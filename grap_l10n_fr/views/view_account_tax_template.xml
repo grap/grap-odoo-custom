@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Grap, OCA   
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<openerp><data>
+
+    <record id="view_account_tax_template_form" model="ir.ui.view">
+        <field name="model">account.tax.template</field>
+        <field name="inherit_id" ref="account.view_account_tax_template_form" />
+        <field name="arch" type="xml">
+            <field name="price_include" position="after">
+                <field name="active"/>
+            </field>
+        </field>
+    </record>
+
+</data></openerp>

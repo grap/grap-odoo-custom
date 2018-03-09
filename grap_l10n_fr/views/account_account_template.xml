@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Grap, OCA   
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+    <record id="grap_l10n_fr_5312" model="account.account.template">
+      <field name="name">Caisse pour Petits achats</field>
+      <field name="code">5312</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_cash"/>
+      <field name="parent_id" ref="l10n_fr.pcg_531"/>
+    </record>
+
+    <record id="grap_l10n_fr_581" model="account.account.template">
+      <field name="name">Espèce en attente d'encaissement</field>
+      <field name="code">581</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_cash"/>
+      <field name="parent_id" ref="l10n_fr.pcg_58"/>
+    </record>
+
+    <record id="grap_l10n_fr_6039" model="account.account.template">
+      <field name="name">Pertes de marchandises et matières premières</field>
+      <field name="code">6039</field>
+      <field name="type">view</field>
+      <field name="user_type" ref="account.data_account_type_expense"/>
+      <field name="parent_id" ref="l10n_fr.pcg_603"/>
+    </record>
+
+    <record id="grap_l10n_fr_60391" model="account.account.template">
+      <field name="name">Pertes constatées en inventaire</field>
+      <field name="code">60391</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_expense"/>
+      <field name="parent_id" ref="grap_l10n_fr_6039"/>
+    </record>
+
+    <record id="grap_l10n_fr_60392" model="account.account.template">
+      <field name="name">Pertes constatées journalièrement</field>
+      <field name="code">60392</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_expense"/>
+      <field name="parent_id" ref="grap_l10n_fr_6039"/>
+    </record>
+
+    <record id="grap_l10n_fr_6041" model="account.account.template">
+      <field name="name">Contrib GRAP</field>
+      <field name="code">6041</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_expense"/>
+      <field name="parent_id" ref="l10n_fr.pcg_604"/>
+    </record>
+
+    <record id="l10n_fr.pcg_6097" model="account.account.template">
+      <field name="name">RRR sur achats de marchandises</field>
+    </record>
+
+    <record id="grap_l10n_fr_6582" model="account.account.template">
+      <field name="name">Erreurs de caisse</field>
+      <field name="code">6582</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_expense"/>
+      <field name="parent_id" ref="l10n_fr.pcg_65"/>
+    </record>
+
+    <record id="grap_l10n_fr_7063" model="account.account.template">
+      <field name="name">Commission sur Vente</field>
+      <field name="code">7063</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_income"/>
+      <field name="parent_id" ref="l10n_fr.pcg_70"/>
+    </record>
+
+    <record id="grap_l10n_fr_7066" model="account.account.template">
+      <field name="name">Prestation Formation</field>
+      <field name="code">7066</field>
+      <field name="type">other</field>
+      <field name="user_type" ref="account.data_account_type_asset"/>
+      <field name="parent_id" ref="l10n_fr.pcg_70"/>
+    </record>
+
+    <record id="l10n_fr.pcg_7097" model="account.account.template">
+      <field name="name">RRR sur ventes de marchandises</field>
+    </record>
+
+    </data>
+</openerp>
+
+
+
