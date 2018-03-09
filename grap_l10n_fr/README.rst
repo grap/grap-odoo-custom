@@ -1,14 +1,45 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
 
-==============
-GRAP l10n_fr 
-==============
+=====================
+GRAP Custom - l10n_fr
+=====================
 
-Module spécifique de GRAP pour faciliter la création des taxes et comptes comptables :
+This module extends the functionality of french Accounting module
+to make easy the creation of taxes and accounts for GRAP.
 
-- Renomme les taxes selon le modèle : TVA <achat/vente> <xx%> basé sur prix <HT/TTC>
-- Renomme leur code selon le modèle : TVA-<HA/VT>-xx.x-<HT/TTC>
-- Désactive les taxes spéciales à 8,5%
-- Créer les comptes comptables spécifiques Grap
+``account.tax.template`` Model
+------------------------------
+
+* Add a new field ``active``
+
+``account.tax.template`` Datas
+------------------------------
+
+* Rename ``name`` : TVA <achat/vente> <xx%> basé sur prix <HT/TTC>
+* Rename ``code`` : TVA-<HA/VT>-xx.x-<HT/TTC>
+* Disable VAT with 8,5% rate
+
+``account.account.template`` Datas
+----------------------------------
+
+* Create specific accounts
+
+Credits
+=======
+
+Contributors
+------------
+
+* Quentin DUPONT <quentin.dupont@grap.coop>
+* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+
+Do not contact contributors directly about support or help with technical issues.
+
+Funders
+-------
+
+The development of this module has been financially supported by:
+
+* GRAP, Groupement Régional Alimentaire de Proximité (http://www.grap.coop)

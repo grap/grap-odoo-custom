@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2017 Grap, OCA   
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
-<openerp>
-    <data>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT <quentin.dupont@grap.coop>
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
 
     <record id="grap_l10n_fr_5312" model="account.account.template">
       <field name="name">Caisse pour Petits achats</field>
@@ -85,8 +87,4 @@
       <field name="name">RRR sur ventes de marchandises</field>
     </record>
 
-    </data>
-</openerp>
-
-
-
+</data></openerp>

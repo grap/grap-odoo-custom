@@ -1,19 +1,16 @@
-# -*- coding: utf-8 -*-
-# Copyright 2017, Grap
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# coding: utf-8
+# Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+# @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+# @author: Quentin DUPONT <quentin.dupont@grap.coop>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "GRAP Change l10n_fr",
-    "summary": "Module summary",
+    "name": "GRAP - Change l10n_fr",
+    "summary": "Custom changes of l10n_fr module for GRAP",
     "version": "8.0.1.0.0",
-    "category": "Uncategorized",
+    "category": "Custom",
     "author": "GRAP",
     "license": "AGPL-3",
-    "application": False,
     "installable": True,
-    "external_dependencies": {
-        "python": [],
-        "bin": [],
-    },
     "depends": [
         "account",
         "simple_tax_account",
