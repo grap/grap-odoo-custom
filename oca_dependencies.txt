@@ -1,0 +1,1 @@
+grap-odoo-incubator https://github.com/grap/grap-odoo-incubator.git 8.0
