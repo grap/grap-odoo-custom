@@ -17,8 +17,8 @@
         "l10n_fr",
     ],
     "data": [
-        'views/account_tax_template.xml',
-        'views/account_account_template.xml',
+        'data/account_tax_template.xml',
+        'data/account_account_template.xml',
         'views/view_account_tax_template.xml',
     ],
 }
