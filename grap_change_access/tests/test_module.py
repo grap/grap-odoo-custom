@@ -6,6 +6,7 @@
 from openerp.tests.common import TransactionCase
 from openerp.exceptions import ValidationError
 
+
 class TestModule(TransactionCase):
 
     def setUp(self):
