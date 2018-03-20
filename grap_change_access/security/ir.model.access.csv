@@ -1,0 +1,83 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+,,,,,,,
+bank_statement_invoice_user,account.bank.statement invoice user,account.model_account_bank_statement,account.group_account_invoice,1,0,0,0
+,,,,,,,
+bank_statement_line_invoice_user,account.bank.statement invoice line user,account.model_account_bank_statement_line,account.group_account_invoice,1,0,0,0
+,,,,,,,
+product.access_product_category_sale_manager,product.category salemanager,product.model_product_category,base.group_sale_manager,1,0,0,0
+stock.access_product_category_stock_manager,product.category stock_manager,product.model_product_category,stock.group_stock_manager,1,0,0,0
+purchase.access_product_category_purchase_manager,product.category purchase_manager,product.model_product_category,purchase.group_purchase_manager,1,0,0,0
+sale.access_product_category_sale_manager,product.category salemanager,product.model_product_category,base.group_sale_manager,1,0,0,0
+point_of_sale.access_product_category_manager,product.category manager,product.model_product_category,point_of_sale.group_pos_manager,1,0,0,0
+access_product_category_manager,grap_change_access__product_category_manager,product.model_product_category,base.group_no_one,1,1,1,1
+,,,,,,,
+stock.access_product_uom_stock_manager,product.uom stock_manager,product.model_product_uom,stock.group_stock_manager,1,0,0,0
+sale.access_product_uom_sale_manager,product.uom salemanager,product.model_product_uom,base.group_sale_manager,1,0,0,0
+point_of_sale.access_product_uom_manager,product.uom manager,product.model_product_uom,point_of_sale.group_pos_manager,1,0,0,0
+purchase.access_product_uom_purchase_manager,product.uom purchase_manager,product.model_product_uom,purchase.group_purchase_manager,1,0,0,0
+access_product_uom_manager,grap_change_access__product_uom_manager,product.model_product_uom,base.group_no_one,1,1,1,1
+,,,,,,,
+stock.access_product_uom_categ_stock_manager,product.uom.categ stock_manager,product.model_product_uom_categ,stock.group_stock_manager,1,0,0,0
+sale.access_product_uom_categ_sale_manager,product.uom.categ salemanager,product.model_product_uom_categ,base.group_sale_manager,1,0,0,0
+purchase.access_product_uom_categ_purchase_manager,product.uom.categ purchase_manager,product.model_product_uom_categ,purchase.group_purchase_manager,1,0,0,0
+access_product_uom_categ_manager,grap_change_access__product_uom_categ_manager,product.model_product_uom_categ,base.group_no_one,1,1,1,1
+,,,,,,,
+stock.access_product_pricelist_stock_manager,product.pricelist stock_manager,product.model_product_pricelist,stock.group_stock_manager,1,0,0,0
+sale.access_product_pricelist_sale_manager,product.pricelist salemanager,product.model_product_pricelist,base.group_sale_manager,1,0,0,0
+purchase.access_product_pricelist_purchase_manager,product.pricelist purchase_manager,product.model_product_pricelist,purchase.group_purchase_manager,1,0,0,0
+access_product_pricelist_manager,grap_change_access__product_pricelist_manager,product.model_product_pricelist,grap_change_access.group_pricelist_manager,1,1,1,1
+,,,,,,,
+stock.access_product_pricelist_version_stock_manager,product.pricelist.version stock_manager,product.model_product_pricelist_version,stock.group_stock_manager,1,0,0,0
+sale.access_product_pricelist_version_sale_manager,product.pricelist.version sale_manager,product.model_product_pricelist_version,base.group_sale_manager,1,0,0,0
+purchase.access_product_pricelist_version_purchase_manager,product.pricelist.version purchase_manager,product.model_product_pricelist_version,purchase.group_purchase_manager,1,0,0,0
+access_product_pricelist_version_manager,grap_change_access__product_pricelist_version_manager,product.model_product_pricelist_version,grap_change_access.group_pricelist_manager,1,1,1,1
+,,,,,,,
+stock.access_product_pricelist_type_stock_manager,product.pricelist.type stock_manager,product.model_product_pricelist_type,base.group_sale_manager,1,0,0,0
+sale.access_product_pricelist_type_sale_manager,product.pricelist.type salemanager,product.model_product_pricelist_type,stock.group_stock_manager,1,0,0,0
+purchase.access_product_pricelist_type_purchase_manager,product.pricelist.type purchase_manager,product.model_product_pricelist_type,purchase.group_purchase_manager,1,0,0,0
+access_product_pricelist_type_manager,grap_change_access__product_pricelist_version_manager,product.model_product_pricelist_type,grap_change_access.group_pricelist_manager,1,1,1,1
+,,,,,,,
+stock.access_stock_warehouse_manager,stock.warehouse.manager,stock.model_stock_warehouse,stock.group_stock_manager,1,0,0,0
+access_stock_warehouse_manager,grap_change_access__stock_warehouse_manager,stock.model_stock_warehouse,base.group_no_one,1,1,1,1
+,,,,,,,
+stock.access_stock_location__partner_manager,stock.location.partner.manager,stock.model_stock_location,base.group_partner_manager,1,0,0,0
+stock.access_stock_location_manager, stock.location.manager,stock.model_stock_location,stock.group_stock_manager,1,0,0,0
+access_stock_location_manager,grap_change_access__stock_location_manager,stock.model_stock_location,base.group_no_one,1,1,1,1
+,,,,,,,
+stock.access_stock_inventory_line_user,stock.inventory.line user,stock.model_stock_inventory_line,stock.group_stock_user,1,1,1,1
+,,,,,,,
+delivery.access_delivery_carrier_manager, delivery.carrier ,delivery.model_delivery_carrier,base.group_sale_manager,1,0,0,0
+access_delivery_carrier_manager,grap_change_access__delivery_carrier_manager,delivery.model_delivery_carrier,base.group_no_one,1,1,1,1
+,,,,,,,
+point_of_sale.access_account_period_pos,account.period pos user,account_fiscal_company.model_account_period,point_of_sale.group_pos_user,1,0,0,0
+,,,,,,,
+base.access_res_country_group_user,res_country res_country_manager,base.model_res_country,base.group_no_one,1,1,1,1
+,,,,,,,
+base.access_res_country_state_group_user,res_country_state res_country_state_manager,base.model_res_country_state,base.group_no_one,1,1,1,1
+,,,,,,,
+email_template.access_email_template,email.template,email_template.model_email_template,base.group_user,1,0,0,0
+,,,,,,,
+access_ir_config_parameter_reader,grap_change_access__ir_config_parameter_reader,base.model_ir_config_parameter,,1,0,0,0
+,,,,,,,
+crm.access_crm_lead,crm.access_crm_lead,crm.model_crm_lead,,1,0,0,0
+crm.access_crm_lead_manager,crm.access_crm_lead_manager,crm.model_crm_lead,,1,0,0,0
+crm.access_crm_lead_partner_manager,crm.access_crm_lead_partner_manager,crm.model_crm_lead,,1,0,0,0
+crm_lead_manager,crm_lead_manager,crm.model_crm_lead,grap_change_access.group_crm_manager,1,1,1,1
+,,,,,,,
+crm.access_crm_phonecall,crm.access_crm_phonecall,crm.model_crm_phonecall,,1,0,0,0
+crm.access_crm_phonecall_manager,crm.access_crm_phonecall_manager,crm.model_crm_phonecall,,1,0,0,0
+crm.access_crm_phonecall_partner_manager,crm.access_crm_phonecall_partner_manager,crm.model_crm_phonecall,,1,0,0,0
+crm_phonecall_manager,crm_phonecall_manager,crm.model_crm_phonecall,grap_change_access.group_crm_manager,1,1,1,1
+,,,,,,,
+crm.access_crm_case_section,crm.access_crm_case_section,crm.model_crm_case_section,,1,0,0,0
+crm.access_crm_case_section_user,crm.access_crm_case_section_user,crm.model_crm_case_section,,1,0,0,0
+crm.access_crm_case_section_manager,crm.access_crm_case_section_manager,crm.model_crm_case_section,,1,0,0,0
+crm_case_sectionl_manager,crm_case_sectionl_manager,crm.model_crm_case_section,grap_change_access.group_crm_manager,1,1,1,1
+,,,,,,,
+crm.access_crm_case_categ,crm.access_crm_case_categ,crm.model_crm_case_categ,,1,0,0,0
+crm.access_crm_case_categ_manager,crm.access_crm_case_categ_manager,crm.model_crm_case_categ,,1,0,0,0
+crm_case_categ,crm_case_categ,crm.model_crm_case_categ,grap_change_access.group_crm_manager,1,1,1,1
+,,,,,,,
+crm.access_crm_case_stage,crm.access_crm_case_stage,crm.model_crm_case_stage,,1,0,0,0
+crm.access_crm_case_stage_manager,crm.access_crm_case_stage_manager,crm.model_crm_case_stage,,1,0,0,0
+crm_case_stage,crm_case_stage,crm.model_crm_case_stage,grap_change_access.group_crm_manager,1,1,1,1

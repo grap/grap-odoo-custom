@@ -1,0 +1,34 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* grap_change_access
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-01 13:07+0000\n"
+"PO-Revision-Date: 2016-09-01 13:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_change_access
+#: model:res.groups,name:grap_change_access.group_crm_manager
+msgid "GRAP - CRM and Calendar Manager"
+msgstr "GRAP - Responsable CRM et Calendrier"
+
+#. module: grap_change_access
+#: model:res.groups,name:grap_change_access.group_pricelist_manager
+msgid "GRAP - Pricelist Manager"
+msgstr "GRAP - Responsable Liste de prix"
+
+#. module: grap_change_access
+#: code:_description:0
+#: model:ir.model,name:grap_change_access.model_stock_location
+#, python-format
+msgid "Location"
+msgstr "Emplacement"
+

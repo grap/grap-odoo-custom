@@ -1,1 +1,2 @@
 grap-odoo-incubator https://github.com/grap/grap-odoo-incubator.git 8.0
+odoo-addons-cis https://github.com/grap/odoo-addons-cis.git 8.0
