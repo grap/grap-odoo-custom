@@ -11,7 +11,7 @@ Remove update / delete access for basic users for some model
 Features
 --------
 
-1. For users that doesn't belong to ``base.group_no_one``, the following models
+For users that doesn't belong to ``base.group_no_one``, the following models
    are readonly
 
 * ``product_category`` is readonly
@@ -23,14 +23,14 @@ Features
 * ``account_period`` is readonly (except for account_manager)
 
 
-2. Add extra constraint on product if income_pdt or expense_pdt:
+Add extra constraint on product if income_pdt or expense_pdt:
 
 * This product are manage by account manager only
 * this product must have account_income (or account_expense)
 * This product must have only one VAT (if expense_pdt)
 * this product can not be 'sale_ok' or 'purchase_ok'
 
-3. Add two new groups
+Add two new groups
 
 * GRAP - CRM and Calendar Manager
 * GRAP - Pricelist Manager
