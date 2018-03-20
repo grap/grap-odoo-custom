@@ -12,7 +12,7 @@ Features
 --------
 
 For users that doesn't belong to ``base.group_no_one``, the following models
-   are readonly
+are readonly
 
 * ``product_category`` is readonly
 * ``product_uom`` is readonly
