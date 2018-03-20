@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="group_crm_manager" model="res.groups">
+        <field name="name">GRAP - CRM and Calendar Manager</field>
+        <field name="category_id" ref="module_category_usability"/>
+    </record>
+
+    <record id="group_pricelist_manager" model="res.groups">
+        <field name="name">GRAP - Pricelist Manager</field>
+        <field name="category_id" ref="module_category_usability"/>
+    </record>
+
+</data></openerp>
