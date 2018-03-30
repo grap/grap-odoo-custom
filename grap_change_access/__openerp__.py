@@ -11,6 +11,7 @@
     'website': 'http://www.grap.coop',
     'license': 'AGPL-3',
     'depends': [
+        'document_page',
         'email_template',
         'delivery',
         'product',
