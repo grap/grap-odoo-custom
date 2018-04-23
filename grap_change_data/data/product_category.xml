@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2015 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="product.product_category_1" model="product.category">
+        <field name="active" eval="False" />
+    </record>
+
+    <record id="product.product_category_all" model="product.category">
+        <field name="active" eval="False" />
+    </record>
+
+</data></openerp>
