@@ -13,4 +13,4 @@ class EmailTemplate(models.Model):
 
     @api.multi
     def disable_useless_template(self):
-        self.write({'ative': False})
+        self.write({'active': False})
