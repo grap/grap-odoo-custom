@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+         <record model="account.chart.template" id="l10n_fr.l10n_fr_pcg_chart_template">
+            <field name="property_account_receivable" ref="l10n_fr.pcg_411"/>
+            <field name="property_account_payable" ref="l10n_fr.pcg_401"/>
+            <field name="property_account_expense_categ" />
+            <field name="property_account_income_categ" />
+        </record>
+    </data>
+</openerp>
