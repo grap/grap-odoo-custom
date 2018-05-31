@@ -11,6 +11,7 @@
     <!-- Changement du type de compte 401 (compte 'vue' a compte 'client') -->
     <record model="account.account.template" id="l10n_fr.pcg_401">
         <field name="type">payable</field>
+        <field name="user_type" ref="account.data_account_type_payable" />
     </record>
 
     <!-- Suppression des comptes 4111, 4117-->
@@ -23,6 +24,7 @@
     <!-- Changement du type de compte 411 (compte 'vue' a compte 'fournisseur') -->
     <record model="account.account.template" id="l10n_fr.pcg_411">
         <field name="type">receivable</field>
+        <field name="user_type" ref="account.data_account_type_receivable" />
     </record>
 
     <!-- Création d'un nouveau compte 5312-->
