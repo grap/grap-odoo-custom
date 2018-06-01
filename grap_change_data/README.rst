@@ -33,7 +33,7 @@ Change default french accounting setting
 * 445712 : TVA collectée (Taux Intermédiaire) -> TVA collectée 5.5%
 * 601 -> change from view to normal type
 * disable some account template
-* ...
+* etc
 
 Contributors
 ------------
