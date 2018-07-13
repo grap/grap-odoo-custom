@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="activity_1" model="grap.activity">
+        <field name="activity_name">Demo Activity 1</field>
+    </record>
+
+    <record id="internal_team" model="grap.activity">
+        <field name="activity_name">Internal Team</field>
+        <field name="state">validated</field>
+    </record>
+
+</data></openerp>
