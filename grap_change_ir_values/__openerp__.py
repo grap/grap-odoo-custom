@@ -19,5 +19,3 @@
         'data/ir_values.xml',
     ],
 }
-
-
