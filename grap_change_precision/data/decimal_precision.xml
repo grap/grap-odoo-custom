@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+        <record id="decimal_purchase_unit_price" model="decimal.precision">
+            <field name="name">GRAP Purchase Unit Price</field>
+            <field name="digits">4</field>
+        </record>
+
+        <record id="decimal_purchase_unit_discount" model="decimal.precision">
+            <field name="name">GRAP Purchase Unit Discount</field>
+            <field name="digits">4</field>
+        </record>
+
+        <record id="product.decimal_purchase" model="decimal.precision">
+            <field name="name">Purchase Price</field>
+            <field name="digits">4</field>
+        </record>
+
+</data></openerp>
+
