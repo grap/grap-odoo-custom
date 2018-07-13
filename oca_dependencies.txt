@@ -1,4 +1,6 @@
 knowledge
+product-attribute
+
 grap-odoo-incubator     https://github.com/grap/grap-odoo-incubator.git         8.0
 grap-odoo-business      https://github.com/grap/grap-odoo-business.git          8.0
 odoo-addons-cis         https://github.com/grap/odoo-addons-cis.git             8.0

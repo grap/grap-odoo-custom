@@ -15,7 +15,7 @@
         'product',
         'purchase',
         'point_of_sale',
-        'standard_price_vat_included',
+        'product_standard_price_tax_included',
     ],
     'data': [
         'data/decimal_precision.xml',
