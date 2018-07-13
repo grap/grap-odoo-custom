@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="view_grap_activity_search" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <search> 
+               <field name="code"/>
+               <field name="name"/>
+               <field name="category_ids"/>
+               <field name="hr_interlocutor_id"/>
+               <field name="attendant_interlocutor_id"/>
+               <field name="accountant_interlocutor_id"/>
+
+               <filter name="filter_validated_working" string="Validated or working" domain="[('state','in', ('validated', 'working'))]"/>
+               <filter name="filter_progress_validated_working" string="In progress, validated or working" domain="[('state','in', ('progress', 'validated', 'working'))]"/>
+               <group expand='0' string='Group by...'>
+                   <filter string='Type' context="{'group_by' : 'type_id'}"/>
+                   <filter string='College' context="{'group_by' : 'college_id'}"/>
+                   <filter string='State' context="{'group_by' : 'state'}"/>
+               </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_grap_activity_tree" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="category_ids" widget="many2many_tags"/>
+                <field name="college_id" />
+                <field name="type_id"/>
+                <field name="fte" sum="# of FTE" />
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_grap_activity_form" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="state_previous" string="Previous State" type="object"
+                        states="progress,validated,working,obsolete" 
+                        groups="grap_cooperative.res_group_grap_cooperative_manager"/>
+                    <button name="state_next" string="Next State" type="object"
+                        states="draft,progress,validated,working"
+                        groups="grap_cooperative.res_group_grap_cooperative_manager"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group col="4">
+                            <group col="2">
+                                <field name="image" widget="image" nolabel="1" height="80" width="80" colspan="2"/>
+                            </group>
+                            <group col="2">
+                                <h2 colspan="2">
+                                    <field name="activity_name" nolabel="1"/>
+                                </h2>
+                                <field name="code" colspan="2"/>
+                            <field name="category_ids"
+                                widget="many2many_tags"
+                                options="{'quick_create':false}" colspan="2"/>
+                            </group>
+                        </group>
+                        <group>
+                                <field name="fte"/>
+                                <field name="siret"/>
+                                <field name="vat"/>
+                                <field name="date_in" string="Business In Date"
+                                    attrs="{'invisible':[('state','not in',['working','obsolete'])]}"/>
+                                <field name="date_out" string="Business Out Date"
+                                    attrs="{'invisible':[('state','not in',['obsolete'])]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group col="4">
+                            <separator string="Activity Contact" colspan="4"/>
+                            <field name="working_email" colspan="4"/>
+                            <field name="web_site" colspan="4"/>
+                            <field name="working_phone" colspan="4"/>
+                            <field name="street" colspan="4"/>
+                            <field name="zip" colspan="2"/>
+                            <field name="city" colspan="2" nolabel="1"/>
+                        </group>
+                        <group col="4">
+                            <separator string="Cooperative Information" colspan="4"/>
+                                <field name="date_validated" colspan="4"
+                                    attrs="{'invisible':[('state','in',['draft','progress'])]}"/>
+                                <field name="type_id"
+                                    options="{'quick_create':false}" colspan="4"/>
+                                <field name="college_id" />
+                                <field name="share_number" colspan="2"
+                                    attrs="{'invisible':[('college_id','=',False)]}"/>
+                                <field name="date_capital_entry" colspan="2"
+                                    attrs="{'invisible':[('college_id','=',False)]}"/>
+
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <separator string="Workers" colspan="2"/>
+                            <field name="people_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="people_id"/>
+                                    <field name="fte"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <separator string="Interlocutors" colspan="2"/>
+                            <field name="accountant_interlocutor_id"/>
+                            <field name="hr_interlocutor_id"/>
+                            <field name="attendant_interlocutor_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_grap_activity_kanban" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <kanban >
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_box oe_kanban_color_border">
+                            <div style="height:150px; width:200px; overflow:hidden;">
+                                <div style="height:40px; width:200px; border-bottom:1px solid #999999;">
+                                    <div style="width:200px; text-align:center;">
+                                        <a type="edit">
+                                            <field name="name"/>
+                                        </a>
+                                    </div>
+                                    <div style="width:200px; text-align:center; font-style:italic;color:gray;">
+                                        (<field name="state" />)
+                                    </div>
+                                </div>
+                                <div style="height:110px; width:200px;">
+                                    <table>
+                                        <tr>
+                                            <td style="height:110px; width:150px; text-align:center;">
+                                                <div style="padding: 5px 5px 5px 5px;">
+                                                    <img t-att-src="kanban_image('grap.activity', 'image', record.id.value)" width="100px"/>
+                                                </div>
+                                            </td>
+                                            <td style="width:50px;text-align:center;vertical-align:middle;">
+                                                <b><t t-esc="record.fte.string"/></b><br />
+                                                <field name="fte"/><br /><br />
+                                                <b><field name="code"/></b>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_grap_activity" model="ir.actions.act_window">
+        <field name="name">Activities</field>
+        <field name="res_model">grap.activity</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{"search_default_filter_validated_working":1}</field>
+    </record>
+
+</data></openerp>
