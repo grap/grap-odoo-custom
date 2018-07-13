@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <menuitem id="menu_grap_root"
+        name="GRAP"
+        sequence="1"/>
+
+<!-- Submenu Directory -->
+    <menuitem id="menu_directory"
+        name="Directory"
+        parent="menu_grap_root"
+        sequence="1"/>
+
+    <menuitem id="menu_activity"
+        parent="menu_directory"
+        action="action_grap_activity" 
+        sequence="1"/>
+
+    <menuitem id="menu_people"
+        parent="menu_directory"
+        action="action_grap_people" 
+        sequence="2"/>
+
+    <menuitem id="menu_member"
+        parent="menu_directory"
+        action="action_grap_member" 
+        sequence="3" />
+
+    <menuitem id="menu_college"
+        parent="menu_directory"
+        action="action_grap_college" 
+        sequence="4"/>
+
+    <menuitem id="menu_category"
+        parent="menu_directory"
+        action="action_grap_category" 
+        sequence="5"/>
+
+    <menuitem id="menu_mandate"
+        parent="menu_directory"
+        action="action_grap_mandate" 
+        sequence="6"/>
+
+    <menuitem id="menu_type"
+        parent="menu_directory"
+        action="action_grap_type" 
+        sequence="7"/>
+
+<!-- Submenu Information -->
+    <menuitem id="menu_information"
+        name="Information"
+        parent="menu_grap_root"
+        sequence="2"/>
+
+</data></openerp>
