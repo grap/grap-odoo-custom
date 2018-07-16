@@ -3,6 +3,8 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from datetime import datetime
+
 from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
@@ -20,6 +22,8 @@ class GrapPeople(models.Model):
     first_name = fields.Char(string='First name', required=True)
 
     last_name = fields.Char(string='Last name', required=True)
+
+    birthdate = fields.Date('Birthdate')
 
     private_phone = fields.Char(string='Private Phone')
 
@@ -51,12 +55,25 @@ class GrapPeople(models.Model):
 
     skills = fields.Text(string='Skills')
 
-    catchword = fields.Text(string='Catchword')
+    is_birthday = fields.Boolean(compute='_compute_is_birthday_color')
+
+    color = fields.Integer(compute='_compute_is_birthday_color')
 
     # Compute section
     @api.model
     def _get_name(self, firstName, lastName):
         return lastName + ' ' + firstName
+
+    @api.multi
+    def _compute_is_birthday_color(self):
+        for people in self.filtered(lambda x: x.birthdate):
+            now = datetime.now()
+            birthdate = datetime.strptime(
+                people.birthdate, '%Y-%m-%d').replace(year=now.year)
+            delta = birthdate - now
+            if delta.days >= -1 and delta.days < 2:
+                people.is_birthday = True
+                people.color = 4
 
     # Overloads section
     @api.model
