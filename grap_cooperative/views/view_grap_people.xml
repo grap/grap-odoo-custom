@@ -51,7 +51,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="first_name" nolabel="1" col="1"/>
                                     <field name="last_name" nolabel="1" col="1"/>
                                 </h2>
-                                <field name="catchword" nolabel="1"/>
+                                <field name="birthdate"/>
+                                <field name="is_birthday" invisible="1"/>
                             </group>
                         </group>
                         <group>
@@ -102,16 +103,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <kanban>
                 <field name="name"/>
+                <field name="is_birthday"/>
+                <field name="color"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_box oe_kanban_color_border">
-                            <div style="height:210px;width:190px;overflow:hidden;">
-                                <div style="height:20px;width:190px;border-bottom:1px solid #999999;padding-left:5px;overflow:hidden;">
-                                    <a type="edit">
-                                        <field name="last_name"/> <field name="first_name"/>
-                                    </a>
-                                </div>
-                                <div style="height:190px;width:190px;text-align:center;vertical-align:middle;padding-top: 5px;">
+                        <div t-attf-class="oe_kanban_box oe_kanban_color_border">
+                            <div style="height:220px;width:190px;overflow:hidden;">
+                                <a type="edit">
+                                    <div style="height:30px;width:190px;border-bottom:1px solid #999999;padding-left:5px;overflow:hidden;"
+                                            t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}">
+                                        <div style="height:30px; width: 155px; overflow: hidden;float:left;">
+                                            <field name="last_name"/> <field name="first_name"/>
+                                        </div>
+                                        <div style="width: 30px; overflow: hidden;">
+                                            <div t-if="record.is_birthday.value">
+                                                <img t-att-src="'/grap_cooperative/static/src/img/is_birthday.png'"
+                                                    style="width:30px; height:30px;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div style="height:190px;width:190px;text-align:center;vertical-align:middle;padding-top: 15px;">
                                     <img t-att-src="kanban_image('grap.people', 'image', record.id.value)" width="180"/>
                                 </div>
                             </div>
