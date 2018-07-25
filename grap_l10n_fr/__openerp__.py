@@ -15,10 +15,13 @@
         "account",
         "simple_tax_account",
         "l10n_fr",
+        "account_export_ebp",
     ],
     "data": [
         'data/account_tax_template.xml',
         'data/account_account_template.xml',
+        'data/account_tax_code_template.xml',
         'views/view_account_tax_template.xml',
+        'views/view_account_tax_code_template.xml',
     ],
 }
