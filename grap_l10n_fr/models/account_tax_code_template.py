@@ -10,6 +10,6 @@ class AccountTaxCodeTemplate(models.Model):
     _inherit = 'account.tax.code.template'
 
     ref_nb = fields.Char(
-            "Tax Code\'s Account suffix in EBP", size=4,
-            help="""When exporting Entries to EBP, this suffix will be"""
-            """ appended to the Account Number to make it a new Account.""")
+        "Tax Codes suffix in EBP", size=4,
+        help="When exporting Entries to EBP, this suffix will be"
+        " appended to the Account Number to make it a new Account.")
