@@ -27,7 +27,7 @@ to make easy the creation of taxes and accounts for GRAP.
 * Create specific accounts
 
 ``account.tax.code.template`` Datas
-------------------------------
+-----------------------------------
 
 * Add EBP code
 
