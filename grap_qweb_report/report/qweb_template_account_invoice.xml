@@ -23,53 +23,57 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
 
                 <h2>
-                    <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
+                    <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Facture</span>
                     <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                    <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                    <span t-if="o.type == 'out_refund'">Refund</span>
-                    <span t-if="o.type == 'in_refund'">Supplier Refund</span>
-                    <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
+                    <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Facture Brouillon</span>
+                    <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Facture annulée</span>
+                    <span t-if="o.type == 'out_refund'">Avoir Client</span>
+                    <span t-if="o.type == 'in_refund'">Avoir Fournisseur</span>
+                    <span t-if="o.type == 'in_invoice'">Facture Fournisseur</span>
                     <span t-field="o.number"/>
                 </h2>
 
-                <div class="row mt32 mb32">
-                    <div class="col-xs-2" t-if="o.name">
-                        <strong>Description:</strong>
-                        <p t-field="o.name"/>
-                    </div>
-                    <div class="col-xs-2" t-if="o.date_invoice">
-                        <strong>Invoice Date:</strong>
-                        <p t-field="o.date_invoice"/>
-                    </div>
-                    <div class="col-xs-2" t-if="o.date_due">
-                        <strong>Due Date:</strong>
-                        <p t-field="o.date_due"/>
-                    </div>
-                    <div class="col-xs-2" t-if="o.origin">
-                        <strong>Source:</strong>
-                        <p t-field="o.origin"/>
-                    </div>
-                    <div class="col-xs-2" t-if="o.partner_id.ref">
-                        <strong>Customer Code:</strong>
-                        <p t-field="o.partner_id.ref"/>
-                    </div>
-                    <div class="col-xs-2" t-if="o.reference">
-                        <strong>Reference:</strong>
-                        <p t-field="o.reference"/>
-                    </div>
-                </div>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th t-if="o.name">Description</th>
+                            <th t-if="o.date_invoice">Date de facture</th>
+                            <th t-if="o.date_due">Date d'échéance</th>
+                            <th t-if="o.origin">Origine</th>
+                            <th t-if="o.reference">Référence</th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <tr>
+                            <td t-if="o.name">
+                                <span t-field="o.name"/>
+                            </td>
+                            <td t-if="o.date_invoice">
+                                <span t-field="o.date_invoice"/>
+                            </td>
+                            <td t-if="o.date_due">
+                                <span t-field="o.date_due"/>
+                            </td>
+                            <td t-if="o.origin">
+                                <span t-field="o.origin"/>
+                            </td>
+                            <td t-if="o.reference">
+                                <span t-field="o.reference"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <table class="table table-condensed">
                     <thead>
                         <tr>
                             <th>Description</th>
                             <th>Labels</th>
-                            <th>Quantity</th>
-                            <th class="text-right">Unit Price</th>
-                            <th t-if="o.has_discount" class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+                            <th>Quantité</th>
+                            <th class="text-right">P.U.</th>
+                            <th t-if="o.has_discount" class="text-right" groups="sale.group_discount_per_so_line">Rem. (%)</th>
                             <th class="text-right">Taxes</th>
-                            <th class="text-right">Amount</th>
+                            <th class="text-right">Montant</th>
                         </tr>
                     </thead>
                     <tbody class="invoice_tbody">
@@ -107,7 +111,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="col-xs-4 pull-right">
                         <table class="table table-condensed">
                             <tr class="border-black">
-                                <td><strong>Total Without Taxes</strong></td>
+                                <td><strong>Total HT</strong></td>
                                 <td class="text-right">
                                     <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                                 </td>
@@ -119,7 +123,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </td>
                             </tr>
                             <tr class="border-black">
-                                <td><strong>Total</strong></td>
+                                <td><strong>Total TTC</strong></td>
                                 <td class="text-right">
                                      <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                                 </td>
@@ -133,9 +137,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
-                                    <th>Tax</th>
-                                    <th class="text-right">Base</th>
-                                    <th class="text-right">Amount</th>
+                                    <th>Taxe</th>
+                                    <th class="text-right">Base de calcul</th>
+                                    <th class="text-right">Montant</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -156,16 +160,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
 
                 <p t-if="o.comment">
-                    <strong>Comment:</strong>
+                    <strong>Commentaire</strong>
                     <span t-field="o.comment"/>
                 </p>
                 <p t-if="o.payment_term.note">
-                    <strong>Payment Term:</strong>
+                    <strong>Condition de paiement</strong>
                     <span t-field="o.payment_term.note"/>
-                </p>
-                <p t-if="o.fiscal_position.note">
-                    <strong>Fiscal Position Remark:</strong>
-                    <span t-field="o.fiscal_position.note"/>
                 </p>
             </div>
         </t>

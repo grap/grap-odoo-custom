@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-03 16:41+0000\n"
-"PO-Revision-Date: 2018-07-03 16:41+0000\n"
+"POT-Creation-Date: 2018-07-31 13:23+0000\n"
+"PO-Revision-Date: 2018-07-31 13:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,16 @@ msgstr ""
 #, python-format
 msgid "------------------------------------------"
 msgstr "------------------------------------------"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.qweb_template_label_counter
+msgid "/KG"
+msgstr "/KG"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.qweb_template_label_counter
+msgid "/PCE"
+msgstr "/PCE"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
@@ -41,7 +51,6 @@ msgstr "Allergènes"
 #. module: grap_qweb_report
 #. openerp-web
 #: code:addons/grap_qweb_report/static/src/xml/grap_qweb_report.xml:23
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 #, python-format
 msgid "Amount"
 msgstr "Montant"
@@ -49,16 +58,20 @@ msgstr "Montant"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_big
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
+#: view:website:grap_qweb_report.qweb_template_label_middle_square
 #: view:website:grap_qweb_report.qweb_template_label_normal
 #: view:website:grap_qweb_report.qweb_template_label_small
+#: view:website:grap_qweb_report.qweb_template_label_small_square
 msgid "Au L :"
 msgstr "Au L :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_big
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
+#: view:website:grap_qweb_report.qweb_template_label_middle_square
 #: view:website:grap_qweb_report.qweb_template_label_normal
 #: view:website:grap_qweb_report.qweb_template_label_small
+#: view:website:grap_qweb_report.qweb_template_label_small_square
 msgid "Au kg :"
 msgstr "Au kg :"
 
@@ -69,6 +82,16 @@ msgstr "Disponible pour les étiquettes"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Avoir Client"
+msgstr "Avoir Client"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Avoir Fournisseur"
+msgstr "Avoir Fournisseur"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
 msgid "Base"
 msgstr "Base de calcul"
 
@@ -76,11 +99,6 @@ msgstr "Base de calcul"
 #: view:picking.summary.wizard:grap_qweb_report.view_picking_summary_wizard_form
 msgid "Cancel"
 msgstr "Annuler"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Cancelled Invoice"
-msgstr "Facture annulée"
 
 #. module: grap_qweb_report
 #: help:res.company,pricetag_ignore_organic_warning:0
@@ -105,8 +123,8 @@ msgstr "Couleur de l'étiquette par défaut. Format #RRGGBB"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Comment:"
-msgstr "Note:"
+msgid "Commentaire"
+msgstr "Commentaire"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_stock_picking
@@ -122,6 +140,11 @@ msgstr "Sociétés"
 #: field:product.pricetag.type,company_id:0
 msgid "Company"
 msgstr "Société"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Condition de paiement"
+msgstr "Condition de paiement"
 
 #. module: grap_qweb_report
 #: code:addons/grap_qweb_report/models/product_product.py:119
@@ -151,11 +174,6 @@ msgid "Customer Address:"
 msgstr "Adresse du client :"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Customer Code:"
-msgstr "Référence client:"
-
-#. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
 msgid "DLUO :"
 msgstr "DLUO :"
@@ -164,6 +182,16 @@ msgstr "DLUO :"
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Date Ordered:"
 msgstr "Date de commande :"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Date d'échéance"
+msgstr "Date d'échéance"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Date de facture"
+msgstr "Date de facture"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_stock_picking
@@ -185,11 +213,6 @@ msgid "Description"
 msgstr "Description"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Description:"
-msgstr "Description:"
-
-#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_stock_picking
 msgid "Destination"
 msgstr "Destination"
@@ -200,11 +223,6 @@ msgid "Disc.(%)"
 msgstr "Rem.(%)"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Discount (%)"
-msgstr "Remise (%)"
-
-#. module: grap_qweb_report
 #: field:picking.summary.wizard,display_name:0
 #: field:picking.summary.wizard.picking,display_name:0
 #: field:picking.summary.wizard.product,display_name:0
@@ -213,24 +231,29 @@ msgid "Display Name"
 msgstr "Nom affiché"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Draft Invoice"
-msgstr "Facture Brouillon"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Due Date:"
-msgstr "Date d'échéance :"
-
-#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_quotation_document
 msgid "Expected Date"
 msgstr "Date prévue"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Fiscal Position Remark:"
-msgstr "Remarque de Position Fiscale:"
+msgid "Facture"
+msgstr "Facture"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Facture Brouillon"
+msgstr "Facture Brouillon"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Facture Fournisseur"
+msgstr "Facture Fournisseur"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Facture annulée"
+msgstr "Facture annulée"
 
 #. module: grap_qweb_report
 #: code:addons/grap_qweb_report/models/product_product.py:138
@@ -279,14 +302,8 @@ msgstr "Ingrédients"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 msgid "Invoice"
 msgstr "Facture"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Invoice Date:"
-msgstr "Date de facture:"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice_line
@@ -333,6 +350,11 @@ msgid "Last Updated on"
 msgstr "Last Updated on"
 
 #. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Montant"
+msgstr "Montant"
+
+#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_layout_footer
 msgid "Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€"
 msgstr "Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€"
@@ -375,6 +397,7 @@ msgid "Organic Product, certified by %s"
 msgstr "Produit issu de l'agriculture biologique, certifié par %s"
 
 #. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
 msgid "Origine"
 msgstr "Origine"
@@ -390,6 +413,11 @@ msgstr "Origine :"
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
 msgid "Our Order Reference:"
 msgstr "Notre référence de commande :"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "P.U."
+msgstr "P.U."
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
@@ -412,7 +440,6 @@ msgid "Pas d'escompte pour paiement anticipé - Pénalité de retard: 3 fois le 
 msgstr "Pas d'escompte pour paiement anticipé - Pénalité de retard: 3 fois le taux d'intérêt légal"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Payment Term:"
 msgstr "Conditions de règlement:"
@@ -446,8 +473,10 @@ msgstr "Liste des Opérations"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_big
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
+#: view:website:grap_qweb_report.qweb_template_label_middle_square
 #: view:website:grap_qweb_report.qweb_template_label_normal
 #: view:website:grap_qweb_report.qweb_template_label_small
+#: view:website:grap_qweb_report.qweb_template_label_small_square
 msgid "Pièce :"
 msgstr "Pièce :"
 
@@ -564,6 +593,21 @@ msgid "Print Summary"
 msgstr "Imprimer le résumé"
 
 #. module: grap_qweb_report
+#: view:website:grap_qweb_report.qweb_template_label_counter
+msgid "Prix au kilo :"
+msgstr "Prix au kilo :"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.qweb_template_label_counter
+msgid "Prix au litre :"
+msgstr "Prix au litre :"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.qweb_template_label_counter
+msgid "Prix à la pièce :"
+msgstr "Prix à la pièce :"
+
+#. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_product_product
 #: view:website:grap_qweb_report.grap_template_stock_picking
 msgid "Product"
@@ -608,7 +652,6 @@ msgid "Qty"
 msgstr "Qté"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 #: view:website:grap_qweb_report.grap_template_picking_summary_wizard_document
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 #: view:website:grap_qweb_report.grap_template_stock_picking
@@ -621,6 +664,11 @@ msgid "Quantity total"
 msgstr "Quantité total"
 
 #. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Quantité"
+msgstr "Quantité"
+
+#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Quotation Date:"
 msgstr "Date du devis:"
@@ -631,19 +679,14 @@ msgid "Quotation N°"
 msgstr "Devis N°"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Reference:"
-msgstr "Référence:"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Refund"
-msgstr "Avoir"
-
-#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_quotation_document
 msgid "Regards,"
 msgstr "Bien à vous,"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Rem. (%)"
+msgstr "Rem. (%)"
 
 #. module: grap_qweb_report
 #: field:product.product,report_extra_food_info:0
@@ -679,6 +722,11 @@ msgstr "Règlement par chèque à l'ordre de"
 #: view:website:grap_qweb_report.grap_layout_footer
 msgid "Règlement par virement sur le compte"
 msgstr "Règlement par virement sur le compte"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Référence"
+msgstr "Référence"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_layout_footer
@@ -728,11 +776,6 @@ msgid "Source"
 msgstr "Origine"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Source:"
-msgstr "Source :"
-
-#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_picking_summary_wizard_document
 msgid "Standard Price"
 msgstr "Coût de revient"
@@ -765,16 +808,6 @@ msgstr "Adresse fournisseur :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Supplier Invoice"
-msgstr "Facture fournisseur"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "Supplier Refund"
-msgstr "Avoir fournisseur"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 msgid "TIN:"
 msgstr "Numéro TVA :"
 
@@ -785,9 +818,13 @@ msgstr "TVA intracommunautaire :"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_tax
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 msgid "Tax"
 msgstr "Taxes"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Taxe"
+msgstr "Taxe"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
@@ -797,7 +834,6 @@ msgid "Taxes"
 msgstr "Taxes"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Total"
@@ -805,6 +841,15 @@ msgstr "Total"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Total HT"
+msgstr "Total HT"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_account_invoice_document
+msgid "Total TTC"
+msgstr "Total TTC"
+
+#. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Total Without Taxes"
@@ -826,7 +871,6 @@ msgid "Type Name"
 msgstr "Nom du Type"
 
 #. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Unit Price"
@@ -902,15 +946,19 @@ msgstr "___________ Base"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_big
+#: view:website:grap_qweb_report.qweb_template_label_middle_square
 #: view:website:grap_qweb_report.qweb_template_label_normal
 #: view:website:grap_qweb_report.qweb_template_label_small
+#: view:website:grap_qweb_report.qweb_template_label_small_square
 msgid "la pièce"
 msgstr "la pièce"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_big
+#: view:website:grap_qweb_report.qweb_template_label_middle_square
 #: view:website:grap_qweb_report.qweb_template_label_normal
 #: view:website:grap_qweb_report.qweb_template_label_small
+#: view:website:grap_qweb_report.qweb_template_label_small_square
 msgid "le kilo"
 msgstr "le kilo"
 
