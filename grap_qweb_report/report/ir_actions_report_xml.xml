@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <!-- New Report -->
+        <report 
+            id="report_picking_summary_wizard"
+            string="Picking Summary"
+            model="picking.summary.wizard"
+            report_type="qweb-pdf"
+            file="grap_qweb_report.grap_template_picking_summary_wizard"
+            name="grap_qweb_report.grap_template_picking_summary_wizard"
+        />
+
+<!-- Overloaded Report -->
+    <record id="account.account_invoices" model="ir.actions.report.xml">
+        <field name="report_rml">grap_qweb_report.grap_template_account_invoice</field>
+    </record>
+
+    <record id="purchase.action_report_purchase_order" model="ir.actions.report.xml">
+        <field name="report_rml">grap_qweb_report.grap_template_purchase_order</field>
+        <field name="report_name">grap_qweb_report.grap_template_purchase_order</field>
+    </record>
+
+    <record id="purchase.report_purchase_quotation" model="ir.actions.report.xml">
+        <field name="report_rml">grap_qweb_report.grap_template_purchase_order_quotation</field>
+    </record>
+
+    <record id="sale.report_sale_order" model="ir.actions.report.xml">
+        <field name="report_rml">grap_qweb_report.grap_template_sale_order</field>
+        <field name="report_name">grap_qweb_report.grap_template_sale_order</field>
+    </record>
+
+    <record id="stock.action_report_picking" model="ir.actions.report.xml">
+        <field name="report_rml">grap_qweb_report.grap_template_stock_picking</field>
+        <field name="report_name">grap_qweb_report.grap_template_stock_picking</field>
+    </record>
+
+</data></openerp>

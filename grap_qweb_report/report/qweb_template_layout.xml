@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+<!--                 -->
+<!--General Layout   -->
+<!--                 -->
+    <template id="grap_layout">
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+
+        <t t-call="grap_qweb_report.grap_layout_header" />
+        <t t-raw="0"/>
+        <t t-call="grap_qweb_report.grap_layout_footer" />
+    </template>
+
+
+<!--                 -->
+<!--Header Layout    -->
+<!--                 -->
+
+    <template id="grap_layout_header">
+
+
+        <div class="header">
+
+<!-- Ligne horizontale -->
+            <div class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+
+<!-- Entete Societe(s) -->
+            <div class="row">
+                <div class="col-xs-2 text-center">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 120px;"/>
+                </div>
+
+                <div class="col-xs-4 text-center">
+                    <div>
+                        <span t-esc="company.name.replace('|', '')"/>
+                    </div>
+                    <div>
+                    <span t-esc="company.street"/> <span t-esc="company.street2"/>
+                    </div>
+                    <div>
+                        <span t-esc="company.zip"/> <span t-esc="company.city"/>
+                    </div>
+                    <div t-if="company.phone">
+                        <span t-esc="company.phone"/>
+                     </div>
+                    <div t-if="company.email">
+                        <span t-esc="company.email"/>
+                    </div>
+                    <div t-if="company.website">
+                        <span t-esc="company.website.replace('http://', '')"/>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 text-center" t-if="company.fiscal_company.id != company.id">
+                    <img t-if="company.fiscal_company.logo" t-att-src="'data:image/png;base64,%s' % company.fiscal_company.logo" style="max-height: 60px;"/>
+                </div>
+                <div class="col-xs-4 text-center" t-if="company.fiscal_company.id != company.id">
+                    <div>
+                        <span t-esc="company.fiscal_company.name.replace('|', '')"/>
+                     </div>
+                    <div>
+                        <span t-esc="company.fiscal_company.street"/> <span t-esc="company.fiscal_company.street2"/>
+                     </div>
+                    <div>
+                        <span t-esc="company.fiscal_company.zip"/> <span t-esc="company.fiscal_company.city"/>
+                     </div>
+                    <div t-if="company.fiscal_company.phone">
+                        <span t-esc="company.fiscal_company.phone"/>
+                     </div>
+                    <div t-if="company.fiscal_company.administrative_department_email">
+                        <span t-esc="company.fiscal_company.administrative_department_email"/>
+                    </div>
+                    <div t-if="company.fiscal_company.website">
+                        <span t-esc="company.fiscal_company.website.replace('http://', '')"/>
+                    </div>
+                </div>
+                    <div class="col-xs-12" t-if="company.rml_header1">
+                        <span t-esc="company.rml_header1"/>
+                    </div>
+            </div>
+
+<!-- Ligne horizontale -->
+            <div class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+<!--                 -->
+<!--Footer Layout    -->
+<!--                 -->
+
+    <template id="grap_layout_footer">
+
+        <div class="footer">
+            <div style="border-top: 1px solid black; font-size:9px;">
+                <div class="col-xs-10 text-center">
+                    <div t-if="company.custom_footer">
+                        <div><span t-esc="company.rml_footer"/></div>
+                    </div>
+                    <div t-if="len(company.certifier_organization_id)">
+                        <div>Tous ces produits sont issus de l'agriculture biologique et certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/></div>
+                    </div>
+                    <div t-if="o._name in ('sale.order', 'account.invoice')">
+                        <div>Pas d'escompte pour paiement anticipé - Pénalité de retard: 3 fois le taux d'intérêt légal</div>
+                        <div>Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</div>
+                    </div>
+                    <div>Règlement par chèque à l'ordre de <span t-esc="company.fiscal_company.name.replace('|', '')"/></div>
+                    <div t-if="len(company.bank_ids)">
+                        <div>Règlement par virement sur le compte <span t-esc="company.bank_ids[0].bank_name"/></div>
+                        <div>
+                            <b>IBAN</b> : <span t-esc="company.bank_ids[0].iban"/> - 
+                            <b>SWIFT/BIC</b> : <span t-esc="company.bank_ids[0].bank_bic"/>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="list-inline">
+                            <li t-if="company.siret"><b>SIRET :</b></li>
+                            <li t-if="company.siret"><span t-esc="company.siret"/></li>
+                            <li t-if="company.vat"><b>TVA intracommunautaire :</b></li>
+                            <li t-if="company.vat"><span t-esc="company.vat"/></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <ul class="list-inline">
+                        <li>Page:</li>
+                        <li><span class="page"/></li>
+                        <li>/</li>
+                        <li><span class="topage"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+</data></openerp>

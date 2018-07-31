@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="sale_food.infusion_girl_power" model="product.product">
+        <field name="pricetag_uom_id" ref="uom_100_gr"/>
+        <field name="pricetag_type_id" ref="type_local_product" />
+    </record>
+
+    <record id="sale_food.biere_pilat_75cl" model="product.product">
+        <field name="pricetag_type_id" ref="type_local_product" />
+    </record>
+
+</data></openerp>

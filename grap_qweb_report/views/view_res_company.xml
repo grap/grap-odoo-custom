@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2012 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author Julien Weste
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="view_res_company_form" model="ir.ui.view" >
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@string='Report Configuration']/group[@string='Configuration']" position="after">
+                <group string="Pricetag">
+                    <field name="pricetag_color"/>
+                    <field name="pricetag_ignore_organic_warning"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</data></openerp>
