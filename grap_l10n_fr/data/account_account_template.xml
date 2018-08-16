@@ -7,7 +7,41 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <openerp><data>
 
-    <!-- Comptes 5x -->
+    <!-- ====================================-->
+    <!-- Comptes 4x =========================-->
+    <!-- ====================================-->
+
+    <!-- Suppression des comptes 4011, 4017-->
+    <record model="account.account.template" id="l10n_fr.fr_pcg_pay">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_4017">
+        <field name="active" eval="False" />
+    </record>
+    <!-- Changement du type de compte 401 (compte 'vue' a compte 'client') -->
+    <record model="account.account.template" id="l10n_fr.pcg_401">
+        <field name="type">payable</field>
+        <field name="user_type" ref="account.data_account_type_payable" />
+    </record>
+
+    <!-- Suppression des comptes 4111, 4117-->
+    <record model="account.account.template" id="l10n_fr.fr_pcg_recv">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_4117">
+        <field name="active" eval="False" />
+    </record>
+    <!-- Changement du type de compte 411 (compte 'vue' a compte 'fournisseur') -->
+    <record model="account.account.template" id="l10n_fr.pcg_411">
+        <field name="type">receivable</field>
+        <field name="user_type" ref="account.data_account_type_receivable" />
+    </record>
+
+    <!-- ====================================-->
+    <!-- Comptes 5x =========================-->
+    <!-- ====================================-->
+
+    <!-- Création d'un nouveau compte 5312-->
     <record id="grap_l10n_fr_5312" model="account.account.template">
       <field name="name">Caisse pour Petits achats</field>
       <field name="code">5312</field>
@@ -16,6 +50,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_531"/>
     </record>
 
+    <!-- Création d'un nouveau compte 581-->
     <record id="grap_l10n_fr_581" model="account.account.template">
       <field name="name">Espèce en attente d'encaissement</field>
       <field name="code">581</field>
@@ -24,7 +59,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_58"/>
     </record>
 
-    <!-- Comptes 6x -->
+    <!-- ====================================-->
+    <!-- Comptes 6x =========================-->
+    <!-- ====================================-->
+
+    <!-- Changement du type de compte 601 (compte 'vue' a compte 'normal') -->
+    <record model="account.account.template" id="l10n_fr.pcg_601">
+        <field name="type">other</field>
+    </record>
+
+    <!-- Suppression des comptes 6011, 6012, 6013-->
+    <record model="account.account.template" id="l10n_fr.pcg_6011">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6012">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6017">
+        <field name="active" eval="False" />
+    </record>
+
+    <!-- Creation d'un sous-compte 6039 -->
     <record id="grap_l10n_fr_6039" model="account.account.template">
       <field name="name">Pertes de marchandises et matières premières</field>
       <field name="code">6039</field>
@@ -33,6 +88,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_603"/>
     </record>
 
+    <!-- Creation d'un sous-compte 60391 -->
     <record id="grap_l10n_fr_60391" model="account.account.template">
       <field name="name">Pertes constatées en inventaire</field>
       <field name="code">60391</field>
@@ -41,6 +97,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="grap_l10n_fr_6039"/>
     </record>
 
+    <!-- Creation d'un sous-compte 60392 -->
     <record id="grap_l10n_fr_60392" model="account.account.template">
       <field name="name">Pertes constatées journalièrement</field>
       <field name="code">60392</field>
@@ -49,6 +106,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="grap_l10n_fr_6039"/>
     </record>
 
+    <!-- Creation d'un sous-compte 6041 -->
     <record id="grap_l10n_fr_6041" model="account.account.template">
       <field name="name">Contrib GRAP</field>
       <field name="code">6041</field>
@@ -57,10 +115,26 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_604"/>
     </record>
 
-    <record id="l10n_fr.pcg_6097" model="account.account.template">
-      <field name="name">RRR sur achats de marchandises</field>
+    <!-- Renommage du compte 6338-->
+    <record model="account.account.template" id="l10n_fr.pcg_6338" >
+        <field name="name">Autres Taxes</field>
     </record>
 
+    <!-- Changement du type de compte 658 (compte 'normal' a compte 'vue') -->
+    <record model="account.account.template" id="l10n_fr.pcg_658">
+      <field name="type">view</field>
+    </record>
+
+    <!-- Creation d'un sous-compte 6581 -->
+    <record model="account.account.template" id="pcg_6581">
+        <field name="name">Fond de caisse (D)</field>
+        <field name="code">6581</field>
+        <field name="type">other</field>
+        <field name="user_type" ref="account.data_account_type_expense"/>
+        <field name="parent_id" ref="l10n_fr.pcg_658"/>
+    </record>
+
+    <!-- Creation d'un sous-compte 6582 -->
     <record id="grap_l10n_fr_6582" model="account.account.template">
       <field name="name">Erreurs de caisse</field>
       <field name="code">6582</field>
@@ -69,7 +143,71 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_65"/>
     </record>
 
-    <!-- Comptes 7x -->
+    <!-- Renommage du compte 6071-->
+    <record model="account.account.template" id="l10n_fr.pcg_6071">
+        <field name="name">Achats de marchandises externes</field>
+    </record>
+
+    <!-- Renommage des comptes 609x-->
+    <record model="account.account.template" id="l10n_fr.pcg_6091">
+        <field name="name">RRR sur achats de matières premières (et fournitures)</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6092">
+        <field name="name">RRR sur achats d'autres approvisionnements stockés</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6094">
+        <field name="name">RRR sur achats d'études et prestations de services</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6095">
+        <field name="name">RRR sur achats de matériel, équipements et travaux</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6096">
+        <field name="name">RRR sur achats d'approvisionnements non stockés</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_6097">
+        <field name="name">RRR sur achats de marchandises</field>
+    </record>
+
+    <!-- ====================================-->
+    <!-- Comptes 7x =========================-->
+    <!-- ====================================-->
+
+    <!-- Changement du type de compte 701 (compte 'vue' a compte 'normal') -->
+    <record model="account.account.template" id="l10n_fr.pcg_701">
+        <field name="type">other</field>
+    </record>
+
+    <!-- Suppression des comptes 7011, 7012 -->
+    <record model="account.account.template" id="l10n_fr.pcg_7011">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7012">
+        <field name="active" eval="False" />
+    </record>
+
+    <!-- Changement du type de compte 758 (compte 'normal' a compte 'vue') -->
+    <record model="account.account.template" id="l10n_fr.pcg_758">
+        <field name="type">view</field>
+    </record>
+
+    <!-- Creation d'un sous-compte 7581 -->
+    <record model="account.account.template" id="pcg_7581">
+        <field name="name">Fond de caisse (C)</field>
+        <field name="code">7581</field>
+        <field name="type">other</field>
+        <field name="user_type" ref="account.data_account_type_income"/>
+        <field name="parent_id" ref="l10n_fr.pcg_758"/>
+    </record>
+    <!-- Creation d'un sous-compte 7582 -->
+    <record model="account.account.template" id="pcg_7582">
+        <field name="name">Erreurs de caisse</field>
+        <field name="code">7582</field>
+        <field name="type">other</field>
+        <field name="user_type" ref="account.data_account_type_income"/>
+        <field name="parent_id" ref="l10n_fr.pcg_758"/>
+    </record>
+
+    <!-- Creation d'un sous-compte 7063 -->
     <record id="grap_l10n_fr_7063" model="account.account.template">
       <field name="name">Commission sur Vente</field>
       <field name="code">7063</field>
@@ -78,6 +216,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_70"/>
     </record>
 
+    <!-- Creation d'un sous-compte 7066 -->
     <record id="grap_l10n_fr_7066" model="account.account.template">
       <field name="name">Prestation Formation</field>
       <field name="code">7066</field>
@@ -86,8 +225,39 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_70"/>
     </record>
 
-    <record id="l10n_fr.pcg_7097" model="account.account.template">
-      <field name="name">RRR sur ventes de marchandises</field>
+    <!-- Changement du type de compte 707 (compte 'vue' a compte 'normal') -->
+    <record model="account.account.template" id="l10n_fr.fr_pcg_sale">
+        <field name="type">other</field>
+    </record>
+    <!-- Suppression des comptes 7071, 7072, 7073-->
+    <record model="account.account.template" id="l10n_fr.pcg_7071">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7072">
+        <field name="active" eval="False" />
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7073">
+        <field name="active" eval="False" />
+    </record>
+
+    <!-- Renommage des comptes 709x-->
+    <record model="account.account.template" id="l10n_fr.pcg_7091">
+        <field name="name">RRR sur ventes de produits finis</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7092">
+        <field name="name">RRR sur ventes de produits intermédiaires</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7094">
+        <field name="name">RRR sur travaux</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7095">
+        <field name="name">RRR sur études</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7096">
+        <field name="name">RRR sur prestations de services</field>
+    </record>
+    <record model="account.account.template" id="l10n_fr.pcg_7097">
+        <field name="name">RRR sur ventes de marchandises</field>
     </record>
 
 </data></openerp>
