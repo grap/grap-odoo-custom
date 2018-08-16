@@ -12,12 +12,8 @@
     'license': 'AGPL-3',
     'depends': [
         'product',
-        'account',
-        'l10n_fr',
     ],
     'data': [
         'data/product_category.xml',
-        'data/account_account_template.xml',
-        'data/account_chart_template.xml',
     ],
 }

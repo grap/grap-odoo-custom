@@ -7,6 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <openerp><data>
 
+    <!-- Comptes 5x -->
     <record id="grap_l10n_fr_5312" model="account.account.template">
       <field name="name">Caisse pour Petits achats</field>
       <field name="code">5312</field>
@@ -23,6 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_58"/>
     </record>
 
+    <!-- Comptes 6x -->
     <record id="grap_l10n_fr_6039" model="account.account.template">
       <field name="name">Pertes de marchandises et matières premières</field>
       <field name="code">6039</field>
@@ -67,6 +69,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="parent_id" ref="l10n_fr.pcg_65"/>
     </record>
 
+    <!-- Comptes 7x -->
     <record id="grap_l10n_fr_7063" model="account.account.template">
       <field name="name">Commission sur Vente</field>
       <field name="code">7063</field>
