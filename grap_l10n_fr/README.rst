@@ -21,10 +21,17 @@ to make easy the creation of taxes and accounts for GRAP.
 * Rename ``code`` : TVA-<HA/VT>-xx.x-<HT/TTC>
 * Disable VAT with 8,5% rate
 
+``account.account.template`` Model
+------------------------------
+
+* Add a new field ``active``
+
 ``account.account.template`` Datas
 ----------------------------------
 
 * Create specific accounts
+* Disable somes accounts. (via the active field)
+* rename or change type of some accounts
 
 ``account.tax.code.template`` Datas
 -----------------------------------

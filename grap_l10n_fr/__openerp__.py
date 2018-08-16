@@ -21,6 +21,7 @@
         'data/account_tax_template.xml',
         'data/account_account_template.xml',
         'data/account_tax_code_template.xml',
+        'data/account_chart_template.xml',
         'views/view_account_tax_template.xml',
         'views/view_account_tax_code_template.xml',
     ],
