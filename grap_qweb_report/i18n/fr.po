@@ -411,8 +411,13 @@ msgstr "Origine :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
-msgid "Our Order Reference:"
-msgstr "Notre référence de commande :"
+msgid "Our Reference:"
+msgstr "Notre référence"
+
+#. module: grap_qweb_report
+#: view:website:grap_qweb_report.grap_template_purchase_order_document
+msgid "Planned Date:"
+msgstr "Date prévue"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_account_invoice_document
@@ -706,12 +711,12 @@ msgstr "Code pour les rapports"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_quotation_document
 msgid "Request for Quotation"
-msgstr "Demande de prix"
+msgstr "Bon de commande"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
-msgid "Request for Quotation N°"
-msgstr "Demande de prix N°"
+msgid "Request for Quotation"
+msgstr "Bon de commande"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_layout_footer
@@ -907,7 +912,7 @@ msgstr "TVA :"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
 msgid "Validated By:"
-msgstr "Validé par:"
+msgstr "Validé par :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_big
@@ -929,13 +934,13 @@ msgstr "Wizard id"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
-msgid "Your Order Reference"
-msgstr "Votre Référence Commande"
+msgid "Your Reference"
+msgstr "Votre Référence :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Your Reference:"
-msgstr "Votre Référence:"
+msgstr "Votre Référence :"
 
 #. module: grap_qweb_report
 #. openerp-web
@@ -966,9 +971,4 @@ msgstr "le kilo"
 #: view:stock.picking:grap_qweb_report.view_stock_picking_form
 msgid "{'invisible': True}"
 msgstr "{'invisible': True}"
-
-#. module: grap_qweb_report
-#: view:website:grap_qweb_report.grap_template_account_invoice_document
-msgid "⚠ ATTENTION ⚠ Changement de coordonnées bancaires, veuillez en prendre acte en bas de ce document."
-msgstr "⚠ ATTENTION ⚠ Changement de coordonnées bancaires, veuillez en prendre acte en bas de ce document."
 
