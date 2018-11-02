@@ -22,7 +22,7 @@ to make easy the creation of taxes and accounts for GRAP.
 * Disable VAT with 8,5% rate
 
 ``account.account.template`` Model
-------------------------------
+----------------------------------
 
 * Add a new field ``active``
 
