@@ -8,67 +8,67 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <openerp><data>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_200">
-        <field name="ref_nb">1</field>
+        <field name="ebp_suffix">1</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_200_ht">
-        <field name="ref_nb">1</field>
+        <field name="ebp_suffix">1</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_200">
-        <field name="ref_nb">1</field>
+        <field name="ebp_suffix">1</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_200_ht">
-        <field name="ref_nb">1</field>
+        <field name="ebp_suffix">1</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_55">
-        <field name="ref_nb">2</field>
+        <field name="ebp_suffix">2</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_55_ht">
-        <field name="ref_nb">2</field>
+        <field name="ebp_suffix">2</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_55">
-        <field name="ref_nb">2</field>
+        <field name="ebp_suffix">2</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_55_ht">
-        <field name="ref_nb">2</field>
+        <field name="ebp_suffix">2</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_100">
-        <field name="ref_nb">4</field>
+        <field name="ebp_suffix">4</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_100_ht">
-        <field name="ref_nb">4</field>
+        <field name="ebp_suffix">4</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_100">
-        <field name="ref_nb">4</field>
+        <field name="ebp_suffix">4</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_100_ht">
-        <field name="ref_nb">4</field>
+        <field name="ebp_suffix">4</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_21">
-        <field name="ref_nb">5</field>
+        <field name="ebp_suffix">5</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_21_ht">
-        <field name="ref_nb">5</field>
+        <field name="ebp_suffix">5</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_21">
-        <field name="ref_nb">5</field>
+        <field name="ebp_suffix">5</field>
     </record>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_col_21_ht">
-        <field name="ref_nb">5</field>
+        <field name="ebp_suffix">5</field>
     </record>
 
 </data></openerp>

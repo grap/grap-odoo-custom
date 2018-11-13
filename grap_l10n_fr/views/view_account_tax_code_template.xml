@@ -12,7 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="account.view_tax_code_template_form" />
         <field name="arch" type="xml">
             <field name="sign" position="after">
-                <field name="ref_nb"/>
+                <field name="ebp_suffix"/>
             </field>
         </field>
     </record>
@@ -22,7 +22,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="account.view_tax_code_template_tree" />
         <field name="arch" type="xml">
             <field name="code" position="after">
-                <field name="ref_nb"/>
+                <field name="ebp_suffix"/>
             </field>
         </field>
     </record>

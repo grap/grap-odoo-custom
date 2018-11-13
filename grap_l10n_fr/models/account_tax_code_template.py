@@ -9,7 +9,7 @@ from openerp import fields, models
 class AccountTaxCodeTemplate(models.Model):
     _inherit = 'account.tax.code.template'
 
-    ref_nb = fields.Char(
-        "Tax Codes suffix in EBP", size=4,
+    ebp_suffix = fields.Char(
+        "Tax Codes suffix in EBP", size=4, oldname='ref_nb',
         help="When exporting Entries to EBP, this suffix will be"
         " appended to the Account Number to make it a new Account.")

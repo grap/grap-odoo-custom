@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * grap_l10n_fr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-13 21:00+0000\n"
+"PO-Revision-Date: 2018-11-13 21:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_l10n_fr
+#: field:account.tax.template,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: grap_l10n_fr
+#: model:ir.model,name:grap_l10n_fr.model_account_tax_code_template
+msgid "Tax Code Template"
+msgstr "Modèle de code de taxe"
+
+#. module: grap_l10n_fr
+#: field:account.tax.code.template,ebp_suffix:0
+msgid "Tax Codes suffix in EBP"
+msgstr "Suffixe de Code de taxe dans EBP"
+
+#. module: grap_l10n_fr
+#: model:ir.model,name:grap_l10n_fr.model_account_account_template
+msgid "Templates for Accounts"
+msgstr "Modèles de comptes"
+
+#. module: grap_l10n_fr
+#: model:ir.model,name:grap_l10n_fr.model_account_tax_template
+msgid "Templates for Taxes"
+msgstr "Modèles de taxes"
+
+#. module: grap_l10n_fr
+#: help:account.tax.code.template,ebp_suffix:0
+msgid "When exporting Entries to EBP, this suffix will be appended to the Account Number to make it a new Account."
+msgstr "Quand vous exporterez des écritures dans EBP, ce suffixe sera ajouté à la fin du numéro de compte, pour créer un nouveau compte."
+
+#. module: grap_l10n_fr
+#: field:account.account.template,active:0
+msgid "active"
+msgstr "actif"
+
