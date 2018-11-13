@@ -32,20 +32,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
 
                 <h2 t-if="o.state != 'draft'">Purchase Order Confirmation N°<span t-field="o.name"/></h2>
-                <h2 t-if="o.state == 'draft'">Request for Quotation N°<span t-field="o.name"/></h2>
+                <h2 t-if="o.state == 'draft'">Request for Quotation <span t-field="o.name"/></h2>
 
                 <div class="row mt32 mb32">
-                    <div t-if="o.name" class="col-xs-3">
-                        <strong>Our Order Reference:</strong>
-                        <p t-field="o.name"/>
-                    </div>
-                    <div t-if="o.partner_ref" class="col-xs-3">
-                        <strong>Your Order Reference</strong>
+                    <div t-if="o.partner_ref" class="col-xs-2">
+                        <strong>Your Reference</strong>
                         <p t-field="o.partner_ref"/>
                     </div>
                     <div t-if="o.date_order" class="col-xs-3">
                         <strong>Order Date:</strong>
                         <p t-field="o.date_order"/>
+                    </div>
+                    <div t-if="o.minimum_planned_date" class="col-xs-3">
+                        <strong>Planned Date:</strong>
+                        <p t-field="o.minimum_planned_date"/>
                     </div>
                     <div t-if="o.validator" class="col-xs-3">
                         <strong>Validated By:</strong>
@@ -72,11 +72,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <span t-esc="', '.join(map(lambda x: x.report_short_code, line.taxes_id))"/>
                             </td>
                             <td class="text-right">
-                                <span t-field="line.product_qty"/>
+                                <span t-esc="'%.2f'%(line.product_qty)"/>
                                 <span t-field="line.product_uom.name" groups="product.group_uom"/>
                             </td>
                             <td class="text-right">
-                                <span t-field="line.price_unit"/>
+                                <span t-field="line.price_unit"
+                                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                             </td>
                             <td class="text-right">
                                 <span t-field="line.price_subtotal"
