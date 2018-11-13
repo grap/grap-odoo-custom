@@ -7,13 +7,13 @@
 GRAP - Invoices 'Verified' / 'To Check' state
 =============================================
 
-1. Add a 'Verified' state on account.invoice (supplier and supplier refund
+Add a 'Verified' state on account.invoice (supplier and supplier refund
    invoices)
 
 * Only Accounting managers can validate supplier account invoices
 * the workflow is so modified
 
-2. Add a 'To check' checkbox field on account move
+Add a 'To check' checkbox field on account move
 
 * The setting is done per journal
 * if a journal is set to 'To Check' all the accounting moves will be set as

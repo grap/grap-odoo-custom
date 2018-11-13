@@ -6,7 +6,7 @@
 from openerp import api, fields, models
 
 
-class grap_college(models.Model):
+class GrapCollege(models.Model):
     _name = 'grap.college'
 
     name = fields.Char('Name', required=True)
