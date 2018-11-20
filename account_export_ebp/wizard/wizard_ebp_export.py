@@ -150,8 +150,8 @@ class WizardEbpExport(models.TransientModel):
                 [('id', 'not in', without_correct_tax_code_move_ids)]
 
             # filter by period (from fiscalyear)
-            if self.fiscalyear_id:
-                periods = self.fiscalyear_id.period_ids
+            if wizard.fiscalyear_id:
+                periods = wizard.fiscalyear_id.period_ids
                 wizard.ignored_period_move_qty = len(AccountMove.search(
                     selection_domain +
                     [('period_id', 'not in', periods.ids)]))
