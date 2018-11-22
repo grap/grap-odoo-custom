@@ -12,25 +12,39 @@ class TestModule(TransactionCase):
     def setUp(self):
         super(TestModule, self).setUp()
         self.WizardEbpExport = self.env['wizard.ebp.export']
+        self.WizardResPartnerAddSuffix = self.env[
+            'wizard.res.partner.add.suffix']
         self.move_invoice = self.env.ref('account.invoice_1').move_id
         self.move_1 = self.env.ref('account_export_ebp.move_1')
         self.sale_account = self.env.ref('account.a_sale')
         self.receivable_account = self.env.ref('account.a_recv')
 
     # Test Section
-    def test_01_export_move(self):
+    def test_01_export_move_correct(self):
+        # Add EBP suffix to partner
+        suffix_wizard = self.WizardResPartnerAddSuffix.with_context(
+            active_ids=[self.move_invoice.partner_id.id]).create({})
+        suffix_wizard.button_affect_suffix()
+
         wizard = self.WizardEbpExport.with_context(
             active_ids=[self.move_invoice.id]).create({})
 
         wizard.button_export()
 
-        self.assertNotEqual(
-            wizard.ebp_export_id.id, False,
-            "Export a move should create an ebp export")
+        self.assertEqual(
+            self.move_invoice.ebp_export_id.id, wizard.ebp_export_id.id,
+            "Exporting a move should link it to the ebp export created.")
+
+    def test_02_export_move_without_partner_code(self):
+        wizard = self.WizardEbpExport.with_context(
+            active_ids=[self.move_invoice.id]).create({})
+
+        wizard.button_export()
 
         self.assertEqual(
-            wizard.ebp_export_id, self.move_invoice.ebp_export_id,
-            "Exporting a move should link it to the ebp export created.")
+            self.move_invoice.ebp_export_id.id, False,
+            "Exporting a move with partner without suffix"
+            " should not link it to the ebp export created.")
 
     def test_02_export_content(self):
         self.move_1.button_validate()
