@@ -184,7 +184,7 @@ class EbpExport(models.Model):
                 account_code = self._get_account_code(move, line)
                 analytic_code = self._get_analytic_code(move, line)
 
-                move_key = (account_code, analytic_code)
+                move_key = (account_code, analytic_code, line.credit > 0)
 
                 # Collect data for the file of move lines
                 if move_key not in moves_data.keys():
