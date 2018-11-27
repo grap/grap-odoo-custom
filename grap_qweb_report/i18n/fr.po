@@ -935,12 +935,12 @@ msgstr "Wizard id"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_document
 msgid "Your Reference"
-msgstr "Votre Référence :"
+msgstr "Votre Référence"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Your Reference:"
-msgstr "Votre Référence :"
+msgstr "Votre Référence"
 
 #. module: grap_qweb_report
 #. openerp-web
