@@ -171,7 +171,7 @@ msgstr "Created on"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_stock_picking
 msgid "Customer Address:"
-msgstr "Adresse du client :"
+msgstr "Adresse du/de la client·e :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.qweb_template_label_bulk_selling
@@ -229,6 +229,12 @@ msgstr "Rem.(%)"
 #: field:product.pricetag.type,display_name:0
 msgid "Display Name"
 msgstr "Nom affiché"
+
+#. module: grap_qweb_report
+#: help:product.product,invoice_extra_cost:0
+#: help:product.template,invoice_extra_cost:0
+msgid "For a sale order, display its price at the bottom of the invoice, above the total"
+msgstr "Pour une vente, affiche son prix en fin de facture, au dessus du total"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_purchase_order_quotation_document
@@ -304,6 +310,12 @@ msgstr "Ingrédients"
 #: model:ir.model,name:grap_qweb_report.model_account_invoice
 msgid "Invoice"
 msgstr "Facture"
+
+#. module: grap_qweb_report
+#: field:product.product,invoice_extra_cost:0
+#: field:product.template,invoice_extra_cost:0
+msgid "Invoice - Extra cost"
+msgstr "Facture - Extra coût"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice_line
@@ -447,7 +459,7 @@ msgstr "Pas d'escompte pour paiement anticipé - Pénalité de retard: 3 fois le
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Payment Term:"
-msgstr "Conditions de règlement:"
+msgstr "Conditions de règlement :"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_stock_picking
@@ -676,7 +688,7 @@ msgstr "Quantité"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Quotation Date:"
-msgstr "Date du devis:"
+msgstr "Date du devis :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
@@ -751,7 +763,7 @@ msgstr "Commande de ventes"
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_sale_order_document
 msgid "Salesperson:"
-msgstr "Vendeur:"
+msgstr "Vendeur :"
 
 #. module: grap_qweb_report
 #: view:website:grap_qweb_report.grap_template_stock_picking

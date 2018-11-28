@@ -13,6 +13,7 @@
     'depends': [
         'account',
         'base_fiscal_company',
+        'base_company_legal_info',
         'l10n_fr_siret',
         'purchase',
         'sale',
@@ -42,6 +43,7 @@
         'views/view_product_uom.xml',
         'views/view_product_pricetag_type.xml',
         'views/view_product_product.xml',
+        'views/view_product_template.xml',
         'views/view_stock_picking.xml',
         'data/product_print_category.xml',
     ],
