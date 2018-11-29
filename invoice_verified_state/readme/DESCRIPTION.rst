@@ -7,7 +7,7 @@ changes default behaviour that doesn't fit with GRAP needs.
 * Only Accounting managers can validate supplier account invoices
 * the workflow is so modified
 
-2. Add a 'To check' checkbox field on ``account move``
+2. Add a 'To check' checkbox field on ``account.move``
 
 * The setting is done per journal
 * if a journal is set to 'To Check' all the accounting moves will be set as
