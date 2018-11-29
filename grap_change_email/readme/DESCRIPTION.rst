@@ -8,11 +8,11 @@ to ``noupdate`` and should be changed, by UI.
 Model Changes
 ~~~~~~~~~~~~~
 
-**``email.template``**
+``**email.template**``
 
 * add new ``active`` field
 
-**``mail.compose.message``**
+``**mail.compose.message**``
 
 * Set ``template_id`` field as required
 
