@@ -15,4 +15,4 @@ changes default behaviour that doesn't fit with GRAP needs.
   prevent import of moves that has not been controled by accounting managers.
 
 3. On the wizard to invoice stock.picking (``stock.invoice.onshipping``), set
-  'Group by partner' checked by default
+   'Group by partner' checked by default
