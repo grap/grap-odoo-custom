@@ -5,7 +5,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': "GRAP - Invoices 'Verified' / 'To Check' state",
+    'name': "GRAP - Custom Invoice workflow",
     'version': '8.0.3.0.0',
     'category': 'Custom',
     'author': 'GRAP',
