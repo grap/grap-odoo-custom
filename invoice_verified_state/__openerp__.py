@@ -14,6 +14,7 @@
     'depends': [
         'account',
         'account_voucher',
+        'stock_account',
     ],
     'data': [
         'views/view_account_invoice.xml',
