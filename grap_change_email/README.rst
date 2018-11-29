@@ -19,16 +19,33 @@ GRAP Custom - Change eMail
 
 |badge1| |badge2| |badge3| 
 
-This module is a glue module installed if the following modules are installed:
+This module extends the functionality of mail and email_template module to
+changes default email templates that doesn't fit with GRAP needs.
 
-* ``account_invoice_triple_discount`` (account-invoicing OCA repository)
-* ``account_invoice_supplierinfo_update_discount`` (account-invoicing OCA repository)
-* ``product_supplierinfo_triple_discount`` (purchase-workflow OCA repository)
+The reason to not change the odoo template is that we have translation
+trouble, when changing data, and because default email templates are set
+to ``noupdate`` and should be changed, by UI.
 
-It allows to update the three discounts on supplierinfo, if the invoice line
-has different discount values.
+Model Changes
+~~~~~~~~~~~~~
 
-.. figure:: https://raw.githubusercontent.com/GRAP/grap-odoo-custom/8.0/grap_change_email/static/description/wizard_form.png
+**``email.template``**
+
+* add new ``active`` field
+
+**``mail.compose.message``**
+
+* Set ``template_id`` field as required
+
+
+Mail Templates
+~~~~~~~~~~~~~~
+
+* Disable default Odoo mail templates for ``purchase.order``, ``sale.order``,
+  and ``account.invoice``.
+
+* Create new mail templates customized for GRAP. Return these templates, when
+  clicking on 'Send by email' button, on each models.
 
 **Table of contents**
 
