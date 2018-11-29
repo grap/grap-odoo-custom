@@ -5,7 +5,7 @@
 
 {
     'name': 'GRAP Custom - Change eMail',
-    'version': '8.0.3.0.0',
+    'version': '8.0.4.0.0',
     'category': 'GRAP - Custom',
     'author': 'GRAP',
     'website': 'http://www.grap.coop',
