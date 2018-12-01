@@ -7,7 +7,7 @@
 from openerp import fields, models
 
 
-class StockInvoiceOnshipping(models.Model):
+class StockInvoiceOnshipping(models.TransientModel):
     _inherit = 'stock.invoice.onshipping'
 
     group = fields.Boolean(default=True)
