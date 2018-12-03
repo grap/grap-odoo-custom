@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2017 - Today: GRAP (http://www.grap.coop)
+@author Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <!-- Sale 5,5% -->
+    <record id="sale_vat_5" model="account.tax">
+        <field name="name">SALE VAT 5% Included</field>
+        <field name="type_tax_use">sale</field>
+        <field name="type">percent</field>
+        <field name="amount">0.05</field>
+        <field name="price_include" eval="True"/>
+        <field name="company_id" ref="base.main_company" />
+        <field name="base_code_id" ref="tax_code_base_5" />
+        <field name="tax_code_id" ref="tax_code_5" />
+        <field name="account_collected_id" ref="account_vat_5" />
+    </record>
+
+    <!-- Sale 5,5% -->
+    <record id="sale_vat_20" model="account.tax">
+        <field name="name">SALE VAT 20% Included</field>
+        <field name="type_tax_use">sale</field>
+        <field name="type">percent</field>
+        <field name="amount">0.20</field>
+        <field name="price_include" eval="True"/>
+        <field name="company_id" ref="base.main_company" />
+        <field name="base_code_id" ref="tax_code_base_20" />
+        <field name="tax_code_id" ref="tax_code_20" />
+        <field name="account_collected_id" ref="account_vat_20" />
+    </record>
+
+</data></openerp>
