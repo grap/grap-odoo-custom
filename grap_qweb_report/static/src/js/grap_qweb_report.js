@@ -4,26 +4,26 @@ Copyright (C) 2018-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 */
 
-'use strict';
-
 openerp.grap_qweb_report = function (instance) {
+    'use strict';
+
     var module = instance.point_of_sale;
     var _t = instance.web._t;
 
-    /*
-        Overwrite : Order getTaxDetails function to return
-        detailed values for tax lines.
-    */
     module.Order = module.Order.extend({
-        getTaxDetails: function() {
+        /**
+            Overwrite : Order getTaxDetails function to return
+            detailed values for tax lines.
+        */
+        getTaxDetails: function () {
             var self = this;
             var tax_dict = {};
             var result = [];
-            this.get('orderLines').each(function(line) {
+            this.get('orderLines').each(function (line) {
                 var line_detail = line.get_all_prices();
-                for (var id in line_detail.taxDetails){
+                for (var id in line_detail.taxDetails) {
                     var tax = self.pos.taxes_by_id[id];
-                    if (tax.amount in tax_dict){
+                    if (tax.amount in tax_dict) {
                         tax_dict[tax.amount].tax_amount += line_detail.tax;
                         tax_dict[tax.amount].tax_base += line_detail.priceWithoutTax;
 
@@ -35,8 +35,8 @@ openerp.grap_qweb_report = function (instance) {
                     }
                 }
             });
-            $.each(tax_dict, function(key, value) {
-                var tax_name = _t('VAT ') + (100 * key) + '%';
+            $.each(tax_dict, function (key, value) {
+                var tax_name = _t('VAT ') + String(100 * key) + '%';
                 tax_name += ' ' + Array(14 - tax_name.length).join('_');
                 result.push({
                     'tax_amount': value.tax_amount,
