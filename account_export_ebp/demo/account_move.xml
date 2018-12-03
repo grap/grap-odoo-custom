@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Copyright (C) 2013-Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author Julien WESTE
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="move_1" model="account.move">
+        <field name="journal_id" ref="account.sales_journal"/>
+    </record>
+
+    <record id="move_1_line_A" model="account.move.line">
+        <field name="move_id" ref="move_1"/>
+        <field name="name">Line Name A (Sale)</field>
+        <field name="account_id" ref="account.a_sale"/>
+        <field name="credit">0</field>
+        <field name="debit">100</field>
+    </record>
+
+    <record id="move_1_line_B" model="account.move.line">
+        <field name="move_id" ref="move_1"/>
+        <field name="name">Line Name B (Refund of Sale)</field>
+        <field name="account_id" ref="account.a_sale"/>
+        <field name="credit">20</field>
+        <field name="debit">0</field>
+    </record>
+
+    <record id="move_1_line_C" model="account.move.line">
+        <field name="move_id" ref="move_1"/>
+        <field name="name">Line Name C (Customer)</field>
+        <field name="account_id" ref="account.a_recv"/>
+        <field name="credit">30</field>
+        <field name="debit">0</field>
+    </record>
+
+    <record id="move_1_line_D" model="account.move.line">
+        <field name="move_id" ref="move_1"/>
+        <field name="name">Line Name D (Customer)</field>
+        <field name="account_id" ref="account.a_recv"/>
+        <field name="credit">50</field>
+        <field name="debit">0</field>
+    </record>
+
+</data></openerp>
