@@ -11,9 +11,11 @@ openerp.grap_qweb_report = function (instance) {
     var _t = instance.web._t;
 
     module.Order = module.Order.extend({
+
         /**
-            Overwrite : Order getTaxDetails function to return
-            detailed values for tax lines.
+        * Overwrite : Order getTaxDetails function to return
+        * detailed values for tax lines.
+        * @returns {dict} List of taxes description.
         */
         getTaxDetails: function () {
             var self = this;
@@ -25,7 +27,8 @@ openerp.grap_qweb_report = function (instance) {
                     var tax = self.pos.taxes_by_id[id];
                     if (tax.amount in tax_dict) {
                         tax_dict[tax.amount].tax_amount += line_detail.tax;
-                        tax_dict[tax.amount].tax_base += line_detail.priceWithoutTax;
+                        tax_dict[tax.amount].tax_base +=\
+                            line_detail.priceWithoutTax;
 
                     } else {
                         tax_dict[tax.amount] = {
