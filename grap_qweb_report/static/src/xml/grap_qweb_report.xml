@@ -24,9 +24,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </line>
             <t t-foreach='receipt.tax_details' t-as='line_tax'>
                 <line>
-                    <left><t t-esc='line_tax.tax_name' /></left>
-                    <left><value><t t-esc='line_tax.tax_base' /></value></left>
-                    <right><value><t t-esc='line_tax.tax_amount' /></value></right>
+                    <left><t t-esc='line_tax.name' /></left>
+                    <left><value><t t-esc='line_tax.base' /></value></left>
+                    <right><value><t t-esc='line_tax.amount' /></value></right>
                 </line>
             </t>
             <div>------------------------------------------</div>

@@ -4,6 +4,7 @@ Copyright (C) 2018-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 */
 
+
 openerp.grap_qweb_report = function (instance) {
     'use strict';
 
@@ -27,7 +28,7 @@ openerp.grap_qweb_report = function (instance) {
                     var tax = self.pos.taxes_by_id[id];
                     if (tax.amount in tax_dict) {
                         tax_dict[tax.amount].tax_amount += line_detail.tax;
-                        tax_dict[tax.amount].tax_base +=\
+                        tax_dict[tax.amount].tax_base +=
                             line_detail.priceWithoutTax;
 
                     } else {
@@ -42,9 +43,9 @@ openerp.grap_qweb_report = function (instance) {
                 var tax_name = _t('VAT ') + String(100 * key) + '%';
                 tax_name += ' ' + Array(14 - tax_name.length).join('_');
                 result.push({
-                    'tax_amount': value.tax_amount,
-                    'tax_base': value.tax_base,
-                    'tax_name': tax_name,
+                    'name': tax_name,
+                    'base': value.tax_base,
+                    'amount': value.tax_amount,
                 });
             });
             return result;
