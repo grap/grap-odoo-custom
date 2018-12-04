@@ -6,7 +6,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <openerp><data>
 
-    <template id="assets_backend" name="grap_qweb_report assets" inherit_id="point_of_sale.assets_backend">
+    <template id="assets_backend" name="grap_qweb_report assets" inherit_id="point_of_sale.index">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/grap_qweb_report/static/src/js/grap_qweb_report.js"></script>
         </xpath>
