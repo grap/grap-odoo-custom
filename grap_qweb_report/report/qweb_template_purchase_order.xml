@@ -40,7 +40,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <thead>
                                 <tr>
                                     <th class="col-xs-3" t-if="o.partner_ref"><strong>Your Reference</strong></th>
-                                    <th class="col-xs-2" t-if="o.date_order"><strong>Order Date:</strong></th>
+                                    <th class="col-xs-2" t-if="o.partner_id.ref"><strong>Customer code</strong></th>
+                                    <th class="col-xs-4" t-if="o.date_order"><strong>Order Date:</strong></th>
                                     <th class="col-xs-2" t-if="o.minimum_planned_date"><strong>Planned Date:</strong></th>
                                     <!-- Pas utile car les actis ont un seul compte partagé 
                                     <th class="col-xs-3" t-if="o.validator"><strong>Validated By:</strong></th>-->
@@ -51,7 +52,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <td  class="col-xs-3" t-if="o.partner_ref">
                                         <span t-field="o.partner_ref"/>
                                     </td>
-                                    <td class="col-xs-3" t-if="o.date_order">
+                                    <td  class="col-xs-2" t-if="o.partner_id.ref">
+                                        <span t-field="o.partner_id.ref"/>
+                                    </td>
+                                    <td class="col-xs-4" t-if="o.date_order">
                                         <span t-field="o.date_order" t-field-options='{"format": "d MMMM y - HH:mm"}'/>
                                     </td>
                                     <td class="col-xs-2" t-if="o.minimum_planned_date">
