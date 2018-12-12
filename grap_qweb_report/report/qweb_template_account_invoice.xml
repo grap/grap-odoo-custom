@@ -34,7 +34,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
-                                    <th t-if="o.name">Description</th>
                                     <th t-if="o.origin">Origine</th>
                                     <th t-if="o.reference">Référence</th>
                                     <th t-if="o.date_invoice">Date de facture</th>
@@ -43,19 +42,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </thead>
                             <tbody class="invoice_tbody">
                                 <tr>
-                                    <td t-if="o.name">
-                                       Commande <span t-esc="o.name.replace('Commande', '')"/>
-                                    </td>
-                                    <td t-if="o.origin" class="col-xs-5">
+                                    <td t-if="o.origin">
                                         <span t-esc="o.origin.replace('OUT/', '')"/>
                                     </td>
                                     <td t-if="o.reference">
                                         <span t-field="o.reference"/>
                                     </td>
-                                    <td t-if="o.date_invoice">
+                                    <td t-if="o.date_invoice" class="col-xs-3">
                                         <span t-field="o.date_invoice"/>
                                     </td>
-                                    <td t-if="o.date_due">
+                                    <td t-if="o.date_due" class="col-xs-3">
                                         <span t-field="o.date_due"/>
                                     </td>
                                 </tr>
@@ -84,7 +80,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <span t-if="not l.product_id.invoice_extra_cost">
                                         <td><span t-field="l.name"/>
                                             <span t-if="l.product_id and l.product_id.report_extra_food_info">
-                                                <br/><span t-field="l.product_id.report_extra_food_info"/>
+                                                <br/><span style="font-style: italic; font-size: 10px;" t-field="l.product_id.report_extra_food_info"/>
                                             </span>
                                         </td>
                                         <td>
