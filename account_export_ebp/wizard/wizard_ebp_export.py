@@ -140,8 +140,10 @@ class WizardEbpExport(models.TransientModel):
             # Filter by tax code without ebp suffix
             without_correct_tax_code_move_lines =\
                 selected_moves.mapped('line_id').filtered(
-                    lambda x: x.tax_code_id and
-                    x.tax_code_id.ebp_suffix is False)
+                    lambda x:
+                        x.account_id.ebp_export_tax_code and
+                        x.tax_code_id and
+                        x.tax_code_id.ebp_suffix is False)
             without_correct_tax_code_move_ids =\
                 without_correct_tax_code_move_lines.mapped('move_id').ids
             wizard.ignored_tax_code_move_qty =\

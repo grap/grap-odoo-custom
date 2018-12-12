@@ -20,6 +20,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                     <p class="alert alert-warning" attrs="{'invisible': [('ignored_draft_move_qty', '=', 0)]}"> You have selected <b><field name="ignored_draft_move_qty" nolabel="1" class="oe_inline"/></b> draft moves.</p>
 
+                    <p class="alert alert-warning" attrs="{'invisible': [('ignored_tax_code_move_qty', '=', 0)]}"> You have selected <b><field name="ignored_tax_code_move_qty" nolabel="1" class="oe_inline"/></b> moves that doesn't have tax code defined.</p>
+
                     <p class="alert alert-warning" attrs="{'invisible': [('ignored_period_move_qty', '=', 0)]}"> You have selected <b><field name="ignored_period_move_qty" nolabel="1" class="oe_inline"/></b> moves that doesn't belong to the selected fiscal year.</p>
 
                     <p class="alert alert-warning" attrs="{'invisible': [('ignored_journal_code_move_qty', '=', 0)]}"> You have selected <b><field name="ignored_journal_code_move_qty" nolabel="1" class="oe_inline"/></b> moves that belong to a journal that doesn't have a correct 'EBP code' set.</p>
