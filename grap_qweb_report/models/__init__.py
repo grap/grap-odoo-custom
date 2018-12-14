@@ -6,6 +6,7 @@ from . import picking_summary_wizard
 from . import picking_summary_wizard_picking
 from . import picking_summary_wizard_product
 from . import product_product
+from . import product_template
 from . import product_uom
 from . import res_company
 from . import sale_order
