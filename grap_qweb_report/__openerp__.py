@@ -12,7 +12,6 @@
     'license': 'AGPL-3',
     'depends': [
         'account',
-        'account_export_ebp',
         'base_fiscal_company',
         'base_company_legal_info',
         'l10n_fr_siret',
