@@ -19,25 +19,30 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <!-- Overloaded Report -->
     <record id="account.account_invoices" model="ir.actions.report.xml">
         <field name="report_rml">grap_qweb_report.grap_template_account_invoice</field>
+        <field name="download_filename">Facture${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.date_invoice if o.date_invoice else ""}.pdf</field>
     </record>
 
     <record id="purchase.action_report_purchase_order" model="ir.actions.report.xml">
         <field name="report_rml">grap_qweb_report.grap_template_purchase_order</field>
         <field name="report_name">grap_qweb_report.grap_template_purchase_order</field>
+        <field name="download_filename">Bon_de_commande${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
     </record>
 
     <record id="purchase.report_purchase_quotation" model="ir.actions.report.xml">
         <field name="report_rml">grap_qweb_report.grap_template_purchase_order_quotation</field>
+        <field name="download_filename">Demande_de_prix${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
     </record>
 
     <record id="sale.report_sale_order" model="ir.actions.report.xml">
         <field name="report_rml">grap_qweb_report.grap_template_sale_order</field>
         <field name="report_name">grap_qweb_report.grap_template_sale_order</field>
+        <field name="download_filename">Devis_Commande${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
     </record>
 
     <record id="stock.action_report_picking" model="ir.actions.report.xml">
         <field name="report_rml">grap_qweb_report.grap_template_stock_picking</field>
         <field name="report_name">grap_qweb_report.grap_template_stock_picking</field>
+        <field name="download_filename">BL${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
     </record>
 
 </data></openerp>

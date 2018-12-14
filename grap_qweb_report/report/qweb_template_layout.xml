@@ -35,19 +35,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <!-- Ligne horizontale -->
             <div class="row zero_min_height">
                 <div class="col-xs-12">
-                    <div style="border-bottom: 1px solid black;"/>
+                    <div style="border-bottom: 0px solid grey;"/>
                 </div>
             </div>
 
 <!-- Entete Societe(s) -->
             <div class="row">
-                <div class="col-xs-2 text-center">
+                <div class="col-xs-2 text-left">
                     <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 120px;"/>
                 </div>
-
-                <div class="col-xs-4 text-center">
+                <div class="col-xs-3 text-left">
+                    <br/>
                     <div>
-                        <span t-esc="company.name.replace('|', '')"/>
+                        <b><span t-esc="company.name.replace('|', '')"/></b>
                     </div>
                     <div>
                     <span t-esc="company.street"/> <span t-esc="company.street2"/>
@@ -55,6 +55,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div>
                         <span t-esc="company.zip"/> <span t-esc="company.city"/>
                     </div>
+                </div>
+                <div class="col-xs-4 text-left">
+                    <br/>
                     <div t-if="company.phone">
                         <span t-esc="company.phone"/>
                      </div>
@@ -64,40 +67,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div t-if="company.website">
                         <span t-esc="company.website.replace('http://', '')"/>
                     </div>
-                </div>
-
-                <div class="col-xs-2 text-center" t-if="company.fiscal_company.id != company.id">
-                    <img t-if="company.fiscal_company.logo" t-att-src="'data:image/png;base64,%s' % company.fiscal_company.logo" style="max-height: 60px;"/>
-                </div>
-                <div class="col-xs-4 text-center" t-if="company.fiscal_company.id != company.id">
-                    <div>
-                        <span t-esc="company.fiscal_company.name.replace('|', '')"/>
-                     </div>
-                    <div>
-                        <span t-esc="company.fiscal_company.street"/> <span t-esc="company.fiscal_company.street2"/>
-                     </div>
-                    <div>
-                        <span t-esc="company.fiscal_company.zip"/> <span t-esc="company.fiscal_company.city"/>
-                     </div>
-                    <div t-if="company.fiscal_company.phone">
-                        <span t-esc="company.fiscal_company.phone"/>
-                     </div>
-                    <div t-if="company.fiscal_company.administrative_department_email">
-                        <span t-esc="company.fiscal_company.administrative_department_email"/>
-                    </div>
-                    <div t-if="company.fiscal_company.website">
-                        <span t-esc="company.fiscal_company.website.replace('http://', '')"/>
+                    <div t-if="company.rml_header1">
+                        <span style="font-style:italic; font-size:9px" t-esc="company.rml_header1"/>
                     </div>
                 </div>
-                    <div class="col-xs-12" t-if="company.rml_header1">
-                        <span t-esc="company.rml_header1"/>
-                    </div>
+                <div class="col-xs-2 text-right">
+                    <br/><br/><br/><br/>
+                    <span class="page"/>/<span class="topage"/>
+                </div>
             </div>
 
 <!-- Ligne horizontale -->
             <div class="row zero_min_height">
                 <div class="col-xs-12">
-                    <div style="border-bottom: 1px solid black;"/>
+                    <div style="border-bottom: 1px solid grey;"/>
                 </div>
             </div>
         </div>
@@ -110,42 +93,65 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="grap_layout_footer">
 
         <div class="footer">
-            <div style="border-top: 1px solid black; font-size:9px;">
-                <div class="col-xs-10 text-center">
-                    <div t-if="company.custom_footer">
-                        <div><span t-esc="company.rml_footer"/></div>
+            <div class="container" style="border-top: 0.5px solid black; font-size:9px;">
+                <div class="row">
+                    <div class="col-xs-2 text-left" t-if="company.fiscal_company.id != company.id">
+                        <span t-esc="company.name.replace('|', '')"/><br/>
+                        est une activité de <br/>
+                        <img t-if="company.fiscal_company.logo" t-att-src="'data:image/png;base64,%s' % company.fiscal_company.logo" style="max-height: 40px;"/>
                     </div>
-                    <div t-if="len(company.certifier_organization_id)">
-                        <div>Tous ces produits sont issus de l'agriculture biologique et certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/></div>
-                    </div>
-                    <div t-if="o._name in ('sale.order', 'account.invoice')">
-                        <div>Pas d'escompte pour paiement anticipé - Pénalité de retard: 3 fois le taux d'intérêt légal</div>
-                        <div>Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</div>
-                    </div>
-                    <div>Règlement par chèque à l'ordre de <span t-esc="company.fiscal_company.name.replace('|', '')"/></div>
-                    <div t-if="len(company.bank_ids)">
-                        <div>Règlement par virement sur le compte <span t-esc="company.bank_ids[0].bank_name"/></div>
+                    <div class="col-xs-2 text-left" t-if="company.fiscal_company.id != company.id">
                         <div>
-                            <b>IBAN</b> : <span t-esc="company.bank_ids[0].iban"/> - 
-                            <b>SWIFT/BIC</b> : <span t-esc="company.bank_ids[0].bank_bic"/>
+                            <b><span t-esc="company.fiscal_company.report_legal_description.replace('|', '')"/></b>
+                        </div>
+                        <div>
+                            <span t-esc="company.fiscal_company.street"/> <span t-esc="company.fiscal_company.street2"/>
+                         </div>
+                        <div>
+                            <span t-esc="company.fiscal_company.zip"/> <span t-esc="company.fiscal_company.city"/>
+                         </div>
+                        <div t-if="company.fiscal_company.phone">
+                            <span t-esc="company.fiscal_company.phone"/>
+                         </div>
+                        <div t-if="company.fiscal_company.email">
+                            <span t-esc="company.fiscal_company.email"/>
+                        </div>
+                        <div t-if="company.fiscal_company.website">
+                            <span t-esc="company.fiscal_company.website.replace('http://', '')"/>
                         </div>
                     </div>
-                    <div>
-                        <ul class="list-inline">
-                            <li t-if="company.siret"><b>SIRET :</b></li>
-                            <li t-if="company.siret"><span t-esc="company.siret"/></li>
-                            <li t-if="company.vat"><b>TVA intracommunautaire :</b></li>
-                            <li t-if="company.vat"><span t-esc="company.vat"/></li>
-                        </ul>
+                    <div class="col-xs-7">
+                        <div t-if="company.fiscal_company.id == company.id">
+                            <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
+                            <br/>
+                        </div>
+                        <div>
+                            <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice')">
+                                Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
+                            </div>
+                            <div t-if="o._name in ('sale.order', 'account.invoice')">
+                                <div >Pas d'escompte pour paiement anticipé - Pénalité de retard : 3 fois le taux d'intérêt légal</div>
+                                <div>Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</div>
+                                <div>Règlement par chèque à l'ordre de<b><span t-esc="company.fiscal_company.name.replace('|','')"/></b></div>
+                            </div>
+                            <div t-if="len(company.bank_ids)">
+                                <div t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.bank_ids[0].bank_name"/></div>
+                                <div>
+                                    <b>IBAN : </b><span t-esc="company.bank_ids[0].iban"/>
+                                    <b>SWIFT/BIC : </b><span t-esc="company.bank_ids[0].bank_bic"/>
+                                </div>
+                            </div>
+                        </div>
+                        <span t-if="company.siret">
+                            <b>SIRET : </b><span t-esc="company.siret"/>
+                        </span>
+                        <span t-if="company.vat">
+                                <b>TVA intracommunautaire : </b><span t-esc="company.vat"/>
+                        </span>
+                        <div t-if="company.custom_footer">
+                            <div><span t-esc="company.rml_footer"/></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-2 text-center">
-                    <ul class="list-inline">
-                        <li>Page:</li>
-                        <li><span class="page"/></li>
-                        <li>/</li>
-                        <li><span class="topage"/></li>
-                    </ul>
                 </div>
             </div>
         </div>
