@@ -15,11 +15,11 @@ env:
   global:
   - VERSION="8.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
 
+  # Weird conflict with grap_qweb_report and account_export_ebp
   matrix:
   - LINT_CHECK="1"
   - TESTS="1" ODOO_REPO="OCA/OCB" UNIT_TEST="1"
-  - TESTS="1" ODOO_REPO="OCA/OCB" EXCLUDE="account_export_ebp"  # Weird conflict with grap_qweb_report
-  - TESTS="1" ODOO_REPO="OCA/OCB" INCLUDE="account_export_ebp"
+  - TESTS="1" ODOO_REPO="OCA/OCB" EXCLUDE="account_export_ebp,grap_l10n_fr,grap_qweb_report"
 
 virtualenv:
   system_site_packages: true
