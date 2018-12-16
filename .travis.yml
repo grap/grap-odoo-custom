@@ -18,7 +18,8 @@ env:
   matrix:
   - LINT_CHECK="1"
   - TESTS="1" ODOO_REPO="OCA/OCB" UNIT_TEST="1"
-  - TESTS="1" ODOO_REPO="OCA/OCB"
+  - TESTS="1" ODOO_REPO="OCA/OCB" EXCLUDE="account_export_ebp"  # Weird conflict with grap_qweb_report
+  - TESTS="1" ODOO_REPO="OCA/OCB" INCLUDE="account_export_ebp"
 
 virtualenv:
   system_site_packages: true
