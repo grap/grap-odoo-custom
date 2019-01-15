@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+<!--
+  Pour format d'étiquettes : 38 x 21.2mm sur A4
+  Configurer format de papier "Products Print Format"
+    Marge supérieure : 5mm
+    Marge gauche : 3mm
+    Marge droite : 2mm
+    Espacement de l'en tête : 10
+-->
+    <template id="grap_template_product_gen_label">
+        <style type="text/css">
+            div.product {
+                background-color:white;
+                width:4.65cm; height:2.61cm;
+                margin : 0.1cm -0.1cm -0.1cm 0;
+                padding : 8px;
+                font-size: 12px;
+            }
+            div.product_name {
+                height: 2.5em;
+                overflow: hidden;
+                margin : -0.2em 0 0 0;
+            }
+            span.product_ean13 {
+                font-size: 8px;
+            }
+            div.floating_box {
+                display : inline-block;
+                vertical-align: top;
+            }
+            div.wrap_ean13_image{
+                overflow: hidden;
+                position: relative;
+                height: 1.35cm;
+                bottom: 26px;
+                right: 17px;
+            }
+            img.ean13_image{
+                /* NOT YET SUPPORTED BY wkhtmltopdf clip-path: polygon(10% 20%, 90% 20%, 90% 40%, 0% 40%); */
+                width:4.9cm;
+                position: relative;
+                top: 0.7cm;
+            }
+        </style>
+        <div class="page">
+            <t t-foreach="docs" t-as="template">
+                <t t-foreach="template.product_variant_ids" t-as="product">
+                  <!-- Il y a 65 étiquettes sur une page -->
+                  <t t-foreach="65" t-as="number">
+                    <div class="product floating_box">
+                        <div class="product_name">
+                          <b><t t-esc="product.name"/></b></div>
+                        <br/>
+                        <t t-if="product.ean13">
+                          <span class="product_ean13"><t t-esc="product.ean13"/></span>
+                          <div class="wrap_ean13_image floating_box">
+                            <img class="ean13_image" t-attf-src="data:image/*;base64,{{product.ean13_image}}"/>
+                          </div>
+                        </t>
+                    </div>
+                  </t>
+                </t>
+            </t>
+        </div>
+    </template>
+
+</data></openerp>
