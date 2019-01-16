@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2019 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <!-- Disabling existing Fiscal Position Template -->
+    <record id="l10n_fr.fiscal_position_template_import_export" model="account.fiscal.position.template">
+        <field name="name">XXX - Hors UE + DOM-TOM</field>
+        <field name="active" eval="0"/>
+    </record>
+
+    <record id="l10n_fr.fiscal_position_template_intraeub2b" model="account.fiscal.position.template">
+        <field name="name">XXX - Zone Euro (Hors France)</field>
+    </record>
+
+    <!-- Creating new fiscal Position Template -->
+    <record id="fiscal_position_template_non_assujetti" model="account.fiscal.position.template">
+        <field name="chart_template_id" ref="l10n_fr.l10n_fr_pcg_chart_template"/>
+        <field name="name">XXX - Non assujetti (Auto entrepreneur / association ...)</field>
+    </record>
+
+</data></openerp>

@@ -6,7 +6,7 @@
 {
     "name": "GRAP - Change l10n_fr",
     "summary": "Custom changes of l10n_fr module for GRAP",
-    "version": "8.0.1.0.0",
+    "version": "8.0.2.0.0",
     "category": "Custom",
     "author": "GRAP",
     "license": "AGPL-3",
@@ -22,6 +22,8 @@
         'data/account_account_template.xml',
         'data/account_tax_code_template.xml',
         'data/account_chart_template.xml',
+        'data/account_fiscal_position_template.xml',
+        'data/account_fiscal_position_tax_template.xml',
         'views/view_account_tax_template.xml',
         'views/view_account_tax_code_template.xml',
     ],
