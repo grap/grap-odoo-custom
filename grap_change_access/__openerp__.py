@@ -4,7 +4,7 @@
 # @author Julien WESTE
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    'name': 'GRAP - Change access for GRAP users',
+    'name': 'GRAP - Change Accesses',
     'version': '8.0.1.0.0',
     'category': 'GRAP - Custom',
     'author': 'GRAP',

@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* grap_change_access
+#   * grap_change_access
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-20 17:00+0000\n"
-"PO-Revision-Date: 2018-03-20 17:00+0000\n"
+"POT-Creation-Date: 2019-01-16 18:04+0000\n"
+"PO-Revision-Date: 2019-01-16 18:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,29 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grap_change_access
-#: field:product.product,available_in_pos:0
-msgid "Available in the Point of Sale"
-msgstr "Available in the Point of Sale"
-
-#. module: grap_change_access
-#: help:product.product,to_weight:0
-msgid "Check if the product should be weighted using the hardware scale integration"
-msgstr "Check if the product should be weighted using the hardware scale integration"
-
-#. module: grap_change_access
-#: help:product.product,available_in_pos:0
-msgid "Check if you want this product to appear in the Point of Sale"
-msgstr "Check if you want this product to appear in the Point of Sale"
-
-#. module: grap_change_access
-#: help:product.product,income_pdt:0
-msgid "Check if, this is a product you can use to put cash into a statement for the point of sale backend."
-msgstr "Check if, this is a product you can use to put cash into a statement for the point of sale backend."
-
-#. module: grap_change_access
-#: help:product.product,expense_pdt:0
-msgid "Check if, this is a product you can use to take cash from a statement for the point of sale backend, example: money lost, transfer to bank, etc."
-msgstr "Check if, this is a product you can use to take cash from a statement for the point of sale backend, example: money lost, transfer to bank, etc."
+#: model:res.groups,name:grap_change_access.group_buyer_reseller
+msgid "GRAP - Buyer / Reseller"
+msgstr "GRAP - Acheteur / Revendeur"
 
 #. module: grap_change_access
 #: model:res.groups,name:grap_change_access.group_crm_manager
@@ -56,24 +36,9 @@ msgid "GRAP - Pricelist Manager"
 msgstr "GRAP - Responsable Liste de prix"
 
 #. module: grap_change_access
-#: field:product.product,income_pdt:0
-msgid "Point of Sale Cash In"
-msgstr "Point of Sale Cash In"
-
-#. module: grap_change_access
-#: field:product.product,expense_pdt:0
-msgid "Point of Sale Cash Out"
-msgstr "Point of Sale Cash Out"
-
-#. module: grap_change_access
-#: field:product.product,pos_categ_id:0
-msgid "Point of Sale Category"
-msgstr "Point of Sale Category"
-
-#. module: grap_change_access
-#: model:ir.model,name:grap_change_access.model_product_product
-msgid "Product"
-msgstr "Article"
+#: model:res.groups,name:grap_change_access.group_transformer
+msgid "GRAP - Transformer"
+msgstr "GRAP - Transformateur"
 
 #. module: grap_change_access
 #: model:ir.model,name:grap_change_access.model_product_template
@@ -81,35 +46,25 @@ msgid "Product Template"
 msgstr "Modèle d'article"
 
 #. module: grap_change_access
-#: help:product.product,pos_categ_id:0
-msgid "Those categories are used to group similar products for point of sale."
-msgstr "Those categories are used to group similar products for point of sale."
-
-#. module: grap_change_access
-#: field:product.product,to_weight:0
-msgid "To Weigh With Scale"
-msgstr "To Weigh With Scale"
-
-#. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:29
+#: code:addons/grap_change_access/models/product_template.py:28
 #, python-format
 msgid "You can not create a product that is both salable or purchasable and POS expense or income product !"
 msgstr "Vous ne pouvez pas paramétrer un article vendable ou achetable qui serve d'article de manipulation de caisse !"
 
 #. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:21
+#: code:addons/grap_change_access/models/product_template.py:20
 #, python-format
 msgid "You can not create an POS expense or income product if you're not account manager !"
 msgstr "Vous ne pouvez pas paramétrer un article de manipulation de caisse si vous n'êtes pas responsable comptable !"
 
 #. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:39
+#: code:addons/grap_change_access/models/product_template.py:38
 #, python-format
 msgid "You can not create an POS expense product without account expense !"
 msgstr "Vous ne pouvez pas paramétrer un article de manipulation de caisse de type dépense sans compte comptable de dépense !"
 
 #. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:44
+#: code:addons/grap_change_access/models/product_template.py:43
 #, python-format
 msgid "You can not create an POS income product without account income !"
 msgstr "Vous ne pouvez pas paramétrer un article de manipulation de caisse de type revenu sans compte comptable de revenu !"
