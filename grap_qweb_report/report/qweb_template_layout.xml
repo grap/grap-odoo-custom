@@ -93,7 +93,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="grap_layout_footer">
 
         <div class="footer">
-            <div class="container" style="border-top: 0.5px solid black; font-size:9px;">
+            <div class="container" style="border-top: 0.5px solid black; font-size:8px;">
                 <div class="row">
                     <div class="col-xs-2 text-left" t-if="company.fiscal_company.id != company.id">
                         <span t-esc="company.name.replace('|', '')"/><br/>
@@ -123,7 +123,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="col-xs-7">
                         <div t-if="company.fiscal_company.id == company.id">
                             <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
-                            <br/>
                         </div>
                         <div>
                             <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice')">
