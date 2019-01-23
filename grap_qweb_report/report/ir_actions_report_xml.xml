@@ -50,7 +50,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="report_rml">grap_qweb_report.grap_template_product_gen_label</field>
         <field name="report_name">grap_qweb_report.grap_template_product_gen_label</field>
         <field name="download_filename">Planche d'étiquettes avec code barre ${o.name}.pdf</field>
-        <field name="paperformat_id" ref="product_print_category.paper_format_custom_gen" />
+        <field name="paperformat_id" ref="grap_qweb_report.paper_format_custom_gen" />
     </record>
 
 </data></openerp>
