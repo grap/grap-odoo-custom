@@ -48,6 +48,7 @@
         'views/view_product_template.xml',
         'views/view_stock_picking.xml',
         'data/product_print_category.xml',
+        'data/report_paperformat.xml',
     ],
     'qweb': [
         'static/src/xml/grap_qweb_report.xml',
