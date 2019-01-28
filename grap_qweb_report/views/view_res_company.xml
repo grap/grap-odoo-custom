@@ -17,6 +17,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <field name="pricetag_ignore_organic_warning"/>
                 </group>
             </xpath>
+            <xpath expr="//page[@string='Report Configuration']/group[@string='Configuration']" position="inside">
+                <field name="report_sale_invoice_origin"/>
+            </xpath>
         </field>
     </record>
 
