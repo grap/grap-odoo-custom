@@ -34,6 +34,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
+                                    <th t-if="o.company_id.report_sale_invoice_origin">Description</th>
                                     <th t-if="o.origin">Origine</th>
                                     <th t-if="o.reference">Référence</th>
                                     <th t-if="o.date_invoice">Date de facture</th>
@@ -42,6 +43,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </thead>
                             <tbody class="invoice_tbody">
                                 <tr>
+                                    <td t-if="o.company_id.report_sale_invoice_origin">
+                                        <span t-esc="o.name"/>
+                                    </td>
                                     <td t-if="o.origin">
                                         <span t-esc="o.origin.replace('OUT/', '')"/>
                                     </td>

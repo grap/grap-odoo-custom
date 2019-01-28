@@ -101,6 +101,11 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #. module: grap_qweb_report
+#: help:res.company,report_sale_invoice_origin:0
+msgid "Check this box if you want to display the name/reference in sale invoice report"
+msgstr "Cochez cette case si vous voulez afficher le nom/référence dans le facture de vente"
+
+#. module: grap_qweb_report
 #: help:res.company,pricetag_ignore_organic_warning:0
 msgid "Check this box if you want to hide the mention 'Not From Organic Farming' that is displayed on pricetags for foods products that don't have an organic label"
 msgstr "Cochez cette case si vous voulez cacher la mention 'Non issu de l'agriculture biologique' qui sera affichée sur les étiquettes pour les produits alimentaire qui n'ont pas de label biologique"
@@ -229,6 +234,11 @@ msgstr "Rem.(%)"
 #: field:product.pricetag.type,display_name:0
 msgid "Display Name"
 msgstr "Nom affiché"
+
+#. module: grap_qweb_report
+#: field:res.company,report_sale_invoice_origin:0
+msgid "Display origin in sale invoice report"
+msgstr "Affiche le nom/origine dans la facture de vente"
 
 #. module: grap_qweb_report
 #: help:product.product,invoice_extra_cost:0
