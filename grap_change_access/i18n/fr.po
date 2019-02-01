@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-16 18:04+0000\n"
-"PO-Revision-Date: 2019-01-16 18:04+0000\n"
+"POT-Creation-Date: 2019-02-01 10:41+0000\n"
+"PO-Revision-Date: 2019-02-01 10:41+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grap_change_access
-#: model:res.groups,name:grap_change_access.group_buyer_reseller
-msgid "GRAP - Buyer / Reseller"
-msgstr "GRAP - Acheteur / Revendeur"
+#: model:res.groups,name:grap_change_access.group_buying_reselling
+msgid "GRAP - Buying / reselling Category"
+msgstr "GRAP - Catégorie Achat / Revente"
 
 #. module: grap_change_access
 #: model:res.groups,name:grap_change_access.group_crm_manager
@@ -36,9 +36,14 @@ msgid "GRAP - Pricelist Manager"
 msgstr "GRAP - Responsable Liste de prix"
 
 #. module: grap_change_access
-#: model:res.groups,name:grap_change_access.group_transformer
-msgid "GRAP - Transformer"
-msgstr "GRAP - Transformateur"
+#: model:res.groups,name:grap_change_access.group_raw_material
+msgid "GRAP - Raw Materials Category"
+msgstr "GRAP - Catégorie Matières Premières"
+
+#. module: grap_change_access
+#: model:res.groups,name:grap_change_access.group_transformation
+msgid "GRAP - Transformation Category"
+msgstr "GRAP - Catégorie Transformation"
 
 #. module: grap_change_access
 #: model:ir.model,name:grap_change_access.model_product_template

@@ -16,13 +16,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="category_id" ref="module_category_usability"/>
     </record>
 
-    <record id="group_buyer_reseller" model="res.groups">
-        <field name="name">GRAP - Buyer / Reseller</field>
+    <record id="group_buying_reselling" model="res.groups">
+        <field name="name">GRAP - Buying / reselling Category</field>
         <field name="category_id" ref="module_category_usability"/>
     </record>
 
-    <record id="group_transformer" model="res.groups">
-        <field name="name">GRAP - Transformer</field>
+    <record id="group_transformation" model="res.groups">
+        <field name="name">GRAP - Transformation Category</field>
+        <field name="category_id" ref="module_category_usability"/>
+    </record>
+
+    <record id="group_raw_material" model="res.groups">
+        <field name="name">GRAP - Raw Materials Category</field>
         <field name="category_id" ref="module_category_usability"/>
     </record>
 

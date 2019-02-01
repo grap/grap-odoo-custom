@@ -30,7 +30,8 @@ Add a new Custom group category.
 
 Add new groups :
 
-* GRAP - Buyer / Reseller
-* GRAP - Transformer
+* GRAP - Buying / Reselling Category
+* GRAP - Transformation Category
+* GRAP - Raw Materials Category
 * GRAP - CRM and Calendar Manager
 * GRAP - Pricelist Manager
