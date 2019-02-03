@@ -27,6 +27,7 @@
     'data': [
         'security/ir_rule.xml',
         'security/ir.model.access.csv',
+        'data/report_paperformat.xml',
         'report/qweb_template_layout.xml',
         'report/qweb_template_account_invoice.xml',
         'report/qweb_template_picking_summary_wizard.xml',
@@ -48,7 +49,6 @@
         'views/view_product_template.xml',
         'views/view_stock_picking.xml',
         'data/product_print_category.xml',
-        'data/report_paperformat.xml',
     ],
     'qweb': [
         'static/src/xml/grap_qweb_report.xml',
