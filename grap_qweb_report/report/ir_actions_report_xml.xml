@@ -47,6 +47,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record id="product.report_product_label" model="ir.actions.report.xml">
         <field name="model">product.product</field>
+        <field name="report_type">qweb-pdf</field>
         <field name="report_rml">grap_qweb_report.grap_template_product_gen_label</field>
         <field name="report_name">grap_qweb_report.grap_template_product_gen_label</field>
         <field name="download_filename">Planche d'étiquettes avec code barre ${o.name}.pdf</field>
