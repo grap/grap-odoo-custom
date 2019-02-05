@@ -37,6 +37,7 @@ class AccountTaxCode(models.Model):
 
     @api.multi
     def _get_has_ebp_suffix_required(self):
+        # pylint: disable=sql-injection
         req = """
             SELECT aml.tax_code_id, count(*)
             FROM account_move_line aml

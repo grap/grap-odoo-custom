@@ -5,7 +5,7 @@
 
 from openerp import _, api, models
 
-from openerp.exceptions import Warning
+from openerp.exceptions import Warning as UserError
 
 
 class PosSession(models.Model):
@@ -25,7 +25,7 @@ class PosSession(models.Model):
             orders = session.order_ids.filtered(
                 lambda order: order.state not in ('paid', 'invoiced'))
             if len(orders):
-                raise Warning(_(
+                raise UserError(_(
                     "The following orders are not in a paid or invoiced"
                     " status: %s") % ', '.join(
                         [order.name for order in orders]))
@@ -75,7 +75,7 @@ class PosSession(models.Model):
                     product_account_id =\
                         product.categ_id.property_account_income_categ.id
                 else:
-                    raise Warning(_(
+                    raise UserError(_(
                         "Please define income account for this product:"
                         " '%s' (id:%d).") % (product.name, product.id))
 
@@ -85,7 +85,7 @@ class PosSession(models.Model):
 
                 # manage taxes
                 if len(line.tax_ids) > 1:
-                    raise Warning(_(
+                    raise UserError(_(
                         "Unimplemented feature, the line %s (order %s) has"
                         " more than one tax.") % (product.name, order.name))
 
