@@ -241,7 +241,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </record>
 
 <!-- ACHAT INTRACOMMUNAUTAIRE - TVA DUE -->
-        <record id="l10n_fr.tva_acq_intra_normale" model="account.tax.template">
+        <record id="l10n_fr.tva_intra_normale" model="account.tax.template">
             <field name="name">TVA achat 20,0% basé sur prix HT DUE Intracom</field>
             <field name="description">TVA-HA-UE-due-20.0</field>
         </record>
@@ -260,7 +260,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="description">TVA-HA-UE-due-5.5</field>
         </record>
 
-        <record id="l10n_fr.tva_intra_reduite" model="account.tax.template">
+        <record id="l10n_fr.tva_intra_super_reduite" model="account.tax.template">
             <field name="name">TVA achat 2,1% basé sur prix HT DUE Intracom</field>
             <field name="description">TVA-HA-UE-due-2.1</field>
         </record>
