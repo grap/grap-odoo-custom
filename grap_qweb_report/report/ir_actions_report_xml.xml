@@ -7,16 +7,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <openerp><data>
 
     <!-- New Report -->
-        <report 
-            id="report_picking_summary_wizard"
-            string="Picking Summary"
-            model="picking.summary.wizard"
-            report_type="qweb-pdf"
-            file="grap_qweb_report.grap_template_picking_summary_wizard"
-            name="grap_qweb_report.grap_template_picking_summary_wizard"
-        />
+    <report
+        id="report_picking_summary_wizard"
+        string="Picking Summary"
+        model="picking.summary.wizard"
+        report_type="qweb-pdf"
+        file="grap_qweb_report.grap_template_picking_summary_wizard"
+        name="grap_qweb_report.grap_template_picking_summary_wizard"
+    />
 
-<!-- Overloaded Report -->
+    <!-- Overloaded Report -->
     <record id="account.account_invoices" model="ir.actions.report.xml">
         <field name="report_rml">grap_qweb_report.grap_template_account_invoice</field>
         <field name="download_filename">Facture${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.date_invoice if o.date_invoice else ""}.pdf</field>
