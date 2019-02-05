@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-# Copyright (C) 2017 - Today: GRAP (http://www.grap.coop)
+# coding: utf-8
+# Copyright (C) 2019 - Today: GRAP (http://www.grap.coop)
 # @author: Quentin DUPONT (https://twitter.com/pondupont)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -10,9 +10,7 @@
     'author': 'GRAP',
     'summary': 'Handle EAN8 Barcode format',
     'depends': [
-        'sale',
-        'stock',
-        'purchase',
+        'barcodes',
     ],
     'installable': True,
 }
