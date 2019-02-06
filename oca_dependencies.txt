@@ -1,7 +1,7 @@
 knowledge
 product-attribute
 
-grap-odoo-incubator     https://github.com/grap/grap-odoo-incubator.git         8.0
+grap-odoo-incubator     https://github.com/grap/grap-odoo-incubator.git         8.0_ADD_pos_environment_matrix_reload
 grap-odoo-business      https://github.com/grap/grap-odoo-business.git          8.0
 
 odoo-addons-cae         https://github.com/grap/odoo-addons-cae.git             8.0
