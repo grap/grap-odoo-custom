@@ -15,6 +15,7 @@
         'pos_environment',
     ],
     'data': [
+        'views/templates.xml',
     ],
     'installable': True,
 }
