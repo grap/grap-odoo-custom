@@ -7,24 +7,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <openerp><data>
 
-        <template id="login_layout_no_db" name="Login Layout" inherit_id="web.login_layout" >
-            <xpath expr="." position="inside">
-                <link rel="stylesheet" href="/server_environment_files/static/RUNNING_ENV/web_login.css"/>
-            </xpath>
-        </template>
-
-                <!-- <link rel="stylesheet" href="/server_environment_files/static/src/css/env-dev_web_login.css"/> -->
-
-<!--     <template id="assets_backend" name="server_environment_files assets" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" href="/server_environment_files/static/src/css/env-dev_web.css"/>
+    <template id="web_assets" inherit_id="web.layout">
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="/server_environment_files/static/RUNNING_ENV/web.css"/>
         </xpath>
     </template>
 
-    <template id="assets_point_of_sale" name="server_environment_files index" inherit_id="point_of_sale.index">
+    <template id="point_of_sale_assets" inherit_id="point_of_sale.index">
         <xpath expr="//link[@id='pos-stylesheet']" position="after">
-            <link rel="stylesheet" href="/server_environment_files/static/src/css/env-dev_point_of_sale.css"/>
-        </xpath> -->
-    <!-- </template> -->
+            <link rel="stylesheet" href="/server_environment_files/static/RUNNING_ENV/point_of_sale.css"/>
+        </xpath>
+    </template>
 
 </data></openerp>
