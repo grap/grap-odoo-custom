@@ -6,5 +6,4 @@ grap-odoo-business      https://github.com/grap/grap-odoo-business.git          
 
 odoo-addons-cae         https://github.com/grap/odoo-addons-cae.git             8.0
 
-odoo-addons-misc        https://github.com/grap/odoo-addons-misc.git            8.0
 odoo-addons-grap        https://github.com/grap/odoo-addons-grap.git            8.0
