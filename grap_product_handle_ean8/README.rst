@@ -10,9 +10,9 @@ Product - Handle EAN8 Barcode format
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/github-GRAP%2Fgrap--odoo--custom-lightgray.png?logo=github
-    :target: https://github.com/GRAP/grap-odoo-custom/tree/8.0/grap_product_handle_ean8
-    :alt: GRAP/grap-odoo-custom
+.. |badge2| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
+    :target: https://github.com/grap/grap-odoo-custom/tree/8.0/grap_product_handle_ean8
+    :alt: grap/grap-odoo-custom
 
 |badge1| |badge2| 
 
@@ -27,10 +27,10 @@ users to set EAN8 on product barcode field.
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/GRAP/grap-odoo-custom/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/grap/grap-odoo-custom/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/GRAP/grap-odoo-custom/issues/new?body=module:%20grap_product_handle_ean8%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/grap/grap-odoo-custom/issues/new?body=module:%20grap_product_handle_ean8%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -52,7 +52,7 @@ Maintainers
 
 
 
-This module is part of the `GRAP/grap-odoo-custom <https://github.com/GRAP/grap-odoo-custom/tree/8.0/grap_product_handle_ean8>`_ project on GitHub.
+This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/8.0/grap_product_handle_ean8>`_ project on GitHub.
 
 
 You are welcome to contribute.
