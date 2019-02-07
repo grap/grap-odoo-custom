@@ -12,7 +12,7 @@
     'licence': 'AGPL-3',
     'depends': [
         'base',
-        'pos_environment',
+        'server_environment',
     ],
     'data': [
         'views/templates.xml',
