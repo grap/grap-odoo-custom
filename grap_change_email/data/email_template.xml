@@ -196,9 +196,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
        % endif
        &nbsp;&nbsp;Total HT: <strong>${object.amount_untaxed} ${object.currency_id.name}</strong><br />
        &nbsp;&nbsp;Total TTC: <strong>${object.amount_total} ${object.currency_id.name}</strong><br />
-       &nbsp;&nbsp;Date de la commande: <strong>${object.date_order}</strong><br />
+       &nbsp;&nbsp;Date de la commande: <strong>${format_tz(object.date_order)}</strong><br />
        % if object.requested_date:
-       &nbsp;&nbsp;Date de livraison souhaité: <strong>${object.requested_date}</strong><br />
+       &nbsp;&nbsp;Date de livraison souhaité: <strong>${format_tz(object.requested_date)}</strong><br />
        % endif
        % if object.recovery_moment_id:
        &nbsp;&nbsp;Lieu de récupération: <strong>${object.recovery_moment_id.place_id.complete_name}</strong><br />
