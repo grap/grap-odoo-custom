@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <template id="grap_template_stock_inventory_document">
+        <t t-call="grap_qweb_report.grap_layout">
+            <div class="page">
+               <h2>Inventaire de stock</h2>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th><strong>Inventaire</strong></th>
+                            <th><strong>Date</strong></th>
+                            <th><strong>Valorisation totale</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <span t-field="o.name"/>
+                        </td>
+                        <td>
+                            <span t-field="o.date"/>
+                        </td>
+                        <td>
+                            <span t-field="o.valuation"/> €
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th><strong>Produit</strong></th>
+                            <th class="text-right"><strong>Quantité</strong></th>
+                            <th class="text-right"><strong>Prix unitaire</strong></th>
+                            <th class="text-right"><strong>Valorisation</strong></th>
+                        </tr>
+                    </thead>
+                    <tr t-foreach="o.line_ids" t-as="line">
+                        <td><span t-field="line.product_id"/></td>
+                        <td class="text-right"><span t-field="line.product_qty"/> <span t-field="line.product_uom_id" groups="product.group_uom"/></td>
+                        <td class="text-right"><span t-esc="line.price_unit"/> €</td>
+                        <td class="text-right"><span t-esc="line.valuation"/> €</td>
+                    </tr>
+                    <tr>
+                        <td/>
+                    </tr>
+                </table>
+                <h4><b>Valorisation totale</b></h4>
+                L'ensemble de cet inventaire est valorisé à hauteur de <span t-field="o.valuation"/> €.
+
+                <t t-if="o.filter == 'product' and o.product_id">
+                  <div class="row">
+                    <div class="col-xs-4 pull-right">
+                         <table class="table table-condensed">
+                            <tr class="border-black">
+                                <td><strong>Total Quantity</strong></td>
+                                <td class="text-right">
+                                    <span t-field="o.total_qty"/> <span t-field="o.product_id.uom_id"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                  </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="grap_template_stock_inventory">
+        <t t-call="report.html_container">
+            <t t-foreach="doc_ids" t-as="doc_id">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'grap_qweb_report.grap_template_stock_inventory_document')"/>
+            </t>
+        </t>
+    </template>
+
+    <!-- We replace account.report_invoice because it is called instead of the name of the report -->
+<!--     <template id="stock.report_inventory">
+        <t t-call="report.html_container">
+            <t t-foreach="doc_ids" t-as="doc_id">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'grap_qweb_report.grap_template_stock_inventory_document')"/>
+            </t>
+        </t>
+    </template> -->
+
+</data></openerp>
