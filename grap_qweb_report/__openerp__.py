@@ -34,6 +34,7 @@
         'report/qweb_template_purchase_order.xml',
         'report/qweb_template_purchase_order_quotation.xml',
         'report/qweb_template_sale_order.xml',
+        'report/qweb_template_stock_inventory.xml',
         'report/qweb_template_stock_picking.xml',
         'report/qweb_template_product_product.xml',
         'report/qweb_template_product_gen_label.xml',
