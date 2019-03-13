@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <record id="product_supplierinfo_form" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="delay" position="attributes">
+                    <attribute name="groups">base.group_no_one</attribute>
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_tree" model="ir.ui.view">
+        <field name="name">product.supplierinfo.tree</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="delay" position="attributes">
+                    <attribute name="groups">base.group_no_one</attribute>
+                </field>
+            </data>
+        </field>
+    </record>
+
+</data></openerp>

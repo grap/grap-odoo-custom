@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018-Today GRAP (http://www.grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <!-- Project Task Kanban View -->
+    <record model="ir.ui.view" id="grap_change_view_task_kanban">
+        <field name="name">Project Task Kanban Grap view</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <field name="project_id" position="replace">
+                <div class="project_kanban_project_id"><field name="project_id"/></div>
+            </field>
+        </field>
+     </record>
+
+</data></openerp>

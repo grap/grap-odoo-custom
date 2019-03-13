@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <record id="base.view_workflow_workitem_form" model="ir.ui.view">
+        <field name="model">workflow.workitem</field>
+        <field name="arch" type="xml">
+        <form string="Workflow Workitems">
+            <field name="wkf_id"/>  
+            <field name="act_id"/>
+            <field name="subflow_id"/>
+            <field name="inst_id"/>
+            <field name="state"/>
+        </form>
+        </field>
+    </record>
+
+</data></openerp>

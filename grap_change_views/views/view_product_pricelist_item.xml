@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <record id="view_product_pricelist_item_tree" model="ir.ui.view">
+        <field name="model">product.pricelist.item</field>
+        <field name="inherit_id" ref="product.product_pricelist_item_tree_view" />
+        <field name="arch" type="xml">
+            <field name="min_quantity" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </field>
+            <field name="base" position="after">
+                <field name="price_discount" />
+                <field name="price_surcharge" />
+            </field>
+        </field>
+    </record>
+
+
+</data></openerp>

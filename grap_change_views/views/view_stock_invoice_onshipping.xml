@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <record id="view_stock_invoice_onshipping_form" model="ir.ui.view">
+        <field name="model">stock.invoice.onshipping</field>
+        <field name="inherit_id" ref="stock_account.view_stock_invoice_onshipping"/>
+        <field name="arch" type="xml">
+            <field name="invoice_date" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+        </field>
+    </record>
+
+</data></openerp>

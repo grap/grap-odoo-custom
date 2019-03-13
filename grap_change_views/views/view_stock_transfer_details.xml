@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Quentin Dupont
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp><data>
+
+    <record id="view_stock_transfer_details" model="ir.ui.view">
+        <field name="model">stock.transfer_details</field>
+        <field name="inherit_id" ref="stock.view_stock_enter_transfer_details"/>
+        <field name="arch" type="xml">
+            <field name="sourceloc_id" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </field>
+            <field name="destinationloc_id" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </field>
+        </field>
+    </record>
+
+</data></openerp>
