@@ -23,6 +23,7 @@ to make easy the creation of taxes and accounts for GRAP.
 
 **``account.tax.code.template`` Datas**
 
+* Add a new field ``active``
 * Add EBP code
 
 **``account.fiscal.position.template`` Model**
