@@ -13,9 +13,9 @@
     "installable": True,
     "depends": [
         "account",
-        "simple_tax_account",
         "l10n_fr",
         "account_export_ebp",
+        "account_product_fiscal_classification_usage_group",
     ],
     "data": [
         'data/account_tax_template.xml',
@@ -24,6 +24,7 @@
         'data/account_chart_template.xml',
         'data/account_fiscal_position_template.xml',
         'data/account_fiscal_position_tax_template.xml',
+        'data/account_product_fiscal_classification_template.xml',
         'views/view_account_tax_template.xml',
         'views/view_account_tax_code_template.xml',
     ],

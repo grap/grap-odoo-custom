@@ -71,5 +71,42 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="ebp_suffix">5</field>
     </record>
 
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_acq_85">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_acq_85_ht">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_imm_85">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_col_85">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_col_85_ht">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_intra_acq_85">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_intra_acq_85_ht">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_intra_85">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record model="account.tax.code.template" id="l10n_fr.tax_intra_85_ht">
+        <field name="active" eval="False"/>
+    </record>
+
 </data></openerp>
 

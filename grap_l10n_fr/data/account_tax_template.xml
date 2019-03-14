@@ -54,15 +54,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="ref_tax_sign" eval="-1"/>
             <field name="sequence" eval="10"/>
             <field name="type_tax_use">sale</field>
-
-            <field name="simple_template_id" ref="l10n_fr.tva_normale"/>
         </record>
 
         <!-- Related Tax -->
-        <record id="l10n_fr.tva_normale" model="account.tax.template">
-            <field name="simple_template_id" ref="grap_l10n_fr.tva_normale_TTC"/>
-        </record>
-
         <record id="tva_intermediaire_TTC" model="account.tax.template">
             <field name="chart_template_id" ref="l10n_fr.l10n_fr_pcg_chart_template"/>
             <field name="name">TVA vente à 10,0% basé sur prix TTC</field>
@@ -84,15 +78,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="ref_tax_sign" eval="-1"/>
             <field name="sequence" eval="10"/>
             <field name="type_tax_use">sale</field>
-
-            <field name="simple_template_id" ref="l10n_fr.tva_intermediaire"/>
         </record>
 
         <!-- Related Tax -->
-        <record id="l10n_fr.tva_intermediaire" model="account.tax.template">
-            <field name="simple_template_id" ref="grap_l10n_fr.tva_intermediaire_TTC"/>
-        </record>
-
         <record id="tva_reduite_TTC" model="account.tax.template">
             <field name="chart_template_id" ref="l10n_fr.l10n_fr_pcg_chart_template"/>
             <field name="name">TVA vente à 5,5% basé sur prix TTC</field>
@@ -114,15 +102,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="ref_tax_sign" eval="-1"/>
             <field name="sequence" eval="10"/>
             <field name="type_tax_use">sale</field>
-
-            <field name="simple_template_id" ref="l10n_fr.tva_reduite"/>
         </record>
 
         <!-- Related Tax -->
-        <record id="l10n_fr.tva_reduite" model="account.tax.template">
-            <field name="simple_template_id" ref="grap_l10n_fr.tva_reduite_TTC"/>
-        </record>
-
         <record id="tva_super_reduite_TTC" model="account.tax.template">
             <field name="chart_template_id" ref="l10n_fr.l10n_fr_pcg_chart_template"/>
             <field name="name">TVA vente à 2,1% basé sur prix TTC</field>
@@ -144,26 +126,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="ref_tax_sign" eval="-1"/>
             <field name="sequence" eval="10"/>
             <field name="type_tax_use">sale</field>
-
-            <field name="simple_template_id" ref="l10n_fr.tva_super_reduite"/>
         </record>
 
         <!-- Related Tax -->
-        <record id="l10n_fr.tva_super_reduite" model="account.tax.template">
-            <field name="simple_template_id" ref="grap_l10n_fr.tva_super_reduite_TTC"/>
-        </record>
-
 <!-- ACHAT Tax excluded from price -->
         <record id="l10n_fr.tva_acq_normale" model="account.tax.template">
             <field name="name">TVA achat 20,0% basé sur prix HT</field>
             <field name="description">TVA-HA-20.0-HT</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_normale_TTC"/>
         </record>
 
         <record id="l10n_fr.tva_acq_intermediaire" model="account.tax.template">
             <field name="name">TVA achat 10,0% basé sur prix HT</field>
             <field name="description">TVA-HA-10.0-HT</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_intermediaire_TTC"/>
         </record>
 
         <record id="l10n_fr.tva_acq_specifique" model="account.tax.template">
@@ -173,26 +147,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <record id="l10n_fr.tva_acq_reduite" model="account.tax.template">
             <field name="name">TVA achat 5,5% basé sur prix HT</field>
             <field name="description">TVA-HA-5.5-HT</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_reduite_TTC"/>
         </record>
 
         <record id="l10n_fr.tva_acq_super_reduite" model="account.tax.template">
             <field name="name">TVA achat 2,1% basé sur prix HT</field>
             <field name="description">TVA-HA-2.1-HT</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_super_reduite_TTC"/>
         </record>
 
 <!-- ACHATS Tax included in price -->
         <record id="l10n_fr.tva_acq_normale_TTC" model="account.tax.template">
             <field name="name">TVA achat 20,0% basé sur prix TTC</field>
             <field name="description">TVA-HA-20.0-TTC</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_normale"/>
         </record>
 
         <record id="l10n_fr.tva_acq_intermediaire_TTC" model="account.tax.template">
             <field name="name">TVA achat 10,0% basé sur prix TTC</field>
             <field name="description">TVA-HA-10.0-TTC</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_intermediaire"/>
         </record>
 
         <record id="l10n_fr.tva_acq_specifique_TTC" model="account.tax.template">
@@ -202,13 +172,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <record id="l10n_fr.tva_acq_reduite_TTC" model="account.tax.template">
             <field name="name">TVA achat 5,5% basé sur prix TTC</field>
             <field name="description">TVA-HA-5.5-TTC</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_reduite"/>
         </record>
 
         <record id="l10n_fr.tva_acq_super_reduite_TTC" model="account.tax.template">
             <field name="name">TVA achat 2,1% basé sur prix TTC</field>
             <field name="description">TVA-HA-2.1-TTC</field>
-            <field name="simple_template_id" ref="l10n_fr.tva_acq_super_reduite"/>
         </record>
 
 <!-- ImmoBILISATIONS (achats) -->
