@@ -48,8 +48,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </group>
                             <group col="2">
                                 <h2 colspan="2">
-                                    <field name="first_name" nolabel="1" col="1"/>
-                                    <field name="last_name" nolabel="1" col="1"/>
+                                    <field name="first_name" nolabel="1" placeholder="First name" col="1"/>
+                                    <field name="last_name" nolabel="1" placeholder="Last name" col="1"/>
                                 </h2>
                                 <field name="birthdate"/>
                                 <field name="is_birthday" invisible="1"/>

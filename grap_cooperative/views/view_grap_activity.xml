@@ -50,10 +50,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="state_previous" string="Previous State" type="object"
+                    <button name="button_state_previous" string="Previous State" type="object"
                         states="progress,validated,working,obsolete" 
                         groups="grap_cooperative.res_group_grap_cooperative_manager"/>
-                    <button name="state_next" string="Next State" type="object"
+                    <button name="button_state_next" string="Next State" type="object"
                         states="draft,progress,validated,working"
                         groups="grap_cooperative.res_group_grap_cooperative_manager"/>
                     <field name="state" widget="statusbar"/>
@@ -152,9 +152,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <table>
                                         <tr>
                                             <td style="height:110px; width:150px; text-align:center;">
-                                                <div style="padding: 5px 5px 5px 5px;">
-                                                    <img t-att-src="kanban_image('grap.activity', 'image', record.id.value)" width="100px"/>
-                                                </div>
+                                                <a type="edit">
+                                                    <div style="padding: 5px 5px 5px 5px; cursor:pointer !important;">
+                                                        <img t-att-src="kanban_image('grap.activity', 'image', record.id.value)" width="100px"/>
+                                                    </div>
+                                                </a>
                                             </td>
                                             <td style="width:50px;text-align:center;vertical-align:middle;">
                                                 <b><t t-esc="record.fte.string"/></b><br />
