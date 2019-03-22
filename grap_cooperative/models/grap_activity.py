@@ -11,7 +11,7 @@ class GrapActivity(models.Model):
     _inherits = {'grap.member': 'grap_member_id'}
     _order = 'activity_name'
 
-    _STATE_SELECTION = [
+    _GRAP_ACTIVITY_STATE = [
         ('draft', 'No linked'),
         ('progress', 'project in progress'),
         ('validated', 'Validated'),
@@ -35,7 +35,7 @@ class GrapActivity(models.Model):
     web_site = fields.Char(string='Web Site')
 
     state = fields.Selection(
-        string='State', selection=_STATE_SELECTION, required=True,
+        string='State', selection=_GRAP_ACTIVITY_STATE, required=True,
         default='draft')
 
     date_validated = fields.Date('Validation date by cooperative')
@@ -90,7 +90,7 @@ class GrapActivity(models.Model):
     @api.multi
     def button_state_previous(self):
         for activity in self:
-            for index in range(len(self._STATE_SELECTION) - 1):
+            for index in range(len(self._GRAP_ACTIVITY_STATE) - 1):
                 if activity.state == self._GRAP_ACTIVITY_STATE[index + 1][0]:
                     activity.state = self._GRAP_ACTIVITY_STATE[index][0]
 

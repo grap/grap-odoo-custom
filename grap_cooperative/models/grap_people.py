@@ -88,5 +88,7 @@ class GrapPeople(models.Model):
                 raise UserError(_(
                     'Unable to perform name changes on many people'))
             vals['name'] =\
-                self._get_name(vals['first_name'], vals['last_name'])
+                self._get_name(
+                    vals.get('first_name', self.first_name),
+                    vals.get('last_name', self.last_name))
         return super(GrapPeople, self).write(vals)
