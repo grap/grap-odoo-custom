@@ -30,9 +30,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="action" ref="point_of_sale.action_pos_pos_form" />
     </record>
 
+    <!-- Disable obsolete menu
     <record model="ir.ui.menu" id="intercompany_trade_base.menu_intercompany_trade_root">
         <field name="sequence">6</field>
     </record>
+--> 
 
     <record model="ir.ui.menu" id="account.menu_finance">
         <field name="sequence">7</field>
