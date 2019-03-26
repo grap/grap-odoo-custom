@@ -1,3 +1,4 @@
+sale-workflow                   https://github.com/grap/sale-workflow.git                           8.0_FIX_IMP_product_margin_classification
 knowledge
 product-attribute
 
