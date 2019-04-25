@@ -13,6 +13,7 @@
     'depends': [
         'base',
         'server_environment',
+        'point_of_sale',
     ],
     'data': [
         'views/templates.xml',
