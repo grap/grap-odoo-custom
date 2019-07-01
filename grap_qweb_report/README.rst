@@ -39,6 +39,11 @@ report changes
 * sale.order
     * display short text for taxes.
 
+* pos.order bill
+    * display VAT details
+    * display customer name
+    * display pricelist if it does'nt contain "catalogue in the name"
+
 Credits
 =======
 
