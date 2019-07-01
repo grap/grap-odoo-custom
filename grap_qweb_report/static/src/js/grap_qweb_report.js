@@ -11,6 +11,8 @@ openerp.grap_qweb_report = function (instance) {
     var module = instance.point_of_sale;
     var _t = instance.web._t;
 
+    var moduleOrderParent = module.Order;
+
     module.Order = module.Order.extend({
 
         /**
@@ -50,6 +52,21 @@ openerp.grap_qweb_report = function (instance) {
             });
             return result;
         },
+
+        export_for_printing: function(attributes){
+            var order = moduleOrderParent.prototype.export_for_printing.apply(this, arguments);
+            partner = this.get_client();
+            if (partner && partner.property_product_pricelist) {
+                order.pricelist_id = partner.property_product_pricelist[0];
+                order.pricelist_name = partner.property_product_pricelist[1];
+            } else {
+                order.pricelist_id = this.pos.config.pricelist_id[0];
+                order.pricelist_name = this.pos.config.pricelist_id[1];
+            }
+            order.pricelist_default = order.pricelist_id === this.pos.config.pricelist_id[0];
+            return order;
+        },
+
     });
 
 };
