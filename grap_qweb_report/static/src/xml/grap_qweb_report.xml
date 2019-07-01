@@ -30,6 +30,24 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </line>
             </t>
             <div>------------------------------------------</div>
+            <t t-if='receipt.client'>
+                <line>
+                    <left>Customer: </left>
+                </line>
+                <line>
+                    <left><t t-esc='receipt.client' /></left>
+                </line>
+                <div>------------------------------------------</div>
+            </t>
+            <t t-if='receipt.pricelist_default === false'>
+                <line>
+                    <left>Pricelist: </left>
+                </line>
+                <line>
+                    <left><t t-esc='receipt.pricelist_name' /></left>
+                </line>
+                <div>------------------------------------------</div>
+            </t>
         </t>
     </t>
 
