@@ -18,8 +18,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <style type="text/css">
             div.product {
                 background-color:white;
-                width:4.65cm; height:2.61cm;
-                margin : 0.1cm -0.1cm -0.1cm 0;
+                width:4.65cm; height:2.626cm;
+                margin : 0.2cm -0.1cm -0.1cm 0.2cm;
                 padding : 8px;
                 font-size: 12px;
             }
