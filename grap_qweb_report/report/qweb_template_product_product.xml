@@ -1481,6 +1481,214 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </t>
     </template>
 
+    <template id="qweb_template_label_large_square">
+        <style type="text/css">
+            body{
+                font-family: liberation, arial, verdana, sans-serif;
+            }
+            div.product {
+                border: 1px solid grey; 
+                background-color:white;
+                width:11.28cm; height:10.42cm;
+                margin : 0 -0.2cm -0.1cm 0;
+                padding : 5px;
+                overflow: hidden;
+            }
+            div.floating_box {
+                display : inline-block;
+                vertical-align: top;
+            }
+            div.label_left {
+                width : 4cm; height:10.1cm;
+            }
+            div.label_right {
+                display: inline-block;
+                width : 6.8cm; height:10.2cm;
+            }
+            div.div_company_logo {
+                height: 3.4cm;
+            }
+            img.company_logo{
+                width: 3cm; height: 3cm;
+                position: relative; left: 0.5cm; top: 0.2cm;
+            }
+            div.product_name{
+                font-size:38px; font-weight:bold; text-transform: uppercase;
+                overflow: hidden;
+                display: inline-block;
+                height: 3.55cm;
+                line-height: 1.2em;
+                width: 100%;
+            }
+            div.label_ingredients {
+                padding-top: 0.2cm;
+                font-size: 13px;
+                height: 3cm;
+                overflow: hidden;
+            }
+            div.label_allergens {
+                padding-top: 0.2cm;
+                font-size: 13px;
+            }
+            div.product_price {
+                position: relative;
+                text-align: center; 
+            }
+            div.product_price_per_uom_price_only {
+                font-size: 12px;
+                position: relative; bottom: 5px;
+                width: 100%;
+            }
+            div.product_price_per_uom_price_big {
+                overflow: hidden;
+                word-wrap: normal;
+            }
+            div.product_price_big {
+                font-family: Open Sans;
+                font-weight: lighter;
+                font-size: 38px;
+                margin: 0.1cm 0;
+            }
+            span.product_uom {
+                font-size:22px;
+            }
+            span.product_uom_special {
+                font-size: 15px; font-weight: bold;
+            }
+            div.label_origin {
+                max-height: 0.7cm; overflow: hidden;
+                font-size: 20px;
+            }
+            div.product_labels{
+                padding-left: 15px;
+                margin-top: 2px;
+                font-size: 30px;
+                height: 4cm;
+            }
+            img.product_label{
+                width: 1.6cm; height: 1.6cm;
+            }
+            div.non_ue {
+                height: 0.6cm;
+                font-size: 12px;
+                padding-left: 15px;
+            }
+            div.product_labels, div.organic_text{
+                overflow: hidden;
+            }            
+            div.organic_text{
+                font-size: 12px;
+                padding-left: 15px;
+                height: 1.5cm;
+            }
+            div_ean13 {
+                padding-left: 5px;
+                position : relative;
+                top: 5px;
+            }
+            div.wrap_ean13_image{
+                overflow: hidden;
+                position: relative;
+                height: 0.5cm;
+            }
+            div.wrap_product_code {
+                padding-left: 33px;
+            }
+            img.ean13_image{
+                /* NOT YET SUPPORTED BY wkhtmltopdf clip-path: polygon(10% 20%, 90% 20%, 90% 40%, 0% 40%); */
+                width: 4cm;
+            }
+        </style>
+        <br/>
+        <t t-foreach="category_data['lines']" t-as="line">
+            <t t-foreach="line.quantity" t-as="q">
+                <div class="product floating_box">
+                    <!-- Label bottom -->
+                    <div class="label_left floating_box">
+                        <div class="div_company_logo" style="background-color:white;">
+                            <img class="company_logo" t-attf-src="data:image/*;base64,{{line.product_id.company_id.logo}}"/>
+                        </div>
+                        <div class="product_labels">
+                            <!-- Product Label -->
+                            <t t-foreach="line.product_id.label_ids" t-as="label">
+                                <img class="product_label" t-attf-src="data:image/*;base64,{{label.image}}" t-att-alt="label.name"/>
+                            </t>
+                        </div>
+                        <div class="non_ue">
+                            <t t-foreach="line.product_id.label_ids" t-as="label">
+                                <t t-if="label.id == 36">
+                                    <span>Agriculture UE - NON UE</span>
+                                </t>
+                            </t>
+                        </div>
+                        <div class="organic_text">
+                            <t t-if="line.product_id.pricetag_organic_text">
+                                <t t-esc="line.product_id.pricetag_organic_text"/><br/>
+                            </t>
+                        </div>
+                        <div class="div_ean13 floating_box">
+                            <t t-if="line.product_id.ean13">
+                                <div class="wrap_ean13_image">
+                                    <img class="ean13_image" t-attf-src="data:image/*;base64,{{line.product_id.ean13_image}}"/>
+                                </div>
+                            </t>
+                            <t t-if="not line.product_id.ean13">
+                                <div class="wrap_product_code">
+                                    <t t-if="line.product_id.code"><b><t t-esc="line.product_id.code"/></b><br/></t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="label_right">
+                        <div class="product_name" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
+                            <t t-esc="line.product_id.name.replace('(RV)', '')"/>
+                        </div>
+                        <t t-if="not line.product_id.pricetag_special_quantity_price">
+                            <div class="product_price_per_uom_price_big">
+                                <div class="product_price_big">
+                                    <b><t t-esc="'%0.2f' % (line.product_id.list_price)"/> €</b><!-- 
+                                     --><t t-if="line.product_id.uom_id.category_id.name == 'Volume'"><!-- 
+                                         --><span class="product_uom">le litre</span><br/>
+                                    </t>
+                                    <t t-if="not line.product_id.uom_id.category_id.name == 'Volume'"><!-- 
+                                         --><t t-if="line.product_id.uom_id.category_id.name == 'Weight'"><!-- 
+                                        --><span class="product_uom">le kilo</span><br/>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-if="line.product_id.pricetag_special_quantity_price">
+                            <div class="product_price_per_uom_price_big">
+                                <div class="product_price_big">
+                                    <b><t t-esc="'%0.2f' % (line.product_id.pricetag_second_price)"/> €</b><!-- 
+                                     --><span class="product_uom_special"><t t-esc="line.product_id.pricetag_second_price_uom_text"/></span>
+                                </div>
+                            </div>
+                            <div class="product_price_per_uom_price_only floating_box">
+                                <t t-if="line.product_id.uom_id.category_id.name == 'Volume'"><span>Au L : </span></t>
+                                <t t-if="not line.product_id.uom_id.category_id.name == 'Volume'">
+                                    <t t-if="not line.product_id.uom_id.category_id.name == 'Weight'"><span>Pièce : </span></t>
+                                    <t t-if="line.product_id.uom_id.category_id.name == 'Weight'"><span>Au kg : </span></t>
+                                </t>
+                                <t t-esc="'%0.2f' % (line.product_id.list_price)"/> €
+                            </div>
+                        </t>
+                        <div class="label_origin">
+                            <t t-if="line.product_id.pricetag_origin"><b>Origine : </b><t t-esc="line.product_id.pricetag_origin"/><br/></t>
+                        </div>
+                        <div class="label_ingredients">
+                            <t t-if="line.product_id.ingredients"><t t-raw="line.product_id.ingredients"/></t>
+                        </div> 
+                        <div class="label_allergens">
+                            <t t-if="line.product_id.allergens"><t t-raw="line.product_id.allergens"/></t>
+                        </div>
+                    </div>
+                </div><!-- /product -->
+            </t>
+        </t>
+    </template>
+
     <template id="qweb_template_label_counter">
         <style type="text/css">
             body{
