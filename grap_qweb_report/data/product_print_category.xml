@@ -144,6 +144,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             (4, ref('product.field_product_product_list_price'))]" />
     </record>
 
+    <record id="category_label_large_square" model="product.print.category">
+        <field name="name">Carré - 92x85mm</field>
+        <field name="qweb_view_id" ref="qweb_template_label_large_square" />
+        <field name="field_ids" eval="[
+            (4, ref('product.field_product_product_name')),
+            (4, ref('product.field_product_product_ean13')),
+            (4, ref('sale_food.field_product_product_label_ids')),
+            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
+            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
+            (4, ref('product.field_product_product_list_price'))]" />
+    </record>
+
     <record id="category_label_counter" model="product.print.category">
         <field name="name">Comptoir - 72*123mm</field>
         <field name="qweb_view_id" ref="qweb_template_label_counter" />
