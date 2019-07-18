@@ -1501,6 +1501,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 font-size:40px; font-weight:bold; line-height: 1em;
                 text-align: center;
                 margin-top: 1.2cm;
+                max-height: 2.15em; overflow: hidden;
             }
             div.price_area {
                 margin-top: 10px;
@@ -1531,7 +1532,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             }
             div.product_price, div.second_product_price {
                 font-size: 40px; font-weight: bold; display: inline;
-                position: absolute; bottom: 1.5cm; right: 3cm;
             }
             span.product_price_per_uom_price, span.product_price_per_uom_price_only {
                 font-size: 25px;
