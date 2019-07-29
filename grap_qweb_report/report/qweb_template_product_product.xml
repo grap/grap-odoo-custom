@@ -11,7 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_normal">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 1px solid grey; 
@@ -281,7 +281,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_small">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 1px solid grey; 
@@ -474,7 +474,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_big">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 1px solid grey; 
@@ -737,7 +737,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_bulk_selling_applimage">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 2px solid black; 
@@ -941,7 +941,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_bulk_selling">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 2px solid black; 
@@ -1181,7 +1181,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_small_square">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 1px solid grey; 
@@ -1332,7 +1332,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_middle_square">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 1px solid grey; 
@@ -1484,7 +1484,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="qweb_template_label_counter">
         <style type="text/css">
             body{
-                font-family: arial, verdana, sans-serif;
+                font-family: liberation, arial, verdana, sans-serif;
             }
             div.product {
                 border: 1px solid grey; 
