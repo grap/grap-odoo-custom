@@ -55,7 +55,7 @@ openerp.grap_qweb_report = function (instance) {
 
         export_for_printing: function(attributes){
             var order = moduleOrderParent.prototype.export_for_printing.apply(this, arguments);
-            partner = this.get_client();
+            var partner = this.get_client();
             if (partner && partner.property_product_pricelist) {
                 order.pricelist_id = partner.property_product_pricelist[0];
                 order.pricelist_name = partner.property_product_pricelist[1];
