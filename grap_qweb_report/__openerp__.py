@@ -61,4 +61,5 @@
         'demo/product_product.xml',
         'demo/product_print_category.xml',
     ],
+    'installable': False,
 }
