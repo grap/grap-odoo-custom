@@ -11,12 +11,11 @@
     'author': 'GRAP',
     'license': 'AGPL-3',
     'depends': [
-        'base',
         'server_environment',
-        'point_of_sale',
+        'pos_environment',
     ],
     'data': [
         'views/templates.xml',
     ],
-    'installable': False,
+    'installable': True,
 }
