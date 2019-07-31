@@ -116,4 +116,5 @@
     'demo': [
         'demo/res_groups.xml',
     ],
+    'installable': False,
 }

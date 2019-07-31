@@ -16,4 +16,5 @@
         'stock',
         'point_of_sale',
     ],
+    'installable': False,
 }

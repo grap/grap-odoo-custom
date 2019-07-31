@@ -19,5 +19,5 @@
         'demo/account_tax.xml',
         'demo/product_product.xml',
     ],
-    'installable': True,
+    'installable': False,
 }

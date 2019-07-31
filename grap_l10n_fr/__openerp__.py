@@ -28,4 +28,5 @@
         'views/view_account_tax_template.xml',
         'views/view_account_tax_code_template.xml',
     ],
+    'installable': False,
 }

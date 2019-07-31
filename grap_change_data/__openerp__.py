@@ -16,4 +16,5 @@
     'data': [
         'data/product_category.xml',
     ],
+    'installable': False,
 }

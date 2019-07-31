@@ -37,5 +37,5 @@
         'demo/account_journal.xml',
         'demo/account_move.xml',
     ],
-    'installable': True,
+    'installable': False,
 }

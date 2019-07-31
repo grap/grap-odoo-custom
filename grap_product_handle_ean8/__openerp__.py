@@ -12,5 +12,5 @@
     'depends': [
         'barcodes',
     ],
-    'installable': True,
+    'installable': False,
 }

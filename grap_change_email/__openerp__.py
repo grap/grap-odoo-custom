@@ -20,4 +20,5 @@
         'data/email_template.xml',
         'views/view_mail_compose_message.xml',
     ],
+    'installable': False,
 }

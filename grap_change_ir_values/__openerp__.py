@@ -18,4 +18,5 @@
     'data': [
         'data/ir_values.xml',
     ],
+    'installable': False,
 }

@@ -20,4 +20,5 @@
     'data': [
         'data/decimal_precision.xml',
     ],
+    'installable': False,
 }
