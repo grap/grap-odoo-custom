@@ -30,4 +30,5 @@
         'demo/grap_people.xml',
         'demo/grap_activity_people.xml',
     ],
+    'installable': False,
 }
