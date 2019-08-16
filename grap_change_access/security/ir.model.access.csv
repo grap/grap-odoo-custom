@@ -59,5 +59,3 @@ crm_case_categ,crm_case_categ,crm.model_crm_case_categ,grap_change_access.group_
 crm.access_crm_case_stage,crm.access_crm_case_stage,crm.model_crm_case_stage,,1,0,0,0
 crm.access_crm_case_stage_manager,crm.access_crm_case_stage_manager,crm.model_crm_case_stage,,1,0,0,0
 crm_case_stage,crm_case_stage,crm.model_crm_case_stage,grap_change_access.group_crm_manager,1,1,1,1
-document_page.document_page,document.page,document_page.model_document_page,base.group_no_one,1,1,1,1
-document_page.document_page_history,document.page.history,document_page.model_document_page_history,base.group_no_one,1,0,1,0
