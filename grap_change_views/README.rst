@@ -6,20 +6,7 @@
 GRAP - Change Views
 ===================
 
-* Hide a lot of field from 'basic users' to group no_one users
-
-* Change size of some columns
-
-PoS Category
-------------
-
-* Add complete_name stored field to reorder display
-* Add product_qty field
-
-Roadmap / Know issues
-=====================
-
-* improve pos.category form
+* Change border fields to make it smoother
 
 Credits
 =======
@@ -29,7 +16,8 @@ Contributors
 
 * Julien WESTE
 * Sylvain LE GAL <https://twitter.com/legalsylvain>
-
+* Quentin DUPONT <https://twitter.com/pondupont>
+ 
 Funders
 -------
 
