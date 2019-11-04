@@ -10,7 +10,8 @@ class SaleOrderLine(models.Model):
 
     # Column Section
     tax_ids_description = fields.Char(
-        string="Taxes", compute="_compute_tax_ids_description", store=True
+        string="Taxes (Description)", compute="_compute_tax_ids_description",
+        store=True
     )
 
     # Compute Section

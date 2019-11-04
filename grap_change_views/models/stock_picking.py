@@ -7,4 +7,4 @@ from odoo import models
 
 class StockPicking(models.Model):
     _inherit = "stock.picking"
-    _order = "min_date desc, date desc"
+    _order = "scheduled_date desc"
