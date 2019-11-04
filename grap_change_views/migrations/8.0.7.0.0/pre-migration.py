@@ -7,26 +7,34 @@ import logging
 from openupgradelib import openupgrade
 
 
-logger = logging.getLogger('OpenUpgrade.grap_change_views')
+logger = logging.getLogger("OpenUpgrade.grap_change_views")
 
 
 def create_tax_ids_description_field(
-        cr, table_line_name, field_description, table_tax_rel_name,
-        field_line_id, field_tax_id):
+    cr,
+    table_line_name,
+    field_description,
+    table_tax_rel_name,
+    field_line_id,
+    field_tax_id,
+):
     logger.info(
         "Fast creation of the field"
-        " %s.%s (pre)" % (table_line_name, field_description))
-    cr.execute("""
+        " %s.%s (pre)" % (table_line_name, field_description)
+    )
+    cr.execute(
+        """
         ALTER TABLE %s
-        ADD COLUMN "%s" VARCHAR""" % (
-        table_line_name,
-        field_description))
+        ADD COLUMN "%s" VARCHAR"""
+        % (table_line_name, field_description)
+    )
 
-    cr.execute("""
+    cr.execute(
+        """
         SELECT %s, array_agg(%s)
-        FROM %s GROUP BY %s;""" % (
-        field_line_id, field_tax_id,
-        table_tax_rel_name, field_line_id))
+        FROM %s GROUP BY %s;"""
+        % (field_line_id, field_tax_id, table_tax_rel_name, field_line_id)
+    )
 
     mapping = {}
     res = cr.fetchall()
@@ -39,41 +47,64 @@ def create_tax_ids_description_field(
     for str_tax_ids, line_ids in mapping.iteritems():
         # compute description
         tax_ids = eval(str_tax_ids)
-        cr.execute("""
+        cr.execute(
+            """
             SELECT name, description
-            FROM account_tax where id in %s""", (tuple(tax_ids),))
+            FROM account_tax where id in %s""",
+            (tuple(tax_ids),),
+        )
         tax_infos = cr.fetchall()
         tax_description = []
         for name, description in tax_infos:
             tax_description.append(description if description else name)
-        tax_ids_description = ', '.join(tax_description).replace("'", " ")
+        tax_ids_description = ", ".join(tax_description).replace("'", " ")
         logger.info(
-            "Populating %d lines with %s" % (
-                len(line_ids), tax_ids_description))
+            "Populating %d lines with %s"
+            % (len(line_ids), tax_ids_description)
+        )
         line_ids.append(0)
-        cr.execute("""
+        cr.execute(
+            """
             UPDATE %s
             set %s = '%s'
-            WHERE id in %s""" % (
-            table_line_name,
-            field_description,
-            tax_ids_description,
-            tuple(line_ids)))
+            WHERE id in %s"""
+            % (
+                table_line_name,
+                field_description,
+                tax_ids_description,
+                tuple(line_ids),
+            )
+        )
 
 
 @openupgrade.migrate()
 def migrate(cr, version):
     # Account Invoice taxes
     create_tax_ids_description_field(
-        cr, 'account_invoice_line', 'tax_ids_description',
-        'account_invoice_line_tax', 'invoice_line_id', 'tax_id')
+        cr,
+        "account_invoice_line",
+        "tax_ids_description",
+        "account_invoice_line_tax",
+        "invoice_line_id",
+        "tax_id",
+    )
 
     # Purchase Order taxes
     create_tax_ids_description_field(
-        cr, 'purchase_order_line', 'tax_ids_description',
-        'purchase_order_taxe', 'ord_id', 'tax_id')
+        cr,
+        "purchase_order_line",
+        "tax_ids_description",
+        "purchase_order_taxe",
+        "ord_id",
+        "tax_id",
+    )
 
     # Sale Order taxes
     create_tax_ids_description_field(
-        cr, 'sale_order_line', 'tax_ids_description',
-        'sale_order_tax', 'order_line_id', 'tax_id')
+        cr,
+        "sale_order_line",
+        "tax_ids_description",
+        "sale_order_tax",
+        "order_line_id",
+        "tax_id",
+    )

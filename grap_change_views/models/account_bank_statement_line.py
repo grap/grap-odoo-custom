@@ -7,5 +7,5 @@ from openerp import models
 
 
 class AccountBankStatementLine(models.Model):
-    _inherit = 'account.bank.statement.line'
-    _order = 'date desc, journal_id'
+    _inherit = "account.bank.statement.line"
+    _order = "date desc, journal_id"

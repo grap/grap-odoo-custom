@@ -7,16 +7,16 @@ from openerp import api, models
 
 
 class StockInventory(models.Model):
-    _inherit = 'stock.inventory'
-    _order = 'date desc, name'
+    _inherit = "stock.inventory"
+    _order = "date desc, name"
 
     # Action Section
     @api.multi
     def action_view_lines(self):
         self.ensure_one()
-        action = self.env.ref(
-            'grap_change_views.action_view_lines_tree')
+        action = self.env.ref("grap_change_views.action_view_lines_tree")
         action_data = action.read()[0]
-        action_data['domain'] = "[('id','in',[" +\
-            ','.join(map(str, self.line_ids.ids)) + "])]"
+        action_data["domain"] = (
+            "[('id','in',[" + ",".join(map(str, self.line_ids.ids)) + "])]"
+        )
         return action_data

@@ -8,12 +8,16 @@ from openerp import models, fields
 
 
 class PosOrderLine(models.Model):
-    _inherit = 'pos.order.line'
-    _order = 'create_date desc'
+    _inherit = "pos.order.line"
+    _order = "create_date desc"
 
     state = fields.Selection(
-        related='order_id.state', string='State', readonly=True)
+        related="order_id.state", string="State", readonly=True
+    )
 
     partner_id = fields.Many2one(
-        related='order_id.partner_id', comodel_name='res.partner',
-        string='Customer', readonly=True)
+        related="order_id.partner_id",
+        comodel_name="res.partner",
+        string="Customer",
+        readonly=True,
+    )

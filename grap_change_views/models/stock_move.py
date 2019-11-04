@@ -7,17 +7,19 @@ from openerp import models, fields, api
 
 
 class StockMove(models.Model):
-    _inherit = 'stock.move'
+    _inherit = "stock.move"
 
     # Column Section
     workflow_description = fields.Char(
-        compute='_compute_workflow_description', string='Workflow',
-        store=True)
+        compute="_compute_workflow_description", string="Workflow", store=True
+    )
 
     # compute Section
     @api.multi
-    @api.depends('location_id', 'location_dest_id')
+    @api.depends("location_id", "location_dest_id")
     def _compute_workflow_description(self):
         for move in self:
-            move.workflow_description = '%s >> %s' % (
-                move.location_id.name, move.location_dest_id.name)
+            move.workflow_description = "%s >> %s" % (
+                move.location_id.name,
+                move.location_dest_id.name,
+            )

@@ -7,18 +7,21 @@ from openerp import models, api, fields
 
 
 class SaleOrderLine(models.Model):
-    _inherit = 'sale.order.line'
+    _inherit = "sale.order.line"
 
     # Column Section
     tax_ids_description = fields.Char(
-        string='Taxes', compute='_compute_tax_ids_description',
-        store=True)
+        string="Taxes", compute="_compute_tax_ids_description", store=True
+    )
 
     # Compute Section
     @api.multi
-    @api.depends('tax_id')
+    @api.depends("tax_id")
     def _compute_tax_ids_description(self):
         for line in self:
-            line.tax_ids_description = ','.join(
-                [x.description and x.description or x.name
-                    for x in line.tax_id])
+            line.tax_ids_description = ",".join(
+                [
+                    x.description and x.description or x.name
+                    for x in line.tax_id
+                ]
+            )

@@ -7,5 +7,5 @@ from openerp import models
 
 
 class StockPicking(models.Model):
-    _inherit = 'stock.picking'
-    _order = 'min_date desc, date desc'
+    _inherit = "stock.picking"
+    _order = "min_date desc, date desc"
