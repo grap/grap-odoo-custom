@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2014-Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, fields
+from odoo import models, api, fields
 
 
 class AccountInvoiceLine(models.Model):
@@ -13,7 +12,7 @@ class AccountInvoiceLine(models.Model):
     type = fields.Selection(
         related="invoice_id.type",
         string="Type",
-        select=True,
+        index=True,
         store=True,
         readonly=True,
     )
@@ -21,7 +20,7 @@ class AccountInvoiceLine(models.Model):
     state = fields.Selection(
         related="invoice_id.state",
         string="State",
-        select=True,
+        index=True,
         store=True,
         readonly=True,
     )
@@ -30,7 +29,7 @@ class AccountInvoiceLine(models.Model):
         related="invoice_id.partner_id",
         string="Partner",
         comodel_name="res.partner",
-        select=True,
+        index=True,
         store=True,
         readonly=True,
     )
@@ -38,7 +37,7 @@ class AccountInvoiceLine(models.Model):
     date_invoice = fields.Date(
         related="invoice_id.date_invoice",
         string="Date invoice",
-        select=True,
+        index=True,
         store=True,
         readonly=True,
     )
@@ -46,7 +45,7 @@ class AccountInvoiceLine(models.Model):
     categ_id = fields.Many2one(
         related="product_id.categ_id",
         string="Category",
-        select=True,
+        index=True,
         comodel_name="product.category",
         store=True,
         readonly=True,

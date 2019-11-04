@@ -6,7 +6,7 @@ Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp><data>
+<odoo>
 
     <record id="view_stock_inventory_line_tree" model="ir.ui.view">
         <field name="model">stock.inventory.line</field>
@@ -31,4 +31,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="view_mode">tree</field>
         <field name="view_id" ref="view_stock_inventory_line_tree"/>
     </record>
-</data></openerp>
+</odoo>

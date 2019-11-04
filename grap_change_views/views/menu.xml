@@ -6,7 +6,7 @@ Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp><data>
+<odoo>
 
 <!-- Reorder Main Menu-->
     <record model="ir.ui.menu" id="grap_cooperative.menu_grap_root">
@@ -60,7 +60,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <!-- enable Menu to basic user -->
     <record model="ir.ui.menu" id="product.menu_product_pricelist_action2">
-        <field eval="[(6, 0, [ref('base.group_sale_salesman_all_leads')])]" name="groups_id"/>
+        <field eval="[(6, 0, [ref('sales_team.group_sale_salesman_all_leads')])]" name="groups_id"/>
     </record>
 
 <!-- Enable menu for standard User -->
@@ -330,4 +330,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field eval="[(6, 0, [ref('base.group_no_one')])]" name="groups_id"/>
     </record>
 
-</data></openerp>
+</odoo>

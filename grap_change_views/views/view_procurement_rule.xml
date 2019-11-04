@@ -5,7 +5,7 @@ Copyright (C) 2018-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp><data>
+<odoo>
 
     <record id="view_procurement_rule_search" model="ir.ui.view">
         <field name="model">procurement.rule</field>
@@ -30,4 +30,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-</data></openerp>
+</odoo>
