@@ -58,6 +58,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="partner_id" position="after">
                 <field name="client_order_ref"/>
             </field>
+            <field name="payment_term" position="replace"/>
+            <field name="fiscal_position" position="replace"/>
+            <field name="client_order_ref" position="after">
+                <field name="payment_term" options="{'no_create': True}"/>
+                <field name="fiscal_position" options="{'no_create': True}" on_change="onchange_fiscal_position(fiscal_position, order_line, context)"/>
+            </field>
             <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>
@@ -124,5 +130,28 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_sale_order_form_sale_crm" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_crm.sale_view_inherit123" />
+        <field name="arch" type="xml">
+            <field name="categ_ids" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_sale_order_form_sale_stock" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_stock.view_order_form_inherit" />
+        <field name="arch" type="xml">
+            <field name="order_policy" position="replace"/>
+            <field name="client_order_ref" position="after">
+                <field name="order_policy"/>
+            </field>
+        </field>
+    </record>
+
+
+  
 
 </data></openerp>
