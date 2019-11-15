@@ -5,7 +5,7 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Quentin DUPONT <quentin.dupont@grap.coop>
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
     <record id="view_account_tax_code_template_form" model="ir.ui.view">
         <field name="model">account.tax.code.template</field>
@@ -28,4 +28,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
   
 
-</data></openerp>
+</odoo>

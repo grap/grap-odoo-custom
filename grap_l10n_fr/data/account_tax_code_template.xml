@@ -5,7 +5,7 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Quentin DUPONT <quentin.dupont@grap.coop>
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
     <record model="account.tax.code.template" id="l10n_fr.tax_acq_200">
         <field name="ebp_suffix">1</field>
@@ -108,5 +108,5 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="active" eval="False"/>
     </record>
 
-</data></openerp>
+</odoo>
 

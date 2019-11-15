@@ -4,7 +4,7 @@ Copyright (C) 2019 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
     <!-- B2C Fiscal Classification Template -->
     <record id="fiscal_classification_template_b2c_20" model="account.product.fiscal.classification.template">
@@ -62,4 +62,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="usage_group_id" ref="account.group_account_manager"/>
     </record>
 
-</data></openerp>
+</odoo>
