@@ -7,6 +7,6 @@ from openerp import fields, models
 
 
 class AccountAccountTemplate(models.Model):
-    _inherit = 'account.account.template'
+    _inherit = "account.account.template"
 
-    active = fields.Boolean(string='active', default=True)
+    active = fields.Boolean(string="active", default=True)
