@@ -5,7 +5,7 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
-<!-- 
+
     <record id="category_pricetag_small" model="product.print.category">
         <field name="name">Normal (small) - 76x33mm</field>
         <field name="qweb_view_id" ref="qweb_template_pricetag_normal_small" />
@@ -21,7 +21,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
             (4, ref('product.field_product_product__list_price'))]" />
-    </record> -->
+    </record>
 
     <record id="category_pricetag_large" model="product.print.category">
         <field name="name">Normal (large) - 76x43mm</field>
