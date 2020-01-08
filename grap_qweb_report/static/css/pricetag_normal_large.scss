@@ -1,0 +1,51 @@
+.normal_pricetag_large {
+    width:9.3cm; height:5.22cm;
+    padding: 0.8cm 5px;
+
+    .pricetag_left {
+        width : 6cm;
+    }
+    .pricetag_right {
+        width : 2.9cm;
+        height: 3.6cm;
+    }
+    .product_informations {
+        font-size:8px;
+    }
+    .pricetag_second_product_price {
+        font-size: 26px;
+    }
+    .pricetag_second_product_price_noimage {
+        font-size: 35px
+    }
+    .pricetag_second_price_uom_text {
+        font-size: 10px;
+    }
+    .pricetag_second_price_uom_text_noimage {
+        font-size: 13px;
+    }
+    .product_price_noimage {
+        font-size: 32px;
+        height: 1cm; line-height: 1cm;
+    }
+    .product_sell_by_weight {
+        bottom: 0.3em;
+    }
+    .product_labels, .organic_text{
+        height:0.8cm;
+    }            
+    img.product_label{
+        width:0.6cm; height:0.6cm; margin: 0.1cm 0.1cm 0.1cm -0.1cm;
+    }
+    .organic_text{
+        max-width: 3.5cm;
+        position: relative; top: 0.1cm;
+        font-size: 7px;
+    }
+    .wrap_barcode_image{
+        position: relative;
+        height: 1.1cm;
+        bottom: 0;
+        left: 5px;
+    }
+}
