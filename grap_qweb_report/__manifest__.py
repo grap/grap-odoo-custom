@@ -24,6 +24,7 @@
     ],
     "data": [
         "report/qweb_pricetag_normal_large.xml",
+        "report/qweb_pricetag_normal_small.xml",
         "data/product_print_category.xml",
     ],
     "qweb": [],
