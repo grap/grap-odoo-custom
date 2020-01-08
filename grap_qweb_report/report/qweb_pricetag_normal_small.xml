@@ -8,19 +8,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- We add css in assets common, file shared for custom reports -->
-    <template id="css_qweb_template_pricetag_normal_large" inherit_id="web.report_assets_common">
+    <template id="css_qweb_template_pricetag_normal_small" inherit_id="web.report_assets_common">
         <xpath expr="." position="inside">
             <!-- pricetag_base.scss et pricetag_normal_base.scss sont importés dans product_print_category_food_report -->
-            <link href="/grap_qweb_report/static/css/pricetag_normal_large.scss" rel="stylesheet" type="text/scss"/>
+            <link href="/grap_qweb_report/static/css/pricetag_normal_small.scss" rel="stylesheet" type="text/scss"/>
         </xpath>
     </template>
 
-    <template id="qweb_template_pricetag_normal_large">
+    <template id="qweb_template_pricetag_normal_small">
         <t t-call="web.basic_layout">
             <t t-foreach="category_data['lines']" t-as="line">
                 <t t-foreach="line.quantity" t-as="q">
-                    <!-- NORMAL PRICETAG LARGE -->
-                    <div class="normal_pricetag normal_pricetag_large floating_box">
+                    <!-- NORMAL PRICETAG SMALL -->
+                    <div class="normal_pricetag normal_pricetag_small floating_box">
                         <div class="pricetag_left floating_box">
                             <div class="product_name" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                                 <t t-esc="line.product_id.name"/>
