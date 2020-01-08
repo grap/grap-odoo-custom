@@ -4,7 +4,7 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
     <template id="grap_template_account_invoice_document">
         <t t-call="grap_qweb_report.grap_layout">
@@ -193,7 +193,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </template>
 
     <template id="grap_template_account_invoice">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="doc_ids" t-as="doc_id">
                 <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'grap_qweb_report.grap_template_account_invoice_document')"/>
             </t>
@@ -202,11 +202,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- We replace account.report_invoice because it is called instead of the name of the report -->
     <template id="account.report_invoice">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="doc_ids" t-as="doc_id">
                 <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'grap_qweb_report.grap_template_account_invoice_document')"/>
             </t>
         </t>
     </template>
 
-</data></openerp>
+</odoo>

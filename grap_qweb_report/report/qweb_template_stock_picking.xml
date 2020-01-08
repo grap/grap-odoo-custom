@@ -4,10 +4,10 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
     <template id="grap_template_stock_picking">
-        <t t-call="report.html_container">
+        <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="grap_qweb_report.grap_layout">
                     <div class="page">
@@ -167,4 +167,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
          </t>
     </template>
 
-</data></openerp>
+</odoo>

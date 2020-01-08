@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_product_pricetag_type_manager,Product Pricetag Type Manager,model_product_pricetag_type,base.group_sale_manager,1,1,1,1
-access_product_pricetag_type_all,Product Pricetag Type All,model_product_pricetag_type,,1,,,
