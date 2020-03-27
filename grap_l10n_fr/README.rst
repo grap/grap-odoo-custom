@@ -44,6 +44,7 @@ to make easy the creation of taxes and accounts for GRAP.
 
 **``account.tax.code.template`` Datas**
 
+* Add a new field ``active``
 * Add EBP code
 
 **``account.fiscal.position.template`` Model**
@@ -96,9 +97,6 @@ Contributors
 Maintainers
 ~~~~~~~~~~~
 
-
-
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/8.0/grap_l10n_fr>`_ project on GitHub.
-
 
 You are welcome to contribute.
