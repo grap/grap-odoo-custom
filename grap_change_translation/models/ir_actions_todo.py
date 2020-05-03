@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductPricelist(models.Model):
-    _inherit = "product.pricelist"
+class IrActionsTodo(models.Model):
+    _inherit = "ir.actions.todo"
 
-    name = fields.Char(translate=False)
+    note = fields.Text(translate=False)

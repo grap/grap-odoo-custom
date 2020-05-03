@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class StockLocation(models.Model):
-    _inherit = "stock.location"
+class SaleOrderTemplateLine(models.Model):
+    _inherit = "sale.order.template.line"
 
-    name = fields.Char(translate=False)
+    name = fields.Text(translate=False)

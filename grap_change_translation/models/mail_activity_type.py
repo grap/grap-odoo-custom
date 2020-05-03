@@ -5,7 +5,9 @@
 from odoo import models, fields
 
 
-class ProductUl(models.Model):
-    _inherit = "product.ul"
+class MailActivityType(models.Model):
+    _inherit = "mail.activity.type"
 
     name = fields.Char(translate=False)
+
+    summary = fields.Char(translate=False)

@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductPricelistVersion(models.Model):
-    _inherit = "product.pricelist.version"
+class AccountProductFiscalClassificationTemplate(models.Model):
+    _inherit = "account.product.fiscal.classification.template"
 
     name = fields.Char(translate=False)

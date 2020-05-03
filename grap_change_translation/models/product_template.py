@@ -8,10 +8,16 @@ from odoo import models, fields
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    name = fields.Char(translate=False)
-
     description = fields.Char(translate=False)
+
+    description_picking = fields.Char(translate=False)
+
+    description_pickingin = fields.Char(translate=False)
+
+    description_pickingout = fields.Char(translate=False)
 
     description_purchase = fields.Char(translate=False)
 
     description_sale = fields.Char(translate=False)
+
+    name = fields.Char(translate=False)

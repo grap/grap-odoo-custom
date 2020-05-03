@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductUom(models.Model):
-    _inherit = "product.uom"
+class UomCategory(models.Model):
+    _inherit = "uom.category"
 
     name = fields.Char(translate=False)

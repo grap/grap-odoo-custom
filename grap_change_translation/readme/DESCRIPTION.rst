@@ -1,0 +1,37 @@
+Disable the mechanism of translation for some fields of the following models:
+
+* ``account.account.type``
+* ``account.cash.rounding``
+* ``account.fiscal.position``
+* ``account_incoterms``
+* ``account_payment_method``
+* ``account_payment_term``
+* ``account_product_fiscal_classification``
+* ``account_product_fiscal_classification_template``
+* ``account_tax_group``
+* ``calendar_alarm``
+* ``crm_lead_tag``
+* ``crm_stage``
+* ``crm_team``
+* ``delivery_carrier``
+* ``ur_actions_todo``
+* ``mail_activity_type``
+* ``mail_channel``
+* ``payment_acquirer``
+* ``pos.category``
+* ``product.attribute``
+* ``product.attribute.value``
+* ``product.category``
+* ``product.template``
+* ``product.template.attribute.value``
+* ``res_company``
+* ``res.config.settings``
+* ``res.partner.title``
+* ``res.partner.category``
+* ``sale.order.template.line``
+* ``stock.location.route``
+* ``stock.picking.type``
+* ``stock.rule``
+* ``uom.uom``
+* ``utm.campaign``
+* ``utm.source``

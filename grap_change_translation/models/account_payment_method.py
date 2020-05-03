@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProcurementRule(models.Model):
-    _inherit = "procurement.rule"
+class AccountPaymentMethod(models.Model):
+    _inherit = "account.payment.method"
 
     name = fields.Char(translate=False)

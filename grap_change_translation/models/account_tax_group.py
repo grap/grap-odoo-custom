@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class AccountTax(models.Model):
-    _inherit = "account.tax"
+class AccountTaxGroup(models.Model):
+    _inherit = "account.tax.group"
 
     name = fields.Char(translate=False)

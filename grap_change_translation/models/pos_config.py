@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class AccountTaxCode(models.Model):
-    _inherit = "account.tax.code"
+class PosConfig(models.Model):
+    _inherit = "pos.config"
 
-    name = fields.Char(translate=False)
+    customer_facing_display_html = fields.Html(translate=False)
