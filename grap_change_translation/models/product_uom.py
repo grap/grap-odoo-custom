@@ -7,6 +7,6 @@ from openerp import models, fields
 
 
 class ProductUom(models.Model):
-    _inherit = 'product.uom'
+    _inherit = "product.uom"
 
     name = fields.Char(translate=False)

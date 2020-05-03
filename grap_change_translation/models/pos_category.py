@@ -7,6 +7,6 @@ from openerp import models, fields
 
 
 class PosCategory(models.Model):
-    _inherit = 'pos.category'
+    _inherit = "pos.category"
 
     name = fields.Char(translate=False)

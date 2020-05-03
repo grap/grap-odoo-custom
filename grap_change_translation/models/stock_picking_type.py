@@ -7,6 +7,6 @@ from openerp import models, fields
 
 
 class StockPickingType(models.Model):
-    _inherit = 'stock.picking.type'
+    _inherit = "stock.picking.type"
 
     name = fields.Char(translate=False)

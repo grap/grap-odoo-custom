@@ -7,7 +7,7 @@ from openerp import models, fields
 
 
 class AccountPaymentTerm(models.Model):
-    _inherit = 'account.payment.term'
+    _inherit = "account.payment.term"
 
     name = fields.Char(translate=False)
 

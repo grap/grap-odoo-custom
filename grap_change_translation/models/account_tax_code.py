@@ -7,6 +7,6 @@ from openerp import models, fields
 
 
 class AccountTaxCode(models.Model):
-    _inherit = 'account.tax.code'
+    _inherit = "account.tax.code"
 
     name = fields.Char(translate=False)

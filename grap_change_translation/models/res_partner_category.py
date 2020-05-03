@@ -7,6 +7,6 @@ from openerp import models, fields
 
 
 class ResPartnerCategory(models.Model):
-    _inherit = 'res.partner.category'
+    _inherit = "res.partner.category"
 
     name = fields.Char(translate=False)

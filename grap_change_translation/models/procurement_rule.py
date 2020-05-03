@@ -7,6 +7,6 @@ from openerp import models, fields
 
 
 class ProcurementRule(models.Model):
-    _inherit = 'procurement.rule'
+    _inherit = "procurement.rule"
 
     name = fields.Char(translate=False)
