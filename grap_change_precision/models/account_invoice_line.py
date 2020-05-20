@@ -10,10 +10,14 @@ from odoo.addons import decimal_precision as dp
 class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
-    price_unit = fields.Float(
-        digits=dp.get_precision("GRAP Purchase Unit Price")
+    purchase_price = fields.Float(
+        digits=dp.get_precision("GRAP Cost Price")
     )
 
-    discount = fields.Float(
-        digits=dp.get_precision("GRAP Purchase Unit Discount")
+    margin = fields.Float(
+        digits=dp.get_precision("GRAP Cost Price")
+    )
+
+    margin_signed = fields.Float(
+        digits=dp.get_precision("GRAP Cost Price")
     )

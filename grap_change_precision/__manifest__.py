@@ -6,16 +6,21 @@
     "name": "GRAP - Change Precision",
     "version": "12.0.1.0.0",
     "summary": "Change the precisions names and values of some fields",
-    "category": "Custom",
+    "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
-        "product",
-        "purchase",
-        "point_of_sale",
+        "account_invoice_margin",
+        "pos_margin",
+        "sale_margin",
         "product_standard_price_tax_included",
     ],
-    "data": ["data/decimal_precision.xml",],
+    "data": [
+        "data/decimal_precision.xml",
+    ],
+    "demo": [
+        "demo/res_groups.xml",
+    ],
     "installable": True,
 }
