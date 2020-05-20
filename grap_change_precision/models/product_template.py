@@ -8,10 +8,12 @@ from openerp.addons import decimal_precision as dp
 
 
 class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+    _inherit = "product.template"
 
     standard_price = fields.Float(
-        digits=dp.get_precision('GRAP Purchase Unit Price'))
+        digits=dp.get_precision("GRAP Purchase Unit Price")
+    )
 
     standard_price_tax_included = fields.Float(
-        digits=dp.get_precision('GRAP Purchase Unit Price'))
+        digits=dp.get_precision("GRAP Purchase Unit Price")
+    )

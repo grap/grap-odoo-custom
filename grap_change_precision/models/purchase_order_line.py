@@ -8,7 +8,8 @@ from openerp.addons import decimal_precision as dp
 
 
 class PurchaseOrderLine(models.Model):
-    _inherit = 'purchase.order.line'
+    _inherit = "purchase.order.line"
 
     price_unit = fields.Float(
-        digits=dp.get_precision('GRAP Purchase Unit Price'))
+        digits=dp.get_precision("GRAP Purchase Unit Price")
+    )

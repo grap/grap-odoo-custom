@@ -8,6 +8,6 @@ from openerp.addons import decimal_precision as dp
 
 
 class PosOrderLine(models.Model):
-    _inherit = 'pos.order.line'
+    _inherit = "pos.order.line"
 
-    qty = fields.Float(digits=dp.get_precision('Product UoS'))
+    qty = fields.Float(digits=dp.get_precision("Product UoS"))

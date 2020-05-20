@@ -9,10 +9,12 @@ from openerp.addons import decimal_precision as dp
 
 
 class AccountInvoiceLine(models.Model):
-    _inherit = 'account.invoice.line'
+    _inherit = "account.invoice.line"
 
     price_unit = fields.Float(
-        digits=dp.get_precision('GRAP Purchase Unit Price'))
+        digits=dp.get_precision("GRAP Purchase Unit Price")
+    )
 
     discount = fields.Float(
-        digits=dp.get_precision('GRAP Purchase Unit Discount'))
+        digits=dp.get_precision("GRAP Purchase Unit Discount")
+    )
