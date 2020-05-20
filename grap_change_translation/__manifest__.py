@@ -4,6 +4,8 @@
 
 {
     "name": "GRAP - Change translation",
+    "summary": "Disable the translation mechanism for a many"
+    " fields",
     "version": "12.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
