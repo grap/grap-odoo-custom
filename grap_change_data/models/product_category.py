@@ -2,10 +2,12 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, models
 
 
 class ProductCategory(models.Model):
     _inherit = "product.category"
 
-    active = fields.Boolean(string="active", default=True)
+    @api.constrains("active")
+    def _check_archive(self):
+        return True

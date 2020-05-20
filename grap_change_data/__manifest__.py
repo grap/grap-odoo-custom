@@ -9,7 +9,14 @@
     "author": "GRAP",
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
-    "depends": ["product",],
-    "data": ["data/product_category.xml",],
+    "depends": [
+        "product",
+        "point_of_sale",
+        "product_category_active",
+    ],
+    "data": [
+        "data/product_category.xml",
+        "data/product_product.xml",
+    ],
     "installable": True,
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="point_of_sale.product_product_consumable_product_template" model="product.template">
+        <field name="active" eval="False" />
+    </record>
+
+    <record id="point_of_sale.product_product_tip_product_template" model="product.template">
+        <field name="active" eval="False" />
+    </record>
+
+</odoo>
