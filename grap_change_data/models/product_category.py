@@ -7,6 +7,6 @@ from openerp import fields, models
 
 
 class ProductCategory(models.Model):
-    _inherit = 'product.category'
+    _inherit = "product.category"
 
-    active = fields.Boolean(string='active', default=True)
+    active = fields.Boolean(string="active", default=True)
