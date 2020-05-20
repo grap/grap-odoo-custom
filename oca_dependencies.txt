@@ -1,11 +1,1 @@
-sale-workflow                   https://github.com/grap/sale-workflow.git                           8.0_FIX_IMP_product_margin_classification
-knowledge
 product-attribute
-
-grap-odoo-incubator             https://github.com/grap/grap-odoo-incubator.git                     8.0
-grap-odoo-business              https://github.com/grap/grap-odoo-business.git                      8.0
-
-odoo-addons-cae                 https://github.com/grap/odoo-addons-cae.git                         8.0
-odoo-addons-intercompany-trade  https://github.com/grap/odoo-addons-intercompany-trade.git 8.0      8.0
-
-odoo-addons-grap                https://github.com/grap/odoo-addons-grap.git                        8.0
