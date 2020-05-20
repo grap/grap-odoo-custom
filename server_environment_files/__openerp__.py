@@ -5,18 +5,12 @@
 
 
 {
-    'name': 'GRAP - Configuration Environment Files',
-    'version': '8.0.1.0.0',
-    'category': 'GRAP - Custom',
-    'author': 'GRAP',
-    'license': 'AGPL-3',
-    'depends': [
-        'base',
-        'server_environment',
-        'point_of_sale',
-    ],
-    'data': [
-        'views/templates.xml',
-    ],
-    'installable': False,
+    "name": "GRAP - Configuration Environment Files",
+    "version": "8.0.1.0.0",
+    "category": "GRAP - Custom",
+    "author": "GRAP",
+    "license": "AGPL-3",
+    "depends": ["base", "server_environment", "point_of_sale",],
+    "data": ["views/templates.xml",],
+    "installable": False,
 }
