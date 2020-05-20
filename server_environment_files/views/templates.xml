@@ -5,18 +5,27 @@ Copyright (C) 2019-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp><data>
+<odoo>
 
-    <template id="web_assets" inherit_id="web.layout">
-        <xpath expr="//head" position="inside">
-            <link rel="stylesheet" href="/server_environment_files/static/RUNNING_ENV/web.css"/>
+    <template id="web_login_layout" inherit_id="web.login_layout" >
+        <xpath expr="." position="inside">
+            <t t-set="web_login_layout_path" t-value="request.env['ir.config_parameter'].sudo().get_param('web_login_layout_path', None)" />
+            <link t-if="web_login_layout_path" rel="stylesheet" t-att-href="web_login_layout_path"/>
         </xpath>
     </template>
 
-    <template id="point_of_sale_assets" inherit_id="point_of_sale.index">
-        <xpath expr="//link[@id='pos-stylesheet']" position="after">
-            <link rel="stylesheet" href="/server_environment_files/static/RUNNING_ENV/point_of_sale.css"/>
+    <template id="web_webclient_bootstrap" inherit_id="web.webclient_bootstrap">
+        <xpath expr="." position="inside">
+            <t t-set="web_webclient_bootstrap_path" t-value="request.env['ir.config_parameter'].sudo().get_param('web_webclient_bootstrap_path', None)" />
+            <link t-if="web_webclient_bootstrap_path" rel="stylesheet" t-att-href="web_webclient_bootstrap_path"/>
         </xpath>
     </template>
 
-</data></openerp>
+    <template id="point_of_sale_index" inherit_id="point_of_sale.index">
+        <xpath expr="." position="inside">
+            <t t-set="point_of_sale_index_path" t-value="request.env['ir.config_parameter'].sudo().get_param('point_of_sale_index_path', None)" />
+            <link t-if="point_of_sale_index_path" rel="stylesheet" t-att-href="point_of_sale_index_path"/>
+        </xpath>
+    </template>
+
+</odoo>
