@@ -16,12 +16,18 @@ You could be interesting too by the following repositories:
 
 [//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[grap_change_data](grap_change_data/) | 12.0.1.0.0 | GRAP - Change Data
+
+
 Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
 [grap_change_access](grap_change_access/) | 8.0.1.0.0 (unported) | GRAP - Change Accesses
-[grap_change_data](grap_change_data/) | 8.0.1.0.0 (unported) | GRAP - Change Data
 [grap_change_email](grap_change_email/) | 8.0.4.0.0 (unported) | GRAP Custom - Change eMail
 [grap_change_ir_values](grap_change_ir_values/) | 8.0.1.0.0 (unported) | GRAP - Change Ir Values
 [grap_change_precision](grap_change_precision/) | 8.0.1.0.0 (unported) | Change the precisions names and values of some fields
