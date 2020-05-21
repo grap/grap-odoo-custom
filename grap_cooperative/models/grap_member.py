@@ -7,32 +7,33 @@ from openerp import fields, models
 
 
 class GrapMember(models.Model):
-    _name = 'grap.member'
-    _order = 'name'
+    _name = "grap.member"
+    _order = "name"
 
     # Columns section
-    name = fields.Char(string='Name', readonly=True)
+    name = fields.Char(string="Name", readonly=True)
 
-    image = fields.Binary(string='Image')
+    image = fields.Binary(string="Image")
 
-    street = fields.Char(string='Street', size=128)
+    street = fields.Char(string="Street", size=128)
 
-    zip = fields.Char(string='Zip')
+    zip = fields.Char(string="Zip")
 
-    city = fields.Char(string='City')
+    city = fields.Char(string="City")
 
-    working_email = fields.Char(string='Contact EMail')
+    working_email = fields.Char(string="Contact EMail")
 
-    working_phone = fields.Char(string='Working Phone')
+    working_phone = fields.Char(string="Working Phone")
 
-    college_id = fields.Many2one(
-        string='College', comodel_name='grap.college')
+    college_id = fields.Many2one(string="College", comodel_name="grap.college")
 
-    date_capital_entry = fields.Date(string='Entry date In Capital')
+    date_capital_entry = fields.Date(string="Entry date In Capital")
 
-    share_number = fields.Integer(string='Number of Share in Capital')
+    share_number = fields.Integer(string="Number of Share in Capital")
 
     # Overload section
+
+
 #    def name_get(self, cr, uid, ids, context=None):
 #        return super(GrapMember, self).name_get(cr, uid, ids, context=context)
 

@@ -7,21 +7,22 @@ from openerp import api, fields, models
 
 
 class GrapCollege(models.Model):
-    _name = 'grap.college'
+    _name = "grap.college"
 
-    name = fields.Char('Name', required=True)
+    name = fields.Char("Name", required=True)
 
-    percentage = fields.Integer(string='Percentage', required=True)
+    percentage = fields.Integer(string="Percentage", required=True)
 
     member_ids = fields.One2many(
-        string='Members', comodel_name='grap.member',
-        inverse_name='college_id')
+        string="Members", comodel_name="grap.member", inverse_name="college_id"
+    )
 
     member_qty = fields.Integer(
-        string='Members Quantity', compute='_compute_member_qty', store=True)
+        string="Members Quantity", compute="_compute_member_qty", store=True
+    )
 
     @api.multi
-    @api.depends('member_ids.college_id')
+    @api.depends("member_ids.college_id")
     def _compute_member_qty(self):
         for item in self:
             item.member_qty = len(item.member_ids)
