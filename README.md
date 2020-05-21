@@ -21,7 +21,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [grap_change_data](grap_change_data/) | 12.0.1.0.1 | GRAP - Change Data
-[grap_change_translation](grap_change_translation/) | 12.0.1.0.0 | Disable the translation mechanism for a many fields
+[grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
 
 
 Unported addons
