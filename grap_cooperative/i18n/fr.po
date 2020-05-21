@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-22 14:58+0000\n"
-"PO-Revision-Date: 2019-03-22 14:58+0000\n"
+"POT-Creation-Date: 2020-05-22 22:33+0000\n"
+"PO-Revision-Date: 2020-05-22 22:33+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_tree
-msgid "# of FTE"
-msgstr "# d'ETP"
-
-#. module: grap_cooperative
-#: code:addons/grap_cooperative/models/grap_activity_people.py:54
-#, python-format
-msgid "%s (%s FTE"
-msgstr "%s (%s FTE"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_category_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_college_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_type_kanban
+msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
+msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
 
 #. module: grap_cooperative
 #: sql_constraint:grap.activity.people:0
@@ -32,418 +29,401 @@ msgid "A people can work only once time in an activity!"
 msgstr "Une personne peut être liée à une activité seulement une fois !"
 
 #. module: grap_cooperative
-#: field:grap.people,accountant_activity_ids:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__accountant_activity_ids
 msgid "Accounting Performed for Activities"
 msgstr "Comptabilité réalisé pour les activités"
 
 #. module: grap_cooperative
-#: field:grap.activity,accountant_interlocutor_id:0
-msgid "Accoutant Interlocutor"
-msgstr "Interlocuteur comptable"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__accountant_interlocutor_id
+msgid "Accoutant"
+msgstr "Comptable"
 
 #. module: grap_cooperative
-#: view:grap.category:grap_cooperative.view_grap_category_form
-#: field:grap.category,activity_ids:0
-#: field:grap.people,activity_ids:0
-#: view:grap.type:grap_cooperative.view_grap_type_form
-#: field:grap.type,activity_ids:0
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_activity
-#: model:ir.model,name:grap_cooperative.model_grap_activity
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_category_to_grap_activity
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_type_to_grap_activity
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__activity_ids
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__activity_ids
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__activity_ids
 #: model:ir.ui.menu,name:grap_cooperative.menu_activity
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_category_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_type_kanban
 msgid "Activities"
 msgstr "Activités"
 
 #. module: grap_cooperative
-#: field:grap.type,activity_qty:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__activity_description
+msgid "Activities Description"
+msgstr "Activités"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__activity_qty
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__activity_qty
 msgid "Activities Quantity"
 msgstr "Nombre d'activités"
 
 #. module: grap_cooperative
-#: field:grap.category,activity_qty:0
-msgid "Activities count"
-msgstr "Nombre d'activités"
-
-#. module: grap_cooperative
-#: field:grap.activity.people,activity_id:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__activity_id
 msgid "Activity"
 msgstr "Activité"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-msgid "Activity Contact"
-msgstr "Contact"
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_category
+#: model:ir.ui.menu,name:grap_cooperative.menu_category
+msgid "Activity Categories"
+msgstr "Catégories d'activité"
 
 #. module: grap_cooperative
-#: field:grap.activity,attendant_interlocutor_id:0
-msgid "Attendant Interlocutor"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__activity_name
+msgid "Activity Name"
+msgstr "Nom de l'activité"
+
+#. module: grap_cooperative
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_type
+#: model:ir.ui.menu,name:grap_cooperative.menu_type
+msgid "Activity Types"
+msgstr "Types d'activités"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__attendant_interlocutor_id
+msgid "Attendant"
 msgstr "Accompagnateur"
 
 #. module: grap_cooperative
-#: field:grap.people,attendant_activity_ids:0
-msgid "Attending Performed for Activities"
-msgstr "Accompagnement réalisé pour les activités"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+msgid "Avatar"
+msgstr "Avatar"
 
 #. module: grap_cooperative
-#: field:grap.people,birthdate:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__birthdate
 msgid "Birthdate"
-msgstr "Birthdate"
+msgstr "Date de naissance"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-msgid "Business In Date"
-msgstr "Début économique"
-
-#. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-msgid "Business Out Date"
-msgstr "Fin économique"
-
-#. module: grap_cooperative
-#: field:grap.activity,category_ids:0
-#: model:ir.actions.act_window,name:grap_cooperative.action_grap_category
-#: model:ir.ui.menu,name:grap_cooperative.menu_category
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__category_ids
 msgid "Categories"
 msgstr "Catégories"
 
 #. module: grap_cooperative
-#: model:ir.model,name:grap_cooperative.model_grap_category
-msgid "Category of activities"
-msgstr "Catégorie d'activités"
-
-#. module: grap_cooperative
-#: field:grap.activity,city:0
-#: field:grap.member,city:0
-#: field:grap.people,city:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__city
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__city
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__city
 msgid "City"
 msgstr "Ville"
 
 #. module: grap_cooperative
-#: field:grap.activity,code:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__code
 msgid "Code"
 msgstr "Code"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_search
-#: field:grap.activity,college_id:0
-#: view:grap.member:grap_cooperative.view_grap_member_search
-#: field:grap.member,college_id:0
-#: view:grap.people:grap_cooperative.view_grap_people_search
-#: field:grap.people,college_id:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__college_id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__college_id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__college_id
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_member_search
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
 msgid "College"
 msgstr "Collège"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_college
-#: model:ir.model,name:grap_cooperative.model_grap_college
 #: model:ir.ui.menu,name:grap_cooperative.menu_college
 msgid "Colleges"
 msgstr "Collèges"
 
 #. module: grap_cooperative
-#: field:grap.people,color:0
-msgid "Color"
-msgstr "Color"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__color
+msgid "Color Index"
+msgstr "Couleur"
 
 #. module: grap_cooperative
-#: field:grap.activity,working_email:0
-#: field:grap.activity.people,working_email:0
-#: field:grap.member,working_email:0
-#: field:grap.people,working_email:0
-msgid "Contact EMail"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__complete_name
+msgid "Complete Name"
+msgstr "Nom Complet"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+msgid "Contact"
+msgstr "Contact"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__working_email
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_working_email
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__working_email
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__working_email
+msgid "Contact Email"
 msgstr "Email de contact"
 
 #. module: grap_cooperative
-#: view:grap.member:grap_cooperative.view_grap_member_form
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_member_form
 msgid "Contact information"
 msgstr "Information sur le contact"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-#: view:grap.member:grap_cooperative.view_grap_member_form
-#: view:grap.people:grap_cooperative.view_grap_people_form
+#: model:ir.ui.menu,name:grap_cooperative.menu_cooperative
+msgid "Cooperative"
+msgstr "Coopérative"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_member_form
 msgid "Cooperative Information"
-msgstr "Information pour la coopérative"
+msgstr "Information coopérative"
 
 #. module: grap_cooperative
-#: field:grap.activity,create_uid:0
-#: field:grap.activity.people,create_uid:0
-#: field:grap.category,create_uid:0
-#: field:grap.college,create_uid:0
-#: field:grap.mandate,create_uid:0
-#: field:grap.member,create_uid:0
-#: field:grap.people,create_uid:0
-#: field:grap.type,create_uid:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__create_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Créé par"
 
 #. module: grap_cooperative
-#: field:grap.activity,create_date:0
-#: field:grap.activity.people,create_date:0
-#: field:grap.category,create_date:0
-#: field:grap.college,create_date:0
-#: field:grap.mandate,create_date:0
-#: field:grap.member,create_date:0
-#: field:grap.people,create_date:0
-#: field:grap.type,create_date:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__create_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Créé le"
 
 #. module: grap_cooperative
-#: view:grap.member:grap_cooperative.view_grap_member_tree
-msgid "Date"
-msgstr "Date"
-
-#. module: grap_cooperative
-#: field:grap.activity,date_in:0
-msgid "Date of activity begins to work"
-msgstr "Date de début d'activité économique"
-
-#. module: grap_cooperative
-#: field:grap.activity,date_out:0
-msgid "Date of activity ends to work"
-msgstr "Date de fin d'activité économique"
-
-#. module: grap_cooperative
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_people
 #: model:ir.ui.menu,name:grap_cooperative.menu_directory
+#: model:ir.ui.menu,name:grap_cooperative.menu_people
 msgid "Directory"
 msgstr "Annuaire"
 
 #. module: grap_cooperative
-#: field:grap.activity,display_name:0
-#: field:grap.activity.people,display_name:0
-#: field:grap.category,display_name:0
-#: field:grap.college,display_name:0
-#: field:grap.mandate,display_name:0
-#: field:grap.member,display_name:0
-#: field:grap.people,display_name:0
-#: field:grap.type,display_name:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__display_name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__display_name
 msgid "Display Name"
-msgstr "Display Name"
+msgstr "Nom affiché"
 
 #. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_activity
-msgid "Display and manage activities of the cooperative."
-msgstr "Afficher et gérer les activités de la coopérative."
-
-#. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_category
-msgid "Display and manage categories of activities in the cooperative."
-msgstr "Afficher gérer les catégories d'activités au sein de la coopérative."
-
-#. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_college
-msgid "Display and manage college of the cooperative."
-msgstr "Afficher et gérer les collèges de la coopérative."
-
-#. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_mandate
-msgid "Display and manage mandates in the cooperative."
-msgstr "Afficher et gérer les mandats au sein de la coopérative."
-
-#. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_people
-msgid "Display and manage people of the cooperative."
-msgstr "Afficher et gérer les personnes de la coopératives."
-
-#. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_type
-msgid "Display and manage types in the cooperative."
-msgstr "Afficher et gérer les types d'associations possibles au sein de la coopérative."
-
-#. module: grap_cooperative
-#: model:ir.actions.act_window,help:grap_cooperative.action_grap_member
-msgid "Display members of the cooperative."
-msgstr "Afficher les membres de la coopérative."
-
-#. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_search
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
 msgid "Email"
-msgstr "Email"
+msgstr "Courriel"
 
 #. module: grap_cooperative
-#: field:grap.activity,date_capital_entry:0
-#: field:grap.member,date_capital_entry:0
-#: field:grap.people,date_capital_entry:0
-msgid "Entry date In Capital"
-msgstr "Date d'entrée au capital"
+#: selection:grap.activity,state:0
+msgid "Exited"
+msgstr "Sortie"
 
 #. module: grap_cooperative
-#: field:grap.activity,fte:0
-#: field:grap.activity.people,fte:0
-msgid "FTE"
-msgstr "ETP"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+msgid "Extra Information"
+msgstr "Extra Information"
 
 #. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_form
-#: field:grap.people,first_name:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__first_name
 msgid "First name"
 msgstr "Prénom"
 
 #. module: grap_cooperative
-#: help:grap.activity.people,fte:0
-msgid "Full Time Equilalent"
-msgstr "Equivalent Temps Plein"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__function
+msgid "Function"
+msgstr "Fonction"
 
 #. module: grap_cooperative
-#: model:ir.ui.menu,name:grap_cooperative.menu_grap_root
+#: model:ir.ui.menu,name:grap_cooperative.menu_root
 msgid "GRAP"
 msgstr "GRAP"
 
 #. module: grap_cooperative
+#: model:ir.model,name:grap_cooperative.model_grap_activity
+msgid "GRAP Activities"
+msgstr "GRAP Activités"
+
+#. module: grap_cooperative
+#: model:ir.model,name:grap_cooperative.model_grap_activity_people
+msgid "GRAP Activity - People"
+msgstr "GRAP Activité - Personne"
+
+#. module: grap_cooperative
+#: model:ir.model,name:grap_cooperative.model_grap_category
+msgid "GRAP Activity Categories"
+msgstr "GRAP Catégories d'activité"
+
+#. module: grap_cooperative
+#: model:ir.model,name:grap_cooperative.model_grap_type
+msgid "GRAP Activity Types"
+msgstr "GRAP Type d'activité"
+
+#. module: grap_cooperative
+#: model:ir.model,name:grap_cooperative.model_grap_college
+msgid "GRAP Colleges"
+msgstr "GRAP Collèges"
+
+#. module: grap_cooperative
 #: model:res.groups,name:grap_cooperative.res_group_grap_cooperative_manager
 msgid "GRAP Cooperative Manager"
-msgstr "GRAP Cooperative Manager"
+msgstr "GRAP Responsable de coopérative"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_search
-#: view:grap.member:grap_cooperative.view_grap_member_search
-#: view:grap.people:grap_cooperative.view_grap_people_search
-msgid "Group by..."
-msgstr "Regrouper par ..."
+#: model:ir.model,name:grap_cooperative.model_grap_mandate
+msgid "GRAP Mandates"
+msgstr "GRAP Mandats"
 
 #. module: grap_cooperative
-#: field:grap.activity,hr_interlocutor_id:0
-msgid "Human Ressources Interlocutor"
+#: model:ir.model,name:grap_cooperative.model_grap_member
+msgid "GRAP Members"
+msgstr "GRAP Membres"
+
+#. module: grap_cooperative
+#: model:ir.model,name:grap_cooperative.model_grap_people
+msgid "GRAP Peoples"
+msgstr "GRAP Personnes"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__hr_interlocutor_id
+msgid "HR Interlocutor"
 msgstr "Interlocuteur RH"
 
 #. module: grap_cooperative
-#: field:grap.people,hr_activity_ids:0
-msgid "Human Ressources Performed for Activities"
-msgstr "Travail RH réalisé pour les activités"
-
-#. module: grap_cooperative
-#: field:grap.activity,id:0
-#: field:grap.activity.people,id:0
-#: field:grap.category,id:0
-#: field:grap.college,id:0
-#: field:grap.mandate,id:0
-#: field:grap.member,id:0
-#: field:grap.people,id:0
-#: field:grap.type,id:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__id
 msgid "ID"
 msgstr "ID"
 
 #. module: grap_cooperative
-#: field:grap.activity,image:0
-#: field:grap.member,image:0
-#: field:grap.people,image:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__image
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__image
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image
 msgid "Image"
 msgstr "Image"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_search
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_member_search
+msgid "In College"
+msgstr "dans un collège"
+
+#. module: grap_cooperative
+#: selection:grap.activity,state:0
+msgid "In progress"
+msgstr "En cours"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
 msgid "In progress, validated or working"
-msgstr "A l'étude, validé ou en activité"
+msgstr ""
 
 #. module: grap_cooperative
-#: model:ir.ui.menu,name:grap_cooperative.menu_information
-msgid "Information"
-msgstr "Information"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__is_birthday
+msgid "Is Birthday"
+msgstr ""
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-msgid "Interlocutors"
-msgstr "Interlocuteurs"
-
-#. module: grap_cooperative
-#: field:grap.people,is_birthday:0
-msgid "Is birthday"
-msgstr "C'est son jour d'anniversaire"
-
-#. module: grap_cooperative
-#: field:grap.activity,__last_update:0
-#: field:grap.activity.people,__last_update:0
-#: field:grap.category,__last_update:0
-#: field:grap.college,__last_update:0
-#: field:grap.mandate,__last_update:0
-#: field:grap.member,__last_update:0
-#: field:grap.people,__last_update:0
-#: field:grap.type,__last_update:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people____last_update
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
 #. module: grap_cooperative
-#: field:grap.activity,write_uid:0
-#: field:grap.activity.people,write_uid:0
-#: field:grap.category,write_uid:0
-#: field:grap.college,write_uid:0
-#: field:grap.mandate,write_uid:0
-#: field:grap.member,write_uid:0
-#: field:grap.people,write_uid:0
-#: field:grap.type,write_uid:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__write_uid
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__write_uid
 msgid "Last Updated by"
-msgstr "Dernière mise à jour faite par"
+msgstr "Dernière mise à jour par"
 
 #. module: grap_cooperative
-#: field:grap.activity,write_date:0
-#: field:grap.activity.people,write_date:0
-#: field:grap.category,write_date:0
-#: field:grap.college,write_date:0
-#: field:grap.mandate,write_date:0
-#: field:grap.member,write_date:0
-#: field:grap.people,write_date:0
-#: field:grap.type,write_date:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__write_date
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
 
 #. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_form
-#: field:grap.people,last_name:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__last_name
 msgid "Last name"
-msgstr "Nom de famille"
+msgstr "Nom"
 
 #. module: grap_cooperative
-#: model:ir.model,name:grap_cooperative.model_grap_mandate
-msgid "Mandate"
-msgstr "Mandat"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_kanban
+msgid "Logo"
+msgstr "Logo"
 
 #. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_search
-#: field:grap.people,mandate_ids:0
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_mandate
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__mandate_ids
 #: model:ir.ui.menu,name:grap_cooperative.menu_mandate
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
 msgid "Mandates"
 msgstr "Mandats"
 
 #. module: grap_cooperative
-#: field:grap.activity,grap_member_id:0
-#: view:grap.member:grap_cooperative.view_grap_member_search
-#: field:grap.people,grap_member_id:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__image_medium
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__image_medium
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image_medium
+msgid "Medium-sized image"
+msgstr "Image de taille moyenne"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__grap_member_id
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__grap_member_id
 msgid "Member"
 msgstr "Membre"
 
 #. module: grap_cooperative
-#: view:grap.college:grap_cooperative.view_grap_college_form
-#: field:grap.college,member_ids:0
-#: field:grap.mandate,people_ids:0
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_college_to_grap_member
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_member
-#: model:ir.model,name:grap_cooperative.model_grap_member
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__member_ids
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__people_ids
 #: model:ir.ui.menu,name:grap_cooperative.menu_member
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_college_kanban
 msgid "Members"
 msgstr "Membres"
 
 #. module: grap_cooperative
-#: field:grap.college,member_qty:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__member_qty
 msgid "Members Quantity"
 msgstr "Nombre de membres"
 
 #. module: grap_cooperative
-#: field:grap.activity,activity_name:0
-#: field:grap.activity,name:0
-#: field:grap.activity.people,complete_name:0
-#: field:grap.category,name:0
-#: field:grap.college,name:0
-#: field:grap.mandate,name:0
-#: field:grap.member,name:0
-#: field:grap.people,name:0
-#: field:grap.type,name:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__name
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__name
 msgid "Name"
 msgstr "Nom"
-
-#. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-msgid "Next State"
-msgstr "Passer au prochain état"
 
 #. module: grap_cooperative
 #: selection:grap.activity,state:0
@@ -451,126 +431,103 @@ msgid "No linked"
 msgstr "Aucun lien"
 
 #. module: grap_cooperative
-#: field:grap.activity,share_number:0
-#: field:grap.member,share_number:0
-#: field:grap.people,share_number:0
-msgid "Number of Share in Capital"
-msgstr "Nombre de part au capital"
-
-#. module: grap_cooperative
-#: field:grap.activity.people,people_id:0
-#: view:grap.mandate:grap_cooperative.view_grap_mandate_form
-#: view:grap.people:grap_cooperative.view_grap_people_search
-#: model:ir.actions.act_window,name:grap_cooperative.action_grap_people
-#: model:ir.model,name:grap_cooperative.model_grap_people
-#: model:ir.ui.menu,name:grap_cooperative.menu_people
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_mandate_to_grap_people
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_id
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
 msgid "People"
 msgstr "Personnes"
 
 #. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_form
-msgid "People Contact"
-msgstr "Contact"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_name
+msgid "People Name"
+msgstr "Nom de la personne"
 
 #. module: grap_cooperative
-#: field:grap.mandate,people_qty:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_image_small
+msgid "People Small-sized image"
+msgstr "Image de personne de taille moyenne"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__people_qty
 msgid "People count"
 msgstr "Nombre de personnes"
 
 #. module: grap_cooperative
-#: field:grap.college,percentage:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__percentage
 msgid "Percentage"
-msgstr "Pourcentage de voix"
+msgstr "Pourcentage"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-msgid "Previous State"
-msgstr "Passer à l'état précédent"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+msgid "Photo"
+msgstr "Photo"
 
 #. module: grap_cooperative
-#: field:grap.activity.people,private_phone:0
-#: field:grap.people,private_phone:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_private_phone
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__private_phone
 msgid "Private Phone"
 msgstr "Téléphone personnel"
 
 #. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_search
-msgid "Related to an activity"
-msgstr "Liés à une activité"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+msgid "Remove"
+msgstr "Supprimer"
 
 #. module: grap_cooperative
-#: model:ir.model,name:grap_cooperative.model_grap_activity_people
-msgid "Relation between activities and people"
-msgstr "Relation entre activités et personnes"
-
-#. module: grap_cooperative
-#: field:grap.activity,siret:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__siret
 msgid "SIRET"
 msgstr "SIRET"
 
 #. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_form
-#: field:grap.people,description:0
-msgid "Self Description"
-msgstr "Description personnelle"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_category_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_college_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_type_kanban
+msgid "Settings"
+msgstr "Configuration"
 
 #. module: grap_cooperative
-#: view:grap.member:grap_cooperative.view_grap_member_search
-msgid "Shareholder"
-msgstr "Membres souscripteurs"
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__image_small
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__image_small
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image_small
+msgid "Small-sized image"
+msgstr "Image de petite taille"
 
 #. module: grap_cooperative
-#: view:grap.member:grap_cooperative.view_grap_member_tree
-msgid "Shares"
-msgstr "Parts"
-
-#. module: grap_cooperative
-#: view:grap.people:grap_cooperative.view_grap_people_form
-#: field:grap.people,skills:0
-msgid "Skills"
-msgstr "Compétences"
-
-#. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_search
-#: field:grap.activity,state:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__state
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
 msgid "State"
-msgstr "Etat"
+msgstr "État"
 
 #. module: grap_cooperative
-#: field:grap.activity,street:0
-#: field:grap.member,street:0
-#: field:grap.people,street:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__street
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__street
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__street
 msgid "Street"
 msgstr "Rue"
 
 #. module: grap_cooperative
-#: field:grap.activity,vat:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__vat
 msgid "Taxe ID"
-msgstr "N° TVA"
+msgstr "N° de TVA"
 
 #. module: grap_cooperative
-#: view:grap.member:grap_cooperative.view_grap_member_tree
-msgid "Total of Share"
-msgstr "Total des parts"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+msgid "Team"
+msgstr "Equipe"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_search
-#: field:grap.activity,type_id:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__type_id
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
 msgid "Type"
 msgstr "Type"
 
 #. module: grap_cooperative
-#: model:ir.actions.act_window,name:grap_cooperative.action_grap_type
-#: model:ir.model,name:grap_cooperative.model_grap_type
-#: model:ir.ui.menu,name:grap_cooperative.menu_type
-msgid "Types"
-msgstr "Types"
-
-#. module: grap_cooperative
-#: code:addons/grap_cooperative/models/grap_people.py:88
+#: code:addons/grap_cooperative/models/grap_people.py:108
 #, python-format
 msgid "Unable to perform name changes on many people"
-msgstr "Unable to perform name changes on many people"
+msgstr "Impossible de changer des noms sur plusieurs personnes"
 
 #. module: grap_cooperative
 #: selection:grap.activity,state:0
@@ -578,23 +535,17 @@ msgid "Validated"
 msgstr "Validé"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_search
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
 msgid "Validated or working"
-msgstr "Validée ou en activité"
+msgstr "Validé ou en activité"
 
 #. module: grap_cooperative
-#: field:grap.activity,date_validated:0
-msgid "Validation date by cooperative"
-msgstr "Date de validation d'entrée"
-
-#. module: grap_cooperative
-#: field:grap.activity,web_site:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__web_site
 msgid "Web Site"
-msgstr "Site Web"
+msgstr "Site web"
 
 #. module: grap_cooperative
-#: view:grap.activity:grap_cooperative.view_grap_activity_form
-#: field:grap.activity,people_ids:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__people_ids
 msgid "Workers"
 msgstr "Travailleurs"
 
@@ -604,26 +555,21 @@ msgid "Working"
 msgstr "En activité"
 
 #. module: grap_cooperative
-#: field:grap.activity,working_phone:0
-#: field:grap.activity.people,working_phone:0
-#: field:grap.member,working_phone:0
-#: field:grap.people,working_phone:0
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__working_phone
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_working_phone
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__working_phone
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__working_phone
 msgid "Working Phone"
 msgstr "Téléphone professionnel"
 
 #. module: grap_cooperative
-#: field:grap.activity,zip:0
-#: field:grap.member,zip:0
-#: field:grap.people,zip:0
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
+msgid "Working in GRAP"
+msgstr "Travaille au GRAP"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__zip
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__zip
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__zip
 msgid "Zip"
-msgstr "Code Postal"
-
-#. module: grap_cooperative
-#: selection:grap.activity,state:0
-msgid "project exited"
-msgstr "projet sorti"
-
-#. module: grap_cooperative
-#: selection:grap.activity,state:0
-msgid "project in progress"
-msgstr "A l'étude"
+msgstr "Code postal"
