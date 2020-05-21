@@ -4,20 +4,17 @@ Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
     <record id="view_grap_people_search" model="ir.ui.view">
         <field name="model">grap.people</field>
         <field name="arch" type="xml">
-            <search> 
+            <search>
                <field name="name" string="People" />
                <field name="mandate_ids" string="Mandates" />
                <field name="working_email" string="Email" />
-               <field name="skills"/>
-               <filter name="filter_related_to_activity" string="Related to an activity" domain="[('activity_ids','!=', False)]"/>
-               <group expand='0' string='Group by...'>
-                   <filter string='College' context="{'group_by' : 'college_id'}"/>
-               </group>
+               <filter name="filter_related_to_activity" string="Working in GRAP" domain="[('activity_ids','!=', False)]"/>
+               <filter string='College' name="group_by_college" context="{'group_by' : 'college_id'}"/>
             </search>
         </field>
     </record>
@@ -27,9 +24,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="working_email"/>
-                <field name="working_phone"/>
-                <field name="private_phone"/>
+                <field name="working_email" widget="email"/>
+                <field name="working_phone" widget="phone"/>
+                <field name="private_phone" widget="phone"/>
                 <field name="mandate_ids" widget="many2many_tags"/>
                 <field name="college_id"/>
             </tree>
@@ -41,56 +38,36 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <div class="oe_edit_only">
+                            <group>
+                                <field name="first_name"/>
+                                <field name="last_name"/>
+                            </group>
+                        </div>
+                    </div>
                     <group>
-                        <group col="4">
-                            <group col="2">
-                                <field name="image" widget="image" nolabel="1" height="80" width="80" colspan="2"/>
-                            </group>
-                            <group col="2">
-                                <h2 colspan="2">
-                                    <field name="first_name" nolabel="1" placeholder="First name" col="1"/>
-                                    <field name="last_name" nolabel="1" placeholder="Last name" col="1"/>
-                                </h2>
-                                <field name="birthdate"/>
-                                <field name="is_birthday" invisible="1"/>
-                            </group>
-                        </group>
                         <group>
-                            <separator string="People Contact" colspan="2"/>
-                            <field name="activity_ids" widget="many2many_tags" />
-                        </group>
-                    </group>
-                    <group>
-                        <group col="4">
-                            <separator string="People Contact" colspan="4"/>
-                            <field name="working_email" colspan="4"/>
-                            <field name="working_phone" colspan="4"/>
-                            <field name="private_phone" colspan="4"/>
-                            <field name="street" colspan="4"/>
-                            <field name="zip" colspan="2"/>
-                            <field name="city" colspan="2" nolabel="1"/>
-                        </group>
-                        <group col="4">
-                            <separator string="Cooperative Information" colspan="4"/>
+                            <field name="working_email" widget="email"/>
+                            <field name="working_phone" widget="phone"/>
+                            <field name="private_phone" widget="phone"/>
+                            <field name="street"/>
+                            <field name="zip"/>
+                            <field name="city"/>
+                       </group>
+                        <group>
+                            <field name="activity_description"/>
                             <field name="mandate_ids" colspan="4"
                                 widget="many2many_tags"
                                 options="{'quick_create':false}"/>
                             <field name="college_id" colspan="4"
                                 options="{'quick_create':false}"/>
-                            <field name="share_number" colspan="2"
-                                attrs="{'invisible':[('college_id','=',False)]}"/>
-                            <field name="date_capital_entry" colspan="2"
-                                attrs="{'invisible':[('college_id','=',False)]}"/>
-                        </group>
-                    </group>
-                    <group>
-                        <group col="4">
-                            <separator string="Skills" colspan="4"/>
-                            <field name="skills" widget="html" nolabel="1"/>
-                        </group>
-                        <group col="4">
-                            <separator string="Self Description" colspan="4"/>
-                            <field name="description" widget="html" nolabel="1"/>
+                            <field name="birthdate"/>
                         </group>
                     </group>
                 </sheet>
@@ -102,30 +79,41 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">grap.people</field>
         <field name="arch" type="xml">
             <kanban>
+                <field name="id"/>
                 <field name="name"/>
                 <field name="is_birthday"/>
-                <field name="color"/>
+                <field name="working_email"/>
+                <field name="activity_description"/>
                 <templates>
+
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_box oe_kanban_color_border">
-                            <div style="height:220px;width:190px;overflow:hidden;">
-                                <a type="edit">
-                                    <div style="height:30px;width:190px;border-bottom:1px solid #999999;padding-left:5px;overflow:hidden;"
-                                            t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}">
-                                        <div style="height:30px; width: 155px; overflow: hidden;float:left;">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                            <!-- Medium people's picture -->
+                            <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image: url(#{kanban_image('grap.people', 'image_medium', record.id.raw_value)})" role="img"/>
+                            <!-- People's picture optimized for mobile -->
+                            <div class="o_kanban_image d-md-none rounded-circle" t-attf-style="background-image: url(#{kanban_image('grap.people', 'image_small', record.id.raw_value)})" role="img"/>
+
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
                                             <field name="last_name"/> <field name="first_name"/>
-                                        </div>
-                                        <div style="width: 30px; overflow: hidden;">
-                                            <div t-if="record.is_birthday.value">
-                                                <img t-att-src="'/grap_cooperative/static/src/img/is_birthday.png'"
-                                                    style="width:30px; height:30px;"/>
-                                            </div>
-                                        </div>
+                                        </strong>
                                     </div>
-                                </a>
-                                <div style="height:190px;width:190px;text-align:center;vertical-align:middle;padding-top: 15px;">
-                                    <img t-att-src="kanban_image('grap.people', 'image', record.id.value)" width="180"/>
                                 </div>
+                                <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                <ul>
+                                    <li t-if="record.activity_description.raw_value">
+                                        <field name="activity_description"/>
+                                    </li>
+                                    <li t-if="record.working_phone.raw_value">
+                                        <field name="working_phone" widget="phone"/>
+                                    </li>
+                                </ul>
+                                <div class="oe_kanban_partner_links"/>
+                                <t t-if="record.is_birthday.raw_value === true">
+                                    <span class="fa fa-lg fa-birthday-cake" role="img" />
+                                </t>
                             </div>
                         </div>
                     </t>
@@ -134,12 +122,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-        <record id="action_grap_people" model="ir.actions.act_window">
-            <field name="name">People</field>
-            <field name="res_model">grap.people</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">kanban,tree,form</field>
-            <field name="context">{"search_default_filter_related_to_activity":1}</field>
-        </record>
+    <record id="action_grap_people" model="ir.actions.act_window">
+        <field name="name">Directory</field>
+        <field name="res_model">grap.people</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{"search_default_filter_related_to_activity":1}</field>
+    </record>
 
-</data></openerp>
+    <menuitem id="menu_people"
+        parent="menu_root"
+        action="action_grap_people"
+        sequence="2"/>
+
+</odoo>
