@@ -7,21 +7,24 @@ from openerp import api, fields, models
 
 
 class GrapCategory(models.Model):
-    _name = 'grap.category'
+    _name = "grap.category"
 
-    name = fields.Char('Name', required=True)
+    name = fields.Char("Name", required=True)
 
     activity_ids = fields.Many2many(
-        string='Activities', comodel_name='grap.activity',
-        relation='grap_activity_category_rel', column1='category_id',
-        column2='activity_id')
+        string="Activities",
+        comodel_name="grap.activity",
+        relation="grap_activity_category_rel",
+        column1="category_id",
+        column2="activity_id",
+    )
 
     activity_qty = fields.Integer(
-        string='Activities count', compute='_compute_activity_qty',
-        store=True)
+        string="Activities count", compute="_compute_activity_qty", store=True
+    )
 
     @api.multi
-    @api.depends('activity_ids')
+    @api.depends("activity_ids")
     def _compute_activity_qty(self):
         for item in self:
             item.activity_qty = len(item.activity_ids)

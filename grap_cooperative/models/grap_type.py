@@ -7,20 +7,24 @@ from openerp import api, fields, models
 
 
 class GrapType(models.Model):
-    _name = 'grap.type'
+    _name = "grap.type"
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(string="Name", required=True)
 
     activity_ids = fields.One2many(
-        string='Activities', comodel_name='grap.activity',
-        inverse_name='type_id')
+        string="Activities",
+        comodel_name="grap.activity",
+        inverse_name="type_id",
+    )
 
     activity_qty = fields.Integer(
-        string='Activities Quantity', compute='_compute_activity_qty',
-        store=True)
+        string="Activities Quantity",
+        compute="_compute_activity_qty",
+        store=True,
+    )
 
     @api.multi
-    @api.depends('activity_ids.type_id')
+    @api.depends("activity_ids.type_id")
     def _compute_activity_qty(self):
         for item in self:
             item.activity_qty = len(item.activity_ids)
