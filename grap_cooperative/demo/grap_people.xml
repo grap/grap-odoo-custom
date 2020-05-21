@@ -4,12 +4,26 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
-    <record id="director" model="grap.people">
-        <field name="first_name">Director</field>
-        <field name="last_name">Demo</field>
-        <field name="birthdate">01/01/2013</field>
+    <record id="people_SLG" model="grap.people">
+        <field name="first_name">Sylvain</field>
+        <field name="last_name">LE GAL</field>
+        <field name="birthdate">1982-05-22/</field>
+        <field name="working_email">sylvain.legal@yourcompany.example.com</field>
+        <field name="working_phone">+33 6 12 34 56 78</field>
+        <field name="image" type="base64" file="grap_cooperative/static/src/img/people_SLG-image.png"/>
+        <field name="mandate_ids" eval="[(4, ref('board_member'))]" />
+        <field name="college_id" ref="college_C" />
     </record>
 
-</data></openerp>
+    <record id="people_QD" model="grap.people">
+        <field name="first_name">Quentin</field>
+        <field name="last_name">DUPONT</field>
+        <field name="birthdate">1972-06-19/</field>
+        <field name="working_email">quentin.dupont@yourcompany.example.com</field>
+        <field name="image" type="base64" file="grap_cooperative/static/src/img/people_QD-image.png"/>
+        <field name="college_id" ref="college_C" />
+    </record>
+
+</odoo>

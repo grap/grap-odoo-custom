@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="college_A" model="grap.college">
+        <field name="name">College A</field>
+        <field name="percentage">40</field>
+    </record>
+
+    <record id="college_B" model="grap.college">
+        <field name="name">College B</field>
+        <field name="percentage">25</field>
+    </record>
+
+    <record id="college_C" model="grap.college">
+        <field name="name">College C</field>
+        <field name="percentage">25</field>
+    </record>
+
+    <record id="college_D" model="grap.college">
+        <field name="name">College D</field>
+        <field name="percentage">10</field>
+    </record>
+
+</odoo>

@@ -4,12 +4,18 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
-    <record id="link_director_internal_team" model="grap.activity.people">
-        <field name="activity_id" ref="internal_team"/>
-        <field name="people_id" ref="director"/>
-        <field name="fte">0.5</field>
+    <record id="link_people_SLG" model="grap.activity.people">
+        <field name="activity_id" ref="activity_INT"/>
+        <field name="people_id" ref="people_SLG"/>
+        <field name="function">Chief Gravos Manager</field>
     </record>
 
-</data></openerp>
+    <record id="link_people_QD" model="grap.activity.people">
+        <field name="activity_id" ref="activity_INT"/>
+        <field name="people_id" ref="people_QD"/>
+        <field name="function">Chief Habile Manager</field>
+    </record>
+
+</odoo>

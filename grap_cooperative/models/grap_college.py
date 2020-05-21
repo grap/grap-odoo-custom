@@ -1,13 +1,14 @@
-# coding: utf-8
 # Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class GrapCollege(models.Model):
     _name = "grap.college"
+    _description = "GRAP Colleges"
+    _order = "name"
 
     name = fields.Char("Name", required=True)
 
