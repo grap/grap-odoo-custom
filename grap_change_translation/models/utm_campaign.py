@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class UtmCampaign(models.Model):
+    _inherit = "utm.campaign"
 
     name = fields.Char(translate=False)

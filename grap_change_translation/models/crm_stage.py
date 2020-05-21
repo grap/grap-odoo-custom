@@ -5,7 +5,9 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class CrmStage(models.Model):
+    _inherit = "crm.stage"
+
+    legend_priority = fields.Text(translate=False)
 
     name = fields.Char(translate=False)

@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class AccountIncoterms(models.Model):
+    _inherit = "account.incoterms"
 
     name = fields.Char(translate=False)

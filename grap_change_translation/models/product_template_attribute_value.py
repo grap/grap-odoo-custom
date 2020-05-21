@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class ProductTemplateAttributeValue(models.Model):
+    _inherit = "product.template.attribute.value"
 
     name = fields.Char(translate=False)

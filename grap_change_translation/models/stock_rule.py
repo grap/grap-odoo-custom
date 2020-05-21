@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class StockRule(models.Model):
+    _inherit = "stock.rule"
 
     name = fields.Char(translate=False)

@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class ResConfigSettings(models.TransientModel):
+    _inherit = "res.config.settings"
 
-    name = fields.Char(translate=False)
+    report_footer = fields.Text(translate=False)

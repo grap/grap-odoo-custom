@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class AccountCashRounding(models.Model):
+    _inherit = "account.cash.rounding"
 
     name = fields.Char(translate=False)

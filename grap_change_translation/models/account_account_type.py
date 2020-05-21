@@ -5,7 +5,9 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class AccountAccountType(models.Model):
+    _inherit = "account.account.type"
 
     name = fields.Char(translate=False)
+
+    vat_label = fields.Char(translate=False)

@@ -5,7 +5,7 @@
 from odoo import models, fields
 
 
-class ProductCategory(models.Model):
-    _inherit = "product.category"
+class MailChannel(models.Model):
+    _inherit = "mail.channel"
 
     name = fields.Char(translate=False)
