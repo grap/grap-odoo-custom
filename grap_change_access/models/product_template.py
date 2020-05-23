@@ -1,11 +1,10 @@
-# coding: utf-8
 # Copyright (C) 2013 - Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # @author Julien WESTE
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import _, api, models
-from openerp.exceptions import ValidationError
+from odoo import _, api, models
+from odoo.exceptions import ValidationError
 
 
 class ProductTemplate(models.Model):
