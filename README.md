@@ -23,7 +23,7 @@ addon | version | summary
 [grap_change_data](grap_change_data/) | 12.0.1.0.1 | GRAP - Change Data
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.1 | Add Activities, Colleges, Peoples, Members, etc.
-[server_environment_files](server_environment_files/) | 12.0.1.0.0 | Add custom CSS and extra text on PoS ticket depending on the environment
+[server_environment_files](server_environment_files/) | 12.0.1.0.1 | Add custom CSS and extra text on PoS ticket depending on the environment
 
 
 Unported addons
