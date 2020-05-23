@@ -4,22 +4,21 @@ Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
-        <record id="decimal_purchase_unit_price" model="decimal.precision">
-            <field name="name">GRAP Purchase Unit Price</field>
-            <field name="digits">4</field>
-        </record>
+    <record id="product.decimal_stock_weight" model="decimal.precision">
+        <field name="digits">3</field>
+    </record>
 
-        <record id="decimal_purchase_unit_discount" model="decimal.precision">
-            <field name="name">GRAP Purchase Unit Discount</field>
-            <field name="digits">4</field>
-        </record>
+    <record id="decimal_cost_price" model="decimal.precision">
+        <field name="name">GRAP Cost Price</field>
+        <field name="digits">3</field>
+    </record>
 
-        <record id="product.decimal_purchase" model="decimal.precision">
-            <field name="name">Purchase Price</field>
-            <field name="digits">4</field>
-        </record>
+    <record id="decimal_volume" model="decimal.precision">
+        <field name="name">GRAP Stock Volume</field>
+        <field name="digits">3</field>
+    </record>
 
-</data></openerp>
+</odoo>
 
