@@ -23,6 +23,7 @@ addon | version | summary
 [grap_change_data](grap_change_data/) | 12.0.1.0.1 | GRAP - Change Data
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.1 | Add Activities, Colleges, Peoples, Members, etc.
+[server_environment_files](server_environment_files/) | 12.0.1.0.0 | Add custom CSS and extra text on PoS ticket depending on the environment
 
 
 Unported addons
@@ -36,7 +37,6 @@ addon | version | summary
 [grap_change_views](grap_change_views/) | 8.0.7.0.0 (unported) | GRAP - Change Views
 [grap_qweb_report](grap_qweb_report/) | 8.0.1.0.0 (unported) | GRAP - Custom Qweb Reports
 [invoice_verified_state](invoice_verified_state/) | 8.0.3.0.0 (unported) | GRAP - Custom Invoice workflow
-[server_environment_files](server_environment_files/) | 8.0.1.0.0 (unported) | GRAP - Configuration Environment Files
 
 [//]: # (end addons)
 
