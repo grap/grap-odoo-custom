@@ -22,6 +22,7 @@ addon | version | summary
 --- | --- | ---
 [grap_change_data](grap_change_data/) | 12.0.1.0.1 | GRAP - Change Data
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
+[grap_cooperative](grap_cooperative/) | 12.0.1.0.0 | Add Activities, Colleges, Peoples, Members, etc.
 
 
 Unported addons
@@ -33,7 +34,6 @@ addon | version | summary
 [grap_change_ir_values](grap_change_ir_values/) | 8.0.1.0.0 (unported) | GRAP - Change Ir Values
 [grap_change_precision](grap_change_precision/) | 8.0.1.0.0 (unported) | Change the precisions names and values of some fields
 [grap_change_views](grap_change_views/) | 8.0.7.0.0 (unported) | GRAP - Change Views
-[grap_cooperative](grap_cooperative/) | 8.0.2.0.0 (unported) | GRAP - Cooperative
 [grap_qweb_report](grap_qweb_report/) | 8.0.1.0.0 (unported) | GRAP - Custom Qweb Reports
 [invoice_verified_state](invoice_verified_state/) | 8.0.3.0.0 (unported) | GRAP - Custom Invoice workflow
 [server_environment_files](server_environment_files/) | 8.0.1.0.0 (unported) | GRAP - Configuration Environment Files
