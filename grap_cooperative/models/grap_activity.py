@@ -1,102 +1,101 @@
-# coding: utf-8
 # Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class GrapActivity(models.Model):
-    _name = 'grap.activity'
-    _inherits = {'grap.member': 'grap_member_id'}
-    _order = 'activity_name'
+    _name = "grap.activity"
+    _description = "GRAP Activities"
+
+    _inherits = {"grap.member": "grap_member_id"}
+    _order = "activity_name"
 
     _GRAP_ACTIVITY_STATE = [
-        ('draft', 'No linked'),
-        ('progress', 'project in progress'),
-        ('validated', 'Validated'),
-        ('working', 'Working'),
-        ('obsolete', 'project exited'),
+        ("draft", "No linked"),
+        ("progress", "In progress"),
+        ("validated", "Validated"),
+        ("working", "Working"),
+        ("obsolete", "Exited"),
     ]
 
     # Columns section
     grap_member_id = fields.Many2one(
-        string='Member', comodel_name='grap.member', required=True,
-        ondelete='cascade')
+        string="Member",
+        comodel_name="grap.member",
+        required=True,
+        ondelete="cascade",
+    )
 
-    activity_name = fields.Char(string='Name', required=True)
+    activity_name = fields.Char(string="Activity Name", required=True)
 
-    code = fields.Char(string='Code')
+    complete_name = fields.Char(
+        string="Complete Name", compute="_compute_complete_name",
+        store=True)
 
-    siret = fields.Char(string='SIRET')
+    code = fields.Char(string="Code")
 
-    vat = fields.Char(string='Taxe ID')
+    siret = fields.Char(string="SIRET")
 
-    web_site = fields.Char(string='Web Site')
+    vat = fields.Char(string="Taxe ID")
+
+    web_site = fields.Char(string="Web Site")
 
     state = fields.Selection(
-        string='State', selection=_GRAP_ACTIVITY_STATE, required=True,
-        default='draft')
+        string="State",
+        selection=_GRAP_ACTIVITY_STATE,
+        required=True,
+        default="draft",
+    )
 
-    date_validated = fields.Date('Validation date by cooperative')
-
-    date_in = fields.Date('Date of activity begins to work')
-
-    date_out = fields.Date('Date of activity ends to work')
-
-    type_id = fields.Many2one(string='Type', comodel_name='grap.type')
+    type_id = fields.Many2one(string="Type", comodel_name="grap.type")
 
     accountant_interlocutor_id = fields.Many2one(
-        string='Accoutant Interlocutor', comodel_name='grap.people')
+        string="Accoutant", comodel_name="grap.people"
+    )
 
     hr_interlocutor_id = fields.Many2one(
-        string='Human Ressources Interlocutor', comodel_name='grap.people')
+        string="HR Interlocutor", comodel_name="grap.people"
+    )
 
     attendant_interlocutor_id = fields.Many2one(
-        string='Attendant Interlocutor', comodel_name='grap.people')
+        string="Attendant", comodel_name="grap.people"
+    )
 
     category_ids = fields.Many2many(
-        string='Categories', comodel_name='grap.category',
-        relation='grap_activity_category_rel', column1='activity_id',
-        column2='category_id')
+        string="Categories",
+        comodel_name="grap.category",
+        relation="grap_activity_category_rel",
+        column1="activity_id",
+        column2="category_id",
+    )
 
     people_ids = fields.One2many(
-        string='Workers', comodel_name='grap.activity.people',
-        inverse_name='activity_id')
+        string="Workers",
+        comodel_name="grap.activity.people",
+        inverse_name="activity_id",
+    )
 
-    fte = fields.Float(
-        string='FTE', compute='_compute_fte', store=True, digits=(16, 1))
-
-    # Compute Section
-    @api.multi
-    @api.depends('people_ids.activity_id', 'people_ids.fte')
-    def _compute_fte(self):
+    @api.depends("code", "activity_name")
+    def _compute_complete_name(self):
         for activity in self:
-            activity.fte = sum(activity.mapped('people_ids.fte'))
+            activity.complete_name = "%s - %s" % (
+                activity.code, activity.activity_name)
 
     # Overloads section
     @api.model
     def create(self, vals):
-        vals['name'] = vals['activity_name']
-        return super(GrapActivity, self).create(vals)
+        vals["name"] = vals["activity_name"]
+        return super().create(vals)
 
-    @api.multi
     def write(self, vals):
-        if 'activity_name' in vals.keys():
-            vals['name'] = vals['activity_name']
-        return super(GrapActivity, self).write(vals)
+        if "activity_name" in vals.keys():
+            vals["name"] = vals["activity_name"]
+        return super().write(vals)
 
-    # Action section
-    @api.multi
-    def button_state_previous(self):
-        for activity in self:
-            for index in range(len(self._GRAP_ACTIVITY_STATE) - 1):
-                if activity.state == self._GRAP_ACTIVITY_STATE[index + 1][0]:
-                    activity.state = self._GRAP_ACTIVITY_STATE[index][0]
-
-    @api.multi
-    def button_state_next(self):
-        for activity in self:
-            for index in range(len(self._GRAP_ACTIVITY_STATE) - 1):
-                if activity.state == self._GRAP_ACTIVITY_STATE[index][0]:
-                    activity.state = self._GRAP_ACTIVITY_STATE[index + 1][0]
+    def unlink(self):
+        members = self.mapped("grap_member_id")
+        res = super().unlink()
+        members.unlink()
+        return res
