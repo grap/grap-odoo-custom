@@ -1,37 +1,25 @@
 This module extends the functionality of Odoo to change access.
 
+**Add roles**
 
-**Prevent Update/Delete Access for users**
-For users that doesn't belong to ``base.group_no_one``, the following models
-are readonly
+based on the module ``base_user_role``.
 
-* ``product.category``
-* ``product.uom``
-* ``product.uom.categ``
-* ``res.country``
-* ``res.country.state``
-* ``email.template``
-* ``account.period`` (except for account manager)
+**Changes access to certains models**
 
+Sales / User: All Documents (``sales_team.group_sale_salesman_all_leads``)
+- can write ``product.margin.classification``.
 
-**Product Changes**
-Add extra constraint on product if ``income_pdt`` or ``expense_pdt``
-are checked:
-
-* This product are manage by account manager only
-* this product must have account_income (or account_expense) defined
-* This product must have only one VAT (if ``expense_pdt`` is checked)
-* this product can not be ``sale_ok`` or ``purchase_ok``
-
+Point of Sale / User (``point_of_sale.group_pos_user``)
+- can write ``pos.category``.
 
 **Groups**
 
-Add a new Custom group category.
+Add a new Custom group category, named 'GRAP - Custom Category'
 
 Add new groups :
 
 * GRAP - Buying / Reselling Category
 * GRAP - Transformation Category
 * GRAP - Raw Materials Category
-* GRAP - CRM and Calendar Manager
-* GRAP - Pricelist Manager
+
+* GRAP - Pricelist Manager to manage ``product.pricelist`` and ``product.pricelist.item``
