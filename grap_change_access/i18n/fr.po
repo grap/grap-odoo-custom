@@ -44,33 +44,3 @@ msgstr "GRAP - Catégorie Matières Premières"
 #: model:res.groups,name:grap_change_access.group_transformation
 msgid "GRAP - Transformation Category"
 msgstr "GRAP - Catégorie Transformation"
-
-#. module: grap_change_access
-#: model:ir.model,name:grap_change_access.model_product_template
-msgid "Product Template"
-msgstr "Modèle d'article"
-
-#. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:28
-#, python-format
-msgid "You can not create a product that is both salable or purchasable and POS expense or income product !"
-msgstr "Vous ne pouvez pas paramétrer un article vendable ou achetable qui serve d'article de manipulation de caisse !"
-
-#. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:20
-#, python-format
-msgid "You can not create an POS expense or income product if you're not account manager !"
-msgstr "Vous ne pouvez pas paramétrer un article de manipulation de caisse si vous n'êtes pas responsable comptable !"
-
-#. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:38
-#, python-format
-msgid "You can not create an POS expense product without account expense !"
-msgstr "Vous ne pouvez pas paramétrer un article de manipulation de caisse de type dépense sans compte comptable de dépense !"
-
-#. module: grap_change_access
-#: code:addons/grap_change_access/models/product_template.py:43
-#, python-format
-msgid "You can not create an POS income product without account income !"
-msgstr "Vous ne pouvez pas paramétrer un article de manipulation de caisse de type revenu sans compte comptable de revenu !"
-
