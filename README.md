@@ -36,7 +36,6 @@ addon | version | summary
 [grap_change_ir_values](grap_change_ir_values/) | 8.0.1.0.0 (unported) | GRAP - Change Ir Values
 [grap_change_views](grap_change_views/) | 8.0.7.0.0 (unported) | GRAP - Change Views
 [grap_qweb_report](grap_qweb_report/) | 8.0.1.0.0 (unported) | GRAP - Custom Qweb Reports
-[invoice_verified_state](invoice_verified_state/) | 8.0.3.0.0 (unported) | GRAP - Custom Invoice workflow
 
 [//]: # (end addons)
 
