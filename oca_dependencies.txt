@@ -6,3 +6,5 @@ server-env
 
 
 product-attribute__product_standard_price_tax_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_standard_price_tax_included
+
+margin-analysis__product_margin_classification  https://github.com/legalsylvain/margin-analysis.git   12.0-MIG-product_margin_classification
