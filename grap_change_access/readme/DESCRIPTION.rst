@@ -1,18 +1,18 @@
 This module extends the functionality of Odoo to change access.
 
-**Add roles**
+Changes access to certains models
+---------------------------------
 
-based on the module ``base_user_role``.
+* Sales / User: All Documents (``sales_team.group_sale_salesman_all_leads``)
 
-**Changes access to certains models**
+-> can write ``product.margin.classification``.
 
-Sales / User: All Documents (``sales_team.group_sale_salesman_all_leads``)
-- can write ``product.margin.classification``.
+* Point of Sale / User (``point_of_sale.group_pos_user``)
 
-Point of Sale / User (``point_of_sale.group_pos_user``)
-- can write ``pos.category``.
+-> can write ``pos.category``.
 
-**Groups**
+New Groups
+----------
 
 Add a new Custom group category, named 'GRAP - Custom Category'
 
