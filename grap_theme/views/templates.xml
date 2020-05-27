@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018-Today GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (https://twitter.com/pondupont)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/grap_theme/static/src/css/grap_theme.css"/>
+        </xpath>
+    </template>
+
+</odoo>
