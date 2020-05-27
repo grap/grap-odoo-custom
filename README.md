@@ -20,7 +20,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[grap_change_access](grap_change_access/) | 12.0.1.0.0 | Add new groups for specific models and change accesses for a number of models.
+[grap_change_access](grap_change_access/) | 12.0.1.0.1 | Add new groups for specific models and change accesses for a number of models.
 [grap_change_data](grap_change_data/) | 12.0.1.0.1 | GRAP - Change Data
 [grap_change_precision](grap_change_precision/) | 12.0.1.0.1 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
