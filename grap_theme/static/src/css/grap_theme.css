@@ -1,0 +1,14 @@
+.o_input {
+    border-top : 0;
+    border-left : 0;
+    border-right : 0;
+    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.o_input:focus {
+    border-bottom-color: #2e822e;
+}
+
