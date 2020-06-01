@@ -150,7 +150,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </field>
         </field>
     </record>
-    
+
     <record id="view_product_product_tree_stock" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="inherit_id" ref="stock.view_stock_product_tree"/>
@@ -235,8 +235,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <group col="6">
                                 <group>
                                     <separator string="Purchase / Produce" colspan="2"/>
-                                    <field name="property_account_expense" 
-                                            domain="[('type','=','other')]" 
+                                    <field name="property_account_expense"
+                                            domain="[('type','=','other')]"
                                             groups="account.group_account_manager"/>
                                     <field name="expense_analytic_account_id"
                                             groups="account.group_account_manager"/>
@@ -374,9 +374,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="eshop_category_id" colspan="4"/>
                                     <field name="eshop_minimum_qty"/>
                                     <field name="eshop_rounded_qty"/>
-                                    <field name="eshop_unpack_qty"/>
-                                    <field name="eshop_unpack_surcharge" attrs="{'invisible':[('eshop_unpack_qty','=', 0)]}"/>
-                                    <field name="eshop_state"/>
                             </group>
                             <group string="Eshop Description">
                                 <field name="eshop_description" widget="html" colspan="4" nolabel="1"/>
@@ -522,7 +519,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_product_product_tactile"
         name="Products (Tactile)"
-        parent="menu_product_product_editable_view" sequence="3" 
+        parent="menu_product_product_editable_view" sequence="3"
         action="action_product_product_tactile_tree"/>
 
     <!--
@@ -652,7 +649,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree string="Products (Origin)" editable="bottom">
                 <field name="name" readonly="1"/>
-                <field name="country_id" 
+                <field name="country_id"
                     options="{'quick_create':false}"
                     on_change="onchange_country_id(
                         country_id,
@@ -692,13 +689,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">product.product</field>
         <field name="arch" type="xml">
             <tree string="Products (eShop)" editable="bottom"
-                    colors="black:eshop_state == 'available'; blue:eshop_state == 'disabled'; gray: eshop_state == 'unavailable'" 
-                    fonts="bold:eshop_unpack_qty!=0">
+                    colors="black:eshop_state == 'available'; blue:eshop_state == 'disabled'; gray: eshop_state == 'unavailable'">
                 <field name="name" readonly="1"/>
                 <field name="eshop_minimum_qty"/>
                 <field name="eshop_rounded_qty"/>
-                <field name="eshop_unpack_qty"/>
-                <field name="eshop_unpack_surcharge" attrs="{'invisible':[('eshop_unpack_qty','=', 0)]}"/>
                 <field name="eshop_category_id"/>
                 <field name="eshop_start_date"/>
                 <field name="eshop_end_date"/>
