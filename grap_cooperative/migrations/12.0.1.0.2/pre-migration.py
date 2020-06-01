@@ -5,12 +5,12 @@
 from openupgradelib import openupgrade
 
 column_renames = {
-    'grap.member': [
+    'grap_member': [
         ('image', None),
     ],
 }
 
 
 @openupgrade.migrate()
-def migrate(cr, version):
-    openupgrade.rename_columns(cr, column_renames)
+def migrate(env, version):
+    openupgrade.rename_columns(env.cr, column_renames)
