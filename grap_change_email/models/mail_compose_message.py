@@ -7,6 +7,6 @@ from openerp import fields, models
 
 
 class MailComposeMessage(models.Model):
-    _inherit = 'mail.compose.message'
+    _inherit = "mail.compose.message"
 
     template_id = fields.Many2one(required=True)

@@ -7,16 +7,19 @@ from openerp import api, models
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = "account.invoice"
 
     @api.multi
     def action_invoice_sent(self):
         """Return the custom GRAP template"""
         res = super(AccountInvoice, self).action_invoice_sent()
         template = self.env.ref(
-            'grap_change_email.email_template_account_invoice')
-        res['context'].update({
-            'default_use_template': bool(template.id),
-            'default_template_id': template.id,
-        })
+            "grap_change_email.email_template_account_invoice"
+        )
+        res["context"].update(
+            {
+                "default_use_template": bool(template.id),
+                "default_template_id": template.id,
+            }
+        )
         return res

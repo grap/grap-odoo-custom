@@ -7,10 +7,10 @@ from openerp import api, fields, models
 
 
 class EmailTemplate(models.Model):
-    _inherit = 'email.template'
+    _inherit = "email.template"
 
-    active = fields.Boolean(string='active', default=True)
+    active = fields.Boolean(string="active", default=True)
 
     @api.multi
     def disable_useless_template(self):
-        self.write({'active': False})
+        self.write({"active": False})

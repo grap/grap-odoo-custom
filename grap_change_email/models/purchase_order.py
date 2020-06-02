@@ -7,16 +7,19 @@ from openerp import api, models
 
 
 class PurchaseOrder(models.Model):
-    _inherit = 'purchase.order'
+    _inherit = "purchase.order"
 
     @api.multi
     def wkf_send_rfq(self):
         """Return the custom GRAP template"""
         res = super(PurchaseOrder, self).wkf_send_rfq()
         template = self.env.ref(
-            'grap_change_email.email_template_purchase_order')
-        res['context'].update({
-            'default_use_template': bool(template.id),
-            'default_template_id': template.id,
-        })
+            "grap_change_email.email_template_purchase_order"
+        )
+        res["context"].update(
+            {
+                "default_use_template": bool(template.id),
+                "default_template_id": template.id,
+            }
+        )
         return res
