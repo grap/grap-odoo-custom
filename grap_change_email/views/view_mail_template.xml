@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_mail_template_tree" model="ir.ui.view">
+        <field name="model">mail.template</field>
+        <field name="inherit_id" ref="mail.email_template_tree"/>
+        <field name="arch" type="xml">
+            <field name="report_name" position="after">
+                <field name="active"/>
+            </field>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-muted">active == False</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_mail_template_form" model="ir.ui.view">
+        <field name="model">mail.template</field>
+        <field name="inherit_id" ref="mail.email_template_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                    <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mail.action_email_template_tree_all"
+            model="ir.actions.act_window">
+        <field name="context">{'active_test': False}</field>
+    </record>
+
+</odoo>

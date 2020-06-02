@@ -12,10 +12,6 @@ Model Changes
 
 * add new ``active`` field
 
-**mail.compose.message**
-
-* Set ``template_id`` field as required
-
 
 Mail Templates
 ~~~~~~~~~~~~~~
@@ -25,3 +21,8 @@ Mail Templates
 
 * Create new mail templates customized for GRAP. Return these templates, when
   clicking on 'Send by email' button, on each models.
+
+Limited access
+~~~~~~~~~~~~~~
+
+This module prevent sending erp link to partners (for quotations, invoices, etc...)

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2015 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <function model="mail.template" name="write">
+        <value eval="[
+            ref('sale.email_template_edi_sale'),
+            ref('purchase.email_template_edi_purchase'),
+            ref('purchase.email_template_edi_purchase_done'),
+            ref('account.email_template_edi_invoice'),
+        ]"/>
+        <value eval="{'active': False}"/>
+    </function>
+
+<!--*********************************************************************** -->
+<!--model purchase.order - Bon de commande                                  -->
+<!--*********************************************************************** -->
+
+    <record id="email_template_purchase_order" model="mail.template">
+        <field name="name">GRAP - Achat - Bon de commande</field>
+        <field name="subject">${object.company_id.name.replace("'", " ")|safe} - Bon de commande (Réf ${object.name or 'n/a' })</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="report_template" ref="purchase.action_report_purchase_order"/>
+        <field name="report_name">${object.state in ['draft', 'sent'] and "Demande_de_devis" else "Bon_de_commande"}_${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="body_html" type="html">
+
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        % set doc_name = 'demande de devis' if object.state in ('draft', 'sent') else 'confirmation de bon de commande'
+
+        Bonjour ${object.partner_id.name}
+        % if object.partner_id.parent_id:
+            (${object.partner_id.parent_id.name})
+        % endif
+        <br/><br/>
+        Vous trouverez en pièce jointe une ${doc_name} <strong>${object.name}</strong>
+        % if object.partner_ref:
+            (référence: ${object.partner_ref})
+        % endif
+        de la part de ${object.company_id.name}.
+        <br />
+        <ul>
+
+            <li>
+                Date de la commande: <strong>${format_tz(object.date_order)}</strong>
+            </li>
+            <li>
+                Total HT: <strong>${format_amount(object.amount_untaxed, object.currency_id)}</strong>
+            </li>
+            <li>
+                Total TTC: <strong>${format_amount(object.amount_total, object.currency_id)}</strong>
+            </li>
+
+        % if object.date_planned:
+            <li>
+                Date de réception souhaitée: <strong>${format_tz(object.date_planned)}</strong>
+            </li>
+        % endif
+
+        </ul>
+        <strong>Merci d'accuser bonne réception de cet email.</strong>
+        <br/>
+        Si vous avez des questions, n'hésitez pas à nous contacter.
+        <br/>
+        Merci !
+    </p>
+</div>
+
+        </field>
+    </record>
+
+<!--*********************************************************************** -->
+<!--model sale.order - Bon de commande                                      -->
+<!--*********************************************************************** -->
+    <record id="email_template_sale_order" model="mail.template">
+        <field name="name">GRAP - Vente - Devis / Bon de commande</field>
+        <field name="email_from">${(object.user_id.email or '')|safe}</field>
+        <field name="subject">${object.company_id.name.replace("'", " ")|safe} - Bon de commande (Réf ${object.name or 'n/a' })</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="report_template" ref="sale.action_report_saleorder"/>
+        <field name="report_name">${object.state in ['draft', 'sent'] and "Devis" else "Bon_de_commande"}_${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="body_html" type="html">
+
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+
+        % set doc_name = 'devis' if object.state in ('draft', 'sent') else 'bon de commande'
+        Bonjour ${object.partner_id.name}
+        % if object.partner_id.parent_id:
+            (${object.partner_id.parent_id.name})
+        % endif
+        <br /><br />
+        Vous trouverez en pièce jointe votre
+        ${doc_name} <strong>${object.name}</strong>
+        % if object.origin:
+            (référence: ${object.origin} )
+        % endif
+        de la part de ${object.company_id.name}.
+        <br />
+        <ul>
+
+            <li>
+                Date de la commande: <strong>${format_tz(object.date_order)}</strong>
+            </li>
+            <li>
+                Total HT: <strong>${format_amount(object.amount_untaxed, object.pricelist_id.currency_id)}</strong>
+            </li>
+            <li>
+                Total TTC: <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>
+            </li>
+
+        % if object.requested_date:
+            <li>
+                Date de livraison souhaité: <strong>${format_tz(object.requested_date)}</strong>
+            </li>
+        % endif
+
+        % if object.recovery_moment_id:
+            <li>
+                Lieu de récupération: <strong>${object.recovery_moment_id.place_id.complete_name}</strong>
+            </li>
+        % endif
+
+        </ul>
+
+        <br/><br/>
+        Si vous avez des questions, n'hésitez pas à nous contacter.
+        <br/>
+        Merci !
+
+    </p>
+
+</div>
+
+        </field>
+    </record>
+
+<!--*********************************************************************** -->
+<!--model account.invoice - Facture                                         -->
+<!--*********************************************************************** -->
+
+
+    <record id="email_template_account_invoice" model="mail.template">
+        <field name="name">GRAP - Facture</field>
+        <field name="email_from">${object.user_id.email_formatted |safe}</field>
+        <field name="subject">${object.company_id.name|safe} Facture (Ref ${object.number or 'n/a'})</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="model_id" ref="account.model_account_invoice"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="report_template" ref="account.account_invoices"/>
+        <field name="report_name">Facture_${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Bonjour ${object.partner_id.name}
+        % if object.partner_id.parent_id:
+            (${object.partner_id.parent_id.name})
+        % endif
+        <br /><br />
+        Une nouvelle facture est disponible pour vous
+        % if object.number:
+            <strong>${object.number}</strong>
+        %endif
+        % if object.origin:
+            (Référence: ${object.origin})
+        % endif
+        de la part de ${object.company_id.name}
+
+        <li>
+            Total HT: <strong>${format_amount(object.amount_untaxed, object.currency_id)}</strong>
+        </li>
+        <li>
+            Total TTC: <strong>${format_amount(object.amount_total, object.currency_id)}</strong>
+        </li>
+        <br />
+        % if object.state=='paid':
+            <strong>Cette facture est déjà payée.</strong>
+        % else:
+            Veuillez nous adresser votre paiement au plus tard le ${format_tz(object.date_due)}.
+        % endif
+
+        <br/><br/>
+        Si vous avez des questions, n'hésitez pas à nous contacter.
+        <br/>
+        Merci !
+
+    </p>
+</div>
+
+        </field>
+    </record>
+
+</odoo>
