@@ -4,6 +4,7 @@ pos
 product-attribute
 server-env
 
+grap-odoo-business      https://github.com/grap/grap-odoo-business.git      12.0
 
 product-attribute__product_standard_price_tax_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_standard_price_tax_included
 
