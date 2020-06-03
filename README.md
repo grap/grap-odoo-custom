@@ -22,6 +22,7 @@ addon | version | summary
 --- | --- | ---
 [grap_change_access](grap_change_access/) | 12.0.1.0.1 | Add new groups for specific models and change accesses for a number of models.
 [grap_change_data](grap_change_data/) | 12.0.1.0.1 | GRAP - Change Data
+[grap_change_email](grap_change_email/) | 12.0.1.0.0 | Change default email template for invoices, sale and purchase orders
 [grap_change_precision](grap_change_precision/) | 12.0.1.0.1 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.2 | Add Activities, Colleges, Peoples, Members, etc.
@@ -33,7 +34,6 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[grap_change_email](grap_change_email/) | 8.0.4.0.0 (unported) | GRAP Custom - Change eMail
 [grap_change_ir_values](grap_change_ir_values/) | 8.0.1.0.0 (unported) | GRAP - Change Ir Values
 [grap_change_views](grap_change_views/) | 8.0.7.0.0 (unported) | GRAP - Change Views
 [grap_qweb_report](grap_qweb_report/) | 8.0.1.0.0 (unported) | GRAP - Custom Qweb Reports
