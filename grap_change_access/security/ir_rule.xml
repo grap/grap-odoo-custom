@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!--
+    Disable this new rule, because it is blocking the access to the other
+    companies for the classical user.
+    We realize the action by write, because the xml_id is flagged as noupdate
+    -->
+    <function model="ir.rule" name="write">
+        <value model="ir.rule" search="[('id', '=', obj().env.ref('base.res_company_rule_employee').id)]"/>
+        <value eval="{'active': False}"/>
+    </function>
+
+
+</odoo>

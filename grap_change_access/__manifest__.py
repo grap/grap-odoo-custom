@@ -17,6 +17,7 @@
         "product_margin_classification",
     ],
     "data": [
+        "security/ir_rule.xml",
         "security/ir_module_category.xml",
         "security/res_groups.xml",
         "security/ir.model.access.csv",
