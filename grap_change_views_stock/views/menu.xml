@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="stock.menu_stock_warehouse_mgmt" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_user')])]"/>
+    </record>
+
+    <record id="stock.menu_stock_scrap" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+    <record id="stock.menu_reordering_rules_config" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+    <record id="stock.menu_procurement_compute" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+
+</odoo>

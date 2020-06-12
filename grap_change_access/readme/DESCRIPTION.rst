@@ -11,6 +11,11 @@ Changes access to certains models
 
 -> can write ``pos.category``.
 
+* Inventory / User (``stock.group_stock_user``)
+
+-> can unlink ``stock.inventory.line``.
+
+
 New Groups
 ----------
 

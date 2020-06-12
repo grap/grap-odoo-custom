@@ -1,9 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-,,,,,,,
 access_product_pricelist_manager,access_product_pricelist_manager,product.model_product_pricelist,grap_change_access.group_pricelist_manager,1,1,1,1
-,,,,,,,
 access_product_pricelist_item_manager,access_product_pricelist_item_manager,product.model_product_pricelist_item,grap_change_access.group_pricelist_manager,1,1,1,1
-,,,,,,,
 product_margin_classification_manager,product_margin_classification manager,product_margin_classification.model_product_margin_classification,sales_team.group_sale_salesman_all_leads,1,1,1,1
-,,,,,,,
 pos_category_manager,pos_category_manager,point_of_sale.model_pos_category,point_of_sale.group_pos_user,1,1,1,1
+stock_inventory_line_unlinker,stock_inventory_line_unlinker,stock.model_stock_inventory_line,stock.group_stock_user,1,1,1,1

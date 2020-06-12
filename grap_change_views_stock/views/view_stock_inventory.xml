@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_stock_inventory_form" model="ir.ui.view">
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_form"/>
+        <field name="arch" type="xml">
+            <button name="action_inventory_line_tree" position="attributes">
+                <attribute name="states">confirm,done</attribute>
+                <attribute name="groups"/>
+            </button>
+            <button name="action_reset_product_qty" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </button>
+            <button name="action_validate" position="attributes">
+                <attribute name="groups">stock.group_stock_user</attribute>
+                <attribute name="confirm">Are you sure you want to confirm this inventory ? This action is definitive</attribute>
+            </button>
+        </field>
+    </record>
+
+    <record id="view_stock_inventory_form_account" model="ir.ui.view">
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock_account.view_inventory_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="accounting_date" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_stock_inventory_form_merge" model="ir.ui.view">
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock_inventory_merge.view_stock_inventory_form"/>
+        <field name="arch" type="xml">
+            <button name="complete_with_zero" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </button>
+        </field>
+    </record>
+
+    <record id="view_stock_inventory_tree" model="ir.ui.view">
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_tree"/>
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="decoration-info">state=='draft'</attribute>
+                <attribute name="decoration-muted">state in ['done', 'cancel']</attribute>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
