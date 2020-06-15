@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_ir_model_access_tree" model="ir.ui.view">
+        <field name="model">ir.model.access</field>
+        <field name="inherit_id" ref="base.ir_access_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
