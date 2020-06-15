@@ -16,5 +16,8 @@
     "data": [
         "views/templates.xml",
     ],
+    "qweb": [
+        "static/src/xml/base.xml",
+    ],
     "installable": True,
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="SwitchCompanyMenu">
+        <t t-jquery="a[class='dropdown-toggle'] span:first-child" t-operation="before">
+            <img class="rounded-circle oe_topbar_company_avatar" alt="Company"/>
+        </t>
+    </t>
+
+</templates>
