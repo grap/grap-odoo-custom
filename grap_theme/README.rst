@@ -29,6 +29,10 @@ This module extend Odoo web module, to change UI.
 
 .. image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/grap_theme/static/description/menu.png
 
+* Change the image of the login page, setting it static
+
+.. image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/grap_theme/static/description/logout_page.png
+
 **Table of contents**
 
 .. contents::
@@ -56,6 +60,7 @@ Contributors
 ~~~~~~~~~~~~
 
 * Quentin DUPONT <https://twitter.com/pondupont>
+* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
 ~~~~~~~~~~~
