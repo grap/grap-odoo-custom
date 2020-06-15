@@ -19,10 +19,15 @@ GRAP - Web Theme
 
 |badge1| |badge2| |badge3| 
 
+This module extend Odoo web module, to change UI.
+
 * Change border fields to make it smoother
 
-
 .. image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/grap_theme/static/description/product_product_form.png
+
+* improve the display of user image and add the company image in the menu
+
+.. image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/grap_theme/static/description/menu.png
 
 **Table of contents**
 
