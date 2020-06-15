@@ -7,3 +7,7 @@ This module extend Odoo web module, to change UI.
 * improve the display of user image and add the company image in the menu
 
 .. image:: ../static/description/menu.png
+
+* Change the image of the login page, setting it static
+
+.. image:: ../static/description/logout_page.png
