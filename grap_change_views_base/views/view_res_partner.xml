@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_res_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="lang" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+            <field name="category_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+            <field name="title" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_stock" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="stock.view_partner_stock_warnings_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='picking_warn']/.." position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_stock_2" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="stock.view_partner_stock_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='container_row_stock']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_purchase" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="purchase.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_purchase_currency_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_sale_invoice_group_method" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sale_invoice_group_method.view_partner_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="invoice_group_method_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_mail" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
+        <field name="arch" type="xml">
+            <field name="message_bounce" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_delivery" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="delivery.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_delivery_carrier_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>
