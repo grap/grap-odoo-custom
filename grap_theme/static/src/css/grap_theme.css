@@ -1,3 +1,6 @@
+/* ****************************************************
+Change input in forms
+**************************************************** */
 .o_input {
     border-top : 0;
     border-left : 0;
@@ -12,3 +15,16 @@
     border-bottom-color: #2e822e;
 }
 
+/* ****************************************************
+Change display of user image, in the menu
+**************************************************** */
+
+.o_main_navbar .o_user_menu .oe_topbar_avatar {
+    height: 40px;
+    transform: translateY(0px);
+}
+
+.o_main_navbar .o_switch_company_menu .oe_topbar_company_avatar {
+    height: 40px;
+    width: 40px;
+}
