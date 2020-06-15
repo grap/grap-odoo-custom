@@ -25,7 +25,7 @@ addon | version | summary
 [grap_change_email](grap_change_email/) | 12.0.1.0.1 | Change default email template for invoices, sale and purchase orders
 [grap_change_precision](grap_change_precision/) | 12.0.1.0.1 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
-[grap_change_views_base](grap_change_views_base/) | 12.0.0.0.1 | GRAP - Change Base Views
+[grap_change_views_base](grap_change_views_base/) | 12.0.0.0.2 | GRAP - Change Base Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.1 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.2 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_theme](grap_theme/) | 12.0.1.1.0 | Customize Odoo web User Interface
