@@ -27,7 +27,7 @@ addon | version | summary
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.1 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.2 | Add Activities, Colleges, Peoples, Members, etc.
-[grap_theme](grap_theme/) | 12.0.1.0.2 | Customize Odoo web User Interface
+[grap_theme](grap_theme/) | 12.0.1.1.0 | Customize Odoo web User Interface
 [server_environment_files](server_environment_files/) | 12.0.1.0.1 | Add custom CSS and extra text on PoS ticket depending on the environment
 
 
