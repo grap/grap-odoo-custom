@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Update Qty On Hand" type="object"
+                            name="action_update_quantity_on_hand"
+                            attrs="{'invisible': [('type', '!=', 'product')]}"/>
+                    <button string="Replenish" type="action" name="%(stock.action_product_replenish)d"
+                            context="{'default_product_id': id}"
+                            attrs="{'invisible': [('type', '!=', 'product')]}"/>
+
+                </header>
+                <sheet>
+                    <field name="id" invisible="True"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                        <button type="object" name="action_open_quants"
+                                attrs="{'invisible':[('type', '!=', 'product')]}"
+                                icon="fa-building-o" class="oe_stat_button">
+                           <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="qty_available" widget="statinfo" nolabel="1" class="mr4"/>
+                                    <field name="uom_name"/>
+                                </span>
+                                <span class="o_stat_text">On Hand</span>
+                           </div>
+                        </button>
+                        <button type="action" name="%(stock.action_stock_level_forecast_report_product)d"
+                                attrs="{'invisible':[('type', '!=', 'product')]}"
+                                class="oe_stat_button" icon="fa-building-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="virtual_available" widget="statinfo" nolabel="1"/>
+                                    <span attrs="{'invisible': [('outgoing_qty', '=', 0), ('incoming_qty', '=', 0)]}">
+                                        (-<field name="outgoing_qty" widget="statinfo" nolabel="1"/>+<field name="incoming_qty" widget="statinfo" nolabel="1"/>)
+                                    </span>
+                                    <field name="uom_name" class="ml4"/>
+                                </span>
+                                <span class="o_stat_text">Forecasted</span>
+                            </div>
+                        </button>
+                        <button type="object" name="action_view_stock_move_lines" string="Product Moves"
+                                attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
+                                class="oe_stat_button" icon="fa-arrows-v"/>
+                        <button  type="action"
+                                name="%(product_form_purchase_link.action_purchase_line_product_product_tree)d"
+                                class="oe_stat_button" icon="fa-list">
+                            <field string="Purchases" name="purchased_product_qty" widget="statinfo"/>
+                        </button>
+                        <button type="object" name="action_view_sales"
+                                class="oe_stat_button" icon="fa-signal"
+                                help="Sold in the last 365 days">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="sales_count" widget="statinfo" nolabel="1" class="mr4"/>
+                                    <field name="uom_name"/>
+                                </span>
+                                <span class="o_stat_text">Sold</span>
+                            </div>
+                        </button>
+
+                    </div>
+                    <field name="image_medium" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Product Name"/>
+                        <h1><field name="name" placeholder="Product Name"/></h1>
+                        <div>
+                            <div>
+                                <field name="sale_ok"/>
+                                <label for="sale_ok"/>
+                            </div>
+                            <div>
+                                <field name="purchase_ok"/>
+                                <label for="purchase_ok"/>
+                            </div>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page string="Information">
+                            <group col="4">
+                                <group string="General">
+                                    <field name="uom_id"/>
+                                    <field name="type"/>
+                                    <field name="is_alimentary"/>
+                                    <field name="categ_id"/>
+                                    <field name="barcode"/>
+                                    <field name="barcode_rule_id"/>
+                                    <field name="is_consignment" groups="recurring_consignment.group_consignment_manager"/>
+                                    <field name="cae_administrative_ok" groups="fiscal_company_base.fiscal_company_manager"/>
+                                    <field name="is_impact_standard_price" groups="account.group_account_manager"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                </group>
+                                <group string="Supply">
+                                    <field name="uom_po_id"/>
+                                    <field name="property_account_expense_id" groups="account.group_account_manager"/>
+                                    <field name="consignor_partner_id"
+                                            attrs="{'readonly':[('is_consignment', '=', True)]}"
+                                            groups="recurring_consignment.group_consignment_user"/>
+                                    <field name="standard_price" string="Cost Price (VAT Excl.)"/>
+                                    <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
+                                        groups="base.group_erp_manager"/>
+                                    <field name="fiscal_classification_id" quick_create="false" required="1"/>
+                                    <field name="consignor_partner_id"/>
+                                </group>
+                                <group string="Sale">
+                                    <field name="property_account_income_id" groups="account.group_account_manager"/>
+                                    <field name="margin_classification_id"/>
+                                    <label for="theoretical_price" attrs="{'invisible': [('margin_state', '=', 'ok')]}"/>
+                                    <div attrs="{'invisible': [('margin_state', '=', 'ok')]}">
+                                        <field name="theoretical_price" class="oe_inline"/>
+                                        <button name="use_theoretical_price_variant" string="⇒ Increase Price"
+                                                type="object" class="oe_link"
+                                                attrs="{'invisible': [('margin_state', '!=', 'cheap')]}"
+                                                help="Increase the Sale Price up to Theoretical Price"/>
+                                        <button name="use_theoretical_price_variant" string="⇒ Decrease Price"
+                                                type="object" class="oe_link"
+                                                attrs="{'invisible': [('margin_state', '!=', 'expensive')]}"
+                                                help="Decrease the Sale Price down to Theoretical Price"/>
+                                    </div>
+                                    <field name="theoretical_difference" invisible="1" />
+                                    <field name="margin_state" invisible="1" />
+                                    <field name="sale_tax_price_include" attrs="{'invisible': 1}"/>
+                                    <field name="price_vat_excl" attrs="{'invisible': [
+                                            ('sale_tax_price_include', '!=', 'all_tax_incl'),
+                                            ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
+                                    <field name="list_price"/>
+                                    <field name="price_vat_incl" attrs="{'invisible': [
+                                            ('sale_tax_price_include', '!=', 'all_tax_excl'),
+                                            ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
+                                    <field name="standard_margin_rate"/>
+                                </group>
+                                <group string="Point of Sale" groups="point_of_sale.group_pos_user">
+                                    <field name="available_in_pos"/>
+                                    <field name="meal_voucher_ok"/>
+                                    <field name="pos_categ_id"/>
+                                    <field name="to_weight"/>
+                                    <field name="sector_id" groups="pos_sector.group_pos_sector_product_user"/>
+                                </group>
+                            </group>
+                            <group col="4">
+                                <group string="Inventory">
+                                    <field name="volume"/>
+                                    <field name="weight"/>
+                                    <field name="preparation_categ_id" groups="sale_recovery_moment.recovery_user"/>
+                                </group>
+                                <group string="Print Options">
+                                    <field name="print_category_id"/>
+                                    <field name="pricetag_type_id"/>
+                                    <field name="pricetag_uom_id"/>
+                                    <field name="to_print"/>
+                                    <!-- <field name="invoice_extra_cost"/> -->
+                                </group>
+                                <group string="Vendors" colspan="2">
+                                    <field name="seller_ids"
+                                        context="{'default_product_tmpl_id':context.get('product_tmpl_id', active_id), 'product_template_invisible_variant': True}" nolabel="1">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="package_qty"/>
+                                            <field name="min_qty"/>
+                                            <field name="price"/>
+                                            <field name="discount" string="Disc. 1 %"/>
+                                            <field name="discount2"  string="Disc. 2 %"/>
+                                            <field name="discount3" invisible="1"/>
+                                            <field name="product_code" string="Code"/>
+                                            <field name="product_name" string="Name"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Description">
+                            <group>
+                                <group string="Internal Notes">
+                                    <field name="description" widget="html" nolabel="1"/>
+                                </group>
+                                <group string="Description for Customers">
+                                    <field name="description_sale" nolabel="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Extra Informations">
+                            <group string="Origin" col="4">
+                                <field name="country_id"/>
+                                <field name="state_id"/>
+                                <field name="department_id"/>
+                                <field name="origin_description"/>
+                                <field name="maker_description"/>
+                            </group>
+                            <group string="Alimentary Information" col="4">
+                                <field name="is_alcohol" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
+                                <field name="best_before_date_day" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
+                                <field name="label_ids" widget="many2many_tags" colspan="4"/>
+                                <field name="is_uncertifiable" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
+                                <field name="organic_type"/>
+                            </group>
+                            <group>
+                                <group string="Notations">
+                                    <field name="local_notation"/>
+                                    <field name="social_notation"/>
+                                    <field name="packaging_notation"/>
+                                    <field name="organic_notation"/>
+                                </group>
+                                <group>
+                                    <field name="spider_chart_image" widget="image"
+                                        class="spider_chart"
+                                        nolabel="1" colspan="2"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Alimentary Composition">
+                            <group>
+                                <group string="Ingredients">
+                                    <field name="ingredients" widget="html" nolabel="1"/>
+                                </group>
+                                <group string="Allergens">
+                                    <field name="allergens" widget="html" nolabel="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Scale" groups="product_to_scale_bizerba.group_user">
+                            <group string="Scale Communication">
+                                <group>
+                                    <field name="scale_group_id"/>
+                                    <field name="scale_tare_weight"/>
+                                </group>
+                                <group groups="product_to_scale_bizerba.group_manager">
+                                    <button name="send_scale_create" type="object" string="Resend Creation To the Scale System" colspan="2"/>
+                                    <button name="send_scale_write" type="object" string="Resend Update To the Scale System" colspan="2"/>
+                                    <button name="send_scale_unlink" type="object" string="Manual Deletion in the Scale System" colspan="2"/>
+                                </group>
+                            </group>
+
+                        </page>
+                        <page string="eShop" groups="sale_eshop.res_groups_eshop_user">
+                            <group col="4">
+                                <field name="eshop_start_date"/>
+                                <field name="eshop_end_date"/>
+                                <field name="eshop_category_id" colspan="4"/>
+                                <field name="eshop_minimum_qty"/>
+                                <field name="eshop_rounded_qty"/>
+                                <field name="eshop_state"/>
+                                <newline/>
+                                <field name="eshop_description" widget="html" colspan="4"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

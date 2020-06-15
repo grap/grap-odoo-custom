@@ -1,0 +1,348 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * grap_change_views_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-17 00:22+0000\n"
+"PO-Revision-Date: 2020-06-17 00:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "<span class=\"o_stat_text\">Forecasted</span>"
+msgstr "<span class=\"o_stat_text\">Prévisions</span>"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "<span class=\"o_stat_text\">On Hand</span>"
+msgstr "<span class=\"o_stat_text\">Disponible</span>"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "<span class=\"o_stat_text\">Sold</span>"
+msgstr "<span class=\"o_stat_text\">Vendu</span>"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Alimentary Composition"
+msgstr "Composition alimentaire"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Alimentary Information"
+msgstr "Information alimentaire"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Allergens"
+msgstr "Allergènes"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Code"
+msgstr "Code"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+msgid "Cost P."
+msgstr "PdR"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Cost Price (VAT Excl.)"
+msgstr "PdR HT"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Cost Price (VAT Incl.)"
+msgstr "PdR TTC"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Decrease the Sale Price down to Theoretical Price"
+msgstr "Baisser le prix de vente pour atteindre le prix théorique"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Description"
+msgstr "Description"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Description for Customers"
+msgstr "Description pour les clients"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Disc. 1 %"
+msgstr "Rem. 1 (%)"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Disc. 2 %"
+msgstr "Rem. 2 (%)"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Extra Informations"
+msgstr "Informations complémentaires"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "General"
+msgstr "Général"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_scale
+msgid "Generate Barcode (Using Barcode Rule)"
+msgstr "Générer un code barre (via règle de codes barre)"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_scale
+msgid "Generate Base (Using Sequence)"
+msgstr "Générer une base (via une séquence)"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Increase the Sale Price up to Theoretical Price"
+msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Information"
+msgstr "Information"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Ingredients"
+msgstr "Ingrédients"
+
+#. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_editable_view
+msgid "Inline editable"
+msgstr "Vue éditable en ligne"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Internal Notes"
+msgstr "Notes internes"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Inventory"
+msgstr "Inventaire"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Manual Deletion in the Scale System"
+msgstr "Suppression manuelle dans le système bizerba"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+msgid "Margin Categ."
+msgstr "Catég. Marge"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Notations"
+msgstr "Notations"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Origin"
+msgstr "Origine"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Point of Sale"
+msgstr "Point de Vente"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Print Options"
+msgstr "Options d'impression"
+
+#. module: grap_change_views_product
+#: model:ir.model,name:grap_change_views_product.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Product Moves"
+msgstr "Mouvements de produits"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Product Name"
+msgstr "Nom de l'article"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_new
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_new
+#: model:ir.ui.menu,name:grap_change_views_product.menu_root
+msgid "Products"
+msgstr "Articles"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_category
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_category
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_category
+msgid "Products (Categories)"
+msgstr "Articles (Catégories)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_food
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_food
+msgid "Products (Food)"
+msgstr "Articles (Alimentaire)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_original
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_original
+msgid "Products (Obsolete views)"
+msgstr "Variante d'articles (Vue obsolètes)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_origin
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_origin
+msgid "Products (Origin)"
+msgstr "Articles (Origine)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_pos
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_pos
+msgid "Products (PoS)"
+msgstr "Articles (PdV)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_pricetag
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_pricetag
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_pricetag
+msgid "Products (Price Tags)"
+msgstr "Articles (Etiquettes)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_price
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_price
+msgid "Products (Price)"
+msgstr "Articles (Prix)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_scale
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_scale
+msgid "Products (Scale)"
+msgstr "Articles (Balances)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_eshop
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_eshop
+msgid "Products (eShop)"
+msgstr "Articles (eBoutique)"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Purchases"
+msgstr "Achats"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+msgid "Ref"
+msgstr "Réf"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Replenish"
+msgstr "Réapprovisionner"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Resend Creation To the Scale System"
+msgstr "Renvoyer la création au système de balance"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Resend Update To the Scale System"
+msgstr "Renvoyer une mise à jour au système de balance"
+
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Sale"
+msgstr "Vente"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+msgid "Sale P."
+msgstr "Prix Vente"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Scale"
+msgstr "Balance"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Scale Communication"
+msgstr "Communication avec la balance"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Sold in the last 365 days"
+msgstr "Vendu dans les 365 derniers jours"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Supply"
+msgstr "Approvisionnement"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_template_original
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_template_original
+msgid "Templates (Obsolete views)"
+msgstr "Modèles d'articles (Vue obsolète)"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+msgid "UoM"
+msgstr "UdM"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Update Qty On Hand"
+msgstr "Mettre à jour le stock disponible"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Vendors"
+msgstr "Fournisseurs"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "eShop"
+msgstr "eBoutique"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "⇒ Decrease Price"
+msgstr "⇒ Baisser le prix"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "⇒ Increase Price"
+msgstr "⇒ Augmenter le prix"
+

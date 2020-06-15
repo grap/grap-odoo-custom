@@ -8,4 +8,4 @@ from openerp import models
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
-    _order = 'name_template, default_code'
+    _order = 'name'

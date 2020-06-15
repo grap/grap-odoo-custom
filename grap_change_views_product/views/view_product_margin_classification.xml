@@ -5,19 +5,22 @@ Copyright (C) 2018-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp><data>
+<odoo>
 
     <record id="view_product_margin_classification_form" model="ir.ui.view">
         <field name="model">product.margin.classification</field>
         <field name="inherit_id" ref="product_margin_classification.view_product_margin_classification_form"/>
         <field name="arch" type="xml">
-            <field name="markup" position="attributes">
-                <attribute name="groups">base.group_no_one</attribute>
-            </field>
+            <xpath expr="//label[@for='markup']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='markup']/.." position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
             <field name="price_surcharge" position="attributes">
-                <attribute name="groups">base.group_no_one</attribute>
+                <attribute name="groups">base.group_erp_manager</attribute>
             </field>
         </field>
     </record>
 
-</data></openerp>
+</odoo>

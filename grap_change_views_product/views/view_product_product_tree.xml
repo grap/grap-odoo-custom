@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_product_product_tree" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="default_code" position="attributes">
+                <attribute name="string">Ref</attribute>
+            </field>
+            <field name="standard_price" position="attributes">
+                <attribute name="string">Cost P.</attribute>
+            </field>
+            <field name="lst_price" position="attributes">
+                <attribute name="string">Sale P.</attribute>
+            </field>
+            <field name="standard_price" position="after">
+                <field name="margin_classification_id" string="Margin Categ."/>
+            </field>
+            <field name="uom_id" position="attributes">
+                <attribute name="string">UoM</attribute>
+            </field>
+            <field name="attribute_value_ids" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+            <field name="barcode" position="after">
+                <field name="company_id" groups="base.group_multi_company"/>
+            </field>
+        </field>
+    </record>
+
+<!-- ************************************************************ -->
+<!-- 1 - Products (Price View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_price" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="fiscal_classification_id" required="1"/>
+                <field name="consignor_partner_id" invisible="1"/>
+                <field name="standard_price"/>
+                <field name="list_price"/>
+                <field name="margin_classification_id"/>
+                <field name="standard_margin_rate"/>
+                <field name="sale_ok"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_price" model="ir.actions.act_window">
+        <field name="name">Products (Price)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_product_tree_price"/>
+        <field name="context">{"search_default_filter_to_sell":1}</field>
+    </record>
+
+    <menuitem id="menu_product_product_price"
+        name="Products (Price)"
+        parent="menu_product_product_editable_view" sequence="1"
+        action="action_product_product_price"/>
+
+<!-- ************************************************************ -->
+<!-- 2 - Products (Food View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_food" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="categ_id"/>
+                <field name="label_ids" widget="many2many_tags"/>
+                <field name="is_alimentary"/>
+                <field name="certifier_organization_id"/>
+                <field name="is_alcohol"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_food" model="ir.actions.act_window">
+        <field name="name">Products (Food)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_product_product_tree_food"/>
+    </record>
+
+   <menuitem id="menu_product_product_food"
+        name="Products (Food)"
+        action="action_product_product_food"
+        parent="menu_product_product_editable_view" sequence="2"/>
+
+
+<!-- ************************************************************ -->
+<!-- 3 - Products (Origin View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_origin" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="country_id"/>
+                <field name="state_id"/>
+                <field name="department_id"/>
+                <field name="maker_description"/>
+                <field name="origin_description"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_origin" model="ir.actions.act_window">
+        <field name="name">Products (Origin)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_product_product_tree_origin"/>
+    </record>
+
+   <menuitem id="menu_product_product_origin"
+        name="Products (Origin)"
+        action="action_product_product_origin"
+        parent="menu_product_product_editable_view" sequence="3"/>
+
+
+<!-- ************************************************************ -->
+<!-- 4 - Products (Pricetag View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_pricetag" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree string="Products (Price Tags)" editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="print_category_id"/>
+                <field name="pricetag_type_id"/>
+                <field name="pricetag_uom_id"/>
+                <field name="to_print"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_pricetag" model="ir.actions.act_window">
+        <field name="name">Products (Price Tags)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_print_todo':1}</field>
+        <field name="view_id" ref="view_product_product_tree_pricetag"/>
+    </record>
+
+    <menuitem id="menu_product_product_pricetag"
+        name="Products (Price Tags)"
+        parent="menu_product_product_editable_view" sequence="4"
+        action="action_product_product_pricetag"/>
+
+<!-- ************************************************************ -->
+<!-- 5 - Products (Categories View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_category" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree string="Products (Categories)" editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="name"/>
+                <field name="categ_id"/>
+                <field name="fiscal_classification_id" required="1"/>
+                <field name="consignor_partner_id" invisible="1"/>
+                <field name="margin_classification_id"/>
+                <field name="print_category_id"/>
+                <field name="pos_categ_id" groups="point_of_sale.group_pos_user"/>
+                <field name="scale_group_id" groups="product_to_scale_bizerba.group_user"/>
+                <field name="eshop_category_id" groups="sale_eshop.res_groups_eshop_user"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_category" model="ir.actions.act_window">
+        <field name="name">Products (Categories)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_product_tree_category"/>
+    </record>
+
+    <menuitem id="menu_product_product_category"
+        name="Products (Categories)"
+        parent="menu_product_product_editable_view" sequence="5"
+        action="action_product_product_category"/>
+
+<!-- ************************************************************ -->
+<!-- 10 - Products (Point of Sale View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_pos" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="available_in_pos"/>
+                <field name="to_weight"/>
+                <field name="pos_categ_id" options="{'quick_create':false}"/>
+                <field name="barcode"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_pos" model="ir.actions.act_window">
+        <field name="name">Products (PoS)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_product_product_tree_pos"/>
+        <field name="context">{"search_default_filter_to_sell":1}</field>
+    </record>
+
+    <menuitem id="menu_product_product_pos"
+        name="Products (PoS)"
+        parent="menu_product_product_editable_view" sequence="10"
+        groups="point_of_sale.group_pos_user"
+        action="action_product_product_pos"/>
+
+<!-- ************************************************************ -->
+<!-- 11 - Products (Scale View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_scale" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="scale_group_id"/>
+                <field name="scale_tare_weight"/>
+                <field name="barcode_rule_id"
+                    domain="[('generate_model', '=', 'product.product')]"
+                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                <field name="generate_type" invisible="1"/>
+                <field name="barcode_base" attrs="{
+                    'invisible': [('barcode_rule_id', '=', False)],
+                    'readonly': [('generate_type', '!=', 'manual')]}"
+                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                <button name="generate_base" type="object" string="Generate Base (Using Sequence)" attrs="{'invisible': ['|',
+                    ('generate_type', '!=', 'sequence'),
+                    ('barcode_base', '!=', 0)]}"
+                    icon="gtk-execute"
+                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                <field name="barcode"
+                    attrs ="{'readonly': [('generate_type', '=', 'sequence')]}" />
+                <button name="generate_barcode" type="object" string="Generate Barcode (Using Barcode Rule)"
+                    icon="gtk-execute"
+                    attrs="{'invisible': ['|',
+                            ('barcode_rule_id', '=', False),
+                            ('barcode_base', '=', 0)]}"
+                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_scale" model="ir.actions.act_window">
+        <field name="name">Products (Scale)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_product_product_tree_scale"/>
+        <field name="context">{"search_default_filter_to_sell":1}</field>
+    </record>
+
+    <menuitem id="menu_product_product_scale"
+        name="Products (Scale)"
+        parent="menu_product_product_editable_view" sequence="11"
+        groups="product_to_scale_bizerba.group_user"
+        action="action_product_product_scale"/>
+
+<!-- ************************************************************ -->
+<!-- 12 - Products (eShop View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_eshop" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom"
+                    decoration-info="eshop_state == 'disabled'"
+                    decoration-muted="eshop_state == 'unavailable'">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="eshop_minimum_qty"/>
+                <field name="eshop_rounded_qty"/>
+                <field name="eshop_category_id"/>
+                <field name="eshop_start_date"/>
+                <field name="eshop_end_date"/>
+                <field name="eshop_state"/>
+                <field name="preparation_categ_id"/>
+                <field name="sale_ok"/>
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_eshop" model="ir.actions.act_window">
+        <field name="name">Products (eShop)</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_eshop_setup':1}</field>
+        <field name="view_id" ref="view_product_product_tree_eshop" />
+    </record>
+
+   <menuitem id="menu_product_product_eshop"
+        name="Products (eShop)"
+        parent="menu_product_product_editable_view" sequence="12"
+        groups="sale_eshop.res_groups_eshop_user"
+        action="action_product_product_eshop"/>
+
+</odoo>
