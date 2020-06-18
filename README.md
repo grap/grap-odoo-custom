@@ -28,7 +28,7 @@ addon | version | summary
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.0.2 | GRAP - Change Base Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.0.3 | GRAP - Change Product Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.1 | GRAP - Change Stock Views
-[grap_cooperative](grap_cooperative/) | 12.0.1.0.2 | Add Activities, Colleges, Peoples, Members, etc.
+[grap_cooperative](grap_cooperative/) | 12.0.1.0.3 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_theme](grap_theme/) | 12.0.1.2.0 | Customize Odoo web User Interface
 [server_environment_files](server_environment_files/) | 12.0.1.0.1 | Add custom CSS and extra text on PoS ticket depending on the environment
 
