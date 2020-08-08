@@ -126,6 +126,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             ('sale_tax_price_include', '!=', 'all_tax_incl'),
                                             ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
                                     <field name="list_price"/>
+                                    <field name="unit_price" attrs="{'invisible': [('unit_price', '=', 0)]}"/>
                                     <field name="price_vat_incl" attrs="{'invisible': [
                                             ('sale_tax_price_include', '!=', 'all_tax_excl'),
                                             ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
