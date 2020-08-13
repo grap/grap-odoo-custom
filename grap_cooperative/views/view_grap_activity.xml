@@ -89,7 +89,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </group>
 
                     <notebook>
-                        <page string="Team">
+                        <page name="team" string="Team">
                             <group>
                                 <field name="people_ids" mode="kanban" nolabel="1"
                                         context="{'default_activity_id': active_id}">
@@ -112,7 +112,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                             t-att-src="_s + '/base/static/img/avatar.png'"/>
                                                     </div>
                                                     <div class="oe_kanban_details">
-                                                        <field name="people_name"/>
+                                                        <a type="open"><field name="people_name"/></a>
                                                         <div t-if="record.function.raw_value">
                                                             <field name="function"/>
                                                         </div>
