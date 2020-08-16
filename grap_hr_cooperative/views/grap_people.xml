@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2020 GRAP
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <record id="act_coop_people_2_hr_employee" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="view_grap_people_form" model="ir.ui.view">
+        <field name="name">grap.people.form</field>
+        <field name="model">grap.people</field>
+        <field name="inherit_id" ref="grap_cooperative.view_grap_people_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Add new button-->
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="create_employee_from_coop_people" 
+                        type="object" class="oe_highlight"
+                        string="Create Employee Form"
+                        attrs="{'invisible': [('emp_id', '!=', False)]}"/>
+                </header>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <field name="emp_id" invisible="1"/>
+                    <button name="action_get_created_employee"
+                        class="oe_stat_button"
+                        icon="fa-user"
+                        type="object"
+                        attrs="{'invisible': [('emp_id', '=', False)]}">
+                        <field name="emp_id" widget="statinfo" string="Employee"/>
+                    </button>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

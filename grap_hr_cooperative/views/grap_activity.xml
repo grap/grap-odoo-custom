@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2020 Coop IT Easy
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <record id="view_grap_activity_form" model="ir.ui.view">
+        <field name="name">grap.activity.form</field>
+        <field name="model">grap.activity</field>
+        <field name="inherit_id" ref="grap_cooperative.view_grap_activity_form"/>
+        <field name="arch" type="xml">
+
+            <!-- new pages -->
+            <xpath expr="//page[@name='team']" position="before">
+                <page name="workers" string="Workers" groups="hr.group_hr_user">
+                    <group>
+                        <field name="worker_ids" mode="kanban" nolabel="1"
+                                context="{'default_activity_id': active_id}">
+                            <kanban>
+                                <field name="id"/>
+                                <field name="name"/>
+                                <field name="image_small"/>
+                                <field name="job_title"/>
+                                <field name="work_phone"/>
+                                <field name="work_phone"/>
+                                <field name="work_email"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div>
+                                            <div class="o_kanban_image">
+                                                <a type="open"><img alt="Photo" t-if="record.id.raw_value"
+                                                    t-att-src="kanban_image('hr.employee', 'image_small', record.id.raw_value)"/></a>
+                                                <img alt="Avatar" t-if="!record.id.raw_value"
+                                                    t-att-src="_s + '/base/static/img/avatar.png'"/>
+                                            </div>
+                                            <div class="oe_kanban_details">
+                                                <a type="open"><field name="name"/></a>
+                                                <div t-if="record.job_title.raw_value">
+                                                    <field name="job_title"/>
+                                                </div>
+                                                <div t-if="record.work_email.raw_value">
+                                                    <field name="work_email" widget="email"/>
+                                                </div>
+                                                <div t-if="record.work_phone.raw_value">
+                                                    <field name="work_phone" widget="phone"/>
+                                                </div>
+                                                <div t-if="record.work_phone.raw_value">
+                                                    <field name="work_phone" widget="phone"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </group>
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

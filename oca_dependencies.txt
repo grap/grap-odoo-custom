@@ -8,6 +8,8 @@ grap-odoo-business      https://github.com/grap/grap-odoo-business.git      12.0
 
 odoo-addons-cae     https://github.com/odoo-cae/odoo-addons-cae.git      12.0
 
+odoo-addons-hr-incubator    https://github.com/odoo-cae/odoo-addons-hr-incubator    12.0
+
 product-attribute__product_standard_price_tax_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_standard_price_tax_included
 
 product-attribute__product_sale_tax_price_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_sale_tax_price_included
