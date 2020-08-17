@@ -97,7 +97,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <field name="id"/>
                                         <field name="function"/>
                                         <field name="people_id"/>
-                                        <field name="people_name"/>
+                                        <a type="open"><field name="people_name"/></a>
                                         <field name="people_working_phone"/>
                                         <field name="people_private_phone"/>
                                         <field name="people_working_email"/>
