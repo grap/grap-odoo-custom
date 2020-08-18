@@ -12,7 +12,6 @@ class Employee(models.Model):
     worker_activity = fields.Many2one(
         string="Activity",
         comodel_name="grap.activity",
-        required=True,
         help="Worker activity",
     )
 

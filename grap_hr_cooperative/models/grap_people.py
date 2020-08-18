@@ -32,7 +32,7 @@ class GrapPeople(models.Model):
         return action
 
     @api.multi
-    def create_employee_from_coop_people(self):
+    def create_employee_from_coop_people(self, edit):
         """ Create an hr.employee from the grap.cooperative people """
         employee = False
         for coop_people in self:
@@ -65,8 +65,11 @@ class GrapPeople(models.Model):
                 'birthday': coop_people.birthdate})
             coop_people.write({'emp_id': employee.id})
 
-        employee_action = self.env.ref('hr.open_view_employee_list')
-        dict_act_window = employee_action.read([])[0]
-        dict_act_window['context'] = {'form_view_initial_mode': 'edit'}
-        dict_act_window['res_id'] = employee.id
-        return dict_act_window
+        if edit is False:
+            return employee
+        else:
+            employee_action = self.env.ref('hr.open_view_employee_list')
+            dict_act_window = employee_action.read([])[0]
+            dict_act_window['context'] = {'form_view_initial_mode': 'edit'}
+            dict_act_window['res_id'] = employee.id
+            return dict_act_window
