@@ -10,6 +10,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="first_name">Sylvain</field>
         <field name="last_name">LE GAL</field>
         <field name="birthdate">1982-05-22/</field>
+        <field name="zip">4569/</field>
+        <field name="city">Orlyon/</field>
         <field name="working_email">sylvain.legal@yourcompany.example.com</field>
         <field name="working_phone">+33 6 12 34 56 78</field>
         <field name="image" type="base64" file="grap_cooperative/static/src/img/people_SLG-image.png"/>
