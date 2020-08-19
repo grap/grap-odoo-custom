@@ -15,9 +15,9 @@ class Employee(models.Model):
     ]
 
     _HR_EMPLOYEE_STATE_COLOR = {
-        "to_be_validated" : 2, #orange
-        "necessary_changes" : 1, #red
-        "validated" : 0, #none
+        "to_be_validated": 2,  # orange
+        "necessary_changes": 1,  # red
+        "validated": 0,  # none
     }
 
     # Columns Section
@@ -44,7 +44,7 @@ class Employee(models.Model):
     color = fields.Integer(
         string='Color Index',
         compute="_compute_color",
-        default=2) #none
+        default=2)  # none
 
     @api.multi
     def employee_change_state(self, state):
@@ -54,22 +54,22 @@ class Employee(models.Model):
     @api.multi
     def employee_change_state_to_to_be_validated(self):
         for employee in self:
-            employee.color = self._HR_EMPLOYEE_STATE_COLOR["to_be_validated"];
+            employee.color = self._HR_EMPLOYEE_STATE_COLOR["to_be_validated"]
             self.employee_change_state('to_be_validated')
 
     @api.multi
     def employee_change_state_to_necessary_changes(self):
         for employee in self:
-            employee.color = self._HR_EMPLOYEE_STATE_COLOR["necessary_changes"];
+            employee.color = self._HR_EMPLOYEE_STATE_COLOR["necessary_changes"]
             self.employee_change_state('necessary_changes')
 
     @api.multi
     def employee_change_state_to_validated(self):
         for employee in self:
-            employee.color = self._HR_EMPLOYEE_STATE_COLOR["validated"];
+            employee.color = self._HR_EMPLOYEE_STATE_COLOR["validated"]
             self.employee_change_state('validated')
 
     @api.depends('state')
     def _compute_color(self):
         for employee in self:
-            employee.color = self._HR_EMPLOYEE_STATE_COLOR[employee.state];
+            employee.color = self._HR_EMPLOYEE_STATE_COLOR[employee.state]
