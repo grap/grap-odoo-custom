@@ -13,17 +13,17 @@
                 <header>
                     <button name="employee_change_state_to_to_be_validated"
                         type="object" class="oe_highlight"
-                        string="Invalidate employee"
+                        string="Invalidate form"
                         attrs="{'invisible': [('state', '=', 'to_be_validated')]}"
                         groups="hr.group_hr_manager"/>
-                    <button name="employee_change_state_to_necessary_changes"
+                    <button name="employee_change_state_to_need_changes"
                         type="object" class="oe_highlight"
                         string="Need changes"
-                        attrs="{'invisible': [('state', '=', 'necessary_changes')]}"
+                        attrs="{'invisible': [('state', '=', 'need_changes')]}"
                         groups="hr.group_hr_manager"/>
                     <button name="employee_change_state_to_validated"
                         type="object" class="oe_highlight"
-                        string="Validate employee"
+                        string="Validate form"
                         attrs="{'invisible': [('state', '=', 'validated')]}"
                         groups="hr.group_hr_manager"/>
                     <field name="state" widget="statusbar"/>
