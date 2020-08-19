@@ -4,13 +4,80 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo>
+
     <record id="view_employee_form_grap" model="ir.ui.view">
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="employee_change_state_to_to_be_validated"
+                        type="object" class="oe_highlight"
+                        string="Invalidate employee"
+                        attrs="{'invisible': [('state', '=', 'to_be_validated')]}"
+                        groups="hr.group_hr_manager"/>
+                    <button name="employee_change_state_to_necessary_changes"
+                        type="object" class="oe_highlight"
+                        string="Need changes"
+                        attrs="{'invisible': [('state', '=', 'necessary_changes')]}"
+                        groups="hr.group_hr_manager"/>
+                    <button name="employee_change_state_to_validated"
+                        type="object" class="oe_highlight"
+                        string="Validate employee"
+                        attrs="{'invisible': [('state', '=', 'validated')]}"
+                        groups="hr.group_hr_manager"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+            </xpath>
             <field name="department_id" position="before">
                 <field name="worker_activity"/>
             </field>
         </field>
     </record>
+
+    <record id="view_employee_kanban_grap" model="ir.ui.view">
+        <field name="name">hr.employee.kanban</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+
+            <!--Kanban view is all replaced -->
+            <xpath expr="//kanban[@class='o_hr_employee_kanban']" position="replace">
+                <kanban class="o_hr_employee_kanban">
+                    <field name="id"/>
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                    <field name="message_needaction_counter"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} o_kanban_record_has_image_fill o_hr_kanban_record oe_kanban_global_click">
+                            <!-- Medium employee's picture -->
+                            <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image: url(#{kanban_image('hr.employee', 'image_medium', record.id.raw_value)})" role="img"/>
+                            <!-- Employee's picture optimized for mobile -->
+                            <div class="o_kanban_image d-md-none rounded-circle" t-attf-style="background-image: url(#{kanban_image('hr.employee', 'image_small', record.id.raw_value)})" role="img"/>
+
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                        <span t-if="record.job_id.raw_value" class="o_kanban_record_subtitle"><field name="job_id"/></span>
+                                    </div>
+                                </div>
+                                <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <ul>
+                                    <li id="last_login"/>
+                                </ul>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </xpath>
+        </field>
+    </record>
+
+
 </odoo>

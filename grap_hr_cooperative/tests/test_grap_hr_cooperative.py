@@ -27,3 +27,5 @@ class TestCreateEmployee(TransactionCase):
         self.assertEqual(employee.work_email, self.people_SLG.working_email)
         self.assertEqual(employee.work_phone, self.people_SLG.working_phone)
         self.assertEqual(employee.birthday, self.people_SLG.birthdate)
+        self.assertEqual(employee.state, 'to_be_validated')
+        self.assertEqual(employee.color, 2)
