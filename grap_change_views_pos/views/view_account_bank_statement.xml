@@ -3,20 +3,12 @@
 Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 @author: Julien WESTE
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT <quentin.dupont@grap.coop>
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp><data>
+<odoo>
 
-    <record id="view_account_bank_statement2" model="ir.ui.view">
-        <field name="model">account.bank.statement</field>
-        <field name="inherit_id" ref="account.view_bank_statement_form2"/>
-        <field name="arch" type="xml">
-            <field name="user_id" position="attributes">
-                <attribute name="readonly">0</attribute>
-            </field>
-        </field>
-    </record>
 
     <record id="view_account_bank_statement1" model="ir.ui.view">
         <field name="model">account.bank.statement</field>
@@ -25,13 +17,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='journal_id']/.." position="attributes">
                 <attribute name="groups">account.group_account_manager</attribute>
             </xpath>
-            <xpath expr="//button[@string='Import Invoice']/.." position="attributes">
-                <attribute name="groups">account.group_account_manager</attribute>
-            </xpath>
             <xpath expr="//header" position="attributes">
                 <attribute name="groups">account.group_account_manager</attribute>
             </xpath>
         </field>
     </record>
 
-</data></openerp>
+    <record id="view_account_bnk_stmt_cashbox" model="ir.ui.view">
+        <field name="model">account.bank.statement.cashbox</field>
+        <field name="inherit_id" ref="account.view_account_bnk_stmt_cashbox"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='number']" position="attributes">
+                <attribute name="widget">numeric_step</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

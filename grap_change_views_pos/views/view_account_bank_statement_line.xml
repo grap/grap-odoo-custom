@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="view_account_bank_statement_line_search" model="ir.ui.view">
             <field name="model">account.bank.statement.line</field>
             <field name="arch" type="xml">
                 <search string="Cash register operations"> 
-                   <field name="name" />
-                   <field name="date" />
+                    <field name="name" />
+                    <field name="date" />
                     <field name="statement_id"/>
-                   <group expand='0' string='Group by...'>
-                       <filter name="other_operation" string="Other operations" domain="[('pos_statement_id','=', False)]"/>
-                   </group>
+                    <group expand='0' string='Group by...'>
+                        <filter name="other_operation" string="Other operations" domain="[('pos_statement_id','=', False)]"/>
+                    </group>
                 </search>
             </field>
         </record>
-
-<!--                   <group expand='0' string='Group by...'>-->
-<!--                       <filter string="Customer operations" domain="[('type','=','customer')]"/>-->
-<!--                       <filter string="Supplier operations" domain="[('type','=','supplier')]"/>-->
-<!--                       <filter name="other_operation" string="Other operations" domain="[('type','=','general')]"/>-->
-<!--                   </group>-->
-
-
-<!--                    <field name="type"/>-->
 
         <record id="view_account_bank_statement_line_tree" model="ir.ui.view">
             <field name="model">account.bank.statement.line</field>
@@ -60,5 +50,4 @@
             parent="point_of_sale.menu_point_of_sale"
             action="action_view_account_bank_statement_line_tree" 
             sequence="50"/>
-    </data>
-</openerp>
+</odoo>
