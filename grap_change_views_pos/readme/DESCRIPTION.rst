@@ -1,20 +1,12 @@
-Change default views for ``stock`` module.
+**Changes for ``point_of_sale`` modules**
 
+* more info in ``pos.category`` form view.
 
-* change the order of the model ``stock.picking`` (last picking displayed first)
+* change the colors of the ``pos.order`` tree view (danger and warning for low margins).
+* add default filter for ``pos.order`` tree view.
 
-* change the colors of the ``stock.inventory`` tree view.
+* change groups rules for ``account.bank.statement`` and ``account.bank.statement.line``.
 
-* remove some button in ``stock.inventory`` form view.
+**Create new view**
 
-* allow to view ``stock.inventory.line`` in tree view, even if the inventory is done.
-
-**give access to the menus**
-
-* "Inventory > Stock Management"
-
-**remove access to the menu:**
-
-* "Inventory / Operations / Scrapped"
-* "Inventory / Operations / Reordering Rules"
-* "Inventory / Operations / Compute only minimum stock rules"
+* "Point of sale > Order Lines"
