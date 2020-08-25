@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/* Seems to doesnt work in Odoo v12 data-id trick
+→ https://www.odoo.com/fr_FR/forum/aide-1/question/changing-column-widths-tree-view-35981
+ No data-id in th tree view..
+*/
+/* account - view_account_invoice_customer_form --------------------------------------------- */
+/*.grap_change_views__view_account_invoice_customer_form [data-id="product_id"]          {width: 33%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="name"]                {width: 25%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="quantity"]            {width: 6%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="uos_id"]              {width: 6%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="price_unit"]          {width: 6%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="discount"]            {width: 5%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="tax_ids_description"] {width: 12%;}
+.grap_change_views__view_account_invoice_customer_form [data-id="price_subtotal"]      {width: 6%;}
+*/
+
+/* account - view_account_invoice_supplier_form --------------------------------------------- */
+/*.grap_change_views__view_account_invoice_supplier_form [data-id="product_id"]          {width: 31%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="name"]                {width: 25%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="quantity"]            {width: 6%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="uos_id"]              {width: 5%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="price_unit"]          {width: 5%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="discount"]            {width: 5%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="discount2"]           {width: 5%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="tax_ids_description"] {width: 12%;}
+.grap_change_views__view_account_invoice_supplier_form [data-id="price_subtotal"]      {width: 6%;}
+*/
+/* account - view_account_invoice_tree --------------------------------          ------------ */
+/*.grap_change_views__view_account_invoice_tree          [data-field="origin"]              {
+    width: 20%;*/
+    /*max-width: 200px; Weird value, but it works ;-)*/
+/*    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+}
+*/
+
+/* account - view_account_invoice_supplierinfo_form ----------------------------------------- */
+/*.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="product_id"]                 {width: 52%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="current_price"]              {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="new_price"]                  {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="current_discount"]           {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="new_discount"]               {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="current_discount2"]          {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="new_discount"]               {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="current_standard_price"]     {width: 6%;}
+.grap_change_views__view_wizard_update_invoice_supplierinfo_form [data-id="new_standard_price"]         {width: 6%;}
+
+*/
+
+
+/* account - view_account_move_form                                           */
+/*.grap_change_views__view_account_move_form [data-id="invoice"]              {width: 3%;}
+.grap_change_views__view_account_move_form [data-id="name"]                 {width: 18%;}
+.grap_change_views__view_account_move_form [data-id="partner_id"]           {width: 12%;}
+.grap_change_views__view_account_move_form [data-id="account_id"]           {width: 18%;}
+.grap_change_views__view_account_move_form [data-id="date_maturity"]        {width: 7%;}
+.grap_change_views__view_account_move_form [data-id="debit"]                {width: 8%;}
+.grap_change_views__view_account_move_form [data-id="credit"]               {width: 8%;}
+.grap_change_views__view_account_move_form [data-id="tax_code_id"]          {width: 10%;}
+.grap_change_views__view_account_move_form [data-id="tax_amount"]           {width: 5%;}
+.grap_change_views__view_account_move_form [data-id="state"]                {width: 5%;}
+.grap_change_views__view_account_move_form [data-id="reconcile_id"]         {width: 3%;}
+.grap_change_views__view_account_move_form [data-id="reconcile_partial_id"] {width: 3%;}
+*/
