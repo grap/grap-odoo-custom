@@ -23,9 +23,7 @@
         "web_tree_dynamic_colored_field",
     ],
     "data": [
-        # "security/res_groups.yml",
         "views/view_account_invoice.xml",
-        # "views/view_account_invoice_line.xml", écrans lignes facturées, semblent inutiles
         'views/view_wizard_update_invoice_supplierinfo.xml',
     ],
     "installable": True,
