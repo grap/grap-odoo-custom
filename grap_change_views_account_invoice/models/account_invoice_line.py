@@ -58,10 +58,6 @@ class AccountInvoiceLine(models.Model):
         string="Taxes", compute="_compute_tax_ids_description", store=True
     )
 
-
-    # NOT INCLUDED FOR THE MOMENT
-    # USELESS ?
-
     # Compute Section
     @api.multi
     @api.depends("invoice_line_tax_id")
