@@ -12,14 +12,10 @@
     "license": "AGPL-3",
     "depends": [
         "account",
-        "account_invoice_supplierinfo_update",
-        "account_product_fiscal_classification",
-        "intercompany_trade_base",
-        "intercompany_trade_account",
-        "grap_custom_account_invoice_workflow",
-        "grap_change_access",
         "account_invoice_supplierinfo_update_standard_price",
         "account_invoice_triple_discount",
+        "grap_custom_account_invoice_workflow",
+        "sale",
         "web_tree_dynamic_colored_field",
     ],
     "data": [

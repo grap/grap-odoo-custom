@@ -62,7 +62,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="account.invoice_supplier_form"/>
         <field name="priority">300</field>
         <field name="arch" type="xml">
-            <button name="action_invoice_verify" position="attributes">
+<!--             <button name="action_invoice_verify" position="attributes">
                 <attribute name="attrs">{'invisible': ['|',
                     ('intercompany_trade','=', True),
                     ('state','not in', ['draft']),
@@ -75,7 +75,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     ('state','not in', ['draft', 'verified']),
                 ]}</attribute>
                 <attribute name="states" position="replace"/>
-            </button>
+            </button> -->
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>

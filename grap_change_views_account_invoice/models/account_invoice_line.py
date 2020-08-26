@@ -7,6 +7,7 @@ from odoo import models, api, fields
 # NOT INCLUDED FOR THE MOMENT
 # USELESS ?
 
+
 class AccountInvoiceLine(models.Model):
     _inherit = "account.invoice.line"
 
@@ -58,8 +59,8 @@ class AccountInvoiceLine(models.Model):
     )
 
 
-# NOT INCLUDED FOR THE MOMENT
-# USELESS ?
+    # NOT INCLUDED FOR THE MOMENT
+    # USELESS ?
 
     # Compute Section
     @api.multi
