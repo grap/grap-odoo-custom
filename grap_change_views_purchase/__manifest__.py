@@ -14,6 +14,8 @@
         "purchase",
         "purchase_discount",
     ],
-    "data": ["views/view_purchase_order.xml",],
+    "data": [
+        "views/view_purchase_order.xml"
+    ],
     "installable": True,
 }
