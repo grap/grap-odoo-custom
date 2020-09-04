@@ -36,10 +36,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 -->
 
-    <record model="ir.ui.menu" id="account.menu_finance">
-        <field name="sequence">7</field>
-    </record>
-
     <record model="ir.ui.menu" id="base.menu_reporting">
         <field name="sequence">8</field>
     </record>
@@ -175,78 +171,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_grap_dashboard"/>
 
 <!-- Accounting Menu -->
-    <menuitem id="menu_account_invoice_line_customer"
-        name="Customer Invoices Lines"
-        parent="account.menu_finance_receivables" sequence="120"
-        action="action_account_invoice_line_tree_customer"/>
-
-    <menuitem id="menu_account_invoice_line_supplier"
-        name="Supplier Invoices Lines"
-        parent="account.menu_finance_payables" sequence="120"
-        action="action_account_invoice_line_tree_supplier"/>
 
     <!-- Disable default menu for account.move.line, because it is dummy -->
-    <record model="ir.ui.menu" id="account.menu_action_account_moves_all">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]" />
-    </record>
-
-    <!-- disable weird voucher menu -->
-    <record model="ir.ui.menu" id="account_voucher.menu_action_sale_receipt">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]" />
-    </record>
-    <record model="ir.ui.menu" id="account_voucher.menu_action_purchase_receipt">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]" />
-    </record>
-
     <!-- Up to somes menu just for Account Manager -->
-    <record model="ir.ui.menu" id="account.menu_finance_charts">
-        <field name="groups_id" eval="[(6, 0, [ref('account.group_account_manager')])]" />
-    </record>
-    <record model="ir.ui.menu" id="account.menu_finance_periodical_processing">
-        <field name="groups_id" eval="[(6, 0, [ref('account.group_account_manager')])]" />
-    </record>
-    <record model="ir.ui.menu" id="account.menu_finance_entries">
-        <field name="groups_id" eval="[(6, 0, [ref('account.group_account_manager')])]" />
-    </record>
 
     <!-- Down to somes menu just for Invoice User -->
-    <record model="ir.ui.menu" id="account.menu_finance_bank_and_cash">
-        <field name="groups_id" eval="[(6, 0, [ref('account.group_account_invoice')])]" />
-    </record>
-
-    <!-- Disable unused accounting feature -->
-    <record model="ir.ui.menu" id="account_statement_reconciliation.menu_menu_Bank_process">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]" />
-    </record>
-
 
     <!-- reorder some items -->
-    <menuitem id="menu_account_move_line"
-        name="Account Move Lines"
-        parent="account.menu_finance_entries" sequence="1"
-        action="action_view_account_move_line_tree"/>
-
-    <menuitem id="account.menu_finance_legal_statement"
-        name="Legal Reports"
-        parent="account.menu_finance_reporting"
-        groups="account.group_account_manager"/>
-
-    <menuitem id="account.menu_finance_generic_reporting"
-        name="Generic Reporting"
-        parent="account.menu_finance_reporting"
-        sequence="100"
-        groups="account.group_account_manager"/>
-
-    <menuitem id="account.menu_finance_statistic_report_statement"
-        name="Statistic Reports"
-        parent="account.menu_finance_reporting"
-        sequence="300"
-        groups="account.group_account_manager"/>
-
-<!-- (accounting) Reporting Menu -->
-    <record model="ir.ui.menu" id="account.menu_action_account_invoice_report_all">
-        <field eval="[(6, 0, [ref('base.group_no_one')])]" name="groups_id"/>
-    </record>
 
     <record model="ir.ui.menu" id="account_voucher.menu_action_sale_receipt_report_all">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>

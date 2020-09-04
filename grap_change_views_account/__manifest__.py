@@ -4,7 +4,7 @@
 # @author Julien WESTE
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "GRAP - Change Views Account Invoice",
+    "name": "GRAP - Change Views Account",
     "version": "12.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
@@ -12,10 +12,9 @@
     "license": "AGPL-3",
     "depends": [
         "account",
-        "account_invoice_supplierinfo_update_standard_price",
         "account_invoice_triple_discount",
-        "grap_custom_account_invoice_workflow",
         "sale",
+        "account_invoice_supplierinfo_update_standard_price",
         "web_tree_dynamic_colored_field",
     ],
     "data": [

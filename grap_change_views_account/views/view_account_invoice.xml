@@ -13,13 +13,43 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_account_invoice_form" model="ir.ui.view">
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_form"/>
-        <field name="priority">300</field>
         <field name="arch" type="xml">
             <button name="action_invoice_open" position="after">
                 <button name="action_invoice_sent" type="object" string="Send by Email" attrs="{'invisible':[('state', 'not in', ['draft','paid'])]}" groups="base.group_user"/>
             </button>
-            <!-- Change names -->
+
+            <field name="date_invoice" position="attributes">
+              <attribute name="required">1</attribute>
+            </field>
+
+            <field name="partner_bank_id" position="attributes">
+                <attribute name="groups">account.group_account_manager</attribute>
+            </field>
+
+            <field name="incoterm_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+
+            <!-- Move some fields -->
+            <field name="user_id" position="replace"/>
+            <field name="payment_term_id" position="replace"/>
+            <field name="fiscal_position_id" position="replace"/>
+            <field name="reference" position="before">
+                <field name="payment_term_id"/>
+                <field name="user_id"/>
+            </field>
+
+            <field name="cash_rounding_id" position="after">
+                <field name="fiscal_position_id"/>
+            </field>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
+                <attribute name="decoration-danger">price_subtotal == 0</attribute>
+             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
+                <attribute name="groups">account.group_account_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='uom_id']" position="attributes">
@@ -29,30 +59,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="string">U.P.</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
-                <attribute name="string">Disc. (%)</attribute>
+                <attribute name="string">Disc. 1(%)</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
                 <attribute name="string">S.T.</attribute>
             </xpath>
-            <field name="date_invoice" position="attributes">
-              <attribute name="required">1</attribute>
-            </field>
-            <!-- Move some fields -->
-            <field name="team_id" position="replace"/>
-            <field name="user_id" position="replace"/>
-            <field name="payment_term_id" position="replace"/>
-            <field name="reference" position="before">
-                <field name="payment_term_id"/>
-                <field name="team_id" position="replace"/>
-                <field name="user_id" position="replace"/>
-            </field>
-
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
                 <attribute name="groups">account.group_account_manager</attribute>
              </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
-                <attribute name="decoration-warning">discount&gt;90</attribute>
-             </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_invoice_form_sale" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="sale.account_invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
         </field>
     </record>
 
@@ -60,22 +85,24 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_account_invoice_form_supplier" model="ir.ui.view">
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_supplier_form"/>
-        <field name="priority">300</field>
         <field name="arch" type="xml">
-<!--             <button name="action_invoice_verify" position="attributes">
-                <attribute name="attrs">{'invisible': ['|',
-                    ('intercompany_trade','=', True),
-                    ('state','not in', ['draft']),
-                ]}</attribute>
-                <attribute name="states" position="replace"/>
-            </button>
-            <button name="action_invoice_open" position="attributes">
-                <attribute name="attrs">{'invisible': ['|',
-                    ('intercompany_trade','=', True),
-                    ('state','not in', ['draft', 'verified']),
-                ]}</attribute>
-                <attribute name="states" position="replace"/>
-            </button> -->
+
+            <field name="vendor_bill_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+            <field name="incoterm_id" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+            <field name="partner_bank_id" position="attributes">
+                <attribute name="groups">account.group_account_manager</attribute>
+            </field>
+
+            <!-- Move some fields -->
+            <field name="fiscal_position_id" position="replace"/>
+            <field name="reference" position="after">
+                <field name="fiscal_position_id"/>
+            </field>
+
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>
@@ -83,28 +110,48 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="string">UoM</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="attributes">
-                <attribute name="string">UP</attribute>
+                <attribute name="string">U.P.</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
-                <attribute name="string">ST</attribute>
+                <attribute name="string">S.T.</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
-                <attribute name="groups">account.group_account_manager</attribute>
+                <attribute name="attrs">{'readonly': 1}</attribute>
              </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
                 <attribute name="string">Disc. 1 (%)</attribute>
+                 <attribute name="groups"/>
             </xpath>
-             <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount2']" position="attributes">
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
+                <attribute name="decoration-danger">price_subtotal == 0</attribute>
+             </xpath>
+        </field>
+    </record>
+
+    <!-- we re enable invoice_line_tax_ids for accountant members only-->
+    <record id="view_account_invoice_form_supplier_accountant" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="groups_id" eval="[(4, ref('account.group_account_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
+                <attribute name="attrs">{'readonly': 0}</attribute>
+             </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_form_supplier_triple_discount" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_invoice_triple_discount.invoice_supplier_triple_discount_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount2']" position="attributes">
                  <attribute name="string">Disc. 2 (%)</attribute>
                  <attribute name="groups"/>
              </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
-                <attribute name="class">grap_change_views__view_account_invoice_supplier_form</attribute>
-                <attribute name="decoration-warning">discount&gt;90</attribute>
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount3']" position="attributes">
+                 <attribute name="string">Disc. 3 (%)</attribute>
+                <attribute name="groups">base.group_erp_manager</attribute>
              </xpath>
-            <xpath expr="//button[@name='check_supplierinfo']" position="attributes">
-                <attribute name="attrs">{'invisible': ['|', ('supplierinfo_ok', '=', True), ('type', '=', 'in_refund')]}</attribute>
-            </xpath>
         </field>
     </record>
 
@@ -135,12 +182,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-
     <!-- TREE - Customer invoice -->
     <record id="view_account_invoice_tree" model="ir.ui.view">
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_tree"/>
-        <field name="priority">300</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-danger">amount_total_signed&lt;0</attribute>
@@ -168,14 +213,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="state" position="after">
                 <field name="company_id" groups="base.group_multi_company"/>
             </field>
-            <!-- Display supplier Invoice for out invoice and refund -->
-            <field name="origin" position="after">
-                <field name="supplier_invoice_number"
-                    invisible="context.get('type', '') in ['out_invoice', 'out_refund']"/>
-            </field>
         </field>
     </record>
 
+    <!-- SEARCH : all Invoices -->
     <record id="view_account_invoice_search" model="ir.ui.view">
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter"/>
@@ -183,7 +224,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="number" position="attributes">
                 <attribute name="filter_domain">['|', '|', ('number','ilike',self),('origin','ilike',self),('reference','ilike',self)]</attribute>
             </field>
+            <field name="partner_id" position="after">
+                <filter name="to_process_customer" string="To Process"
+                    domain="[('state', 'not in', ('paid', 'cancel'))]"/>
+                <filter name="to_process_supplier" string="Not Cancelled"
+                    domain="[('state', '!=', 'cancel')]"/>
+            </field>
         </field>
+    </record>
+
+    <record id="account.action_invoice_tree1" model="ir.actions.act_window">
+        <field name="context">{'search_default_to_process_customer':1}</field>
+    </record>
+
+    <record id="account.action_vendor_bill_template" model="ir.actions.act_window">
+        <field name="context">{'search_default_to_process_supplier':1}</field>
     </record>
 
 </odoo>
