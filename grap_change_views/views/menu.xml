@@ -25,16 +25,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="sequence">4</field>
     </record>
 
-    <record model="ir.ui.menu" id="point_of_sale.menu_point_root">
-        <field name="sequence">5</field>
-        <field name="action" ref="point_of_sale.action_pos_pos_form" />
-    </record>
-
-    <!-- Disable obsolete menu
-    <record model="ir.ui.menu" id="intercompany_trade_base.menu_intercompany_trade_root">
-        <field name="sequence">6</field>
-    </record>
--->
 
     <record model="ir.ui.menu" id="base.menu_reporting">
         <field name="sequence">8</field>
@@ -183,10 +173,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
     </record>
 
-    <menuitem id="menu_pos_order_line" name="Order Lines"
-        sequence="3"
-        parent="point_of_sale.menu_point_of_sale"
-        action="action_pos_order_line"/>
 
 <!-- (Sale) Reporting Menu -->
     <record model="ir.ui.menu" id="sale.menu_report_product_all">
@@ -197,14 +183,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <!-- Point Of Sale Menu -->
     <record model="ir.ui.menu" id="point_of_sale.menu_point_config_product">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]" />
-    </record>
-
-    <record model="ir.ui.menu" id="point_of_sale.menu_pos_details">
-        <field eval="[(6, 0, [ref('base.group_no_one')])]" name="groups_id"/>
-    </record>
-
-    <record model="ir.ui.menu" id="point_of_sale.menu_report_pos_order_all">
-        <field eval="[(6, 0, [ref('base.group_no_one')])]" name="groups_id"/>
     </record>
 
 </data></openerp>

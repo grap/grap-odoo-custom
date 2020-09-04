@@ -9,21 +9,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <odoo>
 
-
-    <record id="view_pos_order_search" model="ir.ui.view">
-        <field name="model">pos.order</field>
-        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
-        <field name="arch" type="xml">
-            <filter name="order_month" position="before">
-                    <filter icon="terp-go-month" string="Today" name="Today" domain="[('date_order','&gt;=',(context_today()).strftime('%%Y-%%m-%%d'))]"/>
-                    <filter icon="terp-go-month" string="Yesterday" name="Yesterday" domain="[('date_order','&lt;', ((context_today()).strftime('%%Y-%%m-%%d 00:00:00'))), ('date_order','&gt;=', ((context_today()+datetime.timedelta(days=-1)).strftime('%%Y-%%m-%%d')))]"/>
-            </filter>
-            <field name="user_id" position="after">
-                <field name="partner_id"/>
-            </field>
-        </field>
-    </record>
-
     <record id="view_pos_order_form" model="ir.ui.view">
         <field name="model">pos.order</field>
         <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
@@ -57,6 +42,24 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="pos_reference" position="replace"/>
             <field name="user_id" position="replace"/>
         </field>
+    </record>
+
+    <record id="view_pos_order_search" model="ir.ui.view">
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <filter name="order_month" position="before">
+                    <filter string="Today" name="today" domain="[('date_order','&gt;=',(context_today()).strftime('%%Y-%%m-%%d'))]"/>
+                    <filter string="Yesterday" name="yesterday" domain="[('date_order','&lt;', ((context_today()).strftime('%%Y-%%m-%%d 00:00:00'))), ('date_order','&gt;=', ((context_today()+datetime.timedelta(days=-1)).strftime('%%Y-%%m-%%d')))]"/>
+            </filter>
+            <field name="user_id" position="after">
+                <field name="partner_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="point_of_sale.action_pos_pos_form">
+        <field name="context">{"search_default_today":1}</field>
     </record>
 
 </odoo>

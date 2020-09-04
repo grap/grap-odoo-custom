@@ -34,25 +34,5 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="context">{'search_default_to_process':1}</field>
         </record>
 
-<!-- Model: pos.order.line -->
-    <record id="action_pos_order_line" model="ir.actions.act_window">
-        <field name="name">POS Lines</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">pos.order.line</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree</field>
-        <field name="domain">[]</field>
-    </record>
-
-
-<!-- * Display To do -->
-        <record id="point_of_sale.action_pos_session" model="ir.actions.act_window">
-            <field name="context">{'search_default_to_process':1}</field>
-        </record>
-
-<!-- Point of Sale 'Action' -->
-        <record model="ir.actions.act_window" id="point_of_sale.action_pos_pos_form">
-            <field name="context">{"search_default_Today":1}</field>
-        </record>
 
 </data></openerp>

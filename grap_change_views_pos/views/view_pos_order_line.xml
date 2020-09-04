@@ -32,7 +32,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Pos Order Line - Search View</field>
         <field name="model">pos.order.line</field>
         <field name="arch" type="xml">
-            <search string="Search POS Order Lines">
+            <search>
                 <filter name="Draft" domain="[('state','=','draft')]"/>
                 <filter name="Done" domain="[('state','in',('paid','invoiced','done'))]"/>
                 <separator orientation="vertical"/>
@@ -45,13 +45,23 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="name"/>
                 <field name="product_id"/>
                 <field name="partner_id"/>
-                <newline/>
-                <field name="create_date" string="Date From" filter_domain="[('create_date','&gt;=',self)]"/>
-                <field name="create_date" string="Date To" filter_domain="[('create_date','&lt;=',self)]"/>
-                <newline/>
            </search>
         </field>
     </record>
+
+    <record id="action_pos_order_line" model="ir.actions.act_window">
+        <field name="name">Order Lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.order.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,search</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <menuitem id="menu_pos_order_line" name="Order Lines"
+        sequence="2"
+        parent="point_of_sale.menu_point_of_sale"
+        action="action_pos_order_line"/>
 
 </odoo>
 

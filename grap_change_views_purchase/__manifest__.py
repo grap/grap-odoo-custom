@@ -17,7 +17,6 @@
     ],
     "data": [
         "views/menu.xml",
-        "views/view_product_product.xml",
         "views/view_purchase_order.xml",
     ],
     "installable": True,

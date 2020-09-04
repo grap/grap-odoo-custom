@@ -4,7 +4,7 @@
         <record id="view_account_bank_statement_line_search" model="ir.ui.view">
             <field name="model">account.bank.statement.line</field>
             <field name="arch" type="xml">
-                <search string="Cash register operations"> 
+                <search string="Cash register operations">
                     <field name="name" />
                     <field name="date" />
                     <field name="statement_id"/>
@@ -42,12 +42,11 @@
             <field name="view_id" ref="view_account_bank_statement_line_tree" />
             <field name="search_view_id" ref="view_account_bank_statement_line_search"/>
             <field name="context">{'search_default_other_operation':1}</field>
-            <field name="help">Display cashs manipulation.</field>
         </record>
 
         <!-- Menu -->
         <menuitem id="menu_cash_register_operation"
             parent="point_of_sale.menu_point_of_sale"
-            action="action_view_account_bank_statement_line_tree" 
+            action="action_view_account_bank_statement_line_tree"
             sequence="50"/>
 </odoo>
