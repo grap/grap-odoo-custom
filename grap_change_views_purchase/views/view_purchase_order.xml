@@ -41,63 +41,92 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='order_line']/tree/field[@name='date_planned']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <field name="picking_type_id" position="attributes">
-                <attribute name="groups">base.group_no_one</attribute>
+            <!-- Move date_planned near date_order in the header -->
+            <xpath expr="//page[@name='purchase_delivery_invoice']/group/group/div/field[@name='date_planned']/.." position="replace"/>
+            <xpath expr="//label[@for='date_planned']" position="replace"/>
+            <field name="date_order" position="after">
+                <field name="date_planned"
+                    attrs="{'readonly': [('state', 'not in', ('draft', 'sent'))]}"/>
             </field>
-            <xpath expr="//field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
-                <attribute name="groups">account.group_account_manager</attribute>
-             </xpath>
-             <xpath expr="//field[@name='order_line']/tree/field[@name='sequence']" position="attributes">
-                <attribute name="string">n°</attribute>
+
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                <attribute name="decoration-danger">price_subtotal == 0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='date_planned']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
+                <attribute name="attrs">{'readonly': 1}</attribute>
+             </xpath>
              <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="attributes">
-                <attribute name="string">UoM</attribute>
+                <attribute name="string">Unit</attribute>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
-                <attribute name="string">UP</attribute>
-            </xpath>
-            <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="attributes">
-                <attribute name="string">Disc (%)</attribute>
+                <attribute name="string">U.P.</attribute>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="attributes">
                 <attribute name="string">S.T.</attribute>
             </xpath>
-            <xpath expr="//page[@name='purchase_delivery_invoice']" position="attributes">
-                <attribute name="groups">base.group_no_one</attribute>
-            </xpath>
-            <field name="date_order" position="after">
-                <field name="new_date_planned" attrs="{'readonly': [('state', 'not in', ('draft', 'sent'))]}"/>
-            </field>
         </field>
     </record>
 
+    <!-- we re enable taxes_id for accountant members only-->
+    <record id="view_purchase_order_form_accountant" model="ir.ui.view">
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="groups_id" eval="[(4, ref('account.group_account_manager'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
+                <attribute name="attrs">{'readonly': 0}</attribute>
+             </xpath>
+        </field>
+    </record>
 
-    <record id="view_purchase_order_discount_form" model="ir.ui.view">
+    <record id="view_purchase_order_form_discount" model="ir.ui.view">
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase_discount.purchase_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='order_line']/tree" position="attributes">
-                <attribute name="decoration-danger">discount&gt;90</attribute>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="attributes">
+                <attribute name="string">Disc. 1 (%)</attribute>
             </xpath>
         </field>
     </record>
 
-   <record id="view_purchase_order_filter" model="ir.ui.view">
+    <record id="view_purchase_order_form_triple_discount" model="ir.ui.view">
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="inherit_id" ref="purchase_triple_discount.purchase_order_triple_discount_form_view"/>
         <field name="arch" type="xml">
-            <filter name="expected_date" position="replace"/>
-            <filter name="order_date" position="after">
-                <filter string="Expected Date" name="new_date_planned" domain="[]" context="{'group_by':'new_date_planned'}"/>
-            </filter>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='discount2']" position="attributes">
+                <attribute name="string">Disc. 2 (%)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='discount3']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
         </field>
     </record>
 
+    <!--
+        * remove bad domain in Purchase Order Actions
+        * Add default filter context
+        * Add 'To Process' Filter
+        * Add color to Purchase Order
+    -->
+    <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_to_process':1}</field>
+    </record>
+
+    <!-- Hide Request for Quotation entries -->
+    <record model="ir.ui.menu" id="purchase.menu_purchase_rfq">
+        <field name="name">Quotations (Admin)</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
 
 </odoo>

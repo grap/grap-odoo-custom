@@ -34,18 +34,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="context">{'search_default_to_process':1}</field>
         </record>
 
-<!-- Purchase Order Part refactoring -->
-        <!--
-            * remove bad domain in Purchase Order Actions
-            * Add default filter context
-            * Add 'To Process' Filter
-            * Add color to Purchase Order
-        -->
-    <record id="purchase.purchase_form_action" model="ir.actions.act_window">
-        <field name="domain">[]</field>
-        <field name="context">{'search_default_to_process':1}</field>
-    </record>
-
     <record id="action_account_invoice_line_tree_customer" model="ir.actions.act_window">
         <field name="name">Customer Invoices Lines</field>
         <field name="res_model">account.invoice.line</field>

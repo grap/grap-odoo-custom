@@ -34,7 +34,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record model="ir.ui.menu" id="intercompany_trade_base.menu_intercompany_trade_root">
         <field name="sequence">6</field>
     </record>
---> 
+-->
 
     <record model="ir.ui.menu" id="account.menu_finance">
         <field name="sequence">7</field>
@@ -99,9 +99,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field eval="[(6, 0, [ref('base.group_no_one')])]" name="groups_id"/>
     </record>
 
-    <record model="ir.ui.menu" id="purchase.menu_purchase_config_pricelist">
-        <field eval="[(6, 0, [ref('base.group_no_one')])]" name="groups_id"/>
-    </record>
 
     <!--
         * Reorder Sale / Sale items
@@ -129,53 +126,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         name="Customers (eShop)"
         sequence="1"
         parent="menu_res_partner_editable_view"/>
-
-<!-- Purchase / Purchase Menu -->
-
-    <record model="ir.ui.menu" id="purchase.menu_product_by_category_purchase_form">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
-    
-    <record model="ir.ui.menu" id="purchase.menu_procurement_management_inventory">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
-
-    <record model="ir.ui.menu" id="purchase.menu_procurement_management_pending_invoice">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
-
-    <record model="ir.ui.menu" id="purchase.menu_purchase_line_order_draft">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
-
-    <record model="ir.ui.menu" id="purchase.menu_action_picking_tree_picking_to_invoice">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
-
-<!-- Purchase / Reporting Menu -->
-    <record model="ir.ui.menu" id="purchase.menu_action_purchase_order_report_all">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
-
-<!-- Purchase purchase.order Menu refactoring -->
-    <!--
-        * Reorder Purchase / Purchase items
-        * Disable Quotation
-    -->
-    
-    <record model="ir.ui.menu" id="purchase.menu_purchase_form_action">
-        <field name="sequence" eval="1" />
-        <field name="name">Quotations / Purchase Orders</field>
-    </record>
-    <record model="ir.ui.menu" id="base.menu_procurement_management_supplier_name">
-        <field name="sequence" eval="2" />
-    </record>
-
-    <record model="ir.ui.menu" id="purchase.menu_purchase_rfq">
-        <field name="name">Quotations (Admin)</field>
-        <field name="sequence" eval="99" />
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
-    </record>
 
 
 <!-- CRM / Sale Menu -->
@@ -220,7 +170,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         sequence="0"
         groups="base.group_user"/>
 
-    <menuitem id="web_dashboard_tile.mail_dashboard" 
+    <menuitem id="web_dashboard_tile.mail_dashboard"
         name="Indicateurs Synthétiques"
         parent="menu_grap_dashboard"/>
 
@@ -304,7 +254,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_pos_order_line" name="Order Lines"
         sequence="3"
-        parent="point_of_sale.menu_point_of_sale" 
+        parent="point_of_sale.menu_point_of_sale"
         action="action_pos_order_line"/>
 
 <!-- (Sale) Reporting Menu -->

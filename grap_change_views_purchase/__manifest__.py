@@ -13,9 +13,12 @@
     "depends": [
         "purchase",
         "purchase_discount",
+        "purchase_triple_discount",
     ],
     "data": [
-        "views/view_purchase_order.xml"
+        "views/menu.xml",
+        "views/view_product_product.xml",
+        "views/view_purchase_order.xml",
     ],
     "installable": True,
 }
