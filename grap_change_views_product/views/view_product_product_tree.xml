@@ -187,7 +187,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <tree string="Products (Categories)" editable="bottom">
                 <field name="default_code" readonly="1"/>
                 <field name="name" readonly="1"/>
-                <field name="name"/>
                 <field name="categ_id"/>
                 <field name="fiscal_classification_id" required="1"/>
                 <field name="consignor_partner_id" invisible="1"/>
