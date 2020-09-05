@@ -8,33 +8,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <openerp><data>
 
-   <record id="view_sale_order_search" model="ir.ui.view">
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
-        <field name="arch" type="xml">
-            <filter name="sales" position="after">
-                <filter name="to_process" string="To Process"
-                    domain="[('state','not in',('done', 'cancel'))]"/>
-            </filter>
-        </field>
-    </record>
-
-    <record id="view_sale_order_tree" model="ir.ui.view">
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_tree"/>
-        <field name="arch" type="xml">
-            <tree position="attributes">
-                <attribute name="colors">blue:state=='draft';gray:state=='cancel';red:state in ('shipping_except','invoice_except');brown:state in ('sent', 'waiting_date', 'progress', 'manual')</attribute>
-            </tree>
-            <field name="user_id" position="before">
-                <field name="margin" sum="Margin Total"/>
-            </field>
-            <field name="amount_total" position="attributes">
-                <attribute name="string">Amount (VAT Incl.)</attribute>
-            </field>
-        </field>
-    </record>
-
     <record id="view_sale_order_form_sale_3" model="ir.ui.view">
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
