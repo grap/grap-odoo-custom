@@ -2,6 +2,7 @@ account-fiscal-rule
 margin-analysis
 pos
 product-attribute
+purchase-workflow
 server-env
 
 grap-odoo-business      https://github.com/grap/grap-odoo-business.git      12.0
