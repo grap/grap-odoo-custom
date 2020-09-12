@@ -12,8 +12,8 @@
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
-        "point_of_sale",
         "sales_team",
+        "point_of_sale",
         "product_margin_classification",
     ],
     "data": [
