@@ -13,16 +13,37 @@ GRAP - Change Purchase Views
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap_change_views_purchase-lightgray.png?logo=github
-    :target: https://github.com/grap/grap_change_views_purchase/tree/12.0_imp_pos_view/grap_change_views_purchase
-    :alt: grap/grap_change_views_purchase
+.. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
+    :target: https://github.com/grap/grap-odoo-custom/tree/12.0/grap_change_views_purchase
+    :alt: grap/grap-odoo-custom
 
 |badge1| |badge2| |badge3| 
 
-Change default views for ``purchase`` module.
+Change default views for the following modules:
 
-Doesn't keep tax_ids_description from v8.0
-Replace date_planned in purchase_order to make it more simple to handle
+- ``purchase``
+- ``purchase_discount``
+- ``purchase_triple_discount``
+
+
+features
+--------
+
+- Rename some fields in the puchase order form
+- hide unused ``discount3`` field and extra tab in purchase order form
+- move ``date_planned`` field from the extra tab near to ``date_order`` field
+- make ``taxes_id`` readonly for non accountant people in purchase order view
+- merge both menu entries "Requests for Quotation" and "Purchase Orders"
+- set red purchase order lines with null amount
+
+- ``date_planned`` field of the order is now, not a computed field anymore.
+- ``date_planned`` field of the order line are based on the date_planned field on the order,
+  when confirming the order.
+
+Note
+----
+
+- hidden fields are available for member of the group ``base.group_erp_manager``
 
 **Table of contents**
 
@@ -32,10 +53,10 @@ Replace date_planned in purchase_order to make it more simple to handle
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/grap/grap_change_views_purchase/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/grap/grap-odoo-custom/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/grap/grap_change_views_purchase/issues/new?body=module:%20grap_change_views_purchase%0Aversion:%2012.0_imp_pos_view%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/grap/grap-odoo-custom/issues/new?body=module:%20grap_change_views_purchase%0Aversion:%2012.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -56,6 +77,6 @@ Contributors
 Maintainers
 ~~~~~~~~~~~
 
-This module is part of the `grap/grap_change_views_purchase <https://github.com/grap/grap_change_views_purchase/tree/12.0_imp_pos_view/grap_change_views_purchase>`_ project on GitHub.
+This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/12.0/grap_change_views_purchase>`_ project on GitHub.
 
 You are welcome to contribute.
