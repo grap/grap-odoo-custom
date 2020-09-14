@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (C) 2013-Today GRAP (http://www.grap.coop)
-@author: Julien WESTE
+Copyright (C) 2020-Today GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-
 <odoo>
 
     <!-- Hide 'product template' menu entries -->
-    <record model="ir.ui.menu" id="stock.menu_product_variant_config_stock">
+    <record model="ir.ui.menu" id="sale.menu_product_template_action">
         <field name="name">Products (Admin)</field>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
     <!-- Rename 'product Variant' menu entries into 'product' -->
-    <record model="ir.ui.menu" id="stock.product_product_menu">
+    <record model="ir.ui.menu" id="sale.menu_products">
         <field name="name">Products</field>
     </record>
 
-    <record id="stock.menu_stock_warehouse_mgmt" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_user')])]"/>
+    <!-- Display Sale configuration menu for all users -->
+    <record model="ir.ui.menu" id="sale.menu_sale_config">
+        <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_salesman_all_leads')])]"/>
     </record>
 
-    <record id="stock.menu_stock_scrap" model="ir.ui.menu">
+    <!-- hide Sales Team configuration -->
+    <record model="ir.ui.menu" id="sale.sales_team_config">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
-    <record id="stock.menu_reordering_rules_config" model="ir.ui.menu">
+    <!-- hide Attribute configuration -->
+    <record model="ir.ui.menu" id="sale_management.menu_product_attribute_action">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
-    <record id="stock.menu_procurement_compute" model="ir.ui.menu">
+    <record model="ir.ui.menu" id="sale_management.menu_catalog_variants_action">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
-
 
 </odoo>

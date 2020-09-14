@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="grap_view_pos_category_tree" model="ir.ui.view">
+        <field name="model">pos.category</field>
+        <field name="inherit_id" ref="point_of_sale.product_pos_category_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="product_qty"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="grap_product_pos_category_form_view" model="ir.ui.view">
+        <field name="model">pos.category</field>
+        <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="after">
+                <field name="product_qty"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_category_form" model="ir.ui.view">
+        <field name="model">pos.category</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                            <field name="product_qty" />
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <label for="image_small" string="Image"/>
+                            <field nolabel="1" name="image_medium" widget="image" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Product List">
+                            <field name="product_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="list_price"/>
+                                    <field name="sale_ok"/>
+                                    <field name="available_in_pos"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

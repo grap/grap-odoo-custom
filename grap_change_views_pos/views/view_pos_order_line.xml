@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_pos_order_line" model="ir.ui.view" >
+        <field name="model">pos.order.line</field>
+        <field name="priority" eval="15"/>
+        <field name="arch" type="xml">
+            <tree string="POS Orders" colors="blue:state == 'draft';gray:state in ('done','cancel');black:state not in('done','cancel')">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="create_date"/>
+                <field name="product_id"/>
+                <field name="qty" sum="Total Qty"/>
+                <field name="price_unit"/>
+                <field name="discount"/>
+                <field name="price_subtotal" sum="Total Excl"/>
+                <field name="price_subtotal_incl" sum="Total Incl"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_pos_order_line_search" model="ir.ui.view">
+        <field name="name">Pos Order Line - Search View</field>
+        <field name="model">pos.order.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="Draft" domain="[('state','=','draft')]"/>
+                <filter name="Done" domain="[('state','in',('paid','invoiced','done'))]"/>
+                <separator orientation="vertical"/>
+                <filter name="Invoiced" domain="[('state','=','invoiced')]"/>
+                <filter  name="Posted" domain="[('state','=','done')]"/>
+                <separator orientation="vertical"/>
+                <filter name="Today" domain="[('create_date','&gt;=',datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),('create_date','&lt;=',datetime.date.today().strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                <filter name="Yesterday" domain="[('create_date','&lt;',datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),('create_date','&gt;=',(datetime.date.today() - relativedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+                <separator orientation="vertical"/>
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="partner_id"/>
+           </search>
+        </field>
+    </record>
+
+    <record id="action_pos_order_line" model="ir.actions.act_window">
+        <field name="name">Order Lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.order.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,search</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <menuitem id="menu_pos_order_line" name="Order Lines"
+        sequence="2"
+        parent="point_of_sale.menu_point_of_sale"
+        action="action_pos_order_line"/>
+
+</odoo>
+
+
+

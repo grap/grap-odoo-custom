@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * grap_change_views_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-04 14:47+0000\n"
+"PO-Revision-Date: 2020-09-04 14:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
+msgid "Current Disc. 1 (%)"
+msgstr "Nouvelle Rem. 1 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
+msgid "Current Disc. 2 (%)"
+msgstr "Nouvelle Rem. 2 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
+msgid "Current Disc. 3 (%)"
+msgstr "Nouvelle Rem. 3 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_dtandard_price
+msgid "Current SP"
+msgstr "Nouveau PdR"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "Current U.P."
+msgstr "Nouveau P.U."
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+msgid "Disc. 1 (%)"
+msgstr "Rem. 1 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier_triple_discount
+msgid "Disc. 2 (%)"
+msgstr "Rem. 2 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier_triple_discount
+msgid "Disc. 3 (%)"
+msgstr "Rem. 3 (%)"
+
+#. module: grap_change_views_account
+#: model:ir.model,name:grap_change_views_account.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
+msgid "New Disc. 1 (%)"
+msgstr "Nouvelle Rem. 1 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
+msgid "New Disc. 2 (%)"
+msgstr "Nouvelle Rem. 2 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
+msgid "New Disc. 3 (%)"
+msgstr "Nouvelle Rem. 3 (%)"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_dtandard_price
+msgid "New SP"
+msgstr "Nouveau PdR"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "New U.P."
+msgstr "Nouveau P.U."
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_search
+msgid "Not Cancelled"
+msgstr "Non annulées"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+msgid "Qty"
+msgstr "Qté"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+msgid "S.T."
+msgstr "S.T."
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form
+msgid "Send by Email"
+msgstr "Envoyer par email"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_supplier_tree
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_search
+msgid "To Process"
+msgstr "A traiter"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+msgid "U.P."
+msgstr "P.U."
+
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+msgid "UoM"
+msgstr "UdM"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "Update Supplier Informations"
+msgstr "Mettre à jour les informations fournisseurs"
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT <quentin.dupont@grap.coop>
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_pos_order_form" model="ir.ui.view">
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <field name="pricelist_id" position="replace"/>
+            <field name="partner_id" position="after">
+                <field name="pricelist_id" />
+            </field>
+            <field name="product_id" position="attributes">
+                <attribute name="options">{"quick_create": false}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_pos_order_form_margin" model="ir.ui.view">
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="pos_margin.view_pos_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lines']/tree" position="attributes">
+                <attribute name="decoration-warning">discount&gt;90</attribute>
+                <attribute name="decoration-warning">margin_percent&lt;10</attribute>
+                <attribute name="decoration-danger">margin&lt;0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_order_tree" model="ir.ui.view">
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="pos_reference" position="replace"/>
+            <field name="user_id" position="replace"/>
+        </field>
+    </record>
+
+    <record id="view_pos_order_search" model="ir.ui.view">
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <filter name="order_month" position="before">
+                    <filter string="Today" name="today" domain="[('date_order','&gt;=',(context_today()).strftime('%%Y-%%m-%%d'))]"/>
+                    <filter string="Yesterday" name="yesterday" domain="[('date_order','&lt;', ((context_today()).strftime('%%Y-%%m-%%d 00:00:00'))), ('date_order','&gt;=', ((context_today()+datetime.timedelta(days=-1)).strftime('%%Y-%%m-%%d')))]"/>
+            </filter>
+            <field name="user_id" position="after">
+                <field name="partner_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="point_of_sale.action_pos_pos_form">
+        <field name="context">{"search_default_today":1}</field>
+    </record>
+
+</odoo>

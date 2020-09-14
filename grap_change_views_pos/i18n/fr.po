@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * grap_change_views_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-04 15:49+0000\n"
+"PO-Revision-Date: 2020-09-04 15:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_change_views_pos
+#: model:ir.model,name:grap_change_views_pos.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Ligne de relevé bancaire"
+
+#. module: grap_change_views_pos
+#: model:ir.actions.act_window,name:grap_change_views_pos.action_view_account_bank_statement_line_tree
+#: model:ir.ui.menu,name:grap_change_views_pos.menu_cash_register_operation
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_account_bank_statement_line_search
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_account_bank_statement_line_tree
+msgid "Cash register operations"
+msgstr "Opération de caisse"
+
+#. module: grap_change_views_pos
+#: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_order_line__partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_account_bank_statement_line_search
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_category_form
+msgid "Image"
+msgstr "Image"
+
+#. module: grap_change_views_pos
+#: model:ir.ui.menu,name:grap_change_views_pos.menu_pos_order_line
+#: model:ir.actions.act_window,name:grap_change_views_pos.action_pos_order_line
+msgid "Order Lines"
+msgstr "Lignes de ventes"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_account_bank_statement_line_search
+msgid "Other operations"
+msgstr "Autres opérations"
+
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line
+msgid "POS Orders"
+msgstr "Commandes en PdV"
+
+#. module: grap_change_views_pos
+#: model:ir.model,name:grap_change_views_pos.model_pos_category
+msgid "Point of Sale Category"
+msgstr "Catégorie du point de vente"
+
+#. module: grap_change_views_pos
+#: model:ir.model,name:grap_change_views_pos.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Lignes des commandes du point de vente"
+
+#. module: grap_change_views_pos
+#: model:ir.model,name:grap_change_views_pos.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Commandes du point de vente"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_category_form
+msgid "Product"
+msgstr "Article"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_category_form
+msgid "Product List"
+msgstr "Liste des articles"
+
+#. module: grap_change_views_pos
+#: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_category__product_qty
+msgid "Product Qty"
+msgstr "Quantité d'articles"
+
+#. module: grap_change_views_pos
+#: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_category__product_ids
+msgid "Products"
+msgstr "Articles"
+
+#. module: grap_change_views_pos
+#: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_order_line__state
+msgid "State"
+msgstr "État"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_session_search
+msgid "To Process"
+msgstr "A traiter"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_search
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_account_bank_statement_line_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line
+msgid "Total Excl"
+msgstr "Total HT"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line
+msgid "Total Incl"
+msgstr "Total TTC"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line
+msgid "Total Qty"
+msgstr "Quantité Totale"
+
+#. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_search
+msgid "Yesterday"
+msgstr "Hier"
+
