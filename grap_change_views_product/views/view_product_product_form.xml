@@ -119,20 +119,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group string="Sale">
                                     <field name="property_account_income_id" groups="account.group_account_manager"/>
                                     <field name="margin_classification_id"/>
-                                    <label for="theoretical_price" attrs="{'invisible': [('margin_state', '=', 'ok')]}"/>
-                                    <div attrs="{'invisible': [('margin_state', '=', 'ok')]}">
+                                    <label for="theoretical_price" attrs="{'invisible': [('margin_state', '=', 'correct')]}"/>
+                                    <div attrs="{'invisible': [('margin_state', '=', 'correct')]}">
                                         <field name="theoretical_price" class="oe_inline"/>
-                                        <button name="use_theoretical_price_variant" string="⇒ Increase Price"
+                                        <button name="use_theoretical_price" string="⇒ Increase Price"
                                                 type="object" class="oe_link"
-                                                attrs="{'invisible': [('margin_state', '!=', 'cheap')]}"
+                                                attrs="{'invisible': [('margin_state', '!=', 'too_cheap')]}"
                                                 help="Increase the Sale Price up to Theoretical Price"/>
-                                        <button name="use_theoretical_price_variant" string="⇒ Decrease Price"
+                                        <button name="use_theoretical_price" string="⇒ Decrease Price"
                                                 type="object" class="oe_link"
-                                                attrs="{'invisible': [('margin_state', '!=', 'expensive')]}"
+                                                attrs="{'invisible': [('margin_state', '!=', 'too_expensive')]}"
                                                 help="Decrease the Sale Price down to Theoretical Price"/>
                                     </div>
                                     <field name="theoretical_difference" invisible="1" />
-                                    <field name="margin_state" invisible="1" />
+                                    <field name="margin_state"/>
                                     <field name="sale_tax_price_include" attrs="{'invisible': 1}"/>
                                     <field name="price_vat_excl" attrs="{'invisible': [
                                             ('sale_tax_price_include', '!=', 'all_tax_incl'),
