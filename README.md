@@ -45,7 +45,6 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[grap_change_ir_values](grap_change_ir_values/) | 8.0.1.0.0 (unported) | GRAP - Change Ir Values
 [grap_qweb_report](grap_qweb_report/) | 8.0.1.0.0 (unported) | GRAP - Custom Qweb Reports
 
 [//]: # (end addons)
