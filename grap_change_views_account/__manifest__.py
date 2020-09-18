@@ -21,5 +21,8 @@
         "views/view_account_invoice.xml",
         'views/view_wizard_update_invoice_supplierinfo.xml',
     ],
+    "demo": [
+        "demo/res_groups.xml",
+    ],
     "installable": True,
 }
