@@ -4,7 +4,7 @@
 
 {
     "name": "GRAP - Change Data",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
