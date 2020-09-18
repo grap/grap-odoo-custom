@@ -6,20 +6,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="product.product_category_1" model="product.category">
-        <field name="active" eval="False" />
-    </record>
-
-    <record id="product.product_category_all" model="product.category">
-        <field name="active" eval="False" />
-    </record>
-
-    <record id="product.cat_expense" model="product.category">
-        <field name="active" eval="False" />
-    </record>
-
-    <record id="point_of_sale.product_category_pos" model="product.category">
-        <field name="active" eval="False" />
-    </record>
+    <function model="product.category" name="write">
+        <value eval="[
+            ref('product.product_category_1'),
+            ref('product.product_category_all'),
+            ref('product.cat_expense'),
+            ref('point_of_sale.product_category_pos'),
+        ]"/>
+        <value eval="{'active': False}"/>
+    </function>
 
 </odoo>
