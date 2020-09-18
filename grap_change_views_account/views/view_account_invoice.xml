@@ -10,7 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- FORM - Customer Invoice -->
-    <record id="view_account_invoice_form" model="ir.ui.view">
+    <record id="view_account_invoice_form_customer" model="ir.ui.view">
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
@@ -46,10 +46,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
                 <attribute name="decoration-danger">price_subtotal == 0</attribute>
              </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="attributes">
                 <attribute name="groups">account.group_account_manager</attribute>
             </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="attributes">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='uom_id']" position="attributes">
@@ -59,7 +59,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="string">U.P.</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
-                <attribute name="string">Disc. 1(%)</attribute>
+                <attribute name="string">Disc. 1 (%)</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
                 <attribute name="string">S.T.</attribute>
@@ -71,13 +71,28 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_account_invoice_form_sale" model="ir.ui.view">
+    <record id="view_account_invoice_form_sale_customer" model="ir.ui.view">
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="sale.account_invoice_form"/>
         <field name="arch" type="xml">
             <field name="team_id" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </field>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_form_triple_discount_customer" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_invoice_triple_discount.invoice_triple_discount_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount2']" position="attributes">
+                 <attribute name="string">Disc. 2 (%)</attribute>
+                <attribute name="groups">base.group_erp_manager</attribute>
+             </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='discount3']" position="attributes">
+                 <attribute name="string">Disc. 3 (%)</attribute>
+                <attribute name="groups">base.group_erp_manager</attribute>
+             </xpath>
         </field>
     </record>
 
