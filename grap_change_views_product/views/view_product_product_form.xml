@@ -61,18 +61,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 class="oe_stat_button" icon="fa-list">
                             <field string="Purchases" name="purchased_product_qty" widget="statinfo"/>
                         </button>
-                        <button type="object" name="action_view_sales"
-                                class="oe_stat_button" icon="fa-signal"
-                                help="Sold in the last 365 days">
-                            <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_value">
-                                    <field name="sales_count" widget="statinfo" nolabel="1" class="mr4"/>
-                                    <field name="uom_name"/>
-                                </span>
-                                <span class="o_stat_text">Sold</span>
-                            </div>
-                        </button>
-
                     </div>
                     <field name="image_medium" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
