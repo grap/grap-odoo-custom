@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT <quentin.dupont@grap.coop>
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<openerp><data>
+
+    <record id="view_account_move_form" model="ir.ui.view">
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="arch" type="xml">
+            <button name="button_validate" position="after">
+                <button name="precompute_V12_tax_data" string="Precompute V12" type="object"/>
+            </button>
+            <field name="company_id" position="after">
+                <field name="tax_state"/>
+            </field>
+            <xpath expr="//field[@name='line_id']/tree" position="attributes">
+                <attribute name="colors">blue:tax_state == 'todo'; gray: tax_state == 'not_concerned'; red: tax_state == 'error'</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_id']/tree//field[@name='reconcile_partial_id']" position="after">
+                <field name="tax_ids"/>
+                <field name="tax_line_id"/>
+                <field name="tax_state"/>
+            </xpath>
+        </field>
+    </record>
+
+</data></openerp>
