@@ -8,19 +8,20 @@ odoo.define("grap_theme.widgets", function (require) {
     "use strict";
 
     var SwitchCompanyMenu = require("web.SwitchCompanyMenu");
+    var session = require('web.session');
+
 
     var SwitchCompanyMenuWidget = SwitchCompanyMenu.include({
         start: function () {
-            var session = this.getSession();
-            return this._super.apply(this, arguments).then(function () {
+            this._super.apply(this, arguments);
+            if (!this.isMobile) {
                 var company_avatar_src = session.url('/web/image', {
                     model:'res.company',
                     field: 'logo',
                     id: session.company_id,
                 });
                 self.$('.oe_topbar_company_avatar').attr('src', company_avatar_src);
-                return $.when();
-            });
+            }
         },
     });
 });
