@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "GRAP - Change Product Views",
-    "version": "12.0.0.0.5",
+    "version": "12.0.0.0.6",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
