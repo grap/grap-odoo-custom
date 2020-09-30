@@ -5,6 +5,7 @@ product-attribute
 purchase-workflow
 server-env
 
+web      https://github.com/legalsylvain/web.git      12.0-ADD-web_favorite_company
 grap-odoo-business      https://github.com/grap/grap-odoo-business.git      12.0
 
 odoo-addons-cae     https://github.com/odoo-cae/odoo-addons-cae.git      12.0

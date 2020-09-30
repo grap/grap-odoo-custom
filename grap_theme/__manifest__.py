@@ -12,6 +12,7 @@
     "license": "AGPL-3",
     "depends": [
         "web",
+        "web_favorite_company",
     ],
     "data": [
         "views/templates.xml",
