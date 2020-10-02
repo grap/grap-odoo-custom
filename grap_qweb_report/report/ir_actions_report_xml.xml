@@ -6,58 +6,58 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <!-- New Report -->
-    <report
-        id="report_picking_summary_wizard"
-        string="Picking Summary"
-        model="picking.summary.wizard"
-        report_type="qweb-pdf"
-        file="grap_qweb_report.grap_template_picking_summary_wizard"
-        name="grap_qweb_report.grap_template_picking_summary_wizard"
-    />
-
-    <!-- Overloaded Report -->
-    <record id="stock.action_report_inventory" model="ir.actions.report">
-        <field name="report_rml">grap_qweb_report.grap_template_stock_inventory</field>
-        <field name="report_name">grap_qweb_report.grap_template_stock_inventory</field>
-        <field name="download_filename">Inventaire${ "_"+ o.company_id.name.replace("|","").replace(' ','_') if o.company_id.name else ""}.pdf</field>
+     <record id="stock.action_report_inventory" model="ir.actions.report">
+        <field name="print_report_name">
+            "Inventaire__%s__%s" % (
+                object.company_id.name.replace("|","").replace(' ','_'),
+                object.date.strftime('%Y-%m-%d')
+            )
+        </field>
     </record>
 
     <record id="account.account_invoices" model="ir.actions.report">
-        <field name="report_rml">grap_qweb_report.grap_template_account_invoice</field>
-        <field name="download_filename">Facture${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.date_invoice if o.date_invoice else ""}.pdf</field>
+        <field name="print_report_name">
+            "Facture__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.date_invoice if object.date_invoice else ""
+            )
+        </field>
     </record>
 
     <record id="purchase.action_report_purchase_order" model="ir.actions.report">
-        <field name="report_rml">grap_qweb_report.grap_template_purchase_order</field>
-        <field name="report_name">grap_qweb_report.grap_template_purchase_order</field>
-        <field name="download_filename">Bon_de_commande${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
+        <field name="print_report_name">
+            "Bon_de_commande__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
     </record>
 
     <record id="purchase.report_purchase_quotation" model="ir.actions.report">
-        <field name="report_rml">grap_qweb_report.grap_template_purchase_order_quotation</field>
-        <field name="download_filename">Demande_de_prix${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
+        <field name="print_report_name">
+            "Demande_de_prix__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
     </record>
 
-    <record id="sale.report_sale_order" model="ir.actions.report">
-        <field name="report_rml">grap_qweb_report.grap_template_sale_order</field>
-        <field name="report_name">grap_qweb_report.grap_template_sale_order</field>
-        <field name="download_filename">Devis_Commande${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
+    <record id="sale.action_report_saleorder" model="ir.actions.report">
+        <field name="print_report_name">
+            "Devis__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
     </record>
 
     <record id="stock.action_report_picking" model="ir.actions.report">
-        <field name="report_rml">grap_qweb_report.grap_template_stock_picking</field>
-        <field name="report_name">grap_qweb_report.grap_template_stock_picking</field>
-        <field name="download_filename">BL${ "_"+ o.partner_id.name.replace("'","_").replace('"',"") if o.partner_id.name else ""}${ "_"+ o.name.replace("'","_").replace('"',"") if o.name else ""}.pdf</field>
-    </record>
-
-    <record id="product.report_product_label" model="ir.actions.report">
-        <field name="model">product.product</field>
-        <field name="report_type">qweb-pdf</field>
-        <field name="report_rml">grap_qweb_report.grap_template_product_gen_label</field>
-        <field name="report_name">grap_qweb_report.grap_template_product_gen_label</field>
-        <field name="download_filename">Planche d'étiquettes avec code barre ${o.name}.pdf</field>
-        <field name="paperformat_id" ref="grap_qweb_report.paper_format_custom_gen" />
+        <field name="print_report_name">
+            "Bon_de_livraison__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
     </record>
 
 </odoo>
