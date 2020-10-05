@@ -11,7 +11,12 @@
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
+        # Odoo modules
+        "sale",
+        "purchase",
+        "point_of_sale",
         "l10n_fr",
+        # OCA & GRAP Modules
         "base_company_legal_info",
         "fiscal_company_base",
         "product_print_category",
@@ -20,10 +25,10 @@
         "product_origin_l10n_fr_department",
         "product_print_category_food_report",
         "stock_inventory_valuation",
-        "sale",
-        "purchase",
     ],
     "data": [
+        "views/templates.xml",
+        'report/qweb_template_product_product_barcode.xml',
         "report/qweb_template_layout_standard.xml",
         "report/qweb_template_account_invoice.xml",
         "report/qweb_template_stock_inventory.xml",
@@ -31,12 +36,15 @@
         "report/qweb_pricetag_square_large.xml",
         "report/qweb_pricetag_normal_small.xml",
         "report/qweb_pricetag_normal_large.xml",
-        "report/ir_actions_report_xml.xml",
+        "data/report_paperformat.xml",
+        "data/ir_actions_report_xml.xml",
         "data/product_print_category.xml",
     ],
     "demo": [
         "demo/res_groups.xml",
     ],
-    "qweb": [],
+    "qweb": [
+        "static/src/xml/pos.xml",
+    ],
     "installable": True,
 }

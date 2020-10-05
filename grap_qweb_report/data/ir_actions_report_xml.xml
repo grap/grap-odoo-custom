@@ -60,4 +60,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <report
+        id="report_product_product_barcode_5"
+        string="Self-Adhesive Barcode Sheet (PDF)"
+        model="product.product"
+        report_type="qweb-pdf"
+        name="grap_qweb_report.grap_template_product_product_barcode_multi_product"
+        file="grap_qweb_report.grap_template_product_product_barcode_multi_product"
+        print_report_name="'Self-Adhesive Barcode Sheet - %s' % (object.name)"
+        paperformat="paperformat_grap_no_margin"
+    />
 </odoo>

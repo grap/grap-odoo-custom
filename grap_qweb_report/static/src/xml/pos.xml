@@ -8,13 +8,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <templates id="template" xml:space="preserve">
 
     <t t-extend="XmlReceipt">
-        <t t-jquery="t[t-if='receipt.header']" t-operation="replace"></t>
-        <t t-jquery="t[t-if='receipt.company.contact_address']" t-operation="after">
-            <t t-if='receipt.header'>
-                <div><t t-raw='receipt.header' /></div>
-            </t>
+        <t t-jquery="t[t-if='!taxincluded']" t-operation="replace">
         </t>
-        <t t-jquery="t[t-if='receipt.shop.name']" t-operation="replace"></t>
+
         <t t-jquery="t[t-if='taxincluded']" t-operation="replace">
             <div>------------------------------------------</div>
             <line>
@@ -22,11 +18,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <left>___________ Base</left>
                 <right>Amount</right>
             </line>
-            <t t-foreach='receipt.tax_details' t-as='line_tax'>
+            <t t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
                 <line>
                     <left><t t-esc='line_tax.name' /></left>
-                    <left><value><t t-esc='line_tax.base' /></value></left>
-                    <right><value><t t-esc='line_tax.amount' /></value></right>
+                    <left><t t-esc='widget.format_currency(line_tax.base)' /></left>
+                    <right><t t-esc='widget.format_currency(line_tax.amount)' /></right>
                 </line>
             </t>
             <div>------------------------------------------</div>
@@ -50,5 +46,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </t>
         </t>
     </t>
+
+<!--
+
+-->
 
 </templates>
