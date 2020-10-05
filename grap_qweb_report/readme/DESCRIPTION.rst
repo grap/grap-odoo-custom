@@ -1,5 +1,7 @@
 * Set a default Document template for all companies. (``web.external_layout_standard``)
 
+* change the default footer and header for all the reports. (sale orders, invoices, ....)
+
 Reports Changes
 ---------------
 
@@ -12,17 +14,16 @@ Reports Changes
 
 - Add ``valuation`` on ``stock.inventory`` report.
 
-- Add a new report for ``product.product`` to have small
+- Add a new ``product.print.category`` for ``product.product`` and associated qweb templates.
 
-Headers / Footers Changes
--------------------------
+* Add a new template for ``product.product`` to print sheet of barcodes.
 
-TODO
 
 PoS Tickets changes
 -------------------
 
 Add extra information on PoS Tickets.
 
-[TODO] - add detailled lines for taxes. (Name / Base / amount)
-[TODO] - Add customer name and pricelist name. (if not the default one)
+* Add detailled lines for taxes. (Name / Base / amount)
+* Add customer name
+* Add the pricelist name. (if not the default one)

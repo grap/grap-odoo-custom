@@ -4,27 +4,24 @@ Copyright (C) 2018-Today GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 */
 
-
-openerp.grap_qweb_report = function (instance) {
+odoo.define('grap_qweb_report.models', function (require) {
     'use strict';
 
-    var module = instance.point_of_sale;
-    var _t = instance.web._t;
+    var models = require('point_of_sale.models');
 
-    var moduleOrderParent = module.Order;
+    var order_super = models.Order.prototype;
 
-    module.Order = module.Order.extend({
+    models.Order = models.Order.extend({
 
         /**
-        * Overwrite : Order getTaxDetails function to return
-        * detailed values for tax lines.
+        * * detailed values for tax lines.
         * @returns {dict} List of taxes description.
         */
-        getTaxDetails: function () {
+        get_tax_details_with_base: function () {
             var self = this;
             var tax_dict = {};
             var result = [];
-            this.get('orderLines').each(function (line) {
+            this.orderlines.each(function (line) {
                 var line_detail = line.get_all_prices();
                 for (var id in line_detail.taxDetails) {
                     var tax = self.pos.taxes_by_id[id];
@@ -42,8 +39,8 @@ openerp.grap_qweb_report = function (instance) {
                 }
             });
             $.each(tax_dict, function (key, value) {
-                var tax_name = _t('VAT ') + String(100 * key) + '%';
-                tax_name += ' ' + Array(14 - tax_name.length).join('_');
+                var tax_name = _t('VAT ') + String(key) + '%';
+                tax_name += ' ' + Array(15 - tax_name.length).join('_');
                 result.push({
                     'name': tax_name,
                     'base': value.tax_base,
@@ -54,19 +51,14 @@ openerp.grap_qweb_report = function (instance) {
         },
 
         export_for_printing: function(attributes){
-            var order = moduleOrderParent.prototype.export_for_printing.apply(this, arguments);
-            var partner = this.get_client();
-            if (partner && partner.property_product_pricelist) {
-                order.pricelist_id = partner.property_product_pricelist[0];
-                order.pricelist_name = partner.property_product_pricelist[1];
-            } else {
-                order.pricelist_id = this.pos.config.pricelist_id[0];
-                order.pricelist_name = this.pos.config.pricelist_id[1];
-            }
-            order.pricelist_default = order.pricelist_id === this.pos.config.pricelist_id[0];
-            return order;
+            var res = order_super.export_for_printing.apply(this, arguments);
+            res.pricelist_id = this.pricelist.id;
+            res.pricelist_name = this.pricelist.name;
+            res.pricelist_default = res.pricelist_id === this.pos.config.pricelist_id[0];
+            res.tax_details_with_base = this.get_tax_details_with_base();
+
+            return res;
         },
 
     });
-
-};
+});
