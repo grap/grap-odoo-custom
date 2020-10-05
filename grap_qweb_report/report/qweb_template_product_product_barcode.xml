@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+<!--
+  Pour format d'étiquettes : 38 x 21.2mm sur A4
+  Configurer format de papier "Products Print Format"
+    Marge supérieure : 5mm
+    Marge gauche : 3mm
+    Marge droite : 2mm
+    Espacement de l'en tête : 10
+-->
+
+    <template id="grap_template_product_product_barcode">
+        <style type="text/css">
+            div.product {
+                width:4.42cm;
+                height:2.32cm;
+                margin: 0px;
+                display:inline-block;
+                overflow:hidden;
+            }
+
+            div.product_name {
+                text-align:center;
+                width: 4.65cm;
+                height: 1.1cm;
+                overflow: hidden;
+                display:inline-block;
+                font-size:10px;
+            }
+
+            div.barcode_image {
+                text-align:center;
+                width: 4.65cm;
+                height: 1.3cm;
+                overflow: hidden;
+                display:inline-block;
+                font-size:9px;
+            }
+
+            div.barcode_image img{
+                width:100%;height:4rem;
+            }
+
+        </style>
+
+        <t t-foreach="65" t-as="number">
+            <div class="product">
+                <div class="product_name">
+                    <t t-esc="product.name"/>
+                </div>
+                <div class="barcode_image">
+                    <span t-field="product.barcode"/>
+                    <img t-if="len(product.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', quote_plus(product.barcode))"/>
+                    <img t-elif="len(product.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', quote_plus(product.barcode))"/>
+                    <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', quote_plus(product.barcode ))"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="grap_template_product_product_barcode_multi_product">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="product">
+                <div class="page">
+                    <t t-call="grap_qweb_report.grap_template_product_product_barcode">
+                        <t t-set="product" t-value="product"/>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>
+
+

@@ -4,168 +4,74 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-<openerp><data>
+<odoo>
 
-    <record id="category_label_normal" model="product.print.category">
-        <field name="name">Normal - 76x31mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_normal" />
-        <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('sale_food.field_product_product_spider_chart_image')),
-            (4, ref('sale_food.field_product_product_country_id')),
-            (4, ref('sale_food.field_product_product_state_id')),
-            (4, ref('sale_food.field_product_product_department_id')),
-            (4, ref('sale_food.field_product_product_origin_description')),
-            (4, ref('sale_food.field_product_product_maker_description')),
-            (4, ref('sale_food.field_product_product_local_notation')),
-            (4, ref('sale_food.field_product_product_organic_notation')),
-            (4, ref('sale_food.field_product_product_packaging_notation')),
-            (4, ref('sale_food.field_product_product_social_notation')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
-    </record>
-
-    <record id="category_label_small" model="product.print.category">
+    <record id="category_pricetag_small" model="product.print.category">
         <field name="name">Normal (small) - 76x33mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_small" />
+        <field name="qweb_view_id" ref="qweb_template_pricetag_normal_small" />
         <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('sale_food.field_product_product_spider_chart_image')),
-            (4, ref('sale_food.field_product_product_country_id')),
-            (4, ref('sale_food.field_product_product_state_id')),
-            (4, ref('sale_food.field_product_product_department_id')),
-            (4, ref('sale_food.field_product_product_origin_description')),
-            (4, ref('sale_food.field_product_product_maker_description')),
-            (4, ref('sale_food.field_product_product_local_notation')),
-            (4, ref('sale_food.field_product_product_organic_notation')),
-            (4, ref('sale_food.field_product_product_packaging_notation')),
-            (4, ref('sale_food.field_product_product_social_notation')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
+            (4, ref('product.field_product_product__name')),
+            (4, ref('product.field_product_product__barcode')),
+            (4, ref('product_label.field_product_product__label_ids')),
+            (4, ref('product_origin.field_product_product__country_id')),
+            (4, ref('product_origin.field_product_product__state_id')),
+            (4, ref('product_origin_l10n_fr_department.field_product_product__department_id')),
+            (4, ref('product_origin.field_product_product__origin_description')),
+            (4, ref('product_origin.field_product_product__maker_description')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
+            (4, ref('product.field_product_product__list_price'))]" />
     </record>
 
-    <record id="category_label_big" model="product.print.category">
-        <field name="name">Normal (big) - 76x43mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_big" />
+    <record id="category_pricetag_large" model="product.print.category">
+        <field name="name">Normal (large) - 76x43mm</field>
+        <field name="qweb_view_id" ref="qweb_template_pricetag_normal_large" />
         <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('sale_food.field_product_product_spider_chart_image')),
-            (4, ref('sale_food.field_product_product_country_id')),
-            (4, ref('sale_food.field_product_product_state_id')),
-            (4, ref('sale_food.field_product_product_department_id')),
-            (4, ref('sale_food.field_product_product_origin_description')),
-            (4, ref('sale_food.field_product_product_maker_description')),
-            (4, ref('sale_food.field_product_product_local_notation')),
-            (4, ref('sale_food.field_product_product_organic_notation')),
-            (4, ref('sale_food.field_product_product_packaging_notation')),
-            (4, ref('sale_food.field_product_product_social_notation')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
+            (4, ref('product.field_product_product__name')),
+            (4, ref('product.field_product_product__barcode')),
+            (4, ref('product_label.field_product_product__label_ids')),
+            (4, ref('product_origin.field_product_product__country_id')),
+            (4, ref('product_origin.field_product_product__state_id')),
+            (4, ref('product_origin_l10n_fr_department.field_product_product__department_id')),
+            (4, ref('product_origin.field_product_product__origin_description')),
+            (4, ref('product_origin.field_product_product__maker_description')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
+            (4, ref('product.field_product_product__list_price'))]" />
     </record>
 
-    <record id="category_label_bulk_selling" model="product.print.category">
-        <field name="name">Vrac - 93x93mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_bulk_selling" />
+    <record id="category_pricetag_square_small" model="product.print.category">
+        <field name="name">Carré petit - 30x30mm</field>
+        <field name="qweb_view_id" ref="qweb_template_pricetag_square_small" />
         <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('sale_food.field_product_product_spider_chart_image')),
-            (4, ref('sale_food.field_product_product_country_id')),
-            (4, ref('sale_food.field_product_product_state_id')),
-            (4, ref('sale_food.field_product_product_department_id')),
-            (4, ref('sale_food.field_product_product_origin_description')),
-            (4, ref('sale_food.field_product_product_maker_description')),
-            (4, ref('sale_food.field_product_product_local_notation')),
-            (4, ref('sale_food.field_product_product_organic_notation')),
-            (4, ref('sale_food.field_product_product_packaging_notation')),
-            (4, ref('sale_food.field_product_product_social_notation')),
-            (4, ref('sale_food.field_product_product_ingredients')),
-            (4, ref('sale_food.field_product_product_allergens')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
+            (4, ref('product.field_product_product__name')),
+            (4, ref('product.field_product_product__barcode')),
+            (4, ref('product_label.field_product_product__label_ids')),
+            (4, ref('product_origin.field_product_product__country_id')),
+            (4, ref('product_origin.field_product_product__state_id')),
+            (4, ref('product_origin_l10n_fr_department.field_product_product__department_id')),
+            (4, ref('product_origin.field_product_product__origin_description')),
+            (4, ref('product_origin.field_product_product__maker_description')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
+            (4, ref('product.field_product_product__list_price'))]" />
     </record>
 
-    <record id="category_label_bulk_selling_applimage" model="product.print.category">
-        <field name="name">Vrac - Applimage 52x101mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_bulk_selling_applimage" />
+    <record id="category_pricetag_square_large" model="product.print.category">
+        <field name="name">Carré large - 92x85mm</field>
+        <field name="qweb_view_id" ref="qweb_template_pricetag_square_large" />
         <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('sale_food.field_product_product_spider_chart_image')),
-            (4, ref('sale_food.field_product_product_country_id')),
-            (4, ref('sale_food.field_product_product_state_id')),
-            (4, ref('sale_food.field_product_product_department_id')),
-            (4, ref('sale_food.field_product_product_origin_description')),
-            (4, ref('sale_food.field_product_product_maker_description')),
-            (4, ref('sale_food.field_product_product_local_notation')),
-            (4, ref('sale_food.field_product_product_organic_notation')),
-            (4, ref('sale_food.field_product_product_packaging_notation')),
-            (4, ref('sale_food.field_product_product_social_notation')),
-            (4, ref('sale_food.field_product_product_ingredients')),
-            (4, ref('sale_food.field_product_product_allergens')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
+            (4, ref('product.field_product_product__name')),
+            (4, ref('product.field_product_product__barcode')),
+            (4, ref('product_label.field_product_product__label_ids')),
+            (4, ref('product_origin.field_product_product__country_id')),
+            (4, ref('product_origin.field_product_product__state_id')),
+            (4, ref('product_origin_l10n_fr_department.field_product_product__department_id')),
+            (4, ref('product_origin.field_product_product__origin_description')),
+            (4, ref('product_origin.field_product_product__maker_description')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
+            (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
+            (4, ref('product.field_product_product__list_price'))]" />
     </record>
 
-    <record id="category_label_small_square" model="product.print.category">
-        <field name="name">Carré - 30*30mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_small_square" />
-        <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
-    </record>
-
-    <record id="category_label_middle_square" model="product.print.category">
-        <field name="name">Carré - 40x36mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_middle_square" />
-        <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
-    </record>
-
-    <record id="category_label_large_square" model="product.print.category">
-        <field name="name">Carré - 92x85mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_large_square" />
-        <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
-    </record>
-
-    <record id="category_label_counter" model="product.print.category">
-        <field name="name">Comptoir - 72*123mm</field>
-        <field name="qweb_view_id" ref="qweb_template_label_counter" />
-        <field name="field_ids" eval="[
-            (4, ref('product.field_product_product_name')),
-            (4, ref('product.field_product_product_ean13')),
-            (4, ref('sale_food.field_product_product_label_ids')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_uom_id')),
-            (4, ref('grap_qweb_report.field_product_product_pricetag_type_id')),
-            (4, ref('product.field_product_product_list_price'))]" />
-    </record>
-
-</data></openerp>
+</odoo>

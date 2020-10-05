@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+     <record id="stock.action_report_inventory" model="ir.actions.report">
+        <field name="print_report_name">
+            "Inventaire__%s__%s" % (
+                object.company_id.name.replace("|","").replace(' ','_'),
+                object.date.strftime('%Y-%m-%d')
+            )
+        </field>
+    </record>
+
+    <record id="account.account_invoices" model="ir.actions.report">
+        <field name="print_report_name">
+            "Facture__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.date_invoice if object.date_invoice else ""
+            )
+        </field>
+    </record>
+
+    <record id="purchase.action_report_purchase_order" model="ir.actions.report">
+        <field name="print_report_name">
+            "Bon_de_commande__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <record id="purchase.report_purchase_quotation" model="ir.actions.report">
+        <field name="print_report_name">
+            "Demande_de_prix__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <record id="sale.action_report_saleorder" model="ir.actions.report">
+        <field name="print_report_name">
+            "Devis__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <record id="stock.action_report_picking" model="ir.actions.report">
+        <field name="print_report_name">
+            "Bon_de_livraison__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <report
+        id="report_product_product_barcode_5"
+        string="Self-Adhesive Barcode Sheet (PDF)"
+        model="product.product"
+        report_type="qweb-pdf"
+        name="grap_qweb_report.grap_template_product_product_barcode_multi_product"
+        file="grap_qweb_report.grap_template_product_product_barcode_multi_product"
+        print_report_name="'Self-Adhesive Barcode Sheet - %s' % (object.name)"
+        paperformat="paperformat_grap_no_margin"
+    />
+</odoo>
