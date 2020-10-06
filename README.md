@@ -25,7 +25,7 @@ addon | version | summary
 [grap_change_data](grap_change_data/) | 12.0.1.0.3 | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.0.2 | GRAP - Change Default
 [grap_change_email](grap_change_email/) | 12.0.1.0.1 | Change default email template for invoices, sale and purchase orders
-[grap_change_precision](grap_change_precision/) | 12.0.1.0.1 | Change the precisions names and values of some fields
+[grap_change_precision](grap_change_precision/) | 12.0.1.0.2 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.1 | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.0.3 | GRAP - Change Views
 [grap_change_views_account](grap_change_views_account/) | 12.0.1.0.5 | GRAP - Change Views Account
@@ -35,7 +35,7 @@ addon | version | summary
 [grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.2 | GRAP - Change POS Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.0.7 | GRAP - Change Product Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.0.3 | GRAP - Change Purchase Views
-[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.2 | GRAP - Change Sale Views
+[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.3 | GRAP - Change Sale Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.2 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.3 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.0.1 | GRAP - Custom Qweb Reports
