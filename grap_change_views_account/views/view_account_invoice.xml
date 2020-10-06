@@ -132,6 +132,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
                 <attribute name="attrs">{'readonly': 1}</attribute>
+                <attribute name="force_save">1</attribute>
              </xpath>
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
                 <attribute name="string">Disc. 1 (%)</attribute>

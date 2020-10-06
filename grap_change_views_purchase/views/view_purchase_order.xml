@@ -63,6 +63,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
                 <attribute name="attrs">{'readonly': 1}</attribute>
+                <attribute name="force_save">1</attribute>
              </xpath>
              <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="attributes">
                 <attribute name="string">Qty</attribute>
