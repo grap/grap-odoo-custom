@@ -16,7 +16,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="sale_order_template_id" position="before">
                 <field name="fiscal_position_id"/>
             </field>
-            <xpath expr="//field[@name='order_line']/tree/control/create[1]" position="attributes">
+            <xpath expr="//field[@name='order_line']/tree/control/create[@groups='product.group_product_variant']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
 
