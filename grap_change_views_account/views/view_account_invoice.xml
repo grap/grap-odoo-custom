@@ -249,11 +249,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="account.action_invoice_tree1" model="ir.actions.act_window">
-        <field name="context">{'search_default_to_process_customer':1}</field>
+        <field name="context">{
+            'type':'out_invoice',
+            'journal_type': 'sale',
+            'search_default_to_process_customer':1,
+        }
+        </field>
     </record>
 
     <record id="account.action_vendor_bill_template" model="ir.actions.act_window">
-        <field name="context">{'search_default_to_process_supplier':1}</field>
+        <field name="context">{
+            'default_type': 'in_invoice',
+            'type': 'in_invoice',
+            'journal_type': 'purchase',
+            'search_default_to_process_supplier':1,
+        }
+        </field>
     </record>
 
 </odoo>
