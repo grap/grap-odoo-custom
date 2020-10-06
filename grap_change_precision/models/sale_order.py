@@ -9,6 +9,6 @@ from odoo.addons import decimal_precision as dp
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    margin = fields.Float(
+    margin = fields.Monetary(
         digits=dp.get_precision("GRAP Cost Price")
     )
