@@ -15,6 +15,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//div[hasclass('o_field_nocontent')]" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
+            <field name="user_id" position="attributes">
+                <attribute name="attrs">{'readonly': 1}</attribute>
+                <attribute name="force_create">1</attribute>
+             </field>
         </field>
     </record>
 
