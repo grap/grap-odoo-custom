@@ -19,8 +19,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <menuitem id="stock.menu_stock_root" sequence="5"/>
     <menuitem id="sale.sale_menu_root" sequence="6"/>
     <menuitem id="point_of_sale.menu_point_root" sequence="7"/>
-    <menuitem id="account.menu_finance" sequence="9"/>
-    <menuitem id="crm.crm_menu_root" sequence="8"/>
+    <menuitem id="account.menu_finance" sequence="8"/>
+    <menuitem id="crm.crm_menu_root" sequence="9"/>
     <menuitem id="mobile_kiosk_abstract.menu_mobile_kiosk_main" sequence="10"/>
     <menuitem id="base.menu_board_root" sequence="11"/>
 
