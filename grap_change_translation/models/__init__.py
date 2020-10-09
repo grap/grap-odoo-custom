@@ -8,9 +8,6 @@ from . import account_product_fiscal_classification
 from . import account_product_fiscal_classification_template
 from . import account_tax_group
 from . import calendar_alarm
-from . import crm_lead_tag
-from . import crm_team
-from . import crm_stage
 from . import delivery_carrier
 from . import ir_actions_todo
 from . import mail_activity_type
