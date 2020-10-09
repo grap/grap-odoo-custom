@@ -13,10 +13,12 @@
         "product",
         "point_of_sale",
         "product_category_active",
+        "grap_change_translation",
     ],
     "data": [
         "data/product_category.xml",
         "data/product_product.xml",
+        "data/uom_uom.xml",
     ],
     "installable": True,
 }
