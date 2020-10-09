@@ -21,8 +21,11 @@
         "mobile_kiosk_abstract",
 
         # For hidden items
+        "utm",
         "mail",
         "calendar",
+        "knowledge",
+
         # Obsolete dependencies to remove after the migration
         'grap_change_views_account',
         'grap_change_views_base',

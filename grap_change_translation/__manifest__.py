@@ -16,7 +16,6 @@
         "account_product_fiscal_classification",
         "base",
         "calendar",
-        "crm",
         "delivery",
         "mail",
         "point_of_sale",
