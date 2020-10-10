@@ -6,37 +6,72 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-
 <!-- ************************************************************ -->
-<!-- Reorders Menu Items -->
-<!-- ************************************************************ -->
-
     <!-- For all users -->
+<!-- ************************************************************ -->
+
     <!-- Cooperative entry -->
-    <menuitem id="grap_cooperative.menu_root" sequence="1"/>
+    <record id="grap_cooperative.menu_root" model="ir.ui.menu">
+        <field name="sequence">1</field>
+    </record>
 
     <!-- Global data (product, partner, ...) -->
-    <menuitem id="grap_change_views_product.menu_root" sequence="10"/>
-    <menuitem id="contacts.menu_contacts" sequence="11"/>
+    <record id="grap_change_views_product.menu_root" model="ir.ui.menu">
+        <field name="sequence">10</field>
+    </record>
+    <record id="contacts.menu_contacts" model="ir.ui.menu">
+        <field name="sequence">11</field>
+    </record>
 
     <!-- Business entries -->
-    <menuitem id="purchase.menu_purchase_root" sequence="20"/>
-    <menuitem id="stock.menu_stock_root" sequence="21"/>
-    <menuitem id="sale.sale_menu_root" sequence="22"/>
-    <menuitem id="point_of_sale.menu_point_root" sequence="23"/>
-    <menuitem id="account.menu_finance" sequence="24"/>
-    <menuitem id="mobile_kiosk_abstract.menu_mobile_kiosk_main" sequence="25"/>
-    <menuitem id="base.menu_board_root" sequence="26"/>
+    <record id="purchase.menu_purchase_root" model="ir.ui.menu">
+        <field name="sequence">100</field>
+    </record>
+    <record id="stock.menu_stock_root" model="ir.ui.menu">
+        <field name="sequence">101</field>
+    </record>
+    <record id="sale.sale_menu_root" model="ir.ui.menu">
+        <field name="sequence">102</field>
+    </record>
+    <record id="point_of_sale.menu_point_root" model="ir.ui.menu">
+        <field name="sequence">103</field>
+    </record>
+    <record id="account.menu_finance" model="ir.ui.menu">
+        <field name="sequence">104</field>
+    </record>
+    <record id="mobile_kiosk_abstract.menu_mobile_kiosk_main" model="ir.ui.menu">
+        <field name="sequence">105</field>
+    </record>
+    <record id="base.menu_board_root" model="ir.ui.menu">
+        <field name="sequence">106</field>
+    </record>
 
+<!-- ************************************************************ -->
     <!-- For IT users -->
-    <menuitem id="queue_job.menu_queue_job_root" sequence="100"/>
-    <menuitem id="base.menu_management" sequence="101"/>
-    <menuitem id="base.menu_administration" sequence="102"/>
+<!-- ************************************************************ -->
+
+    <record id="queue_job.menu_queue_job_root" model="ir.ui.menu">
+        <field name="sequence">201</field>
+    </record>
+    <record id="base.menu_management" model="ir.ui.menu">
+        <field name="sequence">2020</field>
+    </record>
+    <record id="base.menu_administration" model="ir.ui.menu">
+        <field name="sequence">203</field>
+    </record>
 
     <!-- Unused in GRAP -->
-    <menuitem id="mail.menu_root_discuss" sequence="200"/>
-    <menuitem id="calendar.mail_menu_calendar" sequence="201"/>
-    <menuitem id="utm.menu_link_tracker_root" sequence="202"/>
-    <menuitem id="knowledge.menu_document_root" sequence="203"/>
+    <record id="mail.menu_root_discuss" model="ir.ui.menu">
+        <field name="sequence">301</field>
+    </record>
+    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
+        <field name="sequence">302</field>
+    </record>
+    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">
+        <field name="sequence">303</field>
+    </record>
+    <record id="knowledge.menu_document_root" model="ir.ui.menu">
+        <field name="sequence">304</field>
+    </record>
 
 </odoo>
