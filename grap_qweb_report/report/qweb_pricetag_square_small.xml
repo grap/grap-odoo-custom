@@ -8,7 +8,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- We add css in assets common, file shared for custom reports -->
-    <template id="css_qweb_template_normal_pricetag_normal" inherit_id="web.report_assets_common">
+    <template id="css_qweb_template_normal_pricetag_small" inherit_id="web.report_assets_common">
         <xpath expr="." position="inside">
             <!-- pricetag_base.scss et pricetag_square.scss sont importés dans product_print_category_food_report -->
             <link href="/grap_qweb_report/static/css/pricetag_square_small.scss" rel="stylesheet" type="text/scss"/>
