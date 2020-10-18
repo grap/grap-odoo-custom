@@ -17,6 +17,7 @@
         "sale_recovery_moment",
     ],
     "data": [
+        "data/mail_message_subtype.xml",
         "data/mail_template.xml",
         "views/view_mail_template.xml",
     ],

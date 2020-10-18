@@ -102,7 +102,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
                                         groups="base.group_erp_manager"/>
                                     <field name="fiscal_classification_id" quick_create="false" required="1"/>
-                                    <field name="consignor_partner_id"/>
                                 </group>
                                 <group string="Sale">
                                     <field name="property_account_income_id" groups="account.group_account_manager"/>
@@ -243,6 +242,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <field name="eshop_state"/>
                                 <newline/>
                                 <field name="eshop_description" widget="html" colspan="4"/>
+                            </group>
+                        </page>
+                        <page string="Hidden Fields" groups="base.group_erp_manager">
+                            <group col="4">
+                                <group string="Accounting Fields">
+                                    <field name="supplier_taxes_id" widget="many2many_tags"/>
+                                    <field name="taxes_id" widget="many2many_tags"/>
+                                </group>
                             </group>
                         </page>
                     </notebook>
