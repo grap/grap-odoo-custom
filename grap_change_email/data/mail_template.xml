@@ -27,13 +27,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model_id" ref="purchase.model_purchase_order"/>
         <field name="auto_delete" eval="True"/>
         <field name="report_template" ref="purchase.action_report_purchase_order"/>
-        <field name="report_name">${object.state in ['draft', 'sent'] and "Demande_de_devis" else "Bon_de_commande"}_${(object.name or '').replace('/','_')}</field>
+        <field name="report_name">${object.state in ['draft', 'sent'] and "Demande_de_devis" or "Bon_de_commande"}_${(object.name or '').replace('/','_')}</field>
         <field name="lang">${object.partner_id.lang}</field>
         <field name="body_html" type="html">
 
 <div style="margin: 0px; padding: 0px;">
     <p style="margin: 0px; padding: 0px; font-size: 13px;">
-        % set doc_name = 'demande de devis' if object.state in ('draft', 'sent') else 'confirmation de bon de commande'
+        % set doc_name = 'demande de devis' if object.state in ['draft', 'sent'] else 'confirmation de bon de commande'
 
         Bonjour ${object.partner_id.name}
         % if object.partner_id.parent_id:
@@ -87,14 +87,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model_id" ref="sale.model_sale_order"/>
         <field name="auto_delete" eval="True"/>
         <field name="report_template" ref="sale.action_report_saleorder"/>
-        <field name="report_name">${object.state in ['draft', 'sent'] and "Devis" else "Bon_de_commande"}_${(object.name or '').replace('/','_')}</field>
+        <field name="report_name">${object.state in ['draft', 'sent'] and "Devis" or "Bon_de_commande"}_${(object.name or '').replace('/','_')}</field>
         <field name="lang">${object.partner_id.lang}</field>
         <field name="body_html" type="html">
 
 <div style="margin: 0px; padding: 0px;">
     <p style="margin: 0px; padding: 0px; font-size: 13px;">
 
-        % set doc_name = 'devis' if object.state in ('draft', 'sent') else 'bon de commande'
+        % set doc_name = 'devis' if object.state in ['draft', 'sent'] else 'bon de commande'
         Bonjour ${object.partner_id.name}
         % if object.partner_id.parent_id:
             (${object.partner_id.parent_id.name})
@@ -119,9 +119,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 Total TTC: <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>
             </li>
 
-        % if object.requested_date:
+        % if object.commitment_date:
             <li>
-                Date de livraison souhaité: <strong>${format_tz(object.requested_date)}</strong>
+                Date de livraison souhaité: <strong>${format_tz(object.commitment_date)}</strong>
             </li>
         % endif
 
