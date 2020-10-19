@@ -14,6 +14,7 @@
     "depends": [
         "sales_team",
         "point_of_sale",
+        "pos_restaurant",
         "product_margin_classification",
     ],
     "data": [
@@ -21,6 +22,7 @@
         "security/ir_module_category.xml",
         "security/res_groups.xml",
         "security/ir.model.access.csv",
+        "views/menu.xml",
     ],
     "installable": True,
 }
