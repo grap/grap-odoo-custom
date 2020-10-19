@@ -13,6 +13,7 @@
         "point_of_sale",
         "pos_multicompany",
         "pos_margin",
+        "pos_cash_rounding",
     ],
     "data": [
         "views/view_account_bank_statement.xml",

@@ -70,8 +70,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <filter name="my_sale_orders_filter" position="after">
                 <filter name="to_process" string="To Process" domain="[
-                    ('state','!=','cancel'),
-                    '|', ('state','!=','sale'), ('invoice_status', 'not in', ('no', 'invoiced')),
+                    ('state','not in', ('cancel', 'done')),
+                    ('invoice_status', '!=', 'invoiced'),
                     ]"/>
             </filter>
         </field>
