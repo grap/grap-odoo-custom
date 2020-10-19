@@ -16,6 +16,7 @@
         "grap_change_translation",
     ],
     "data": [
+        "data/barcode_nomenclature.xml",
         "data/product_category.xml",
         "data/product_product.xml",
         "data/uom_uom.xml",
