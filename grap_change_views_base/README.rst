@@ -22,8 +22,6 @@ GRAP - Change Base Views
 Change default views for ``base`` module.
 
 
-* change the order of the model ``res.company`` (order by name)
-
 * add / remove some fields in the following views:
 
 1. ``res.company`` form view
