@@ -32,10 +32,10 @@ addon | version | summary
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.0.3 | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.2 | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.0.2 | GRAP - Change Mail Views
-[grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.3 | GRAP - Change POS Views
+[grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.4 | GRAP - Change POS Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.0.8 | GRAP - Change Product Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.0.3 | GRAP - Change Purchase Views
-[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.3 | GRAP - Change Sale Views
+[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.4 | GRAP - Change Sale Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.2 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.3 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.0.1 | GRAP - Custom Qweb Reports
