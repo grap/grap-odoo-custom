@@ -22,7 +22,7 @@ addon | version | summary
 --- | --- | ---
 [grap_change_access](grap_change_access/) | 12.0.1.0.5 | Add new groups for specific models and change accesses for a number of models.
 [grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.0.4 | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
-[grap_change_data](grap_change_data/) | 12.0.1.0.4 | GRAP - Change Data
+[grap_change_data](grap_change_data/) | 12.0.1.0.5 | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.0.2 | GRAP - Change Default
 [grap_change_email](grap_change_email/) | 12.0.1.0.2 | Change default email template for invoices, sale and purchase orders
 [grap_change_precision](grap_change_precision/) | 12.0.1.0.2 | Change the precisions names and values of some fields
@@ -32,7 +32,7 @@ addon | version | summary
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.0.3 | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.2 | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.0.2 | GRAP - Change Mail Views
-[grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.2 | GRAP - Change POS Views
+[grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.3 | GRAP - Change POS Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.0.8 | GRAP - Change Product Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.0.3 | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.3 | GRAP - Change Sale Views
