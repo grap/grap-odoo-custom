@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT <quentin.dupont@grap.coop>
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record model="ir.ui.menu" id="account.menu_finance_receivables">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="account.product_product_menu_sellable">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_finance_payables">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="account.product_product_menu_purchasable">
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+    </record>
+
+</odoo>

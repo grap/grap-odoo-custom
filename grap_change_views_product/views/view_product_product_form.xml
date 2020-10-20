@@ -66,30 +66,40 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="oe_title">
                         <label class="oe_edit_only" for="name" string="Product Name"/>
                         <h1><field name="name" placeholder="Product Name"/></h1>
-                        <div>
+                        <group>
+                            <div>
+                                <field name="purchase_ok"/>
+                                <label for="purchase_ok"/>
+                            </div>
                             <div>
                                 <field name="sale_ok"/>
                                 <label for="sale_ok"/>
                             </div>
                             <div>
-                                <field name="purchase_ok"/>
-                                <label for="purchase_ok"/>
+                                <field name="is_consignment_commission" groups="recurring_consignment.group_consignment_manager"/>
+                                <label for="is_consignment_commission"/>
                             </div>
-                        </div>
+                            <div>
+                                <field name="cae_administrative_ok" groups="fiscal_company_base.fiscal_company_manager"/>
+                                <label for="cae_administrative_ok"/>
+                            </div>
+                            <div>
+                                <field name="is_impact_standard_price" groups="account.group_account_manager"/>
+                                <label for="is_impact_standard_price"/>
+                            </div>
+                        </group>
                     </div>
                     <notebook>
                         <page string="Information">
                             <group col="4">
                                 <group string="General">
                                     <field name="uom_id"/>
+                                    <field name="default_code"/>
                                     <field name="type"/>
                                     <field name="is_alimentary"/>
                                     <field name="categ_id"/>
                                     <field name="barcode"/>
                                     <field name="barcode_rule_id"/>
-                                    <field name="is_consignment" groups="recurring_consignment.group_consignment_manager"/>
-                                    <field name="cae_administrative_ok" groups="fiscal_company_base.fiscal_company_manager"/>
-                                    <field name="is_impact_standard_price" groups="account.group_account_manager"/>
                                     <field name="company_id" groups="base.group_multi_company"/>
                                 </group>
                                 <group string="Supply">
@@ -98,6 +108,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="consignor_partner_id"
                                             attrs="{'readonly':[('is_consignment', '=', True)]}"
                                             groups="recurring_consignment.group_consignment_user"/>
+                                    <field name="is_consignment" groups="recurring_consignment.group_consignment_manager"/>
                                     <field name="standard_price" string="Cost Price (VAT Excl.)"/>
                                     <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
                                         groups="base.group_erp_manager"/>
