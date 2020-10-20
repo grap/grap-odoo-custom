@@ -28,15 +28,15 @@ addon | version | summary
 [grap_change_precision](grap_change_precision/) | 12.0.1.0.2 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.2 | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.0.5 | GRAP - Change Views
-[grap_change_views_account](grap_change_views_account/) | 12.0.1.0.6 | GRAP - Change Views Account
+[grap_change_views_account](grap_change_views_account/) | 12.0.1.0.7 | GRAP - Change Views Account
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.0.3 | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.2 | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.0.2 | GRAP - Change Mail Views
-[grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.4 | GRAP - Change POS Views
-[grap_change_views_product](grap_change_views_product/) | 12.0.0.0.9 | GRAP - Change Product Views
-[grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.0.3 | GRAP - Change Purchase Views
-[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.4 | GRAP - Change Sale Views
-[grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.2 | GRAP - Change Stock Views
+[grap_change_views_pos](grap_change_views_pos/) | 12.0.1.0.5 | GRAP - Change POS Views
+[grap_change_views_product](grap_change_views_product/) | 12.0.0.0.10 | GRAP - Change Product Views
+[grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.0.4 | GRAP - Change Purchase Views
+[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.5 | GRAP - Change Sale Views
+[grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.3 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.3 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.0.1 | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.2.1 | Customize Odoo web User Interface
