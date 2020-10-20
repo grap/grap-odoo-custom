@@ -12,7 +12,9 @@
     "license": "AGPL-3",
     "depends": [
         "sale",
+        "delivery",
         "sale_margin",
+        "sale_invoice_group_method",
         "product_margin_classification",
     ],
     "data": [

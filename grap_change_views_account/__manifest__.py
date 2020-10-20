@@ -18,6 +18,7 @@
         "web_tree_dynamic_colored_field",
     ],
     "data": [
+        "views/menu.xml",
         "views/view_account_invoice.xml",
         "views/view_account_move.xml",
         'views/view_wizard_update_invoice_supplierinfo.xml',

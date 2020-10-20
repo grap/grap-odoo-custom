@@ -10,13 +10,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- Hide 'product template' menu entries -->
     <record model="ir.ui.menu" id="stock.menu_product_variant_config_stock">
-        <field name="name">Products (Admin)</field>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
     <!-- Rename 'product Variant' menu entries into 'product' -->
     <record model="ir.ui.menu" id="stock.product_product_menu">
-        <field name="name">Products</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
     <record id="stock.menu_stock_warehouse_mgmt" model="ir.ui.menu">

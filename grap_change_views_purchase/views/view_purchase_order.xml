@@ -128,7 +128,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- Hide Request for Quotation entries -->
     <record model="ir.ui.menu" id="purchase.menu_purchase_rfq">
-        <field name="name">Quotations (Admin)</field>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
