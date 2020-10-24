@@ -50,6 +50,7 @@
         "views/view_product_pricelist.xml",
         "views/view_product_pricelist_item.xml",
         "views/view_product_supplierinfo.xml",
+        "views/view_product_product_stock.xml",
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
     ],
