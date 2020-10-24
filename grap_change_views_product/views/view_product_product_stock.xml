@@ -39,9 +39,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="view_id" ref="view_product_product_tree_stock_valuation"/>
     </record>
 
-    <menuitem id="menu_product_product_stock_valuation"
-        name="Products (Stock)"
-        parent="menu_product_product_stock" sequence="1"
-        action="action_product_product_stock_valuation"/>
-
 </odoo>
