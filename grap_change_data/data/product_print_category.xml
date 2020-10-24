@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- Rename data -->
+    <function model="product.print.category" name="write">
+        <value eval="[ref('product_print_category_food_report.category_pricetag_normal')]"/>
+        <value eval="{'name': 'Normal (normal) - 76x31mm'}"/>
+    </function>
+
+    <function model="product.print.category" name="write">
+        <value eval="[ref('product_print_category_food_report.category_pricetag_bulk_selling_applimage')]"/>
+        <value eval="{'name': 'Vrac format Applimage - 52x101mm'}"/>
+    </function>
+
+    <function model="product.print.category" name="write">
+        <value eval="[ref('product_print_category_food_report.category_pricetag_bulk_selling')]"/>
+        <value eval="{'name': 'Vrac format carré - 93x93mm'}"/>
+    </function>
+
+    <function model="product.print.category" name="write">
+        <value eval="[ref('product_print_category_food_report.category_pricetag_middle_square')]"/>
+        <value eval="{'name': 'Carré moyen - 40x36mm'}"/>
+    </function>
+
+    <function model="product.print.category" name="write">
+        <value eval="[ref('product_print_category_food_report.category_pricetag_counter')]"/>
+        <value eval="{'name': 'Comptoir - 55*94mm'}"/>
+    </function>
+
+</odoo>
