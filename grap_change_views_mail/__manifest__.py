@@ -13,6 +13,7 @@
         "mail",
     ],
     "data": [
+        "views/templates.xml",
         "views/menu.xml",
     ],
     "installable": True,
