@@ -1,1 +1,1 @@
-Change default views for ``product`` module.
+Change default views for ``contacts`` module.
