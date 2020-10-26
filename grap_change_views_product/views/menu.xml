@@ -29,6 +29,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_root"
         sequence="4"/>
 
+    <menuitem id="menu_product_product_print_category"
+        name="Print product labels"
+        parent="menu_root"
+        action="product_print_category.action_product_print_category"
+        groups="product_print_category.user"
+        sequence="5"/>
+
 <!-- ************************************************************ -->
 <!-- Product Menu Items -->
 <!-- ************************************************************ -->

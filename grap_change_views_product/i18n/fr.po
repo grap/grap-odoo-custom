@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 09:58+0000\n"
-"PO-Revision-Date: 2020-10-24 09:58+0000\n"
+"POT-Creation-Date: 2020-10-24 22:41+0000\n"
+"PO-Revision-Date: 2020-10-24 22:41+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,11 @@ msgstr "<span class=\"o_stat_text\">Prévisions</span>"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "<span class=\"o_stat_text\">On Hand</span>"
 msgstr "<span class=\"o_stat_text\">Disponible</span>"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Accounting Fields"
+msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -107,6 +112,11 @@ msgstr "Générer une base (via une séquence)"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Hidden Fields"
+msgstr ""
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Increase the Sale Price up to Theoretical Price"
 msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
 
@@ -123,7 +133,7 @@ msgstr "Ingrédients"
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_editable_view
 msgid "Inline editable"
-msgstr "Vue éditable en ligne"
+msgstr "Vues éditables en ligne"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -166,9 +176,19 @@ msgid "Point of Sale"
 msgstr "Point de vente"
 
 #. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_print_category
+msgid "Print Categories"
+msgstr "Catégories d'impression"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Print Options"
 msgstr "Options d'impression"
+
+#. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_print_category
+msgid "Print product labels"
+msgstr "Impression des étiquettes"
 
 #. module: grap_change_views_product
 #: model:ir.model,name:grap_change_views_product.model_product_product
@@ -186,9 +206,9 @@ msgid "Product Name"
 msgstr "Nom de l'article"
 
 #. module: grap_change_views_product
-#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_new
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_new
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_root
 msgid "Products"
 msgstr "Articles"
@@ -207,12 +227,6 @@ msgid "Products (Food)"
 msgstr "Articles (Alimentaire)"
 
 #. module: grap_change_views_product
-#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_original
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_original
-msgid "Products (Obsolete views)"
-msgstr "Variante d'articles (Vue obsolètes)"
-
-#. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_origin
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_origin
 msgid "Products (Origin)"
@@ -229,7 +243,7 @@ msgstr "Articles (PdV)"
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_pricetag
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_pricetag
 msgid "Products (Price Tags)"
-msgstr "Articles (Etiquettes)"
+msgstr "Articles (Étiquettes)"
 
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_price
@@ -311,20 +325,14 @@ msgid "Supply"
 msgstr "Approvisionnement"
 
 #. module: grap_change_views_product
-#: model:ir.actions.act_window,name:grap_change_views_product.action_product_template_original
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_template_original
-msgid "Templates (Obsolete views)"
-msgstr "Modèles d'articles (Vue obsolète)"
-
-#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_stock_valuation
 msgid "Total Valuation On Hand"
-msgstr "Valorisation total du stock actuel"
+msgstr "Valorisation total du stock disponible"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_stock_valuation
 msgid "Total Virtual Valuation"
-msgstr "Valorisation total du stock prévu"
+msgstr "Valorisation total du stock virtuel"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
@@ -339,12 +347,12 @@ msgstr "Mettre à jour le stock disponible"
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__valuation_qty_available
 msgid "Valuation of Quantity on Hand"
-msgstr "Valorisation du stock actuel"
+msgstr "Valorisation du stock disponible"
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__valuation_virtual_available
 msgid "Valuation of Virtual Quantity"
-msgstr "Valorisation du stock prévu"
+msgstr "Valorisation du stock virtuel"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
