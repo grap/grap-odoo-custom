@@ -6,7 +6,7 @@
         width : 6cm;
     }
     .pricetag_right {
-        width : 2.9cm;
+        max-width : 2.9cm;
         height: 3.6cm;
     }
     .product_informations {
@@ -21,9 +21,11 @@
     .product_price {
         font-size: 32px;
         height: 1cm; line-height: 1cm;
+        white-space: nowrap;
     }
     .product_sell_by_weight {
-        bottom: 0.3em;
+        position: relative;
+        bottom: 0.8em;
     }
     .product_labels, .organic_text{
         height:0.8cm;
