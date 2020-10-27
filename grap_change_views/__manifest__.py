@@ -25,6 +25,7 @@
         "mail",
         "calendar",
         "knowledge",
+        "web_dashboard_tile",
 
         # Obsolete dependencies to remove after the migration
         'grap_change_views_account',
