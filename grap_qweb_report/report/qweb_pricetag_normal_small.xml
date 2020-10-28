@@ -54,6 +54,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
                                     </t>
                                 </div>
+                                <div class="write_date">
+                                    <t t-if="line.product_id.write_date">
+                                        Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
+                                    </t>
+                                </div>
                             </div>
                         </div>
                         <div class="pricetag_right floating_box">
