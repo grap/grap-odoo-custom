@@ -16,6 +16,8 @@
         "point_of_sale",
         "pos_restaurant",
         "product_margin_classification",
+        "product_print_category_food_report",
+        "purchase",
     ],
     "data": [
         "security/ir_rule.xml",
