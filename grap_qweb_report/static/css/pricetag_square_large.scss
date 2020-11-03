@@ -31,7 +31,7 @@
     .label_ingredients {
         padding-top: 0.2cm;
         font-size: 13px;
-        height: 2.5cm;
+        height: 2.7cm;
         overflow: hidden;
     }
     .label_allergens {
@@ -64,7 +64,7 @@
         font-size: 15px; font-weight: bold;
     }
     .label_origin {
-        max-height: 0.7cm; overflow: hidden;
+        max-height: 0.9cm; overflow: hidden;
         font-size: 12px;
     }
     .product_labels{
@@ -103,7 +103,8 @@
         width: 4cm;
     }
     .wrap_product_code {
-        padding-left: 33px;
+        font-size: 25px;
+        padding-left: 10px;
     }
     .write_date{
         font-size: 5px;
