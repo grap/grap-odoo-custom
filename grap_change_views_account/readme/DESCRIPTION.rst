@@ -17,7 +17,7 @@ features
 
 - TMP (post migration V12) : add also a field ``active`` on ``account.tax.group``
   to disable them, without dropping them.
-TODO : to remove.
+  TODO : to remove.
 
 Note
 ----
