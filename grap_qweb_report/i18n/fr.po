@@ -132,7 +132,7 @@ msgstr "Modèle de document"
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Fabriquant·e :"
+msgid "Producteur·rice :"
 msgstr ""
 
 #. module: grap_qweb_report
