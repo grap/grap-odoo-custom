@@ -31,7 +31,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </t>
                                 <t t-if="line.product_id.pricetag_origin">Origine : <b><t t-esc="line.product_id.pricetag_origin"/></b><br/></t>
                                 <t t-else=""><br/></t>
-                                <t t-if="line.product_id.maker_description">Fabriquant·e : <b><t t-esc="line.product_id.maker_description"/></b><br/></t>
+                                <t t-if="line.product_id.maker_description">Producteur·rice : <b><t t-esc="line.product_id.maker_description"/></b><br/></t>
                                 <t t-else=""><br/></t>
                             </div>
                             <div class="product_labels">
