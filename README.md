@@ -37,7 +37,7 @@ addon | version | summary
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.0.13 | GRAP - Change Product Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.0.5 | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.6 | GRAP - Change Sale Views
-[grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.3 | GRAP - Change Stock Views
+[grap_change_views_stock](grap_change_views_stock/) | 12.0.0.0.4 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.3 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.0.5 | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.2.1 | Customize Odoo web User Interface
