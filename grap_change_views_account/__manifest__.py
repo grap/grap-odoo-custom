@@ -12,6 +12,7 @@
     "license": "AGPL-3",
     "depends": [
         "account",
+        "account_group_menu",
         "account_invoice_triple_discount",
         "sale",
         "account_invoice_supplierinfo_update_standard_price",
@@ -21,6 +22,7 @@
         "views/menu.xml",
         "views/view_account_invoice.xml",
         "views/view_account_move.xml",
+        "views/view_account_tax_group.xml",
         'views/view_wizard_update_invoice_supplierinfo.xml',
     ],
     "demo": [
