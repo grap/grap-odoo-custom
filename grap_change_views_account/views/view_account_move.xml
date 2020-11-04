@@ -11,6 +11,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
+            <button name="action_post" position="after">
+                <button name="action_post_no_check" string="Post without reconciliation" type="object"
+                    attrs="{'invisible': ['|', ('post_at_bank_rec_journal', '=', False), ('state', '!=', 'draft')]}"/>
+            </button>
+            <field name="journal_id" position="after">
+                <field name="post_at_bank_rec_journal" invisible="1"/>
+            </field>
             <field name="tax_ids" position="after">
                 <field name="tax_line_id"/>
             </field>
