@@ -22,6 +22,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record id="email_template_purchase_order" model="mail.template">
         <field name="name">GRAP - Achat - Bon de commande</field>
+        <field name="email_from">${object.user_id.email_formatted |safe}</field>
         <field name="subject">${object.company_id.name.replace("'", " ")|safe} - Bon de commande (Réf ${object.name or 'n/a' })</field>
         <field name="partner_to">${object.partner_id.id}</field>
         <field name="model_id" ref="purchase.model_purchase_order"/>
