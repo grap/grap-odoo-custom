@@ -129,6 +129,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="reference" position="after">
                 <field name="fiscal_position_id"/>
             </field>
+            <field name="payment_term_id" position="replace"/>
+            <field name="date_due" position="after">
+                <field name="payment_term_id"/>
+            </field>
 
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
                 <attribute name="string">Qty</attribute>
