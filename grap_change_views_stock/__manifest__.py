@@ -17,6 +17,7 @@
     "data": [
         "views/view_stock_inventory.xml",
         "views/view_stock_inventory_line.xml",
+        "views/view_stock_move.xml",
         "views/menu.xml",
         "views/action.xml",
     ],
