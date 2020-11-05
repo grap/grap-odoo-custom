@@ -28,7 +28,7 @@ addon | version | summary
 [grap_change_precision](grap_change_precision/) | 12.0.1.0.2 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.2 | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.0.6 | GRAP - Change Views
-[grap_change_views_account](grap_change_views_account/) | 12.0.1.0.13 | GRAP - Change Views Account
+[grap_change_views_account](grap_change_views_account/) | 12.0.1.0.14 | GRAP - Change Views Account
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.0.3 | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.2 | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.0.3 | GRAP - Change Mail Views
