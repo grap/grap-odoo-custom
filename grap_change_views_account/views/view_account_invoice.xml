@@ -35,12 +35,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="payment_term_id" position="replace"/>
             <field name="fiscal_position_id" position="replace"/>
             <field name="reference" position="before">
-                <field name="payment_term_id"/>
                 <field name="user_id"/>
             </field>
 
             <field name="cash_rounding_id" position="after">
                 <field name="fiscal_position_id"/>
+            </field>
+            <field name="date_due" position="after">
+                <field name="payment_term_id"/>
             </field>
 
             <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
