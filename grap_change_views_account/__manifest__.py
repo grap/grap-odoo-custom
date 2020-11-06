@@ -14,6 +14,7 @@
         "account",
         "account_group_menu",
         "account_invoice_triple_discount",
+        "account_financial_report",
         "sale",
         "account_invoice_supplierinfo_update_standard_price",
         "web_tree_dynamic_colored_field",
