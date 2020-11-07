@@ -18,9 +18,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             name="action_update_quantity_on_hand"
                             attrs="{'invisible': [('type', '!=', 'product')]}"/>
                     <button string="Replenish" type="action" name="%(stock.action_product_replenish)d"
-                            context="{'default_product_id': id}"
+                            context="{'default_product_id': id}" groups="base.group_erp_manager"
                             attrs="{'invisible': [('type', '!=', 'product')]}"/>
-
                 </header>
                 <sheet>
                     <field name="id" invisible="True"/>
@@ -77,33 +76,46 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </div>
                             <div>
                                 <field name="is_consignment_commission" groups="recurring_consignment.group_consignment_manager"/>
-                                <label for="is_consignment_commission"/>
                             </div>
                             <div>
                                 <field name="cae_administrative_ok" groups="fiscal_company_base.fiscal_company_manager"/>
-                                <label for="cae_administrative_ok"/>
                             </div>
                             <div>
                                 <field name="is_impact_standard_price" groups="account.group_account_manager"/>
-                                <label for="is_impact_standard_price"/>
                             </div>
                         </group>
                     </div>
                     <notebook>
                         <page string="Information">
-                            <group col="4">
+                            <group col="3">
                                 <group string="General">
                                     <field name="uom_id"/>
                                     <field name="default_code"/>
                                     <field name="type"/>
                                     <field name="is_alimentary"/>
                                     <field name="categ_id"/>
-                                    <field name="barcode"/>
-                                    <field name="barcode_rule_id"/>
                                     <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="barcode_rule_id"
+                                        domain="[('generate_model', '=', 'product.product')]"
+                                        groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                                    <field name="generate_type" invisible="1" />
+                                    <field name="barcode_base" attrs="{
+                                        'invisible': [('barcode_rule_id', '=', False)],
+                                        'readonly': [('generate_type', '!=', 'manual')]}"
+                                        groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                                    <button name="generate_base" type="object" string="Generate Base (Using Sequence)" attrs="{'invisible': ['|',
+                                        ('generate_type', '!=', 'sequence'),
+                                        ('barcode_base', '!=', 0)]}"
+                                        groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
+                                    <field name="barcode"  attrs="{'readonly': [('generate_type', '=', 'sequence')]}"/>
+                                    <button name="generate_barcode" type="object" string="Generate Barcode (Using Barcode Rule)"
+                                        attrs="{'invisible': ['|',
+                                                ('barcode_rule_id', '=', False),
+                                                ('barcode_base', '=', 0)]}"
+                                        groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
                                 </group>
                                 <group string="Supply">
-                                    <field name="uom_po_id"/>
+                                    <field name="uom_po_id" string="Unit of measure"/>
                                     <field name="property_account_expense_id" groups="account.group_account_manager"/>
                                     <field name="consignor_partner_id"
                                             attrs="{'readonly':[('is_consignment', '=', True)]}"
@@ -128,6 +140,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                 type="object" class="oe_link"
                                                 attrs="{'invisible': [('margin_state', '!=', 'too_expensive')]}"
                                                 help="Decrease the Sale Price down to Theoretical Price"/>
+                                        <!-- <field name="invoice_extra_cost"/> -->
                                     </div>
                                     <field name="theoretical_difference" invisible="1" />
                                     <field name="margin_state"/>
@@ -143,40 +156,47 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
                                     <field name="standard_margin_rate"/>
                                 </group>
-                                <group string="Point of Sale" groups="point_of_sale.group_pos_user">
-                                    <field name="available_in_pos"/>
-                                    <field name="meal_voucher_ok"/>
-                                    <field name="pos_categ_id"/>
-                                    <field name="to_weight"/>
-                                    <field name="sector_id" groups="pos_sector.group_pos_sector_product_user"/>
-                                </group>
                             </group>
-                            <group col="4">
+                            <group col="3">
                                 <group string="Inventory">
                                     <field name="volume"/>
                                     <field name="weight"/>
                                     <field name="preparation_categ_id" groups="sale_recovery_moment.recovery_user"/>
                                 </group>
                                 <group string="Print Options">
-                                    <field name="print_category_id"/>
+                                    <field name="print_category_id" string="Category"/>
                                     <field name="pricetag_type_id"/>
                                     <field name="pricetag_uom_id"/>
                                     <field name="to_print"/>
-                                    <!-- <field name="invoice_extra_cost"/> -->
                                 </group>
-                                <group string="Vendors" colspan="2">
-                                    <field name="seller_ids"
-                                        context="{'default_product_tmpl_id':context.get('product_tmpl_id', active_id), 'product_template_invisible_variant': True}" nolabel="1">
-                                        <tree>
+                                <group string="Point of Sale" groups="point_of_sale.group_pos_user">
+                                    <field name="available_in_pos" string="Active in POS"/>
+                                    <field name="meal_voucher_ok"/>
+                                    <field name="pos_categ_id" string="Category in POS"/>
+                                    <field name="to_weight" string="To weight"/>
+                                    <field name="sector_id" string="POS Sector" groups="pos_sector.group_pos_sector_product_user"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Vendors" colspan="4">
+                                    <field name="seller_ids" nolabel="1">
+                                        <tree editable="bottom">
                                             <field name="name"/>
-                                            <field name="package_qty"/>
-                                            <field name="min_qty"/>
+                                            <field name="product_name" string="Supplier product name"/>
+                                            <field name="product_code" string="Code"/>
+                                            <field name="package_qty" string="Package Qty"/>
+                                            <field name="min_qty" string="Min Qty"/>
                                             <field name="price"/>
                                             <field name="discount" string="Disc. 1 %"/>
                                             <field name="discount2"  string="Disc. 2 %"/>
                                             <field name="discount3" invisible="1"/>
-                                            <field name="product_code" string="Code"/>
-                                            <field name="product_name" string="Name"/>
+                                            <field name="is_intercompany_trade" invisible="1"/>
+                                            <field name="intercompany_trade_id" groups="intercompany_trade_base.intercompany_trade_manager"/>
+                                            <field name="catalog_id" quick_create="false" string="IT Catalog"
+                                                attrs="{'required': [('is_intercompany_trade', '=', True)]}"
+                                                groups="intercompany_trade_base.intercompany_trade_user"/>
+                                            <field name="supplier_product_id" readonly="1" string="IT Supplier Product"
+                                                groups="intercompany_trade_base.intercompany_trade_user"/>
                                         </tree>
                                     </field>
                                 </group>

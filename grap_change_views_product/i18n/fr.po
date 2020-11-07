@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 22:41+0000\n"
-"PO-Revision-Date: 2020-10-24 22:41+0000\n"
+"POT-Creation-Date: 2020-11-07 13:42+0000\n"
+"PO-Revision-Date: 2020-11-07 13:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,6 +32,11 @@ msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Active in POS"
+msgstr "Dispo dans le PdV"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Alimentary Composition"
 msgstr "Composition alimentaire"
 
@@ -44,6 +49,16 @@ msgstr "Information alimentaire"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Allergens"
 msgstr "Allergènes"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Category"
+msgstr "Format"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Category in POS"
+msgstr "Catégorie de PdV"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -101,11 +116,13 @@ msgid "General"
 msgstr "Général"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_scale
 msgid "Generate Barcode (Using Barcode Rule)"
 msgstr "Générer un code barre (via règle de codes barre)"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_scale
 msgid "Generate Base (Using Sequence)"
 msgstr "Générer une base (via une séquence)"
@@ -114,6 +131,16 @@ msgstr "Générer une base (via une séquence)"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Hidden Fields"
 msgstr ""
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "IT Catalog"
+msgstr "TI - Catalogue"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "IT Supplier Product"
+msgstr "TI - Article chez l'acti"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -157,8 +184,8 @@ msgstr "Catég. Marge"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Name"
-msgstr "Nom"
+msgid "Min Qty"
+msgstr "Qté min."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -172,13 +199,18 @@ msgstr "Origine"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Point of Sale"
-msgstr "Point de vente"
+msgid "POS Sector"
+msgstr "Secteur du PdV"
 
 #. module: grap_change_views_product
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_print_category
-msgid "Print Categories"
-msgstr "Catégories d'impression"
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Package Qty"
+msgstr "Qté conditionnement"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Point of Sale"
+msgstr "Point de Vente"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -255,7 +287,7 @@ msgstr "Articles (Prix)"
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_scale
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_scale
 msgid "Products (Scale)"
-msgstr "Articles (Balances)"
+msgstr "Articles (Balance)"
 
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_stock_valuation
@@ -321,8 +353,18 @@ msgstr "Valorisation de stock"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Supplier product name"
+msgstr "Nom chez le fournisseur"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Supply"
 msgstr "Approvisionnement"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "To weight"
+msgstr "À peser"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_stock_valuation
@@ -333,6 +375,11 @@ msgstr "Valorisation total du stock disponible"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_stock_valuation
 msgid "Total Virtual Valuation"
 msgstr "Valorisation total du stock virtuel"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Unit of measure"
+msgstr "Unité de mesure"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
