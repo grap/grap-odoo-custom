@@ -254,10 +254,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">
                             <group string="Scale Communication">
                                 <group>
-                                    <field name="scale_group_id"/>
+                                    <field name="scale_group_id" widget="selection"/>
                                     <field name="scale_tare_weight"/>
                                 </group>
-                                <group groups="product_to_scale_bizerba.group_manager">
+                                <group>
                                     <button name="send_scale_create" type="object" string="Resend Creation To the Scale System" colspan="2"/>
                                     <button name="send_scale_write" type="object" string="Resend Update To the Scale System" colspan="2"/>
                                     <button name="send_scale_unlink" type="object" string="Manual Deletion in the Scale System" colspan="2"/>
