@@ -10,6 +10,15 @@ class ProductProduct(models.Model):
     _inherit = 'product.product'
     _order = 'name'
 
+    # Columns Section
+    valuation_qty_available = fields.Float(
+        compute='_compute_valuation_qty_available',
+        string='Valuation of Quantity on Hand')
+
+    valuation_virtual_available = fields.Float(
+        compute='_compute_valuation_virtual_available',
+        string='Valuation of Virtual Quantity')
+
     # Compute Section
     @api.multi
     def _compute_valuation_qty_available(self):
@@ -22,11 +31,3 @@ class ProductProduct(models.Model):
         for product in self:
             product.valuation_virtual_available =\
                 product.virtual_available * product.standard_price
-
-    # Columns Section
-    valuation_qty_available = fields.Float(
-        compute='_compute_valuation_qty_available',
-        string='Valuation of Quantity on Hand')
-    valuation_virtual_available = fields.Float(
-        compute='_compute_valuation_virtual_available',
-        string='Valuation of Virtual Quantity')

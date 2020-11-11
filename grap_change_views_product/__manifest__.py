@@ -25,6 +25,7 @@
         "barcodes_generator_product",
         "product_to_scale_bizerba",
         "sale_eshop",
+        "sale_invoice_policy",
         "product_food",
         "product_label",
         "product_print_category",
