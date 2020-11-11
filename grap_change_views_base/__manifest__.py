@@ -13,7 +13,6 @@
         "base",
         "delivery",
         "purchase",
-        "sale_invoice_group_method",
         "stock",
     ],
     "data": [

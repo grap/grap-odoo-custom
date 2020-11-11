@@ -14,10 +14,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
-    <record model="ir.ui.menu" id="sale_invoice_group_method.menu_invoice_group_method">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
-    </record>
-
     <!-- Hide 'product template' menu entries -->
     <record model="ir.ui.menu" id="sale.menu_product_template_action">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
