@@ -24,6 +24,10 @@ class ProductProduct(models.Model):
                         "product_id": product.id,
                         })
                     order_line.onchange_product_id()
+                    order_line.name = order_line.product_id.with_context(
+                        lang=order_line.order_id.partner_id.lang,
+                        partner_id=order_line.order_id.partner_id.id,
+                    ).display_name
                     order_line.product_qty = product.qty_to_process
                     order_line._onchange_quantity()
                     values = {}
