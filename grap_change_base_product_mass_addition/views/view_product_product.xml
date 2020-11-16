@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT <quentin.dupont@grap.coop>
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_product_tree" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="purchase_quick.product_tree_view4purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-info">qty_to_process == 0</attribute>
+            </xpath>
+            <field name="lst_price" position="replace"/>
+            <field name="standard_price" position="replace"/>
+            <field name="qty_to_process" position="after">
+                <field name="uom_po_id" string="Purchase UoM"/>
+            </field>
+            <field name="incoming_qty" position="after">
+                <field name="mass_addition_purchase_package_qty" string="Package Qty"
+                    attrs="{'invisible': [('mass_addition_purchase_package_qty', '=', 0)]}"
+                    options="{'bg_color': '#FF0000: mass_addition_purchase_package_qty_bad;'}"/>
+                <field name="mass_addition_purchase_min_qty" string="Min Qty"
+                    attrs="{'invisible': [('mass_addition_purchase_min_qty', '=', 0)]}"
+                    options="{'bg_color': '#FF0000: mass_addition_purchase_min_qty_bad;'}"/>
+                <field name="mass_addition_purchase_price" string="Price"
+                    attrs="{'invisible': [('mass_addition_purchase_price', '=', 0)]}"/>
+                <field name="mass_addition_purchase_discount" string="Disc 1"
+                    attrs="{'invisible': [('mass_addition_purchase_discount', '=', 0)]}"/>
+                <field name="mass_addition_purchase_discount2" string="Disc 2"
+                    attrs="{'invisible': [('mass_addition_purchase_discount2', '=', 0)]}"/>
+                <field name="mass_addition_purchase_package_qty_bad" invisible="1"/>
+                <field name="mass_addition_purchase_min_qty_bad" invisible="1"/>
+            </field>
+            <button name="button_quick_open_product" position="replace"/>
+        </field>
+    </record>
+</odoo>
