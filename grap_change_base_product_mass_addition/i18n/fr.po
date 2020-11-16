@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * grap_change_base_product_mass_addition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-16 00:21+0000\n"
+"PO-Revision-Date: 2020-11-16 00:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_change_base_product_mass_addition
+#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+msgid "Disc 1"
+msgstr "Rem. 1"
+
+#. module: grap_change_base_product_mass_addition
+#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+msgid "Disc 2"
+msgstr "Rem. 2"
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_discount
+msgid "Mass Addition Purchase Discount"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_discount2
+msgid "Mass Addition Purchase Discount2"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_min_qty
+msgid "Mass Addition Purchase Min Qty"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_min_qty_bad
+msgid "Mass Addition Purchase Min Qty Bad"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_package_qty
+msgid "Mass Addition Purchase Package Qty"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_package_qty_bad
+msgid "Mass Addition Purchase Package Qty Bad"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_price
+msgid "Mass Addition Purchase Price"
+msgstr ""
+
+#. module: grap_change_base_product_mass_addition
+#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+msgid "Min Qty"
+msgstr "Qté Min."
+
+#. module: grap_change_base_product_mass_addition
+#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+msgid "Package Qty"
+msgstr "Qté Cond."
+
+#. module: grap_change_base_product_mass_addition
+#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+msgid "Price"
+msgstr "Prix"
+
+#. module: grap_change_base_product_mass_addition
+#: model:ir.model,name:grap_change_base_product_mass_addition.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: grap_change_base_product_mass_addition
+#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+msgid "Purchase UoM"
+msgstr "UdM d'Achat"
+
