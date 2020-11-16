@@ -13,6 +13,13 @@
     "depends": [
         "base_product_mass_addition",
         "purchase_quick",
+        "onchange_helper",
+        "purchase_discount",
+        "purchase_triple_discount",
+        "purchase_package_qty",
+    ],
+    "data": [
+        "views/view_product_product.xml",
     ],
     "installable": True,
 }
