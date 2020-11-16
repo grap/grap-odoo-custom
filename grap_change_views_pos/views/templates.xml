@@ -13,4 +13,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </xpath>
     </template>
 
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/grap_change_views_pos/static/src/css/front_end.css" />
+      </xpath>
+    </template>
+
+
 </odoo>
