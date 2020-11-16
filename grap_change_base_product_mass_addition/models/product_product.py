@@ -96,14 +96,21 @@ class ProductProduct(models.Model):
                     vals = {
                         "order_id": parent_id,
                         "product_id": product.id,
+                        "partner_id": order.partner_id,
                         "product_qty": new_qty,
                     }
                     vals = PurchaseOrderLine.play_onchanges(
                         vals, ["product_id", "product_qty"])
-                    # We pop product_image, to avoid a useless write
-                    # to ir.attachment
-                    if 'product_image' in vals.keys():
-                        vals.pop('product_image')
+                    # We pop related fields like product_image,
+                    # to avoid a useless write to ir.attachment
+                    for k in [x for x in vals]:
+                        field = PurchaseOrderLine._fields[k]
+                        if field.related_field:
+                            vals.pop(k)
+                    # We add price_unit because play_onchanges
+                    # doesn't seems to return null values...
+                    if 'price_unit' not in vals:
+                        vals['price_unit'] = 0.0
                     PurchaseOrderLine.create(
                         PurchaseOrderLine._convert_to_write(vals)
                     )
