@@ -185,8 +185,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="seller_ids" nolabel="1">
                                         <tree editable="bottom">
                                             <field name="name"/>
-                                            <field name="product_name" string="Supplier product name"/>
-                                            <field name="product_code" string="Code"/>
+                                            <field name="product_name" string="Supplier product name"
+                                                attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
+                                            <field name="product_code" string="Code"
+                                                attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
                                             <field name="package_qty" string="Package Qty"/>
                                             <field name="min_qty" string="Min Qty"/>
                                             <field name="price"/>
