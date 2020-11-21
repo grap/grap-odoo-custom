@@ -12,7 +12,6 @@ class ProductTemplate(models.Model):
     @api.multi
     @api.depends('type', 'default_invoice_policy')
     def _compute_invoice_policy(self):
-        print("OVERWRITE::_compute_invoice_policy")
         invoice_policy = self.env.context.get('invoice_policy')
         for tmpl in self:
             if tmpl.type == 'service':
