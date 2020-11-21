@@ -18,5 +18,9 @@
 /*Application "Settings"*/
 .o_web_settings_dashboard {
     background-color:#AAFFAA !important;
+}
 
+/*Application "web_responsive" and "web_favorite_company"*/
+div.dropdown-menu{
+    background-color:#AAFFAA !important;
 }
