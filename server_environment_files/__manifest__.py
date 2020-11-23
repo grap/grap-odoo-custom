@@ -7,7 +7,7 @@
     "name": "GRAP - Configuration Environment Files",
     "summary": "Add custom CSS and extra text on PoS ticket"
     " depending on the environment",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "license": "AGPL-3",
