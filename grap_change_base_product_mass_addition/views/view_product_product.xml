@@ -18,7 +18,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="lst_price" position="replace"/>
             <field name="standard_price" position="replace"/>
             <field name="qty_to_process" position="after">
-                <field name="uom_po_id" string="Purchase UoM"/>
+                <field name="uom_po_id" string="Purchase UoM" readonly="1"/>
             </field>
             <field name="incoming_qty" position="after">
                 <field name="mass_addition_purchase_package_qty" string="Package Qty"
