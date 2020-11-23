@@ -41,7 +41,7 @@ addon | version | summary
 [grap_cooperative](grap_cooperative/) | 12.0.1.0.3 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.0.6 | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.2.1 | Customize Odoo web User Interface
-[server_environment_files](server_environment_files/) | 12.0.1.0.1 | Add custom CSS and extra text on PoS ticket depending on the environment
+[server_environment_files](server_environment_files/) | 12.0.1.0.2 | Add custom CSS and extra text on PoS ticket depending on the environment
 
 [//]: # (end addons)
 
