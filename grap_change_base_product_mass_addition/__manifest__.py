@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "GRAP - Change Base Product Mass Addition",
-    "version": "12.0.0.0.6",
+    "version": "12.0.0.0.7",
     "category": "GRAP - Custom",
     "summary": "Fix slow call to odoo.tests.Form, used in "
             "base_product_mass_addition, for purchase_quick module",
