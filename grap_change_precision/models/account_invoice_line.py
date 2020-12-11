@@ -21,3 +21,7 @@ class AccountInvoiceLine(models.Model):
     margin_signed = fields.Float(
         digits=dp.get_precision("GRAP Cost Price")
     )
+
+    price_unit = fields.Float(
+        digits=dp.get_precision("GRAP Invoice Price Unit")
+    )
