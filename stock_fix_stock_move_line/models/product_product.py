@@ -22,10 +22,9 @@ class ProductProduct(models.Model):
     @api.model
     def _fix_stock_move_line_cron(self, limit):
         date_begin = fields.datetime.now()
-        products = self.sudo().search(
-            [('fix_stock_move_lines_state', '=', "todo")],
-            limit=limit
-        )
+        products = self.sudo().with_context(active_test=False).search([
+            ('fix_stock_move_lines_state', '=', "todo"),
+        ], limit=limit)
         products.button_fix_stock_move_line()
         date_end = fields.datetime.now()
         logger.info(
@@ -38,6 +37,7 @@ class ProductProduct(models.Model):
     @api.multi
     def button_fix_stock_move_line(self):
         for product in self:
+            logger.info("Handle %s-%s" % (product.default_code, product.name))
             has_error = False
 
             quants = self.env["stock.quant"].search(
@@ -101,7 +101,7 @@ class ProductProduct(models.Model):
                                 quant.write({"reserved_quantity": 0})
             move_lines = self.env["stock.move.line"].search(
                 [
-                    ("product_id", "in", self.ids),
+                    ("product_id", "=", product.id),
                     ("product_qty", "!=", 0),
                     ("id", "not in", move_line_ids),
                 ]
@@ -133,6 +133,6 @@ class ProductProduct(models.Model):
                 )
 
             if has_error:
-                product.quant_merged_state = "fixed"
+                product.fix_stock_move_lines_state = "fixed"
             else:
-                product.quant_merged_state = "done"
+                product.fix_stock_move_lines_state = "done"
