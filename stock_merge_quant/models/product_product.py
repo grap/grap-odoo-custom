@@ -31,10 +31,9 @@ class ProductProduct(models.Model):
     @api.model
     def _quant_merge_cron(self, limit):
         date_begin = fields.datetime.now()
-        products = self.sudo().search(
-            [('quant_merged_state', '=', "todo")],
-            limit=limit
-        )
+        products = self.sudo().with_context(active_test=False).search([
+            ('quant_merged_state', '=', "todo")
+        ], limit=limit)
         products.button_quant_merge()
         date_end = fields.datetime.now()
         logger.info("Merged quant for %s products in %s. Average time %s" % (
