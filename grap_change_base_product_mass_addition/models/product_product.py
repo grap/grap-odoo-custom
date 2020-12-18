@@ -59,6 +59,8 @@ class ProductProduct(models.Model):
         if self.env.context.get("parent_model", False) == "purchase.order":
             order = PurchaseOrder.browse(
                 [self.env.context.get("parent_id")])[0]
+        else:
+            return
 
         for product in self.filtered(lambda x: x.id):
             sellers = product.seller_ids\
