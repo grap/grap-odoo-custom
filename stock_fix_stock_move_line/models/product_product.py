@@ -13,7 +13,7 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     fix_stock_move_lines_state = fields.Selection(
-        string="Quant Merge State",
+        string="Fix Stock Move Lines State",
         default="todo", selection=[
             ("todo", "To Do"),
             ("done", "Done"),
@@ -140,3 +140,26 @@ class ProductProduct(models.Model):
                 )
 
             product.fix_stock_move_lines_state = state
+
+    # _name = 'stock.quant'
+
+    # @api.model
+    # def _update_reserved_quantity(
+    #         self, product_id, location_id, quantity, lot_id=None,
+    #         package_id=None, owner_id=None, strict=False
+    #     ):
+    #     try:
+    #         return super()._update_reserved_quantity(
+    #             product_id, location_id, quantity,
+    #             lot_id=lot_id, package_id=package_id,
+    #             owner_id=owner_id, strict=strict)
+
+    #     except UserError:
+    #         logger.warning("on corrige manuellement")
+    #         product = self.env["product.product"].browse(product_id)
+    #         product.button_fix_stock_move_line()
+
+    #     return super()._update_reserved_quantity(
+    #         product_id, location_id, quantity,
+    #         lot_id=lot_id, package_id=package_id,
+    #         owner_id=owner_id, strict=strict)
