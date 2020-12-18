@@ -17,7 +17,13 @@ class ProductProduct(models.Model):
         default="todo", selection=[
             ("todo", "To Do"),
             ("done", "Done"),
-            ("fixed", "Fixed"),
+            ("fixed_1", "Fixed (1)"),
+            ("fixed_2", "Fixed (2)"),
+            ("fixed_3", "Fixed (3)"),
+            ("fixed_4", "Fixed (4)"),
+            ("fixed_5", "Fixed (5)"),
+            ("fixed_6", "Fixed (6)"),
+            ("fixed_7", "Fixed (7)"),
         ])
 
     @api.model
@@ -39,7 +45,7 @@ class ProductProduct(models.Model):
     def button_fix_stock_move_line(self):
         for product in self:
             logger.info("Handle %s-%s" % (product.default_code, product.name))
-            has_error = False
+            state = 'done'
 
             quants = self.env["stock.quant"].search(
                 [('product_id', '=', product.id)])
@@ -64,7 +70,7 @@ class ProductProduct(models.Model):
                     # reservation, its `reserved_quantity` field
                     # should be 0.
                     if quant.reserved_quantity != 0:
-                        has_error = True
+                        state = 'fixed_1'
                         quant.write({"reserved_quantity": 0})
                 else:
                     # If a quant is in a reservable location, its
@@ -74,13 +80,13 @@ class ProductProduct(models.Model):
                     # characteristics.
                     if quant.reserved_quantity == 0:
                         if move_lines:
-                            has_error = True
+                            state = 'fixed_2'
                             move_lines.with_context(bypass_reservation_update=True).write(
                                 {"product_uom_qty": 0}
                             )
 
                     elif quant.reserved_quantity < 0:
-                        has_error = True
+                        state = 'fixed_3'
                         quant.write({"reserved_quantity": 0})
                         if move_lines:
                             move_lines.with_context(bypass_reservation_update=True).write(
@@ -88,14 +94,14 @@ class ProductProduct(models.Model):
                             )
                     else:
                         if reserved_on_move_lines != quant.reserved_quantity:
-                            has_error = True
+                            state = 'fixed_4'
                             move_lines.with_context(bypass_reservation_update=True).write(
                                 {"product_uom_qty": 0}
                             )
                             quant.write({"reserved_quantity": 0})
                         else:
                             if any(move_line.product_qty < 0 for move_line in move_lines):
-                                has_error = True
+                                state = 'fixed_5'
                                 move_lines.with_context(bypass_reservation_update=True).write(
                                     {"product_uom_qty": 0}
                                 )
@@ -113,7 +119,7 @@ class ProductProduct(models.Model):
                     move_lines_to_unreserve.append(move_line.id)
 
             if len(move_lines_to_unreserve) > 1:
-                has_error = True
+                state = 'fixed_6'
                 self.env.cr.execute(
                     """
                         UPDATE stock_move_line
@@ -123,7 +129,7 @@ class ProductProduct(models.Model):
                     % (tuple(move_lines_to_unreserve),)
                 )
             elif len(move_lines_to_unreserve) == 1:
-                has_error = True
+                state = 'fixed_7'
                 self.env.cr.execute(
                     """
                     UPDATE stock_move_line
@@ -133,7 +139,4 @@ class ProductProduct(models.Model):
                     % (move_lines_to_unreserve[0])
                 )
 
-            if has_error:
-                product.fix_stock_move_lines_state = "fixed"
-            else:
-                product.fix_stock_move_lines_state = "done"
+            product.fix_stock_move_lines_state = state
