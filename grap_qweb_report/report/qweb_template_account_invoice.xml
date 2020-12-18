@@ -7,6 +7,42 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <template id="template_account_invoice" inherit_id="account.report_invoice_document">
+
+        <!-- Changement car si la description est trop longue
+             ça merdait en affichant pas les auttres champs-->
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div id="informations">
+                <div class="col-xs-10">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th t-if="o.date_invoice">Date de facture</th>
+                                <th t-if="o.date_due">Date d'échéance</th>
+                                <th t-if="o.name">Description</th>
+                                <th t-if="o.origin">Origine</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <tr>
+                                <td t-if="o.date_invoice" class="col-xs-3">
+                                    <span t-field="o.date_invoice"/>
+                                </td>
+                                <td t-if="o.date_due" class="col-xs-3">
+                                    <span t-field="o.date_due"/>
+                                </td>
+                                <td t-if="o.name">
+                                    <span t-esc="o.name"/>
+                                </td>
+                                <td t-if="o.origin">
+                                    <span t-esc="o.origin"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+
         <xpath expr="//t[@name='account_invoice_line_accountable']/td[hasclass('o_price_total')]" position="replace">
             <td class="text-right o_price_total">
                 <span t-field="line.price_total_displayed"/>
