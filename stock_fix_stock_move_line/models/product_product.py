@@ -5,6 +5,7 @@
 import logging
 from odoo import api, fields, models
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -72,8 +73,8 @@ class ProductProduct(models.Model):
                     # / assigned move lines with the same
                     # characteristics.
                     if quant.reserved_quantity == 0:
-                        has_error = True
                         if move_lines:
+                            has_error = True
                             move_lines.with_context(bypass_reservation_update=True).write(
                                 {"product_uom_qty": 0}
                             )
