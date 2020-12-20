@@ -36,10 +36,13 @@ class ProductProduct(models.Model):
         ], limit=limit)
         products.button_quant_merge()
         date_end = fields.datetime.now()
-        logger.info("Merged quant for %s products in %s. Average time %s" % (
-            len(products), str(date_end - date_begin),
-            str((date_end - date_begin) / len(products))
-        ))
+        if products:
+            logger.info(
+                "Merged quant for %s products in %s."
+                " Average time %s" % (
+                    len(products), str(date_end - date_begin),
+                    str((date_end - date_begin) / len(products))
+                ))
 
     @api.multi
     def button_quant_merge(self):
