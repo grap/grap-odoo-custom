@@ -4,6 +4,7 @@
 
 import logging
 from odoo import api, fields, models
+from odoo.osv import expression
 
 
 logger = logging.getLogger(__name__)
@@ -27,19 +28,24 @@ class ProductProduct(models.Model):
         ])
 
     @api.model
-    def _fix_stock_move_line_cron(self, limit):
+    def _fix_stock_move_line_cron(self, limit, extra_domain):
+        domain = expression.AND([
+            [('fix_stock_move_lines_state', '=', "todo")],
+            extra_domain])
+        print(domain)
         date_begin = fields.datetime.now()
-        products = self.sudo().with_context(active_test=False).search([
-            ('fix_stock_move_lines_state', '=', "todo"),
-        ], limit=limit)
+        products = self.sudo().with_context(active_test=False).search(
+            domain, limit=limit)
         products.button_fix_stock_move_line()
         date_end = fields.datetime.now()
-        logger.info(
-            "Fixed Stock move lines for %s products in %s"
-            ". Average time %s" % (
-                len(products), str(date_end - date_begin),
-                str((date_end - date_begin) / len(products))
-            ))
+        if products:
+            logger.info(
+                "Fixed Stock move lines for %s products in %s"
+                ". Average time %s" % (
+                    len(products), str(date_end - date_begin),
+                    str((date_end - date_begin) / len(products))
+                ))
+        return True
 
     @api.multi
     def button_fix_stock_move_line(self):
@@ -71,7 +77,7 @@ class ProductProduct(models.Model):
                     # should be 0.
                     if quant.reserved_quantity != 0:
                         state = 'fixed_1'
-                        quant.write({"reserved_quantity": 0})
+                        quant.sudo().write({"reserved_quantity": 0})
                 else:
                     # If a quant is in a reservable location, its
                     # `reserved_quantity` should be exactly the sum
@@ -81,31 +87,38 @@ class ProductProduct(models.Model):
                     if quant.reserved_quantity == 0:
                         if move_lines:
                             state = 'fixed_2'
-                            move_lines.with_context(bypass_reservation_update=True).write(
-                                {"product_uom_qty": 0}
+                            move_lines.with_context(
+                                bypass_reservation_update=True).write(
+                                    {"product_uom_qty": 0}
                             )
 
                     elif quant.reserved_quantity < 0:
                         state = 'fixed_3'
-                        quant.write({"reserved_quantity": 0})
+                        quant.sudo().write({"reserved_quantity": 0})
                         if move_lines:
-                            move_lines.with_context(bypass_reservation_update=True).write(
-                                {"product_uom_qty": 0}
+                            move_lines.with_context(
+                                bypass_reservation_update=True).write(
+                                    {"product_uom_qty": 0}
                             )
                     else:
                         if reserved_on_move_lines != quant.reserved_quantity:
                             state = 'fixed_4'
-                            move_lines.with_context(bypass_reservation_update=True).write(
-                                {"product_uom_qty": 0}
-                            )
-                            quant.write({"reserved_quantity": 0})
-                        else:
-                            if any(move_line.product_qty < 0 for move_line in move_lines):
-                                state = 'fixed_5'
-                                move_lines.with_context(bypass_reservation_update=True).write(
+                            move_lines.with_context(
+                                bypass_reservation_update=True).write(
                                     {"product_uom_qty": 0}
+                            )
+                            quant.sudo().write({"reserved_quantity": 0})
+                        else:
+                            if any(
+                                move_line.product_qty < 0
+                                for move_line in move_lines
+                            ):
+                                state = 'fixed_5'
+                                move_lines.with_context(
+                                    bypass_reservation_update=True).write(
+                                        {"product_uom_qty": 0}
                                 )
-                                quant.write({"reserved_quantity": 0})
+                                quant.sudo().write({"reserved_quantity": 0})
             move_lines = self.env["stock.move.line"].search(
                 [
                     ("product_id", "=", product.id),
@@ -140,26 +153,4 @@ class ProductProduct(models.Model):
                 )
 
             product.fix_stock_move_lines_state = state
-
-    # _name = 'stock.quant'
-
-    # @api.model
-    # def _update_reserved_quantity(
-    #         self, product_id, location_id, quantity, lot_id=None,
-    #         package_id=None, owner_id=None, strict=False
-    #     ):
-    #     try:
-    #         return super()._update_reserved_quantity(
-    #             product_id, location_id, quantity,
-    #             lot_id=lot_id, package_id=package_id,
-    #             owner_id=owner_id, strict=strict)
-
-    #     except UserError:
-    #         logger.warning("on corrige manuellement")
-    #         product = self.env["product.product"].browse(product_id)
-    #         product.button_fix_stock_move_line()
-
-    #     return super()._update_reserved_quantity(
-    #         product_id, location_id, quantity,
-    #         lot_id=lot_id, package_id=package_id,
-    #         owner_id=owner_id, strict=strict)
+        return True
