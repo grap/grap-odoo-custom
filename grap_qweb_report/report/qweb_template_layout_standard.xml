@@ -42,13 +42,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="col-5 text-left">
                         <br/>
                         <div t-if="company.phone">
-                            🖁 <span t-esc="company.phone"/>
+                            <span t-esc="company.phone"/>
                          </div>
                         <div t-if="company.email">
-                            📨 <span t-esc="company.email"/>
+                            <span t-esc="company.email"/>
                         </div>
                         <div t-if="company.website">
-                            💻 <span t-esc="company.website.replace('http://', '')"/>
+                            <span t-esc="company.website.replace('http://', '')"/>
                         </div>
                         <div t-if="company.report_header">
                             <span style="font-style:italic; font-size:9px" t-esc="company.report_header"/>
