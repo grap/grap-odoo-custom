@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="grap_change_views_product.view_product_product_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button string="Merge Quants" type="object"
+                        name="button_quant_merge" groups="base.group_erp_manager"/>
+            </xpath>
+            <field name="barcode" position="after">
+                <field name="quant_merged_state" groups="base.group_erp_manager"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
