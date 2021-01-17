@@ -43,15 +43,31 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_product_tree_price" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
-            <tree editable="bottom">
+            <tree editable="bottom"
+                    decoration-warning="margin_state == 'too_expensive'"
+                    decoration-danger="margin_state == 'too_cheap'"
+                >
                 <field name="default_code" readonly="1"/>
                 <field name="name" readonly="1"/>
                 <field name="fiscal_classification_id" required="1"/>
                 <field name="consignor_partner_id" invisible="1"/>
                 <field name="standard_price"/>
                 <field name="list_price"/>
-                <field name="margin_classification_id"/>
                 <field name="standard_margin_rate"/>
+                <field name="margin_classification_id"/>
+                <field name="theoretical_price"
+                    widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"
+                    attrs="{'invisible': [('theoretical_difference', '=', 0)]}"
+                    />
+                <field name="margin_state"/>
+                <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-up"
+                    attrs="{'invisible': [('margin_state', '!=', 'too_cheap')]}"
+                    help="Increase the Sale Price up to Theoretical Price"/>
+                <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-down"
+                    attrs="{'invisible': [('margin_state', '!=', 'too_expensive')]}"
+                    help="Decrease the Sale Price down to Theoretical Price"/>
+                <field name="theoretical_difference"
+                    widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="sale_ok"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </tree>
