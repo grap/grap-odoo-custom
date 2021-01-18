@@ -25,9 +25,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <!-- Affichage des information de la société -->
                 <div class="row">
                     <div class="col-2 text-left">
-                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px;" alt="Logo"/>
                     </div>
                     <div class="col-5 text-left">
+                        <br/>
                         <div>
                             <b><span t-esc="company.name.replace('|', '')"/></b>
                         </div>
@@ -39,6 +40,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </div>
                     </div>
                     <div class="col-5 text-left">
+                        <br/>
                         <div t-if="company.phone">
                             <span t-esc="company.phone"/>
                          </div>
