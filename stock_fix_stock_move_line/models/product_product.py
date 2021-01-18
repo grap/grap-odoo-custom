@@ -32,7 +32,6 @@ class ProductProduct(models.Model):
         domain = expression.AND([
             [('fix_stock_move_lines_state', '=', "todo")],
             extra_domain])
-        print(domain)
         date_begin = fields.datetime.now()
         products = self.sudo().with_context(active_test=False).search(
             domain, limit=limit)
@@ -133,6 +132,7 @@ class ProductProduct(models.Model):
 
             if len(move_lines_to_unreserve) > 1:
                 state = 'fixed_6'
+                # pylint: disable=sql-injection
                 self.env.cr.execute(
                     """
                         UPDATE stock_move_line
@@ -143,6 +143,7 @@ class ProductProduct(models.Model):
                 )
             elif len(move_lines_to_unreserve) == 1:
                 state = 'fixed_7'
+                # pylint: disable=sql-injection
                 self.env.cr.execute(
                     """
                     UPDATE stock_move_line
