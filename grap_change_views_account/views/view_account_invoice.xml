@@ -159,6 +159,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
                 <attribute name="decoration-danger">price_subtotal == 0</attribute>
              </xpath>
+             <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']" position="before">
+                <field name="base"/>
+             </xpath>
         </field>
     </record>
 
