@@ -54,4 +54,36 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         action="action_product_product"
         sequence="1"/>
 
+    <record id="action_product_product_admin" model="ir.actions.act_window">
+        <field name="name">Product Variants (Admin)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="product.product_normal_form_view"/>
+        <field name="view_mode">form,tree,tree</field>
+    </record>
+
+    <menuitem id="menu_product_product_admin"
+        name="Product Variants (Admin)"
+        parent="menu_product"
+        action="action_product_product_admin"
+        groups="base.group_erp_manager"
+        sequence="90"/>
+
+    <record id="action_product_template_admin" model="ir.actions.act_window">
+        <field name="name">Product Templates (Admin)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="product.product_template_only_form_view"/>
+        <field name="view_mode">form,tree,tree</field>
+    </record>
+
+    <menuitem id="menu_product_template_admin"
+        name="Product Templates (Admin)"
+        parent="menu_product"
+        action="action_product_template_admin"
+        groups="base.group_erp_manager"
+        sequence="90"/>
+
 </odoo>
