@@ -5,7 +5,7 @@
 {
     "name": "GRAP - Must Have Modules",
     "summary": "Install must have modules",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
