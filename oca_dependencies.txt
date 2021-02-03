@@ -5,7 +5,9 @@ pos
 product-attribute
 purchase-workflow
 server-env
+server-tools
 stock-logistics-barcode
+web
 
 web__web_favorite_company      https://github.com/legalsylvain/web.git      12.0-ADD-web_favorite_company
 web__web_dashboard_tile      https://github.com/legalsylvain/web.git      12.0-mig-web_dashboard_tile
