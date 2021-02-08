@@ -77,6 +77,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="attributes">
                 <attribute name="string">S.T.</attribute>
             </xpath>
+            <!-- make priority bigger to make sure that this XPATH is used after the one
+                 that adds the button -->
+            <!-- button oe_highlight -->
+            <xpath expr='//button[@name="action_view_invoice"][1]' position='attributes'>
+                <attribute name="attrs">{'invisible': 
+                    ['|', ('state', 'not in', ('purchase', 'done')),
+                     '|', ('invoice_status', 'in', ('no', 'invoiced')),
+                     '|', ('consignment_trade', '=', True),
+                    ('intercompany_trade', '=', True)]}</attribute>
+            </xpath>
+            <!-- button pas oe_highlight -->
+            <xpath expr='//button[@name="action_view_invoice"][2]' position='attributes'>
+                <attribute name="attrs">
+                    {'invisible': 
+                    ['|', ('state', 'not in', ('purchase', 'done')),
+                    '|', ('invoice_status', 'not in', ('no', 'invoiced')),
+                    '|', ('order_line', '=', []),
+                    '|', ('consignment_trade', '=', True),
+                    ('intercompany_trade', '=', True)]}
+                </attribute>
+            </xpath>
         </field>
     </record>
 

@@ -14,6 +14,7 @@
         "purchase",
         "purchase_discount",
         "purchase_triple_discount",
+        "intercompany_trade_purchase",
     ],
     "data": [
         "views/menu.xml",
