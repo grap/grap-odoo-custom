@@ -15,6 +15,8 @@
         "pos_margin",
         "sale_margin",
         "product_standard_price_tax_included",
+        "grap_change_base_product_mass_addition",
+        "account_invoice_supplierinfo_update_standard_price",
     ],
     "data": [
         "data/decimal_precision.xml",
