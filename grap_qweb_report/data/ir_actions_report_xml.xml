@@ -60,6 +60,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="stock.action_report_delivery" model="ir.actions.report">
+        <field name="print_report_name">
+            "Bon_de_livraison__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
     <report
         id="report_product_product_barcode_5"
         string="Self-Adhesive Barcode Sheet (PDF)"
