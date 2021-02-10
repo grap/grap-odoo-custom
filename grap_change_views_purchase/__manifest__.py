@@ -14,6 +14,7 @@
         "purchase",
         "purchase_discount",
         "purchase_triple_discount",
+        "purchase_batch_invoicing",
     ],
     "data": [
         "views/menu.xml",
