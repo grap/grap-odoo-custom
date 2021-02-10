@@ -20,3 +20,7 @@ class ProductProduct(models.Model):
     standard_price_tax_included = fields.Float(
         digits=dp.get_precision("GRAP Cost Price")
     )
+
+    mass_addition_purchase_price = fields.Float(
+        digits=dp.get_precision("GRAP Purchase Price Unit")
+    )
