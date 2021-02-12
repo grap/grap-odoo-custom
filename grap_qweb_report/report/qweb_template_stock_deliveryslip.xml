@@ -12,11 +12,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
              ça merdait en affichant pas les auttres champs-->
         <xpath expr="//h2" position="replace">
             <h3>
-                <span>Bon de livraison</span>
+                <span>Bon de livraison n° </span><span t-field="o.name"/>
             </h3>
-            <h5>
-                <span>N° </span><span t-field="o.name"/>
-            </h5>
         </xpath>
 
     </template>
