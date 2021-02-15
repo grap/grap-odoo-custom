@@ -10,6 +10,7 @@
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
+        "delivery",
         "product",
         "point_of_sale",
         "product_category_active",
