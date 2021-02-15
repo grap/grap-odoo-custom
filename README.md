@@ -25,7 +25,7 @@ addon | version | summary
 [grap_change_data](grap_change_data/) | 12.0.1.0.5 | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.0.2 | GRAP - Change Default
 [grap_change_email](grap_change_email/) | 12.0.1.0.3 | Change default email template for invoices, sale and purchase orders
-[grap_change_precision](grap_change_precision/) | 12.0.1.0.3 | Change the precisions names and values of some fields
+[grap_change_precision](grap_change_precision/) | 12.0.1.0.4 | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.0.2 | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.0.6 | GRAP - Change Views
 [grap_change_views_account](grap_change_views_account/) | 12.0.1.0.17 | GRAP - Change Views Account
