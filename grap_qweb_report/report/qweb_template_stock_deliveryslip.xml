@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (qurntin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document">
+
+        <!-- Changement car si la description est trop longue
+             ça merdait en affichant pas les auttres champs-->
+        <xpath expr="//h2" position="replace">
+            <h3>
+                <span>Bon de livraison n° </span><span t-field="o.name"/>
+            </h3>
+        </xpath>
+
+    </template>
+
+</odoo>
