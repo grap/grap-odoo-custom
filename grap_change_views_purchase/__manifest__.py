@@ -11,6 +11,7 @@
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
+        "purchase_batch_invoicing",
         "purchase",
         "purchase_discount",
         "purchase_triple_discount",
