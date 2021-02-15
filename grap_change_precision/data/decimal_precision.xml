@@ -15,6 +15,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="digits">3</field>
     </record>
 
+    <record id="decimal_purchase_price_unit" model="decimal.precision">
+        <field name="name">GRAP Purchase Price Unit</field>
+        <field name="digits">4</field>
+    </record>
+
+    <record id="decimal_supplierinfo_price" model="decimal.precision">
+        <field name="name">GRAP Supplierinfo Price</field>
+        <field name="digits">4</field>
+    </record>
+
     <record id="decimal_invoice_price" model="decimal.precision">
         <field name="name">GRAP Invoice Price Unit</field>
         <field name="digits">4</field>
