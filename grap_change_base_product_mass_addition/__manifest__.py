@@ -6,7 +6,7 @@
     "version": "12.0.0.0.8",
     "category": "GRAP - Custom",
     "summary": "Fix slow call to odoo.tests.Form, used in "
-            "base_product_mass_addition, for purchase_quick module",
+    "base_product_mass_addition, for purchase_quick module",
     "author": "GRAP",
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
