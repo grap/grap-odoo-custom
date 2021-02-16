@@ -3,9 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import logging
+
 from odoo import api, fields, models
 from odoo.osv import expression
-
 
 logger = logging.getLogger(__name__)
 
@@ -49,7 +49,7 @@ class ProductProduct(models.Model):
     @api.multi
     def button_fix_stock_move_line(self):
         for product in self:
-            logger.info("Handle %s-%s" % (product.default_code, product.name))
+            logger.info("Handle {}-{}".format(product.default_code, product.name))
             state = 'done'
 
             quants = self.env["stock.quant"].search(

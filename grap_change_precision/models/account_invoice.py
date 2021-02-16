@@ -4,6 +4,7 @@
 
 
 from odoo import fields, models
+
 from odoo.addons import decimal_precision as dp
 
 

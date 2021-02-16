@@ -3,10 +3,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import logging
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+
 from openupgradelib import openupgrade_merge_records
 
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 QUANT_MERGE_OPS = {
     # The rest of the values are good with default merge operation

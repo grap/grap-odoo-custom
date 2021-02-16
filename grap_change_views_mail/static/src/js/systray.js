@@ -12,7 +12,7 @@ odoo.define("grap_change_views_mail.systray", function (require) {
     var newItems = [];
     _.each(SystrayMenu.Items, function (WidgetClass) {
         if (["mail.systray.MessagingMenu", "mail.systray.ActivityMenu"].indexOf(
-                WidgetClass.prototype.template) === -1) {
+            WidgetClass.prototype.template) === -1) {
             newItems.push(WidgetClass);
         }
     });
