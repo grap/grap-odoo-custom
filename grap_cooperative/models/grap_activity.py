@@ -31,8 +31,8 @@ class GrapActivity(models.Model):
     activity_name = fields.Char(string="Activity Name", required=True)
 
     complete_name = fields.Char(
-        string="Complete Name", compute="_compute_complete_name",
-        store=True)
+        string="Complete Name", compute="_compute_complete_name", store=True
+    )
 
     code = fields.Char(string="Code")
 
@@ -81,7 +81,8 @@ class GrapActivity(models.Model):
     def _compute_complete_name(self):
         for activity in self:
             activity.complete_name = "{} - {}".format(
-                activity.code, activity.activity_name)
+                activity.code, activity.activity_name
+            )
 
     # Overloads section
     @api.model

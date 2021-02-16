@@ -36,8 +36,7 @@ class GrapActivityPeople(models.Model):
     )
 
     people_image_small = fields.Binary(
-        string="People Small-sized image",
-        related="people_id.image_small"
+        string="People Small-sized image", related="people_id.image_small"
     )
 
     people_working_email = fields.Char(
