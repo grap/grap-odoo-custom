@@ -11,7 +11,7 @@ odoo.define("grap_theme.widgets", function (require) {
     var session = require('web.session');
 
 
-    var SwitchCompanyMenuWidget = SwitchCompanyMenu.include({
+    SwitchCompanyMenu.include({
         start: function () {
             this._super.apply(this, arguments);
             if (!this.isMobile) {
