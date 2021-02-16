@@ -5,8 +5,8 @@
 from openupgradelib import openupgrade
 
 column_renames = {
-    'grap_member': [
-        ('image', None),
+    "grap_member": [
+        ("image", None),
     ],
 }
 

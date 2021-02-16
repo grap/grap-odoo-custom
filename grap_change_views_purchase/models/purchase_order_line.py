@@ -6,7 +6,7 @@ from odoo import api, models
 
 
 class PurchaseOrderLine(models.Model):
-    _inherit = 'purchase.order.line'
+    _inherit = "purchase.order.line"
 
     @api.model
     def _get_date_planned(self, seller, po=False):

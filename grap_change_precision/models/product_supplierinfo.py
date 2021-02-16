@@ -10,6 +10,4 @@ from odoo.addons import decimal_precision as dp
 class ProductSupplierinfo(models.Model):
     _inherit = "product.supplierinfo"
 
-    price = fields.Float(
-        digits=dp.get_precision("GRAP Supplierinfo Price")
-    )
+    price = fields.Float(digits=dp.get_precision("GRAP Supplierinfo Price"))

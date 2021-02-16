@@ -15,7 +15,8 @@ class ProductProduct(models.Model):
 
     fix_stock_move_lines_state = fields.Selection(
         string="Fix Stock Move Lines State",
-        default="todo", selection=[
+        default="todo",
+        selection=[
             ("todo", "To Do"),
             ("done", "Done"),
             ("fixed_1", "Fixed (1)"),
@@ -25,35 +26,39 @@ class ProductProduct(models.Model):
             ("fixed_5", "Fixed (5)"),
             ("fixed_6", "Fixed (6)"),
             ("fixed_7", "Fixed (7)"),
-        ])
+        ],
+    )
 
     @api.model
     def _fix_stock_move_line_cron(self, limit, extra_domain):
-        domain = expression.AND([
-            [('fix_stock_move_lines_state', '=', "todo")],
-            extra_domain])
+        domain = expression.AND(
+            [[("fix_stock_move_lines_state", "=", "todo")], extra_domain]
+        )
         date_begin = fields.datetime.now()
-        products = self.sudo().with_context(active_test=False).search(
-            domain, limit=limit)
+        products = (
+            self.sudo().with_context(active_test=False).search(domain, limit=limit)
+        )
         products.button_fix_stock_move_line()
         date_end = fields.datetime.now()
         if products:
             logger.info(
                 "Fixed Stock move lines for %s products in %s"
-                ". Average time %s" % (
-                    len(products), str(date_end - date_begin),
-                    str((date_end - date_begin) / len(products))
-                ))
+                ". Average time %s"
+                % (
+                    len(products),
+                    str(date_end - date_begin),
+                    str((date_end - date_begin) / len(products)),
+                )
+            )
         return True
 
     @api.multi
     def button_fix_stock_move_line(self):
         for product in self:
             logger.info("Handle {}-{}".format(product.default_code, product.name))
-            state = 'done'
+            state = "done"
 
-            quants = self.env["stock.quant"].search(
-                [('product_id', '=', product.id)])
+            quants = self.env["stock.quant"].search([("product_id", "=", product.id)])
             move_line_ids = []
             for quant in quants:
                 move_lines = self.env["stock.move.line"].search(
@@ -75,7 +80,7 @@ class ProductProduct(models.Model):
                     # reservation, its `reserved_quantity` field
                     # should be 0.
                     if quant.reserved_quantity != 0:
-                        state = 'fixed_1'
+                        state = "fixed_1"
                         quant.sudo().write({"reserved_quantity": 0})
                 else:
                     # If a quant is in a reservable location, its
@@ -85,38 +90,33 @@ class ProductProduct(models.Model):
                     # characteristics.
                     if quant.reserved_quantity == 0:
                         if move_lines:
-                            state = 'fixed_2'
+                            state = "fixed_2"
                             move_lines.with_context(
-                                bypass_reservation_update=True).write(
-                                    {"product_uom_qty": 0}
-                            )
+                                bypass_reservation_update=True
+                            ).write({"product_uom_qty": 0})
 
                     elif quant.reserved_quantity < 0:
-                        state = 'fixed_3'
+                        state = "fixed_3"
                         quant.sudo().write({"reserved_quantity": 0})
                         if move_lines:
                             move_lines.with_context(
-                                bypass_reservation_update=True).write(
-                                    {"product_uom_qty": 0}
-                            )
+                                bypass_reservation_update=True
+                            ).write({"product_uom_qty": 0})
                     else:
                         if reserved_on_move_lines != quant.reserved_quantity:
-                            state = 'fixed_4'
+                            state = "fixed_4"
                             move_lines.with_context(
-                                bypass_reservation_update=True).write(
-                                    {"product_uom_qty": 0}
-                            )
+                                bypass_reservation_update=True
+                            ).write({"product_uom_qty": 0})
                             quant.sudo().write({"reserved_quantity": 0})
                         else:
                             if any(
-                                move_line.product_qty < 0
-                                for move_line in move_lines
+                                move_line.product_qty < 0 for move_line in move_lines
                             ):
-                                state = 'fixed_5'
+                                state = "fixed_5"
                                 move_lines.with_context(
-                                    bypass_reservation_update=True).write(
-                                        {"product_uom_qty": 0}
-                                )
+                                    bypass_reservation_update=True
+                                ).write({"product_uom_qty": 0})
                                 quant.sudo().write({"reserved_quantity": 0})
             move_lines = self.env["stock.move.line"].search(
                 [
@@ -131,7 +131,7 @@ class ProductProduct(models.Model):
                     move_lines_to_unreserve.append(move_line.id)
 
             if len(move_lines_to_unreserve) > 1:
-                state = 'fixed_6'
+                state = "fixed_6"
                 # pylint: disable=sql-injection
                 self.env.cr.execute(
                     """
@@ -142,7 +142,7 @@ class ProductProduct(models.Model):
                     % (tuple(move_lines_to_unreserve),)
                 )
             elif len(move_lines_to_unreserve) == 1:
-                state = 'fixed_7'
+                state = "fixed_7"
                 # pylint: disable=sql-injection
                 self.env.cr.execute(
                     """

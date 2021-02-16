@@ -5,8 +5,8 @@
 from openupgradelib import openupgrade, openupgrade_90
 
 attachment_fields = {
-    'grap.member': [
-        ('image', None),
+    "grap.member": [
+        ("image", None),
     ],
 }
 

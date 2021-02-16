@@ -10,13 +10,9 @@ from odoo.addons import decimal_precision as dp
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    volume = fields.Float(
-        digits=dp.get_precision("GRAP Stock Volume")
-    )
+    volume = fields.Float(digits=dp.get_precision("GRAP Stock Volume"))
 
-    standard_price = fields.Float(
-        digits=dp.get_precision("GRAP Cost Price")
-    )
+    standard_price = fields.Float(digits=dp.get_precision("GRAP Cost Price"))
 
     standard_price_tax_included = fields.Float(
         digits=dp.get_precision("GRAP Cost Price")

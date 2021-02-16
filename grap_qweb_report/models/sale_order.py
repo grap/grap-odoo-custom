@@ -10,7 +10,7 @@ class SaleOrder(models.Model):
 
     def action_invoice_create(self, grouped=False, final=False):
         if not grouped and len(self) > 1:
-            return super(SaleOrder, self.with_context(
-                add_picking_date=True)).action_invoice_create(
-                    grouped=grouped, final=final)
+            return super(
+                SaleOrder, self.with_context(add_picking_date=True)
+            ).action_invoice_create(grouped=grouped, final=final)
         return super().action_invoice_create(grouped=grouped, final=final)

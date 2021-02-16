@@ -11,7 +11,8 @@
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
-        "web_responsive", "base_technical_features",
+        "web_responsive",
+        "base_technical_features",
     ],
     "installable": True,
 }

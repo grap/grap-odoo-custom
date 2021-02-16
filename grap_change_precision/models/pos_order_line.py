@@ -10,10 +10,6 @@ from odoo.addons import decimal_precision as dp
 class PosOrderLine(models.Model):
     _inherit = "pos.order.line"
 
-    margin = fields.Float(
-        digits=dp.get_precision("GRAP Cost Price")
-    )
+    margin = fields.Float(digits=dp.get_precision("GRAP Cost Price"))
 
-    purchase_price = fields.Float(
-        digits=dp.get_precision("GRAP Cost Price")
-    )
+    purchase_price = fields.Float(digits=dp.get_precision("GRAP Cost Price"))

@@ -24,7 +24,7 @@
         "views/view_pos_session.xml",
         "views/view_pos_config.xml",
         "views/menu.xml",
-        'views/templates.xml',
+        "views/templates.xml",
     ],
     "installable": True,
 }

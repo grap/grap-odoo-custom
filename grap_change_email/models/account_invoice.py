@@ -10,9 +10,7 @@ class AccountInvoice(models.Model):
 
     def action_invoice_sent(self):
         res = super().action_invoice_sent()
-        template = self.env.ref(
-            "grap_change_email.email_template_account_invoice"
-        )
+        template = self.env.ref("grap_change_email.email_template_account_invoice")
         res["context"].update(
             {
                 "default_use_template": bool(template.id),
