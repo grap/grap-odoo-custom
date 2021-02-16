@@ -14,7 +14,7 @@ odoo.define('grap_qweb_report.models', function (require) {
     models.Order = models.Order.extend({
 
         /**
-        * * detailed values for tax lines.
+        * * Detailed values for tax lines.
         * @returns {dict} List of taxes description.
         */
         get_tax_details_with_base: function () {
@@ -50,7 +50,7 @@ odoo.define('grap_qweb_report.models', function (require) {
             return result;
         },
 
-        export_for_printing: function(attributes){
+        export_for_printing: function (attributes) {
             var res = order_super.export_for_printing.apply(this, arguments);
             res.pricelist_id = this.pricelist.id;
             res.pricelist_name = this.pricelist.name;
