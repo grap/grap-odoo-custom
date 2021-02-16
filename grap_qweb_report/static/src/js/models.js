@@ -8,6 +8,8 @@ odoo.define('grap_qweb_report.models', function (require) {
     'use strict';
 
     var models = require('point_of_sale.models');
+    var core = require('web.core');
+    var _t = core._t;
 
     var order_super = models.Order.prototype;
 
@@ -50,11 +52,12 @@ odoo.define('grap_qweb_report.models', function (require) {
             return result;
         },
 
-        export_for_printing: function (attributes) {
+        export_for_printing: function () {
             var res = order_super.export_for_printing.apply(this, arguments);
             res.pricelist_id = this.pricelist.id;
             res.pricelist_name = this.pricelist.name;
-            res.pricelist_default = res.pricelist_id === this.pos.config.pricelist_id[0];
+            res.pricelist_default =
+                res.pricelist_id === this.pos.config.pricelist_id[0];
             res.tax_details_with_base = this.get_tax_details_with_base();
 
             return res;
