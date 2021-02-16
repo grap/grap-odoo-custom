@@ -36,9 +36,9 @@ class GrapMember(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            tools.image_resize_images(vals, sizes={'image': (1024, None)})
+            tools.image_resize_images(vals, sizes={"image": (1024, None)})
         return super().create(vals_list)
 
     def write(self, vals):
-        tools.image_resize_images(vals, sizes={'image': (1024, None)})
+        tools.image_resize_images(vals, sizes={"image": (1024, None)})
         return super().write(vals)
