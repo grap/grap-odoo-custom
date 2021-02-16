@@ -80,7 +80,7 @@ class GrapActivity(models.Model):
     @api.depends("code", "activity_name")
     def _compute_complete_name(self):
         for activity in self:
-            activity.complete_name = "%s - %s" % (
+            activity.complete_name = "{} - {}".format(
                 activity.code, activity.activity_name)
 
     # Overloads section
