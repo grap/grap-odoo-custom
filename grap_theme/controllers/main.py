@@ -4,9 +4,10 @@
 
 import functools
 
-from odoo.addons.web import controllers
-from odoo.modules import get_resource_path
 from odoo import http
+from odoo.modules import get_resource_path
+
+from odoo.addons.web import controllers
 
 
 class Binary(controllers.main.Binary):
