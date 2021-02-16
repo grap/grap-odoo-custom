@@ -42,13 +42,13 @@ class ProductProduct(models.Model):
         "mass_addition_purchase_package_qty")
     def _compute_mass_addition_purchase_bad(self):
         for product in self.filtered(
-                lambda x: x.qty_to_process and
-                x.mass_addition_purchase_min_qty):
+                lambda x: x.qty_to_process
+                and x.mass_addition_purchase_min_qty):
             product.mass_addition_purchase_min_qty_bad =\
                 product.qty_to_process < product.mass_addition_purchase_min_qty
         for product in self.filtered(
-                lambda x: x.qty_to_process and
-                x.mass_addition_purchase_package_qty):
+                lambda x: x.qty_to_process
+                and x.mass_addition_purchase_package_qty):
             product.mass_addition_purchase_package_qty_bad =\
                 product.qty_to_process %\
                 product.mass_addition_purchase_package_qty
