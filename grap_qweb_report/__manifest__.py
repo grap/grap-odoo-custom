@@ -28,7 +28,7 @@
     ],
     "data": [
         "views/templates.xml",
-        'report/qweb_template_product_product_barcode.xml',
+        "report/qweb_template_product_product_barcode.xml",
         "report/qweb_template_layout_standard.xml",
         "report/qweb_template_account_invoice.xml",
         "report/qweb_template_stock_deliveryslip.xml",
