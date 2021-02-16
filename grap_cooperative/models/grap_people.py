@@ -40,7 +40,8 @@ class GrapPeople(models.Model):
     activity_description = fields.Char(
         string="Activities Description",
         compute="_compute_activity_description",
-        store=True)
+        store=True,
+    )
 
     mandate_ids = fields.Many2many(
         string="Mandates",
@@ -50,8 +51,7 @@ class GrapPeople(models.Model):
         column2="mandate_id",
     )
 
-    is_birthday = fields.Boolean(
-        string="Is Birthday", compute="_compute_is_birthday")
+    is_birthday = fields.Boolean(string="Is Birthday", compute="_compute_is_birthday")
 
     # Compute section
     @api.model
@@ -62,7 +62,8 @@ class GrapPeople(models.Model):
     def _compute_activity_description(self):
         for people in self:
             people.activity_description = ", ".join(
-                people.mapped("activity_ids.activity_id.name"))
+                people.mapped("activity_ids.activity_id.name")
+            )
 
     @api.depends("birthdate")
     def _compute_is_birthday(self):
@@ -82,9 +83,7 @@ class GrapPeople(models.Model):
     def write(self, vals):
         if "last_name" in vals.keys() or "first_name" in vals.keys():
             if len(self) > 1:
-                raise UserError(
-                    _("Unable to perform name changes on many people")
-                )
+                raise UserError(_("Unable to perform name changes on many people"))
             vals["name"] = self._get_name(
                 vals.get("first_name", self.first_name),
                 vals.get("last_name", self.last_name),
