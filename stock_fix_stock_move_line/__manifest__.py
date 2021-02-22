@@ -4,7 +4,7 @@
 
 {
     "name": "Stock - Fix Stock Move Lines",
-    "version": "12.0.1.0.2",
+    "version": "12.0.1.1.0",
     "category": "Tools",
     "author": "GRAP",
     "website": "http://www.grap.coop",
