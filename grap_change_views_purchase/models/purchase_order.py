@@ -6,7 +6,7 @@ from odoo import fields, models
 
 
 class PurchaseOrder(models.Model):
-    _inherit = 'purchase.order'
+    _inherit = "purchase.order"
 
     # Column Section
     date_planned = fields.Datetime(compute=False)

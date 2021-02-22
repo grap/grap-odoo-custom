@@ -3,12 +3,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models
+
 from odoo.addons import decimal_precision as dp
 
 
 class ProductSupplierinfo(models.Model):
     _inherit = "product.supplierinfo"
 
-    price = fields.Float(
-        digits=dp.get_precision("GRAP Supplierinfo Price")
-    )
+    price = fields.Float(digits=dp.get_precision("GRAP Supplierinfo Price"))

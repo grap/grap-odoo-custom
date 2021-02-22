@@ -11,8 +11,7 @@ class SaleOrderLine(models.Model):
     def _prepare_invoice_line(self, qty):
         res = super()._prepare_invoice_line(qty)
 
-        if self.env.context.get("add_picking_date", False) and\
-                self.move_ids:
+        if self.env.context.get("add_picking_date", False) and self.move_ids:
             prefix = (
                 self.move_ids[0].date_expected
                 and self.move_ids[0].date_expected.strftime("%Y-%m-%d") + " - "

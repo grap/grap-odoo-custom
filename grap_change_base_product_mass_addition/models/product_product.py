@@ -9,75 +9,76 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     mass_addition_purchase_min_qty = fields.Float(
-        compute='_compute_mass_addition_purchase',
+        compute="_compute_mass_addition_purchase",
     )
 
     mass_addition_purchase_package_qty = fields.Float(
-        compute='_compute_mass_addition_purchase',
+        compute="_compute_mass_addition_purchase",
     )
 
     mass_addition_purchase_price = fields.Float(
-        compute='_compute_mass_addition_purchase',
+        compute="_compute_mass_addition_purchase",
     )
 
     mass_addition_purchase_discount = fields.Float(
-        compute='_compute_mass_addition_purchase',
+        compute="_compute_mass_addition_purchase",
     )
 
     mass_addition_purchase_discount2 = fields.Float(
-        compute='_compute_mass_addition_purchase',
+        compute="_compute_mass_addition_purchase",
     )
 
     mass_addition_purchase_min_qty_bad = fields.Boolean(
-        compute='_compute_mass_addition_purchase_bad',
+        compute="_compute_mass_addition_purchase_bad",
     )
 
     mass_addition_purchase_package_qty_bad = fields.Boolean(
-        compute='_compute_mass_addition_purchase_bad',
+        compute="_compute_mass_addition_purchase_bad",
     )
 
     @api.multi
     @api.depends(
-        "qty_to_process", "mass_addition_purchase_min_qty",
-        "mass_addition_purchase_package_qty")
+        "qty_to_process",
+        "mass_addition_purchase_min_qty",
+        "mass_addition_purchase_package_qty",
+    )
     def _compute_mass_addition_purchase_bad(self):
         for product in self.filtered(
-                lambda x: x.qty_to_process and
-                x.mass_addition_purchase_min_qty):
-            product.mass_addition_purchase_min_qty_bad =\
+            lambda x: x.qty_to_process and x.mass_addition_purchase_min_qty
+        ):
+            product.mass_addition_purchase_min_qty_bad = (
                 product.qty_to_process < product.mass_addition_purchase_min_qty
+            )
         for product in self.filtered(
-                lambda x: x.qty_to_process and
-                x.mass_addition_purchase_package_qty):
-            product.mass_addition_purchase_package_qty_bad =\
-                product.qty_to_process %\
-                product.mass_addition_purchase_package_qty
+            lambda x: x.qty_to_process and x.mass_addition_purchase_package_qty
+        ):
+            product.mass_addition_purchase_package_qty_bad = (
+                product.qty_to_process % product.mass_addition_purchase_package_qty
+            )
 
     @api.multi
     def _compute_mass_addition_purchase(self):
         PurchaseOrder = self.env["purchase.order"]
         if self.env.context.get("parent_model", False) == "purchase.order":
-            order = PurchaseOrder.browse(
-                [self.env.context.get("parent_id")])[0]
+            order = PurchaseOrder.browse([self.env.context.get("parent_id")])[0]
         else:
             return
 
         for product in self.filtered(lambda x: x.id):
-            sellers = product.seller_ids\
-                .filtered(lambda r: r.name == order.partner_id)\
-                .sorted(key=lambda r: r.min_qty)
+            sellers = product.seller_ids.filtered(
+                lambda r: r.name == order.partner_id
+            ).sorted(key=lambda r: r.min_qty)
 
             if sellers:
                 product.mass_addition_purchase_min_qty = sellers[0].min_qty
-                product.mass_addition_purchase_package_qty =\
-                    sellers[0].package_qty
+                product.mass_addition_purchase_package_qty = sellers[0].package_qty
                 product.mass_addition_purchase_price = sellers[0].price
                 product.mass_addition_purchase_discount = sellers[0].discount
                 product.mass_addition_purchase_discount2 = sellers[0].discount2
 
     def _inverse_set_process_qty(self):
-        parent_model = self.env.context.get('parent_model')
-        parent_id = self.env.context.get('parent_id')
+        parent_model = self.env.context.get("parent_model")
+        parent_id = self.env.context.get("parent_id")
         PurchaseOrderLine = self.env["purchase.order.line"]
         if parent_model == "purchase.order":
             order = self.env[parent_model].browse(parent_id)
@@ -102,7 +103,8 @@ class ProductProduct(models.Model):
                         "product_qty": new_qty,
                     }
                     vals = PurchaseOrderLine.play_onchanges(
-                        vals, ["product_id", "product_qty"])
+                        vals, ["product_id", "product_qty"]
+                    )
                     # We pop related fields like product_image,
                     # to avoid a useless write to ir.attachment
                     for k in [x for x in vals]:
@@ -111,10 +113,8 @@ class ProductProduct(models.Model):
                             vals.pop(k)
                     # We add price_unit because play_onchanges
                     # doesn't seems to return null values...
-                    if 'price_unit' not in vals:
-                        vals['price_unit'] = 0.0
-                    PurchaseOrderLine.create(
-                        PurchaseOrderLine._convert_to_write(vals)
-                    )
+                    if "price_unit" not in vals:
+                        vals["price_unit"] = 0.0
+                    PurchaseOrderLine.create(PurchaseOrderLine._convert_to_write(vals))
         else:
             return super()._inverse_set_process_qty()

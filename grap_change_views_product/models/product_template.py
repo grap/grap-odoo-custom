@@ -6,7 +6,7 @@ from odoo import api, fields, models
 
 
 class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+    _inherit = "product.template"
 
     list_price = fields.Float(
         track_visibility="onchange",
@@ -14,14 +14,14 @@ class ProductTemplate(models.Model):
 
     # Overwrite Section
     @api.multi
-    @api.depends('type', 'default_invoice_policy')
+    @api.depends("type", "default_invoice_policy")
     def _compute_invoice_policy(self):
-        invoice_policy = self.env.context.get('invoice_policy')
+        invoice_policy = self.env.context.get("invoice_policy")
         for tmpl in self:
-            if tmpl.type == 'service':
-                tmpl.invoice_policy = 'order'
+            if tmpl.type == "service":
+                tmpl.invoice_policy = "order"
             else:
                 if invoice_policy:
                     tmpl.invoice_policy = invoice_policy
                 else:
-                    tmpl.invoice_policy = 'delivery'
+                    tmpl.invoice_policy = "delivery"

@@ -6,9 +6,12 @@ from odoo import fields, models
 
 
 class StockInventoryLine(models.Model):
-    _inherit = 'stock.inventory.line'
+    _inherit = "stock.inventory.line"
 
     product_categ_id = fields.Many2one(
-        comodel_name='product.category', string='Product Category',
+        comodel_name="product.category",
+        string="Product Category",
         readonly=True,
-        related='product_id.categ_id', store=True)
+        related="product_id.categ_id",
+        store=True,
+    )

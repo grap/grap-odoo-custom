@@ -10,9 +10,7 @@ class PurchaseOrder(models.Model):
 
     def action_rfq_send(self):
         res = super().action_rfq_send()
-        template = self.env.ref(
-            "grap_change_email.email_template_purchase_order"
-        )
+        template = self.env.ref("grap_change_email.email_template_purchase_order")
         res["context"].update(
             {
                 "default_use_template": bool(template.id),

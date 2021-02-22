@@ -4,16 +4,13 @@
 
 
 from odoo import fields, models
+
 from odoo.addons import decimal_precision as dp
 
 
 class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
-    margin = fields.Float(
-        digits=dp.get_precision("GRAP Cost Price")
-    )
+    margin = fields.Float(digits=dp.get_precision("GRAP Cost Price"))
 
-    margin_signed = fields.Float(
-        digits=dp.get_precision("GRAP Cost Price")
-    )
+    margin_signed = fields.Float(digits=dp.get_precision("GRAP Cost Price"))

@@ -4,24 +4,25 @@
 
 import functools
 
-from odoo.addons.web import controllers
-from odoo.modules import get_resource_path
 from odoo import http
+from odoo.modules import get_resource_path
+
+from odoo.addons.web import controllers
 
 
 class Binary(controllers.main.Binary):
-
-    @http.route([
-        '/web/binary/company_logo',
-        '/logo',
-        '/logo.png',
-    ], type='http', auth="none", cors="*")
+    @http.route(
+        [
+            "/web/binary/company_logo",
+            "/logo",
+            "/logo.png",
+        ],
+        type="http",
+        auth="none",
+        cors="*",
+    )
     def company_logo(self, dbname=None, **kw):
         placeholder = functools.partial(
-            get_resource_path,
-            'grap_theme',
-            'static',
-            'src',
-            'img'
+            get_resource_path, "grap_theme", "static", "src", "img"
         )
         return http.send_file(placeholder("grap_logo.png"))

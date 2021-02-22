@@ -10,9 +10,7 @@ class PosOrderLine(models.Model):
     _inherit = "pos.order.line"
     _order = "create_date desc"
 
-    state = fields.Selection(
-        related="order_id.state", string="State", readonly=True
-    )
+    state = fields.Selection(related="order_id.state", string="State", readonly=True)
 
     partner_id = fields.Many2one(
         related="order_id.partner_id",

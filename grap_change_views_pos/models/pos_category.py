@@ -25,10 +25,9 @@ class PosCategory(models.Model):
     # Compute Section
     @api.depends("product_ids.pos_categ_id")
     def _compute_product_qty(self):
-        product_obj = self.env['product.product']
+        product_obj = self.env["product.product"]
         for category in self:
-            products = product_obj.search_count([
-                '&', ('pos_categ_id', '=', category.id),
-                ('active', '=', True)
-            ])
+            products = product_obj.search_count(
+                ["&", ("pos_categ_id", "=", category.id), ("active", "=", True)]
+            )
             category.product_qty = products
