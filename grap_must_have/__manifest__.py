@@ -12,6 +12,7 @@
     "license": "AGPL-3",
     "depends": [
         "web_responsive",
+        "web_refresher",
         "base_technical_features",
     ],
     "installable": True,
