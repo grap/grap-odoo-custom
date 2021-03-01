@@ -13,7 +13,10 @@
     "depends": [
         "web_responsive",
         "web_refresher",
+        "web_no_bubble",
         "base_technical_features",
+        "partner_disable_gravatar",
+        "disable_odoo_online",
     ],
     "installable": True,
 }
