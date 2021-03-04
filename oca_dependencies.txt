@@ -4,6 +4,7 @@ margin-analysis
 pos
 product-attribute
 purchase-workflow
+server-brand
 server-env
 server-tools
 stock-logistics-barcode
