@@ -24,16 +24,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_res_partner_form_stock" model="ir.ui.view">
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="stock.view_partner_stock_warnings_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='picking_warn']/.." position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </xpath>
-        </field>
-    </record>
-
     <record id="view_res_partner_form_stock_2" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="stock.view_partner_stock_form"/>
