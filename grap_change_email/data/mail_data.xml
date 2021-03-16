@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (qurntin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="template_grap_change_mail" inherit_id="mail.mail_notification_paynow">
+
+        <!-- delete "Best regards" automatically added -->
+        <xpath expr="//tr[2]//div[2]" position="replace">
+        </xpath>
+
+    </template>
+
+</odoo>
