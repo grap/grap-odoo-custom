@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!--
+    Disable some ir.model.access
+    We realize the action by write, because the xml_id is flagged as noupdate
+    -->
+
+    <!-- res.country can be changed only by erp_manager -->
+    <function model="ir.model.access" name="write">
+        <value model="ir.model.access" search="[('id', '=', obj().env.ref('base.access_res_country_group_user').id)]"/>
+        <value eval="{'group_id': ref('base.group_erp_manager')}"/>
+    </function>
+
+    <!-- res.country.state can be changed only by erp_manager -->
+    <function model="ir.model.access" name="write">
+        <value model="ir.model.access" search="[('id', '=', obj().env.ref('base.access_res_country_state_group_user').id)]"/>
+        <value eval="{'group_id': ref('base.group_erp_manager')}"/>
+    </function>
+
+    <!-- res.bank can NOT be changed by Contact Creation -->
+    <function model="ir.model.access" name="write">
+        <value model="ir.model.access" search="[('id', '=', obj().env.ref('base.access_res_bank_group_partner_manager').id)]"/>
+        <value eval="{'active': False}"/>
+    </function>
+
+</odoo>
