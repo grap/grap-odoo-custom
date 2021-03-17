@@ -152,7 +152,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="price_vat_excl" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [
                                             ('sale_tax_price_include', '!=', 'all_tax_incl'),
                                             ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
-                                    <field name="list_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="lst_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                                     <field name="price_per_unit" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('price_per_unit', '=', 0)]}"/>
                                     <field name="price_vat_incl" attrs="{'invisible': [
                                             ('sale_tax_price_include', '!=', 'all_tax_excl'),
