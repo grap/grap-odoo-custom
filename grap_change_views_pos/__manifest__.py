@@ -14,6 +14,7 @@
         "pos_multicompany",
         "pos_margin",
         "pos_cash_rounding",
+        "pos_cash_move_reason",
     ],
     "data": [
         "views/view_account_bank_statement.xml",
