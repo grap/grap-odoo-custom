@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_ir_sequence_tree" model="ir.ui.view">
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-muted">active == False</attribute>
+            </xpath>
+            <field name="implementation" position="after">
+                <field name="active" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
