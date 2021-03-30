@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 22:33+0000\n"
-"PO-Revision-Date: 2020-05-22 22:33+0000\n"
+"POT-Creation-Date: 2021-03-30 08:42+0000\n"
+"PO-Revision-Date: 2021-03-30 08:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,17 +21,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_type_kanban
 msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
-msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
+msgstr ""
 
 #. module: grap_cooperative
 #: sql_constraint:grap.activity.people:0
 msgid "A people can work only once time in an activity!"
 msgstr "Une personne peut être liée à une activité seulement une fois !"
-
-#. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__accountant_activity_ids
-msgid "Accounting Performed for Activities"
-msgstr "Comptabilité réalisé pour les activités"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__accountant_interlocutor_id
@@ -57,8 +52,8 @@ msgid "Activities Description"
 msgstr "Activités"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__activity_qty
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_category__activity_qty
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__activity_qty
 msgid "Activities Quantity"
 msgstr "Nombre d'activités"
 
@@ -92,7 +87,7 @@ msgstr "Accompagnateur"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
 msgid "Avatar"
-msgstr "Avatar"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__birthdate
@@ -114,7 +109,7 @@ msgstr "Ville"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__code
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__college_id
@@ -145,7 +140,7 @@ msgstr "Nom Complet"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
 msgid "Contact"
-msgstr "Contact"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__working_email
@@ -226,7 +221,7 @@ msgstr "Sortie"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
 msgid "Extra Information"
-msgstr "Extra Information"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__first_name
@@ -237,11 +232,6 @@ msgstr "Prénom"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__function
 msgid "Function"
 msgstr "Fonction"
-
-#. module: grap_cooperative
-#: model:ir.ui.menu,name:grap_cooperative.menu_root
-msgid "GRAP"
-msgstr "GRAP"
 
 #. module: grap_cooperative
 #: model:ir.model,name:grap_cooperative.model_grap_activity
@@ -303,14 +293,14 @@ msgstr "Interlocuteur RH"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__id
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_type__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__image
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_member__image
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image
 msgid "Image"
-msgstr "Image"
+msgstr ""
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_member_search
@@ -330,6 +320,11 @@ msgstr ""
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__is_birthday
 msgid "Is Birthday"
+msgstr ""
+
+#. module: grap_cooperative
+#: model:ir.ui.menu,name:grap_cooperative.menu_root
+msgid "La Coopérative"
 msgstr ""
 
 #. module: grap_cooperative
@@ -376,7 +371,7 @@ msgstr "Nom"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_kanban
 msgid "Logo"
-msgstr "Logo"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_mandate
@@ -461,7 +456,7 @@ msgstr "Pourcentage"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
 msgid "Photo"
-msgstr "Photo"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity_people__people_private_phone
@@ -477,7 +472,7 @@ msgstr "Supprimer"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__siret
 msgid "SIRET"
-msgstr "SIRET"
+msgstr ""
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_category_kanban
@@ -521,10 +516,10 @@ msgstr "Equipe"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_activity__type_id
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #. module: grap_cooperative
-#: code:addons/grap_cooperative/models/grap_people.py:108
+#: code:addons/grap_cooperative/models/grap_people.py:86
 #, python-format
 msgid "Unable to perform name changes on many people"
 msgstr "Impossible de changer des noms sur plusieurs personnes"
