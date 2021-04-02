@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <menuitem id="menu_root"
-        name="La Coopérative"
+        name="The Cooperative"
         sequence="1"
         web_icon="grap_cooperative,static/src/img/icon.png"/>
 
