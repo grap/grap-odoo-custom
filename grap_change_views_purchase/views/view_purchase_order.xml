@@ -53,7 +53,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
             <!-- Button "Send by Email" only visible when Purchase is confirmed-->
             <xpath expr='//button[@name="action_rfq_send"][1]' position="replace"/>
-            <!-- On draft : Print quotation is not highlighted -->
+            <!-- On draft : Print Quotation is not highlighted -->
             <xpath expr='//button[@name="print_quotation"][1]' position="replace">
                 <button name="print_quotation" string="Print RFQ" type="object" states="draft" groups="base.group_user"/>
             </xpath>
