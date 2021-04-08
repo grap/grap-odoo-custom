@@ -14,11 +14,13 @@
         "delivery",
         "purchase",
         "stock",
+        "sql_export",
     ],
     "data": [
         "views/view_ir_model_access.xml",
         "views/view_res_company.xml",
         "views/view_res_partner.xml",
+        "views/menu.xml",
     ],
     "installable": True,
 }
