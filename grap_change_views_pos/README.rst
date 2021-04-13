@@ -32,6 +32,12 @@ GRAP - Change POS Views
 
 * "Point of sale > Order Lines"
 
+
+**Alter module Pos Cash Move Reason**
+
+* Statement lines (of cash moves) has now the date of the close of the session, if it
+  is in a closing state. (Today otherwise)
+
 **Table of contents**
 
 .. contents::
