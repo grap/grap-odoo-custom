@@ -18,6 +18,7 @@
         "sale",
         "account_invoice_supplierinfo_update_standard_price",
         "web_tree_dynamic_colored_field",
+        "account_subsequence_fiscal_year",
     ],
     "data": [
         "views/menu.xml",
