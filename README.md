@@ -29,7 +29,7 @@ addon | version | summary
 [grap_change_translation](grap_change_translation/) | 12.0.1.1.0 | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.1.0 | GRAP - Change Views
 [grap_change_views_account](grap_change_views_account/) | 12.0.1.1.0 | GRAP - Change Views Account
-[grap_change_views_base](grap_change_views_base/) | 12.0.0.0.5 | GRAP - Change Base Views
+[grap_change_views_base](grap_change_views_base/) | 12.0.0.0.6 | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.2 | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.1.0 | GRAP - Change Mail Views
 [grap_change_views_partner](grap_change_views_partner/) | 12.0.0.0.12 | GRAP - Change Partner Views
