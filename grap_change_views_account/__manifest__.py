@@ -23,6 +23,7 @@
     "data": [
         "views/menu.xml",
         "views/view_account_invoice.xml",
+        "views/view_account_journal.xml",
         "views/view_account_move.xml",
         "views/view_account_tax_group.xml",
         "views/view_wizard_update_invoice_supplierinfo.xml",
