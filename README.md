@@ -20,7 +20,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[grap_change_access](grap_change_access/) | 12.0.1.0.9 | Add new groups for specific models and change accesses for a number of models.
+[grap_change_access](grap_change_access/) | 12.0.1.0.10 | Add new groups for specific models and change accesses for a number of models.
 [grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.1.0 | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
 [grap_change_data](grap_change_data/) | 12.0.1.0.7 | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.1.0 | GRAP - Change Default
