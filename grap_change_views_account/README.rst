@@ -36,6 +36,8 @@ features
 
 - add colored background in supplier info update wizard
 
+- set default value of ``res.company`` field ``account_subsequence_method`` to ``fiscal_year_setting``.
+
 - TMP (post migration V12) : add also a field ``active`` on ``account.tax.group``
   to disable them, without dropping them.
   TODO : to remove.
