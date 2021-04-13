@@ -5,7 +5,7 @@
 {
     "name": "GRAP - Cooperative",
     "summary": "Add Activities, Colleges, Peoples, Members, etc.",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.1.1",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
