@@ -19,12 +19,13 @@ class AccountInvoice(models.Model):
 
     @api.depends("fiscal_position_id")
     def _compute_price_unit_include_taxes(self):
-        # Check if fiscal_position is HT or TTC
+        # Check if fiscal_position is w ou wo taxes (just checking first line)
         for invoice in self:
             # Check if there is a fiscal_position
             try:
                 tax_dest = invoice.fiscal_position_id.tax_ids[0].tax_dest_id
-            except:
+            # No fiscal position → wo taxes
+            except IndexError:
                 invoice.price_unit_include_taxes = False
             else:
                 if tax_dest.price_include:

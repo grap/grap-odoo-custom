@@ -2,6 +2,7 @@
 <!--
 Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
@@ -14,7 +15,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </xpath>
 
         <!-- Changement car si la description est trop longue
-             ça merdait en affichant pas les auttres champs-->
+             ça merdait en affichant pas les autres champs-->
         <xpath expr="//div[@id='informations']" position="replace">
             <div id="informations">
                 <div class="col-xs-10">
@@ -48,29 +49,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </div>
         </xpath>
 
-        <!-- Nom colonne : Distinguer prix unitaire HT et TTC -->
+        <!-- Colonne Prix Unitaire : Pas de HT ou TTC dans le nom car ça depend des lignes -->
         <xpath expr="//th[@name='th_priceunit']" position="replace">
-            <th t-if="o.price_unit_include_taxes" name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>P.U&#160;(TTC)</span></th>
-            <th t-else="" name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>P.U&#160;(HT)</span></th>
+            <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Prix&#160;unitaire</span></th>
         </xpath>
 
-        <!-- Nom colonne : Distinguer sous total HT et TTC -->
+        <!-- Colonne Sous-Total : Choix HT ou TTC selon facture sur Odoo -->
         <xpath expr="//th[@name='th_subtotal']" position="replace">
             <th t-if="o.price_unit_include_taxes" name="th_subtotal" class="text-right">
-                <span groups="account.group_show_line_subtotals_tax_excluded">S.T&#160;(TTC)</span>
+                <span>S.T&#160;(TTC)</span>
             </th>
             <th t-else="" name="th_subtotal" class="text-right">
-                <span groups="account.group_show_line_subtotals_tax_excluded">S.T&#160;(HT)</span>
+                <span>S.T&#160;(HT)</span>
             </th>
         </xpath>
-
-        <!-- Ligne SousTotal : afficher avec HT ou TTC -->
-<!--         <xpath expr="//t[@name='account_invoice_line_accountable']/td[hasclass('o_price_total')]" position="replace">
-            <td class="text-right o_price_total">
-                <span t-field="line.price_total_displayed"/>
-            </td>
-        </xpath> -->
-        <!-- ESSAI sans le display-->
         <xpath expr="//t[@name='account_invoice_line_accountable']/td[hasclass('o_price_total')]" position="replace">
             <td t-if="o.price_unit_include_taxes" class="text-right">
                 <span t-field="line.price_total"/>
@@ -79,7 +71,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <span t-field="line.price_subtotal"/>
             </td>
         </xpath>
-
 
     </template>
 
