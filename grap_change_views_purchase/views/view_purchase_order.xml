@@ -35,7 +35,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="decoration-success">state in ('purchase', 'approved')</attribute>
             </xpath>
             <field name="user_id" position="attributes">
-                <attribute name="groups">account.group_account_manager</attribute>
+                <attribute name="groups">base.group_erp_manager</attribute>
             </field>
         </field>
     </record>
