@@ -146,13 +146,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         * Add color to Purchase Order
     -->
     <record id="purchase.purchase_form_action" model="ir.actions.act_window">
-        <field name="domain">[]</field>
         <field name="context">{'search_default_to_process':1}</field>
-    </record>
-
-    <!-- Hide Request for Quotation entries -->
-    <record model="ir.ui.menu" id="purchase.menu_purchase_rfq">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
     </record>
 
 </odoo>
