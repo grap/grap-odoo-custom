@@ -11,9 +11,7 @@ class PurchaseOrder(models.Model):
     # Column Section
     date_planned = fields.Datetime(compute=False)
 
-    state = fields.Selection(
-        selection_add=[('done', 'Archived')]
-    )
+    state = fields.Selection(selection_add=[("done", "Archived")])
 
     def button_confirm(self):
         self.action_set_date_planned()
