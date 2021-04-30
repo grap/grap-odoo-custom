@@ -34,6 +34,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="decoration-info">state in ('draft', 'sent', 'to approve')</attribute>
                 <attribute name="decoration-success">state in ('purchase', 'approved')</attribute>
             </xpath>
+            <field name="user_id" position="attributes">
+                <attribute name="groups">account.group_account_manager</attribute>
+            </field>
         </field>
     </record>
 
@@ -50,17 +53,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     attrs="{'readonly': [('state', 'not in', ('draft', 'sent'))]}"
                     required="1"/>
             </field>
-
-            <!-- Button "Send by Email" only visible when Purchase is confirmed-->
-            <xpath expr='//button[@name="action_rfq_send"][1]' position="replace"/>
-            <!-- On draft : Print Quotation is not highlighted -->
-            <xpath expr='//button[@name="print_quotation"][1]' position="replace">
-                <button name="print_quotation" string="Print RFQ" type="object" states="draft" groups="base.group_user"/>
-            </xpath>
-            <!-- On draft : Confirm button is highlighted -->
-            <xpath expr='//button[@name="button_confirm"][2]' position="replace">
-                <button name="button_confirm" type="object" states="draft" string="Confirm Order" id="draft_confirm" class="oe_highlight"/>
-            </xpath>
 
             <xpath expr="//page[@name='purchase_delivery_invoice']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
