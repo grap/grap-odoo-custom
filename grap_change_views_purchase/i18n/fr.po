@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-02 15:52+0000\n"
-"PO-Revision-Date: 2021-04-02 15:52+0000\n"
+"POT-Creation-Date: 2021-04-30 14:48+0000\n"
+"PO-Revision-Date: 2021-04-30 14:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grap_change_views_purchase
+#: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_form
+msgid "Archive"
+msgstr "Archiver"
+
+#. module: grap_change_views_purchase
+#: selection:purchase.order,state:0
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: grap_change_views_purchase
+#: selection:purchase.order,state:0
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: grap_change_views_purchase
 #: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_search
 msgid "Company"
 msgstr "Société"
-
-#. module: grap_change_views_purchase
-#: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_form
-msgid "Confirm Order"
-msgstr "Confirmer la commande"
 
 #. module: grap_change_views_purchase
 #: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_form_discount
@@ -36,12 +46,13 @@ msgid "Disc. 2 (%)"
 msgstr "Rem. 2 (%)"
 
 #. module: grap_change_views_purchase
-#: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_form
-msgid "Print RFQ"
-msgstr "Imprimer demande de prix"
+#: selection:purchase.order,state:0
+msgid "Draft"
+msgstr "Brouillon"
 
 #. module: grap_change_views_purchase
 #: model:ir.model,name:grap_change_views_purchase.model_purchase_order
+#: selection:purchase.order,state:0
 msgid "Purchase Order"
 msgstr "Commande fournisseur"
 
@@ -66,14 +77,24 @@ msgid "Scheduled Date"
 msgstr "Date prévue"
 
 #. module: grap_change_views_purchase
-#: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_form
-msgid "Send by Email"
-msgstr "Envoyer par courriel"
+#: selection:purchase.order,state:0
+msgid "Sent"
+msgstr "Envoyé"
+
+#. module: grap_change_views_purchase
+#: model:ir.model.fields,field_description:grap_change_views_purchase.field_purchase_order__state
+msgid "Status"
+msgstr "État"
+
+#. module: grap_change_views_purchase
+#: selection:purchase.order,state:0
+msgid "To Approve"
+msgstr "À approuver"
 
 #. module: grap_change_views_purchase
 #: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_search
 msgid "To Process"
-msgstr "À traiter"
+msgstr "A traiter"
 
 #. module: grap_change_views_purchase
 #: model_terms:ir.ui.view,arch_db:grap_change_views_purchase.view_purchase_order_form

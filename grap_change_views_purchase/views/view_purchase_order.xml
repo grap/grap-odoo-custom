@@ -101,6 +101,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     ('intercompany_trade', '=', True)]}
                 </attribute>
             </xpath>
+
+            <!-- Rename locked button from 'Lock' to 'Archive' -->
+            <xpath expr="//button[@name='button_done']" position="attributes">
+                <attribute name="string">Archive</attribute>
+            </xpath>
+
+            <!-- Hide purchase_batch_invoicing button in form view -->
+            <xpath expr="//button[@name='2023']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
         </field>
     </record>
 
