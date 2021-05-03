@@ -87,6 +87,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="attrs">{'invisible':
                     ['|', ('state', 'not in', ('purchase', 'done')),
                      '|', ('invoice_status', 'in', ('no', 'invoiced')),
+                    '|', ('order_line', '=', []),
                      '|', ('consignment_trade', '=', True),
                     ('intercompany_trade', '=', True)]}</attribute>
             </xpath>
@@ -108,8 +109,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
 
             <!-- Hide purchase_batch_invoicing button in form view -->
-            <xpath expr="//button[@name='2023']" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <xpath expr="//button[@name='%(purchase_batch_invoicing.wizard_purchase_batch_invoicing_action)d']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
 
         </field>

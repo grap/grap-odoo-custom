@@ -16,6 +16,7 @@
         "purchase_discount",
         "purchase_triple_discount",
         "intercompany_trade_purchase",
+        "recurring_consignment",
     ],
     "data": [
         "views/menu.xml",
