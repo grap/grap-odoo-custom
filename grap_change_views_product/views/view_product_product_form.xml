@@ -120,6 +120,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group string="Supply">
                                     <field name="uom_po_id" string="Unit of measure"/>
                                     <field name="property_account_expense_id" groups="account.group_account_manager"/>
+                                    <field name="uom_category_id" invisible="1"/>
+                                    <field name="uom_measure_type" invisible="1"/>
                                     <field name="consignor_partner_id"
                                             attrs="{'readonly':[('is_consignment', '=', True)]}"
                                             groups="recurring_consignment.group_consignment_user"/>

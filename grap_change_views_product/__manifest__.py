@@ -43,6 +43,7 @@
         "product_sale_tax_price_included",
         "pos_sector",
         "intercompany_trade_product",
+        "product_uom_po_domain",
         # TODO
         # "grap_qweb_report",
     ],
