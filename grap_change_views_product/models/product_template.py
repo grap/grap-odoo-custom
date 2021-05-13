@@ -13,10 +13,10 @@ class ProductTemplate(models.Model):
     )
 
     uom_po_id = fields.Many2one(
-        domain="""[
-        ('use_type', 'in', ('purchase', 'both')),
-        ('category_id', '=', uom_category_id)
-    ]"""
+        domain="["
+        "('use_type', 'in', ('purchase', 'both')),"
+        "('category_id', '=', uom_category_id)"
+        "]"
     )
 
     # Overwrite Section
