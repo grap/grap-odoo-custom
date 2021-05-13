@@ -12,6 +12,13 @@ class ProductTemplate(models.Model):
         track_visibility="onchange",
     )
 
+    uom_po_id = fields.Many2one(
+        domain="""[
+        ('use_type', 'in', ('purchase", 'both'),
+        ('category_id', '=', uom_category_id)
+    ]"""
+    )
+
     # Overwrite Section
     @api.multi
     @api.depends("type", "default_invoice_policy")

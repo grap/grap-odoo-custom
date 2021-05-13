@@ -44,6 +44,7 @@
         "pos_sector",
         "intercompany_trade_product",
         "product_uom_po_domain",
+        "product_uom_use_type",
         # TODO
         # "grap_qweb_report",
     ],
