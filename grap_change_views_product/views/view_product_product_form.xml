@@ -232,31 +232,38 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </group>
                         </page>
                         <page string="Extra Informations">
-                            <group string="Origin" col="4">
-                                <field name="country_id"/>
-                                <field name="state_id"/>
-                                <field name="department_id"/>
-                                <field name="origin_description"/>
-                                <field name="maker_description"/>
-                            </group>
-                            <group string="Alimentary Information" col="4">
-                                <field name="is_alcohol" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
-                                <field name="best_before_date_day" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
-                                <field name="label_ids" widget="many2many_tags" colspan="4"/>
-                                <field name="is_uncertifiable" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
-                                <field name="organic_type"/>
-                            </group>
-                            <group>
-                                <group string="Notations">
-                                    <field name="local_notation"/>
-                                    <field name="social_notation"/>
-                                    <field name="packaging_notation"/>
-                                    <field name="organic_notation"/>
-                                </group>
                                 <group>
-                                    <field name="spider_chart_image" widget="image"
-                                        class="spider_chart"
-                                        nolabel="1" colspan="2"/>
+                                <group string="🚩 Production place">
+                                    <field name="maker_description"/>
+                                    <field name="department_id"/>
+                                    <field name="state_id"/>
+                                    <field name="country_id"/>
+                                    <field name="origin_description"/>
+                                </group>
+                                <group string="🌱 Organic informations">
+                                    <field name="country_group_id"/>
+                                    <field name="label_ids" widget="many2many_tags"/>
+                                    <field name="is_uncertifiable" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
+                                    <field name="organic_type"/>
+                                    <field name="pricetag_origin"/>
+                                </group>
+                                <group string="🍴 Alimentary informations">
+                                    <field name="is_vegan"/>
+                                    <field name="is_alcohol" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
+                                    <field name="best_before_date_day" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
+                                </group>
+                                <group string="✅ Notations">
+                                    <group>
+                                        <field name="local_notation"/>
+                                        <field name="social_notation"/>
+                                        <field name="packaging_notation"/>
+                                        <field name="organic_notation"/>
+                                    </group>
+                                    <group>
+                                        <field name="spider_chart_image" widget="image"
+                                            class="spider_chart"
+                                            nolabel="1" colspan="2"/>
+                                    </group>
                                 </group>
                             </group>
                         </page>

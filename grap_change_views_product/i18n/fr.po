@@ -42,11 +42,6 @@ msgstr "Composition alimentaire"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Alimentary Information"
-msgstr "Information alimentaire"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Allergens"
 msgstr "Allergènes"
 
@@ -201,16 +196,6 @@ msgstr "Qté min."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Notations"
-msgstr ""
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Origin"
-msgstr "Origine"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "POS Sector"
 msgstr "Secteur du PdV"
 
@@ -223,6 +208,12 @@ msgstr "Qté conditionnement"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Point of Sale"
 msgstr "Point de Vente"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__list_price
+#: model:ir.model.fields,help:grap_change_views_product.field_product_template__list_price
+msgid "Price at which the product is sold to customers."
+msgstr "Prix auquel l'article est vendu aux clients."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -477,3 +468,22 @@ msgstr "⇒ Baisser le prix"
 msgid "⇒ Increase Price"
 msgstr "⇒ Augmenter le prix"
 
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "✅ Notations"
+msgstr ""
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "🌱 Organic informations"
+msgstr "🌱 Informations bio"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "🍴 Alimentary informations"
+msgstr "🍴 Informations alimentaire"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "🚩 Production place"
+msgstr "🚩 Lieu de production"

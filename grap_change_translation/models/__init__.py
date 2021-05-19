@@ -22,6 +22,7 @@ from . import product_template
 from . import product_template_attribute_value
 from . import res_company
 from . import res_config_settings
+from . import res_country_group
 from . import res_partner_category
 from . import sale_order_template_line
 from . import stock_location_route
