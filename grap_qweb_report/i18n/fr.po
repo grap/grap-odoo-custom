@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-05 16:03+0000\n"
-"PO-Revision-Date: 2020-10-05 16:03+0000\n"
+"POT-Creation-Date: 2021-05-21 08:30+0000\n"
+"PO-Revision-Date: 2021-05-21 08:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,6 @@ msgid "<span>Agriculture UE - NON UE</span>"
 msgstr ""
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
@@ -75,11 +74,25 @@ msgid "<span>Au L : </span>"
 msgstr ""
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
 msgid "<span>Au kg : </span>"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
+msgid "<span>Au L :</span>"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
+msgid "<span>Au kg :</span>"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_stock_delivery
+msgid "<span>Bon de livraison n° </span>"
 msgstr ""
 
 #. module: grap_qweb_report
@@ -113,9 +126,55 @@ msgid "Amount (w / wo taxes)"
 msgstr "Montant (avec ou sans taxes)"
 
 #. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_uom_pricetag_available
+msgid "Available for Pricetag"
+msgstr "Disponible pour les étiquettes"
+
+#. module: grap_qweb_report
+#: model:product.print.category,name:grap_qweb_report.category_pricetag_square_large
+msgid "Carré large - 92x85mm"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:product.print.category,name:grap_qweb_report.category_pricetag_square_small
+msgid "Carré petit - 30x30mm"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,help:grap_qweb_report.field_product_uom_pricetag_available
+msgid "Check this box if you want to use this Unit of Mesure to display price per this unit on pricetags."
+msgstr "Cochez cette case si vous souhaitez utiliser cette unité de mesure pour afficher le prix à l'unité, sur l'étiquette."
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_color
+msgid "Color"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,help:grap_qweb_report.field_product_pricetag_type_color
+#: model:ir.model.fields,help:grap_qweb_report.field_res_company_pricetag_color
+msgid "Color of the Pricetag by default. Format #RRGGBB"
+msgstr "Couleur de l'étiquette par défaut. Format #RRGGBB"
+
+#. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_res_company
 msgid "Companies"
 msgstr "Sociétés"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_create_date
+msgid "Created on"
+msgstr "Créé le"
 
 #. module: grap_qweb_report
 #. openerp-web
@@ -125,20 +184,66 @@ msgid "Customer:"
 msgstr "Client : "
 
 #. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
+msgid "Date d'échéance"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
+msgid "Date de facture"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
+msgid "Description"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_res_company__external_report_layout_id
 msgid "Document Template"
 msgstr "Modèle de document"
 
 #. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_id
+msgid "ID"
+msgstr ""
+
+#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Producteur·rice :"
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
+msgid "Imprimée le"
 msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice_line
 msgid "Invoice Line"
 msgstr "Ligne de facture"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
@@ -148,6 +253,26 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
 msgid "Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_pricetag_type_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: grap_qweb_report
+#: model:product.print.category,name:grap_qweb_report.category_pricetag_large
+msgid "Normal (large) - 76x43mm"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:product.print.category,name:grap_qweb_report.category_pricetag_small
+msgid "Normal (small) - 76x33mm"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
+msgid "Origine"
 msgstr ""
 
 #. module: grap_qweb_report
@@ -175,6 +300,72 @@ msgid "Pricelist:"
 msgstr "Liste de prix: "
 
 #. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_res_company_pricetag_color
+msgid "Pricetag Color"
+msgstr "Couleur de l'étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_display_spider_chart
+msgid "Pricetag Display Spider Chart"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_is_second_price
+msgid "Pricetag Is Second Price"
+msgstr "Second prix sur l'étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_second_price
+msgid "Pricetag Second Price"
+msgstr "Second prix sur l'étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_second_price_uom_text
+msgid "Pricetag Second Price Uom Text"
+msgstr "Texte de l'étiquette pour la seconde unité de mesure"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_special_quantity_price
+msgid "Pricetag Special Quantity Price"
+msgstr "Prix pour une certaine quantité"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_type_id
+msgid "Pricetag Type"
+msgstr "Type d'étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_product_product_pricetag_uom_id
+msgid "Pricetag UoM"
+msgstr "UdM de l'étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_product_pricetag_type
+msgid "Product Pricetag Types"
+msgstr "Types d'étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr "Unité de mesure d'article"
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
+msgid "Producteur·rice :"
+msgstr ""
+
+#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
 msgid "Règlement par chèque à l'ordre de"
 msgstr ""
@@ -200,9 +391,29 @@ msgid "Self-Adhesive Barcode Sheet (PDF)"
 msgstr "Planche de code barre autocollante (PDF)"
 
 #. module: grap_qweb_report
+#: model:ir.model.fields,help:grap_qweb_report.field_product_product_pricetag_uom_id
+msgid "Set an alternative Unit of Mesure if you want to display the price on your pricetags relative to this Unit."
+msgstr "Définir une unité de mesure alternative si vous voulez afficher un prix relatif à cette unité sur votre étiquette"
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_account_tax
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
 msgid "Tous les produits issus de l'agriculture biologique (AB) sont certifiés par"
 msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
 
 #. module: grap_qweb_report
 #. openerp-web
@@ -213,7 +424,7 @@ msgstr "TVA"
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/js/models.js:42
+#: code:addons/grap_qweb_report/static/src/js/models.js:44
 #, python-format
 msgid "VAT "
 msgstr "TVA "
@@ -229,13 +440,13 @@ msgstr ""
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:18
 #, python-format
 msgid "___________ Base"
-msgstr "___________ Base"
+msgstr ""
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
 msgid "kg"
-msgstr "kg"
+msgstr ""
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
@@ -250,4 +461,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
 msgid "le kilo"
 msgstr ""
-

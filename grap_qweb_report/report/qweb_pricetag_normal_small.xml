@@ -64,7 +64,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <div class="pricetag_right floating_box">
                             <t t-if="not line.product_id.pricetag_special_quantity_price">
                                 <div class="product_price">
-                                    <t t-esc="'%0.2f' % (line.product_id.list_price)"/> €
+                                    <t t-esc="'%0.2f' % (line.product_id.list_price)"/>€
                                 </div>
                                 <!-- Le kilo // La pièce -->
                                 <t t-if="line.product_id.uom_id.category_id.measure_type == 'weight'"><div class="product_sell_by_weight">le kilo</div></t>
@@ -86,7 +86,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </t>
                             <t t-if="line.product_id.pricetag_special_quantity_price">
                                 <div class="second_product_price">
-                                    <div class="pricetag_second_product_price"><t t-esc="'%0.2f' % (line.product_id.pricetag_second_price)"/> €</div>
+                                    <div class="pricetag_second_product_price"><t t-esc="'%0.2f' % (line.product_id.pricetag_second_price)"/>€</div>
                                     <div class="pricetag_second_price_uom_text"><t t-esc="line.product_id.pricetag_second_price_uom_text"/></div>
                                 </div>
                                 <div class="product_price_per_uom_price_only floating_box">
