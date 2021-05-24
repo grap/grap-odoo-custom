@@ -18,27 +18,27 @@ msgstr ""
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
 msgid "Current Disc. 1 (%)"
-msgstr "Nouvelle Rem. 1 (%)"
+msgstr "Actuelle Rem. 1 (%)"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
 msgid "Current Disc. 2 (%)"
-msgstr "Nouvelle Rem. 2 (%)"
+msgstr "Actuelle Rem. 2 (%)"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
 msgid "Current Disc. 3 (%)"
-msgstr "Nouvelle Rem. 3 (%)"
+msgstr "Actuelle Rem. 3 (%)"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_dtandard_price
 msgid "Current SP"
-msgstr "Nouveau PdR"
+msgstr "Actuel PdR"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "Current U.P."
-msgstr "Nouveau P.U."
+msgstr "Actuel P.U."
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
