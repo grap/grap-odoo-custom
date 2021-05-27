@@ -17,6 +17,9 @@ web__web_favorite_company      https://github.com/legalsylvain/web.git      12.0
 web__web_dashboard_tile      https://github.com/legalsylvain/web.git      12.0-mig-web_dashboard_tile
 grap-odoo-business      https://github.com/grap/grap-odoo-business.git      12.0
 
+grap-odoo-incubator__product_simple_pricelist      https://github.com/legalsylvain/grap-odoo-incubator.git      12.0-IMP-product_simple_pricelist-recursive-pricelist
+
+
 odoo-addons-intercompany-trade       https://github.com/grap/odoo-addons-intercompany-trade.git      12.0
 odoo-addons-cae     https://github.com/odoo-cae/odoo-addons-cae.git      12.0
 

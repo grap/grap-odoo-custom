@@ -29,6 +29,7 @@
         "product_food",
         "product_label",
         "product_print_category",
+        "product_simple_pricelist",
         "product_print_category_food_report",
         "product_origin",
         "product_origin_l10n_fr_department",

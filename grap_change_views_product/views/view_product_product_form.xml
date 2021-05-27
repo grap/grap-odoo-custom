@@ -153,7 +153,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             ('sale_tax_price_include', '!=', 'all_tax_incl'),
                                             ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
                                     <field name="lst_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                                    <field name="price_per_unit" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('price_per_unit', '=', 0)]}"/>
                                     <field name="price_vat_incl" attrs="{'invisible': [
                                             ('sale_tax_price_include', '!=', 'all_tax_excl'),
                                             ('sale_tax_price_include', '!=', 'various_taxes')]}"/>
@@ -164,6 +163,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group string="Inventory">
                                     <field name="volume"/>
                                     <field name="weight"/>
+                                    <field name="price_per_unit" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('price_per_unit', '=', 0)]}"/>
                                     <field name="preparation_categ_id" groups="sale_recovery_moment.recovery_user"/>
                                 </group>
                                 <group string="Print Options">
@@ -202,6 +202,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                 groups="intercompany_trade_base.intercompany_trade_user"/>
                                             <field name="supplier_product_id" readonly="1" string="IT Supplier Product"
                                                 groups="intercompany_trade_base.intercompany_trade_user"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Pricelist" groups="product_simple_pricelist.group_simple_pricelist_editor" colspan="4">
+                                    <field name="variant_item_ids" nolabel="1" context="{'default_base':'list_price', 'default_applied_on' :'0_product_variant'}">
+                                        <tree editable="bottom">
+                                            <field name="pricelist_id" string="Pricelist" required="1" domain="[('editable_by_product', '=', True)]"/>
+                                            <field name="currency_id" invisible="1"/>
+                                            <field name="fixed_price" string="Price" required='1' widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                            <field name="applied_on" invisible="1"/>
                                         </tree>
                                     </field>
                                 </group>
