@@ -15,7 +15,7 @@ class GrapCollege(models.Model):
     percentage = fields.Integer(string="Percentage", required=True)
 
     member_ids = fields.One2many(
-        string="Members", comodel_name="grap.member", inverse_name="college_id"
+        string="Members", comodel_name="grap.people", inverse_name="college_id"
     )
 
     member_qty = fields.Integer(

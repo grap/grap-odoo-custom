@@ -4,59 +4,69 @@
 
 from datetime import datetime
 
-from odoo import _, api, fields, models
-from odoo.exceptions import Warning as UserError
+from odoo import api, fields, models, tools
 
 
 class GrapPeople(models.Model):
     _name = "grap.people"
     _description = "GRAP Peoples"
 
-    _inherits = {"grap.member": "grap_member_id"}
-    _order = "last_name,first_name"
+    _order = "name"
 
-    # Column section
-    grap_member_id = fields.Many2one(
-        comodel_name="grap.member",
-        string="Member",
-        required=True,
-        ondelete="cascade",
-    )
+    # Columns section
+    name = fields.Char(string="Full name", required=True, store=True)
 
     first_name = fields.Char(string="First name", required=True)
 
     last_name = fields.Char(string="Last name", required=True)
 
+    image = fields.Binary(string="Image", attachment=True)
+
+    image_medium = fields.Binary(string="Medium-sized image", attachment=True)
+
+    image_small = fields.Binary(string="Small-sized image", attachment=True)
+
+    street = fields.Char(string="Street")
+
+    zip = fields.Char(string="Zip")
+
+    city = fields.Char(string="City")
+
+    profession = fields.Char(string="Profession")
+
+    working_email = fields.Char(string="Working Email")
+
+    working_phone = fields.Char(string="Working Phone")
+
     birthdate = fields.Date("Birthdate")
+
+    is_birthday = fields.Boolean(string="Is Birthday", compute="_compute_is_birthday")
 
     private_phone = fields.Char(string="Private Phone")
 
-    activity_ids = fields.One2many(
-        string="Activities",
-        comodel_name="grap.activity.people",
-        inverse_name="people_id",
+    college_id = fields.Many2one(string="College", comodel_name="grap.college")
+
+    company_id = fields.Many2one(
+        string="Companies",
+        comodel_name="res.company",
+        inverse_name="people_ids",
     )
 
-    activity_description = fields.Char(
-        string="Activities Description",
-        compute="_compute_activity_description",
-        store=True,
+    company_manager_ids = fields.Many2many(
+        string="Companies with mandates",
+        comodel_name="res.company",
+        relation="grap_people_companies_managers_rel",
+        column1="people_id",
+        column2="company_manager_id",
     )
 
     mandate_ids = fields.Many2many(
-        string="Mandates",
+        string="Cooperative mandates",
         comodel_name="grap.mandate",
         relation="grap_people_mandate_rel",
         column1="people_id",
         column2="mandate_id",
     )
-
-    is_birthday = fields.Boolean(string="Is Birthday", compute="_compute_is_birthday")
-
-    # Compute section
-    @api.model
-    def _get_name(self, firstName, lastName):
-        return lastName + " " + firstName
 
     @api.depends("activity_ids")
     def _compute_activity_description(self):
@@ -74,24 +84,37 @@ class GrapPeople(models.Model):
             if delta.days >= -1 and delta.days < 2:
                 people.is_birthday = True
 
+    # Set people name with first and last name
+    # Optimize for creating people directly from company form
+    @api.onchange("first_name", "last_name")
+    def _handle_name(self):
+        for people in self:
+            if people.name and not people.first_name and not people.last_name:
+                split_name = people.name.split()
+                if len(split_name) > 0:
+                    people.first_name = split_name[0]
+                if len(split_name) > 1:
+                    people.last_name = " ".join(split_name[1:])
+            else:
+                people.name = ""
+                if people.last_name:
+                    people.last_name = people.last_name.upper()
+                    people.name = people.last_name
+                if people.first_name:
+                    people.first_name = people.first_name.capitalize()
+                    people.name += " " + people.first_name
+
     # Overloads section
     @api.model
     def create(self, vals):
-        vals["name"] = self._get_name(vals["first_name"], vals["last_name"])
+        tools.image_resize_images(vals, sizes={"image": (1024, None)})
         return super().create(vals)
 
     def write(self, vals):
-        if "last_name" in vals.keys() or "first_name" in vals.keys():
-            if len(self) > 1:
-                raise UserError(_("Unable to perform name changes on many people"))
-            vals["name"] = self._get_name(
-                vals.get("first_name", self.first_name),
-                vals.get("last_name", self.last_name),
-            )
+        tools.image_resize_images(vals, sizes={"image": (1024, None)})
         return super().write(vals)
 
     def unlink(self):
-        members = self.mapped("grap_member_id")
+        self.write({"company_id": False})
         res = super().unlink()
-        members.unlink()
         return res
