@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_grap_activity_search" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <search>
+               <field name="code"/>
+               <field name="name"/>
+               <field name="category_ids"/>
+               <field name="type_id"/>
+               <field name="hr_interlocutor_id"/>
+               <field name="attendant_interlocutor_id"/>
+               <field name="accountant_interlocutor_id"/>
+               <filter name="filter_validated_working" string="Validated or working" domain="[('state','in', ('validated', 'working'))]"/>
+               <filter name="filter_progress_validated_working"
+                    string="In progress, validated or working"
+                    domain="[('state','in', ('progress', 'validated', 'working'))]"/>
+               <filter string="Type" name="group_by_type"
+                    context="{'group_by' : 'type_id'}"/>
+               <filter string="College" name="group_by_college"
+                    context="{'group_by' : 'college_id'}"/>
+               <filter string="State" name="group_by_state"
+                    context="{'group_by' : 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_grap_activity_tree" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="category_ids" widget="many2many_tags"/>
+                <field name="college_id" />
+                <field name="type_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_grap_activity_form" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="complete_name"/>
+                        </h1>
+                        <div class="oe_edit_only">
+                            <group>
+                                <field name="activity_name"/>
+                                <field name="code"/>
+                            </group>
+                        </div>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="web_site" widget="url"/>
+                            <field name="working_email" widget="email"/>
+                            <field name="working_phone" widget="phone"/>
+                            <field name="street"/>
+                            <field name="zip"/>
+                            <field name="city"/>
+                       </group>
+                        <group>
+                            <field name="category_ids" widget="many2many_tags"
+                                options="{'quick_create':false, 'color_field': 'color'}"/>
+                            <field name="type_id"/>
+                            <field name="college_id"/>
+                            <field name="accountant_interlocutor_id"/>
+                            <field name="hr_interlocutor_id"/>
+                            <field name="attendant_interlocutor_id"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Team">
+                            <group>
+                                <field name="people_ids" mode="kanban" nolabel="1"
+                                        context="{'default_activity_id': active_id}">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="function"/>
+                                        <field name="people_id"/>
+                                        <field name="people_name"/>
+                                        <field name="people_working_phone"/>
+                                        <field name="people_private_phone"/>
+                                        <field name="people_working_email"/>
+                                        <field name="people_image_small"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div>
+                                                    <div class="o_kanban_image">
+                                                        <img alt="Photo" t-if="record.people_id.raw_value"
+                                                            t-att-src="kanban_image('grap.people', 'image_small', record.people_id.raw_value)"/>
+                                                        <img alt="Avatar" t-if="!record.people_id.raw_value"
+                                                            t-att-src="_s + '/base/static/img/avatar.png'"/>
+                                                    </div>
+                                                    <div class="oe_kanban_details">
+                                                        <field name="people_name"/>
+                                                        <div t-if="record.function.raw_value">
+                                                            <field name="function"/>
+                                                        </div>
+                                                        <div t-if="record.people_working_email.raw_value">
+                                                            <field name="people_working_email" widget="email"/>
+                                                        </div>
+                                                        <div t-if="record.people_working_phone.raw_value">
+                                                            <field name="people_working_phone" widget="phone"/>
+                                                        </div>
+                                                        <div t-if="record.people_private_phone.raw_value">
+                                                            <field name="people_private_phone" widget="phone"/>
+                                                        </div>
+                                                        <div class="oe_edit_only">
+                                                            <button class="btn btn-primary" type="object" name="unlink" >Remove</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                    <form string="Contact">
+                                        <sheet>
+                                            <group>
+                                                <field name="people_id"/>
+                                                <field name="function"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Extra Information">
+                            <group>
+                            <field name="siret"/>
+                            <field name="vat"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_grap_activity_kanban" model="ir.ui.view">
+        <field name="model">grap.activity</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="image_small"/>
+                <field name="display_name"/>
+                <field name="category_ids"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="working_phone"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <t t-if="record.image_small.raw_value">
+                                <img class="o_kanban_image"
+                                    t-att-src="kanban_image('grap.activity', 'image_small', record.id.raw_value)"
+                                    t-att-alt="record.name"/>
+                            </t>
+                            <t t-else="">
+                                <img class="o_kanban_image" alt="Logo" t-att-src="_s + &quot;/base/static/img/company_image.png&quot;"/>
+                            </t>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="code"/> - <field name="name"/>
+                                </strong>
+
+                                <span t-if="record.type_id.raw_value" class="o_kanban_record_subtitle">
+                                    <field name="type_id"/>
+                                </span>
+
+                                <div class="o_kanban_tags_section oe_kanban_partner_categories">
+                                    <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                </div>
+
+                                <ul>
+                                    <li t-if="record.zip.raw_value and !record.city.raw_value">
+                                        <field name="zip"/>
+                                    </li>
+                                        <li t-if="!record.city.raw_value and record.city.raw_value">
+                                            <field name="city"/>
+                                        </li>
+                                        <li t-if="record.city.raw_value and record.city.raw_value">
+                                            <field name="zip"/>, <field name="city"/>
+                                    </li>
+                                    <li t-if="record.working_phone.raw_value">
+                                        <field name="working_phone" widget="phone"/>
+                                    </li>
+                                </ul>
+
+                                <div class="oe_kanban_partner_links"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+<!--                                 <ul>
+                                    <li t-if="record.parent_id.raw_value and !record.function.raw_value"><field name="parent_id"/></li>
+                                    <li t-if="!record.parent_id.raw_value and record.function.raw_value"><field name="function"/></li>
+                                    <li t-if="record.parent_id.raw_value and record.function.raw_value"><field name="function"/> at <field name="parent_id"/></li>
+                                    <li t-if="record.city.raw_value and !record.country_id.raw_value"><field name="city"/></li>
+                                    <li t-if="!record.city.raw_value and record.country_id.raw_value"><field name="country_id"/></li>
+                                    <li t-if="record.city.raw_value and record.country_id.raw_value"><field name="city"/>, <field name="country_id"/></li>
+                                    <li t-if="record.email.raw_value" class="o_text_overflow"><field name="email"/></li>
+                                </ul> -->
+
+
+
+
+
+<!--
+                        <div class="oe_kanban_box oe_kanban_color_border">
+                            <div style="height:150px; width:200px; overflow:hidden;">
+                                <div style="height:40px; width:200px; border-bottom:1px solid #999999;">
+                                    <div style="width:200px; text-align:center;">
+                                        <a type="edit">
+                                            <field name="name"/>
+                                        </a>
+                                    </div>
+                                    <div style="width:200px; text-align:center; font-style:italic;color:gray;">
+                                        (<field name="state" />)
+                                    </div>
+                                </div>
+                                <div style="height:110px; width:200px;">
+                                    <table>
+                                        <tr>
+                                            <td style="height:110px; width:150px; text-align:center;">
+                                                <a type="edit">
+                                                    <div style="padding: 5px 5px 5px 5px; cursor:pointer !important;">
+                                                        <img t-att-src="kanban_image('grap.activity', 'image', record.id.value)" width="100px" tag="activity"/>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> -->
+
+    <record id="action_grap_activity" model="ir.actions.act_window">
+        <field name="name">Activities</field>
+        <field name="res_model">grap.activity</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{"search_default_filter_validated_working":1}</field>
+    </record>
+
+    <menuitem id="menu_activity"
+        parent="menu_root"
+        action="action_grap_activity"
+        sequence="1"/>
+
+</odoo>
