@@ -5,13 +5,14 @@
 {
     "name": "GRAP - Cooperative",
     "summary": "Add Activities, Colleges, Peoples, Members, etc.",
-    "version": "12.0.1.1.2",
+    "version": "12.0.2.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
         "base",
+        "base_company_legal_info",
         "fiscal_company_base",
         "l10n_fr_siret",
         "l10n_fr_department",
