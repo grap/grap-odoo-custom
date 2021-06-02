@@ -8,6 +8,14 @@ from odoo import api, fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
+    _COOP_COMPANY_STATE = [
+        ("draft", "No linked"),
+        ("progress", "In progress"),
+        ("validated", "Validated"),
+        ("working", "Working"),
+        ("obsolete", "Exited"),
+    ]
+
     display_name = fields.Char(
         string="Clean name",
         compute="_compute_display_name",
@@ -20,11 +28,18 @@ class ResCompany(models.Model):
     )
 
     manager_ids = fields.Many2many(
-        string="Workers with mandates",
+        string="Co-directors",
         comodel_name="grap.people",
         relation="grap_people_companies_managers_rel",
         column1="company_manager_id",
         column2="people_id",
+    )
+
+    state = fields.Selection(
+        string="Company state",
+        selection=_COOP_COMPANY_STATE,
+        required=True,
+        default="draft",
     )
 
     # Cooperative informations
@@ -42,7 +57,7 @@ class ResCompany(models.Model):
         string="Accounting closure",
     )
 
-    is_using_Odoo = fields.Boolean(
+    is_using_odoo = fields.Boolean(
         string="Is using Odoo",
     )
 
@@ -70,6 +85,10 @@ class ResCompany(models.Model):
 
     it_interlocutor_service_id = fields.Many2one(
         string="IT contact person in service team", comodel_name="grap.people"
+    )
+
+    attendant_interlocutor_service_id = fields.Many2one(
+        string="Attendant contact person in service team", comodel_name="grap.people"
     )
 
     @api.depends("name")
