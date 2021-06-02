@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
-@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
@@ -13,11 +13,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <search>
                <field name="code"/>
                <field name="display_name"/>
-               <filter name="inactive" string="Inactive companies" domain="[('active','=', False)]"/>
-<!--                <filter string="Type" name="group_by_type"
-                    context="{'group_by' : 'type_id'}"/>
-               <filter string="College" name="group_by_college"
-                    context="{'group_by' : 'college_id'}"/> -->
+               <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
+               <field name="accounting_interlocutor_service_id"/>
+               <field name="hr_interlocutor_service_id"/>
+               <field name="it_interlocutor_service_id"/>
+               <field name="attendant_interlocutor_service_id"/>
+               <filter name="filter_validated_working" string="Validated or working" domain="[('state','in', ('validated', 'working'))]"/>
+               <filter name="filter_progress_validated_working"
+                    string="In progress, validated or working"
+                    domain="[('state','in', ('progress', 'validated', 'working'))]"/>
+               <filter string="State" name="group_by_state"
+                    context="{'group_by' : 'state'}"/>
+               <filter string="Category" name="group_by_category"
+                    context="{'group_by' : 'category_id'}"/>
             </search>
         </field>
     </record>
@@ -30,11 +38,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="display_name"/>
                 <field name="zip"/>
                 <field name="city"/>
-                <field name="working_phone"/>
-                <field name="category_ids" widget="many2many_tags"/>
-                <field name="college_id" />
-                <field name="type_id"/>
-                <field name="state"/>
+                <field name="state_id"/>
+                <field name="fiscal_type"/>
+                <field name="category_id"/>
             </tree>
         </field>
     </record>
@@ -43,6 +49,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">res.company</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
                 <sheet>
                     <field name="logo" widget="image" class="oe_avatar" options="{'preview_image': 'logo', 'size': [90, 90]}"/>
                     <div class="oe_title">
@@ -77,10 +86,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                        </group>
                         <group>
                             <h3>📗 Cooperative informations</h3>
-                            <field name="fiscal_type" readonly="True"/><br/>
+                            <field name="fiscal_type" readonly="True"/>
+                            <field name="category_id"/><br/>
                             <field name="manager_ids" widget="many2many_tags"/><br/>
                             <field name="accounting_closing_date"/><br/>
-                            <field name="is_using_Odoo"/>
+                            <field name="is_using_odoo"/>
                         </group>
                         <group>
                             <h3>👥 Interlocutors in the company</h3>
@@ -97,6 +107,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="accounting_interlocutor_service_id"/>
                             <field name="it_interlocutor_service_id"/>
                             <field name="hr_interlocutor_service_id"/>
+                            <field name="attendant_interlocutor_service_id"/>
                        </group>
                     </group>
 
@@ -176,6 +187,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <li t-if="record.fiscal_type.raw_value" class="o_kanban_record_subtitle">
                                         <field name="fiscal_type"/>
                                     </li>
+                                    <li t-if="record.category_id.raw_value" class="o_kanban_record_subtitle">
+                                        <field name="category_id"/>
+                                    </li>
                                     <li t-if="record.zip.raw_value and record.city.raw_value">
                                         <field name="zip"/>,
                                         <field name="city"/>
@@ -184,8 +198,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <field name="phone" widget="phone"/>
                                     </li>
                                 </ul>
-
-                                <!-- <div class="oe_kanban_partner_links"/> -->
                             </div>
                         </div>
                     </t>
@@ -201,6 +213,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="res_model">res.company</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{"search_default_filter_validated_working":1}</field>
     </record>
 
     <menuitem id="menu_activity"
