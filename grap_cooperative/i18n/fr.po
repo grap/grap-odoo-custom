@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-28 15:11+0000\n"
-"PO-Revision-Date: 2021-05-28 15:11+0000\n"
+"POT-Creation-Date: 2021-06-10 14:49+0000\n"
+"PO-Revision-Date: 2021-06-10 14:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,6 +46,11 @@ msgstr "Activités"
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
 msgid "Activity"
 msgstr "Activité"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__attendant_interlocutor_service_id
+msgid "Attendant contact person in service team"
+msgstr "Accompagnateur·rice"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
@@ -132,21 +137,6 @@ msgstr "Annuaire"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
-
-#. module: grap_cooperative
-#: model_terms:ir.actions.act_window,help:grap_cooperative.action_grap_college
-msgid "Display and manage college of the cooperative."
-msgstr "Afficher et gérer les collèges de la coopérative."
-
-#. module: grap_cooperative
-#: model_terms:ir.actions.act_window,help:grap_cooperative.action_grap_mandate
-msgid "Display and manage mandates in the cooperative."
-msgstr "Afficher et gérer les mandats au sein de la coopérative."
-
-#. module: grap_cooperative
-#: model_terms:ir.actions.act_window,help:grap_cooperative.action_grap_people
-msgid "Display and manage people of the cooperative."
-msgstr "Afficher et gérer les personnes de la coopératives."
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form
@@ -248,10 +238,10 @@ msgstr "Activités archivées"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__is_birthday
 msgid "Is Birthday"
-msgstr ""
+msgstr "C'est son anniversaire"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__is_using_Odoo
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__is_using_odoo
 msgid "Is using Odoo"
 msgstr "Utilise Odoo"
 
@@ -267,14 +257,14 @@ msgstr "Dernière modification le"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__write_uid
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__write_uid
 msgid "Last Updated by"
-msgstr "Mis à jour par"
+msgstr "Dernière mise à jour par"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__write_date
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__write_date
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__write_date
 msgid "Last Updated on"
-msgstr "Mis à jour le"
+msgstr "Dernière mise à jour le"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__last_name
@@ -362,13 +352,13 @@ msgstr "Configuration"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image_small
 msgid "Small-sized image"
-msgstr "Vignette de l'image"
+msgstr "Image de petite taille"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__state_id
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
 msgid "State"
-msgstr "Statut"
+msgstr "Région"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__street
@@ -378,7 +368,7 @@ msgstr "Rue"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
 msgid "Team"
-msgstr "Équipe"
+msgstr "Equipe"
 
 #. module: grap_cooperative
 #: model:ir.ui.menu,name:grap_cooperative.menu_root
@@ -392,13 +382,13 @@ msgstr "Travailleur·se·s"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__manager_ids
-msgid "Workers with mandates"
-msgstr "Travailleur·se·s avec mandat"
+msgid "Co-directors"
+msgstr "Co-gérant·e·s de l'activité"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__working_email
 msgid "Working Email"
-msgstr "Courriel pro"
+msgstr "Mail professionel"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__working_phone
