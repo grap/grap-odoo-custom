@@ -12,6 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <search>
                <field name="name" string="People" />
                <field name="company_id" string="Activity"/>
+               <field name="college_id"/>
                <field name="mandate_ids"/>
                <field name="working_email"/>
                <filter string='College' name="group_by_college" context="{'group_by' : 'college_id'}"/>
@@ -58,6 +59,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <h3>👤 Contact informations</h3>
                             <field name="working_email" widget="email"/>
                             <field name="working_phone" widget="phone"/>
+                            <field name="private_phone" widget="phone"/>
                             <field name="street"/>
                             <field name="zip"/>
                             <field name="city"/>
@@ -133,6 +135,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <menuitem id="menu_people"
         parent="menu_root"
         action="action_grap_people"
-        sequence="2"/>
+        sequence="1"/>
 
 </odoo>
