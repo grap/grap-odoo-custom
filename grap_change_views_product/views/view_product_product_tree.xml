@@ -242,6 +242,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="name" readonly="1"/>
                 <field name="available_in_pos"/>
                 <field name="to_weight"/>
+                <field name="tare_weight"/>
                 <field name="pos_categ_id" options="{'quick_create':false}"/>
                 <field name="barcode"/>
                 <field name="company_id" groups="base.group_multi_company"/>
@@ -276,7 +277,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="default_code" readonly="1"/>
                 <field name="name" readonly="1"/>
                 <field name="scale_group_id"/>
-                <field name="scale_tare_weight"/>
+                <field name="tare_weight"/>
                 <field name="barcode_rule_id"
                     domain="[('generate_model', '=', 'product.product')]"
                     groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
