@@ -1,5 +1,6 @@
 account-financial-tools
 account-fiscal-rule
+manufacture
 margin-analysis
 pos
 product-attribute
