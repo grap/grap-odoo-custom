@@ -26,3 +26,8 @@
 .pos .numpad button {
     color: #000;
 }
+
+.pos .order .summary {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
