@@ -20,6 +20,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <button string="Replenish" type="action" name="%(stock.action_product_replenish)d"
                             context="{'default_product_id': id}" groups="base.group_erp_manager"
                             attrs="{'invisible': [('type', '!=', 'product')]}"/>
+                    <button string="See Margins per Pricelist"
+                            name="button_margin_per_pricelist"
+                            type="object"/>
                 </header>
                 <sheet>
                     <field name="id" invisible="True"/>

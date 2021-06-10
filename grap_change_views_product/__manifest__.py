@@ -21,7 +21,7 @@
         "product_margin_classification",
         "stock_preparation_category",
         "recurring_consignment",
-        "product_margin_classification",
+        "product_pricelist_margin",
         "barcodes_generator_product",
         "product_to_scale_bizerba",
         "sale_eshop",
