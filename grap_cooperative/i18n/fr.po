@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-10 14:49+0000\n"
-"PO-Revision-Date: 2021-06-10 14:49+0000\n"
+"POT-Creation-Date: 2021-06-11 10:02+0000\n"
+"PO-Revision-Date: 2021-06-11 10:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,11 @@ msgid "Activity"
 msgstr "Activité"
 
 #. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
+msgid "Archived companies"
+msgstr "Sociétés archivées"
+
+#. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__attendant_interlocutor_service_id
 msgid "Attendant contact person in service team"
 msgstr "Accompagnateur·rice"
@@ -63,6 +68,11 @@ msgid "Birthdate"
 msgstr "Date de Naissance"
 
 #. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__city
 msgid "City"
 msgstr "Ville"
@@ -76,6 +86,11 @@ msgstr "Adresse copiable"
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__display_name
 msgid "Clean name"
 msgstr "Nom affichable"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__manager_ids
+msgid "Co-directors"
+msgstr "Co-gérant·e·s"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__college_id
@@ -99,6 +114,11 @@ msgstr "Activités"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__company_manager_ids
 msgid "Companies with mandates"
 msgstr "Activités avec mandats"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__state
+msgid "Company state"
+msgstr "État de l'activité"
 
 #. module: grap_cooperative
 #: model:ir.ui.menu,name:grap_cooperative.menu_cooperative
@@ -137,6 +157,11 @@ msgstr "Annuaire"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
+
+#. module: grap_cooperative
+#: selection:res.company,state:0
+msgid "Exited"
+msgstr "Sortie"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form
@@ -231,9 +256,14 @@ msgid "Image"
 msgstr ""
 
 #. module: grap_cooperative
+#: selection:res.company,state:0
+msgid "In progress"
+msgstr "En cours"
+
+#. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
-msgid "Inactive companies"
-msgstr "Activités archivées"
+msgid "In progress, validated or working"
+msgstr "En cours, validé ou en activité"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__is_birthday
@@ -288,7 +318,7 @@ msgid "Medium-sized image"
 msgstr "Image de taille moyenne"
 
 #. module: grap_cooperative
-#: model:ir.actions.act_window,name:grap_cooperative.action_grap_college_to_grap_member
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_college_to_grap_people
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__member_ids
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__people_ids
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_college_kanban
@@ -305,6 +335,11 @@ msgstr "Nombre de membres"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__name
 msgid "Name"
 msgstr "Nom"
+
+#. module: grap_cooperative
+#: selection:res.company,state:0
+msgid "No linked"
+msgstr "Aucun lien"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_mandate_to_grap_people
@@ -357,6 +392,7 @@ msgstr "Image de petite taille"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__state_id
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_form
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
 msgid "State"
 msgstr "Région"
 
@@ -376,14 +412,24 @@ msgid "The Cooperative"
 msgstr "La Coopérative"
 
 #. module: grap_cooperative
+#: selection:res.company,state:0
+msgid "Validated"
+msgstr "Validé"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_activity_search
+msgid "Validated or working"
+msgstr "Validé ou en activité"
+
+#. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__people_ids
 msgid "Workers"
 msgstr "Travailleur·se·s"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__manager_ids
-msgid "Co-directors"
-msgstr "Co-gérant·e·s de l'activité"
+#: selection:res.company,state:0
+msgid "Working"
+msgstr "En activité"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__working_email
