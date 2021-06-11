@@ -59,6 +59,7 @@ french company which brings together activities that sale food products in the
 region Rhône Alpes. We promote organic and local food, social and solidarity
 economy and cooperation.
 
+
 The GRAP IT Team promote Free Software and developp all the Odoo modules under
 AGPL-3 Licence. You can get find all this modules here :
 * on the [OCA Apps Store](https://odoo-community.org/shop?&search=GRAP)
