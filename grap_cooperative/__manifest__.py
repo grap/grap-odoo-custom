@@ -18,6 +18,7 @@
         "l10n_fr_siret",
         "l10n_fr_department",
         "res_company_active",
+        "res_company_category",
         "res_company_code",
     ],
     "data": [
