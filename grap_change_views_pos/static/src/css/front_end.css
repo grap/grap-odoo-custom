@@ -1,3 +1,33 @@
 .screen .screen-content {
     max-width: 90%;
 }
+
+
+.pos .category-button {
+    border: 1px solid #000;
+}
+
+.pos .category-button .category-name {
+    color: #000;
+}
+
+.pos .product {
+    border: 1px solid #000;
+}
+
+.pos {
+    color: #000;
+}
+
+.pos .actionpad .button {
+    color: #000;
+}
+
+.pos .numpad button {
+    color: #000;
+}
+
+.pos .order .summary {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
