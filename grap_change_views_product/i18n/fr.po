@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-07 13:42+0000\n"
-"PO-Revision-Date: 2020-11-07 13:42+0000\n"
+"POT-Creation-Date: 2021-06-10 13:38+0000\n"
+"PO-Revision-Date: 2021-06-10 13:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -51,6 +51,11 @@ msgid "Allergens"
 msgstr "Allergènes"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
+msgid "Apply Margin"
+msgstr "Appliquer la marge"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Category"
 msgstr "Format"
@@ -82,6 +87,7 @@ msgstr "PdR TTC"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Decrease the Sale Price down to Theoretical Price"
 msgstr "Baisser le prix de vente pour atteindre le prix théorique"
 
@@ -144,6 +150,7 @@ msgstr "TI - Article chez l'acti"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Increase the Sale Price up to Theoretical Price"
 msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
 
@@ -171,6 +178,11 @@ msgstr "Notes internes"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Inventory"
 msgstr "Inventaire"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Invoicing Fields"
+msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -214,6 +226,22 @@ msgstr "Point de Vente"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Price"
+msgstr "Prix"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__list_price
+#: model:ir.model.fields,help:grap_change_views_product.field_product_template__list_price
+msgid "Price at which the product is sold to customers."
+msgstr "Prix auquel l'article est vendu aux clients."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Print Options"
 msgstr "Options d'impression"
 
@@ -236,6 +264,23 @@ msgstr "Mouvements de produits"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Product Name"
 msgstr "Nom de l'article"
+
+#. module: grap_change_views_product
+#: model:ir.model,name:grap_change_views_product.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_template_admin
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_template_admin
+msgid "Product Templates (Admin)"
+msgstr ""
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_admin
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_admin
+msgid "Product Variants (Admin)"
+msgstr ""
 
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product
@@ -337,6 +382,12 @@ msgid "Sale P."
 msgstr "Prix Vente"
 
 #. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__list_price
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_template__list_price
+msgid "Sales Price"
+msgstr "Prix de vente"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Scale"
 msgstr "Balance"
@@ -345,6 +396,11 @@ msgstr "Balance"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Scale Communication"
 msgstr "Communication Balance"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "See Margins per Pricelist"
+msgstr "Voir les marges par liste de prix"
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock
@@ -420,3 +476,4 @@ msgstr "⇒ Baisser le prix"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "⇒ Increase Price"
 msgstr "⇒ Augmenter le prix"
+
