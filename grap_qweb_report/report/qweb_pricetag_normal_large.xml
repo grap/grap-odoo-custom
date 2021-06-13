@@ -75,7 +75,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <t t-if="line.product_id.volume">Volume<br/><b><t t-esc="line.product_id.volume"/> L</b><br/></t>
                                         <t t-elif="line.product_id.weight">Poids net<br/><b><t t-esc="line.product_id.weight"/> kg</b><br/></t>
                                     </div>
-                                    <!-- Prix au Kg ou au L -->
+                                    <!-- Prix au kilo ou au L -->
                                     <div class="product_price_per_uom_price floating_box">
                                         <t t-if="line.product_id.pricetag_is_second_price">
                                             <t t-esc="line.product_id.pricetag_second_price_uom_text"/><br/>
