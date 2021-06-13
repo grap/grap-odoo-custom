@@ -52,6 +52,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//page[@name='other_information']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
+            <xpath expr="//button[@name='action_done']" position="attributes">
+                <attribute name="string">Archive</attribute>
+            </xpath>
         </field>
     </record>
 
