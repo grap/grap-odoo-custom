@@ -34,6 +34,7 @@
         "product_origin_l10n_fr_department",
         "product_form_purchase_link",
         "pos_meal_voucher",
+        "pos_tare",
         "product_notation",
         "purchase_package_qty",
         "purchase_discount",
