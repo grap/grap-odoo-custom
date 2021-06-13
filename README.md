@@ -36,7 +36,7 @@ addon | version | summary
 [grap_change_views_pos](grap_change_views_pos/) | 12.0.1.1.3 | GRAP - Change POS Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.1.4 | GRAP - Change Product Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.1.2 | GRAP - Change Purchase Views
-[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.7 | GRAP - Change Sale Views
+[grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.8 | GRAP - Change Sale Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.1.0 | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.1.1.1 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_must_have](grap_must_have/) | 12.0.1.1.1 | Install must have modules
