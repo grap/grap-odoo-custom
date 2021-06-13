@@ -12,24 +12,24 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">pos.order.line</field>
         <field name="priority" eval="15"/>
         <field name="arch" type="xml">
-            <tree string="POS Orders" colors="blue:state == 'draft';gray:state in ('done','cancel');black:state not in('done','cancel')">
-                <field name="name"/>
-                <field name="partner_id"/>
+            <tree colors="blue:state == 'draft';gray:state in ('done','cancel');black:state not in('done','cancel')" create="false" delete="false">
                 <field name="create_date"/>
+                <field name="partner_id"/>
                 <field name="product_id"/>
                 <field name="qty" sum="Total Qty"/>
                 <field name="price_unit"/>
                 <field name="discount"/>
+                <field name="purchase_price"/>
+                <field name="margin"/>
+                <field name="margin_percent"/>
                 <field name="price_subtotal" sum="Total Excl"/>
                 <field name="price_subtotal_incl" sum="Total Incl"/>
-                <field name="state"/>
             </tree>
         </field>
     </record>
 
 
     <record id="view_pos_order_line_search" model="ir.ui.view">
-        <field name="name">Pos Order Line - Search View</field>
         <field name="model">pos.order.line</field>
         <field name="arch" type="xml">
             <search>
@@ -39,10 +39,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <filter name="Invoiced" domain="[('state','=','invoiced')]"/>
                 <filter  name="Posted" domain="[('state','=','done')]"/>
                 <separator orientation="vertical"/>
-                <filter name="Today" domain="[('create_date','&gt;=',datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),('create_date','&lt;=',datetime.date.today().strftime('%%Y-%%m-%%d 23:59:59'))]"/>
-                <filter name="Yesterday" domain="[('create_date','&lt;',datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),('create_date','&gt;=',(datetime.date.today() - relativedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00'))]"/>
+                <filter string="Today" name="today" domain="[('create_date','&gt;=',datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),('create_date','&lt;=',datetime.date.today().strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                <filter string="Yesterday" name="yesterday" domain="[('create_date','&lt;',datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),('create_date','&gt;=',(datetime.date.today() - relativedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00'))]"/>
                 <separator orientation="vertical"/>
-                <field name="name"/>
                 <field name="product_id"/>
                 <field name="partner_id"/>
            </search>
@@ -54,8 +53,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">pos.order.line</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,search</field>
-        <field name="domain">[]</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="context">{"search_default_today":1}</field>
     </record>
 
     <menuitem id="menu_pos_order_line" name="Order Lines"
