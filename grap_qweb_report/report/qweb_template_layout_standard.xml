@@ -73,14 +73,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <xpath expr="//div[hasclass('footer')]" position="replace">
             <div class="footer o_standard_footer">
 
-                <div class="container" style="border-top: 0.5px solid black; font-size:8px;">
+                <div class="container">
                     <div class="row">
-                        <div class="col-2 text-left" t-if="company.fiscal_company_id.id != company.id">
+                        <div class="col-2 text-left" style="font-size:10px" t-if="company.fiscal_company_id.id != company.id">
                             <span t-esc="company.name.replace('|', '')"/><br/>
                             est une activité de <br/>
                             <img t-if="company.fiscal_company_id.logo" t-att-src="image_data_uri(company.fiscal_company_id.logo)" style="max-height: 45px;" alt="Logo"/>
                             </div>
-                        <div class="col-2 text-left" t-if="company.fiscal_company_id.id != company.id">
+                        <div class="col-2 text-left" style="font-size:10px" t-if="company.fiscal_company_id.id != company.id">
                             <div>
                                 <b><span t-esc="company.fiscal_company_id.report_legal_description.replace('|', '')"/></b>
                             </div>
@@ -100,7 +100,37 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <span t-esc="company.fiscal_company_id.website.replace('http://', '')"/>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-12" style="font-size:15px" t-if="not company.fiscal_company_id.id != company.id">
+                            <div t-if="company.fiscal_company_id.id == company.id">
+                                <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
+                            </div>
+                            <div>
+                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice')">
+                                    Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
+                                </div>
+                                <div t-if="o._name in ('sale.order', 'account.invoice')">
+                                    <div >Pas d'escompte pour paiement anticipé - Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</div>
+                                    <div>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b></div>
+                                </div>
+                                <div t-if="len(company.bank_ids)">
+                                    <div t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.bank_ids[0].bank_name"/></div>
+                                    <div>
+                                        <b>IBAN : </b><span t-esc="company.bank_ids[0].acc_number"/>
+                                        <b> - SWIFT/BIC : </b><span t-esc="company.bank_ids[0].bank_bic"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <span t-if="company.siret">
+                                <b>SIRET : </b><span t-esc="company.siret"/>
+                            </span>
+                            <span t-if="company.vat">
+                                    <b> - TVA intracommunautaire : </b><span t-esc="company.vat"/>
+                            </span>
+                            <div t-if="company.report_footer">
+                                <div><span t-esc="company.report_footer"/></div>
+                            </div>
+                        </div>
+                        <div class="col-8" style="font-size:9px">
                             <div t-if="company.fiscal_company_id.id == company.id">
                                 <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
                             </div>
@@ -111,13 +141,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <div t-if="o._name in ('sale.order', 'account.invoice')">
                                     <div >Pas d'escompte pour paiement anticipé - Pénalité de retard : 3 fois le taux d'intérêt légal</div>
                                     <div>Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</div>
-                                    <div>Règlement par chèque à l'ordre de<b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b></div>
+                                    <div>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b></div>
                                 </div>
                                 <div t-if="len(company.bank_ids)">
                                     <div t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.bank_ids[0].bank_name"/></div>
                                     <div>
-                                        <b>IBAN : </b><span t-esc="company.bank_ids[0].sanitized_acc_number"/>
-                                        <b>SWIFT/BIC : </b><span t-esc="company.bank_ids[0].bank_bic"/>
+                                        <b>IBAN : </b><span t-esc="company.bank_ids[0].acc_number"/>
+                                        <b> - SWIFT/BIC : </b><span t-esc="company.bank_ids[0].bank_bic"/>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +155,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <b>SIRET : </b><span t-esc="company.siret"/>
                             </span>
                             <span t-if="company.vat">
-                                    <b>TVA intracommunautaire : </b><span t-esc="company.vat"/>
+                                    <b> - TVA intracommunautaire : </b><span t-esc="company.vat"/>
                             </span>
                             <div t-if="company.report_footer">
                                 <div><span t-esc="company.report_footer"/></div>
