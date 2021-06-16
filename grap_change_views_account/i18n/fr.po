@@ -6,14 +6,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-18 06:19+0000\n"
-"PO-Revision-Date: 2020-09-18 06:19+0000\n"
+"POT-Creation-Date: 2021-06-03 14:49+0000\n"
+"PO-Revision-Date: 2021-06-03 14:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: grap_change_views_account
+#: model:ir.model.fields,field_description:grap_change_views_account.field_res_company__account_subsequence_method
+msgid "Accounting Subsequences Method"
+msgstr "Méthode pour les sous-séquences comptables"
+
+#. module: grap_change_views_account
+#: model:ir.model.fields,field_description:grap_change_views_account.field_account_tax_group__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: grap_change_views_account
+#: selection:res.company,account_subsequence_method:0
+msgid "Based on Company Settings"
+msgstr "Basé sur les paramètres de la société"
+
+#. module: grap_change_views_account
+#: selection:res.company,account_subsequence_method:0
+msgid "Based on Fiscal Years Settings"
+msgstr "Basés sur les exercices comptables"
+
+#. module: grap_change_views_account
+#: model:ir.model,name:grap_change_views_account.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
@@ -41,8 +66,8 @@ msgid "Current U.P."
 msgstr "Actuel P.U."
 
 #. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
 msgid "Disc. 1 (%)"
 msgstr "Rem. 1 (%)"
 
@@ -62,6 +87,11 @@ msgstr "Rem. 3 (%)"
 #: model:ir.model,name:grap_change_views_account.model_account_invoice
 msgid "Invoice"
 msgstr "Facture"
+
+#. module: grap_change_views_account
+#: model:ir.model,name:grap_change_views_account.model_account_move
+msgid "Journal Entries"
+msgstr "Pièces comptables"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
@@ -94,6 +124,21 @@ msgid "Not Cancelled"
 msgstr "Non annulées"
 
 #. module: grap_change_views_account
+#: model:ir.model,name:grap_change_views_account.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: grap_change_views_account
+#: model:ir.model.fields,field_description:grap_change_views_account.field_account_move__post_at_bank_rec_journal
+msgid "Post At Bank Reconciliation"
+msgstr "Poster au rapprochement bancaire"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_move_form
+msgid "Post without reconciliation"
+msgstr "Poster sans rapprochement bancaire"
+
+#. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
 msgid "Qty"
@@ -103,7 +148,7 @@ msgstr "Qté"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
 msgid "S.T."
-msgstr "S.T."
+msgstr ""
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
@@ -114,6 +159,11 @@ msgstr "Envoyer par email"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_supplier_tree
 msgid "Supplier"
 msgstr "Fournisseur"
+
+#. module: grap_change_views_account
+#: model:ir.model,name:grap_change_views_account.model_account_tax_group
+msgid "Tax Group"
+msgstr "Groupe de Taxe"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_search
@@ -137,3 +187,13 @@ msgstr "UdM"
 msgid "Update Supplier Informations"
 msgstr "Mettre à jour les informations fournisseurs"
 
+#. module: grap_change_views_account
+#: model:ir.model.fields,help:grap_change_views_account.field_account_move__post_at_bank_rec_journal
+msgid "Whether or not the payments made in this journal should be generated in draft state, so that the related journal entries are only posted when performing bank reconciliation."
+msgstr "Indiquez si les paiements effectués dans ce journal doivent être générés à l'état brouillon afin que les écritures correspondantes ne soient enregistrées que lors du rapprochement bancaire."
+
+#. module: grap_change_views_account
+#: code:addons/grap_change_views_account/models/account_payment.py:17
+#, python-format
+msgid "You have no right to select a payment type other than inbound."
+msgstr "Vous ne pouvez choisir que la méthode de paiement 'Règlement'."
