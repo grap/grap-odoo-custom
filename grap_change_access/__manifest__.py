@@ -25,7 +25,9 @@
         "security/ir_module_category.xml",
         "security/res_groups.xml",
         "security/ir.model.access.csv",
-        "views/menu.xml",
+    ],
+    "qweb": [
+        "static/src/xml/grap_change_access.xml",
     ],
     "installable": True,
 }
