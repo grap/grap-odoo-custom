@@ -9,6 +9,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="people_SLG" model="grap.people">
         <field name="first_name">Sylvain</field>
         <field name="last_name">LE GAL</field>
+        <field name="name">LE GAL Sylvain</field>
         <field name="birthdate">1982-05-22/</field>
         <field name="working_email">sylvain.legal@yourcompany.example.com</field>
         <field name="working_phone">+33 6 12 34 56 78</field>
@@ -23,6 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="people_QD" model="grap.people">
         <field name="first_name">Quentin</field>
         <field name="last_name">DUPONT</field>
+        <field name="name">DUPONT Quentin</field>
         <field name="birthdate">1972-06-19/</field>
         <field name="street">Street Ambroise Croizat</field>
         <field name="zip">69007</field>
