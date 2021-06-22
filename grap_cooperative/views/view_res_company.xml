@@ -163,18 +163,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <kanban>
                 <field name="id"/>
-                <field name="complete_name"/>
                 <field name="fiscal_type"/>
-                <field name="logo"/>
+                <field name="logo_web"/>
                 <field name="zip"/>
                 <field name="city"/>
                 <field name="phone"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
-                            <t t-if="record.logo.raw_value">
+                            <t t-if="record.logo_web.raw_value">
                                 <img class="o_kanban_image"
-                                    t-att-src="kanban_image('res.company', 'logo', record.id.raw_value)"
+                                    t-att-src="kanban_image('res.company', 'logo_web', record.id.raw_value)"
                                     t-att-alt="record.name"/>
                             </t>
                             <t t-else="">
@@ -207,8 +206,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-
-
     <record id="action_grap_activity" model="ir.actions.act_window">
         <field name="name">Activities</field>
         <field name="res_model">res.company</field>
@@ -224,6 +221,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_activity"
+        name="Activities"
         parent="menu_root"
         action="action_grap_activity"
         sequence="1"/>
