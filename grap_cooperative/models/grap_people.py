@@ -50,6 +50,9 @@ class GrapPeople(models.Model):
         string="Companies",
         comodel_name="res.company",
         inverse_name="people_ids",
+        context={
+            "form_view_ref": "grap_cooperative.view_grap_activity_form",
+        },
     )
 
     company_manager_ids = fields.Many2many(
