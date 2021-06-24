@@ -5,7 +5,7 @@
 {
     "name": "GRAP - MRP Manufacture R&D - Work in Progress",
     "summary": "Install MRP modules for R&D",
-    "version": "12.0.1.1.1",
+    "version": "12.0.1.1.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
