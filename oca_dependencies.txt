@@ -2,6 +2,7 @@ a_pos__pos_tare  https://github.com/legalsylvain/pos.git   12.0-pos_tare-add-def
 
 account-financial-tools
 account-fiscal-rule
+manufacture
 margin-analysis
 product-attribute
 purchase-workflow
