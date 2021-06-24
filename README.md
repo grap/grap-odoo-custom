@@ -41,7 +41,7 @@ addon | version | summary
 [grap_cooperative](grap_cooperative/) | 12.0.1.1.2 | Add Activities, Colleges, Peoples, Members, etc.
 [grap_mrp](grap_mrp/) | 12.0.1.1.2 | Install MRP modules for R&D
 [grap_must_have](grap_must_have/) | 12.0.1.1.1 | Install must have modules
-[grap_qweb_report](grap_qweb_report/) | 12.0.1.1.2 | GRAP - Custom Qweb Reports
+[grap_qweb_report](grap_qweb_report/) | 12.0.1.1.3 | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.3.0 | Customize Odoo web User Interface
 [server_environment_files](server_environment_files/) | 12.0.1.0.2 | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_fix_stock_move_line](stock_fix_stock_move_line/) | 12.0.1.1.0 | Stock - Fix Stock Move Lines
