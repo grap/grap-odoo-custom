@@ -6,11 +6,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="group_pos_restaurant" model="res.groups">
-        <field name="name">GRAP - Configure Point of Sale Restaurant</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
-    </record>
-
     <record id="group_pricelist_manager" model="res.groups">
         <field name="name">GRAP - Pricelist Manager</field>
         <field name="category_id" ref="module_category_usability"/>

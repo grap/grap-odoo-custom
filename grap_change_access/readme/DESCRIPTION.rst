@@ -9,7 +9,7 @@ Changes access to certains models
 
 * Point of Sale / User (``point_of_sale.group_pos_user``)
 
--> can write ``pos.category``.
+-> can write ``pos.category``, ``restaurant.floor``, ``restaurant.table``
 
 * Inventory / User (``stock.group_stock_user``)
 
