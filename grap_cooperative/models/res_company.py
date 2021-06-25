@@ -16,9 +16,10 @@ class ResCompany(models.Model):
         ("obsolete", "Exited"),
     ]
 
-    display_name = fields.Char(
+    clean_name = fields.Char(
         string="Clean name",
-        compute="_compute_display_name",
+        compute="_compute_clean_name",
+        store=True,
     )
 
     people_ids = fields.One2many(
@@ -92,10 +93,10 @@ class ResCompany(models.Model):
     )
 
     @api.depends("name")
-    def _compute_display_name(self):
+    def _compute_clean_name(self):
         for activity in self:
             if activity.name:
-                activity.display_name = activity.name.replace("|", "")
+                activity.clean_name = activity.name.replace("|", "")
 
     @api.depends("street", "city", "zip")
     def _compute_clean_adress(self):
@@ -107,29 +108,3 @@ class ResCompany(models.Model):
                 activity.clean_address += activity.zip + " "
             if activity.city:
                 activity.clean_address += activity.city.upper()
-
-    # manager_ids = fields.Many2many(
-    #     string="Workers with mandates",
-    #     comodel_name="grap.people",
-    #     inverse_name="company_mandate_id")
-    # compute='_get_people_with_mandates')
-
-    # def _get_people_with_mandates(self):
-    #     self.people_with_mandates = self.people_ids.search(
-    #         [('mandate_ids', '!=', False),
-    #          ('company_id', '=', self.id)
-    #         ])
-
-    # complete_name = fields.Char(
-    #     string="Complete Name", compute="_compute_complete_name", store=True
-    # )
-
-    # @api.depends("code", "name")
-    # def _compute_complete_name(self):
-    #     for activity in self:
-    #         _name = self.name
-    #         if activity.name:
-    #             _name = self.name.replace('|', '')
-    #         activity.complete_name = "{} - {}".format(
-    #             activity.code, activity._name
-    #         )
