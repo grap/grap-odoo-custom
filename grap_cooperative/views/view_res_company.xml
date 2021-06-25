@@ -12,7 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <search>
                <field name="code"/>
-               <field name="display_name"/>
+               <field name="clean_name"/>
                <field name="category_id"/>
                <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
                <field name="accounting_interlocutor_service_id"/>
@@ -36,7 +36,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree>
                 <field name="code"/>
-                <field name="display_name"/>
+                <field name="clean_name"/>
                 <field name="zip"/>
                 <field name="city"/>
                 <field name="state_id"/>
@@ -59,7 +59,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="oe_title">
                         <h1>
                             <field name="code" readonly="True"/> -
-                            <field name="display_name" readonly="True"/>
+                            <field name="clean_name" readonly="True"/>
                         </h1>
                         <div class="oe_edit_only">
                             <group>
@@ -181,7 +181,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </t>
                             <div class="oe_kanban_details">
                                 <strong class="o_kanban_record_title oe_partner_heading">
-                                    <field name="code"/> - <field name="display_name"/>
+                                    <field name="code"/> - <field name="clean_name"/>
                                 </strong>
                                 <ul>
                                     <li t-if="record.fiscal_type.raw_value" class="o_kanban_record_subtitle">
