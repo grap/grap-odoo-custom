@@ -48,7 +48,7 @@ def migrate(cr, version):
             hr_interlocutor_service_id = ga.hr_interlocutor_id,
             attendant_interlocutor_service_id =ga.attendant_interlocutor_id
         FROM grap_activity ga
-        WHERE res_company.name ILIKE ('%' || ga.activity_name || '%');
+        WHERE res_company.code = ga.code;
     """
     )
 
