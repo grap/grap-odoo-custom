@@ -96,8 +96,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_college"
-        parent="menu_cooperative"
+        parent="menu_root"
         action="action_grap_college"
-        sequence="2"/>
+        sequence="5"/>
 
 </odoo>
