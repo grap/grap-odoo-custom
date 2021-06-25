@@ -13,6 +13,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <search>
                <field name="code"/>
                <field name="display_name"/>
+               <field name="category_id"/>
                <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
                <field name="accounting_interlocutor_service_id"/>
                <field name="hr_interlocutor_service_id"/>
