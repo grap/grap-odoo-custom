@@ -117,7 +117,5 @@ class GrapPeople(models.Model):
         tools.image_resize_images(vals, sizes={"image": (1024, None)})
         return super().write(vals)
 
-    def unlink(self):
+    def detach_people_from_company(self):
         self.write({"company_id": False})
-        res = super().unlink()
-        return res

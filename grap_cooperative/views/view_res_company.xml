@@ -119,7 +119,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <field name="people_ids" nolabel="1">
                                     <kanban>
                                         <field name="id"/>
-                                        <!-- <field name="function"/> -->
                                         <field name="image_medium"/>
                                         <field name="name"/>
                                         <field name="last_name"/>
@@ -143,7 +142,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                             <field name="working_email" widget="email"/>
                                                         </div>
                                                         <div class="oe_edit_only">
-                                                            <button class="btn btn-primary" type="object" name="unlink" >Remove</button>
+                                                            <button class="btn btn-primary" type="object" name="detach_people_from_company">Detach from the activity</button>
                                                         </div>
                                                     </div>
                                                 </div>
