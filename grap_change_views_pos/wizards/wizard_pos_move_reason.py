@@ -6,7 +6,7 @@ from odoo import api, models
 
 
 class WizardPosMoveReason(models.TransientModel):
-    _inherit = 'wizard.pos.move.reason'
+    _inherit = "wizard.pos.move.reason"
 
     @api.multi
     def _prepare_statement_line(self):

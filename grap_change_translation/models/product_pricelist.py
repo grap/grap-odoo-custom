@@ -5,7 +5,7 @@
 from odoo import fields, models
 
 
-class ResCompany(models.Model):
-    _inherit = "res.company"
+class ProductPricelist(models.Model):
+    _inherit = "product.pricelist"
 
-    account_subsequence_method = fields.Selection(default="fiscal_year_setting")
+    name = fields.Char(translate=False)
