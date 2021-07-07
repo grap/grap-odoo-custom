@@ -64,4 +64,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_res_partner_form_purchase_triple_discount" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="purchase_triple_discount.res_partner_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='default_supplierinfo_discount3']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='default_supplierinfo_discount3']/.." position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
