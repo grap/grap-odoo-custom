@@ -11,3 +11,5 @@ class ProductTemplate(models.Model):
     uom_id = fields.Many2one(default=False)
     uom_po_id = fields.Many2one(default=False)
     categ_id = fields.Many2one(default=False)
+
+    type = fields.Selection(default="product")
