@@ -22,6 +22,9 @@
     ],
     "data": [
         "views/menu.xml",
+        "views/view_account_account.xml",
+        "views/view_account_account_template.xml",
+        "views/view_account_account_type.xml",
         "views/view_account_invoice.xml",
         "views/view_account_journal.xml",
         "views/view_account_move.xml",
