@@ -11,6 +11,11 @@
     "license": "AGPL-3",
     "depends": [
         "product",
+        "point_of_sale",
+        # OCA Modules
+        "pos_tare",
+        "pos_order_to_sale_order",
+        "pos_meal_voucher",
     ],
     "installable": True,
 }
