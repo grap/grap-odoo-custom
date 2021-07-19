@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (qurntin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="template_purchaseorder" inherit_id="purchase.report_purchaseorder_document">
+
+        <!-- Ajout : Date prévue du bon de commande -->
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="o.date_planned" class="col-3 bm-2">
+                <strong>Date prévue :</strong>
+                <p t-field="o.date_planned" class="m-0"/>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>
