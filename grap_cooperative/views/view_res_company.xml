@@ -10,7 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">res.company</field>
         <field name="inherit_id" ref="fiscal_company_base.view_res_company_search"/>
         <field name="arch" type="xml">
-            <search>
+            <field name="fiscal_type" position="after">
                <field name="code"/>
                <field name="clean_name"/>
                <field name="category_id"/>
@@ -19,20 +19,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                <field name="hr_interlocutor_service_id"/>
                <field name="it_interlocutor_service_id"/>
                <field name="attendant_interlocutor_service_id"/>
-               <filter name="filter_validated_working" string="Validated or working" domain="[('state','in', ('validated', 'working'))]"/>
-               <filter name="filter_progress_validated_working"
-                    string="In progress, validated or working"
-                    domain="[('state','in', ('progress', 'validated', 'working'))]"/>
-               <filter string="State" name="group_by_state"
-                    context="{'group_by' : 'state'}"/>
                <filter string="Category" name="group_by_category"
                     context="{'group_by' : 'category_id'}"/>
-            </search>
+            </field>
         </field>
     </record>
 
-    <record id="view_res_company_tree" model="ir.ui.view">
+    <record id="view_res_company_form" model="ir.ui.view">
         <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+           <field name="sequence" position="after">
+               <field name="is_displayed_in_directory" widget="boolean_toggle"/>
+           </field>
+       </field>
+    </record>
+
+    <record id="view_res_company_tree_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="code"/>
@@ -46,14 +51,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_res_company_form" model="ir.ui.view">
+    <record id="view_res_company_form_directory" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
-                </header>
+                <header/>
                 <sheet>
                     <field name="logo" widget="image" class="oe_avatar" options="{'preview_image': 'logo', 'size': [90, 90]}"/>
                     <div class="oe_title">
@@ -91,7 +94,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="fiscal_type" readonly="True"/>
                             <field name="category_id"/><br/>
                             <field name="manager_ids" widget="many2many_tags"/><br/>
-                            <field name="accounting_closing_date"/><br/>
                             <field name="is_using_odoo"/>
                         </group>
                         <group>
@@ -123,6 +125,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <field name="name"/>
                                         <field name="last_name"/>
                                         <field name="working_phone"/>
+                                        <field name="private_phone"/>
                                         <field name="working_email"/>
                                         <templates>
                                             <t t-name="kanban-box">
@@ -137,6 +140,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                         <field name="name"/>
                                                         <div t-if="record.working_phone.raw_value">
                                                             <field name="working_phone" widget="phone"/>
+                                                        </div>
+                                                        <div t-if="record.private_phone.raw_value">
+                                                            (<field name="private_phone" widget="phone"/>)
                                                         </div>
                                                         <div t-if="record.working_email.raw_value">
                                                             <field name="working_email" widget="email"/>
@@ -158,7 +164,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_res_company_kanban" model="ir.ui.view">
+    <record id="view_res_company_kanban_directory" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="arch" type="xml">
             <kanban>
@@ -210,12 +216,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Activities</field>
         <field name="res_model">res.company</field>
         <field name="view_type">form</field>
-        <field name="view_id" ref="view_res_company_kanban"/>
+        <field name="view_id" ref="view_res_company_kanban_directory"/>
         <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
         <field name="context">
             {
-                "form_view_ref": "grap_cooperative.view_res_company_form",
-                "search_default_filter_validated_working":1,
+                "form_view_ref": "grap_cooperative.view_res_company_form_directory",
+                "tree_view_ref": "grap_cooperative.view_res_company_tree_directory",
             }
         </field>
     </record>

@@ -91,7 +91,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="is_birthday"/>
                 <field name="working_email"/>
                 <templates>
-
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
                             <!-- Medium people's picture -->
@@ -111,6 +110,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <ul>
                                     <li t-if="record.working_phone.raw_value">
                                         <field name="working_phone" widget="phone"/>
+                                    </li>
+                                    <li t-if="record.private_phone.raw_value">
+                                        (<field name="private_phone" widget="phone"/>)
+                                    </li>
+                                    <li t-if="record.working_email.raw_value">
+                                        <field name="working_email" widget="email"/>
                                     </li>
                                 </ul>
                                 <div class="oe_kanban_partner_links"/>

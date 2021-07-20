@@ -47,11 +47,13 @@ class GrapPeople(models.Model):
     college_id = fields.Many2one(string="College", comodel_name="grap.college")
 
     company_id = fields.Many2one(
-        string="Companies",
+        string="Company",
         comodel_name="res.company",
         inverse_name="people_ids",
+        domain="[('is_displayed_in_directory', '=', True)]",
         context={
-            "form_view_ref": "grap_cooperative.view_grap_activity_form",
+            "form_view_ref": "grap_cooperative.view_res_company_form_directory",
+            "tree_view_ref": "grap_cooperative.view_res_company_tree_directory",
         },
     )
 
@@ -70,13 +72,6 @@ class GrapPeople(models.Model):
         column1="people_id",
         column2="mandate_id",
     )
-
-    @api.depends("activity_ids")
-    def _compute_activity_description(self):
-        for people in self:
-            people.activity_description = ", ".join(
-                people.mapped("activity_ids.activity_id.name")
-            )
 
     @api.depends("birthdate")
     def _compute_is_birthday(self):

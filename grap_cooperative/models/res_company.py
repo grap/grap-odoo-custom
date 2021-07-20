@@ -8,14 +8,6 @@ from odoo import api, fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    _COOP_COMPANY_STATE = [
-        ("draft", "No linked"),
-        ("progress", "In progress"),
-        ("validated", "Validated"),
-        ("working", "Working"),
-        ("obsolete", "Exited"),
-    ]
-
     clean_name = fields.Char(
         string="Clean name",
         compute="_compute_clean_name",
@@ -36,13 +28,6 @@ class ResCompany(models.Model):
         column2="people_id",
     )
 
-    state = fields.Selection(
-        string="Company state",
-        selection=_COOP_COMPANY_STATE,
-        required=True,
-        default="draft",
-    )
-
     # Cooperative informations
     state_id = fields.Many2one(
         string="State",
@@ -54,12 +39,12 @@ class ResCompany(models.Model):
         compute="_compute_clean_adress",
     )
 
-    accounting_closing_date = fields.Date(
-        string="Accounting closure",
-    )
-
     is_using_odoo = fields.Boolean(
         string="Is using Odoo",
+    )
+
+    is_displayed_in_directory = fields.Boolean(
+        string="Displayed in Directory", default=True
     )
 
     # Interlocutors in company
@@ -94,17 +79,16 @@ class ResCompany(models.Model):
 
     @api.depends("name")
     def _compute_clean_name(self):
-        for activity in self:
-            if activity.name:
-                activity.clean_name = activity.name.replace("|", "")
+        for company in self:
+            company.clean_name = (company.name or "").replace("|", "")
 
     @api.depends("street", "city", "zip")
     def _compute_clean_adress(self):
-        for activity in self:
-            activity.clean_address = ""
-            if activity.street:
-                activity.clean_address += activity.street + ", "
-            if activity.zip:
-                activity.clean_address += activity.zip + " "
-            if activity.city:
-                activity.clean_address += activity.city.upper()
+        for company in self:
+            company.clean_address = ""
+            if company.street:
+                company.clean_address += company.street + ", "
+            if company.zip:
+                company.clean_address += company.zip + " "
+            if company.city:
+                company.clean_address += company.city.upper()
