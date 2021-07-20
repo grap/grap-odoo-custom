@@ -38,6 +38,24 @@ def migrate(cr, version):
         ALTER TABLE res_company ADD COLUMN accounting_interlocutor_service_id integer;
         ALTER TABLE res_company ADD COLUMN hr_interlocutor_service_id integer;
         ALTER TABLE res_company ADD COLUMN attendant_interlocutor_service_id integer;
+        ALTER TABLE res_company ADD COLUMN is_displayed_in_directory boolean;
+    """
+    )
+
+    cr.execute(
+        """
+        UPDATE res_company
+            SET is_displayed_in_directory = false;
+    """
+    )
+    cr.execute(
+        """
+        UPDATE res_company rc
+            SET is_displayed_in_directory = true
+        FROM grap_activity ga
+        WHERE rc.code = ga.code
+        AND rc.active = true
+        AND ga.state not in ('obsolete');
     """
     )
 
@@ -55,10 +73,12 @@ def migrate(cr, version):
     # Compute res_company from old grap_people.activity_description
     cr.execute(
         """
-        UPDATE grap_people
-        SET company_id = res_company.id
-        FROM res_company
-        WHERE res_company.name ILIKE ('%' || grap_people.activity_description || '%');
+         UPDATE grap_people gp
+         SET company_id = rc.id
+         FROM grap_activity ga, grap_activity_people gap, res_company rc
+         WHERE gp.id = gap.people_id
+         AND ga.id = gap.activity_id
+         AND ga.code = rc.code;
     """
     )
 
