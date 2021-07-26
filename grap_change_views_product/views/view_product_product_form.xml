@@ -96,7 +96,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <group col="3">
                                 <group string="General">
                                     <field name="uom_id"/>
-                                    <field name="default_code"/>
+                                    <field name="default_code" attrs="{'readonly': [('company_id', '!=', False)]}"/>
                                     <field name="type"/>
                                     <field name="is_alimentary"/>
                                     <field name="categ_id"/>
