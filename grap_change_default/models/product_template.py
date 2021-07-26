@@ -8,6 +8,4 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    uom_id = fields.Many2one(default=False)
-    uom_po_id = fields.Many2one(default=False)
     categ_id = fields.Many2one(default=False)
