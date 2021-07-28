@@ -282,6 +282,13 @@ msgid "Products"
 msgstr "Articles"
 
 #. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_alcohol
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_alcohol
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_alcohol
+msgid "Products (Alcohol)"
+msgstr "Articles (Alcool)"
+
+#. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_category
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_category
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_category
@@ -326,12 +333,6 @@ msgid "Products (Scale)"
 msgstr "Articles (Balance)"
 
 #. module: grap_change_views_product
-#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_stock_valuation
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock_valuation
-msgid "Products (Stock)"
-msgstr "Articles (Stock)"
-
-#. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_eshop
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_eshop
 msgid "Products (eShop)"
@@ -341,6 +342,12 @@ msgstr "Articles (eBoutique)"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Purchases"
 msgstr "Achats"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_alcohol_valuation
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_alcohol_valuation
+msgid "Quantity of Alcohol"
+msgstr "Quantité d'alcool"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
@@ -395,8 +402,14 @@ msgstr "Voir les marges par liste de prix"
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock
-msgid "Stock valuation"
-msgstr "Valorisation de stock"
+msgid "Stock Situation"
+msgstr "Etat des stocks"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_stock_valuation
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock_valuation
+msgid "Stock Valuation"
+msgstr "Valorisation du stock"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

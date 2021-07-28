@@ -32,7 +32,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="action_product_product_stock_valuation" model="ir.actions.act_window">
-        <field name="name">Products (Stock)</field>
+        <field name="name">Stock Valuation</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree</field>
@@ -40,8 +40,42 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_product_product_stock_valuation"
-        name="Products (Stock)"
+        name="Stock Valuation"
         parent="menu_product_product_stock" sequence="1"
         action="action_product_product_stock_valuation"/>
+
+<!-- ************************************************************ -->
+<!-- 1 - Products (Alcohol Valuation View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_alcohol_valuation" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="categ_id"/>
+                <field name="uom_id"/>
+                <field name="qty_available"/>
+                <field name="volume"/>
+                <field name="alcohol_by_volume"/>
+
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_alcohol_valuation" model="ir.actions.act_window">
+        <field name="name">Quantity of Alcohol</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_product_product_tree_alcohol_valuation"/>
+    </record>
+
+    <menuitem id="menu_product_product_alcohol_valuation"
+        name="Quantity of Alcohol"
+        parent="menu_product_product_stock" sequence="2"
+        action="action_product_product_alcohol_valuation"/>
 
 </odoo>

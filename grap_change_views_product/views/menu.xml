@@ -24,7 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         sequence="3"/>
 
     <menuitem id="menu_product_product_stock"
-        name="Stock valuation"
+        name="Stock Situation"
         parent="menu_root"
         sequence="4"/>
 

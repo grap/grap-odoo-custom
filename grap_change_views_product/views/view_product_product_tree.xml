@@ -230,6 +230,40 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_product_product_editable_view" sequence="5"
         action="action_product_product_category"/>
 
+
+<!-- ************************************************************ -->
+<!-- 6 - Products (Alcohol View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_alcohol" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree string="Products (Alcohol)" editable="bottom">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="categ_id"/>
+                <field name="is_alcohol"/>
+                <field name="alcohol_by_volume"/>
+                <field name="volume"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_alcohol" model="ir.actions.act_window">
+        <field name="name">Products (Alcohol)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_product_tree_alcohol"/>
+    </record>
+
+    <menuitem id="menu_product_product_alcohol"
+        name="Products (Alcohol)"
+        parent="menu_product_product_editable_view" sequence="6"
+        action="action_product_product_alcohol"/>
+
 <!-- ************************************************************ -->
 <!-- 10 - Products (Point of Sale View) -->
 <!-- ************************************************************ -->
