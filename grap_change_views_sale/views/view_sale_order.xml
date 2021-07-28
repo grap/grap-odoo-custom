@@ -17,19 +17,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="sale_order_template_id" position="before">
                 <field name="fiscal_position_id"/>
             </field>
-            <xpath expr="//field[@name='validity_date']" position="attributes">
+            <field name="validity_date" position="attributes">
                 <attribute name="string">Quote validity</attribute>
-            </xpath>
+            </field>
             <field name="confirmation_date" position="after">
                 <field name="commitment_date"/>
             </field>
-            <xpath expr="//field[@name='carrier_id']" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </xpath>
             <xpath expr="//field[@name='order_line']/tree/control/create[@groups='product.group_product_variant']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
-
             <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="attributes">
                 <attribute name="string">Qty</attribute>
             </xpath>
@@ -49,11 +45,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="attrs">{'readonly': 1}</attribute>
                 <attribute name="force_save">1</attribute>
              </xpath>
-            <xpath expr="//page[@name='other_information']" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </xpath>
             <xpath expr="//button[@name='action_done']" position="attributes">
                 <attribute name="string">Archive</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_order_form_delivery" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="delivery.view_order_form_with_carrier"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='carrier_id']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+            <xpath expr="//div[@name='carrier_selection']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
         </field>
     </record>
@@ -73,9 +79,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </field>
             <field name="amount_total" position="attributes">
                 <attribute name="string">Total (VAT Incl.)</attribute>
-            </field>
-            <field name="user_id" position="attributes">
-                <attribute name="groups">account.group_account_manager</attribute>
             </field>
             <field name="expected_date" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
