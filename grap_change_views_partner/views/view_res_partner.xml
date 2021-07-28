@@ -21,6 +21,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="title" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </field>
+            <field name="type" position="before">
+                <field name="partner_type"/>
+            </field>
+            <xpath expr="//group[@name='sale']/field[@name='customer']" position="attributes">
+                <attribute name="attrs">{'readonly': 1}</attribute>
+            </xpath>
+            <xpath expr="//group[@name='purchase']/field[@name='supplier']" position="attributes">
+                <attribute name="attrs">{'readonly': 1}</attribute>
+            </xpath>
         </field>
     </record>
 
