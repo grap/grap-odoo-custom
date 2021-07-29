@@ -26,7 +26,7 @@ def migrate(cr, version):
         """
         UPDATE res_partner
         SET partner_type_selec = 'supplier'
-        WHERE res_partner.customer = false
+        WHERE res_partner.customer = false OR res_partner.customer = null
         AND res_partner.supplier = true;
     """
     )
@@ -35,7 +35,7 @@ def migrate(cr, version):
         """
         UPDATE res_partner
         SET partner_type_selec = 'customer_supplier'
-        WHERE res_partner.customer = true
+        WHERE res_partner.customer = true OR res_partner.customer = null
         AND res_partner.supplier = true;
     """
     )
@@ -43,8 +43,8 @@ def migrate(cr, version):
     cr.execute(
         """
         UPDATE res_partner
-        SET partner_type_selec = 'none'
-        WHERE res_partner.customer = false
+        SET partner_type_selec = 'customer_supplier'
+        WHERE res_partner.customer = false OR res_partner.customer = null
         AND res_partner.supplier = false;
     """
     )
