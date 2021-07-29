@@ -23,6 +23,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <value eval="{'group_id': ref('base.group_erp_manager')}"/>
     </function>
 
+    <!-- res.country.group can be changed only by erp_manager -->
+    <function model="ir.model.access" name="write">
+        <value model="ir.model.access" search="[('id', '=', obj().env.ref('base.access_res_country_group_group_user').id)]"/>
+        <value eval="{'group_id': ref('base.group_erp_manager')}"/>
+    </function>
+
     <!-- res.bank can NOT be changed by Contact Creation -->
     <function model="ir.model.access" name="write">
         <value model="ir.model.access" search="[('id', '=', obj().env.ref('base.access_res_bank_group_partner_manager').id)]"/>
