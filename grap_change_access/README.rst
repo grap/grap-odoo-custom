@@ -24,17 +24,25 @@ This module extends the functionality of Odoo to change access.
 Changes access to certains models
 ---------------------------------
 
-* Sales / User: All Documents (``sales_team.group_sale_salesman_all_leads``)
+* **Sales / User: All Documents** (``sales_team.group_sale_salesman_all_leads``)
 
--> can write ``product.margin.classification``.
+-> full access on ``product.margin.classification``.
+-> full access on ``product.product``, ``product.template`` and ``product.price.history``
+-> full access on ``product.pricetag.type``
+-> full access on ``sale.order.template``, ``sale.order.template.line``, ``sale.order.template.option``
 
-* Point of Sale / User (``point_of_sale.group_pos_user``)
+* **Point of Sale / User** (``point_of_sale.group_pos_user``)
 
--> can write ``pos.category``, ``restaurant.floor``, ``restaurant.table``
+-> full access on ``pos.category``
+-> full access on ``restaurant.floor``, ``restaurant.table``
 
-* Inventory / User (``stock.group_stock_user``)
+* **Inventory / User** (``stock.group_stock_user``)
 
--> can unlink ``stock.inventory.line``.
+-> full access on ``stock.inventory.line``.
+
+* **Purchase / User** (``purchase.group_purchase_user``)
+
+-> full access on ``product.supplierinfo``.
 
 
 New Groups
