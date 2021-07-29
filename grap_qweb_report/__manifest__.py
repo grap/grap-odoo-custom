@@ -5,7 +5,7 @@
 
 {
     "name": "GRAP - Custom Qweb Reports",
-    "version": "12.0.1.1.4",
+    "version": "12.0.1.1.5",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "http://www.grap.coop",
