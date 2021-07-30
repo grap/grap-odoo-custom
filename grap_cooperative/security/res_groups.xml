@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <record id="res_group_grap_cooperative_manager" model="res.groups">
-        <field name="name">GRAP Cooperative Manager</field>
+        <field name="name">Cooperative Directory Manager</field>
         <field name="category_id" ref="base.module_category_usability"/>
     </record>
 

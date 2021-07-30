@@ -11,14 +11,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         sequence="1"
         web_icon="grap_cooperative,static/src/img/icon.png"/>
 
-    <menuitem id="menu_directory"
-        name="Directory"
-        parent="menu_root"
-        sequence="2"/>
-
-    <menuitem id="menu_cooperative"
-        name="Cooperative"
-        parent="menu_root"
-        sequence="10"/>
-
 </odoo>

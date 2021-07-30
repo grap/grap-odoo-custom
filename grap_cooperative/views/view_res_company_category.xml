@@ -1,54 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (C) 2014 - Today: GRAP (http://www.grap.coop)
-@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="action_grap_type_to_grap_activity" model="ir.actions.act_window">
-        <field name="name">Activities</field>
-        <field name="res_model">grap.activity</field>
+    <record id="action_company_category_to_company" model="ir.actions.act_window">
+        <field name="name">Activities categories</field>
+        <field name="res_model">res.company</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="context">{
-            "search_default_type_id": [active_id],
-            "default_type_id": active_id,
+            "search_default_category_id": [active_id],
+            "default_category_id": active_id,
         }
         </field>
     </record>
 
-    <record id="view_grap_type_tree" model="ir.ui.view">
-        <field name="model">grap.type</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="activity_qty"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="view_grap_type_form" model="ir.ui.view">
-        <field name="model">grap.type</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <div class="oe_button_box" name="button_box"/>
-                    <group col="4">
-                        <field name="name"/>
-                        <field name="activity_qty"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record id="view_grap_type_kanban" model="ir.ui.view">
-        <field name="model">grap.type</field>
+    <record id="view_company_category_kanban" model="ir.ui.view">
+        <field name="model">res.company.category</field>
         <field name="arch" type="xml">
             <kanban class="oe_background_grey o_kanban_dashboard o_hr_kanban">
                 <field name="name"/>
-                <field name="activity_qty"/>
+                <field name="company_qty"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div>
@@ -64,8 +39,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <div class="row">
                                     <div class="col-6 o_kanban_primary_left">
                                         <button class="btn btn-primary" type="action"
-                                                name="%(action_grap_type_to_grap_activity)d" >
-                                            <field name="activity_qty"/> Activities
+                                                name="%(action_company_category_to_company)d" >
+                                            <field name="company_qty"/> Activities
                                         </button>
                                     </div>
                                     <div class="col-6 o_kanban_primary_right">
@@ -86,16 +61,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="action_grap_type" model="ir.actions.act_window">
-        <field name="name">Activity Types</field>
-        <field name="res_model">grap.type</field>
+    <record id="action_company_category" model="ir.actions.act_window">
+        <field name="name">Activities Category</field>
+        <field name="res_model">res.company.category</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 
-    <menuitem id="menu_type"
-        parent="menu_cooperative"
-        action="action_grap_type"
-        sequence="4"/>
+    <menuitem id="menu_company_category"
+        parent="menu_root"
+        action="action_company_category"
+        sequence="3"/>
 
 </odoo>

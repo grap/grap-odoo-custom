@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_res_company_search" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="fiscal_company_base.view_res_company_search"/>
+        <field name="arch" type="xml">
+            <field name="fiscal_type" position="after">
+               <field name="code"/>
+               <field name="clean_name"/>
+               <field name="category_id"/>
+               <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
+               <field name="accounting_interlocutor_service_id"/>
+               <field name="hr_interlocutor_service_id"/>
+               <field name="it_interlocutor_service_id"/>
+               <field name="attendant_interlocutor_service_id"/>
+               <filter string="Category" name="group_by_category"
+                    context="{'group_by' : 'category_id'}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_company_form" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+           <field name="sequence" position="after">
+               <field name="is_displayed_in_directory" widget="boolean_toggle"/>
+           </field>
+       </field>
+    </record>
+
+    <record id="view_res_company_tree_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="clean_name"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="fiscal_type"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_company_form_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <form>
+                <header/>
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar" options="{'preview_image': 'logo', 'size': [90, 90]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" readonly="True"/> -
+                            <field name="clean_name" readonly="True"/>
+                        </h1>
+                        <div class="oe_edit_only">
+                            <group>
+                                <field name="name" readonly="True"/>
+                                <field name="code" readonly="True"/>
+                            </group>
+                        </div>
+                    </div>
+                    <group>
+                        <group>
+                            <h3>📭 Public informations</h3>
+                            <field name="email" widget="email" readonly="True"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="website" widget="url"/><br/>
+                            <field name="street"/>
+                            <field name="city"/>
+                            <field name="zip"/>
+                            <field name="state_id" string="State"/>
+                            <field name="clean_address"/><br/>
+                            <field name="legal_type" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
+                            <field name="legal_name" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
+                            <field name="report_legal_description" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
+                            <br attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
+                            <field name="siret"/>
+                            <field name="vat"/>
+                       </group>
+                        <group>
+                            <h3>📗 Cooperative informations</h3>
+                            <field name="fiscal_type" readonly="True"/>
+                            <field name="category_id"/><br/>
+                            <field name="manager_ids" widget="many2many_tags"/><br/>
+                            <field name="is_using_odoo"/>
+                        </group>
+                        <group>
+                            <h3>👥 Interlocutors in the company</h3>
+                            <field name="accounting_interlocutor_activity_id"
+                                   domain="[('company_id','=', id)]"
+                                   context="{'default_last_name': accounting_interlocutor_activity_id}"/>
+                            <field name="it_interlocutor_activity_id"
+                                   domain="[('company_id','=', id)]"/>
+                            <field name="hr_interlocutor_activity_id"
+                                   domain="[('company_id','=', id)]"/>
+                        </group>
+                        <group>
+                            <h3>👥 Interlocutors in the service team</h3>
+                            <field name="accounting_interlocutor_service_id"/>
+                            <field name="it_interlocutor_service_id"/>
+                            <field name="hr_interlocutor_service_id"/>
+                            <field name="attendant_interlocutor_service_id"/>
+                       </group>
+                    </group>
+
+                     <notebook>
+                        <page string="Team">
+                            <group>
+                                <field name="people_ids" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="image_medium"/>
+                                        <field name="name"/>
+                                        <field name="last_name"/>
+                                        <field name="working_phone"/>
+                                        <field name="private_phone"/>
+                                        <field name="working_email"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="o_kanban_image">
+                                                        <img alt="Photo" t-if="record.id.raw_value"
+                                                            t-att-src="kanban_image('grap.people', 'image_medium', record.id.raw_value)"/>
+                                                        <img alt="Avatar" t-if="!record.id.raw_value"
+                                                            t-att-src="_s + '/base/static/img/avatar.png'"/>
+                                                    </div>
+                                                    <div class="oe_kanban_details">
+                                                        <field name="name"/>
+                                                        <div t-if="record.working_phone.raw_value">
+                                                            <field name="working_phone" widget="phone"/>
+                                                        </div>
+                                                        <div t-if="record.private_phone.raw_value">
+                                                            (<field name="private_phone" widget="phone"/>)
+                                                        </div>
+                                                        <div t-if="record.working_email.raw_value">
+                                                            <field name="working_email" widget="email"/>
+                                                        </div>
+                                                        <div class="oe_edit_only">
+                                                            <button class="btn btn-primary" type="object" name="detach_people_from_company">Detach from the activity</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_res_company_kanban_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="fiscal_type"/>
+                <field name="logo_web"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="phone"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <t t-if="record.logo_web.raw_value">
+                                <img class="o_kanban_image"
+                                    t-att-src="kanban_image('res.company', 'logo_web', record.id.raw_value)"
+                                    t-att-alt="record.name"/>
+                            </t>
+                            <t t-else="">
+                                <img class="o_kanban_image" alt="Logo" t-att-src="_s + &quot;/base/static/img/company_image.png&quot;"/>
+                            </t>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="code"/> - <field name="clean_name"/>
+                                </strong>
+                                <ul>
+                                    <li t-if="record.fiscal_type.raw_value" class="o_kanban_record_subtitle">
+                                        <field name="fiscal_type"/>
+                                    </li>
+                                    <li t-if="record.category_id.raw_value" class="o_kanban_record_subtitle">
+                                        <field name="category_id"/>
+                                    </li>
+                                    <li t-if="record.zip.raw_value and record.city.raw_value">
+                                        <field name="zip"/>,
+                                        <field name="city"/>
+                                    </li>
+                                    <li t-if="record.phone.raw_value">
+                                        <field name="phone" widget="phone"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_res_company" model="ir.actions.act_window">
+        <field name="name">Activities</field>
+        <field name="res_model">res.company</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_res_company_kanban_directory"/>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
+        <field name="context">
+            {
+                "form_view_ref": "grap_cooperative.view_res_company_form_directory",
+                "tree_view_ref": "grap_cooperative.view_res_company_tree_directory",
+            }
+        </field>
+    </record>
+
+    <menuitem id="menu_res_company"
+        name="Activities"
+        parent="menu_root"
+        action="action_res_company"
+        sequence="1"/>
+
+</odoo>
