@@ -6,6 +6,7 @@ manufacture
 l10n-france
 margin-analysis
 product-attribute
+a_purchase-workflow_01     https://github.com/legalsylvain/purchase-workflow.git    12.0-purchase_xxx_discount-apply-default-value
 purchase-workflow
 server-brand
 server-env

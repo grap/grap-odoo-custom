@@ -13,8 +13,15 @@
         "account",
         "contacts",
         "product",
+        "stock",
+        "purchase",
+        "mail",
+        "delivery",
+        # OCA Modules
+        "purchase_triple_discount",
     ],
     "data": [
+        "views/view_res_partner_form.xml",
         "views/view_res_partner_tree.xml",
     ],
     "installable": True,

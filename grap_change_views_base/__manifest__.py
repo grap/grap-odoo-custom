@@ -11,16 +11,12 @@
     "license": "AGPL-3",
     "depends": [
         "base",
-        "delivery",
-        "purchase",
-        "stock",
         "sql_export",
     ],
     "data": [
         "views/view_ir_model_access.xml",
         "views/view_ir_sequence.xml",
         "views/view_res_company.xml",
-        "views/view_res_partner.xml",
         "views/view_ir_module_module.xml",
         "views/view_ir_actions_act_window.xml",
         "views/menu.xml",
