@@ -1,10 +1,9 @@
-a_pos__pos_tare  https://github.com/legalsylvain/pos.git   12.0-pos_tare-add-default-tare-value
-
 account-financial-tools
 account-fiscal-rule
 manufacture
 l10n-france
 margin-analysis
+pos
 product-attribute
 a_purchase-workflow_01     https://github.com/legalsylvain/purchase-workflow.git    12.0-purchase_xxx_discount-apply-default-value
 purchase-workflow
@@ -14,25 +13,12 @@ server-tools
 stock-logistics-barcode
 web
 
-account-financial-tools__account_subsequence_fiscal_year  https://github.com/legalsylvain/account-financial-tools.git   12.0-add-account_subsequence_fiscal_year
+z__web_dashboard_tile               https://github.com/legalsylvain/web.git                     12.0-mig-web_dashboard_tile
+z__product_pricelist_margin         https://github.com/legalsylvain/margin-analysis.git         12.0-ADD-product_pricelist_margin
+z__product_margin_classification    https://github.com/legalsylvain/margin-analysis.git         12.0-MIG-product_margin_classification
 
-a_grap-odoo-business__country_group      https://github.com/quentinDupont/grap-odoo-business.git      12.0_IMP_origin_country_group
-
-web__web_favorite_company      https://github.com/legalsylvain/web.git      12.0-ADD-web_favorite_company
-web__web_dashboard_tile      https://github.com/legalsylvain/web.git      12.0-mig-web_dashboard_tile
-grap-odoo-business      https://github.com/grap/grap-odoo-business.git      12.0
-grap-odoo-incubator      https://github.com/grap/grap-odoo-incubator.git      12.0
-
-grap-odoo-incubator__product_simple_pricelist      https://github.com/legalsylvain/grap-odoo-incubator.git      12.0-IMP-product_simple_pricelist-recursive-pricelist
-
-
-odoo-addons-intercompany-trade       https://github.com/grap/odoo-addons-intercompany-trade.git      12.0
-odoo-addons-cae     https://github.com/odoo-cae/odoo-addons-cae.git      12.0
-odoo-addons-logistics     https://github.com/grap/odoo-addons-logistics.git      12.0
-
-product-attribute__product_standard_price_tax_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_standard_price_tax_included
-
-product-attribute__product_sale_tax_price_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_sale_tax_price_included
-
-margin-analysis__product_pricelist_margin  https://github.com/legalsylvain/margin-analysis.git   12.0-ADD-product_pricelist_margin
-margin-analysis__product_margin_classification  https://github.com/legalsylvain/margin-analysis.git   12.0-MIG-product_margin_classification
+odoo-addons-cae                 https://github.com/odoo-cae/odoo-addons-cae.git             12.0
+grap-odoo-business              https://github.com/grap/grap-odoo-business.git              12.0
+grap-odoo-incubator             https://github.com/grap/grap-odoo-incubator.git             12.0
+odoo-addons-intercompany-trade  https://github.com/grap/odoo-addons-intercompany-trade.git  12.0
+odoo-addons-logistics           https://github.com/grap/odoo-addons-logistics.git           12.0
