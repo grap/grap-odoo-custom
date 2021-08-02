@@ -28,6 +28,7 @@ grap-odoo-incubator__product_simple_pricelist      https://github.com/legalsylva
 
 odoo-addons-intercompany-trade       https://github.com/grap/odoo-addons-intercompany-trade.git      12.0
 odoo-addons-cae     https://github.com/odoo-cae/odoo-addons-cae.git      12.0
+odoo-addons-logistics     https://github.com/grap/odoo-addons-logistics.git      12.0
 
 product-attribute__product_standard_price_tax_included  https://github.com/legalsylvain/product-attribute.git   12.0-mig-product_standard_price_tax_included
 
