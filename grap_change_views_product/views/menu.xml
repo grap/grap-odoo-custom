@@ -11,7 +11,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <!-- ************************************************************ -->
     <menuitem id="menu_root"
         name="Products"
-        web_icon="grap_change_views_product,static/src/img/icon.png"/>
+        web_icon="grap_change_views_product,static/src/img/icon.png"
+        groups="sales_team.group_sale_salesman"/>
 
     <menuitem id="menu_product"
         name="Products"
