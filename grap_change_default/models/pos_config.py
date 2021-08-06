@@ -16,7 +16,7 @@ class PosConfig(models.Model):
 
     cash_control = fields.Boolean(default=True)
 
-    max_meal_voucher_amount = fields.Boolean(default=19.0)
+    max_meal_voucher_amount = fields.Monetary(default=19.0)
 
     module_account = fields.Boolean(default=True)
 
