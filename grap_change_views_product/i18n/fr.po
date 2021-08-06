@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-10 13:38+0000\n"
-"PO-Revision-Date: 2021-06-10 13:38+0000\n"
+"POT-Creation-Date: 2021-08-06 06:54+0000\n"
+"PO-Revision-Date: 2021-08-06 06:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -208,12 +208,6 @@ msgstr "Qté conditionnement"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Point of Sale"
 msgstr "Point de Vente"
-
-#. module: grap_change_views_product
-#: model:ir.model.fields,help:grap_change_views_product.field_product_product__list_price
-#: model:ir.model.fields,help:grap_change_views_product.field_product_template__list_price
-msgid "Price at which the product is sold to customers."
-msgstr "Prix auquel l'article est vendu aux clients."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -500,3 +494,4 @@ msgstr "🍴 Informations alimentaire"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "🚩 Production place"
 msgstr "🚩 Lieu de production"
+
