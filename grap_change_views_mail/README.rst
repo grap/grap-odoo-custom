@@ -21,14 +21,34 @@ GRAP - Change Mail Views
 
 Change default views for ``mail`` module.
 
-- hide main 'Message' menu entry.
+* Hide main "Message" menu entry.
 
-- remove two 'Mail' features present in the systray: ``mail.systray.MessagingMenu`` and ``mail.systray.ActivityMenu``
+..figure :: ../static/description/main_menu.png
+
+* remove two "Mail" features present in the systray: ``mail.systray.MessagingMenu`` and ``mail.systray.ActivityMenu``
+
+..figure :: ../static/description/systray.png
+
+* Hide template management in the "Send by mail" wizards.
+
+..figure :: ../static/description/wizard_form.png
 
 **Table of contents**
 
 .. contents::
    :local:
+
+Development
+===========
+
+Due to poor design of Odoo Core ``mail`` and ``account`` modules,
+the wizard to send mail via odoo is fully duplicated.
+
+* ``mail.xxx``
+* ``account.account_invoice_send_wizard_form``
+
+It so forces us to inherit from ``account`` module, and to duplicates
+the code.
 
 Bug Tracker
 ===========
@@ -55,6 +75,14 @@ Contributors
 
 Maintainers
 ~~~~~~~~~~~
+
+.. |maintainer-legalsylvain| image:: https://github.com/legalsylvain.png?size=40px
+    :target: https://github.com/legalsylvain
+    :alt: legalsylvain
+
+Current maintainer:
+
+|maintainer-legalsylvain| 
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/12.0/grap_change_views_mail>`_ project on GitHub.
 
