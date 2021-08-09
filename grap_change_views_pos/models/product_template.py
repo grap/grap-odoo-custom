@@ -8,4 +8,7 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    available_in_pos = fields.Boolean(default=True)
+    available_in_pos = fields.Boolean(default=lambda x: x._default_available_in_pos())
+
+    def _default_available_in_pos(self):
+        return not self.env.context.get("joint_buying")

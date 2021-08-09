@@ -12,15 +12,17 @@
         # Odoo Modules
         "account",
         "contacts",
-        "product",
-        "stock",
-        "purchase",
-        "mail",
         "delivery",
+        "mail",
+        "product",
+        "purchase",
+        "sales_team",
+        "stock",
         # OCA Modules
         "purchase_triple_discount",
     ],
     "data": [
+        "views/menu.xml",
         "views/view_res_partner_form.xml",
         "views/view_res_partner_tree.xml",
     ],

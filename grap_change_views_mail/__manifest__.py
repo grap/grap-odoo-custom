@@ -7,13 +7,16 @@
     "version": "12.0.1.1.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
+    "maintainers": ["legalsylvain"],
     "website": "http://www.grap.coop",
     "license": "AGPL-3",
     "depends": [
-        "mail",
+        "account",
     ],
     "data": [
         "views/templates.xml",
+        "views/view_account_invoice_send.xml",
+        "views/view_mail_compose_message.xml",
         "views/menu.xml",
     ],
     "installable": True,
