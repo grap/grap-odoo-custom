@@ -45,6 +45,7 @@
         "product_sale_tax_price_included",
         "pos_sector",
         "intercompany_trade_product",
+        "joint_buying_product",
         # TODO
         # "grap_qweb_report",
     ],

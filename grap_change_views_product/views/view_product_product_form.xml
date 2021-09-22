@@ -23,6 +23,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <button string="See Margins per Pricelist"
                             name="button_margin_per_pricelist"
                             type="object"/>
+                    <button string="Offer For joint Buying" type="object" name="create_joint_buying_product"
+                        attrs="{'invisible': ['|', ('display_joint_buying_propagation', '=', False), ('joint_buying_product_id', '!=', False)]}"
+                        groups="joint_buying_base.group_joint_buying_user"/>
                 </header>
                 <sheet>
                     <field name="id" invisible="True"/>
@@ -185,6 +188,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </group>
                             </group>
                             <group>
+                                <group name="joint_buying" string="Joint Buying" colspan="4" groups="joint_buying_base.group_joint_buying_user">
+                                    <field name="display_joint_buying_propagation" invisible="1"/>
+                                    <field name="is_joint_buying" invisible="1"/>
+                                    <field name="joint_buying_partner_id"
+                                            attrs="{'invisible': [('is_joint_buying', '=', False)], 'required': [('is_joint_buying', '=', True)]}"/>
+                                    <field name="joint_buying_product_id" attrs="{'invisible': [('display_joint_buying_propagation', '=', False)]}"/>
+                                </group>
+
                                 <group string="Vendors" colspan="4">
                                     <field name="seller_ids" nolabel="1">
                                         <tree editable="bottom">
