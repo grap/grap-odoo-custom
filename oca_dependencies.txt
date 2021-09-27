@@ -6,7 +6,7 @@ margin-analysis
 pos
 product-attribute
 a_purchase-workflow_01     https://github.com/legalsylvain/purchase-workflow.git    12.0-purchase_xxx_discount-apply-default-value
-a_odoo-addons-logistics_01     https://github.com/legalsylvain/odoo-addons-logistics.git    12.0-IMP-cest-la-rentree-2021
+a_product-attribute_01   https://github.com/legalsylvain/product-attribute.git   12.0-ADD-product_uom_measure_type
 purchase-workflow
 server-brand
 server-env
