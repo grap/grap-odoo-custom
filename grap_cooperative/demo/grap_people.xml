@@ -16,6 +16,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="street">Street Louise Michel</field>
         <field name="zip">69006</field>
         <field name="city">Lyon</field>
+        <field name="company_id" ref="base.main_company"/>
         <field name="image" type="base64" file="grap_cooperative/static/src/img/people_SLG-image.png"/>
         <field name="mandate_ids" eval="[(4, ref('board_member'))]" />
         <field name="college_id" ref="college_C" />
@@ -30,6 +31,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="zip">69007</field>
         <field name="city">Lyon</field>
         <field name="working_email">quentin.dupont@yourcompany.example.com</field>
+        <field name="company_id" ref="base.main_company"/>
         <field name="image" type="base64" file="grap_cooperative/static/src/img/people_QD-image.png"/>
         <field name="college_id" ref="college_C" />
     </record>
