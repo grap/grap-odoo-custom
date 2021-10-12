@@ -57,6 +57,8 @@ class GrapPeople(models.Model):
         },
     )
 
+    company_code = fields.Char(related="company_id.code", store=True)
+
     company_manager_ids = fields.Many2many(
         string="Companies with mandates",
         comodel_name="res.company",
