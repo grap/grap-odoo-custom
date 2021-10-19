@@ -105,7 +105,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
                             </div>
                             <div>
-                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice')">
+                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice', 'stock.picking')">
                                     Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
                                 </div>
                                 <div t-if="o._name in ('sale.order', 'account.invoice')">
