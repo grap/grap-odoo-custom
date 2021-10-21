@@ -108,17 +108,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice', 'stock.picking')">
                                     Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
                                 </div>
-                                <div t-if="o._name in ('sale.order', 'account.invoice')">
-                                    <div >Pas d'escompte pour paiement anticipé - Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</div>
-                                    <div>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b></div>
-                                </div>
-                                <div t-if="len(company.partner_id.bank_ids)">
-                                    <div t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/></div>
-                                    <div>
+                                <span t-if="o._name in ('sale.order', 'account.invoice')">
+                                    <span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>
+                                    <br/><span>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b>. </span>
+                                </span>
+                                <span t-if="len(company.partner_id.bank_ids)">
+                                    <span t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/>.</span>
+                                    <span>
+                                        <br/>
                                         <b>IBAN : </b><span t-esc="company.partner_id.bank_ids[0].acc_number"/>
                                         <b> - SWIFT/BIC : </b><span t-esc="company.partner_id.bank_ids[0].bank_bic"/>
-                                    </div>
-                                </div>
+                                    </span>
+                                </span>
                             </div>
                             <span t-if="company.siret">
                                 <b>SIRET : </b><span t-esc="company.siret"/>
