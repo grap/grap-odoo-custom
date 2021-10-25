@@ -7,7 +7,7 @@
     "version": "12.0.1.1.0",
     "category": "Tools",
     "author": "GRAP",
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     # Depends on this module only to add a button in the correct place
     "depends": ["grap_change_views_product"],

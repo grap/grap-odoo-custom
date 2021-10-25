@@ -9,7 +9,7 @@
     " and change accesses for a number of models.",
     "category": "GRAP - Custom",
     "author": "GRAP",
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
         "sales_team",

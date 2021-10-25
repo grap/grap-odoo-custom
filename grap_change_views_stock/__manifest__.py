@@ -7,7 +7,7 @@
     "version": "12.0.0.1.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
         "stock",
