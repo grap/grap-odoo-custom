@@ -5,7 +5,7 @@
 {
     "name": "GRAP - Must Have Modules",
     "summary": "Install must have modules",
-    "version": "12.0.1.1.1",
+    "version": "12.0.1.1.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
