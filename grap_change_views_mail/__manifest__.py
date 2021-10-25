@@ -8,7 +8,7 @@
     "category": "GRAP - Custom",
     "author": "GRAP",
     "maintainers": ["legalsylvain"],
-    "website": "http://www.grap.coop",
+    "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
         "account",
