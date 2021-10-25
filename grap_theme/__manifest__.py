@@ -5,7 +5,7 @@
 {
     "name": "GRAP - Web Theme",
     "summary": "Customize Odoo web User Interface",
-    "version": "12.0.1.3.1",
+    "version": "12.0.1.3.2",
     "category": "GRAP Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
