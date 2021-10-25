@@ -4,7 +4,7 @@
 
 {
     "name": "Stock - Merge Quants",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.1.1",
     "category": "Tools",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
