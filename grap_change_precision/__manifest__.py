@@ -4,7 +4,7 @@
 
 {
     "name": "GRAP - Change Precision",
-    "version": "12.0.1.1.1",
+    "version": "12.0.1.1.2",
     "summary": "Change the precisions names and values of some fields",
     "category": "GRAP - Custom",
     "author": "GRAP",
