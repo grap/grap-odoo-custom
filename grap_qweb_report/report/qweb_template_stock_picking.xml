@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (qurntin.dupont@grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="template_report_picking"  inherit_id="stock.report_picking">
+        <!-- Add Custom Message -->
+        <xpath expr="//div[hasclass('page')]/h1/.." position="before">
+            <t t-raw="o.report_custom_message"/>
+        </xpath>
+    </template>
+
+    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document">
+
+        <!-- Add Custom Message -->
+        <xpath expr="//div[hasclass('page')]/h2/.." position="before">
+            <t t-raw="o.report_custom_message"/>
+        </xpath>
+
+        <!-- Changement car si la description est trop longue
+             ça merdait en affichant pas les auttres champs-->
+        <xpath expr="//h2" position="replace">
+            <h3>
+                <span>Bon de livraison n° </span><span t-field="o.name"/>
+            </h3>
+        </xpath>
+
+    </template>
+
+    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document">
+
+        <!-- Add Custom Message -->
+        <xpath expr="//div[hasclass('page')]/h2/.." position="before">
+            <t t-raw="o.report_custom_message"/>
+        </xpath>
+
+        <!-- Changement car si la description est trop longue
+             ça merdait en affichant pas les auttres champs-->
+        <xpath expr="//h2" position="replace">
+            <h3>
+                <span>Bon de livraison n° </span><span t-field="o.name"/>
+            </h3>
+        </xpath>
+
+    </template>
+
+</odoo>

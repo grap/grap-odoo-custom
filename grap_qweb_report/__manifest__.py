@@ -27,12 +27,15 @@
         "stock_inventory_valuation",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/templates.xml",
+        "views/view_report_custom_message.xml",
         "report/qweb_template_product_product_barcode.xml",
         "report/qweb_template_layout_standard.xml",
         "report/qweb_template_account_invoice.xml",
-        "report/qweb_template_purchaseorder.xml",
-        "report/qweb_template_stock_deliveryslip.xml",
+        "report/qweb_template_purchase_order.xml",
+        "report/qweb_template_sale_order.xml",
+        "report/qweb_template_stock_picking.xml",
         "report/qweb_template_stock_inventory.xml",
         "report/qweb_pricetag_square_small.xml",
         "report/qweb_pricetag_square_large.xml",
@@ -44,6 +47,7 @@
     ],
     "demo": [
         "demo/res_groups.xml",
+        "demo/report_custom_message.xml",
     ],
     "qweb": [
         "static/src/xml/pos.xml",
