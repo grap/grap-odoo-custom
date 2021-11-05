@@ -54,7 +54,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <div class="product_name">
                     <t t-esc="product.name"/>
                 </div>
-                <div class="barcode_image">
+                <div t-if="product.barcode" class="barcode_image">
                     <span t-field="product.barcode"/>
                     <img t-if="len(product.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', quote_plus(product.barcode))"/>
                     <img t-elif="len(product.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', quote_plus(product.barcode))"/>

@@ -8,6 +8,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="template_purchaseorder" inherit_id="purchase.report_purchaseorder_document">
 
+        <!-- Add Custom Message -->
+        <xpath expr="//div[hasclass('page')]/h2/.." position="before">
+            <t t-raw="o.report_custom_message"/>
+        </xpath>
+
         <!-- Ajout : Date prévue du bon de commande -->
         <xpath expr="//div[@id='informations']" position="inside">
             <div t-if="o.date_planned" class="col-3 bm-2">
