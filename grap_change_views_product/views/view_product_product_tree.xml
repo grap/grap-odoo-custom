@@ -31,7 +31,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="groups">base.group_erp_manager</attribute>
             </field>
             <field name="barcode" position="after">
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </field>
         </field>
     </record>
@@ -69,7 +69,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="theoretical_difference"
                     widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="sale_ok"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -104,7 +104,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="is_alimentary"/>
                 <field name="certifier_organization_id"/>
                 <field name="is_alcohol"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -139,7 +139,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="department_id"/>
                 <field name="maker_description"/>
                 <field name="origin_description"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -173,7 +173,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="pricetag_type_id"/>
                 <field name="pricetag_uom_id"/>
                 <field name="to_print"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -211,7 +211,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="pos_categ_id" groups="point_of_sale.group_pos_user"/>
                 <field name="scale_group_id" groups="product_to_scale_bizerba.group_user"/>
                 <field name="eshop_category_id" groups="sale_eshop.res_groups_eshop_user"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -245,7 +245,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="is_alcohol"/>
                 <field name="alcohol_by_volume"/>
                 <field name="volume"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -279,7 +279,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="tare_weight"/>
                 <field name="pos_categ_id" options="{'quick_create':false}"/>
                 <field name="barcode"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -333,7 +333,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             ('barcode_rule_id', '=', False),
                             ('barcode_base', '=', 0)]}"
                     groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -374,7 +374,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="eshop_state"/>
                 <field name="preparation_categ_id"/>
                 <field name="sale_ok"/>
-                <field name="company_id" groups="base.group_multi_company" />
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
     </record>
@@ -393,5 +393,40 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_product_product_editable_view" sequence="12"
         groups="sale_eshop.res_groups_eshop_user"
         action="action_product_product_eshop"/>
+
+<!-- ************************************************************ -->
+<!-- 20 - Products (Grouped Purchase Order View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_product_product_tree_joint_buying" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" decoration-info="joint_buying_product_id != False">
+                <field name="default_code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="joint_buying_product_id" readonly="1"/>
+                <button string="Offer For joint Buying" type="object" name="create_joint_buying_product"
+                        attrs="{'invisible': ['|', ('display_joint_buying_propagation', '=', False), ('joint_buying_product_id', '!=', False)]}"
+                        groups="joint_buying_base.group_joint_buying_user"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+                <field name="display_joint_buying_propagation" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_joint_buying" model="ir.actions.act_window">
+        <field name="name">Products (Joint Buying)</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_eshop_setup':1}</field>
+        <field name="view_id" ref="view_product_product_tree_joint_buying" />
+    </record>
+
+   <menuitem id="menu_product_product_joint_buying"
+        name="Products (Joint Buying)"
+        parent="menu_product_product_editable_view" sequence="20"
+        groups="joint_buying_base.group_joint_buying_user"
+        action="action_product_product_joint_buying"/>
 
 </odoo>
