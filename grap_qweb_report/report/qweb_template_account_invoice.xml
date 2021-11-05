@@ -8,6 +8,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="template_account_invoice" inherit_id="account.report_invoice_document">
 
+        <!-- Add Custom Message -->
+        <xpath expr="//div[hasclass('page')]/h2/.." position="before">
+            <t t-raw="o.report_custom_message"/>
+        </xpath>
+
         <!-- Changement car si la description est trop longue
              ça merdait en affichant pas les auttres champs-->
         <xpath expr="//div[@id='informations']" position="replace">
