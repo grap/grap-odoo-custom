@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.1.1 |  | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
 [grap_change_data](grap_change_data/) | 12.0.1.0.9 |  | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.1.4 |  | GRAP - Change Default
-[grap_change_email](grap_change_email/) | 12.0.1.1.3 |  | Change default email template for invoices, sale and purchase orders
+[grap_change_email](grap_change_email/) | 12.0.1.1.4 |  | Change default email template for invoices, sale and purchase orders
 [grap_change_precision](grap_change_precision/) | 12.0.1.1.2 |  | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.2.1 |  | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.1.1 |  | GRAP - Change Views
