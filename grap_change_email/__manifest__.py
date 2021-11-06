@@ -6,7 +6,7 @@
     "name": "GRAP Custom - Change eMail",
     "summary": "Change default email template for invoices, "
     " sale and purchase orders",
-    "version": "12.0.1.1.3",
+    "version": "12.0.1.1.4",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
