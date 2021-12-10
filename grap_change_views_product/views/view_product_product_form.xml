@@ -24,7 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             name="button_margin_per_pricelist"
                             type="object"/>
                     <button string="Offer For joint Buying" type="object" name="create_joint_buying_product"
-                        attrs="{'invisible': ['|', ('display_joint_buying_propagation', '=', False), ('joint_buying_product_id', '!=', False)]}"
+                        attrs="{'invisible': ['|', ('joint_buying_display_propagation', '=', False), ('joint_buying_product_id', '!=', False)]}"
                         groups="joint_buying_base.group_joint_buying_user"/>
                 </header>
                 <sheet>
@@ -169,6 +169,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <group col="3">
                                 <group string="Inventory">
                                     <field name="volume"/>
+                                    <field name="net_weight"/>
                                     <field name="weight"/>
                                     <field name="price_per_unit" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('price_per_unit', '=', 0)]}"/>
                                     <field name="preparation_categ_id" groups="sale_recovery_moment.recovery_user"/>
@@ -190,11 +191,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </group>
                             <group>
                                 <group name="joint_buying" string="Joint Buying" colspan="4" groups="joint_buying_base.group_joint_buying_user">
-                                    <field name="display_joint_buying_propagation" invisible="1"/>
+                                    <field name="joint_buying_display_propagation" invisible="1"/>
                                     <field name="is_joint_buying" invisible="1"/>
                                     <field name="joint_buying_partner_id"
                                             attrs="{'invisible': [('is_joint_buying', '=', False)], 'required': [('is_joint_buying', '=', True)]}"/>
-                                    <field name="joint_buying_product_id" attrs="{'invisible': [('display_joint_buying_propagation', '=', False)]}"/>
+                                    <field name="joint_buying_product_id" attrs="{'invisible': [('joint_buying_display_propagation', '=', False)]}"/>
                                 </group>
 
                                 <group string="Vendors" colspan="4">
