@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2020-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="demo_custom_message" model="report.custom.message">
+        <field name="name">Demo Custom Message</field>
+        <field name="background_color">#FFFF00</field>
+        <field name="company_id" eval="False"/>
+        <field name="height">80</field>
+        <field name="border">3</field>
+        <field name="extra_css_code">border-radius:10px;</field>
+        <field name="html_text"><![CDATA[
+        <p><b>Attention</b>, change of RIB on January 1, 2022.</p>
+        ]]></field>
+    </record>
+
+</odoo>

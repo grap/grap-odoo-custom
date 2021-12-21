@@ -6,7 +6,8 @@ from odoo import models
 
 
 class SaleOrder(models.Model):
-    _inherit = "sale.order"
+    _name = "sale.order"
+    _inherit = ["sale.order", "report.custom.message.mixin"]
 
     def action_invoice_create(self, grouped=False, final=False):
         if not grouped and len(self) > 1:
