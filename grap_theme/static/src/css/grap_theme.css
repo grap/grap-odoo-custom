@@ -1,18 +1,21 @@
 /* ****************************************************
-Change input in forms
+Change input and spaces between objects in forms
 **************************************************** */
-.o_input {
-    border-top : 0;
-    border-left : 0;
-    border-right : 0;
-    border-bottom-color: rgb(204, 204, 204);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    transition: border-bottom-color 0.3s ease;
-}
 
 .o_input:focus {
     border-bottom-color: #2e822e;
+}
+
+.o_form_view .o_horizontal_separator{
+    margin: 0px;
+}
+
+.o_form_view .o_group{
+    margin: 5px 0px; /* instead of 10px */
+}
+
+.o_form_view .o_notebook .tab-content > .tab-pane{
+    padding: 0px; /* instead of $o-horizontal-padding */
 }
 
 /* ****************************************************
