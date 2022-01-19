@@ -27,7 +27,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </div>
                             <div class="product_informations" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                                 <t t-if="not line.product_id.barcode">
-                                    <t t-if="line.product_id.default_code"><b><t t-esc="line.product_id.default_code"/></b><br/></t>
+                                    <t t-if="line.product_id.default_code"><t t-esc="line.product_id.default_code"/><br/></t>
                                 </t>
                                 <t t-if="line.product_id.pricetag_origin">Origine : <b><t t-esc="line.product_id.pricetag_origin"/></b><br/></t>
                                 <t t-else=""><br/></t>

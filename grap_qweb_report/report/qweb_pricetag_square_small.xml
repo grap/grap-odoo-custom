@@ -27,7 +27,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <div class="product_labels">
                             <t t-set="i" t-value="0"/>
                             <t t-foreach="line.product_id.label_ids" t-as="label">
-                                <t t-if="i &lt; 2">
+                                <t t-if="i &lt; 3">
                                     <img class="product_label" t-attf-src="data:image/*;base64,{{label.image}}" t-att-alt="label.name"/>
                                     <t t-set="i" t-value="i+1"/>
                                 </t>
