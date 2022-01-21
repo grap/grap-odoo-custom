@@ -11,12 +11,12 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        # Odoo modules
         "sale",
         "purchase",
         "point_of_sale",
         "l10n_fr",
-        # OCA & GRAP Modules
+        # OCA
+        # GRAP
         "base_company_legal_info",
         "fiscal_company_base",
         "product_print_category",
