@@ -12,7 +12,11 @@
     "category": "GRAP - Custom",
     "author": "GRAP",
     "license": "AGPL-3",
-    "depends": ["server_environment_ir_config_parameter", "pos_environment"],
+    "depends": [
+        # OCA
+        "server_environment_ir_config_parameter",
+        "pos_environment",
+    ],
     "data": ["views/templates.xml"],
     "installable": True,
 }
