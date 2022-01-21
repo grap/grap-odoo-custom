@@ -8,7 +8,7 @@ from odoo import fields, models
 class AccountAccountType(models.Model):
     _inherit = "account.account.type"
 
-    xml_id = fields.Char(compute='_compute_xml_id', string="External ID")
+    xml_id = fields.Char(compute="_compute_xml_id", string="External ID")
 
     def _compute_xml_id(self):
         res = self.get_external_id()
