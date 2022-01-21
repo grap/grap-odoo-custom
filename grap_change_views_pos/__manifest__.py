@@ -11,10 +11,12 @@
     "license": "AGPL-3",
     "depends": [
         "point_of_sale",
-        "pos_multicompany",
-        "pos_margin",
         "pos_cash_rounding",
+        # OCA
+        "pos_margin",
         "pos_cash_move_reason",
+        # GRAP
+        "pos_multicompany",
     ],
     "data": [
         "views/view_account_bank_statement.xml",

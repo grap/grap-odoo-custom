@@ -12,6 +12,7 @@
     "depends": [
         "stock",
         "stock_account",
+        # GRAP
         "stock_inventory_merge",
     ],
     "data": [

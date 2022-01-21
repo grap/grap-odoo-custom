@@ -14,6 +14,7 @@
         "mrp",
         "sale_mrp",
         "mrp_bom_cost",
+        # OCA
         "mrp_bom_component_menu",
         "mrp_auto_assign",
         "mrp_bom_note",

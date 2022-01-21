@@ -14,10 +14,12 @@
     "depends": [
         "sales_team",
         "point_of_sale",
-        "pos_restaurant",
-        "product_margin_classification",
-        "product_print_category_food_report",
         "purchase",
+        "pos_restaurant",
+        # OCA
+        "product_margin_classification",
+        # GRAP
+        "product_print_category_food_report",
     ],
     "data": [
         "security/ir_rule.xml",

@@ -9,8 +9,11 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    # Depends on this module only to add a button in the correct place
-    "depends": ["grap_change_views_product"],
+    "depends": [
+        # GRAP
+        # Depends on this module only to add a button in the correct place
+        "grap_change_views_product",
+    ],
     "data": [
         "data/ir_cron.xml",
         "views/view_product_product.xml",

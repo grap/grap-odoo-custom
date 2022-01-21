@@ -10,21 +10,22 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "grap_cooperative",
-        "grap_change_views_product",
         "contacts",
         "purchase",
         "stock",
         "sale",
         "point_of_sale",
         "account",
-        "mobile_kiosk_abstract",
-        # For hidden items
         "utm",
         "mail",
         "calendar",
+        # OCA
         "knowledge",
         "web_dashboard_tile",
+        # GRAP
+        "mobile_kiosk_abstract",
+        "grap_cooperative",
+        "grap_change_views_product",
         # Obsolete dependencies to remove after the migration
         "grap_change_views_account",
         "grap_change_views_base",
