@@ -15,13 +15,11 @@ class ReportCustomMessage(models.Model):
         string="Height",
         default="30",
         required=True,
-        help="Height of the message, expressed in pixel"
+        help="Height of the message, expressed in pixel",
     )
 
     border = fields.Float(
-        string="Border",
-        default="1",
-        help="Size of the border, expressed in pixel"
+        string="Border", default="1", help="Size of the border, expressed in pixel"
     )
 
     company_id = fields.Many2one(comodel_name="res.company", string="Company")
@@ -41,9 +39,7 @@ class ReportCustomMessage(models.Model):
     html_text = fields.Text(string="HTML Text", required=True)
 
     html_text_code = fields.Text(
-        string="HTML Text (Code View)",
-        related="html_text",
-        readonly=False
+        string="HTML Text (Code View)", related="html_text", readonly=False
     )
 
     extra_css_code = fields.Char(string="Extra Css Code")
@@ -56,17 +52,18 @@ class ReportCustomMessage(models.Model):
         "background_color",
         "height",
         "border",
-        "extra_css_code"
+        "extra_css_code",
     )
     def _compute_message(self):
         for item in self:
             vals = {x: item[x] for x in item._fields}
-            item.message = "<div style='"\
-                "overflow: hidden;"\
-                "width: 100%;"\
-                "height: {height}px;"\
-                "background-color:{background_color};"\
-                "border:{border}px solid;"\
-                "{extra_css_code};"\
-                "'>{html_text}</div>"\
-                .format(**vals)
+            item.message = (
+                "<div style='"
+                "overflow: hidden;"
+                "width: 100%;"
+                "height: {height}px;"
+                "background-color:{background_color};"
+                "border:{border}px solid;"
+                "{extra_css_code};"
+                "'>{html_text}</div>".format(**vals)
+            )
