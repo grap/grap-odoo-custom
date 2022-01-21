@@ -92,7 +92,6 @@ class ProductProduct(models.Model):
                         # Update mode
                         order_line.product_qty = product.qty_to_process
                     else:
-                        pass
                         order_line.unlink()
                 else:
                     # Create Mode

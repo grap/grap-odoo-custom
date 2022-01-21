@@ -11,9 +11,11 @@ class AccountInvoiceSend(models.TransientModel):
     @api.model
     def default_get(self, fields):
         res = super().default_get(fields)
-        res.update({
-            "template_id": self.env.ref(
-                "grap_change_email.email_template_account_invoice"
-            ).id,
-        })
+        res.update(
+            {
+                "template_id": self.env.ref(
+                    "grap_change_email.email_template_account_invoice"
+                ).id,
+            }
+        )
         return res

@@ -16,10 +16,12 @@ class ReportCustomMessageMixin(models.AbstractModel):
     def _compute_report_custom_message(self):
         ReportCustomMessage = self.env["report.custom.message"]
         for item in self:
-            domain = expression.OR([
-                [('company_id', '=', False)],
-                [('company_id', 'child_of', [item.company_id.id])],
-            ])
+            domain = expression.OR(
+                [
+                    [("company_id", "=", False)],
+                    [("company_id", "child_of", [item.company_id.id])],
+                ]
+            )
             if self._name == "account.invoice":
                 model_domain = ("display_on_account_invoice", "=", True)
             elif self._name == "purchase.order":
