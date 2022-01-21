@@ -13,7 +13,9 @@
         "delivery",
         "product",
         "point_of_sale",
+        # OCA
         "product_category_active",
+        # GRAP
         "grap_change_translation",
     ],
     "data": [

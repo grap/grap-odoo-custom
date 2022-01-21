@@ -11,6 +11,7 @@
     "license": "AGPL-3",
     "depends": [
         "base",
+        # OCA
         "sql_export",
     ],
     "data": [

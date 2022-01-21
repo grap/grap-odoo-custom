@@ -12,7 +12,6 @@
     "license": "AGPL-3",
     "depends": [
         "account",
-        "account_product_fiscal_classification",
         "base",
         "calendar",
         "delivery",
@@ -23,6 +22,8 @@
         "stock",
         "uom",
         "utm",
+        # OCA
+        "account_product_fiscal_classification",
     ],
     "installable": True,
 }

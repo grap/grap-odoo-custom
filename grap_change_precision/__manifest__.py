@@ -11,12 +11,14 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
+        "sale_margin",
+        # OCA
         "account_invoice_margin",
         "pos_margin",
-        "sale_margin",
         "product_standard_price_tax_included",
-        "grap_change_base_product_mass_addition",
+        # GRAP
         "account_invoice_supplierinfo_update_standard_price",
+        "grap_change_base_product_mass_addition",
     ],
     "data": [
         "data/decimal_precision.xml",

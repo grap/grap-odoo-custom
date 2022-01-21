@@ -11,11 +11,13 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
+        # OCA
         "base_product_mass_addition",
         "purchase_quick",
         "onchange_helper",
         "purchase_discount",
         "purchase_triple_discount",
+        # GRAP
         "purchase_package_qty",
     ],
     "data": [

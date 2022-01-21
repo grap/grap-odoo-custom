@@ -13,6 +13,7 @@
     "depends": [
         "sale",
         "delivery",
+        # OCA
         "sale_margin",
         "product_margin_classification",
     ],

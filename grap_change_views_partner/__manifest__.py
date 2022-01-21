@@ -9,7 +9,6 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        # Odoo Modules
         "account",
         "contacts",
         "delivery",
@@ -18,7 +17,7 @@
         "purchase",
         "sales_team",
         "stock",
-        # OCA Modules
+        # OCA
         "purchase_triple_discount",
     ],
     "data": [

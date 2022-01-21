@@ -12,13 +12,15 @@
     "license": "AGPL-3",
     "depends": [
         "account",
+        "sale",
+        # OCA
+        "account_financial_report",
         "account_group_menu",
         "account_invoice_triple_discount",
-        "account_financial_report",
-        "sale",
-        "account_invoice_supplierinfo_update_standard_price",
-        "web_tree_dynamic_colored_field",
         "account_subsequence_fiscal_year",
+        "web_tree_dynamic_colored_field",
+        # GRAP
+        "account_invoice_supplierinfo_update_standard_price",
     ],
     "data": [
         "views/menu.xml",

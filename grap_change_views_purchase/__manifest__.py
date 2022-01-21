@@ -11,10 +11,12 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "purchase_batch_invoicing",
         "purchase",
+        # OCA
+        "purchase_batch_invoicing",
         "purchase_discount",
         "purchase_triple_discount",
+        # GRAP
         "intercompany_trade_purchase",
         "recurring_consignment",
     ],

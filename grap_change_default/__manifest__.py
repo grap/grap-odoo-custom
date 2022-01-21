@@ -10,13 +10,14 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "joint_buying_product",
         "product",
         "point_of_sale",
-        # OCA Modules
+        # OCA
         "pos_tare",
         "pos_order_to_sale_order",
         "pos_meal_voucher",
+        # GRAP
+        "joint_buying_product",
     ],
     "installable": True,
 }

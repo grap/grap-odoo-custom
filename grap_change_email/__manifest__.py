@@ -14,6 +14,7 @@
     "depends": [
         "purchase",
         "sale",
+        # GRAP
         "sale_recovery_moment",
     ],
     "data": [
