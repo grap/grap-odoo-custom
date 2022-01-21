@@ -23,7 +23,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <div class="product_name" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                             <t t-esc="line.product_id.name"/>
                         </div>
-                        <!-- Display only two product labels -->
+                        <!-- Display only three product labels -->
                         <div class="product_labels">
                             <t t-set="i" t-value="0"/>
                             <t t-foreach="line.product_id.label_ids" t-as="label">
