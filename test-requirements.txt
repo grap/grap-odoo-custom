@@ -8,6 +8,7 @@ git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/pos_sect
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_inventory_merge
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/base_company_legal_info
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_inventory_valuation
+git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/product_uom_package
 
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_print_category_food_report
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_recovery_moment
