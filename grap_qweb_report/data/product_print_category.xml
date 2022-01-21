@@ -20,7 +20,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             (4, ref('product_origin.field_product_product__maker_description')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
-            (4, ref('product.field_product_product__list_price'))]" />
+            (4, ref('product.field_product_product__list_price')),
+            (4, ref('product_food.field_product_product__price_per_unit'))]" />
     </record>
 
     <record id="category_pricetag_large" model="product.print.category">
@@ -37,7 +38,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             (4, ref('product_origin.field_product_product__maker_description')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
-            (4, ref('product.field_product_product__list_price'))]" />
+            (4, ref('product.field_product_product__list_price')),
+            (4, ref('product_food.field_product_product__price_per_unit'))]" />
     </record>
 
     <record id="category_pricetag_square_small" model="product.print.category">
@@ -54,7 +56,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             (4, ref('product_origin.field_product_product__maker_description')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
-            (4, ref('product.field_product_product__list_price'))]" />
+            (4, ref('product.field_product_product__list_price')),
+            (4, ref('product_food.field_product_product__price_per_unit'))]" />
     </record>
 
     <record id="category_pricetag_square_large" model="product.print.category">
@@ -71,7 +74,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             (4, ref('product_origin.field_product_product__maker_description')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_uom_id')),
             (4, ref('product_print_category_food_report.field_product_product__pricetag_type_id')),
-            (4, ref('product.field_product_product__list_price'))]" />
+            (4, ref('product.field_product_product__list_price')),
+            (4, ref('product_food.field_product_product__price_per_unit'))]" />
     </record>
 
 </odoo>
