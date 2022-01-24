@@ -1,8 +1,6 @@
 # Unmerged OCA Contributions
-git+https://github.com/legalsylvain/margin-analysis@refs/pull/76/head#subdirectory=setup/product_margin_classification
-
-git+https://github.com/legalsylvain/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
-git+https://github.com/legalsylvain/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
+git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
+git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
 
 # GRAP Dependencies
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
