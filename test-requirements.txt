@@ -1,3 +1,6 @@
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
+
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/purchase_package_qty
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/mobile_kiosk_abstract
@@ -9,6 +12,7 @@ git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_in
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/base_company_legal_info
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_inventory_valuation
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/product_uom_package
+git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/technical_partner_access
 
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_print_category_food_report
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_recovery_moment
@@ -29,6 +33,3 @@ git+https://github.com/grap/odoo-addons-logistics@12.0#subdirectory=setup/joint_
 git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=setup/intercompany_trade_base
 git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=setup/intercompany_trade_product
 git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=setup/intercompany_trade_purchase
-
-git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
-git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
