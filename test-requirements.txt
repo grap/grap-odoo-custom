@@ -2,8 +2,8 @@
 git+https://github.com/legalsylvain/margin-analysis@12.0-MIG-product_margin_classification#subdirectory=setup/product_margin_classification
 
 # https://github.com/OCA/purchase-workflow/pull/1185
-git+https://github.com/legalsylvain/purchase-workflow@12.0-purchase_xxx_discount-apply-default-value#subdirectory=setup/ purchase_discount
-git+https://github.com/legalsylvain/purchase-workflow@12.0-purchase_xxx_discount-apply-default-value#subdirectory=setup/  purchase_triple_discount
+git+https://github.com/legalsylvain/purchase-workflow@12.0-purchase_xxx_discount-apply-default-value#subdirectory=setup/purchase_discount
+git+https://github.com/legalsylvain/purchase-workflow@12.0-purchase_xxx_discount-apply-default-value#subdirectory=setup/purchase_triple_discount
 
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/purchase_package_qty
