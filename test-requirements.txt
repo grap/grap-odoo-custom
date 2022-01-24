@@ -1,3 +1,7 @@
+# https://github.com/OCA/margin-analysis/pull/76
+git+https://github.com/legalsylvain/margin-analysis@12.0-MIG-product_margin_classification#subdirectory=setup/product_margin_classification
+
+
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
 
