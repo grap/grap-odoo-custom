@@ -1,9 +1,9 @@
 # https://github.com/OCA/margin-analysis/pull/76
 git+https://github.com/legalsylvain/margin-analysis@12.0-MIG-product_margin_classification#subdirectory=setup/product_margin_classification
 
-
-git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
-git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
+# https://github.com/OCA/purchase-workflow/pull/1185
+git+https://github.com/legalsylvain/purchase-workflow@12.0-purchase_xxx_discount-apply-default-value#subdirectory=setup/ purchase_discount
+git+https://github.com/legalsylvain/purchase-workflow@12.0-purchase_xxx_discount-apply-default-value#subdirectory=setup/  purchase_triple_discount
 
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/purchase_package_qty
@@ -37,3 +37,6 @@ git+https://github.com/grap/odoo-addons-logistics@12.0#subdirectory=setup/joint_
 git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=setup/intercompany_trade_base
 git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=setup/intercompany_trade_product
 git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=setup/intercompany_trade_purchase
+
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
