@@ -1,3 +1,9 @@
+# Unmerged OCA Contributions
+git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
+git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
+
+# GRAP Dependencies
+git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/purchase_package_qty
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/mobile_kiosk_abstract
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/pos_multicompany
@@ -7,12 +13,15 @@ git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/pos_sect
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_inventory_merge
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/base_company_legal_info
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_inventory_valuation
+git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/product_uom_package
+git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/technical_partner_access
 
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_print_category_food_report
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_recovery_moment
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/account_invoice_supplierinfo_update_standard_price
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/stock_preparation_category
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/recurring_consignment
+git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/recurring_consignment_purchase
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_to_scale_bizerba
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_eshop
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_food

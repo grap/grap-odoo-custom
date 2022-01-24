@@ -18,7 +18,7 @@
         "purchase_triple_discount",
         # GRAP
         "intercompany_trade_purchase",
-        "recurring_consignment",
+        "recurring_consignment_purchase",
     ],
     "data": [
         "views/menu.xml",
