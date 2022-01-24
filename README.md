@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [grap_theme](grap_theme/) | 12.0.1.3.3 |  | Customize Odoo web User Interface
 [server_environment_files](server_environment_files/) | 12.0.1.0.3 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_fix_stock_move_line](stock_fix_stock_move_line/) | 12.0.1.1.1 |  | Stock - Fix Stock Move Lines
-[stock_merge_quant](stock_merge_quant/) | 12.0.1.1.1 |  | Stock - Merge Quants
+[stock_merge_quant](stock_merge_quant/) | 12.0.1.1.1 |  | Stock - Merge Quants Tools
 
 [//]: # (end addons)
 
