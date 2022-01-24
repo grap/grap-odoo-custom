@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [grap_change_views_partner](grap_change_views_partner/) | 12.0.0.0.15 |  | GRAP - Change Partner Views
 [grap_change_views_pos](grap_change_views_pos/) | 12.0.1.1.5 |  | GRAP - Change POS Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.1.13 |  | GRAP - Change Product Views
-[grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.1.3 |  | GRAP - Change Purchase Views
+[grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.1.4 |  | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.10 |  | GRAP - Change Sale Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.1.1 |  | GRAP - Change Stock Views
 [grap_cooperative](grap_cooperative/) | 12.0.2.0.3 |  | Add Directories, Companies, Colleges, Peoples, etc.
@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [grap_theme](grap_theme/) | 12.0.1.3.3 |  | Customize Odoo web User Interface
 [server_environment_files](server_environment_files/) | 12.0.1.0.3 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_fix_stock_move_line](stock_fix_stock_move_line/) | 12.0.1.1.1 |  | Stock - Fix Stock Move Lines
-[stock_merge_quant](stock_merge_quant/) | 12.0.1.1.1 |  | Stock - Merge Quants Tools
+[stock_merge_quant](stock_merge_quant/) | 12.0.1.1.2 |  | Stock - Merge Quants Tools
 
 [//]: # (end addons)
 
