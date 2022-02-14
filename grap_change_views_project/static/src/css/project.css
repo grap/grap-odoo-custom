@@ -1,0 +1,19 @@
+.o_status.o_status_red {
+    /* http://apps.eky.hk/css-triangle-generator */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7px 12px 7px;
+    border-color: transparent transparent #ff0000 transparent;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.o_status.o_status_green {
+    border-radius: 0px;
+    background-color: #00FF33;
+}
+
+.bg-success-full {
+    background-color: #00FF33;
+}
