@@ -31,3 +31,25 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+.pos .searchbox input{
+    width: 200px;
+    background-image: none;
+    border: 1px solid;
+    padding: 14px 20px;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.pos .search-clear{
+    top: 0px;
+    left: -60px;
+    width: 19px;
+    height: 19px;
+    border-radius: 30px;
+    background: #6EC89B;
+    border: 1px solid;
+    padding: 14px 20px 14px 10px;
+    font-size: 16px;
+
+}

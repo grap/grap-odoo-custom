@@ -29,5 +29,8 @@
         "views/menu.xml",
         "views/templates.xml",
     ],
+    "qweb": [
+        "static/src/xml/grap_change_views_pos.xml",
+    ],
     "installable": True,
 }
