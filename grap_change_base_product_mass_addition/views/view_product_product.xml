@@ -11,6 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_product_tree" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="inherit_id" ref="purchase_quick.product_tree_view4purchase"/>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-info">qty_to_process == 0</attribute>
