@@ -47,34 +47,34 @@ class ResCompany(models.Model):
         string="Displayed in Directory", default=True
     )
 
-    # Interlocutors in company
-    accounting_interlocutor_activity_id = fields.Many2one(
-        string="Accouting contact person", comodel_name="grap.people"
+    # Referents in Company
+    accounting_referent_id = fields.Many2one(
+        string="Accouting Referent", comodel_name="grap.people"
     )
 
-    hr_interlocutor_activity_id = fields.Many2one(
-        string="HR contact person", comodel_name="grap.people"
+    hr_referent_id = fields.Many2one(
+        string="HR Referent", comodel_name="grap.people"
     )
 
-    it_interlocutor_activity_id = fields.Many2one(
-        string="IT contact person", comodel_name="grap.people"
+    it_referent_id = fields.Many2one(
+        string="IT Referent", comodel_name="grap.people"
     )
 
-    # Interlocutors in service team
-    accounting_interlocutor_service_id = fields.Many2one(
-        string="Accouting contact in service team", comodel_name="grap.people"
+    # Interlocutors in Service Team
+    accounting_interlocutor_id = fields.Many2one(
+        string="Accouting Interlocutor", comodel_name="grap.people"
     )
 
-    hr_interlocutor_service_id = fields.Many2one(
-        string="HR contact person in service team", comodel_name="grap.people"
+    hr_interlocutor_id = fields.Many2one(
+        string="HR Interlocutor", comodel_name="grap.people"
     )
 
-    it_interlocutor_service_id = fields.Many2one(
-        string="IT contact person in service team", comodel_name="grap.people"
+    it_interlocutor_id = fields.Many2one(
+        string="IT Interlocutor", comodel_name="grap.people"
     )
 
-    attendant_interlocutor_service_id = fields.Many2one(
-        string="Attendant contact person in service team", comodel_name="grap.people"
+    attendant_interlocutor_id = fields.Many2one(
+        string="Attendant Interlocutor", comodel_name="grap.people"
     )
 
     @api.depends("name")
