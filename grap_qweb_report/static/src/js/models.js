@@ -40,9 +40,10 @@ odoo.define('grap_qweb_report.models', function (require) {
             });
             $.each(tax_dict, function (key, value) {
                 var tax_name = String(key) + '%';
-                tax_name += ' ' + Array(10 - tax_name.length).join('_');
+                var tax_name_with_underscore = tax_name + ' ' + Array(10 - tax_name.length).join('_');
                 result.push({
                     'name': tax_name,
+                    'tax_name_with_underscore': tax_name_with_underscore,
                     'base': value.tax_base,
                     'amount': value.tax_amount,
                 });
