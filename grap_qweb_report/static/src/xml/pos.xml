@@ -5,6 +5,8 @@ Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
+<!-- Extend ticket printed via Proxy-->
+
 <templates id="template" xml:space="preserve">
 
     <t t-extend="XmlReceipt">
@@ -12,43 +14,47 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </t>
 
         <t t-jquery="t[t-if='taxincluded']" t-operation="replace">
+        </t>
+
+        <t t-jquery="div[class='before-footer']" t-operation="before">
             <div>------------------------------------------</div>
-            <line>
-                <left>VAT</left>
-                <left>___________ Base</left>
-                <right>Amount</right>
-            </line>
-            <t t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
+
+            <t t-if='receipt.tax_details_with_base'>
                 <line>
-                    <left><t t-esc='line_tax.name' /></left>
-                    <left><t t-esc='widget.format_currency(line_tax.base)' /></left>
-                    <right><t t-esc='widget.format_currency(line_tax.amount)' /></right>
+                    <left>VAT</left>
+                    <left>______ Base</left>
+                    <right>Amount</right>
                 </line>
-            </t>
-            <div>------------------------------------------</div>
-            <t t-if='receipt.client'>
-                <line>
-                    <left>Customer: </left>
-                </line>
-                <line>
-                    <left><t t-esc='receipt.client' /></left>
-                </line>
+                <t t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
+                    <line>
+                        <left><t t-esc='line_tax.name' /></left>
+                        <left><t t-esc='widget.format_currency(line_tax.amount)' /></left>
+                        <right><t t-esc='widget.format_currency(line_tax.base)' /></right>
+                    </line>
+                </t>
                 <div>------------------------------------------</div>
             </t>
+
+            <t t-if='receipt.client'>
+                <div font='b'>
+                    Customer:
+                </div>
+                <div font='b'>
+                    <t t-esc='receipt.client' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
             <t t-if='receipt.pricelist_default === false'>
-                <line>
-                    <left>Pricelist: </left>
-                </line>
-                <line>
-                    <left><t t-esc='receipt.pricelist_name' /></left>
-                </line>
+                <div font='b'>
+                    Pricelist:
+                </div>
+                <div font='b'>
+                    <t t-esc='receipt.pricelist_name' />
+                </div>
                 <div>------------------------------------------</div>
             </t>
         </t>
     </t>
-
-<!--
-
--->
 
 </templates>

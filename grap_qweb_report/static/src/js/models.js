@@ -8,8 +8,6 @@ odoo.define('grap_qweb_report.models', function (require) {
     'use strict';
 
     var models = require('point_of_sale.models');
-    var core = require('web.core');
-    var _t = core._t;
 
     var order_super = models.Order.prototype;
 
@@ -41,8 +39,8 @@ odoo.define('grap_qweb_report.models', function (require) {
                 }
             });
             $.each(tax_dict, function (key, value) {
-                var tax_name = _t('VAT ') + String(key) + '%';
-                tax_name += ' ' + Array(15 - tax_name.length).join('_');
+                var tax_name = String(key) + '%';
+                tax_name += ' ' + Array(10 - tax_name.length).join('_');
                 result.push({
                     'name': tax_name,
                     'base': value.tax_base,
