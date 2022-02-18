@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 22:41+0000\n"
-"PO-Revision-Date: 2021-11-05 22:41+0000\n"
+"POT-Creation-Date: 2022-02-18 07:15+0000\n"
+"PO-Revision-Date: 2022-02-18 07:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr "Edition avancée"
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/xml/pos.xml:19
+#: code:addons/grap_qweb_report/static/src/xml/pos.xml:26
 #, python-format
 msgid "Amount"
 msgstr "Montant"
@@ -182,7 +182,7 @@ msgstr "Messages personnalisés"
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/xml/pos.xml:31
+#: code:addons/grap_qweb_report/static/src/xml/pos.xml:39
 #, python-format
 msgid "Customer:"
 msgstr "Client : "
@@ -237,6 +237,11 @@ msgstr "Afficher sur"
 #: model:ir.model.fields,field_description:grap_qweb_report.field_res_company__external_report_layout_id
 msgid "Document Template"
 msgstr "Modèle de document"
+
+#. module: grap_qweb_report
+#: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__extra_css_code
+msgid "Extra Css Code"
+msgstr "Code CSS additionnel"
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.view_report_custom_message_form
@@ -354,7 +359,7 @@ msgstr "Prévisualiser"
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/xml/pos.xml:40
+#: code:addons/grap_qweb_report/static/src/xml/pos.xml:49
 #, python-format
 msgid "Pricelist:"
 msgstr "Liste de prix: "
@@ -381,7 +386,6 @@ msgid "Report Custom Message"
 msgstr "Message personnalisé de rapport"
 
 #. module: grap_qweb_report
-#: model:ir.model,name:grap_qweb_report.model_report_custom_message_abstract
 #: model:ir.model,name:grap_qweb_report.model_report_custom_message_mixin
 msgid "Report Custom Message Mixin"
 msgstr "Messages personnalisés de rapport (Mixin)"
@@ -405,7 +409,7 @@ msgstr ""
 #: model:ir.model,name:grap_qweb_report.model_sale_order
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.view_report_custom_message_form
 msgid "Sale Order"
-msgstr "Commande de vente"
+msgstr "Bon de commande"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_sale_order_line
@@ -439,17 +443,10 @@ msgstr "Transfert"
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/xml/pos.xml:17
+#: code:addons/grap_qweb_report/static/src/xml/pos.xml:24
 #, python-format
 msgid "VAT"
 msgstr "TVA"
-
-#. module: grap_qweb_report
-#. openerp-web
-#: code:addons/grap_qweb_report/static/src/js/models.js:44
-#, python-format
-msgid "VAT "
-msgstr "TVA "
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
@@ -459,9 +456,9 @@ msgstr ""
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/xml/pos.xml:18
+#: code:addons/grap_qweb_report/static/src/xml/pos.xml:25
 #, python-format
-msgid "___________ Base"
+msgid "______ Base"
 msgstr ""
 
 #. module: grap_qweb_report
@@ -483,4 +480,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
 msgid "le kilo"
 msgstr ""
-
