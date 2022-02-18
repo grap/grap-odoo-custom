@@ -11,6 +11,8 @@ odoo.define('grap_qweb_report.models', function (require) {
 
     var order_super = models.Order.prototype;
 
+    models.load_fields("res.company", ['siret']);
+
     models.Order = models.Order.extend({
 
         /**
