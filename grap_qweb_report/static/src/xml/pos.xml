@@ -10,6 +10,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- Extend ticket printed via Proxy-->
     <t t-extend="XmlReceipt">
+
+        <t t-jquery="t[t-if='receipt.company.vat']" t-operation="after">
+            <t t-if='widget.pos.company.company_registry'>
+                <div>Company Registry: <t t-esc='widget.pos.company.company_registry' /></div>
+            </t>
+            <t t-if='receipt.company.siret'>
+                <div>SIRET: <t t-esc='widget.pos.company.siret' /></div>
+            </t>
+        </t>
+
         <t t-jquery="t[t-if='!taxincluded']" t-operation="replace">
         </t>
 
@@ -61,6 +71,30 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <t t-extend="PosTicket">
 
         <t t-jquery="t[t-foreach='order.get_tax_details()']" t-operation="replace">
+        </t>
+
+        <t t-jquery="div[class='receipt-phone']" t-operation="before">
+            <div>------------------------------------------</div>
+        </t>
+        <t t-jquery="div[class='receipt-phone']" t-operation="after">
+            <div t-if="widget.pos.company.vat">
+                VAT: <t t-esc="widget.pos.company.vat"/><br />
+            </div>
+            <div t-if="widget.pos.company.company_registry">
+                Company Registry: <t t-esc="widget.pos.company.company_registry"/><br />
+            </div>
+            <div t-if="widget.pos.company.siret">
+                SIRET: <t t-esc="widget.pos.company.siret"/><br />
+            </div>
+            <div t-if="widget.pos.company.website">
+                Website: <t t-esc="widget.pos.company.website"/><br />
+            </div>
+            <div t-if="widget.pos.company.email">
+                Email: <t t-esc="widget.pos.company.email"/><br />
+            </div>
+        </t>
+        <t t-jquery="div[class='receipt-user']" t-operation="after">
+            <div>------------------------------------------</div>
         </t>
 
 
