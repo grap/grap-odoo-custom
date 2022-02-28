@@ -15,6 +15,7 @@
         # OCA
         "pos_margin",
         "pos_cash_move_reason",
+        "pos_order_mgmt",
         # GRAP
         "pos_multicompany",
     ],

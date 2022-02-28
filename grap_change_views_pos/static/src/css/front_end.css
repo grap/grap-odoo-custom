@@ -33,7 +33,7 @@
 }
 
 .pos .searchbox input{
-    width: 200px;
+    width: 200px !important;
     background-image: none;
     border: 1px solid;
     padding: 14px 20px;
@@ -52,4 +52,8 @@
     padding: 14px 20px 14px 10px;
     font-size: 16px;
 
+}
+
+div.orderlist-screen span.search-clear{
+    display: none;
 }
