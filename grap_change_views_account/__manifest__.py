@@ -16,6 +16,7 @@
         # OCA
         "account_financial_report",
         "account_group_menu",
+        "account_invoice_overdue_reminder",
         "account_invoice_triple_discount",
         "account_subsequence_fiscal_year",
         "web_tree_dynamic_colored_field",
@@ -31,7 +32,8 @@
         "views/view_account_journal.xml",
         "views/view_account_move.xml",
         "views/view_account_tax_group.xml",
-        "views/view_wizard_update_invoice_supplierinfo.xml",
+        "wizards/view_overdue_reminder_start.xml",
+        "wizards/view_wizard_update_invoice_supplierinfo.xml",
     ],
     "demo": [
         "demo/res_groups.xml",
