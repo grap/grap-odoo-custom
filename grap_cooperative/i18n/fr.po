@@ -25,12 +25,12 @@ msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_interlocutor_id
 msgid "Accouting Interlocutor"
-msgstr "Interlocuteur comptable"
+msgstr "Interlocuteur comptabilité"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_referent_id
 msgid "Accouting Referent"
-msgstr "Référent comptable"
+msgstr "Référent comptabilité"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_res_company
@@ -58,7 +58,7 @@ msgstr "Sociétés archivées"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__attendant_interlocutor_id
 msgid "Attendant Interlocutor"
-msgstr "Interlocuteur accompagnateur"
+msgstr "Interlocuteur accompagnement"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
@@ -218,12 +218,12 @@ msgstr "GRAP Personnes"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_interlocutor_id
 msgid "HR Interlocutor"
-msgstr "Interlocuteur Social"
+msgstr "Interlocuteur social"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_referent_id
 msgid "HR Referent"
-msgstr "Référent Social"
+msgstr "Référent social"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__id
@@ -235,12 +235,12 @@ msgstr ""
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_interlocutor_id
 msgid "IT Interlocutor"
-msgstr "Interlocteur Informatique"
+msgstr "Interlocuteur informatique"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_referent_id
 msgid "IT Referent"
-msgstr "Référent Informatique"
+msgstr "Référent informatique"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image
