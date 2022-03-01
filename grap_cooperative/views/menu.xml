@@ -11,4 +11,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         sequence="1"
         web_icon="grap_cooperative,static/src/img/icon.png"/>
 
+    <menuitem id="menu_editable_view"
+        name="Editable View"
+        parent="menu_root"
+        groups="res_group_grap_cooperative_manager"
+        sequence="100"/>
+
 </odoo>
