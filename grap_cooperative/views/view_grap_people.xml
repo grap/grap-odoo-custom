@@ -45,7 +45,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Fill first and last name ↓"/>
+                            <field name="name" attrs="{'readonly': 1}" force_save="1"/>
                         </h1>
                         <div class="oe_edit_only">
                             <group>
