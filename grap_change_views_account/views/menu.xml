@@ -23,6 +23,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="groups_id" eval="[(6, 0, [ref('account.group_account_invoice')])]"/>
     </record>
 
+    <!-- Facturation / Comptabilité / Action / rappel de facture en souffrance DEPLACE dans Facturation / Client / Client-->
+    <record model="ir.ui.menu" id="account_invoice_overdue_reminder.overdue_reminder_start_menu">
+        <field name="parent_id" ref="account.menu_finance_receivables"/>
+        <field name="sequence">120</field>
+    </record>
+
     <!-- Facturation / Fournisseurs / Fournisseur -->
     <record model="ir.ui.menu" id="account.menu_account_supplier">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
