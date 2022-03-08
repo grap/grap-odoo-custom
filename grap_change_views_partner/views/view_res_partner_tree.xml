@@ -26,6 +26,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="email"/>
                 <field name="property_product_pricelist"/>
                 <field name="property_account_position_id"/>
+                <field name="property_payment_term_id"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
