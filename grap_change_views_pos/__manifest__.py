@@ -15,6 +15,7 @@
         # OCA
         "pos_margin",
         "pos_cash_move_reason",
+        "pos_order_mgmt",
         # GRAP
         "pos_multicompany",
     ],
@@ -28,6 +29,9 @@
         "views/view_pos_config.xml",
         "views/menu.xml",
         "views/templates.xml",
+    ],
+    "qweb": [
+        "static/src/xml/grap_change_views_pos.xml",
     ],
     "installable": True,
 }

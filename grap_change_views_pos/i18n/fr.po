@@ -6,14 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-04 15:49+0000\n"
-"PO-Revision-Date: 2020-09-04 15:49+0000\n"
+"POT-Creation-Date: 2022-02-16 09:38+0000\n"
+"PO-Revision-Date: 2022-02-16 09:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: grap_change_views_pos
+#: model:ir.model.fields,field_description:grap_change_views_pos.field_product_product__available_in_pos
+#: model:ir.model.fields,field_description:grap_change_views_pos.field_product_template__available_in_pos
+msgid "Available in POS"
+msgstr "Disponible dans le PdV"
 
 #. module: grap_change_views_pos
 #: model:ir.model,name:grap_change_views_pos.model_account_bank_statement_line
@@ -29,6 +35,12 @@ msgid "Cash register operations"
 msgstr "Opération de caisse"
 
 #. module: grap_change_views_pos
+#: model:ir.model.fields,help:grap_change_views_pos.field_product_product__available_in_pos
+#: model:ir.model.fields,help:grap_change_views_pos.field_product_template__available_in_pos
+msgid "Check if you want this product to appear in the Point of Sale."
+msgstr "Cochez si vous souhaitez faire apparaître ce produit dans le Point de Vente"
+
+#. module: grap_change_views_pos
 #: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_order_line__partner_id
 msgid "Customer"
 msgstr "Client"
@@ -41,11 +53,11 @@ msgstr "Regrouper par..."
 #. module: grap_change_views_pos
 #: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_category_form
 msgid "Image"
-msgstr "Image"
+msgstr ""
 
 #. module: grap_change_views_pos
-#: model:ir.ui.menu,name:grap_change_views_pos.menu_pos_order_line
 #: model:ir.actions.act_window,name:grap_change_views_pos.action_pos_order_line
+#: model:ir.ui.menu,name:grap_change_views_pos.menu_pos_order_line
 msgid "Order Lines"
 msgstr "Lignes de ventes"
 
@@ -54,11 +66,10 @@ msgstr "Lignes de ventes"
 msgid "Other operations"
 msgstr "Autres opérations"
 
-
 #. module: grap_change_views_pos
-#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line
-msgid "POS Orders"
-msgstr "Commandes en PdV"
+#: model:ir.model,name:grap_change_views_pos.model_wizard_pos_move_reason
+msgid "PoS Move Reasons Wizard"
+msgstr "PdV - Assistant de mouvement d'argent"
 
 #. module: grap_change_views_pos
 #: model:ir.model,name:grap_change_views_pos.model_pos_category
@@ -91,9 +102,21 @@ msgid "Product Qty"
 msgstr "Quantité d'articles"
 
 #. module: grap_change_views_pos
+#: model:ir.model,name:grap_change_views_pos.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: grap_change_views_pos
 #: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_category__product_ids
 msgid "Products"
 msgstr "Articles"
+
+#. module: grap_change_views_pos
+#. openerp-web
+#: code:addons/grap_change_views_pos/static/src/xml/grap_change_views_pos.xml:11
+#, python-format
+msgid "RtZ"
+msgstr "RaZ"
 
 #. module: grap_change_views_pos
 #: model:ir.model.fields,field_description:grap_change_views_pos.field_pos_order_line__state
@@ -106,6 +129,7 @@ msgid "To Process"
 msgstr "A traiter"
 
 #. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line_search
 #: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_search
 msgid "Today"
 msgstr "Aujourd'hui"
@@ -113,7 +137,7 @@ msgstr "Aujourd'hui"
 #. module: grap_change_views_pos
 #: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_account_bank_statement_line_tree
 msgid "Total"
-msgstr "Total"
+msgstr ""
 
 #. module: grap_change_views_pos
 #: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line
@@ -131,7 +155,7 @@ msgid "Total Qty"
 msgstr "Quantité Totale"
 
 #. module: grap_change_views_pos
+#: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_line_search
 #: model_terms:ir.ui.view,arch_db:grap_change_views_pos.view_pos_order_search
 msgid "Yesterday"
 msgstr "Hier"
-
