@@ -38,7 +38,7 @@ addon | version | maintainers | summary
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.1.1.4 |  | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.10 |  | GRAP - Change Sale Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.1.1 |  | GRAP - Change Stock Views
-[grap_cooperative](grap_cooperative/) | 12.0.2.0.3 |  | Add Directories, Companies, Colleges, Peoples, etc.
+[grap_cooperative](grap_cooperative/) | 12.0.2.0.4 |  | Add Directories, Companies, Colleges, Peoples, etc.
 [grap_mrp](grap_mrp/) | 12.0.1.1.3 |  | Install MRP modules for R&D
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.2.0 |  | GRAP - Custom Qweb Reports
