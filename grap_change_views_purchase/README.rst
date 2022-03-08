@@ -40,6 +40,13 @@ features
 - ``date_planned`` field of the order line are based on the date_planned field on the order,
   when confirming the order.
 
+- add an onchange feature on ``product_template.type`` field :
+
+If type in 'service', purchase_method is 'purchase'
+If type in ('product', 'consu'), purchase_method is 'receive'
+
+(Introduce an hook and a pre-migration script to fix existing databases)
+
 Note
 ----
 
