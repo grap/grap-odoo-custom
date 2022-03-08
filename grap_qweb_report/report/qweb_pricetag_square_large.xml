@@ -60,17 +60,26 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </div>
                             <t t-if="not line.product_id.pricetag_special_quantity_price">
                                 <div class="product_price_per_uom_price_big">
-                                    <div class="product_price_big">
+                                    <span class="product_price_big">
                                         <b><t t-esc="'%0.2f' % (line.product_id.list_price)"/> €</b><!--
-                                         --><t t-if="line.product_id.uom_id.category_id.name == 'Volume'"><!--
+                                         --><t t-if="line.product_id.uom_id.category_id.measure_type == 'volume'"><!--
                                              --><span class="product_uom">le litre</span><br/>
                                         </t>
                                         <t t-if="not line.product_id.uom_id.category_id.name == 'Volume'"><!--
-                                             --><t t-if="line.product_id.uom_id.category_id.name == 'Weight'"><!--
+                                             --><t t-if="line.product_id.uom_id.category_id.measure_type == 'weight'"><!--
                                             --><span class="product_uom">le kilo</span><br/>
                                             </t>
                                         </t>
-                                    </div>
+                                    </span>
+                                    <!-- Prix au kilo ou au L -->
+                                    <t t-if="line.product_id.pricetag_is_second_price">
+                                        <span class="product_price_per_uom_price_beside floating_box">
+                                            <t t-if="line.product_id.pricetag_is_second_price">
+                                                <t t-esc="line.product_id.pricetag_second_price_uom_text"/> :
+                                                <b><t t-esc="'%0.2f' % (line.product_id.pricetag_second_price)"/>&#160;€</b>
+                                            </t>
+                                        </span>
+                                    </t>
                                 </div>
                             </t>
                             <t t-if="line.product_id.pricetag_special_quantity_price">
@@ -81,10 +90,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     </div>
                                 </div>
                                 <div class="product_price_per_uom_price_only floating_box">
-                                    <t t-if="line.product_id.uom_id.category_id.name == 'Volume'"><span>Au L : </span></t>
-                                    <t t-if="not line.product_id.uom_id.category_id.name == 'Volume'">
-                                        <t t-if="not line.product_id.uom_id.category_id.name == 'Weight'"><span>Pièce : </span></t>
-                                        <t t-if="line.product_id.uom_id.category_id.name == 'Weight'"><span>Au kg : </span></t>
+                                    <t t-if="line.product_id.uom_id.category_id.measure_type == 'volume'"><span>Au L : </span></t>
+                                    <t t-if="not line.product_id.uom_id.category_id.measure_type == 'volume'">
+                                        <t t-if="not line.product_id.uom_id.category_id.measure_type == 'weight'"><span>Pièce : </span></t>
+                                        <t t-if="line.product_id.uom_id.category_id.measure_type == 'weight'"><span>Au kg : </span></t>
                                     </t>
                                     <t t-esc="'%0.2f' % (line.product_id.list_price)"/> €
                                 </div>

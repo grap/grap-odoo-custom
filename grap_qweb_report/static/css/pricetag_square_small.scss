@@ -6,9 +6,12 @@
     padding : 5px;
     overflow: hidden;
 
+    .write_date{
+        font-size: 4px;
+    }
     .product_labels{
         float:left;
-        width: 0.88cm; max-height: 1.4cm;
+        width: 0.88cm; max-height: 1cm;
         padding-top: 0.25cm;
     }
     img.product_label{
@@ -18,7 +21,7 @@
         display: initial;
         position: relative;
         bottom: 0.2cm;
-        width: 2.8cm;
+        width: 2.7cm;
     }
     .product_name{
         font-size:12px; font-weight:bold;
@@ -37,9 +40,8 @@
         text-align: center; line-height: 0.5em;
     }
     .product_price {
-        font-size: 25px; font-weight: bold;
+        font-size: 23px; font-weight: bold;
         line-height: 1cm;
-        text-align: center;
         overflow: hidden;
         white-space: nowrap;
     }
@@ -48,7 +50,7 @@
         font-size:9px;
         height: 0.8cm;
         display: inline;
-        position : relative; left: 1.1cm;
+        position : relative; left: 0.7cm;
         overflow : hidden;
     }
     .product_price_per_uom_price_only {
@@ -64,8 +66,8 @@
     }
     .wrap_barcode_image{
         overflow: hidden;
-        position: relative;
-        height: 0.4cm; bottom: 0.15cm;
+        position: relative; bottom: 0.17cm;
+        height: 0.35cm;
     }
     .wrap_barcode_image > img{
         width: 3.8cm;

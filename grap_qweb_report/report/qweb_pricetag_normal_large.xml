@@ -22,12 +22,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <!-- NORMAL PRICETAG LARGE -->
                     <div class="normal_pricetag normal_pricetag_large floating_box">
                         <div class="pricetag_left floating_box">
+                            <div class="write_date">
+                                <t t-if="line.product_id.write_date">
+                                    Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
+                                </t>
+                            </div>
                             <div class="product_name" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                                 <t t-esc="line.product_id.name"/>
                             </div>
                             <div class="product_informations" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                                 <t t-if="not line.product_id.barcode">
-                                    <t t-if="line.product_id.default_code"><b><t t-esc="line.product_id.default_code"/></b><br/></t>
+                                    <t t-if="line.product_id.default_code"><t t-esc="line.product_id.default_code"/><br/></t>
                                 </t>
                                 <t t-if="line.product_id.pricetag_origin">Origine : <b><t t-esc="line.product_id.pricetag_origin"/></b><br/></t>
                                 <t t-else=""><br/></t>
@@ -54,11 +59,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
                                     </t>
                                 </div>
-                                <div class="write_date">
-                                    <t t-if="line.product_id.write_date">
-                                        Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
-                                    </t>
-                                </div>
                             </div>
                         </div>
                         <div class="pricetag_right floating_box">
@@ -73,7 +73,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <t t-if="line.product_id.pricetag_is_second_price">
                                     <div class="product_price_per_uom_qty floating_box">
                                         <t t-if="line.product_id.volume">Volume<br/><b><t t-esc="line.product_id.volume"/> L</b><br/></t>
-                                        <t t-elif="line.product_id.weight">Poids net<br/><b><t t-esc="line.product_id.weight"/> kg</b><br/></t>
+                                        <t t-elif="line.product_id.net_weight">Poids net<br/><b><t t-esc="line.product_id.net_weight"/> kg</b><br/></t>
                                     </div>
                                     <!-- Prix au kilo ou au L -->
                                     <div class="product_price_per_uom_price floating_box">

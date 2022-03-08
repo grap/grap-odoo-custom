@@ -20,14 +20,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <t t-foreach="category_data['lines']" t-as="line">
             <t t-foreach="line.quantity" t-as="q">
                 <div class="square_pricetag_small floating_box">
+                        <!-- Write date -->
+                        <div class="write_date">
+                            <t t-if="line.product_id.write_date">
+                                Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
+                            </t>
+                        </div>
+                        <!-- Product name -->
                         <div class="product_name" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                             <t t-esc="line.product_id.name"/>
                         </div>
-                        <!-- Display only two product labels -->
+                        <!-- Display only three product labels -->
                         <div class="product_labels">
                             <t t-set="i" t-value="0"/>
                             <t t-foreach="line.product_id.label_ids" t-as="label">
-                                <t t-if="i &lt; 2">
+                                <t t-if="i &lt; 3">
                                     <img class="product_label" t-attf-src="data:image/*;base64,{{label.image}}" t-att-alt="label.name"/>
                                     <t t-set="i" t-value="i+1"/>
                                 </t>

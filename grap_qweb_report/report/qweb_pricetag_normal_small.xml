@@ -22,43 +22,49 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <!-- NORMAL PRICETAG SMALL -->
                     <div class="normal_pricetag normal_pricetag_small floating_box">
                         <div class="pricetag_left floating_box">
+                            <div class="write_date">
+                                <t t-if="line.product_id.write_date">
+                                    Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
+                                </t>
+                            </div>
                             <div class="product_name" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                                 <t t-esc="line.product_id.name"/>
                             </div>
                             <div class="product_informations" t-attf-style="background-color: {{ line.product_id.pricetag_type_id.color }};">
                                 <t t-if="not line.product_id.barcode">
-                                    <t t-if="line.product_id.default_code"><b><t t-esc="line.product_id.default_code"/></b><br/></t>
+                                    <t t-if="line.product_id.default_code"><t t-esc="line.product_id.default_code"/><br/></t>
                                 </t>
                                 <t t-if="line.product_id.pricetag_origin">Origine : <b><t t-esc="line.product_id.pricetag_origin"/></b><br/></t>
                                 <t t-else=""><br/></t>
                                 <t t-if="line.product_id.maker_description">Producteur·rice : <b><t t-esc="line.product_id.maker_description"/></b><br/></t>
                                 <t t-else=""><br/></t>
                             </div>
-                            <div class="product_labels">
-                                <!-- Product Label -->
+                            <!-- Product Label -->
+                            <span class="product_labels">
+                                <t t-set="i" t-value="0"/>
                                 <t t-foreach="line.product_id.label_ids" t-as="label">
-                                    <img class="product_label" t-attf-src="data:image/*;base64,{{label.image}}" t-att-alt="label.name"/>
+                                    <t t-if="i &lt; 5">
+                                        <img class="product_label" t-attf-src="data:image/*;base64,{{label.image}}" t-att-alt="label.name"/>
+                                        <t t-set="i" t-value="i+1"/>
+                                    </t>
                                 </t>
-                            </div>
-                            <div class="organic_text">
-                                <t t-if="line.product_id.pricetag_organic_text">
-                                    <t t-esc="line.product_id.pricetag_organic_text"/><br/>
-                                </t>
-                            </div>
-                            <!-- BARCODE Image -->
+                            </span>
+                            <t t-if="line.product_id.pricetag_organic_text">
+                                <span class="organic_text">
+                                    <t t-esc="line.product_id.pricetag_organic_text"/>
+                                </span>
+                            </t>
                             <div>
-                                <div class="wrap_barcode_image floating_box">
+                                <!-- BARCODE Image -->
+                                <div class="wrap_barcode_image">
                                     <t t-if="line.product_id.barcode">
-                                        <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
-                                        <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
-                                        <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
+                                            <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
+                                            <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
+                                            <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
                                     </t>
                                 </div>
-                                <div class="write_date">
-                                    <t t-if="line.product_id.write_date">
-                                        Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
-                                    </t>
-                                </div>
+                                <!-- Other informations -->
+
                             </div>
                         </div>
                         <div class="pricetag_right floating_box">
@@ -73,7 +79,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <t t-if="line.product_id.pricetag_is_second_price">
                                     <div class="product_price_per_uom_qty floating_box">
                                         <t t-if="line.product_id.volume">Volume<br/><b><t t-esc="line.product_id.volume"/> L</b><br/></t>
-                                        <t t-elif="line.product_id.weight">Poids net<br/><b><t t-esc="line.product_id.weight"/> kg</b><br/></t>
+                                        <t t-elif="line.product_id.net_weight">Poids net<br/><b><t t-esc="line.product_id.net_weight"/> kg</b><br/></t>
                                     </div>
                                     <!-- Prix au Kg ou au L -->
                                     <div class="product_price_per_uom_price floating_box">
