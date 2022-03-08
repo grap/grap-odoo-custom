@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-20 14:57+0000\n"
-"PO-Revision-Date: 2021-07-20 14:57+0000\n"
+"POT-Creation-Date: 2022-02-17 12:40+0000\n"
+"PO-Revision-Date: 2022-02-17 12:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,14 +23,14 @@ msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"
 msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_interlocutor_service_id
-msgid "Accouting contact in service team"
-msgstr "Référent·e comptable"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_interlocutor_id
+msgid "Accouting Interlocutor"
+msgstr "Interlocuteur comptabilité"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_interlocutor_activity_id
-msgid "Accouting contact person"
-msgstr "Référent·e comptable"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_referent_id
+msgid "Accouting Referent"
+msgstr "Référent comptabilité"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_res_company
@@ -56,9 +56,9 @@ msgid "Archived companies"
 msgstr "Sociétés archivées"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__attendant_interlocutor_service_id
-msgid "Attendant contact person in service team"
-msgstr "Accompagnateur·rice"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__attendant_interlocutor_id
+msgid "Attendant Interlocutor"
+msgstr "Interlocuteur accompagnement"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
@@ -94,6 +94,11 @@ msgstr "Nom affichable"
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__manager_ids
 msgid "Co-directors"
 msgstr "Co-gérant·e·s"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__company_code
+msgid "Code"
+msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__college_id
@@ -198,12 +203,12 @@ msgstr "Nom complet"
 #. module: grap_cooperative
 #: model:ir.model,name:grap_cooperative.model_grap_college
 msgid "GRAP Colleges"
-msgstr "GRAP Collèges"
+msgstr "Collèges GRAP"
 
 #. module: grap_cooperative
 #: model:ir.model,name:grap_cooperative.model_grap_mandate
 msgid "GRAP Mandates"
-msgstr "GRAP Mandats"
+msgstr "Mandats GRAP"
 
 #. module: grap_cooperative
 #: model:ir.model,name:grap_cooperative.model_grap_people
@@ -211,14 +216,14 @@ msgid "GRAP Peoples"
 msgstr "GRAP Personnes"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_interlocutor_activity_id
-msgid "HR contact person"
-msgstr "Référent·e social"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_interlocutor_id
+msgid "HR Interlocutor"
+msgstr "Interlocuteur social"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_interlocutor_service_id
-msgid "HR contact person in service team"
-msgstr "Référent·e social"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_referent_id
+msgid "HR Referent"
+msgstr "Référent social"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__id
@@ -228,14 +233,14 @@ msgid "ID"
 msgstr ""
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_interlocutor_activity_id
-msgid "IT contact person"
-msgstr "Référent·e informatique"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_interlocutor_id
+msgid "IT Interlocutor"
+msgstr "Interlocuteur informatique"
 
 #. module: grap_cooperative
-#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_interlocutor_service_id
-msgid "IT contact person in service team"
-msgstr "Référent·e informatique"
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_referent_id
+msgid "IT Referent"
+msgstr "Référent informatique"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image
@@ -404,13 +409,13 @@ msgstr "👤 Informations de contact"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
-msgid "👥 Interlocutors in the company"
-msgstr "👥 Interlocuteur·rices dans l'activité"
+msgid "👥 Interlocutors in the service team"
+msgstr "👥 Interlocuteur·rices dans l'équipe support"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
-msgid "👥 Interlocutors in the service team"
-msgstr "👥 Interlocuteur·rices dans l'équipe support"
+msgid "👥 Referents in the company"
+msgstr "👥 Référents dans l'activité"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form

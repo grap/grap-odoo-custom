@@ -15,10 +15,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                <field name="clean_name"/>
                <field name="category_id"/>
                <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
-               <field name="accounting_interlocutor_service_id"/>
-               <field name="hr_interlocutor_service_id"/>
-               <field name="it_interlocutor_service_id"/>
-               <field name="attendant_interlocutor_service_id"/>
+               <field name="accounting_interlocutor_id"/>
+               <field name="hr_interlocutor_id"/>
+               <field name="it_interlocutor_id"/>
+               <field name="attendant_interlocutor_id"/>
                <filter string="Category" name="group_by_category"
                     context="{'group_by' : 'category_id'}"/>
             </field>
@@ -97,21 +97,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="is_using_odoo"/>
                         </group>
                         <group>
-                            <h3>👥 Interlocutors in the company</h3>
-                            <field name="accounting_interlocutor_activity_id"
+                            <h3>👥 Referents in the company</h3>
+                            <field name="accounting_referent_id"
                                    domain="[('company_id','=', id)]"
-                                   context="{'default_last_name': accounting_interlocutor_activity_id}"/>
-                            <field name="it_interlocutor_activity_id"
+                                   context="{'default_last_name': accounting_referent_id}"/>
+                            <field name="it_referent_id"
                                    domain="[('company_id','=', id)]"/>
-                            <field name="hr_interlocutor_activity_id"
+                            <field name="hr_referent_id"
                                    domain="[('company_id','=', id)]"/>
                         </group>
                         <group>
                             <h3>👥 Interlocutors in the service team</h3>
-                            <field name="accounting_interlocutor_service_id"/>
-                            <field name="it_interlocutor_service_id"/>
-                            <field name="hr_interlocutor_service_id"/>
-                            <field name="attendant_interlocutor_service_id"/>
+                            <field name="accounting_interlocutor_id"/>
+                            <field name="it_interlocutor_id"/>
+                            <field name="hr_interlocutor_id"/>
+                            <field name="attendant_interlocutor_id"/>
                        </group>
                     </group>
 

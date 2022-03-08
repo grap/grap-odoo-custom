@@ -12,6 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_pos_order_form" model="ir.ui.view">
         <field name="model">pos.order</field>
         <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <field name="pricelist_id" position="replace"/>
             <field name="partner_id" position="after">
@@ -36,6 +37,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_pos_order_form_margin" model="ir.ui.view">
         <field name="model">pos.order</field>
         <field name="inherit_id" ref="pos_margin.view_pos_order_form"/>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='lines']/tree" position="attributes">
                 <attribute name="decoration-warning">discount&gt;90</attribute>
@@ -48,6 +50,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_pos_order_tree" model="ir.ui.view">
         <field name="model">pos.order</field>
         <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="priority">100</field>
         <field name="arch" type="xml">
             <field name="pos_reference" position="replace"/>
             <field name="user_id" position="replace"/>
