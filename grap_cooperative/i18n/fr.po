@@ -51,11 +51,6 @@ msgid "Activities categories"
 msgstr "Catégories d'activités"
 
 #. module: grap_cooperative
-#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
-msgid "Activity"
-msgstr "Activité"
-
-#. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_search
 msgid "Archived companies"
 msgstr "Sociétés archivées"
@@ -163,6 +158,12 @@ msgid "Directory"
 msgstr "Annuaire"
 
 #. module: grap_cooperative
+#: model:ir.actions.act_window,name:grap_cooperative.action_grap_people_editable
+#: model:ir.ui.menu,name:grap_cooperative.menu_people_editable
+msgid "Directory (Editable View)"
+msgstr "Annuaire (Vue éditable)"
+
+#. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__display_name
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_mandate__display_name
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__display_name
@@ -173,6 +174,11 @@ msgstr "Nom affiché"
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__is_displayed_in_directory
 msgid "Displayed in Directory"
 msgstr "Affiché dans l'annuaire"
+
+#. module: grap_cooperative
+#: model:ir.ui.menu,name:grap_cooperative.menu_editable_view
+msgid "Editable View"
+msgstr "Vue éditable"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form
@@ -310,7 +316,6 @@ msgstr "Nom"
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_grap_mandate_to_grap_people
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
-#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_search
 msgid "People"
 msgstr "Personnes"
 
