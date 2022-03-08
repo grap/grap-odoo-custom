@@ -322,9 +322,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="supplier_taxes_id" widget="many2many_tags"/>
                                     <field name="taxes_id" widget="many2many_tags"/>
                                 </group>
-                                <group string="Invoicing Fields" col="4">
+                                <group string="Sale Invoicing Fields" col="4">
                                     <field name="invoice_policy"/>
                                     <field name="default_invoice_policy"/>
+                                </group>
+                                <group string="Purchase Invoicing Fields" col="4">
+                                    <field name="purchase_method"/>
                                 </group>
                             </group>
                         </page>

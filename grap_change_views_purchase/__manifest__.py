@@ -5,7 +5,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "GRAP - Change Purchase Views",
-    "version": "12.0.1.1.4",
+    "version": "12.0.3.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -24,5 +24,6 @@
         "views/menu.xml",
         "views/view_purchase_order.xml",
     ],
+    "post_init_hook": "configure_product_template_purchase_method",
     "installable": True,
 }
