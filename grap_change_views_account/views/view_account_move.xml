@@ -21,6 +21,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="tax_ids" position="after">
                 <field name="tax_line_id"/>
             </field>
+            <xpath expr="//field[@name='line_ids']/tree" position="attributes">
+                <attribute name="limit">1000</attribute>
+            </xpath>
         </field>
     </record>
 

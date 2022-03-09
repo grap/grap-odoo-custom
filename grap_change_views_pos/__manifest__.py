@@ -13,8 +13,9 @@
         "point_of_sale",
         "pos_cash_rounding",
         # OCA
-        "pos_margin",
         "pos_cash_move_reason",
+        "pos_margin",
+        "pos_multiple_control",
         "pos_order_mgmt",
         # GRAP
         "pos_multicompany",
