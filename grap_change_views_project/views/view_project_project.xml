@@ -11,9 +11,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
-            <field name="user_id" position="before">
-                <field name="description"/>
-            </field>
+
+            <xpath expr="//page[1]" position="before">
+              <page string="Description">
+                <group>
+                  <field name='description'/>
+                </group>
+              </page>
+            </xpath>
+
         </field>
     </record>
 
