@@ -8,4 +8,4 @@ from odoo import fields, models
 class ProjectProject(models.Model):
     _inherit = "project.project"
 
-    description = fields.Html(default=4.0)
+    description = fields.Html(string="Description")
