@@ -10,6 +10,8 @@
     "license": "AGPL-3",
     "depends": [
         "project",
+        # OCA
+        "project_task_add_very_high",
     ],
     "data": [
         "views/templates.xml",
