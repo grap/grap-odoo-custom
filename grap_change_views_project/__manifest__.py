@@ -1,5 +1,5 @@
 # Copyright (C) 2022-Today: GRAP (http://www.grap.coop)
-# @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+# @author: Mouna SEBTI (https://github.com/mounasb)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "GRAP - Change Project Views",
@@ -12,7 +12,7 @@
         "project",
     ],
     "data": [
-        # "views/templates.xml",
+        "views/templates.xml",
         "views/view_project_project.xml",
         "views/view_project_task.xml",
     ],
