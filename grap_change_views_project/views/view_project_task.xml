@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Copyright (C) 2022-Today GRAP (http://www.grap.coop)
-@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Mouna SEBTI (https://github.com/mounasb)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
 <odoo>
 
-    <record id="task_dummy_id" model="ir.ui.view">
+    <record id="view_project_task_form2" model="ir.ui.view">
+        <field name="name">view_task_form2</field>
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
@@ -20,6 +21,28 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </group>
           </field>
 
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="project_task_code_tree_view">
+        <field name="name">project.task.code.tree</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="priority" widget="priority"/>
+                <field name="kanban_state" widget="state_selection"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="project_task_search" model="ir.ui.view">
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="description" string="Description"/>
+            </field>
         </field>
     </record>
 
