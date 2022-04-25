@@ -23,6 +23,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="groups">stock.group_stock_user</attribute>
                 <attribute name="confirm">Are you sure you want to confirm this inventory ? This action is definitive</attribute>
             </button>
+            <xpath expr="//field[@name='line_ids']/tree" position="attributes">
+                <attribute name="limit">10000</attribute>
+            </xpath>
         </field>
     </record>
 

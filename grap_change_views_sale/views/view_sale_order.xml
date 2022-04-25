@@ -24,6 +24,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="confirmation_date" position="after">
                 <field name="commitment_date"/>
             </field>
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                <attribute name="limit">1000</attribute>
+            </xpath>
             <xpath expr="//field[@name='order_line']/tree/control/create[@groups='product.group_product_variant']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>

@@ -22,6 +22,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_pos_session_form_pos_multiple_control" model="ir.ui.view">
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="pos_multiple_control.view_pos_session_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='summary_statement_ids']/form/field[@name='line_ids']/tree" position="attributes">
+                <attribute name="limit">1000</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record id="view_pos_session_search" model="ir.ui.view">
         <field name="model">pos.session</field>
         <field name="inherit_id" ref="point_of_sale.view_pos_session_search"/>
