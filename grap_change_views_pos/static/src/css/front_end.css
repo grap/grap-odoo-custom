@@ -57,3 +57,7 @@
 div.orderlist-screen span.search-clear{
     display: none;
 }
+
+.pos .clientlist-screen .button.new-customer{
+    margin-left: 160px;
+}
