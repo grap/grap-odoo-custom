@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-26 13:11+0000\n"
-"PO-Revision-Date: 2021-10-26 13:11+0000\n"
+"POT-Creation-Date: 2022-03-10 16:24+0000\n"
+"PO-Revision-Date: 2022-03-10 16:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Appliquer la marge"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Category"
-msgstr "Format"
+msgstr "Catégorie"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -176,18 +176,13 @@ msgstr "Inventaire"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Invoicing Fields"
-msgstr "Champs de facturation"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Joint Buying"
 msgstr "Commande groupée"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Manual Deletion in the Scale System"
-msgstr "Suppression manuelle sur le système de balance"
+msgstr "Suppression manuel dans le système de balance"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
@@ -254,7 +249,7 @@ msgstr "Article"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Product Moves"
-msgstr "Mouvements de produits"
+msgstr "Mouvements d'articles"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -351,6 +346,11 @@ msgstr "Articles (eBoutique)"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Purchase Invoicing Fields"
+msgstr "Champs de facturation à l'achat"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Purchases"
 msgstr "Achats"
 
@@ -384,6 +384,11 @@ msgstr "Envoyer une modification au système de balance"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Sale"
 msgstr "Vente"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Sale Invoicing Fields"
+msgstr "Champs de facturation à la vente"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
@@ -459,6 +464,11 @@ msgstr "UdM"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Update Joint Buying Product"
+msgstr "Mettre à jour le produit de commande groupée"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Update Qty On Hand"
 msgstr "Mettre à jour le stock disponible"
 
@@ -511,4 +521,3 @@ msgstr "🍴 Informations alimentaire"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "🚩 Production place"
 msgstr "🚩 Lieu de production"
-
