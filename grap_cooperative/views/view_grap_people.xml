@@ -151,7 +151,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_grap_people_tree_editable" model="ir.ui.view">
         <field name="model">grap.people</field>
         <field name="arch" type="xml">
-            <tree editable="bottom">
+            <tree editable="bottom" create="false">
                 <field name="name" invisible="1"/>
                 <field name="last_name"/>
                 <field name="first_name"/>
