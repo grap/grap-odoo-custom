@@ -224,7 +224,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_res_company_tree_editable" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="arch" type="xml">
-            <tree editable="bottom">
+            <tree editable="bottom" create="false">
                 <field name="code"/>
                 <field name="clean_name"/>
                 <field name="attendant_interlocutor_id" />
