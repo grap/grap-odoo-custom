@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * grap_cooperative
+#	* grap_cooperative
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-17 12:40+0000\n"
-"PO-Revision-Date: 2022-02-17 12:40+0000\n"
+"POT-Creation-Date: 2022-04-26 15:06+0000\n"
+"PO-Revision-Date: 2022-04-26 15:06+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,13 +24,14 @@ msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_interlocutor_id
-msgid "Accouting Interlocutor"
-msgstr "Interlocuteur comptabilité"
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_search
+msgid "Accounting Interlocutor"
+msgstr "Interlocuteur·ice comptabilité"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_referent_id
-msgid "Accouting Referent"
-msgstr "Référent comptabilité"
+msgid "Accounting Referent"
+msgstr "Référent·e comptabilité"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_res_company
@@ -38,6 +39,12 @@ msgstr "Référent comptabilité"
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_company_category_kanban
 msgid "Activities"
 msgstr "Activités"
+
+#. module: grap_cooperative
+#: model:ir.actions.act_window,name:grap_cooperative.action_res_company_editable
+#: model:ir.ui.menu,name:grap_cooperative.menu_company_editable
+msgid "Activities (Editable View)"
+msgstr "Activités (Vue Éditable)"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_company_category
@@ -57,8 +64,9 @@ msgstr "Sociétés archivées"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__attendant_interlocutor_id
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_search
 msgid "Attendant Interlocutor"
-msgstr "Interlocuteur accompagnement"
+msgstr "Interlocuteur·ice accompagnement"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
@@ -186,11 +194,6 @@ msgid "Editable View"
 msgstr "Vue éditable"
 
 #. module: grap_cooperative
-#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form
-msgid "Fill first and last name ↓"
-msgstr "Remplir prénom et nom ↓"
-
-#. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__first_name
 msgid "First name"
 msgstr "Prénom"
@@ -217,8 +220,9 @@ msgstr "GRAP Personnes"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_interlocutor_id
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_search
 msgid "HR Interlocutor"
-msgstr "Interlocuteur social"
+msgstr "Interlocuteur·ice social"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_referent_id
@@ -234,13 +238,14 @@ msgstr ""
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_interlocutor_id
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_search
 msgid "IT Interlocutor"
-msgstr "Interlocuteur informatique"
+msgstr "Interlocuteur·ice informatique"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__it_referent_id
 msgid "IT Referent"
-msgstr "Référent informatique"
+msgstr "Référent·e informatique"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__image
@@ -410,12 +415,12 @@ msgstr "👤 Informations de contact"
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
 msgid "👥 Interlocutors in the service team"
-msgstr "👥 Interlocuteur·rices dans l'équipe support"
+msgstr "👥 Interlocuteur·ices dans l'équipe support"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
 msgid "👥 Referents in the company"
-msgstr "👥 Référents dans l'activité"
+msgstr "👥 Référent·es dans l'activité"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form
