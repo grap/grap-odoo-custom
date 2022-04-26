@@ -18,9 +18,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <field name="github_link_1" widget="url" placeholder="e.g. https://www.github.com"/>
               <field name="github_link_2" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_1', '=', False)]}"/>
               <field name="github_link_3" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_2', '=', False)]}"/>
+              <field name="is_odoo_dev_project" widget="boolean_toggle" invisible="1"/>
+              <field name="to_install_modules" attrs="{'invisible':[('is_odoo_dev_project', '=', False)]}"/>
+              <field name="to_uninstall_modules" attrs="{'invisible':[('is_odoo_dev_project', '=', False)]}"/>
+              <field name="sql_requests" attrs="{'invisible':[('is_odoo_dev_project', '=', False)]}"/>
             </group>
           </field>
-
         </field>
     </record>
 
