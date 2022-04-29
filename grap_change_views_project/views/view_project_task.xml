@@ -49,4 +49,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="project.action_view_task" model="ir.actions.act_window">
+      <field name="name">Tasks</field>
+      <field name="res_model">project.task</field>
+      <field name="view_mode">kanban,tree,form,calendar,pivot,graph,activity</field>
+      <field name="context">{'search_default_my_tasks': 1}</field>
+      <field name="domain">[('project_id','not ilike','template')]</field>
+      <field name="search_view_id" ref="project.view_task_search_form"/>
+      <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+              Create a new task
+          </p><p>
+              Odoo's project management allows you to manage the pipeline of your tasks efficiently.<br/>
+              You can track progress, discuss on tasks, attach documents, etc.
+          </p>
+      </field>
+    </record>
+
 </odoo>
