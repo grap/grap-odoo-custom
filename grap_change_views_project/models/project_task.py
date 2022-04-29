@@ -11,3 +11,5 @@ class ProjectTask(models.Model):
     github_link_1 = fields.Char(string="Pull request n°1")
     github_link_2 = fields.Char(string="Pull request n°2")
     github_link_3 = fields.Char(string="Pull request n°3")
+
+    user_id = fields.Many2one(default=None)
