@@ -3,9 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "GRAP - MRP Manufacture R&D - Work in Progress",
-    "summary": "Install MRP modules for R&D",
-    "version": "12.0.1.1.3",
+    "name": "GRAP - MRP Manufacture for Food",
+    "summary": "MRP modules adapted for food-related professions",
+    "version": "12.0.1.1.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -14,23 +14,19 @@
         "mrp",
         "purchase",
         "sale_mrp",
-        # "mrp_bom_cost",
-        # OCA
-        # "mrp_bom_component_menu",
-        # "mrp_auto_assign",
-        "mrp_bom_note",
-        # "mrp_bom_tracking",
-        # "mrp_production_grouped_by_product",
-        # "mrp_production_note",
-        # "mrp_warehouse_calendar",
-        # "product_mrp_info",
-        "web_widget_numeric_step",
-        # GRAP
-        "grap_mrp_food",
+        # OCA modules
+        "web_widget_color",
+        "product_food",
+        "product_label",
     ],
     "data": [
+        "security/ir_rule.xml",
+        "security/ir.model.access.csv",
         "security/res_groups.xml",
         "views/view_mrp_bom.xml",
+        "views/view_mrp_bom_tag.xml",
+        "views/view_mrp_bom_season.xml",
+        "views/view_product_product.xml",
     ],
     "installable": True,
 }

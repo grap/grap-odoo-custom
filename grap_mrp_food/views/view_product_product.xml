@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+
+            <!-- BoM Lines -->
+            <xpath expr="//page[@name='alimentary_composition']" position="inside">
+                <group string="Allergens Choice">
+                    <field name="allergen_ids" nolabel="1" widget="many2many_tags"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * grap_mrp_food
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-28 07:51+0000\n"
+"PO-Revision-Date: 2022-04-28 07:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_mrp_food
+#: model:ir.model,name:grap_mrp_food.model_mrp_bom_season
+msgid "Bill Of Material Seasonality"
+msgstr "Saisonnalité"
+
+#. module: grap_mrp_food
+#: model:ir.model,name:grap_mrp_food.model_mrp_bom_tag
+msgid "Bill Of Material Tag"
+msgstr "Étiquette"
+
+#. module: grap_mrp_food
+#: model:ir.actions.act_window,name:grap_mrp_food.action_bom_season_2_mrp_bom
+#: model:ir.actions.act_window,name:grap_mrp_food.action_bom_tag_2_mrp_bom
+#: model:ir.model,name:grap_mrp_food.model_mrp_bom
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_bom_season_form
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_bom_tag_form
+msgid "Bill of Material"
+msgstr "Recette"
+
+#. module: grap_mrp_food
+#: model:ir.model,name:grap_mrp_food.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de recette"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__bom_qty
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__bom_qty
+msgid "BoM Quantity"
+msgstr "Quantité de recette"
+
+#. module: grap_mrp_food
+#: model:ir.actions.act_window,name:grap_mrp_food.action_bom_season
+#: model:ir.ui.menu,name:grap_mrp_food.menu_bom_season
+msgid "BoM Seasonality"
+msgstr "Saisonnalité"
+
+#. module: grap_mrp_food
+#: model:ir.actions.act_window,name:grap_mrp_food.action_bom_tag
+#: model:ir.ui.menu,name:grap_mrp_food.menu_bom_tag
+msgid "BoM Tags"
+msgstr "Étiquette"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__bom_ids
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__bom_ids
+msgid "Bom"
+msgstr "Recette"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__color
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__color
+msgid "Color Index"
+msgstr "Couleur"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__company_id
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_line__standard_price_unit
+msgid "Cost"
+msgstr "Coût"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,help:grap_mrp_food.field_mrp_bom_line__standard_price_unit
+msgid "Cost used for stock valuation in standard price and as a first price to set in average/fifo. Also used as a base price for pricelists. Expressed in the default unit of measure of the product."
+msgstr "Également utilisé comme prix de base pour les listes. Exprimé dans l'unité de mesure par défaut du produit."
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__create_uid
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__create_date
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__display_name
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__id
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__id
+msgid "ID"
+msgstr ""
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__image
+msgid "Image"
+msgstr ""
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season____last_update
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__write_uid
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__write_date
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: grap_mrp_food
+#: model:res.groups,name:grap_mrp_food.mrp_bom_season_manager
+msgid "Manage Seasonality"
+msgstr "Gérer la saisonnalité"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: grap_mrp_food
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_mrp_bom_form
+msgid "Production information sheet"
+msgstr "Fiche recette"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__bom_season_ids
+msgid "Seasonality"
+msgstr "Saisonnalité"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__name
+msgid "Seasonality name"
+msgstr "Nom de la saisonnalité"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_line__standard_price_subtotal
+msgid "Subtotal price"
+msgstr "Sous-total"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__bom_tag_ids
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,help:grap_mrp_food.field_mrp_bom__image
+msgid "This field holds the image used as image for the product, limited to 1024x1024px."
+msgstr "Ce champ contient l'image utilisée pour cet article, limitée à 1024x1024 px."
+
+#. module: grap_mrp_food
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_mrp_bom_form
+msgid "Total"
+msgstr ""
