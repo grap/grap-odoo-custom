@@ -36,6 +36,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
                 <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="label_ids" widget="many2many_tags"/>
+                <field name="currency_id" invisible="1"/>
                 <field name="standard_price_unit" readonly="1" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />

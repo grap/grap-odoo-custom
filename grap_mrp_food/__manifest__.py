@@ -13,6 +13,7 @@
     "depends": [
         "mrp",
         "purchase",
+        "product",
         "sale_mrp",
         # OCA modules
         "web_widget_color",
@@ -27,6 +28,7 @@
         "views/view_mrp_bom_tag.xml",
         "views/view_mrp_bom_season.xml",
         "views/view_product_product.xml",
+        "views/menu.xml",
     ],
     "installable": True,
 }

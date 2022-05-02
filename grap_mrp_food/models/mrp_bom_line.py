@@ -9,6 +9,7 @@ class MrpBomLine(models.Model):
     _inherit = "mrp.bom.line"
 
     standard_price_unit = fields.Float(related="product_id.standard_price")
+    currency_id = fields.Many2one(related="product_id.currency_id")
 
     standard_price_subtotal = fields.Float(
         string="Subtotal price", compute="_compute_standard_price_subtotal"

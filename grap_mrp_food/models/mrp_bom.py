@@ -26,13 +26,13 @@ class MrpBom(models.Model):
         comodel_name="product.allergen",
         string="Allergens",
         help="Includes allergens of the product and its components",
-        compute="_compute_bom_allergens",
+        compute="_compute_bom_allergens_ids",
         store=True,
     )
 
     @api.multi
     @api.depends("product_id", "bom_line_ids")
-    def _compute_bom_allergens(self):
+    def _compute_bom_allergens_ids(self):
         for bom in self:
             bom.bom_allergen_ids = bom.product_id.allergen_ids
             for bom_line in bom.bom_line_ids:

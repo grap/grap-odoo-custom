@@ -1,19 +1,34 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * grap_mrp_food
+#	* grap_mrp_food
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-28 07:51+0000\n"
-"PO-Revision-Date: 2022-04-28 07:51+0000\n"
+"POT-Creation-Date: 2022-05-02 14:18+0000\n"
+"PO-Revision-Date: 2022-05-02 14:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__bom_allergen_ids
+msgid "Allergens"
+msgstr "Allergènes"
+
+#. module: grap_mrp_food
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_product_product_form
+msgid "Allergens Choice"
+msgstr "Choix des allergènes"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_line__allergen_ids
+msgid "Allergens on product"
+msgstr "Allergènes du produit"
 
 #. module: grap_mrp_food
 #: model:ir.model,name:grap_mrp_food.model_mrp_bom_season
@@ -32,12 +47,12 @@ msgstr "Étiquette"
 #: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_bom_season_form
 #: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_bom_tag_form
 msgid "Bill of Material"
-msgstr "Recette"
+msgstr "Nomenclature"
 
 #. module: grap_mrp_food
 #: model:ir.model,name:grap_mrp_food.model_mrp_bom_line
 msgid "Bill of Material Line"
-msgstr "Ligne de recette"
+msgstr "Ligne de nomenclature"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__bom_qty
@@ -56,6 +71,11 @@ msgstr "Saisonnalité"
 #: model:ir.ui.menu,name:grap_mrp_food.menu_bom_tag
 msgid "BoM Tags"
 msgstr "Étiquette"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,help:grap_mrp_food.field_mrp_bom__bom_label_ids
+msgid "BoM labels are not computed, you have to define them by hand"
+msgstr "Les étiquettes des recettes ne sont pas définies automatiquement, vous devez les paramétrer à la main."
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__bom_ids
@@ -98,6 +118,11 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_product_product__date_last_statement_price
+msgid "Date Last Statement Price"
+msgstr "Date relevé prix"
+
+#. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season__display_name
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__display_name
 msgid "Display Name"
@@ -113,6 +138,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__image
 msgid "Image"
 msgstr ""
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,help:grap_mrp_food.field_mrp_bom__bom_allergen_ids
+msgid "Includes allergens of the product and its components"
+msgstr "Inclus les allergènes du produit et de ses composants"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__bom_label_ids
+msgid "Labels"
+msgstr "Labels"
+
+#. module: grap_mrp_food
+#: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_line__label_ids
+msgid "Labels on product"
+msgstr "Labels du produit"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_season____last_update
@@ -143,9 +183,34 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: grap_mrp_food
+#: model:ir.ui.menu,name:grap_mrp_food.menu_mrp_pricelists
+msgid "Price Lists - Inline editable"
+msgstr "Mercuriales"
+
+#. module: grap_mrp_food
+#: model:ir.model,name:grap_mrp_food.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: grap_mrp_food
 #: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_mrp_bom_form
 msgid "Production information sheet"
 msgstr "Fiche recette"
+
+#. module: grap_mrp_food
+#: model:ir.ui.menu,name:grap_mrp_food.menu_root
+msgid "Products"
+msgstr "Articles"
+
+#. module: grap_mrp_food
+#: model:ir.actions.act_window,name:grap_mrp_food.action_product_product_mrp_tree
+msgid "Products (Price Lists)"
+msgstr ""
+
+#. module: grap_mrp_food
+#: model:ir.ui.menu,name:grap_mrp_food.menu_product_product
+msgid "Products - All"
+msgstr "Produits - Tous"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__bom_season_ids
@@ -176,3 +241,9 @@ msgstr "Ce champ contient l'image utilisée pour cet article, limitée à 1024x1
 #: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_mrp_bom_form
 msgid "Total"
 msgstr ""
+
+#. module: grap_mrp_food
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_mrp_bom_form
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_product_product_mrp_tree
+msgid "UoM"
+msgstr "UdM"
