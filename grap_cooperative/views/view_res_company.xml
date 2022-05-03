@@ -225,8 +225,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">res.company</field>
         <field name="arch" type="xml">
             <tree editable="bottom" create="false">
-                <field name="code"/>
-                <field name="clean_name"/>
+                <field name="code" readonly="True"/>
+                <field name="clean_name" readonly="True"/>
                 <field name="attendant_interlocutor_id" />
                 <field name="accounting_interlocutor_id"/>
                 <field name="hr_interlocutor_id"/>
@@ -241,13 +241,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="view_type">form</field>
         <field name="view_mode">tree</field>
         <field name="view_id" ref="view_res_company_tree_editable"/>
+        <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
     </record>
 
     <menuitem id="menu_company_editable"
         name="Activities (Editable View)"
         parent="menu_editable_view"
         action="action_res_company_editable"
-        sequence="1"/>
+        sequence="2"/>
 
     <record id="action_res_company" model="ir.actions.act_window">
         <field name="name">Activities</field>
