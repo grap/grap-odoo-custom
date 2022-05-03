@@ -34,7 +34,6 @@ msgstr "Modules à désinstaller"
 
 #. module: grap_change_views_project
 #: model:ir.model.fields,field_description:grap_change_views_project.field_project_project__is_odoo_development
-#: model:ir.model.fields,field_description:grap_change_views_project.field_project_task__is_odoo_dev_project
 msgid "Odoo Development"
 msgstr "Développement Odoo"
 
