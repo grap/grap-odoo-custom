@@ -12,11 +12,10 @@ class ProjectTask(models.Model):
     github_link_2 = fields.Char(string="Pull request n°2")
     github_link_3 = fields.Char(string="Pull request n°3")
 
-    is_odoo_dev_project = fields.Boolean(
+    is_odoo_development = fields.Boolean(
         "Odoo Development", related="project_id.is_odoo_development"
     )
 
     to_install_modules = fields.Char("Modules to install")
     to_uninstall_modules = fields.Char("Modules to uninstall")
     sql_requests = fields.Text("SQL requests")
-    to_install = False
