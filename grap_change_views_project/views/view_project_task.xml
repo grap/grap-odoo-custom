@@ -56,11 +56,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <field name="github_link_2"/>
               <field name="github_link_3"/>
           </field>
-            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]" position="inside">
-              <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  title="Pull Requests" style="font-size:18px;color:#505050"/></a></span>
-              <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  title="Pull Requests" style="font-size:18px;color:#505050"/></a></span>
-              <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  title="Pull Requests" style="font-size:18px;color:#505050"/></a></span>
-            </xpath>
+          <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </xpath>
+          <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
+            <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull Request" title="Pull Request" style="font-size:18px;color:#505050;margin-left:7px"/></a></span>
+            <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull Request" title="Pull Request" style="font-size:18px;color:#505050"/></a></span>
+            <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull Request" title="Pull Request" style="font-size:18px;color:#505050"/></a></span>
+          </xpath>
         </field>
     </record>
 
