@@ -46,4 +46,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_task_kanban" model="ir.ui.view" >
+        <field name="name">project.task.kanban.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+          <field name="activity_ids" position="after">
+              <field name="github_link_1"/>
+              <field name="github_link_2"/>
+              <field name="github_link_3"/>
+          </field>
+            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]" position="inside">
+              <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  title="Pull Requests" style="font-size:18px;color:#505050"/></a></span>
+              <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  title="Pull Requests" style="font-size:18px;color:#505050"/></a></span>
+              <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  title="Pull Requests" style="font-size:18px;color:#505050"/></a></span>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
