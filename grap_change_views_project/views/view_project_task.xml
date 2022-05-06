@@ -27,7 +27,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record model="ir.ui.view" id="project_task_code_tree_view">
+    <record id="project_task_code_tree_view" model="ir.ui.view">
         <field name="name">project.task.code.tree</field>
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_tree2"/>
