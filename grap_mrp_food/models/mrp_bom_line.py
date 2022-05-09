@@ -8,6 +8,7 @@ from odoo import api, fields, models
 class MrpBomLine(models.Model):
     _inherit = "mrp.bom.line"
 
+    # New fields
     standard_price_unit = fields.Float(related="product_id.standard_price")
     currency_id = fields.Many2one(related="product_id.currency_id")
 
@@ -25,6 +26,12 @@ class MrpBomLine(models.Model):
         comodel_name="product.allergen",
         related="product_id.allergen_ids",
         string="Allergens on product",
+    )
+
+    seasonality_ids = fields.Many2many(
+        comodel_name="mrp.seasonality",
+        related="product_id.product_seasonality_ids",
+        string="Seasonalities of the product",
     )
 
     @api.multi

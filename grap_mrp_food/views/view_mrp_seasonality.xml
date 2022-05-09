@@ -6,25 +6,37 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="action_bom_season_2_mrp_bom" model="ir.actions.act_window">
-        <field name="name">Bill of Material</field>
+    <record id="action_mrp_season_2_mrp_bom" model="ir.actions.act_window">
+        <field name="name">Bills of Materials</field>
         <field name="res_model">mrp.bom</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[('bom_season_ids', '=', active_id)]</field>
     </record>
 
-    <record id="view_bom_season_form" model="ir.ui.view">
-        <field name="model">mrp.bom.season</field>
+    <record id="action_mrp_season_2_product_product" model="ir.actions.act_window">
+        <field name="name">Products Variants</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('product_seasonality_ids', '=', active_id)]</field>
+    </record>
+
+    <record id="view_mrp_season_form" model="ir.ui.view">
+        <field name="model">mrp.seasonality</field>
         <field name="arch" type="xml">
             <form>
                 <header/>
 
                 <sheet>
                     <div class="oe_right oe_button_box" name="buttons">
+                        <button class="oe_stat_button" type="action" icon="fa-flask"
+                            name="%(action_mrp_season_2_mrp_bom)d">
+                            <field string="Bills of Materials" name="bom_qty" widget="statinfo"/>
+                        </button>
                         <button class="oe_stat_button" type="action" icon="fa-list"
-                            name="%(action_bom_season_2_mrp_bom)d">
-                            <field string="Bill of Material" name="bom_qty" widget="statinfo"/>
+                            name="%(action_mrp_season_2_product_product)d">
+                            <field string="Products Variants" name="product_product_qty" widget="statinfo"/>
                         </button>
                     </div>
 
@@ -40,8 +52,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_bom_season_tree" model="ir.ui.view">
-        <field name="model">mrp.bom.season</field>
+    <record id="view_mrp_seasonality_tree" model="ir.ui.view">
+        <field name="model">mrp.seasonality</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -51,16 +63,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="action_bom_season" model="ir.actions.act_window">
-        <field name="name">BoM Seasonality</field>
+    <record id="action_mrp_seasonality" model="ir.actions.act_window">
+        <field name="name">MRP Seasonality</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">mrp.bom.season</field>
+        <field name="res_model">mrp.seasonality</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_bom_season"
+    <menuitem id="menu_mrp_seasonality"
         parent="mrp.menu_mrp_configuration" sequence="10"
-        action="action_bom_season"/>
+        action="action_mrp_seasonality"/>
 
 </odoo>

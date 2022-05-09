@@ -5,9 +5,9 @@
 from odoo import api, fields, models
 
 
-class MrpBomSeason(models.Model):
-    _name = "mrp.bom.season"
-    _description = "Bill Of Material Seasonality"
+class MrpSeasonality(models.Model):
+    _name = "mrp.seasonality"
+    _description = "MRP Seasonality"
 
     # Column Section
     company_id = fields.Many2one(
@@ -29,10 +29,26 @@ class MrpBomSeason(models.Model):
         string="BoM Quantity", compute="_compute_bom_qty", store=True
     )
 
+    product_product_ids = fields.Many2many(
+        comodel_name="product.product",
+        inverse_name="product_seasonality_ids",
+    )
+
+    product_product_qty = fields.Integer(
+        string="Product Variant Quantity",
+        compute="_compute_product_product_qty",
+        store=True,
+    )
+
     @api.depends("bom_ids")
     def _compute_bom_qty(self):
-        for bom_tag in self:
-            bom_tag.bom_qty = len(bom_tag.bom_ids)
+        for seasonality in self:
+            seasonality.bom_qty = len(seasonality.bom_ids)
+
+    @api.depends("product_product_ids")
+    def _compute_product_product_qty(self):
+        for seasonality in self:
+            seasonality.product_product_qty = len(seasonality.product_product_ids)
 
     # Default Section
     @api.model

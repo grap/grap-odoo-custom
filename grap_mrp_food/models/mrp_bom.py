@@ -13,7 +13,7 @@ class MrpBom(models.Model):
     bom_tag_ids = fields.Many2many(comodel_name="mrp.bom.tag", string="Tags")
 
     bom_season_ids = fields.Many2many(
-        comodel_name="mrp.bom.season", string="Seasonality"
+        comodel_name="mrp.seasonality", string="Seasonality"
     )
 
     bom_label_ids = fields.Many2many(

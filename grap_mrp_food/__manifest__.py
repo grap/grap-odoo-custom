@@ -24,11 +24,11 @@
         "security/ir_rule.xml",
         "security/ir.model.access.csv",
         "security/res_groups.xml",
+        "views/menu.xml",
         "views/view_mrp_bom.xml",
         "views/view_mrp_bom_tag.xml",
-        "views/view_mrp_bom_season.xml",
+        "views/view_mrp_seasonality.xml",
         "views/view_product_product.xml",
-        "views/menu.xml",
     ],
     "installable": True,
 }

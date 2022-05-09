@@ -17,28 +17,49 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <h1><field name="product_tmpl_id" placeholder="Production information sheet" readonly="1"/></h1>
                 </div>
             </xpath>
-            <xpath expr="//field[@name='product_qty']" position="attributes">
+            <!-- <xpath expr="//field[@name='product_qty']" position="attributes">
                 <attribute name="widget">numeric_step</attribute>
                 <attribute name="options">{'step': 1, 'min': 0}</attribute>
-            </xpath>
+            </xpath> -->
             <xpath expr="//field[@name='code']" position="after">
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="bom_season_ids" groups="grap_mrp_food.mrp_bom_season_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_season_ids" groups="grap_mrp_food.mrp_seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
             </xpath>
+
+            <!-- TODO : gros travail en s'inspirant de sale. Ya pas mal de code à faire dans mrp le model .bom.line-->
+            <!-- s'inspire de src/odoo/addons/sale/models/sale.py -->
+            <!-- ressources : https://apps.odoo.com/apps/modules/11.0/web_section_note_widget/ -->
+            <!-- ressources : https://apps.odoo.com/apps/modules/11.0/web_section_note_widget/ -->
+            <!-- <xpath expr="//field[@name='bom_line_ids']" position="attributes">
+                <attribute name="widget">section_and_note_one2many</attribute>
+            </xpath>
+            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='sequence']" position="before">
+              <control>
+                <create string="Add a product"/>
+                <create string="Add a section" context="{'default_display_type': 'line_section'}"/>
+                <create string="Add a note" context="{'default_display_type': 'line_note'}"/>
+              </control>
+              <field name="display_type" invisible="1"/>
+              <field name="name" widget="section_and_note_text"/>
+            </xpath> -->
 
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="attributes">
                 <attribute name="widget">numeric_step</attribute>
                 <attribute name="options">{'step': 0.1, 'min': 0}</attribute>
             </xpath>
+            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_uom_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price_unit" readonly="1" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
+                <field name="seasonality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
             </xpath>
         </field>
@@ -50,7 +71,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="bom_season_ids" groups="grap_mrp_food.mrp_bom_season_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_season_ids" groups="grap_mrp_food.mrp_seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
             </xpath>
@@ -63,7 +84,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_tmpl_id']" position="after">
                 <field name="bom_tag_ids"/>
-                <field name="bom_season_ids" groups="grap_mrp_food.mrp_bom_season_manager"/>
+                <field name="bom_season_ids" groups="grap_mrp_food.mrp_seasonality_manager"/>
                 <field name="bom_label_ids"/>
                 <field name="bom_allergen_ids"/>
             </xpath>
