@@ -31,18 +31,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
         <!-- STATE != DONE -->
-        <xpath expr="//table[@t-if=o.state!='done']//span[@t-field='move.product_id']" position="attributes">
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move.product_id']" position="attributes">
               <attribute name="t-att-style">'display: none'</attribute>
         </xpath>
-        <xpath expr="//table[@t-if=o.state!='done']//span[@t-field='move.product_id']" position="after">
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move.product_id']" position="after">
                 <span t-field="move.name"/>
         </xpath>
 
         <!-- STATE == DONE -->
-        <xpath expr="//table[@t-if=&quot;o.move_line_ids and o.state=='done'&quot;]//span[@t-field='move_line.product_id']" position="attributes">
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move_line.product_id']" position="attributes">
               <attribute name="t-att-style">'display: none'</attribute>
         </xpath>
-        <xpath expr="//table[@t-if=&quot;o.move_line_ids and o.state=='done'&quot;]//span[@t-field='move_line.product_id']" position="after">
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move_line.product_id']" position="after">
                 <span t-field="move_line.move_id.name"/>
         </xpath>
 
