@@ -83,7 +83,7 @@ msgstr ""
 #. module: grap_change_views_project
 #: model:ir.model.fields,field_description:grap_change_views_project.field_project_task__sql_request
 msgid "SQL request"
-msgstr ""
+msgstr "Requête SQL"
 
 #. module: grap_change_views_project
 #: model:ir.model,name:grap_change_views_project.model_project_task
