@@ -16,8 +16,8 @@ class ProjectTask(models.Model):
         "Odoo Development", related="project_id.is_odoo_development"
     )
 
-    to_install_modules = fields.Char("Modules to install")
-    to_uninstall_modules = fields.Char("Modules to uninstall")
-    sql_requests = fields.Text("SQL requests")
+    modules_to_install = fields.Char("Modules to install")
+    modules_to_uninstall = fields.Char("Modules to uninstall")
+    sql_request = fields.Text("SQL request")
 
     user_id = fields.Many2one(default=None)

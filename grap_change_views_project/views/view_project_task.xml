@@ -18,9 +18,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <field name="github_link_2" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_1', '=', False)]}"/>
               <field name="github_link_3" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_2', '=', False)]}"/>
               <field name="is_odoo_development" widget="boolean_toggle" invisible="1"/>
-              <field name="to_install_modules" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
-              <field name="to_uninstall_modules" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
-              <field name="sql_requests" widget="ace" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
+              <field name="modules_to_install" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
+              <field name="modules_to_uninstall" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
+              <field name="sql_request" widget="ace" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
             </group>
           </field>
         </field>
@@ -61,20 +61,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <field name="github_link_1"/>
               <field name="github_link_2"/>
               <field name="github_link_3"/>
-              <field name="to_install_modules"/>
-              <field name="to_uninstall_modules"/>
-              <field name="sql_requests"/>
+              <field name="modules_to_install"/>
+              <field name="modules_to_uninstall"/>
+              <field name="sql_request"/>
           </field>
           <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="attributes">
             <attribute name="invisible">1</attribute>
           </xpath>
           <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
-            <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull Request" title="Pull Request" style="font-size:18px;color:#505050;margin-left:7px"/></a></span>
-            <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull Request" title="Pull Request" style="font-size:18px;color:#505050"/></a></span>
-            <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull Request" title="Pull Request" style="font-size:18px;color:#505050"/></a></span>
-            <span t-if="record.to_install_modules.raw_value"><i class="fa fa-plus-square" role="img"  aria-label="Modules to install" t-att-title="record.to_install_modules.value" style="font-size:15px;color:#505050"/></span>
-            <span t-if="record.to_uninstall_modules.raw_value"><i class="fa fa-minus-square" role="img"  aria-label="Modules to uninstall" t-att-title="record.to_uninstall_modules.value" style="font-size:15px;color:#505050"/></span>
-            <span t-if="record.sql_requests.raw_value"><i class="fa fa-database" role="img"  aria-label="SQL Requests" title="SQL Requests" style="font-size:15px;color:#505050"/></span>
+            <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050;margin-left:7px"/></a></span>
+            <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
+            <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
+            <span t-if="record.modules_to_install.raw_value"><i class="fa fa-plus-square" role="img"  aria-label="Modules to install" t-att-title="record.modules_to_install.value" style="font-size:15px;color:#505050"/></span>
+            <span t-if="record.modules_to_uninstall.raw_value"><i class="fa fa-minus-square" role="img"  aria-label="Modules to uninstall" t-att-title="record.modules_to_uninstall.value" style="font-size:15px;color:#505050"/></span>
+            <span t-if="record.sql_request.raw_value"><i class="fa fa-database" role="img"  aria-label="SQL request" title="SQL request" style="font-size:15px;color:#505050"/></span>
           </xpath>
         </field>
     </record>
