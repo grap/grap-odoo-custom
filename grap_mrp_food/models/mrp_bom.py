@@ -37,14 +37,3 @@ class MrpBom(models.Model):
             bom.bom_allergen_ids = bom.product_id.allergen_ids
             for bom_line in bom.bom_line_ids:
                 bom.bom_allergen_ids = [x.id for x in bom_line.product_id.allergen_ids]
-
-
-# FAIRE COMME Ça POUR LES MANY 2 MANY ??
-
-# allergen_ids = fields.Many2many(
-#     comodel_name="product.allergen",
-#     relation="product_allergen_product_rel",
-#     column1="product_id",
-#     column2="allergen_id",
-#     string="Allergens",
-# )

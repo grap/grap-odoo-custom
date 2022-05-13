@@ -7,22 +7,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
       <!-- ************************************************************ -->
-      <!-- Product.product Form View -->
+      <!-- Product.product Original Form View -->
       <!-- ************************************************************ -->
 
     <record id="view_product_product_form" model="ir.ui.view">
         <field name="model">product.product</field>
-        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="inherit_id" ref="product_food.view_product_product_form" />
         <field name="arch" type="xml">
 
             <xpath expr="//group[@name='group_standard_price']" position="inside">
                 <field name="date_last_statement_price"/>
             </xpath>
 
-            <xpath expr="//page[@name='alimentary_composition']" position="inside">
-                <group string="Allergens Choice">
-                    <field name="allergen_ids" nolabel="1" widget="many2many_tags"/>
-                </group>
+            <xpath expr="//field[@name='is_alimentary']" position="before">
+                <field name="allergen_ids" widget="many2many_tags"/>
             </xpath>
 
             <xpath expr="//field[@name='is_alimentary']" position="after">
@@ -73,103 +71,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="action_product_product_mrp_tree" model="ir.actions.act_window">
-        <field name="name">Products - All</field>
+        <field name="name">Composants Products</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_product_product_mrp_tree"/>
+        <field name="context">{"search_default_components":1}</field>
     </record>
 
     <menuitem id="menu_product_product_all"
-        name="Products - All"
-        parent="grap_mrp_food.menu_mrp_pricelists" sequence="1"
+        name="Price Lists - Inline editable"
+        parent="mrp.menu_mrp_root" sequence="10"
         action="action_product_product_mrp_tree"/>
 
-
-<!-- TODO : les vues ne sont plus éditables avec le group by -->
-
-    <!-- ************************************************************ -->
-    <!-- 2 - Products (All group by Vendors) -->
-    <!-- ************************************************************ -->
-
-
-    <record id="view_product_product_mrp_tree_vendors" model="ir.ui.view">
-        <field name="model">product.product</field>
-        <field name="arch" type="xml">
-          <tree editable="bottom">
-              <field name="default_code" readonly="1"/>
-              <field name="name" readonly="1"/>
-              <field name="categ_id" readonly="1"/>
-              <field name="currency_id" invisible="1"/>
-              <field name="standard_price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
-              <field name="uom_id" string="UoM" readonly="1"/>
-              <field name="seller_ids" widget="many2many_tags" readonly="1"/>
-              <field name="date_last_statement_price"/>
-              <field name="label_ids" widget="many2many_tags"/>
-              <field name="allergen_ids" widget="many2many_tags"/>
-              <field name="description"/>
-              <field name="company_id" groups="base.group_multi_company" readonly="1"/>
-          </tree>
-        </field>
-    </record>
-
-
-    <record id="action_product_product_mrp_tree_vendors" model="ir.actions.act_window">
-        <field name="name">Products (Group by Main Vendor)</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">product.product</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_product_product_mrp_tree_vendors"/>
-        <field name="context">{"search_default_mrp_product_group_by_main_seller":1}</field>
-    </record>
-
-    <menuitem id="menu_product_product_vendors"
-        name="Products - Group by Vendors"
-        parent="grap_mrp_food.menu_mrp_pricelists" sequence="2"
-        action="action_product_product_mrp_tree_vendors"/>
-
-
-    <!-- ************************************************************ -->
-    <!-- 3 - Products (All group by Category) -->
-    <!-- ************************************************************ -->
-
-
-    <record id="view_product_product_mrp_tree_category" model="ir.ui.view">
-        <field name="model">product.product</field>
-        <field name="arch" type="xml">
-          <tree editable="bottom">
-              <field name="default_code" readonly="1"/>
-              <field name="name" readonly="1"/>
-              <field name="categ_id" readonly="1"/>
-              <field name="currency_id" invisible="1"/>
-              <field name="standard_price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
-              <field name="uom_id" string="UoM" readonly="1"/>
-              <field name="seller_ids" widget="many2many_tags" readonly="1"/>
-              <field name="date_last_statement_price"/>
-              <field name="label_ids" widget="many2many_tags"/>
-              <field name="allergen_ids" widget="many2many_tags"/>
-              <field name="description"/>
-              <field name="company_id" groups="base.group_multi_company" readonly="1"/>
-          </tree>
-        </field>
-    </record>
-
-
-    <record id="action_product_product_mrp_tree_category" model="ir.actions.act_window">
-        <field name="name">Products (Group by Category)</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">product.product</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_product_product_mrp_tree_category"/>
-        <field name="context">{"search_default_mrp_product_group_by_category":1}</field>
-    </record>
-
-    <menuitem id="menu_product_product_category"
-        name="Products - Group by Category"
-        parent="grap_mrp_food.menu_mrp_pricelists" sequence="3"
-        action="action_product_product_mrp_tree_category"/>
 
 </odoo>

@@ -30,6 +30,7 @@
         "product_sale_tax_price_included",
         # GRAP
         "fiscal_company_product",
+        "grap_mrp",
         "stock_preparation_category",
         "recurring_consignment",
         "product_to_scale_bizerba",

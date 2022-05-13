@@ -22,10 +22,8 @@ class ProductProduct(models.Model):
         store=True,
     )
 
-    # TODO : ne se déclenche pas au changement d'ordre de foournisseur
-    # est-ce qu'il y a une autre méthode de connaitre le partner principal ?
     @api.multi
-    @api.depends("variant_seller_ids")
+    @api.depends("variant_seller_ids.sequence")
     def _compute_main_seller_partner_id(self):
         for product in self:
             if len(product.variant_seller_ids):
