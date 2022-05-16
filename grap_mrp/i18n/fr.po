@@ -25,7 +25,7 @@ msgstr "Tous les articles"
 #: model:ir.actions.act_window,name:grap_mrp.action_grap_mrp_bom
 #: model:ir.ui.menu,name:grap_mrp.menu_grap_mrp_bom
 msgid "Bills of Materials"
-msgstr "Nomenclatures"
+msgstr "Fiches techniques"
 
 #. module: grap_mrp
 #: model:ir.actions.act_window,name:grap_mrp.action_grap_mrp_product_composants
@@ -47,7 +47,7 @@ msgstr "Produits finis"
 #. module: grap_mrp
 #: model:res.groups,name:grap_mrp.mrp_bom_type_manager
 msgid "Manage BoM Type"
-msgstr "Gérer les types de Nomenclatures"
+msgstr "Gérer les types de fiche technique"
 
 #. module: grap_mrp
 #: model_terms:ir.ui.view,arch_db:grap_mrp.view_grap_mrp_product_kanban

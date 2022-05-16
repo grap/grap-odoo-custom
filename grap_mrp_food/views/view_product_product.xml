@@ -47,6 +47,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <!-- ************************************************************ -->
+    <!-- 0 - new menu for Price Lists -->
+    <!-- ************************************************************ -->
+
+    <menuitem id="menu_mrp_editable_views"
+        name="Price Lists - Inline editable"
+        parent="mrp.menu_mrp_root" sequence="10"/>
+
+    <!-- ************************************************************ -->
     <!-- 1 - Products (Price Lists Tree View) -->
     <!-- ************************************************************ -->
 
@@ -71,7 +79,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="action_product_product_mrp_tree" model="ir.actions.act_window">
-        <field name="name">Composants Products</field>
+        <field name="name">Composants Products - Inline editable</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
@@ -81,9 +89,47 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_product_product_all"
-        name="Price Lists - Inline editable"
-        parent="mrp.menu_mrp_root" sequence="10"
+        name="Composants Products"
+        parent="menu_mrp_editable_views" sequence="1"
         action="action_product_product_mrp_tree"/>
+
+    <!-- ************************************************************ -->
+    <!-- 2 - Supplier info (Price Lists Tree View) -->
+    <!-- ************************************************************ -->
+
+    <record id="view_product_supplierinfo_mrp_tree" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="false">
+                <field name="product_tmpl_id" string="Product" readonly="1"/>
+                <field name="display_name" string="Supplier" readonly="1"/>
+                <field name="product_name"/>
+                <field name="product_code"/>
+                <field name="package_qty"/>
+                <field name="min_qty"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="price" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
+                <field name="product_uom" readonly="1"/>
+                <field name="discount"/>
+                <field name="discount2"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_supplierinfo_mrp_tree" model="ir.actions.act_window">
+        <field name="name">Suppliers informations - Inline editable</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.supplierinfo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_supplierinfo_mrp_tree"/>
+    </record>
+
+    <menuitem id="menu_product_supplierinfo_editable"
+        name="Suppliers Informations"
+        parent="menu_mrp_editable_views" sequence="2"
+        action="action_product_supplierinfo_mrp_tree"/>
 
 
 </odoo>

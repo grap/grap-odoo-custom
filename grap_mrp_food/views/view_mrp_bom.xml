@@ -17,9 +17,23 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//group[1]" position="before">
                 <field name="image" widget="image" class="oe_avatar"/>
                 <div class="oe_title">
-                    <label for="product_tmpl_id" string="Production information sheet"/>
-                    <h1><field name="product_tmpl_id" placeholder="Production information sheet" readonly="1"/></h1>
+                    <!-- <label for="product_tmpl_id" string="Bill of Materials"/> -->
+                    <label for="product_id" string="Bill of Materials"/>
+                    <!-- <h1><field name="product_tmpl_id" readonly="1"/></h1> -->
+                    <h1><field name="product_id" readonly="1"/></h1>
                 </div>
+            </xpath>
+            <!-- Handle product product and not template -->
+            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                <field name="product_id" string="Product"/>
+            </xpath>
+            <!-- / Handle product product and not template -->
+            <xpath expr="//field[@name='routing_id']" position="before">
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
             </xpath>
             <xpath expr="//field[@name='code']" position="after">
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
@@ -39,7 +53,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="currency_id" invisible="1"/>
-                <field name="standard_price_unit" readonly="1" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <!-- <field name="standard_price_unit" readonly="1" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/> -->
                 <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="seasonality_ids" groups="grap_mrp_food.mrp_seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>

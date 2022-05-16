@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-13 14:29+0000\n"
-"PO-Revision-Date: 2022-05-13 14:29+0000\n"
+"POT-Creation-Date: 2022-05-16 10:19+0000\n"
+"PO-Revision-Date: 2022-05-16 10:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,25 +28,25 @@ msgstr "Allergènes du produit"
 #. module: grap_mrp_food
 #: model:ir.model,name:grap_mrp_food.model_mrp_bom_tag
 msgid "Bill Of Material Tag"
-msgstr "Étiquette"
+msgstr "Tags des Fiches recettes"
 
 #. module: grap_mrp_food
 #: model:ir.actions.act_window,name:grap_mrp_food.action_bom_tag_2_mrp_bom
 #: model:ir.model,name:grap_mrp_food.model_mrp_bom
 #: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_bom_tag_form
 msgid "Bill of Material"
-msgstr "Nomenclature"
+msgstr "Fiche technique"
 
 #. module: grap_mrp_food
 #: model:ir.model,name:grap_mrp_food.model_mrp_bom_line
 msgid "Bill of Material Line"
-msgstr "Ligne de nomenclature"
+msgstr "Ligne de fiche technique"
 
 #. module: grap_mrp_food
 #: model:ir.actions.act_window,name:grap_mrp_food.action_mrp_season_2_mrp_bom
 #: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_mrp_season_form
 msgid "Bills of Materials"
-msgstr "Nomenclatures"
+msgstr "Fiches techniques"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__bom_qty
@@ -58,12 +58,12 @@ msgstr "Quantité de recette"
 #: model:ir.actions.act_window,name:grap_mrp_food.action_bom_tag
 #: model:ir.ui.menu,name:grap_mrp_food.menu_bom_tag
 msgid "BoM Tags"
-msgstr "Étiquette"
+msgstr "Tags"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,help:grap_mrp_food.field_mrp_bom__bom_label_ids
 msgid "BoM labels are not computed, you have to define them by hand"
-msgstr "Les étiquettes des recettes ne sont pas définies automatiquement, vous devez les paramétrer à la main."
+msgstr "Les tags des recettes ne sont pas définies automatiquement, vous devez les paramétrer à la main."
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__bom_ids
@@ -91,7 +91,17 @@ msgstr "Couleur"
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__company_id
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_seasonality__company_id
 msgid "Company"
-msgstr "Société"
+msgstr ""
+
+#. module: grap_mrp_food
+#: model:ir.ui.menu,name:grap_mrp_food.menu_product_product_all
+msgid "Composants Products"
+msgstr "Matières Premières"
+
+#. module: grap_mrp_food
+#: model:ir.actions.act_window,name:grap_mrp_food.action_product_product_mrp_tree
+msgid "Composants Products - Inline editable"
+msgstr "Produits Matières Premières - Éditable en ligne"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_line__standard_price_unit
@@ -130,11 +140,6 @@ msgstr "Date relevé prix"
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_seasonality__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
-
-#. module: grap_mrp_food
-#: model:ir.actions.act_window,name:grap_mrp_food.action_product_product_mrp_tree
-msgid "Composants Products"
-msgstr "Matières premières"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom_tag__id
@@ -190,12 +195,12 @@ msgstr "Saisonnalité"
 #. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_product_product__main_seller_partner_id
 msgid "Main Seller Partner"
-msgstr "Fournisseur principal"
+msgstr "Fournisseur·e principal·e"
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,help:grap_mrp_food.field_product_product__main_seller_partner_id
 msgid "Main Seller Partner of the product"
-msgstr "Fournisseur principal du produit"
+msgstr "Fournisseur·e principal·e du produit"
 
 #. module: grap_mrp_food
 #: model:res.groups,name:grap_mrp_food.mrp_seasonality_manager
@@ -208,12 +213,13 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: grap_mrp_food
-#: model:ir.ui.menu,name:grap_mrp_food.menu_product_product_all
+#: model:ir.ui.menu,name:grap_mrp_food.menu_mrp_editable_views
 msgid "Price Lists - Inline editable"
-msgstr "Mercuriales"
+msgstr "Mercuriales éditables en ligne"
 
 #. module: grap_mrp_food
 #: model:ir.model,name:grap_mrp_food.model_product_product
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_product_supplierinfo_mrp_tree
 msgid "Product"
 msgstr "Article"
 
@@ -260,9 +266,24 @@ msgid "Subtotal price"
 msgstr "Sous-total"
 
 #. module: grap_mrp_food
+#: model_terms:ir.ui.view,arch_db:grap_mrp_food.view_product_supplierinfo_mrp_tree
+msgid "Supplier"
+msgstr "Fournisseur·e"
+
+#. module: grap_mrp_food
+#: model:ir.ui.menu,name:grap_mrp_food.menu_product_supplierinfo_editable
+msgid "Suppliers Informations"
+msgstr "Prix fournisseur·es"
+
+#. module: grap_mrp_food
+#: model:ir.actions.act_window,name:grap_mrp_food.action_product_supplierinfo_mrp_tree
+msgid "Suppliers informations - Inline editable"
+msgstr "Prix fournisseur·es - Éditable en ligne"
+
+#. module: grap_mrp_food
 #: model:ir.model.fields,field_description:grap_mrp_food.field_mrp_bom__bom_tag_ids
 msgid "Tags"
-msgstr "Étiquettes"
+msgstr ""
 
 #. module: grap_mrp_food
 #: model:ir.model.fields,help:grap_mrp_food.field_mrp_bom__image
