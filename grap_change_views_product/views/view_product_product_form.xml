@@ -304,7 +304,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <group>
                               <field name="date_last_statement_price"/>
                               <field name="allergen_ids" widget="many2many_tags"/>
-                              <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                              <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                              <field name="is_seasonal"/>
                             </group>
                         </page>
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">

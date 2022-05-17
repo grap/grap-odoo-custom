@@ -17,11 +17,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//group[1]" position="before">
                 <field name="image" widget="image" class="oe_avatar"/>
                 <div class="oe_title">
-                    <!-- <label for="product_tmpl_id" string="Bill of Materials"/> -->
                     <label for="product_id" string="Bill of Materials"/>
-                    <!-- <h1><field name="product_tmpl_id" readonly="1"/></h1> -->
                     <h1><field name="product_id" readonly="1"/></h1>
                 </div>
+                <p class="alert alert-warning alert-dismissable" role="alert" attrs="{'invisible': [('is_seasonal', '!=', False)]}">
+                  The BoM contains these products which are not in season
+                  <b><field name="products_not_in_season" readonly="1"/></b>
+                </p>
             </xpath>
             <!-- Handle product product and not template -->
             <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
@@ -37,7 +39,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='code']" position="after">
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="bom_season_ids" groups="grap_mrp_food.mrp_seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_season_ids" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="is_seasonal" widget="boolean"/>
                 <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
             </xpath>
@@ -54,10 +57,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                <!-- <field name="standard_price_unit" readonly="1" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/> -->
                 <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
-                <field name="seasonality_ids" groups="grap_mrp_food.mrp_seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="seasonality_ids" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                <field name="is_seasonal"/>
                 <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
             </xpath>
         </field>
@@ -73,7 +76,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="bom_season_ids" groups="grap_mrp_food.mrp_seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_season_ids" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
             </xpath>
@@ -90,7 +93,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_tmpl_id']" position="after">
                 <field name="bom_tag_ids"/>
-                <field name="bom_season_ids" groups="grap_mrp_food.mrp_seasonality_manager"/>
+                <field name="bom_season_ids" groups="grap_mrp_food.seasonality_manager"/>
                 <field name="bom_label_ids"/>
                 <field name="bom_allergen_ids"/>
             </xpath>

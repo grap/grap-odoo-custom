@@ -29,9 +29,13 @@ class MrpBomLine(models.Model):
     )
 
     seasonality_ids = fields.Many2many(
-        comodel_name="mrp.seasonality",
+        comodel_name="seasonality",
         related="product_id.product_seasonality_ids",
         string="Seasonalities of the product",
+    )
+
+    is_seasonal = fields.Boolean(
+        related="product_id.is_seasonal",
     )
 
     @api.multi

@@ -5,9 +5,9 @@
 from odoo import api, fields, models
 
 
-class MrpSeasonality(models.Model):
-    _name = "mrp.seasonality"
-    _description = "MRP Seasonality"
+class Seasonality(models.Model):
+    _name = "seasonality"
+    _description = "Seasonality"
 
     # Column Section
     company_id = fields.Many2one(
@@ -17,8 +17,13 @@ class MrpSeasonality(models.Model):
     )
 
     name = fields.Char(string="Seasonality name", required=True)
-
     color = fields.Integer("Color Index", default=0)
+
+    seasonality_line_ids = fields.One2many(
+        comodel_name="seasonality.line",
+        inverse_name="seasonality_id",
+        string="Seasonality lines",
+    )
 
     bom_ids = fields.Many2many(
         comodel_name="mrp.bom",
@@ -40,6 +45,8 @@ class MrpSeasonality(models.Model):
         store=True,
     )
 
+    # TODO : un bouton pour rajouter des lignes sur les prochaines années
+
     @api.depends("bom_ids")
     def _compute_bom_qty(self):
         for seasonality in self:
@@ -50,7 +57,7 @@ class MrpSeasonality(models.Model):
         for seasonality in self:
             seasonality.product_product_qty = len(seasonality.product_product_ids)
 
-    # Default Section
+    # Default methos
     @api.model
     def _default_company_id(self):
         return self.env.user.company_id.id

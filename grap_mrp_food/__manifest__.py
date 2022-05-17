@@ -26,8 +26,8 @@
         "security/res_groups.xml",
         "views/view_mrp_bom.xml",
         "views/view_mrp_bom_tag.xml",
-        "views/view_mrp_seasonality.xml",
         "views/view_product_product.xml",
+        "views/view_seasonality.xml",
     ],
     "installable": True,
 }

@@ -29,8 +29,12 @@ class MrpBom(models.Model):
 
     bom_tag_ids = fields.Many2many(comodel_name="mrp.bom.tag", string="Tags")
 
-    bom_season_ids = fields.Many2many(
-        comodel_name="mrp.seasonality", string="Seasonality"
+    bom_season_ids = fields.Many2many(comodel_name="seasonality", string="Seasonality")
+
+    is_seasonal = fields.Boolean(default=False, compute="_compute_is_seasonal")
+
+    products_not_in_season = fields.Char(
+        default="", compute="_compute_products_not_in_season"
     )
 
     bom_label_ids = fields.Many2many(
@@ -67,3 +71,30 @@ class MrpBom(models.Model):
             bom.standard_price_total = sum(
                 x.standard_price_subtotal for x in bom.bom_line_ids
             )
+
+    @api.multi
+    @api.depends("product_id", "bom_line_ids")
+    def _compute_is_seasonal(self):
+        for bom in self:
+            # Handling BoM Seasonalities
+            today = fields.Date.today()
+            for seasonality in bom.bom_season_ids:
+                for period in seasonality.seasonality_line_ids:
+                    print("========== [BOM] DANS LA PERIODE " + str(period.name))
+                    if today >= period.date_start and today <= period.date_end:
+                        print("============ [BOM] De Saison grâce au tag")
+                        bom.is_seasonal = True
+            #  Handling BoM Lines Seasonalities
+            for bom_line in bom.bom_line_ids:
+                if not bom_line.is_seasonal:
+                    bom.is_seasonal = False
+                    print("============ [BOM] PLUS de Saison grâce aux aliments")
+
+    @api.multi
+    @api.depends("product_id", "bom_line_ids")
+    def _compute_products_not_in_season(self):
+        for bom in self:
+            bom.products_not_in_season = ""
+            for bom_line in bom.bom_line_ids.filtered(lambda x: x.is_seasonal is False):
+                bom.products_not_in_season += str(bom_line.product_id.name) + ", "
+            bom.products_not_in_season = bom.products_not_in_season[:-2] + "."

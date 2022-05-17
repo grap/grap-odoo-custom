@@ -11,7 +11,14 @@ class ProductProduct(models.Model):
     date_last_statement_price = fields.Date(string="Date Last Statement Price")
 
     product_seasonality_ids = fields.Many2many(
-        comodel_name="mrp.seasonality", string="Seasonality"
+        comodel_name="seasonality", string="Seasonality"
+    )
+
+    is_seasonal = fields.Boolean(
+        string="Seasonal",
+        help="Computed thanks to choosen seasonalities. It is enough that a selected season matches",
+        compute="_compute_is_seasonal",
+        default=False,
     )
 
     main_seller_partner_id = fields.Many2one(
@@ -33,3 +40,22 @@ class ProductProduct(models.Model):
     def _onchange_date_last_statement_price(self):
         for product in self:
             product.date_last_statement_price = fields.Date.today()
+
+    @api.multi
+    def _compute_is_seasonal(self):
+        today = fields.Date.today()
+        for product in self:
+            for seasonality in product.product_seasonality_ids:
+                for period in seasonality.seasonality_line_ids:
+                    print("========== DANS LA PERIODE " + str(period.name))
+                    if today >= period.date_start and today <= period.date_end:
+                        product.is_seasonal = True
+
+    # @api.multi
+    # def _compute_is_seasonal(self):
+    #     today = fields.Date.today()
+    #     for product in self:
+    #         for period in product.filtered(lambda x: x.product_seasonality_ids.seasonality_line_ids):
+    #             print("========== DANS LA PERIODE " + str(period.name))
+    #             if today >= period.date_start and today <= period.date_end:
+    #                 product.is_seasonal = True
