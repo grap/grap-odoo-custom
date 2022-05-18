@@ -19,6 +19,8 @@
         "web_widget_color",
         "product_food",
         "product_label",
+        # GRAP modules,
+        "mrp_bom_widget_section_and_note_one2many",
     ],
     "data": [
         "security/ir_rule.xml",

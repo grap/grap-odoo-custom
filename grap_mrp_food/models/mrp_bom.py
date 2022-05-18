@@ -31,7 +31,8 @@ class MrpBom(models.Model):
 
     bom_season_ids = fields.Many2many(comodel_name="seasonality", string="Seasonality")
 
-    is_seasonal = fields.Boolean(default=False, compute="_compute_is_seasonal")
+    is_bom_seasonal = fields.Boolean(default=False, compute="_compute_seasonal")
+    are_bom_lines_seasonals = fields.Boolean(default=False, compute="_compute_seasonal")
 
     products_not_in_season = fields.Char(
         default="", compute="_compute_products_not_in_season"
@@ -55,8 +56,10 @@ class MrpBom(models.Model):
         string="Cost", compute="_compute_standard_price_total"
     )
 
+    # TODO : pourquoi pas déclencher au changement d'allergenes des lignes
+
     @api.multi
-    @api.depends("product_id", "bom_line_ids")
+    @api.depends("product_id", "bom_line_ids.allergen_ids")
     def _compute_bom_allergen_ids(self):
         for bom in self:
             bom.bom_allergen_ids = bom.product_id.allergen_ids
@@ -74,21 +77,24 @@ class MrpBom(models.Model):
 
     @api.multi
     @api.depends("product_id", "bom_line_ids")
-    def _compute_is_seasonal(self):
+    def _compute_seasonal(self):
         for bom in self:
             # Handling BoM Seasonalities
+            # One Tag is in season, and we considere the BoM in season
             today = fields.Date.today()
             for seasonality in bom.bom_season_ids:
                 for period in seasonality.seasonality_line_ids:
                     print("========== [BOM] DANS LA PERIODE " + str(period.name))
                     if today >= period.date_start and today <= period.date_end:
                         print("============ [BOM] De Saison grâce au tag")
-                        bom.is_seasonal = True
-            #  Handling BoM Lines Seasonalities
+                        bom.is_bom_seasonal = True
+            #  Handling BoM Lines Seasonalities.
+            #  One Line not in season and we considere the BoM Lines not in season
+            bom.are_bom_lines_seasonals = True
             for bom_line in bom.bom_line_ids:
                 if not bom_line.is_seasonal:
-                    bom.is_seasonal = False
-                    print("============ [BOM] PLUS de Saison grâce aux aliments")
+                    bom.are_bom_lines_seasonals = False
+                    print("============ [BOM LINES] Pas de saison")
 
     @api.multi
     @api.depends("product_id", "bom_line_ids")
