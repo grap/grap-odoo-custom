@@ -13,6 +13,8 @@ class PurchaseOrder(models.Model):
 
     state = fields.Selection(selection_add=[("done", "Archived")])
 
+    fiscal_position_id = fields.Many2one(track_visibility="always")
+
     def button_confirm(self):
         self.action_set_date_planned()
         return super().button_confirm()
