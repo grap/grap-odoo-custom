@@ -21,6 +21,7 @@
         "product_label",
         # GRAP modules,
         "mrp_bom_widget_section_and_note_one2many",
+        "product_main_seller",
     ],
     "data": [
         "security/ir_rule.xml",

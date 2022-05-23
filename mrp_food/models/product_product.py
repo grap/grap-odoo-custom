@@ -21,21 +21,6 @@ class ProductProduct(models.Model):
         default=False,
     )
 
-    main_seller_partner_id = fields.Many2one(
-        comodel_name="res.partner",
-        string="Main Seller Partner",
-        help="Main Seller Partner of the product",
-        compute="_compute_main_seller_partner_id",
-        store=True,
-    )
-
-    @api.multi
-    @api.depends("variant_seller_ids.sequence")
-    def _compute_main_seller_partner_id(self):
-        for product in self:
-            if len(product.variant_seller_ids):
-                product.main_seller_partner_id = product.variant_seller_ids[0].name
-
     @api.onchange("standard_price")
     def _onchange_date_last_statement_price(self):
         for product in self:

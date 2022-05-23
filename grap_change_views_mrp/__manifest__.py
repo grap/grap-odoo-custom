@@ -26,7 +26,7 @@
         # "product_mrp_info",
         "web_widget_numeric_step",
         # GRAP
-        "grap_mrp_food",
+        "mrp_food",
     ],
     "data": [
         "security/res_groups.xml",
