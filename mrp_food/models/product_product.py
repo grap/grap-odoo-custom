@@ -47,7 +47,7 @@ class ProductProduct(models.Model):
         for product in self:
             for seasonality in product.product_seasonality_ids:
                 for period in seasonality.seasonality_line_ids:
-                    print("========== [PRODUCT] DANS LA PERIODE " + str(period.name))
+                    # print("========== [PRODUCT] DANS LA PERIODE " + str(period.name))
                     if today >= period.date_start and today <= period.date_end:
                         product.is_seasonal = True
 
