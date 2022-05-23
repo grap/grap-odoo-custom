@@ -46,11 +46,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='code']" position="after">
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_season_ids" string="Seasonality 🥕" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="is_bom_seasonal" groups="base.group_no_one"/>
                 <field name="are_bom_lines_seasonals" groups="base.group_no_one"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
+                <field name="bom_label_ids" widget="many2many_tags"/>
             </xpath>
 
             <!-- BoM Lines -->
@@ -68,7 +68,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="seasonality_ids" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
-                <field name="is_seasonal"/>
+                <field name="is_seasonal" groups="base.group_no_one"/>
                 <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
             </xpath>
         </field>
@@ -96,8 +96,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
-                <field name="seasonality_ids" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
-                <field name="is_seasonal"/>
+                <field name="seasonality_ids" groups="base.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                <field name="is_seasonal" groups="base.group_no_one"/>
                 <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
             </xpath>
         </field>
@@ -117,7 +117,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="bom_season_ids" groups="grap_mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
-                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+            </xpath>
+            <xpath expr="//field[@name='product_uom_id']" position="after">
+                <field name="active" widget="boolean_toggle"/>
             </xpath>
         </field>
     </record>

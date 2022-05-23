@@ -27,17 +27,20 @@ class MrpBom(models.Model):
 
     image = fields.Binary(related="product_tmpl_id.image")
 
-    bom_tag_ids = fields.Many2many(comodel_name="mrp.bom.tag", string="Tags")
+    standard_price_total = fields.Float(
+        string="Cost", compute="_compute_standard_price_total"
+    )
 
+    # Seasonality
     bom_season_ids = fields.Many2many(comodel_name="seasonality", string="Seasonality")
 
     is_bom_seasonal = fields.Boolean(default=False, compute="_compute_seasonal")
+
     are_bom_lines_seasonals = fields.Boolean(default=False, compute="_compute_seasonal")
 
-    products_not_in_season = fields.Char(
-        default="", compute="_compute_products_not_in_season"
-    )
+    products_not_in_season = fields.Char(compute="_compute_products_not_in_season")
 
+    # Labels, allergens and tags
     bom_label_ids = fields.Many2many(
         comodel_name="product.label",
         string="Labels",
@@ -45,18 +48,16 @@ class MrpBom(models.Model):
     )
 
     bom_allergen_ids = fields.Many2many(
-        comodel_name="product.allergen",
         string="Allergens",
+        comodel_name="product.allergen",
         help="Includes allergens of the product and its components",
         compute="_compute_bom_allergen_ids",
         store=True,
     )
 
-    standard_price_total = fields.Float(
-        string="Cost", compute="_compute_standard_price_total"
-    )
+    bom_tag_ids = fields.Many2many(comodel_name="mrp.bom.tag", string="Tags")
 
-    # TODO : pourquoi pas déclencher au changement d'allergenes des lignes
+    # Handling time
 
     @api.multi
     @api.depends("product_id", "bom_line_ids.allergen_ids")
@@ -70,7 +71,6 @@ class MrpBom(models.Model):
     @api.depends("product_id", "bom_line_ids")
     def _compute_standard_price_total(self):
         for bom in self:
-            # import pdb; pdb.set_trace()
             bom.standard_price_total = sum(
                 x.standard_price_subtotal for x in bom.bom_line_ids
             )
@@ -84,9 +84,7 @@ class MrpBom(models.Model):
             today = fields.Date.today()
             for seasonality in bom.bom_season_ids:
                 for period in seasonality.seasonality_line_ids:
-                    print("========== [BOM] DANS LA PERIODE " + str(period.name))
-                    if today >= period.date_start and today <= period.date_end:
-                        print("============ [BOM] De Saison grâce au tag")
+                    if period.date_start <= today <= period.date_end:
                         bom.is_bom_seasonal = True
             #  Handling BoM Lines Seasonalities.
             #  One Line not in season and we considere the BoM Lines not in season
@@ -94,7 +92,6 @@ class MrpBom(models.Model):
             for bom_line in bom.bom_line_ids:
                 if not bom_line.is_seasonal:
                     bom.are_bom_lines_seasonals = False
-                    print("============ [BOM LINES] Pas de saison")
 
     @api.multi
     @api.depends("product_id", "bom_line_ids")
