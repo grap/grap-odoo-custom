@@ -32,7 +32,6 @@
         "security/res_groups.xml",
         "views/menu.xml",
         "views/view_mrp_bom.xml",
-        "views/view_product_product.xml",
     ],
     "installable": True,
 }

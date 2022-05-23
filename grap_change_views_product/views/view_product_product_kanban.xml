@@ -8,9 +8,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
     <!-- ************************************************************ -->
-    <!-- New view kanban for Product Product -->
+    <!-- New view kanban for MRP -->
     <!-- ************************************************************ -->
-    <record id="view_grap_mrp_product_kanban" model="ir.ui.view">
+    <record id="view_mrp_product_kanban" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
             <kanban>
@@ -45,52 +45,52 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+
     <!-- ************************************************************ -->
-    <!-- New menus for Product Product -->
+    <!-- New menus for MRP -->
     <!-- ************************************************************ -->
-    <record id="action_grap_mrp_product_finished" model="ir.actions.act_window">
+    <record id="action_mrp_product_finished" model="ir.actions.act_window">
         <field name="name">Finished Products</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" ref="view_grap_mrp_product_kanban"/>
+        <field name="view_id" ref="view_mrp_product_kanban"/>
         <field name="context">{"search_default_manufactured_products":1}</field>
     </record>
 
     <menuitem id="menu_product_finished"
         name="Finished Products"
-        parent="menu_mrp_bom_products" sequence="1"
-        action="action_grap_mrp_product_finished"/>
+        parent="grap_mrp.menu_mrp_bom_products" sequence="1"
+        action="action_mrp_product_finished"/>
 
-    <record id="action_grap_mrp_product_composants" model="ir.actions.act_window">
+    <record id="action_mrp_product_composants" model="ir.actions.act_window">
         <field name="name">Composants Products</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" ref="view_grap_mrp_product_kanban"/>
+        <field name="view_id" ref="view_mrp_product_kanban"/>
         <field name="context">{"search_default_components":1}</field>
     </record>
 
     <menuitem id="menu_product_composants"
         name="Composants Products"
-        parent="menu_mrp_bom_products" sequence="2"
-        action="action_grap_mrp_product_composants"/>
+        parent="grap_mrp.menu_mrp_bom_products" sequence="2"
+        action="action_mrp_product_composants"/>
 
-    <record id="action_grap_mrp_product_all" model="ir.actions.act_window">
+    <record id="action_mrp_product_all" model="ir.actions.act_window">
         <field name="name">All Products</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.product</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" ref="view_grap_mrp_product_kanban"/>
+        <field name="view_id" ref="view_mrp_product_kanban"/>
     </record>
 
     <menuitem id="menu_product_all"
         name="All Products"
-        parent="menu_mrp_bom_products" sequence="3"
-        action="action_grap_mrp_product_all"/>
-
+        parent="grap_mrp.menu_mrp_bom_products" sequence="3"
+        action="action_mrp_product_all"/>
 
   </odoo>
