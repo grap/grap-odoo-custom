@@ -11,7 +11,10 @@ class SeasonalityLine(models.Model):
     _description = "Seasonality Line"
 
     # Column Section
-    name = fields.Char(string="Seasonality line name", required=True)
+    name = fields.Char(
+        string="Seasonality line name",
+        required=True,
+    )
 
     seasonality_id = fields.Many2one(
         comodel_name="seasonality",

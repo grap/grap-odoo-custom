@@ -6,27 +6,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-      <!-- ************************************************************ -->
-      <!-- Product.product Original Form View -->
-      <!-- ************************************************************ -->
+    <!-- ************************************************************ -->
+    <!-- Product.product Product Food View -->
+    <!-- ************************************************************ -->
 
     <record id="view_product_product_form" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product_food.view_product_product_form" />
         <field name="arch" type="xml">
 
-            <xpath expr="//group[@name='group_standard_price']" position="inside">
-                <field name="date_last_statement_price"/>
-            </xpath>
+          <xpath expr="//group[@name='group_standard_price']" position="inside">
+              <field name="date_last_statement_price"/>
+          </xpath>
 
-            <xpath expr="//field[@name='is_alimentary']" position="before">
-                <field name="allergen_ids" widget="many2many_tags"/>
-            </xpath>
+          <xpath expr="//field[@name='is_alimentary']" position="after">
+              <field name="is_seasonal"/>
+              <field name="allergen_ids" widget="many2many_tags"/>
+              <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+          </xpath>
 
-            <xpath expr="//field[@name='is_alimentary']" position="after">
-                <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-            </xpath>
-<!-- TODO : ajouter seasonal -->
         </field>
     </record>
 
@@ -40,7 +38,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='consumable']" position="after">
                 <separator/>
-                <filter string="By Main Vendor" name="mrp_product_group_by_main_seller" context="{'group_by':'product_main_seller.main_seller_partner_id'}"/>
+                <filter string="By Main Vendor" name="mrp_product_group_by_main_seller" context="{'group_by':'main_seller_partner_id'}"/>
                 <filter string="By Category" name="mrp_product_group_by_category" context="{'group_by':'categ_id'}"/>
             </xpath>
         </field>
@@ -107,13 +105,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="display_name" string="Supplier" readonly="1"/>
                 <field name="product_name"/>
                 <field name="product_code"/>
-                <field name="package_qty"/>
+                <!-- TODO : ajouter dans la vue Grap, dépend de purchase_package_qty-->
+                <!-- <field name="package_qty"/> -->
                 <field name="min_qty"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="price" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                 <field name="product_uom" readonly="1"/>
-                <field name="discount"/>
-                <field name="discount2"/>
+                <!-- TODO : ajouter dans la vue Grap, dépend de purchase_discount-->
+                <!-- <field name="discount"/>
+                <field name="discount2"/> -->
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>

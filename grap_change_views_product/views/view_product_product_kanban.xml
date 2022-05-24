@@ -61,7 +61,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_product_finished"
         name="Finished Products"
-        parent="grap_mrp.menu_mrp_bom_products" sequence="1"
+        parent="grap_change_views_mrp.menu_mrp_bom_products" sequence="1"
         action="action_mrp_product_finished"/>
 
     <record id="action_mrp_product_composants" model="ir.actions.act_window">
@@ -76,7 +76,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_product_composants"
         name="Composants Products"
-        parent="grap_mrp.menu_mrp_bom_products" sequence="2"
+        parent="grap_change_views_mrp.menu_mrp_bom_products" sequence="2"
         action="action_mrp_product_composants"/>
 
     <record id="action_mrp_product_all" model="ir.actions.act_window">
@@ -90,7 +90,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_product_all"
         name="All Products"
-        parent="grap_mrp.menu_mrp_bom_products" sequence="3"
+        parent="grap_change_views_mrp.menu_mrp_bom_products" sequence="3"
         action="action_mrp_product_all"/>
 
   </odoo>

@@ -1,5 +1,6 @@
 # Copyright (C) 2013-Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+# @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # @author Julien WESTE
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
@@ -30,7 +31,6 @@
         "product_sale_tax_price_included",
         # GRAP
         "fiscal_company_product",
-        "grap_mrp",
         "stock_preparation_category",
         "recurring_consignment",
         "product_to_scale_bizerba",
@@ -48,6 +48,7 @@
         "pos_sector",
         "intercompany_trade_product",
         "joint_buying_product",
+        "mrp_food",
     ],
     "data": [
         "views/menu.xml",
@@ -58,7 +59,7 @@
         "views/view_product_product_stock.xml",
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
-        "views/view_product_product_kanban.xml",
+        # "views/view_product_product_kanban.xml",
     ],
     "installable": True,
 }

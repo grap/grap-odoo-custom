@@ -12,15 +12,13 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        "purchase",
-        "product",
-        "sale_mrp",
+        # "purchase",
+        # "sale_mrp",
         # OCA modules
-        "web_widget_color",
         "product_food",
         "product_label",
+        "web_widget_color",
         # GRAP modules,
-        "mrp_bom_widget_section_and_note_one2many",
         "product_main_seller",
     ],
     "data": [
@@ -30,6 +28,7 @@
         "views/view_mrp_bom.xml",
         "views/view_mrp_bom_tag.xml",
         "views/view_product_product.xml",
+        "views/view_product_template.xml",
         "views/view_seasonality.xml",
     ],
     "installable": True,

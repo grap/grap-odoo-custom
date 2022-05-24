@@ -25,6 +25,7 @@
         # "mrp_warehouse_calendar",
         # "product_mrp_info",
         "web_widget_numeric_step",
+        "mrp_bom_widget_section_and_note_one2many",
         # GRAP
         "mrp_food",
     ],

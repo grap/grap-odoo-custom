@@ -18,6 +18,8 @@
         # GRAP
         "grap_change_views_mrp",
         "mrp_food",
+        # OCA Modules
+        "mrp_bom_widget_section_and_note_one2many",
     ],
     "installable": True,
 }

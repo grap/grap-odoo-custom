@@ -8,21 +8,6 @@ from odoo import api, fields, models
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
-    # Doing with Product and not product template
-    product_tmpl_id = fields.Many2one(
-        "product.template",
-        "Product",
-        related="product_id.product_tmpl_id",
-        required=True,
-    )
-
-    product_id = fields.Many2one(
-        "product.product",
-        "Product Variant",
-        domain="[('type', 'in', ['product', 'consu'])]",
-        required=True,
-    )
-
     currency_id = fields.Many2one(related="product_id.currency_id")
 
     image = fields.Binary(related="product_tmpl_id.image")

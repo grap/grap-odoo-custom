@@ -11,11 +11,11 @@ class ProductProduct(models.Model):
     date_last_statement_price = fields.Date(string="Date Last Statement Price")
 
     product_seasonality_ids = fields.Many2many(
-        comodel_name="seasonality", string="Seasonality"
+        comodel_name="seasonality", string="Seasonalities"
     )
 
     is_seasonal = fields.Boolean(
-        string="Seasonal",
+        string="Is Seasonal",
         help="Computed thanks to choosen seasonalities. It is enough that a selected season matches",
         compute="_compute_is_seasonal",
         default=False,
@@ -32,7 +32,6 @@ class ProductProduct(models.Model):
         for product in self:
             for seasonality in product.product_seasonality_ids:
                 for period in seasonality.seasonality_line_ids:
-                    # print("========== [PRODUCT] DANS LA PERIODE " + str(period.name))
                     if today >= period.date_start and today <= period.date_end:
                         product.is_seasonal = True
 

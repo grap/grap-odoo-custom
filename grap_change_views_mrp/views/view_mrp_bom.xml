@@ -6,17 +6,49 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Original View -->
+    <!-- ************************************************************ -->
+
     <record id="view_mrp_bom_form" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='type']" position="attributes">
-                <attribute name="groups">grap_mrp.mrp_bom_type_manager</attribute>
+                <attribute name="groups">grap_change_views_mrp.mrp_bom_type_manager</attribute>
             </xpath>
 
         </field>
     </record>
 
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Form With Sections and Notes -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_form_sections_notes" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp_bom_widget_section_and_note_one2many.mrp_bom_form_view_section" />
+        <field name="arch" type="xml">
+            <!-- BoM Lines -->
+            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_qty']" position="attributes">
+                <attribute name="widget">numeric_step</attribute>
+                <attribute name="options">{'step': 0.1, 'min': 0}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_uom_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_qty']" position="after">
+                <field name="label_ids" widget="many2many_tags"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="product_uom_id" string="UoM" readonly="1"/>
+                <field name="allergen_ids" widget="many2many_tags"/>
+                <field name="seasonality_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                <field name="is_seasonal" groups="base.group_no_one"/>
+                <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+            </xpath>
+        </field>
+    </record>
 
 </odoo>
