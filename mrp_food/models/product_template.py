@@ -23,7 +23,8 @@ class ProductTemplate(models.Model):
 
     is_seasonal = fields.Boolean(
         string="Is Seasonal",
-        help="Computed thanks to choosen seasonalities. It is enough that a selected season matches",
+        help="Computed thanks to choosen seasonalities.\
+              It is enough that a selected season matches",
         related="product_variant_ids.is_seasonal",
         default=False,
         readonly=False,

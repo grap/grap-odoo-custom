@@ -16,7 +16,8 @@ class ProductProduct(models.Model):
 
     is_seasonal = fields.Boolean(
         string="Is Seasonal",
-        help="Computed thanks to choosen seasonalities. It is enough that a selected season matches",
+        help="Computed thanks to choosen seasonalities.\
+              It is enough that a selected season matches",
         compute="_compute_is_seasonal",
         default=False,
     )
@@ -34,12 +35,3 @@ class ProductProduct(models.Model):
                 for period in seasonality.seasonality_line_ids:
                     if today >= period.date_start and today <= period.date_end:
                         product.is_seasonal = True
-
-    # @api.multi
-    # def _compute_is_seasonal(self):
-    #     today = fields.Date.today()
-    #     for product in self:
-    #         for period in product.filtered(lambda x: x.product_seasonality_ids.seasonality_line_ids):
-    #             print("========== DANS LA PERIODE " + str(period.name))
-    #             if today >= period.date_start and today <= period.date_end:
-    #                 product.is_seasonal = True
