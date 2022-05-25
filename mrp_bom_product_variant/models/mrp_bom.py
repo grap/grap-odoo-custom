@@ -2,30 +2,31 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
-    # Doing with Product and not product template
-    product_tmpl_id = fields.Many2one(
-        "product.template",
-        "Product",
-        related="product_id.product_tmpl_id",
-        required=True,
-    )
-
+    # Made mandatory by the view so as not to interfere with other codes
     product_id = fields.Many2one(
         "product.product",
         "Product Variant",
         domain="[('type', 'in', ['product', 'consu'])]",
-        required=True,
     )
 
+    @api.onchange("product_id")
+    def _onchange_product_id(self):
+        self.product_tmpl_id = self.product_id.product_tmpl_id
 
-# Erreurs à l'installation
-# 2022-05-24 09:39:52,591 147248 WARNING mrp_food2 odoo.models: method mrp.bom._check_product_recursion: @constrains parameter 'product_tmpl_id' is not writeable
-# 2022-05-24 09:39:52,591 147248 WARNING mrp_food2 odoo.models: method mrp.bom.check_kit_has_not_orderpoint: @constrains parameter 'product_tmpl_id' is not writeable
-# 2022-05-24 09:39:53,576 147248 WARNING mrp_food2 odoo.modules.loading: Table 'mrp_bom': column 'product_id': unable to set constraint NOT NULL
-# column "product_id" contains null values
+    @api.constrains(
+        "product_id",
+        "product_tmpl_id",
+    )
+    def _check_product_and_variant(self):
+        for bom in self:
+            if bom.product_id.product_tmpl_id != bom.product_tmpl_id:
+                raise ValidationError(
+                    _("Product Variant and Product Template should be linked.")
+                )

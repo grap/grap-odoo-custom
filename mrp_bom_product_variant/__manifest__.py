@@ -11,5 +11,8 @@
     "depends": [
         "mrp",
     ],
+    "data": [
+        "views/view_mrp_bom.xml",
+    ],
     "installable": True,
 }

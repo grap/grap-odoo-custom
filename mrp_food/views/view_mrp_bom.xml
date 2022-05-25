@@ -32,14 +32,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <b><field name="products_not_in_season" readonly="1"/></b>
                 </p>
             </xpath>
-            <!-- Handle product product and not template -->
-            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
-                <attribute name="groups">base.group_no_one</attribute>
-            </xpath>
-            <xpath expr="//field[@name='product_tmpl_id']" position="after">
-                <field name="product_id" string="Product"/>
-            </xpath>
-            <!-- / Handle product product and not template -->
             <xpath expr="//field[@name='routing_id']" position="before">
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price_total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
