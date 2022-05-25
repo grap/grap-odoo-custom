@@ -1,1 +1,1 @@
-Get main seller partner for a product  
+Get main seller partner for a product

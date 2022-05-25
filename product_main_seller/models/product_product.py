@@ -8,7 +8,6 @@ from odoo import api, fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-
     main_seller_partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Main Seller Partner",
