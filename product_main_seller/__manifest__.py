@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "GRAP - Product Main Seller",
+    "name": "Product Main Seller",
     "summary": "Product Attribute - Main seller for a product",
     "version": "12.0.1.1.0",
     "category": "GRAP - Custom",

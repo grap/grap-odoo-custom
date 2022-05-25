@@ -59,7 +59,7 @@
         "views/view_product_product_stock.xml",
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
-        # "views/view_product_product_kanban.xml",
+        "views/view_product_product_kanban.xml",
     ],
     "installable": True,
 }

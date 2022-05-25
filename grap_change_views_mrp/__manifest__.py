@@ -1,11 +1,10 @@
-# Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+# Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
 # @author: Quentin Dupont (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "GRAP - MRP Manufacture R&D - Work in Progress",
-    "summary": "Install MRP modules for R&D",
-    "version": "12.0.1.1.3",
+    "name": "GRAP - Change Views MRP",
+    "version": "12.0.1.1.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

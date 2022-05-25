@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "GRAP - MRP Manufacture for Food",
+    "name": "MRP Manufacture for Food",
     "summary": "MRP modules adapted for food-related professions",
     "version": "12.0.1.1.0",
     "category": "GRAP - Custom",
