@@ -25,7 +25,7 @@ class MrpBom(models.Model):
 
     products_not_in_season = fields.Char(compute="_compute_products_not_in_season")
 
-    # Labels, allergens and tags
+    # Labels, allergens
     bom_label_ids = fields.Many2many(
         comodel_name="product.label",
         string="Labels",
@@ -39,8 +39,6 @@ class MrpBom(models.Model):
         compute="_compute_bom_allergen_ids",
         store=True,
     )
-
-    bom_tag_ids = fields.Many2many(comodel_name="mrp.bom.tag", string="Tags")
 
     # Handling time
 

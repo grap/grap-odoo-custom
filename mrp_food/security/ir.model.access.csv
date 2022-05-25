@@ -1,6 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bom_tag_manager,Bill Of Material Tag Manager,model_mrp_bom_tag,mrp.group_mrp_manager,1,1,1,1
-access_bom_tag_all,Bill Of Material Tag All,model_mrp_bom_tag,,1,,,
 access_seasonality_manager,Seasonality Manager,model_seasonality,mrp.group_mrp_manager,1,1,1,1
 access_seasonality_all,Seasonality All,model_seasonality,,1,,,
 access_seasonality_line_manager,Seasonality Line Manager,model_seasonality_line,mrp.group_mrp_manager,1,1,1,1
