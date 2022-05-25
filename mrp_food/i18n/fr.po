@@ -62,7 +62,7 @@ msgstr "Fiches techniques"
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__bom_qty
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__bom_qty
 msgid "BoM Quantity"
-msgstr "Quantité de recette"
+msgstr "Quantité de recettes"
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_bom_tag
