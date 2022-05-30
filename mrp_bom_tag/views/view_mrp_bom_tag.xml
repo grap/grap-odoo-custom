@@ -24,7 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="oe_right oe_button_box" name="buttons">
                         <button class="oe_stat_button" type="action" icon="fa-list"
                             name="%(action_bom_tag_2_mrp_bom)d">
-                            <field string="Bill of Material" name="bom_qty" widget="statinfo"/>
+                            <field string="Bills of Material" name="bom_qty" widget="statinfo"/>
                         </button>
                     </div>
 
