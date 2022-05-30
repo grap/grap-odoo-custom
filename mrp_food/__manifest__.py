@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "MRP Manufacture for Food",
+    "name": "MRP for Food",
     "summary": "MRP modules adapted for food-related professions",
     "version": "12.0.1.1.0",
     "category": "GRAP - Custom",
@@ -26,6 +26,7 @@
         "security/ir.model.access.csv",
         "security/res_groups.xml",
         "views/view_mrp_bom.xml",
+        "views/view_product_allergen.xml",
         "views/view_product_product.xml",
         "views/view_product_template.xml",
         "views/view_seasonality.xml",

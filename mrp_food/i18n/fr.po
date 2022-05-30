@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-25 07:33+0000\n"
-"PO-Revision-Date: 2022-05-25 07:33+0000\n"
+"POT-Creation-Date: 2022-05-30 14:44+0000\n"
+"PO-Revision-Date: 2022-05-30 14:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mrp_food
+#: model:ir.model,name:mrp_food.model_product_allergen
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_allergen_ids
+#: model:ir.ui.menu,name:mrp_food.menu_mrp_product_allergen
 msgid "Allergens"
 msgstr "Allergènes"
 
@@ -31,14 +33,7 @@ msgid "Are Bom Lines Seasonals"
 msgstr "Composants de saison ?"
 
 #. module: mrp_food
-#: model:ir.model,name:mrp_food.model_mrp_bom_tag
-msgid "Bill Of Material Tag"
-msgstr "Étiquette"
-
-#. module: mrp_food
-#: model:ir.actions.act_window,name:mrp_food.action_bom_tag_2_mrp_bom
 #: model:ir.model,name:mrp_food.model_mrp_bom
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_bom_tag_form
 msgid "Bill of Material"
 msgstr "Fiche technique"
 
@@ -54,21 +49,17 @@ msgstr "Fiche technique"
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_mrp_season_2_mrp_bom
+#: model:ir.actions.act_window,name:mrp_food.action_product_allergens_2_mrp_bom
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_allergen_form
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
 msgid "Bills of Materials"
 msgstr "Fiches techniques"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__bom_qty
+#: model:ir.model.fields,field_description:mrp_food.field_product_allergen__bom_qty
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__bom_qty
 msgid "BoM Quantity"
-msgstr "Quantité de recettes"
-
-#. module: mrp_food
-#: model:ir.actions.act_window,name:mrp_food.action_bom_tag
-#: model:ir.ui.menu,name:mrp_food.menu_bom_tag
-msgid "BoM Tags"
-msgstr "Étiquettes"
+msgstr "Quantité de fiches techniques"
 
 #. module: mrp_food
 #: model:ir.model.fields,help:mrp_food.field_mrp_bom__bom_label_ids
@@ -76,10 +67,10 @@ msgid "BoM labels are not computed, you have to define them by hand"
 msgstr "Les étiquettes des recettes ne sont pas définies automatiquement, vous devez les paramétrer à la main."
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__bom_ids
+#: model:ir.model.fields,field_description:mrp_food.field_product_allergen__bom_ids
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__bom_ids
 msgid "Bom"
-msgstr "Recette"
+msgstr "Fiche technique"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_product_product_search
@@ -92,13 +83,11 @@ msgid "By Main Vendor"
 msgstr "Par Fournisseur principal"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__color
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__color
 msgid "Color Index"
 msgstr "Couleur"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__company_id
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__company_id
 msgid "Company"
 msgstr "Société"
@@ -117,8 +106,8 @@ msgstr "Produits Matières Premières - Éditable en ligne"
 #: model:ir.model.fields,help:mrp_food.field_mrp_bom_line__is_seasonal
 #: model:ir.model.fields,help:mrp_food.field_product_product__is_seasonal
 #: model:ir.model.fields,help:mrp_food.field_product_template__is_seasonal
-msgid "Computed thanks to choosen seasonalities. It is enough that a selected season matches"
-msgstr "Déterminé selon les tags de saison choisis. Une saison qui matche est suffisant pour déterminé que les composants sont de saison."
+msgid "Computed thanks to choosen seasonalities.              It is enough that a selected season matches"
+msgstr "Calculé grâce aux saisonnalités choisies.              Une saison qui matche est une condition suffisante."
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__standard_price_total
@@ -126,14 +115,12 @@ msgid "Cost"
 msgstr "Coût"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__create_uid
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__create_uid
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__create_date
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__create_date
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__create_date
 msgid "Created on"
@@ -167,14 +154,12 @@ msgid "Def code"
 msgstr "Code"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__display_name
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__display_name
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__id
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__id
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__id
 msgid "ID"
@@ -213,21 +198,18 @@ msgid "Labels on product"
 msgstr "Labels du produit"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag____last_update
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality____last_update
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__write_uid
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__write_uid
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__write_date
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__write_date
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__write_date
 msgid "Last Updated on"
@@ -239,18 +221,12 @@ msgid "Manage Seasonality"
 msgstr "Gérer les saisonnalités"
 
 #. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_tag__name
-msgid "Name"
-msgstr "Nom"
-
-#. module: mrp_food
 #: model:ir.ui.menu,name:mrp_food.menu_mrp_editable_views
 msgid "Price Lists - Inline editable"
 msgstr "Mercuriales"
 
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_product_product
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
 msgid "Product"
 msgstr "Article"
@@ -350,11 +326,6 @@ msgstr "Prix fournisseur·es"
 #: model:ir.actions.act_window,name:mrp_food.action_product_supplierinfo_mrp_tree
 msgid "Suppliers informations - Inline editable"
 msgstr "Prix fournisseur·es - Éditable en ligne"
-
-#. module: mrp_food
-#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_tag_ids
-msgid "Tags"
-msgstr "Étiquettes"
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/seasonality_line.py:32

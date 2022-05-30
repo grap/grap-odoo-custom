@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record id="action_product_allergens_2_mrp_bom" model="ir.actions.act_window">
+        <field name="name">Bills of Materials</field>
+        <field name="res_model">mrp.bom</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('bom_allergen_ids', '=', active_id)]</field>
+    </record>
+
+    <record id="view_product_allergen_form" model="ir.ui.view">
+        <field name="model">product.allergen</field>
+        <field name="inherit_id" ref="product_food.view_product_allergen_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='toggle_active']" position="before">
+              <button class="oe_stat_button" type="action" icon="fa-flask"
+                  name="%(action_product_allergens_2_mrp_bom)d">
+                  <field string="Bills of Materials" name="bom_qty" widget="statinfo"/>
+              </button>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_mrp_product_allergen"
+        parent="mrp.menu_mrp_configuration" sequence="11"
+        action="product_food.action_product_allergen"/>
+
+
+</odoo>
