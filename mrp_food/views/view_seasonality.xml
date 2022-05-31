@@ -26,7 +26,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">seasonality</field>
         <field name="arch" type="xml">
             <form>
-                <header/>
+                <header>
+                  <button class="btn btn-primary" type="object"
+                    string="Add next period with one more year" name="add_seasonality_line_one_more_year"
+                    action="add_seasonality_line_one_more_year" attrs="{'invisible': [('seasonality_line_ids', '=', [])]}"
+                    help="Based on last period of this seasonality, it creates an other period with one more year"/>
+                </header>
 
                 <sheet>
                     <div class="oe_right oe_button_box" name="buttons">
@@ -44,12 +49,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name"/></h1>
                     </div>
-                    <p class="alert alert-info" role="status">ℹ️ Complete the <i>Seasonality lines</i> to define the different periods of this seasonality.</p>
+                    <p class="alert alert-info" role="status"
+                       attrs="{'invisible': [('seasonality_line_ids', '!=', [])]}">
+                      ℹ️ Complete the <i>Seasonality lines</i> to define the different periods of this seasonality.
+                    </p>
                     <group>
                         <field name="company_id" groups="base.group_multi_company"/>
                         <field name="seasonality_line_ids">
                             <tree editable="bottom">
-                                <field name="name" placeholder="e.g. The name of the season and year of the seasonal line : Summer 2022"/>
+                                <field name="name" placeholder="e.g. The name of the season and year of the seasonal line : Summer (2022)"/>
                                 <field name="date_start"/>
                                 <field name="date_end"/>
                             </tree>

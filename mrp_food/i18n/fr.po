@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-30 14:44+0000\n"
-"PO-Revision-Date: 2022-05-30 14:44+0000\n"
+"POT-Creation-Date: 2022-05-31 13:54+0000\n"
+"PO-Revision-Date: 2022-05-31 13:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "Add next period with one more year"
+msgstr "Ajoute une nouvelle période avec un an de plus"
 
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_product_allergen
@@ -31,6 +36,11 @@ msgstr "Allergènes du produit"
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__are_bom_lines_seasonals
 msgid "Are Bom Lines Seasonals"
 msgstr "Composants de saison ?"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "Based on last period of this seasonality, it creates an other period with one more year"
+msgstr "Se base sur la dernière période de cette saisonnalité, crée une autre période avant un an de plus"
 
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_mrp_bom
@@ -107,7 +117,7 @@ msgstr "Produits Matières Premières - Éditable en ligne"
 #: model:ir.model.fields,help:mrp_food.field_product_product__is_seasonal
 #: model:ir.model.fields,help:mrp_food.field_product_template__is_seasonal
 msgid "Computed thanks to choosen seasonalities.              It is enough that a selected season matches"
-msgstr "Calculé grâce aux saisonnalités choisies.              Une saison qui matche est une condition suffisante."
+msgstr ""
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__standard_price_total
@@ -350,9 +360,15 @@ msgid "UoM"
 msgstr "UdM"
 
 #. module: mrp_food
+#: code:addons/mrp_food/models/seasonality.py:74
+#, python-format
+msgid "You cannot use this button. Fill one period for this seasonality before."
+msgstr ""
+
+#. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
-msgid "e.g. The name of the season and year of the seasonal line : Summer 2022"
-msgstr "ex : Le nom de la saison and l'année de cette période : Été 2022"
+msgid "e.g. The name of the season and year of the seasonal line : Summer (2022)"
+msgstr "ex : Le nom de la saison and l'année de cette période : Été (2022)"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form

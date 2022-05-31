@@ -2,7 +2,12 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+import re
+
+from dateutil.relativedelta import relativedelta
+
+from odoo import _, api, fields, models
+from odoo.exceptions import AccessError
 
 
 class Seasonality(models.Model):
@@ -45,8 +50,7 @@ class Seasonality(models.Model):
         store=True,
     )
 
-    # TODO : un bouton pour rajouter des lignes sur les prochaines années
-
+    # Compute methods
     @api.depends("bom_ids")
     def _compute_bom_qty(self):
         for seasonality in self:
@@ -61,3 +65,41 @@ class Seasonality(models.Model):
     @api.model
     def _default_company_id(self):
         return self.env.user.company_id.id
+
+    # Action methods
+    @api.multi
+    def add_seasonality_line_one_more_year(self):
+        for seasonality in self:
+            if not len(seasonality.seasonality_line_ids):
+                raise AccessError(
+                    _(
+                        "You cannot use this button. "
+                        "Fill one period for this seasonality before."
+                    )
+                )
+            last_seasonality_line = seasonality.seasonality_line_ids[-1]
+
+            new_date_start = last_seasonality_line.date_start + relativedelta(years=1)
+            new_date_end = last_seasonality_line.date_end + relativedelta(years=1)
+            new_name = self._compute_name_with_one_year_more(
+                last_seasonality_line.name, new_date_start.year
+            )
+            seasonality.seasonality_line_ids = [
+                (
+                    0,
+                    0,
+                    {
+                        "name": new_name,
+                        "date_start": new_date_start,
+                        "date_end": new_date_end,
+                    },
+                )
+            ]
+
+    def _compute_name_with_one_year_more(self, name, year):
+        # Clean name of potential year created by human then by this method
+        clean_name = re.sub("[0-9]*", "", name)
+        clean_name = re.sub(r"\([0-9]*\)", "", clean_name)
+
+        new_name = clean_name + " (" + str(year) + ")"
+        return new_name
