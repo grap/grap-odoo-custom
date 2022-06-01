@@ -38,7 +38,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='consumable']" position="after">
                 <separator/>
-                <filter string="By Main Vendor" name="mrp_product_group_by_main_seller" context="{'group_by':'main_seller_partner_id'}"/>
+                <filter string="By Main Vendor" name="mrp_product_group_by_main_seller" context="{'group_by':'product_main_seller_partner_id'}"/>
                 <filter string="By Category" name="mrp_product_group_by_category" context="{'group_by':'categ_id'}"/>
             </xpath>
         </field>

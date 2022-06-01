@@ -1,4 +1,4 @@
-# Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+# Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
 # @author: Quentin Dupont (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -12,6 +12,10 @@
     "license": "AGPL-3",
     "depends": [
         "product",
+        "purchase",
+    ],
+    "data": [
+        "views/product_template.xml",
     ],
     "installable": True,
 }

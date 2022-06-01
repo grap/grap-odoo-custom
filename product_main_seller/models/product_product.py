@@ -8,9 +8,9 @@ from odoo import api, fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    main_seller_partner_id = fields.Many2one(
+    product_main_seller_partner_id = fields.Many2one(
         comodel_name="res.partner",
-        string="Main Seller Partner",
+        string="Main Product Seller Partner",
         help="Main Seller Partner of the product",
         compute="_compute_main_seller_partner_id",
         store=True,
@@ -19,6 +19,6 @@ class ProductProduct(models.Model):
     @api.multi
     @api.depends("variant_seller_ids.sequence")
     def _compute_main_seller_partner_id(self):
-        for product in self:
-            if len(product.variant_seller_ids):
-                product.main_seller_partner_id = product.variant_seller_ids[0].name
+        for prod in self:
+            if len(prod.variant_seller_ids):
+                prod.product_main_seller_partner_id = prod.variant_seller_ids[0].name
