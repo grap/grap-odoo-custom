@@ -13,6 +13,7 @@
     "depends": [
         "mrp",
     ],
+    "demo": ["demo/mrp_bom_tag.xml"],
     "data": [
         "security/ir_rule.xml",
         "security/ir.model.access.csv",
