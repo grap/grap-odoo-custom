@@ -9,7 +9,8 @@ from odoo.exceptions import ValidationError
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
-    # Made mandatory by the view so as not to interfere with other codes
+    # Product product became mandatory by the view and not by the python code
+    # so as not to interfere with other codes
     product_id = fields.Many2one(
         "product.product",
         "Product Variant",
