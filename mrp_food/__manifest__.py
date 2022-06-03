@@ -21,6 +21,14 @@
         # GRAP modules,
         "product_main_seller",
     ],
+    "demo": [
+        "demo/allergens.xml",
+        "demo/seasonality.xml",
+        "demo/seasonality_line.xml",
+        "demo/product.xml",
+        "demo/bom.xml",
+        "demo/res_groups.xml",
+    ],
     "data": [
         "security/ir_rule.xml",
         "security/ir.model.access.csv",

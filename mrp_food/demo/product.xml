@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record model="product.product" id="demo_product_spinach">
+        <field name="name">Épinard</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">4</field>
+        <field name="product_seasonality_ids" eval="[
+          (4, ref('mrp_food.demo_seasonality_spring')),
+          ]" />
+        <field name="label_ids" eval="[
+            (4, ref('product_label.label_agriculture_biologique')),
+            ]"/>
+    </record>
+
+    <record model="product.product" id="demo_product_tomato">
+        <field name="name">Tomates</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">3</field>
+        <field name="product_seasonality_ids" eval="[
+            (4, ref('mrp_food.demo_seasonality_summer')),
+            ]" />
+        <field name="label_ids" eval="[
+            (4, ref('product_label.label_agriculture_biologique')),
+            ]"/>
+    </record>
+
+    <record model="product.product" id="demo_product_mustard">
+        <field name="name">Moutarde</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">10</field>
+        <field name="allergen_ids" eval="[
+          (4, ref('mrp_food.demo_allergen_mustard')),
+          ]" />
+        <field name="product_seasonality_ids" eval="[
+          (4, ref('mrp_food.demo_seasonality_all_season')),
+          ]" />
+    </record>
+
+    <record model="product.product" id="demo_product_pie">
+        <field name="name">Pâte à tarte</field>
+        <field name="standard_price">3</field>
+        <field name="allergen_ids" eval="[
+          (4, ref('mrp_food.demo_allergen_gluten')),
+          ]" />
+        <field name="product_seasonality_ids" eval="[
+          (4, ref('mrp_food.demo_seasonality_all_season')),
+          ]" />
+    </record>
+
+    <record model="product.template" id="demo_product_template_tomato_tart">
+        <field name="name">Tarte à la tomate</field>
+    </record>
+
+
+</odoo>
