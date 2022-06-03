@@ -16,9 +16,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//group[1]" position="before">
                 <field name="image" widget="image" class="oe_avatar"/>
-                <div class="oe_title">
-                    <label for="product_id" string="Bill of Materials"/>
-                    <h1><field name="product_id" readonly="1"/></h1>
+                <div class="oe_title" name="bom_title">
+                    <label for="product_tmpl_id" string="Bill of Materials"/>
+                    <h1><field name="product_tmpl_id" readonly="1"/></h1>
                 </div>
                 <p class="alert alert-warning" role="alert" groups="mrp_food.seasonality_manager" attrs="{'invisible': ['|', ('is_bom_seasonal', '=', True), '&amp;', ('is_bom_seasonal', '=', False), ('are_bom_lines_seasonals', '=', False)]}">
                   ⚠️ This Bill Of Materials is not in season.

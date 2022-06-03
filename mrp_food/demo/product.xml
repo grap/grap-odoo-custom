@@ -59,6 +59,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record model="product.template" id="demo_product_template_tomato_tart">
         <field name="name">Tarte à la tomate</field>
+        <field name="image" type="base64" file="mrp_food/static/img/tomato_pie.png"/>
     </record>
 
 

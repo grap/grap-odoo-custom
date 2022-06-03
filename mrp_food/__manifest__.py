@@ -39,5 +39,8 @@
         "views/view_product_template.xml",
         "views/view_seasonality.xml",
     ],
+    "images": [
+        "./static/img/tomato_pie.png",
+    ],
     "installable": True,
 }
