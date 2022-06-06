@@ -27,6 +27,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- Hide menu -->
     <menuitem id="mrp.menu_mrp_bom"
+        name="(Admin) Master Data"
         parent="mrp.menu_mrp_root"
         groups="base.group_no_one"/>
 
