@@ -8,14 +8,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
     <record model="seasonality.line" id="demo_seasonality_spring_line2022">
-      <field name="name">Spring 2022</field>
+      <field name="name">Spring (2022)</field>
       <field name="date_start">2022-03-23</field>
       <field name="date_end">2022-06-22</field>
       <field name="seasonality_id" ref="mrp_food.demo_seasonality_spring"/>
     </record>
 
     <record model="seasonality.line" id="demo_seasonality_summer_line2022">
-        <field name="name">Summer 2022</field>
+        <field name="name">Summer (2022)</field>
         <field name="date_start">2022-06-23</field>
         <field name="date_end">2022-09-22</field>
         <field name="seasonality_id" ref="mrp_food.demo_seasonality_summer"/>

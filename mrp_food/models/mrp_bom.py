@@ -40,7 +40,7 @@ class MrpBom(models.Model):
         store=True,
     )
 
-    # Handling time
+    # TODO : Handling time
 
     @api.multi
     @api.depends("product_id", "bom_line_ids.allergen_ids")
@@ -59,7 +59,7 @@ class MrpBom(models.Model):
             )
 
     @api.multi
-    @api.depends("product_id", "bom_line_ids")
+    @api.depends("product_id", "bom_season_ids", "bom_line_ids")
     def _compute_seasonal(self):
         for bom in self:
             # Handling BoM Seasonalities

@@ -101,5 +101,5 @@ class Seasonality(models.Model):
         clean_name = re.sub("[0-9]*", "", name)
         clean_name = re.sub(r"\([0-9]*\)", "", clean_name)
 
-        new_name = clean_name + " (" + str(year) + ")"
+        new_name = clean_name + "(" + str(year) + ")"
         return new_name

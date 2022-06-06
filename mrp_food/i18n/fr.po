@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 13:54+0000\n"
-"PO-Revision-Date: 2022-05-31 13:54+0000\n"
+"POT-Creation-Date: 2022-06-06 09:11+0000\n"
+"PO-Revision-Date: 2022-06-06 09:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -231,6 +231,12 @@ msgid "Manage Seasonality"
 msgstr "Gérer les saisonnalités"
 
 #. module: mrp_food
+#: model:product.product,name:mrp_food.demo_product_mustard
+#: model:product.template,name:mrp_food.demo_product_mustard_product_template
+msgid "Moutarde"
+msgstr ""
+
+#. module: mrp_food
 #: model:ir.ui.menu,name:mrp_food.menu_mrp_editable_views
 msgid "Price Lists - Inline editable"
 msgstr "Mercuriales"
@@ -266,6 +272,18 @@ msgstr "Articles hors saison"
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
 msgid "Products Variants"
 msgstr "Produits"
+
+#. module: mrp_food
+#: model:product.product,name:mrp_food.demo_product_pie
+#: model:product.template,name:mrp_food.demo_product_pie_product_template
+msgid "Pâte à tarte"
+msgstr ""
+
+#. module: mrp_food
+#: model:product.product,name:mrp_food.demo_product_peach
+#: model:product.template,name:mrp_food.demo_product_peach_product_template
+msgid "Pêches"
+msgstr ""
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_seasonality
@@ -338,6 +356,11 @@ msgid "Suppliers informations - Inline editable"
 msgstr "Prix fournisseur·es - Éditable en ligne"
 
 #. module: mrp_food
+#: model:product.template,name:mrp_food.demo_product_template_tomato_tart
+msgid "Tarte à la tomate"
+msgstr ""
+
+#. module: mrp_food
 #: code:addons/mrp_food/models/seasonality_line.py:32
 #, python-format
 msgid "The end date cannot be earlier than the start date."
@@ -349,9 +372,24 @@ msgid "This field holds the image used as image for the product, limited to 1024
 msgstr "Ce champ contient l'image utilisée pour cet article, limitée à 1024x1024 px."
 
 #. module: mrp_food
+#: model:product.product,name:mrp_food.demo_product_tomato
+#: model:product.template,name:mrp_food.demo_product_tomato_product_template
+msgid "Tomates"
+msgstr ""
+
+#. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
 msgid "Total"
 msgstr ""
+
+#. module: mrp_food
+#: model:product.product,uom_name:mrp_food.demo_product_peach
+#: model:product.product,uom_name:mrp_food.demo_product_pie
+#: model:product.template,uom_name:mrp_food.demo_product_peach_product_template
+#: model:product.template,uom_name:mrp_food.demo_product_pie_product_template
+#: model:product.template,uom_name:mrp_food.demo_product_template_tomato_tart
+msgid "Unit(s)"
+msgstr "Unité(s)"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
@@ -360,7 +398,7 @@ msgid "UoM"
 msgstr "UdM"
 
 #. module: mrp_food
-#: code:addons/mrp_food/models/seasonality.py:74
+#: code:addons/mrp_food/models/seasonality.py:75
 #, python-format
 msgid "You cannot use this button. Fill one period for this seasonality before."
 msgstr ""
@@ -369,6 +407,33 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
 msgid "e.g. The name of the season and year of the seasonal line : Summer (2022)"
 msgstr "ex : Le nom de la saison and l'année de cette période : Été (2022)"
+
+#. module: mrp_food
+#: model:product.product,uom_name:mrp_food.demo_product_mustard
+#: model:product.product,uom_name:mrp_food.demo_product_spinach
+#: model:product.product,uom_name:mrp_food.demo_product_tomato
+#: model:product.product,weight_uom_name:mrp_food.demo_product_mustard
+#: model:product.product,weight_uom_name:mrp_food.demo_product_peach
+#: model:product.product,weight_uom_name:mrp_food.demo_product_pie
+#: model:product.product,weight_uom_name:mrp_food.demo_product_spinach
+#: model:product.product,weight_uom_name:mrp_food.demo_product_tomato
+#: model:product.template,uom_name:mrp_food.demo_product_mustard_product_template
+#: model:product.template,uom_name:mrp_food.demo_product_spinach_product_template
+#: model:product.template,uom_name:mrp_food.demo_product_tomato_product_template
+#: model:product.template,weight_uom_name:mrp_food.demo_product_mustard_product_template
+#: model:product.template,weight_uom_name:mrp_food.demo_product_peach_product_template
+#: model:product.template,weight_uom_name:mrp_food.demo_product_pie_product_template
+#: model:product.template,weight_uom_name:mrp_food.demo_product_spinach_product_template
+#: model:product.template,weight_uom_name:mrp_food.demo_product_template_tomato_tart
+#: model:product.template,weight_uom_name:mrp_food.demo_product_tomato_product_template
+msgid "kg"
+msgstr ""
+
+#. module: mrp_food
+#: model:product.product,name:mrp_food.demo_product_spinach
+#: model:product.template,name:mrp_food.demo_product_spinach_product_template
+msgid "Épinard"
+msgstr ""
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
