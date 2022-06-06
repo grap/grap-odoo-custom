@@ -30,6 +30,7 @@
         "product_standard_price_tax_included",
         "product_sale_tax_price_included",
         # GRAP
+        "grap_change_views_mrp",
         "fiscal_company_product",
         "stock_preparation_category",
         "recurring_consignment",
