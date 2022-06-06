@@ -27,7 +27,13 @@ class MrpBom(models.Model):
     )
     def _check_product_and_variant(self):
         for bom in self:
-            if bom.product_id.product_tmpl_id != bom.product_tmpl_id:
-                raise ValidationError(
-                    _("Product Variant and Product Template should be linked.")
-                )
+            # Mandatory with this module but prevent warning for demo datas
+            # of other modules
+            if bom.product_id:
+                if bom.product_id.product_tmpl_id != bom.product_tmpl_id:
+                    raise ValidationError(
+                        _(
+                            "In BoM, product Variant and product Template"
+                            " should be set and linked."
+                        )
+                    )
