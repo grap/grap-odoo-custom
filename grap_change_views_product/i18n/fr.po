@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-25 07:38+0000\n"
-"PO-Revision-Date: 2022-05-25 07:38+0000\n"
+"POT-Creation-Date: 2022-06-08 22:35+0000\n"
+"PO-Revision-Date: 2022-06-08 22:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -208,6 +208,11 @@ msgid "Manual Deletion in the Scale System"
 msgstr "Suppression manuel dans le système de balance"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Manufacturing Informations"
+msgstr "Informations de production"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Margin Categ."
 msgstr "Catég. Marge"
@@ -216,6 +221,11 @@ msgstr "Catég. Marge"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Min Qty"
 msgstr "Qté min."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Nomenclatures"
+msgstr "Fiches techniques"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

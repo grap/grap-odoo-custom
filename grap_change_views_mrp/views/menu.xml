@@ -31,4 +31,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="mrp.menu_mrp_root"
         groups="base.group_no_one"/>
 
+    <menuitem id="mrp.menu_mrp_production_report"
+        name="(Admin) Report"
+        parent="mrp.menu_mrp_root"
+        groups="base.group_no_one"/>
+
+
+
   </odoo>

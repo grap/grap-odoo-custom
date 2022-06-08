@@ -12,12 +12,14 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        "purchase",
-        "sale_mrp",
         "mrp_bom_note",
         # GRAP
-        "grap_change_views_mrp",
+        "mrp_bom_product_variant",
+        "mrp_bom_tag",
         "mrp_food",
+        "product_main_seller",
+        "grap_change_views_mrp",
+        "grap_change_views_product",
         # OCA Modules
         "mrp_bom_widget_section_and_note_one2many",
     ],

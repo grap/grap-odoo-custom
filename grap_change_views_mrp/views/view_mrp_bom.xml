@@ -16,7 +16,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='type']" position="attributes">
-                <attribute name="groups">grap_change_views_mrp.mrp_bom_type_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </xpath>
 
         </field>
@@ -36,8 +36,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//div[@name='bom_title']" position="after">
                 <div class="oe_title" name="bom_title">
-                    <label for="product_id" string="Bill of Materials"/>
-                    <h1><field name="product_id" readonly="1"/></h1>
+                    <label for="product_name" string="Fiche technique" style="margin-left:5px;"/>
+                    <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
                 </div>
             </xpath>
 
@@ -62,10 +62,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="invisible">1</attribute>
             </xpath>
             <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="label_ids" widget="many2many_tags"/>
+                <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                <field name="product_uom_id" string="UoM" readonly="1"/>
+                <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="seasonality_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                 <field name="is_seasonal" groups="base.group_no_one"/>

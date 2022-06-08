@@ -3,6 +3,7 @@
 Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 @author: Julien WESTE
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
@@ -58,12 +59,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <span class="o_stat_text">Forecasted</span>
                             </div>
                         </button>
-                        <!-- <button class="oe_stat_button" name="action_view_bom"
+                        <button class="oe_stat_button" name="action_view_bom"
                                 type="object" icon="fa-flask"
                                 attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
                                 groups="mrp.group_mrp_user">
                             <field string="Nomenclatures" name="bom_count" widget="statinfo"/>
-                        </button> -->
+                        </button>
                         <button type="object" name="action_view_stock_move_lines" string="Product Moves"
                                 attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
                                 class="oe_stat_button" icon="fa-arrows-v"/>
@@ -300,14 +301,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </group>
                             </group>
                         </page>
-                        <!-- <page string="Manufacturing Informations" groups="mrp.group_mrp_user">
+                        <page string="Manufacturing Informations" groups="mrp.group_mrp_user">
                             <group>
                               <field name="date_last_statement_price"/>
                               <field name="allergen_ids" widget="many2many_tags"/>
                               <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal"/>
                             </group>
-                        </page> -->
+                        </page>
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">
                             <group string="Scale Communication">
                                 <group>

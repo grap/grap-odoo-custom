@@ -49,6 +49,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- ************************************************************ -->
     <!-- New menus for MRP -->
     <!-- ************************************************************ -->
+    <record id="action_mrp_product_composants" model="ir.actions.act_window">
+      <field name="name">Composants Products</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">product.product</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_product_kanban"/>
+      <field name="context">{"search_default_components":1}</field>
+    </record>
+
+    <menuitem id="menu_product_composants"
+      name="Composants Products"
+      parent="grap_change_views_mrp.menu_mrp_bom_products" sequence="1"
+      action="action_mrp_product_composants"/>
+
     <record id="action_mrp_product_finished" model="ir.actions.act_window">
         <field name="name">Finished Products</field>
         <field name="type">ir.actions.act_window</field>
@@ -61,23 +76,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_product_finished"
         name="Finished Products"
-        parent="grap_change_views_mrp.menu_mrp_bom_products" sequence="1"
-        action="action_mrp_product_finished"/>
-
-    <record id="action_mrp_product_composants" model="ir.actions.act_window">
-        <field name="name">Composants Products</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">product.product</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" ref="view_mrp_product_kanban"/>
-        <field name="context">{"search_default_components":1}</field>
-    </record>
-
-    <menuitem id="menu_product_composants"
-        name="Composants Products"
         parent="grap_change_views_mrp.menu_mrp_bom_products" sequence="2"
-        action="action_mrp_product_composants"/>
+        action="action_mrp_product_finished"/>
 
     <record id="action_mrp_product_all" model="ir.actions.act_window">
         <field name="name">All Products</field>

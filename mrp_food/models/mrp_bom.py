@@ -72,7 +72,9 @@ class MrpBom(models.Model):
             #  Handling BoM Lines Seasonalities.
             #  One Line not in season and we considere the BoM Lines not in season
             bom.are_bom_lines_seasonals = True
-            for bom_line in bom.bom_line_ids:
+            for bom_line in bom.bom_line_ids.filtered(
+                lambda x: x.product_id.is_alimentary
+            ):
                 if not bom_line.is_seasonal:
                     bom.are_bom_lines_seasonals = False
 
