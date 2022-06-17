@@ -33,6 +33,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <h1><field name="name"/></h1>
                     </div>
                     <group>
+                        <field name="parent_id" class="oe_inline"/>
                         <field name="company_id" groups="base.group_multi_company"/>
                     </group>
                 </sheet>
@@ -44,6 +45,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">mrp.bom.tag</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="complete_name"/>
                 <field name="name"/>
                 <field name="bom_qty"/>
                 <field name="company_id" groups="base.group_multi_company"/>
@@ -62,5 +64,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <menuitem id="menu_bom_tag"
         parent="mrp.menu_mrp_configuration" sequence="10"
         action="action_bom_tag"/>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials Tags - Search -->
+    <!-- ************************************************************ -->
+
+    <record id="view_bom_tag_search" model="ir.ui.view">
+        <field name="model">mrp.bom.tag</field>
+        <field name="arch" type="xml">
+            <search string="Tags">
+              <field name="complete_name"/>
+            </search>
+        </field>
+    </record>
 
 </odoo>
