@@ -36,6 +36,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="mrp.menu_mrp_root"
         groups="base.group_no_one"/>
 
+    <menuitem id="mrp.menu_view_resource_calendar_search_mrp"
+        name="(Admin) Working Times"
+        parent="mrp.menu_mrp_configuration"
+        groups="base.group_no_one"/>
+
 
 
   </odoo>
