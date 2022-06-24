@@ -38,6 +38,7 @@
         "sale_eshop",
         "product_food",
         "product_label",
+        "product_main_seller",
         "product_print_category",
         "product_simple_pricelist",
         "product_print_category_food_report",

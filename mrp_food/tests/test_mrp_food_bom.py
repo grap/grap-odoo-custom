@@ -9,11 +9,12 @@ class TestMrpFoodBom(TransactionCase):
     def setUp(self):
         super(TestMrpFoodBom, self).setUp()
         self.bom_tomato_tart = self.env.ref("mrp_food.demo_bom_tomato_tart")
+        self.bom_not_seasonal = self.env.ref("mrp_food.demo_bom_lines_not_seasonal")
         self.bom_tomato_tart_tomatoes = self.env.ref(
             "mrp_food.demo_bom_tomato_tart_line_tomatoes"
         )
         self.seasonality_all = self.env.ref("mrp_food.demo_seasonality_all_season")
-        self.peach = self.env.ref("mrp_food.demo_product_peach")
+        self.peach = self.env.ref("mrp_food.demo_product_peach_no_season")
 
     def test_01_bom_price_subtotal_line(self):
         self.assertEqual(
@@ -50,10 +51,10 @@ class TestMrpFoodBom(TransactionCase):
         )
 
     def test_04_bom_lines_seasonalities(self):
-        self.assertEqual(self.bom_tomato_tart.products_not_in_season, "Tomates.")
-        self.bom_tomato_tart.write(
+        self.assertEqual(self.bom_not_seasonal.products_not_in_season, "Chickpea.")
+        self.bom_not_seasonal.write(
             {"bom_line_ids": [(0, 0, {"product_id": self.peach.id, "product_qty": 1})]}
         )
         self.assertEqual(
-            self.bom_tomato_tart.products_not_in_season, "Tomates, Pêches."
+            self.bom_not_seasonal.products_not_in_season, "Chickpea, Peach."
         )

@@ -15,11 +15,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//group[1]" position="before">
-                <field name="image" widget="image" class="oe_avatar"/>
-                <div class="oe_title" name="bom_title">
-                    <label for="product_tmpl_id" string="Bill of Materials"/>
-                    <h1><field name="product_tmpl_id" readonly="1"/></h1>
-                </div>
                 <p class="alert alert-warning" role="alert" groups="mrp_food.seasonality_manager" attrs="{'invisible': ['|', ('is_bom_seasonal', '=', True), '&amp;', ('is_bom_seasonal', '=', False), ('are_bom_lines_seasonals', '=', False)]}">
                   ⚠️ This Bill Of Materials is not in season.
                 </p>
@@ -32,11 +27,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <b><field name="products_not_in_season" readonly="1"/></b>
                 </p>
             </xpath>
-            <xpath expr="//field[@name='routing_id']" position="before">
-                <field name="currency_id" invisible="1"/>
-                <field name="standard_price_total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-            </xpath>
-            <xpath expr="//field[@name='code']" position="after">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <br/>
                 <field name="bom_season_ids" string="Seasonality 🥕" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                 <field name="is_bom_seasonal" groups="base.group_no_one"/>
                 <field name="are_bom_lines_seasonals" groups="base.group_no_one"/>
@@ -45,22 +37,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
 
             <!-- BoM Lines -->
-            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="attributes">
-                <attribute name="widget">numeric_step</attribute>
-                <attribute name="options">{'step': 0.1, 'min': 0}</attribute>
-            </xpath>
-            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_uom_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="currency_id" invisible="1"/>
-                <field name="product_uom_id" string="UoM" readonly="1"/>
-                <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="seasonality_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                 <field name="is_seasonal" groups="base.group_no_one"/>
-                <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
             </xpath>
         </field>
     </record>
@@ -77,9 +58,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="bom_season_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="bom_label_ids" widget="many2many_tags"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>
-            </xpath>
-            <xpath expr="//field[@name='product_uom_id']" position="after">
-                <field name="active" widget="boolean_toggle"/>
             </xpath>
         </field>
     </record>

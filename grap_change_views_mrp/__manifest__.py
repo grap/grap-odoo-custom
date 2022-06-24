@@ -29,7 +29,6 @@
         "mrp_food",
     ],
     "data": [
-        "security/res_groups.xml",
         "views/menu.xml",
         "views/view_mrp_bom.xml",
     ],

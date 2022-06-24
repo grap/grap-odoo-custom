@@ -21,19 +21,18 @@ class MrpBom(models.Model):
     def _onchange_product_id(self):
         self.product_tmpl_id = self.product_id.product_tmpl_id
 
+    # Mandatory with this module but prevent warning for demo datas
+    # of other modules
     @api.constrains(
         "product_id",
         "product_tmpl_id",
     )
     def _check_product_and_variant(self):
-        for bom in self:
-            # Mandatory with this module but prevent warning for demo datas
-            # of other modules
-            if bom.product_id:
-                if bom.product_id.product_tmpl_id != bom.product_tmpl_id:
-                    raise ValidationError(
-                        _(
-                            "In BoM, product Variant and product Template"
-                            " should be set and linked."
-                        )
+         for bom in self.filtered(lambda x: x.product_id):
+            if bom.product_id.product_tmpl_id != bom.product_tmpl_id:
+                raise ValidationError(
+                    _(
+                        "In BoM, product Variant and product Template"
+                        " should be set and linked."
                     )
+                )

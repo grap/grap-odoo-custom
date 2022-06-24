@@ -302,9 +302,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </group>
                         </page>
                         <page string="Manufacturing Informations" groups="mrp.group_mrp_user">
-                            <span attrs="{'invisible': [('bom_count', '=', 0)]}"><b>Date de relevé de prix</b> : paramétrable seulement pour les produits rentrant dans la composition d'au moins <u>une</u> fiche technique.</span>
+                            <span attrs="{'invisible': [('bom_count', '=', 0)]}"><b>Date last statement price</b>:only configurable for products that are part of at least <u>one</u> bill of material.</span>
                             <group>
-                              <field name="date_last_statement_price" attrs="{'invisible': [('bom_count', '!=', 0)]}" help="Seulement pour les matières premières"/>
+                              <field name="date_last_statement_price" attrs="{'invisible': [('bom_count', '!=', 0)]}" help="Only for the raw materials"/>
                               <field name="allergen_ids" widget="many2many_tags"/>
                               <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal"/>

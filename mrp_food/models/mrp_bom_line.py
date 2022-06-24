@@ -9,13 +9,6 @@ class MrpBomLine(models.Model):
     _inherit = "mrp.bom.line"
 
     # New fields
-    standard_price_unit = fields.Float(compute="_compute_standard_price_unit")
-    currency_id = fields.Many2one(related="product_id.currency_id")
-
-    standard_price_subtotal = fields.Float(
-        string="Subtotal price", compute="_compute_standard_price_subtotal"
-    )
-
     label_ids = fields.Many2many(
         comodel_name="product.label",
         related="product_id.label_ids",
@@ -37,15 +30,3 @@ class MrpBomLine(models.Model):
     is_seasonal = fields.Boolean(
         related="product_id.is_seasonal",
     )
-
-    @api.multi
-    @api.depends("standard_price_unit", "product_qty")
-    def _compute_standard_price_subtotal(self):
-        for line in self:
-            line.standard_price_subtotal = line.standard_price_unit * line.product_qty
-
-    @api.multi
-    @api.depends("product_id")
-    def _compute_standard_price_unit(self):
-        for line in self:
-            line.standard_price_unit = line.product_id.standard_price

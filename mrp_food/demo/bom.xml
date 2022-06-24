@@ -7,8 +7,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
 
+    <!-- BoM n°1 : Tomato pie  -->
     <record model="mrp.bom" id="demo_bom_tomato_tart">
-      <field name="code">TARTETOMATE</field>
+      <field name="code">TOMATO_PIE</field>
       <field name="product_tmpl_id" ref="mrp_food.demo_product_template_tomato_tart"/>
       <field name="bom_season_ids" eval="[(4, ref('mrp_food.demo_seasonality_spring')), (4, ref('mrp_food.demo_seasonality_summer'))]" />
     </record>
@@ -35,6 +36,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="bom_id" ref="mrp_food.demo_bom_tomato_tart"/>
         <field name="product_id" ref="mrp_food.demo_product_mustard"/>
         <field name="product_qty">0.1</field>
+    </record>
+
+    <!-- BoM n°2 : Season BoM with lines not in season  -->
+    <record model="mrp.bom" id="demo_bom_lines_not_seasonal">
+      <field name="product_tmpl_id" ref="mrp_food.demo_product_template_not_seasonal"/>
+      <field name="bom_season_ids" eval="[(4, ref('mrp_food.demo_seasonality_all_season'))]" />
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_lines_not_seasonal_line_chickpea">
+        <field name="bom_id" ref="mrp_food.demo_bom_lines_not_seasonal"/>
+        <field name="product_id" ref="mrp_food.demo_product_chickpea_no_season"/>
+        <field name="product_qty">1</field>
     </record>
 
 

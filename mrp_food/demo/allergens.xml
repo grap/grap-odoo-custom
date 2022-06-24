@@ -8,7 +8,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
     <record model="product.allergen" id="demo_allergen_mustard">
-        <field name="name">Moutarde</field>
+        <field name="name">Mustard</field>
     </record>
 
     <record model="product.allergen" id="demo_allergen_gluten">

@@ -1,4 +1,4 @@
-# Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+# Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
 # @author: Quentin Dupont (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -12,14 +12,13 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        # "purchase",
-        # "sale_mrp",
         # OCA modules
-        "product_food",
-        "product_label",
         "web_widget_color",
         # GRAP modules,
+        "product_food",
+        "product_label",
         "product_main_seller",
+        "mrp_bom_sale_product_margin",
     ],
     "demo": [
         "demo/allergens.xml",

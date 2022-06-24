@@ -8,10 +8,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
     <record model="product.product" id="demo_product_spinach">
-        <field name="name">Épinard</field>
+        <field name="name">Spinach</field>
         <field name="uom_id" ref="uom.product_uom_kgm"/>
         <field name="uom_po_id" ref="uom.product_uom_kgm"/>
         <field name="standard_price">4</field>
+        <field name="is_alimentary">1</field>
         <field name="product_seasonality_ids" eval="[
           (4, ref('mrp_food.demo_seasonality_spring')),
           ]" />
@@ -21,10 +22,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record model="product.product" id="demo_product_tomato">
-        <field name="name">Tomates</field>
+        <field name="name">Tomatoes</field>
         <field name="uom_id" ref="uom.product_uom_kgm"/>
         <field name="uom_po_id" ref="uom.product_uom_kgm"/>
         <field name="standard_price">3</field>
+        <field name="is_alimentary">1</field>
         <field name="product_seasonality_ids" eval="[
             (4, ref('mrp_food.demo_seasonality_summer')),
             ]" />
@@ -34,10 +36,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record model="product.product" id="demo_product_mustard">
-        <field name="name">Moutarde</field>
+        <field name="name">Mustard</field>
         <field name="uom_id" ref="uom.product_uom_kgm"/>
         <field name="uom_po_id" ref="uom.product_uom_kgm"/>
         <field name="standard_price">10</field>
+        <field name="is_alimentary">1</field>
         <field name="allergen_ids" eval="[
           (4, ref('mrp_food.demo_allergen_mustard')),
           ]" />
@@ -47,8 +50,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record model="product.product" id="demo_product_pie">
-        <field name="name">Pâte à tarte</field>
+        <field name="name">Pie</field>
         <field name="standard_price">3</field>
+        <field name="is_alimentary">1</field>
         <field name="allergen_ids" eval="[
           (4, ref('mrp_food.demo_allergen_gluten')),
           ]" />
@@ -57,14 +61,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
           ]" />
     </record>
 
-    <record model="product.product" id="demo_product_peach">
-        <field name="name">Pêches</field>
+    <record model="product.product" id="demo_product_chickpea_no_season">
+        <field name="name">Chickpea</field>
+        <field name="is_alimentary">1</field>
+        <field name="standard_price">3</field>
+    </record>
+
+    <record model="product.product" id="demo_product_peach_no_season">
+        <field name="name">Peach</field>
+        <field name="is_alimentary">1</field>
         <field name="standard_price">3</field>
     </record>
 
     <record model="product.template" id="demo_product_template_tomato_tart">
-        <field name="name">Tarte à la tomate</field>
+        <field name="name">Tomato pie</field>
         <field name="image" type="base64" file="mrp_food/static/img/tomato_pie.png"/>
+    </record>
+
+    <record model="product.template" id="demo_product_template_not_seasonal">
+        <field name="name">Not seasonal product</field>
     </record>
 
 
