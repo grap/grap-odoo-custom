@@ -19,7 +19,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <br/>
                 <field name="currency_id" invisible="1"/>
                 <!-- Standard price -->
-                <field name="diff_product_bom_standard_price" groups="base.group_no_one"/>
+                <field name="diff_product_bom_standard_price" invisible="1"/>
                 <field name="standard_price_total" class="oe_inline" widget="monetary"
                        options="{'currency_field': 'currency_id'}"
                        attrs="{'invisible': [('diff_product_bom_standard_price', '!=', 0)]}"/>
@@ -33,7 +33,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
 
                 <!-- Theorical price -->
-                <label for="bom_theoretical_price" attrs="{'invisible': [('bom_margin_state', '=', 'correct')]}"/>
+                <!-- <label for="bom_theoretical_price" attrs="{'invisible': [('bom_margin_state', '=', 'correct')]}"/>
                 <div attrs="{'invisible': [('bom_margin_state', '=', 'correct')]}">
                     <field name="bom_theoretical_price" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                     <button name="use_theoretical_price" string="⇒ Increase Price"
@@ -45,9 +45,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             attrs="{'invisible': [('bom_margin_state', '!=', 'too_expensive')]}"
                             help="Decrease the Sale Price down to Theoretical Price"/>
                 </div>
-                <field name="bom_margin_state" invisible="1"/>
-                <!-- <field name="bom_lst_price" widget="monetary"/>
-                <field name="bom_standard_margin_rate"/> -->
+                <field name="bom_margin_state" invisible="1"/> -->
+                <br/>
+                <div>
+                  <span id="handling_price_title"><i><b>ℹ️ Handling product's variant prices</b></i></span><br/>
+                  <span attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">
+                    <i>Actual cost: <b><field name="product_standard_price" widget="monetary" nolabel="1"/></b></i>
+                    <br/>
+                  </span>
+                  <span>
+                    <i>Actual sale: <b><field name="product_sale_price" widget="monetary" nolabel="1"/></b>
+                    (margin <b><field name="product_margin_rate" nolabel="1"/>&#x25;</b>).</i>
+                  </span>
+                  <br/>
+                </div>
+                <!-- <field name="product_margin_sale_text" /> -->
+                <!-- <field name="bom_standard_margin_rate"/> -->
             </xpath>
 
             <!-- BoM Lines -->

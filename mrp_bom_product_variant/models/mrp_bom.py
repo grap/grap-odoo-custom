@@ -28,7 +28,7 @@ class MrpBom(models.Model):
         "product_tmpl_id",
     )
     def _check_product_and_variant(self):
-         for bom in self.filtered(lambda x: x.product_id):
+        for bom in self.filtered(lambda x: x.product_id):
             if bom.product_id.product_tmpl_id != bom.product_tmpl_id:
                 raise ValidationError(
                     _(

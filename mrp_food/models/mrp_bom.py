@@ -2,7 +2,7 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class MrpBom(models.Model):
@@ -52,6 +52,7 @@ class MrpBom(models.Model):
             for period in bom.mapped("bom_season_ids.seasonality_line_ids"):
                 if period.date_start <= today <= period.date_end:
                     bom.is_bom_seasonal = True
+                    break
             #  Handling BoM Lines Seasonalities.
             #  One Line not in season and we considere the BoM Lines not in season
             bom.are_bom_lines_seasonals = True
