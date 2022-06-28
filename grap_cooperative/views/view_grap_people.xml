@@ -96,9 +96,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
                             <!-- Medium people's picture -->
                             <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image: url(#{kanban_image('grap.people', 'image', record.id.raw_value)})" role="img">
-                                <div class="o_kanban_image_inner_pic rounded-circle" t-if="record.company_id.raw_value">
-                                    <field name="company_code"/>
-                                </div>
                             </div>
                             <!-- People's picture optimized for mobile -->
                             <div class="o_kanban_image d-md-none rounded-circle" t-attf-style="background-image: url(#{kanban_image('grap.people', 'image_small', record.id.raw_value)})" role="img"/>
@@ -107,7 +104,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <div class="o_kanban_record_top">
                                     <div class="o_kanban_record_headings">
                                         <strong class="o_kanban_record_title">
-                                            <field name="name"/>
+                                            <ul>
+                                              <li><field name="name"/></li>
+                                              <li><field name="company_code"/> - <field name="company_id"/></li>
+                                            </ul>
                                         </strong>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <li t-if="record.working_phone.raw_value">
                                         <field name="working_phone" widget="phone"/>
                                     </li>
-                                    <li t-if="record.private_phone.raw_value">
+                                    <li t-elif="record.private_phone.raw_value">
                                         (<field name="private_phone" widget="phone"/>)
                                     </li>
                                     <li t-if="record.working_email.raw_value">
