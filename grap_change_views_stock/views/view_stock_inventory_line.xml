@@ -22,7 +22,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_categ_id" readonly="1"/>
             </field>
             <field name="product_uom_id" position="attributes">
-                <attribute name="attrs">{'readonly': [('state', '!=', 'confirm')]}</attribute>
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
             </field>
             <field name="location_id" position="attributes">
                 <attribute name="attrs">{'readonly': [('state', '!=', 'confirm')]}</attribute>
@@ -41,5 +42,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </field>
         </field>
     </record>
+
+    <record id="view_stock_inventory_line_tree_manager" model="ir.ui.view">
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="grap_change_views_stock.view_stock_inventory_line_tree"/>
+            <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="arch" type="xml">
+            <field name="product_uom_id" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+
 
 </odoo>
