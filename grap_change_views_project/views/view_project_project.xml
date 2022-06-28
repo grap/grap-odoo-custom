@@ -15,11 +15,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//page[1]" position="before">
               <page string="Description">
                 <group>
-                  <field name='is_odoo_development'/>
-                  <field name='description'/>
+                  <field name="description"/>
                 </group>
               </page>
             </xpath>
+
+            <field name="company_id" position="after">
+              <field name="is_odoo_development" widget="boolean_toggle"/>
+            </field>
 
         </field>
     </record>
