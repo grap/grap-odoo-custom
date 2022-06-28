@@ -49,7 +49,7 @@ class ResCompany(models.Model):
 
     # Referents in Company
     accounting_referent_id = fields.Many2one(
-        string="Accouting Referent", comodel_name="grap.people"
+        string="Accounting Referent", comodel_name="grap.people"
     )
 
     hr_referent_id = fields.Many2one(string="HR Referent", comodel_name="grap.people")
@@ -58,7 +58,7 @@ class ResCompany(models.Model):
 
     # Interlocutors in Service Team
     accounting_interlocutor_id = fields.Many2one(
-        string="Accouting Interlocutor", comodel_name="grap.people"
+        string="Accounting Interlocutor", comodel_name="grap.people"
     )
 
     hr_interlocutor_id = fields.Many2one(
