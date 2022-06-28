@@ -54,6 +54,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     required="1"/>
             </field>
 
+            <!-- Move some fields -->
+            <field name="fiscal_position_id" position="replace"/>
+            <field name="partner_ref" position="after">
+                <field name="fiscal_position_id"/>
+            </field>
+
             <xpath expr="//page[@name='purchase_delivery_invoice']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
