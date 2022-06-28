@@ -29,21 +29,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </h3>
         </xpath>
 
-    </template>
 
-    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document">
-
-        <!-- Add Custom Message -->
-        <xpath expr="//div[hasclass('page')]/h2/.." position="before">
-            <t t-raw="o.report_custom_message"/>
+        <!-- STATE != DONE -->
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move.product_id']" position="attributes">
+              <attribute name="t-att-style">'display: none'</attribute>
+        </xpath>
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move.product_id']" position="after">
+                <span t-field="move.name"/>
         </xpath>
 
-        <!-- Changement car si la description est trop longue
-             ça merdait en affichant pas les auttres champs-->
-        <xpath expr="//h2" position="replace">
-            <h3>
-                <span>Bon de livraison n° </span><span t-field="o.name"/>
-            </h3>
+        <!-- STATE == DONE -->
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move_line.product_id']" position="attributes">
+              <attribute name="t-att-style">'display: none'</attribute>
+        </xpath>
+        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move_line.product_id']" position="after">
+                <span t-field="move_line.move_id.name"/>
         </xpath>
 
     </template>
