@@ -22,6 +22,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
             </xpath>
 
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='code']" position="after">
+                <label for="code"/>
+                <div>
+                  <field name="code" class="oe_inline"/>
+                  <button name="generate_product_tla" string="⇒ Change Product trigram"
+                          type="object" class="oe_link"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='ready_to_produce']" position="before">
+              <field name="code_nb"/><br/>
+            </xpath>
+
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="attributes">
                 <attribute name="widget">numeric_step</attribute>

@@ -12,6 +12,7 @@ class MrpBom(models.Model):
     image = fields.Binary(related="product_tmpl_id.image")
 
     # override product_uom_id to make it related to product uom
+    # as it's related to product_id and required, module depends mrp_bom_product_variant
     product_uom_id = fields.Many2one(
         "uom.uom",
         "Product Unit of Measure",
@@ -21,95 +22,76 @@ class MrpBom(models.Model):
     )
 
     # Code and Trigram (Three Letter Acronym)
-    tla = fields.Char(compute="_compute_tla", store=True)
-
-    code = fields.Char(
-        compute="_compute_proposal_code",
-        inverse="_inverse_proposal_code",
-        store=True,
+    BOM_CODE_SEQ_START = _("BOM")
+    PRODUCT_CODE_GENERIC_TLA = fields.Char(
+        related="product_id.PRODUCT_CODE_GENERIC_TLA"
     )
 
-    _BOM_CODE_SEQ_START = _("FT")
-    _BOM_CODE_GENERIC_TLA = "XXX"
+    code_nb = fields.Integer(
+        string="Bill Of Material Numbering",
+        help="You can change it manually here and it will change reference.",
+        compute="_compute_code_nb",
+        inverse="_inverse_code_nb",
+        store=True,
+    )
+    code = fields.Char(
+        compute="_compute_proposal_code",
+        help="Automatic code. You can change number manually"
+        " or product trigram directly on product form",
+        store=True,
+    )
 
     # TODO : Handling time
 
     # Models methods
-    #
-    # BoM Code and Trigram functions
-    #
-    @api.multi
-    @api.depends("product_id")
-    def _compute_tla(self):
-        for bom in self:
-            if bom.product_id:
-                if 1 <= len(bom.product_id.name) <= 2:
-                    bom.tla = self._BOM_CODE_GENERIC_TLA
-                else:
-                    # Takes 0-1-2 product's name letters
-                    new_tla_start = bom.product_id.name[0:2].upper()
-                    new_tla_end = bom.product_id.name[2].upper()
-                    new_tla = new_tla_start + new_tla_end
-                    i = 2
-                    # Loop until finding new BoM TLA, changing last TLA letter
-                    while (
-                        bom.env["mrp.bom"].search_count(
-                            [
-                                ("product_id", "!=", bom.product_id.id),
-                                ("tla", "=", new_tla),
-                            ]
-                        )
-                        > 0
-                    ):
-                        # End ot the product's name → Add generic letters and break
-                        if i + 1 >= len(bom.product_id.name):
-                            new_tla = new_tla_start + self._BOM_CODE_GENERIC_TLA[0:1]
-                            break
-                        # Next letter is space, but it's not the end of the name
-                        if bom.product_id.name[i + 1] == " ":
-                            i += 1
-                            continue
-                        # Loop with next letter
-                        else:
-                            new_tla_end = bom.product_id.name[i + 1].upper()
-                            new_tla = new_tla_start + new_tla_end
-                            i += 1
-                    bom.tla = new_tla
-
+    # _get_bom_code_start → returns "BOM-COMPANYCODE-TLA"
     @api.multi
     def _get_bom_code_start(self):
         self.ensure_one()
         if not self.product_id:
             return 0
         else:
-            bom_code = self._BOM_CODE_SEQ_START
+            bom_code_start = self.BOM_CODE_SEQ_START
             if self.env.user.company_id.code:
-                bom_code += ("-") + self.env.user.company_id.code
-            bom_code += ("-") + self.tla
-            return bom_code
-
-    # Override function
-    # We have to override copy function, otherwise, when we duplicate BoM
-    # the bom_count of the product is not accurate (it counts the one being created)
-    @api.multi
-    def copy(self, default=None):
-        default = dict(default or {})
-        if self.product_id:
-            count = self.product_id.bom_count
-        new_code = self._get_bom_code_start() + ("-") + str(count + 1)
-        default.update(
-            {
-                "code": new_code,
-            }
-        )
-        return super(MrpBom, self).copy(default)
+                bom_code_start += ("-") + self.env.user.company_id.code
+            if not self.product_id.tla:
+                self.product_id.write({"tla": self.PRODUCT_CODE_GENERIC_TLA})
+                self.env.user.notify_warning(
+                    message=_(
+                        "You need to change default trigram on product set to %s."
+                    )
+                    % (self.PRODUCT_CODE_GENERIC_TLA),
+                    title=_("No Trigram on product %s " % self.product_id.name),
+                    sticky=False,
+                )
+            bom_code_start += ("-") + self.product_id.tla
+            return bom_code_start
 
     @api.depends("product_id")
-    def _compute_proposal_code(self):
+    def _compute_code_nb(self):
         for bom in self:
-            if bom.product_id:
-                bom.code = self._get_bom_code_start()
-                bom.code += ("-") + str(self.product_id.bom_count + 1)
+            # count archive and active BoMs
+            count = (
+                self.env["mrp.bom"]
+                .with_context(active_test=False)
+                .search_count(
+                    [
+                        ("product_id", "=", bom.product_id.id),
+                        ("code", "!=", ""),
+                    ]
+                )
+            )
+            bom.code_nb = count + 1
 
-    def _inverse_proposal_code(self):
+    def _inverse_code_nb(self):
         return True
+
+    # _compute_proposal_code → compute "BOM-COMPANYCODE-TLA-1"
+    @api.depends("product_id.tla", "code_nb")
+    def _compute_proposal_code(self):
+        for bom in self.filtered(lambda x: x.product_id):
+            bom.code = bom._get_bom_code_start() + ("-") + str(bom.code_nb)
+
+    def generate_product_tla(self):
+        for bom in self.filtered(lambda x: x.product_id):
+            bom.product_id.generate_tla()
