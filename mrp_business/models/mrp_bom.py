@@ -26,6 +26,7 @@ class MrpBom(models.Model):
     PRODUCT_CODE_GENERIC_TLA = fields.Char(
         related="product_id.PRODUCT_CODE_GENERIC_TLA"
     )
+    tla_to_change = fields.Boolean(related="product_id.tla_to_change")
 
     code_nb = fields.Integer(
         string="Bill Of Material Numbering",
@@ -56,6 +57,7 @@ class MrpBom(models.Model):
                 bom_code_start += ("-") + self.env.user.company_id.code
             if not self.product_id.tla:
                 self.product_id.write({"tla": self.PRODUCT_CODE_GENERIC_TLA})
+                self.product_id.write({"tla_to_change": True})
                 self.env.user.notify_warning(
                     message=_(
                         "You need to change default trigram on product set to %s."

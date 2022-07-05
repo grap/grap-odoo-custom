@@ -23,6 +23,10 @@ class ProductProduct(models.Model):
         store=True,
     )
 
+    tla_to_change = fields.Boolean(
+        default=False,
+    )
+
     # [DEPRECATED] Commentaire juste après plus valide car TLA pas généré automatiquement.
     #  Par contre, une contrainte est bien faite dans le onchange qui vérifie l'unicité
     #
@@ -77,7 +81,9 @@ class ProductProduct(models.Model):
             simple_name = re.sub(r"[^A-Za-z0-9]+", "", product.name)
             if 1 <= len(simple_name) <= 2:
                 product.tla = self.PRODUCT_CODE_GENERIC_TLA
+                product.tla_to_change = True
             else:
+                product.tla_to_change = False
                 # Takes 0-1-2 product's name letters
                 new_tla_start = simple_name[0:2].upper()
                 new_tla_end = simple_name[2].upper()
@@ -98,6 +104,7 @@ class ProductProduct(models.Model):
                         new_tla = (
                             new_tla_start[0:1] + self.PRODUCT_CODE_GENERIC_TLA[0:2]
                         )
+                        product.tla_to_change = True
                         break
                     # Next letter is space, but it's not the end of the name
                     if simple_name[i + 1] == " ":
