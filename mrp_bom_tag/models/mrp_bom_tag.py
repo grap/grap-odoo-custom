@@ -58,7 +58,6 @@ class MrpBomTag(models.Model):
     @api.depends("bom_ids")
     def _compute_bom_qty(self):
         for bom_tag in self:
-            # import pdb; pdb.set_trace()
             bom_tag.bom_qty = len(bom_tag.bom_ids)
 
     @api.constrains("parent_id")
