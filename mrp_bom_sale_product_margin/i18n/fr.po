@@ -22,18 +22,18 @@ msgstr "(marge"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
-msgid "<span id=\"handling_price_title\"><i><b>ℹ️ Handling product's variant prices</b></i></span><br/>"
-msgstr "<span id=\"handling_price_title\"><i><b>ℹ️ Gestion des prix</b></i></span><br/>"
+msgid "<span id=\"handling_price_title\"><i><b>ℹ️ Actual product's variant prices</b></i></span><br/>"
+msgstr "<span id=\"handling_price_title\"><i><b>ℹ️ Prix actuels du produit</b></i></span><br/>"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "Actual cost:"
-msgstr "Actuel PdR :"
+msgstr "PdR :"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "Actual sale:"
-msgstr "Actuel PdV :"
+msgstr "PdV :"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model,name:mrp_bom_sale_product_margin.model_mrp_bom
