@@ -12,7 +12,7 @@ class MrpBom(models.Model):
 
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
     # Fields related to cost
-    product_standard_price = fields.Float(related="product_id.standard_price")
+    product_standard_price = fields.Float(compute="_compute_product_standard_price")
     standard_price_total = fields.Float(
         string="BoM Cost",
         track_visibility="onchange",
@@ -31,6 +31,12 @@ class MrpBom(models.Model):
     #
     # Other functions
     #
+    @api.multi
+    @api.depends("product_id", "product_id.standard_price")
+    def _compute_product_standard_price(self):
+        for bom in self:
+            bom.product_standard_price = bom.product_id.standard_price
+
     @api.multi
     @api.depends("product_id", "bom_line_ids")
     def _compute_standard_price_total(self):
