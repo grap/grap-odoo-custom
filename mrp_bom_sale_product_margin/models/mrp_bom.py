@@ -27,7 +27,6 @@ class MrpBom(models.Model):
     # Fields related to sale price
     product_sale_price = fields.Float(related="product_id.lst_price")
     product_margin_rate = fields.Float(related="product_id.standard_margin_rate")
-    product_margin_sale_text = fields.Char(compute="_compute_product_margin_sale_text")
 
     #
     # Other functions
