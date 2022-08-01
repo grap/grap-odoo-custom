@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_main_seller
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-25 07:37+0000\n"
+"PO-Revision-Date: 2022-05-25 07:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_main_seller
+#: model:ir.model.fields,field_description:product_main_seller.field_product_product__main_seller_partner_id
+msgid "Main Seller Partner"
+msgstr "Fournisseur·e principal·e"
+
+#. module: product_main_seller
+#: model:ir.model.fields,help:product_main_seller.field_product_product__main_seller_partner_id
+msgid "Main Seller Partner of the product"
+msgstr "Fournisseur·e principal·e du produit"
+
+#. module: product_main_seller
+#: model:ir.model,name:product_main_seller.model_product_product
+msgid "Product"
+msgstr "Article"
