@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-27 15:03+0000\n"
-"PO-Revision-Date: 2022-06-27 15:03+0000\n"
+"POT-Creation-Date: 2022-08-01 08:49+0000\n"
+"PO-Revision-Date: 2022-08-01 08:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "(margin"
 msgstr "(marge"
-
-#. module: mrp_bom_sale_product_margin
-#: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
-msgid "<span id=\"handling_price_title\"><i><b>ℹ️ Actual product's variant prices</b></i></span><br/>"
-msgstr "<span id=\"handling_price_title\"><i><b>ℹ️ Prix actuels du produit</b></i></span><br/>"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
@@ -56,10 +51,10 @@ msgid "Cost"
 msgstr "Coût"
 
 #. module: mrp_bom_sale_product_margin
-#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:116
+#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:62
 #, python-format
-msgid "Cost price is set to $%s (old price was $%s)"
-msgstr "Le prix de revient est défini à %s€ (l'ancien prix était de %s€)"
+msgid "Cost price is set to $%s (former price was $%s)"
+msgstr "Le Prix de Revient est maintenant de %s € (ancien prix : %s €)"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,help:mrp_bom_sale_product_margin.field_mrp_bom__product_standard_price
@@ -88,10 +83,10 @@ msgid "Markup rate is [ Theorical Margin / sale price (Wo Tax) ] of the product 
 msgstr ""
 
 #. module: mrp_bom_sale_product_margin
-#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:119
+#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:65
 #, python-format
-msgid "New Standard Price for %s"
-msgstr "Nouveau Prix de Revient pour l'article %s"
+msgid "New standard price for %s"
+msgstr "Nouveau Prix de Revient %s"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__product_margin_sale_text
@@ -127,6 +122,11 @@ msgstr "Taux de marque Théorique (%)"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "Total"
 msgstr ""
+
+#. module: mrp_bom_sale_product_margin
+#: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
+msgid "ℹ️ <span id=\"handling_price_title\">Actual product's variant prices</span><br/>"
+msgstr "ℹ️ <span id=\"handling_price_title\">Prix actuels de l'article</span><br/>"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
