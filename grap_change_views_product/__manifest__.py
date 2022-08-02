@@ -29,6 +29,7 @@
         "product_standard_price_tax_included",
         "product_sale_tax_price_included",
         # GRAP
+        "grap_change_views_mrp",
         "fiscal_company_product",
         "stock_preparation_category",
         "recurring_consignment",
@@ -36,6 +37,7 @@
         "sale_eshop",
         "product_food",
         "product_label",
+        "product_main_seller",
         "product_print_category",
         "product_simple_pricelist",
         "product_print_category_food_report",
@@ -47,6 +49,7 @@
         "pos_sector",
         "intercompany_trade_product",
         "joint_buying_product",
+        "mrp_food",
     ],
     "data": [
         "views/menu.xml",
@@ -57,6 +60,7 @@
         "views/view_product_product_stock.xml",
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
+        "views/view_product_product_kanban.xml",
     ],
     "installable": True,
 }

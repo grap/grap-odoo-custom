@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * grap_change_views_product
+#	* grap_change_views_product
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-10 16:24+0000\n"
-"PO-Revision-Date: 2022-03-10 16:24+0000\n"
+"POT-Creation-Date: 2022-06-08 22:35+0000\n"
+"PO-Revision-Date: 2022-06-08 22:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,6 +41,12 @@ msgid "Alimentary Composition"
 msgstr "Composition alimentaire"
 
 #. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_mrp_product_all
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_all
+msgid "All Products"
+msgstr "Tous les articles"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Allergens"
 msgstr "Allergènes"
@@ -66,6 +72,12 @@ msgid "Code"
 msgstr ""
 
 #. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_mrp_product_composants
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_composants
+msgid "Composants Products"
+msgstr "Matières premières"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Cost P."
 msgstr "PdR"
@@ -79,6 +91,11 @@ msgstr "PdR HT"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Cost Price (VAT Incl.)"
 msgstr "PdR TTC"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_mrp_product_kanban
+msgid "Cost:"
+msgstr "Coût : "
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -110,6 +127,12 @@ msgstr "Rem. 2 (%)"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Extra Informations"
 msgstr "Informations complémentaires"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_mrp_product_finished
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_finished
+msgid "Finished Products"
+msgstr "Produits finis"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -185,6 +208,11 @@ msgid "Manual Deletion in the Scale System"
 msgstr "Suppression manuel dans le système de balance"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Manufacturing Informations"
+msgstr "Informations de production"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Margin Categ."
 msgstr "Catég. Marge"
@@ -193,6 +221,11 @@ msgstr "Catég. Marge"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Min Qty"
 msgstr "Qté min."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Nomenclatures"
+msgstr "Fiches techniques"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -243,6 +276,7 @@ msgstr "Impression des étiquettes"
 
 #. module: grap_change_views_product
 #: model:ir.model,name:grap_change_views_product.model_product_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_mrp_product_kanban
 msgid "Product"
 msgstr "Article"
 
@@ -394,6 +428,11 @@ msgstr "Champs de facturation à la vente"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Sale P."
 msgstr "Prix Vente"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_mrp_product_kanban
+msgid "Sale:"
+msgstr "Vente : "
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__list_price

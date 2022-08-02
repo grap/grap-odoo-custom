@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record model="seasonality.line" id="demo_seasonality_spring_line2022">
+      <field name="name">Spring (2022)</field>
+      <field name="date_start">2022-03-23</field>
+      <field name="date_end">2022-06-22</field>
+      <field name="seasonality_id" ref="mrp_food.demo_seasonality_spring"/>
+    </record>
+
+    <record model="seasonality.line" id="demo_seasonality_summer_line2022">
+        <field name="name">Summer (2022)</field>
+        <field name="date_start">2022-06-23</field>
+        <field name="date_end">2022-09-22</field>
+        <field name="seasonality_id" ref="mrp_food.demo_seasonality_summer"/>
+    </record>
+
+    <record model="seasonality.line" id="demo_seasonality_all_line">
+        <field name="name">All season line</field>
+        <field name="date_start">2000-01-01</field>
+        <field name="date_end">2999-12-31</field>
+        <field name="seasonality_id" ref="mrp_food.demo_seasonality_all_season"/>
+    </record>
+
+
+</odoo>

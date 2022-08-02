@@ -33,6 +33,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="barcode" position="after">
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </field>
+            <xpath expr="//field[@name='standard_price']" position="after">
+                <field name="product_main_seller_partner_id" string="Main Seller"/>
+            </xpath>
         </field>
     </record>
 
@@ -52,6 +55,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="fiscal_classification_id" required="1"/>
                 <field name="consignor_partner_id" invisible="1"/>
                 <field name="standard_price"/>
+                <field name="product_main_seller_partner_id" string="Main Seller"/>
                 <field name="list_price"/>
                 <field name="standard_margin_rate"/>
                 <field name="margin_classification_id"/>

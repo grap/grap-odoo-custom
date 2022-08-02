@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* grap_change_views_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-25 07:43+0000\n"
+"PO-Revision-Date: 2022-05-25 07:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: grap_change_views_mrp
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
+msgid "Bills of Materials"
+msgstr "Fiches techniques"
+
+#. module: grap_change_views_mrp
+#: model:res.groups,name:grap_change_views_mrp.mrp_bom_type_manager
+msgid "Manage BoM Type"
+msgstr "Gérer les types de fiche technique"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_mrp_bom_products
+msgid "Products"
+msgstr "Articles"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+msgid "Total"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+msgid "UoM"
+msgstr "UdM"

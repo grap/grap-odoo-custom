@@ -13,7 +13,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//label[@for='date_start']" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+              <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
             <xpath expr="//field[@name='date_start']/.." position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
@@ -26,6 +26,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='delay']/.." position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_mrp_tree" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="mrp_food.view_product_supplierinfo_mrp_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_code']" position="after">
+                <field name="package_qty"/>
+            </xpath>
+            <xpath expr="//field[@name='product_uom']" position="after">
+                <field name="discount"/>
+                <field name="discount2"/>
             </xpath>
         </field>
     </record>
