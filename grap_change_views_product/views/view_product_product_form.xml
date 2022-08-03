@@ -107,6 +107,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group string="General">
                                     <field name="uom_id"/>
                                     <field name="default_code" attrs="{'readonly': [('company_id', '!=', False)]}"/>
+                                    <field name="tla_to_change" invisible="1"/>
+                                    <label for="tla"/>
+                                    <div>
+                                      <field name="tla" class="oe_inline"/>
+                                      <button name="generate_tla" string="⇒ Generate new trigram"
+                                              type="object" class="oe_link"
+                                              help="Create an automatic trigram. Change its BoM references with this trigram."/>
+                                    </div>
                                     <field name="type"/>
                                     <field name="is_alimentary"/>
                                     <field name="categ_id"/>
