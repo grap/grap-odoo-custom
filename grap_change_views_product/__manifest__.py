@@ -50,6 +50,7 @@
         "intercompany_trade_product",
         "joint_buying_product",
         "mrp_food",
+        "mrp_business",
     ],
     "data": [
         "views/menu.xml",

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- Product.product Form View -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_business_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='default_code']" position="after">
+              <field name="tla_to_change" invisible="1"/>
+              <label for="tla"/>
+              <div>
+                <field name="tla" class="oe_inline"/>
+                <button name="generate_tla" string="⇒ Generate new trigram"
+                        type="object" class="oe_link"
+                        help="Create an automatic trigram. Change its BoM references with this trigram."/>
+              </div>
+          </xpath>
+
+        </field>
+    </record>
+
+    <!-- ************************************************************ -->
+    <!-- Product.product Tree View -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_business_product_tree" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view" />
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='name']" position="before">
+              <field name="tla"/>
+          </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>

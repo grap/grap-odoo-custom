@@ -41,7 +41,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <!-- Theorical price -->
                 <br/>
                 <div class="handling_product_variant_price" attrs="{'invisible': [('product_id', '=', False)]}">
-                  ℹ️ <span id="handling_price_title">Actual product's variant prices</span><br/>
+                  <span>💵 <span id="handling_price_title">Actual product's variant prices</span></span><br/>
                   <span>
                     Actual cost: <b><field name="product_standard_price" widget="monetary" nolabel="1"/></b>
                     <span attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">❗</span>

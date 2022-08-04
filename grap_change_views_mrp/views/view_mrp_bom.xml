@@ -47,6 +47,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='product_id']" position="attributes">
               <attribute name="string">Article</attribute>
             </xpath>
+            <xpath expr="//field[@name='code']" position="attributes">
+              <attribute name="string">Référence</attribute>
+            </xpath>
             <xpath expr="//field[@name='product_uom_id']" position="after">
               <field name="active" widget="boolean_toggle"/>
             </xpath>

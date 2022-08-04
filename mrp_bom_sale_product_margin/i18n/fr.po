@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-01 08:49+0000\n"
-"PO-Revision-Date: 2022-08-01 08:49+0000\n"
+"POT-Creation-Date: 2022-08-04 10:04+0000\n"
+"PO-Revision-Date: 2022-08-04 10:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "(margin"
 msgstr "(marge"
+
+#. module: mrp_bom_sale_product_margin
+#: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
+msgid "<span>💵 <span id=\"handling_price_title\">Actual product's variant prices</span></span><br/>"
+msgstr "<span>💶 <span id=\"handling_price_title\">Prix actuels de l'article</span></span><br/>"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
@@ -46,18 +51,18 @@ msgid "BoM Cost"
 msgstr "PdR de la fiche technique"
 
 #. module: mrp_bom_sale_product_margin
-#: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__product_standard_price
+#: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_product_product__standard_price
 msgid "Cost"
 msgstr "Coût"
 
 #. module: mrp_bom_sale_product_margin
-#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:62
+#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:67
 #, python-format
 msgid "Cost price is set to $%s (former price was $%s)"
 msgstr "Le Prix de Revient est maintenant de %s € (ancien prix : %s €)"
 
 #. module: mrp_bom_sale_product_margin
-#: model:ir.model.fields,help:mrp_bom_sale_product_margin.field_mrp_bom__product_standard_price
+#: model:ir.model.fields,help:mrp_bom_sale_product_margin.field_product_product__standard_price
 msgid "Cost used for stock valuation in standard price and as a first price to set in average/fifo. Also used as a base price for pricelists. Expressed in the default unit of measure of the product."
 msgstr "Également utilisé comme prix de base pour les listes. Exprimé dans l'unité de mesure par défaut du produit."
 
@@ -83,14 +88,19 @@ msgid "Markup rate is [ Theorical Margin / sale price (Wo Tax) ] of the product 
 msgstr ""
 
 #. module: mrp_bom_sale_product_margin
-#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:65
+#: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:70
 #, python-format
 msgid "New standard price for %s"
 msgstr "Nouveau Prix de Revient %s"
 
 #. module: mrp_bom_sale_product_margin
-#: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__product_margin_sale_text
-msgid "Product Margin Sale Text"
+#: model:ir.model,name:mrp_bom_sale_product_margin.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: mrp_bom_sale_product_margin
+#: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__product_standard_price
+msgid "Product Standard Price"
 msgstr ""
 
 #. module: mrp_bom_sale_product_margin
@@ -122,11 +132,6 @@ msgstr "Taux de marque Théorique (%)"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "Total"
 msgstr ""
-
-#. module: mrp_bom_sale_product_margin
-#: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
-msgid "ℹ️ <span id=\"handling_price_title\">Actual product's variant prices</span><br/>"
-msgstr "ℹ️ <span id=\"handling_price_title\">Prix actuels de l'article</span><br/>"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
