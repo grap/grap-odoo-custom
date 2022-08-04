@@ -60,12 +60,12 @@ class MrpBom(models.Model):
             old_product_standard_price = bom.product_id.standard_price
             bom.product_id.standard_price = bom.standard_price_total
             self.env.user.notify_success(
-                message=_(
-                    "Cost price is set to $%s (former price was $%s)"
+                message=(
+                    _("Cost price is set to $ %s former price was $ %s")
                     % (
                         round(bom.product_id.standard_price, 2),
                         round(old_product_standard_price, 2),
                     )
                 ),
-                title=_("New standard price for %s" % bom.product_id.name),
+                title=(_("New standard price for %s") % bom.product_id.name),
             )
