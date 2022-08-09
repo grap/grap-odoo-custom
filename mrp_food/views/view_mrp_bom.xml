@@ -48,6 +48,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="seasonality_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                 <field name="is_seasonal" groups="base.group_no_one"/>
             </xpath>
+            <notebook position="inside">
+                <page class="notebook_images" string="Images">
+                    <group>
+                      <field name="image_2" widget="image" class="oe_avatar"/>
+                    </group>
+                    <group>
+                      <field name="image_3" widget="image" class="oe_avatar"/>
+                    </group>
+                </page>
+            </notebook>
+            <!-- <xpath expr="//notebook[1]" position="after">
+                <notebook class="notebook_images">
+                    <field name="image_2"/>
+                    <field name="image_3"/>
+                  </notebook>
+            </xpath> -->
         </field>
     </record>
 

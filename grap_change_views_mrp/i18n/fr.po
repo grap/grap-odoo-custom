@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-25 07:43+0000\n"
-"PO-Revision-Date: 2022-05-25 07:43+0000\n"
+"POT-Creation-Date: 2022-08-09 14:53+0000\n"
+"PO-Revision-Date: 2022-08-09 14:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,36 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
+msgid "Article"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model:ir.model,name:grap_change_views_mrp.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Fiche technique"
+
+#. module: grap_change_views_mrp
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
 msgid "Bills of Materials"
-msgstr "Fiches techniques"
+msgstr "Fiches technique"
 
 #. module: grap_change_views_mrp
-#: model:res.groups,name:grap_change_views_mrp.mrp_bom_type_manager
-msgid "Manage BoM Type"
-msgstr "Gérer les types de fiche technique"
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_product_variant
+msgid "Fiche technique"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: grap_change_views_mrp
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Unité de mesure d'article"
 
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_mrp_bom_products
@@ -32,9 +53,19 @@ msgid "Products"
 msgstr "Articles"
 
 #. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
+msgid "Référence"
+msgstr ""
+
+#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
 msgid "Total"
 msgstr ""
+
+#. module: grap_change_views_mrp
+#: model:ir.model.fields,help:grap_change_views_mrp.field_mrp_bom__product_uom_id
+msgid "Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control"
+msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes

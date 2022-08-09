@@ -61,9 +61,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </button>
                         <button class="oe_stat_button" name="action_view_bom"
                                 type="object" icon="fa-flask"
-                                attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
                                 groups="mrp.group_mrp_user">
-                            <field string="Nomenclatures" name="bom_count" widget="statinfo"/>
+                            <field string="Bill of Materials" name="bom_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" name="action_used_in_bom" type="object"
+                                icon="fa-level-up" groups="mrp.group_mrp_user">
+                            <field string="Used In" name="used_in_bom_count" widget="statinfo" />
                         </button>
                         <button type="object" name="action_view_stock_move_lines" string="Product Moves"
                                 attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
@@ -112,7 +115,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <div groups="mrp.group_mrp_manager">
                                       <field name="tla" class="oe_inline"/>
                                       <button name="generate_tla" string="⇒ Generate new trigram"
-                                              type="object" class="oe_link"
+                                              type="object" class="oe_link" attrs="{'invisible': [('tla_to_change', '!=', True)]}"
                                               help="Create an automatic trigram. Change its BoM references with this trigram."/>
                                     </div>
                                     <field name="type"/>
@@ -301,22 +304,45 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </page>
                         <page string="Alimentary Composition">
                             <group>
-                                <group string="Ingredients">
+                                <group col="12" string="Ingredients">
                                     <field name="ingredients" widget="html" nolabel="1"/>
                                 </group>
                                 <group string="Allergens">
+                                    <p class="alert alert-warning alert-dismissable" role="alert" groups="mrp.group_mrp_user">
+                                      Text field for labels, not for tracking allergens in production (see dedicated tab)
+                                    </p>
                                     <field name="allergens" widget="html" nolabel="1"/>
                                 </group>
                             </group>
                         </page>
-                        <page string="Manufacturing Informations" groups="mrp.group_mrp_user">
-                            <span attrs="{'invisible': [('bom_count', '=', 0)]}"><b>Date last statement price</b>: only configurable for products that are part of at least <u>one</u> bill of material.</span>
+
+
+<!-- TODO : les menus matières premières affichent des trucs qui sont pas dans des Bom, pourquoi ! -->
+
+
+
+
+                        <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
+                          <group>
+                            <group attrs="{'invisible': [('used_in_bom_count', '!=', 0)]}">
+                              <span><b>Date last statement price</b>: only configurable for products that are part of at least <u>one</u> bill of material.</span>
+                            </group>
                             <group>
-                              <field name="date_last_statement_price" attrs="{'invisible': [('bom_count', '!=', 0)]}" help="Only for the raw materials"/>
+                              <field name="date_last_statement_price" attrs="{'invisible': [('used_in_bom_count', '=', 0)]}" help="Only for the raw materials"/>
+                            </group>
+                            <group>
+                              <label for="time_to_produce_product"/>
+                              <div>
+                                <field name="time_to_produce_product" class="oe_inline" widget="numeric_step"/>
+                                <span class="unity_for_time_to_produce"> minutes</span>
+                              </div>
+                            </group>
+                            <group>
                               <field name="allergen_ids" widget="many2many_tags"/>
                               <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal"/>
                             </group>
+                          </group>
                         </page>
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">
                             <group string="Scale Communication">

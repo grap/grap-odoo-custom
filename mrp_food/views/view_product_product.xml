@@ -17,6 +17,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
           <xpath expr="//group[@name='group_standard_price']" position="inside">
               <field name="date_last_statement_price"/>
+              <field name="end_date_of_market_price_list"/>
           </xpath>
 
           <xpath expr="//field[@name='is_alimentary']" position="after">
@@ -40,7 +41,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <separator/>
                 <filter string="By Main Vendor" name="mrp_product_group_by_main_seller" context="{'group_by':'product_main_seller_partner_id'}"/>
                 <filter string="By Category" name="mrp_product_group_by_category" context="{'group_by':'categ_id'}"/>
-                <filter string="BoM Components" name="mrp_food_components" domain="[('bom_line_ids', '!=', False)]"/>
             </xpath>
         </field>
     </record>
@@ -67,10 +67,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="maker_description"/>
                 <field name="categ_id" readonly="1"/>
                 <field name="currency_id" invisible="1"/>
-                <field name="standard_price" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
+                <field name="standard_price" string="PdR" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                 <field name="uom_id" string="UoM" readonly="1"/>
                 <field name="seller_ids" widget="many2many_tags" readonly="1"/>
                 <field name="date_last_statement_price"/>
+                <field name="end_date_of_market_price_list"
+                      options="{'bg_color': '#e74c3c: end_date_of_market_price_list &lt; current_date and end_date_of_market_price_list != False;'}"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
@@ -78,7 +80,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
+
     </record>
+
 
     <record id="action_product_product_mrp_tree" model="ir.actions.act_window">
         <field name="name">Composants Products - Inline editable</field>

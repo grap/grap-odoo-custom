@@ -96,10 +96,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_uom_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//button[@name='action_see_attachments']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_qty']" position="after">
                 <field name="product_uom_id" string="UoM" readonly="1"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="time_to_produce_per_unit"/>
+                <field name="time_to_produce_line" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="seasonality_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>

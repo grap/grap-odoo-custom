@@ -48,7 +48,7 @@ msgstr "Ligne de fiche technique"
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__standard_price_total
 msgid "BoM Cost"
-msgstr "PdR de la fiche technique"
+msgstr "Prix de revient"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_product_product__standard_price

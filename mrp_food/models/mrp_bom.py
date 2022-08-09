@@ -9,6 +9,8 @@ class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
     image = fields.Binary(related="product_tmpl_id.image")
+    image_2 = fields.Binary()
+    image_3 = fields.Binary()
 
     # Seasonality
     bom_season_ids = fields.Many2many(comodel_name="seasonality", string="Seasonality")

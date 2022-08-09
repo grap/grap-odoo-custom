@@ -16,6 +16,7 @@
         "point_of_sale",
         "stock",
         "sale_invoice_policy",
+        "mrp",
         # OCA
         "product_margin_classification",
         "product_pricelist_margin",
@@ -28,6 +29,7 @@
         "purchase_triple_discount",
         "product_standard_price_tax_included",
         "product_sale_tax_price_included",
+        "web_widget_numeric_step",
         # GRAP
         "grap_change_views_mrp",
         "fiscal_company_product",
@@ -62,6 +64,7 @@
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
         "views/view_product_product_kanban.xml",
+        "views/view_product_product_search.xml",
     ],
     "installable": True,
 }

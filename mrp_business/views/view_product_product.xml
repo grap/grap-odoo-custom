@@ -26,21 +26,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </div>
           </xpath>
 
-        </field>
-    </record>
-
-    <!-- ************************************************************ -->
-    <!-- Product.product Tree View -->
-    <!-- ************************************************************ -->
-
-    <record id="view_mrp_business_product_tree" model="ir.ui.view">
-        <field name="model">product.product</field>
-        <field name="inherit_id" ref="product.product_product_tree_view" />
-        <field name="arch" type="xml">
-
-          <xpath expr="//field[@name='name']" position="before">
-              <field name="tla"/>
-          </xpath>
+          <!-- TODO : ajouter time_to_produce_product -->
 
         </field>
     </record>

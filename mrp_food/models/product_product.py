@@ -9,6 +9,7 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     date_last_statement_price = fields.Date(string="Date Last Statement Price")
+    end_date_of_market_price_list = fields.Date(string="End Date of Market Price List")
 
     product_seasonality_ids = fields.Many2many(
         comodel_name="seasonality", string="Seasonalities"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-08 22:35+0000\n"
-"PO-Revision-Date: 2022-06-08 22:35+0000\n"
+"POT-Creation-Date: 2022-08-09 14:54+0000\n"
+"PO-Revision-Date: 2022-08-09 14:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,16 @@ msgstr "<span class=\"o_stat_text\">Prévisions</span>"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "<span class=\"o_stat_text\">On Hand</span>"
 msgstr "<span class=\"o_stat_text\">Disponible</span>"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
+msgstr ""
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "<span><b>Date last statement price</b>: only configurable for products that are part of at least <u>one</u> bill of material.</span>"
+msgstr "<span><b>Date relevé prix</b> : activé seulement si le produit est utilisé dans au moins une fiche technique.</span>"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -55,6 +65,11 @@ msgstr "Allergènes"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Apply Margin"
 msgstr "Appliquer la marge"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Bill of Materials"
+msgstr "Fiches technique"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -96,6 +111,11 @@ msgstr "PdR TTC"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_mrp_product_kanban
 msgid "Cost:"
 msgstr "Coût : "
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Create an automatic trigram. Change its BoM references with this trigram."
+msgstr "Générer un trigramme automatiquement. Cela change les codes références des fiches techniques du produit."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -203,19 +223,30 @@ msgid "Joint Buying"
 msgstr "Commande groupée"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
+msgid "Main Seller"
+msgstr "Fournisseur·e principal·e"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Manual Deletion in the Scale System"
 msgstr "Suppression manuel dans le système de balance"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Manufacturing Informations"
-msgstr "Informations de production"
+msgid "Manufacturing Informations 🥕"
+msgstr "Informations de production 🥕"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Margin Categ."
 msgstr "Catég. Marge"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_grap_mrp_product_product_search
+msgid "Matières premières"
+msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -224,14 +255,14 @@ msgstr "Qté min."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Nomenclatures"
-msgstr "Fiches techniques"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_joint_buying
 msgid "Offer For joint Buying"
 msgstr "Proposer aux commandes groupées"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Only for the raw materials"
+msgstr "Seulement pour les matières premières"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -379,6 +410,11 @@ msgid "Products (eShop)"
 msgstr "Articles (eBoutique)"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_grap_mrp_product_product_search
+msgid "Produits finis"
+msgstr ""
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Purchase Invoicing Fields"
 msgstr "Champs de facturation à l'achat"
@@ -478,6 +514,11 @@ msgstr "Approvisionnement"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Text field for labels, not for tracking allergens in production (see dedicated tab)"
+msgstr "Champ du texte s'affichant sur les étiquettes, pas fait pour le suivi des allergènes en production (voir onglet dédié)."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "To weight"
 msgstr "À peser"
 
@@ -512,6 +553,11 @@ msgid "Update Qty On Hand"
 msgstr "Mettre à jour le stock disponible"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Used In"
+msgstr "Utilisé dans"
+
+#. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__valuation_qty_available
 msgid "Valuation of Quantity on Hand"
 msgstr "Valorisation du stock disponible"
@@ -535,6 +581,11 @@ msgstr "eBoutique"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "⇒ Decrease Price"
 msgstr "⇒ Baisser le prix"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "⇒ Generate new trigram"
+msgstr "⇒ Générer un nouveau trigramme"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

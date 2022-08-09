@@ -27,6 +27,7 @@
         "mrp_bom_widget_section_and_note_one2many",
         # GRAP
         "mrp_food",
+        "mrp_business",
         "mrp_bom_product_variant",
     ],
     "data": [
