@@ -11,7 +11,7 @@ from odoo.exceptions import ValidationError
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    # Trigram (Three Letter Acronym)
+    # ========== Trigram
     PRODUCT_CODE_GENERIC_TLA = fields.Char(default="XXX")
 
     tla = fields.Char(
@@ -24,7 +24,7 @@ class ProductProduct(models.Model):
     )
 
     tla_to_change = fields.Boolean(
-        default=False,
+        default=True,
     )
 
     # [DEPRECATED] Commentaire juste après plus valide car TLA pas généré automatiquement.
@@ -44,6 +44,9 @@ class ProductProduct(models.Model):
     #     ("unique_tla", "unique(tla)", "Trigram should be unique"),
     # ]
 
+    # ========== Time
+    time_to_produce_product = fields.Float(store=True)
+
     # Methods
     @api.onchange("tla")
     def check_tla_change(self):
@@ -59,7 +62,7 @@ class ProductProduct(models.Model):
                 res0 = self.env["product.product"].search([("tla", "=", self.tla)])[0]
                 if res0.id != self._origin.id:
                     raise ValidationError(
-                        _("Trigram already used by an other product : %s." % res0.name)
+                        _("Trigram already used by an other product : %s.") % res0.name
                     )
 
     # J'aurais aimé que ça soit un truc automatique qui dépend du nom mais :

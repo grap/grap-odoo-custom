@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 12:50+0000\n"
-"PO-Revision-Date: 2022-08-04 12:50+0000\n"
+"POT-Creation-Date: 2022-08-09 15:05+0000\n"
+"PO-Revision-Date: 2022-08-09 15:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:14
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
+msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
+msgstr ""
+
+#. module: mrp_business
+#: code:addons/mrp_business/models/mrp_bom.py:20
 #, python-format
 msgid "BOM"
 msgstr "FT"
@@ -24,12 +29,17 @@ msgstr "FT"
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code_nb
 msgid "Bill Of Material Numbering"
-msgstr "Numérotation de la fiche technique"
+msgstr "Numérotation"
 
 #. module: mrp_business
 #: model:ir.model,name:mrp_business.model_mrp_bom
 msgid "Bill of Material"
 msgstr "Fiche technique"
+
+#. module: mrp_business
+#: model:ir.model,name:mrp_business.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de fiche technique"
 
 #. module: mrp_business
 #: model:ir.model.fields,help:mrp_business.field_mrp_bom__code
@@ -47,10 +57,25 @@ msgid "Currency"
 msgstr "Devise"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:57
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__diff_time_to_produce_bom_and_lines
+msgid "Diff Time To Produce Bom And Lines"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_long
+msgid "Long description"
+msgstr "Description longue"
+
+#. module: mrp_business
+#: code:addons/mrp_business/models/mrp_bom.py:75
 #, python-format
 msgid "No Trigram on product %s "
 msgstr "Aucun trigramme sur l'Article %s "
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_packaging
+msgid "Packaging description"
+msgstr "Description de conditionnement"
 
 #. module: mrp_business
 #: model:ir.model,name:mrp_business.model_product_product
@@ -69,6 +94,36 @@ msgid "Reference ℹ️"
 msgstr "Référence ℹ️"
 
 #. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_bom__time_to_produce
+msgid "Set this time or calculate it with BoM lines time"
+msgstr "Temps à écrire ou à générer automatiquement avec la somme des temps composant la fiche technique"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_short
+msgid "Short description"
+msgstr "Description"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_per_unit
+msgid "Theorical time per unit"
+msgstr "Temps théo. par unité"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_line
+msgid "Time (min)"
+msgstr "Temps (min)"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__time_to_produce
+msgid "Time To Produce"
+msgstr "Temps"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_product_product__time_to_produce_product
+msgid "Time To Produce Product"
+msgstr "Temps de production"
+
+#. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__tla_to_change
 #: model:ir.model.fields,field_description:mrp_business.field_product_product__tla_to_change
 msgid "Tla To Change"
@@ -80,7 +135,7 @@ msgid "Trigram"
 msgstr "Trigramme"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/product_product.py:62
+#: code:addons/mrp_business/models/product_product.py:67
 #, python-format
 msgid "Trigram already used by an other product : %s."
 msgstr "Trigramme déjà utilisé par un autre produit : %s."
@@ -91,7 +146,7 @@ msgid "You can change it manually here and it will change reference."
 msgstr "Vous pouvez le changer directement ici et ça changera le code de la fiche technique."
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:53
+#: code:addons/mrp_business/models/mrp_bom.py:71
 #, python-format
 msgid "You need to change default trigram on product set to %s."
 msgstr "Vous devez changer le trigramme du produit qui a été défini à %s."
@@ -105,3 +160,8 @@ msgstr "⇒ Générer un nouveau trigramme"
 #: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
 msgid "⇒ Set Code"
 msgstr "⇒ Définir la Référence"
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
+msgid "⇒ Set Time with BoM lines"
+msgstr "⇒ Définir avec le temps des lignes de la FT"

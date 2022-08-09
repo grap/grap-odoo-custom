@@ -8,9 +8,15 @@ from odoo import _, api, fields, models
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
+    # ========== Divers
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
+    description_packaging = fields.Char(string="Packaging description")
+    description_short = fields.Char(string="Short description")
+    description_long = fields.Text(string="Long description")
+    # Tracking not possible for One2many
+    # bom_line_ids = fields.One2many(track_visibility="onchange")
 
-    # Code and Trigram (Three Letter Acronym)
+    # ========== Code and Trigram (Three Letter Acronym)
     BOM_CODE_SEQ_START = _("BOM")
     PRODUCT_CODE_GENERIC_TLA = fields.Char(
         related="product_id.PRODUCT_CODE_GENERIC_TLA"
@@ -31,9 +37,20 @@ class MrpBom(models.Model):
         store=True,
     )
 
-    # TODO : Handling time
+    # ========== Methods for Time
+    # Trop "compliqué" pour l'usage ? → remplacer par affichage de "min" aux bons endroits
+    # uom_time_to_produce = fields.Many2one(
+    #     comodel_name="uom.uom",
+    #     domain=[("measure_type", "=", "time")]
+    # )
+    diff_time_to_produce_bom_and_lines = fields.Boolean(
+        compute="_compute_diff_time_to_produce_bom_and_lines"
+    )
+    time_to_produce = fields.Float(
+        help="Set this time or calculate it with BoM lines time", store=True
+    )
 
-    # Models methods
+    # ========== Methods for Code and Trigram (Three Letter Acronym)
     # _get_bom_code_start → returns "BOM-COMPANYCODE-TLA"
     @api.multi
     def _get_bom_code_start(self):
@@ -74,7 +91,6 @@ class MrpBom(models.Model):
         return code_nb
 
     # _compute_proposal_code → compute "BOM-COMPANYCODE-TLA-1"
-    # @api.depends("product_id.tla", "code_nb")
     @api.depends("product_id", "product_id.tla", "code_nb")
     def _compute_proposal_code(self):
         for bom in self.filtered(lambda x: x.product_id):
@@ -83,3 +99,17 @@ class MrpBom(models.Model):
     def generate_product_tla(self):
         for bom in self.filtered(lambda x: x.product_id):
             bom.product_id.generate_tla()
+
+    # ========== Methods for Time
+    # Let user write by hand this time or generate thanks to this method
+    def generate_proposal_bom_time(self):
+        for bom in self:
+            bom.time_to_produce = sum(bom.bom_line_ids.mapped("time_to_produce_line"))
+
+    @api.depends("bom_line_ids", "time_to_produce")
+    def _compute_diff_time_to_produce_bom_and_lines(self):
+        for bom in self:
+            time_theoric_lines = sum(bom.bom_line_ids.mapped("time_to_produce_line"))
+            bom.diff_time_to_produce_bom_and_lines = (
+                True if time_theoric_lines != bom.time_to_produce else False
+            )
