@@ -59,7 +59,7 @@ msgstr "Coût"
 #: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:63
 #, python-format
 msgid "Cost price is set to $ %s former price was $ %s"
-msgstr "Nouveau Prix de Revient à %s € (ancien prix : %s €)"
+msgstr "Prix de revient : %s € (ancien prix : %s €)"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,help:mrp_bom_sale_product_margin.field_product_product__standard_price
