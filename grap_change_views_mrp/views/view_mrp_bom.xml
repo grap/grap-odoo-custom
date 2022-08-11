@@ -104,6 +104,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="time_to_produce_per_unit"/>
+                <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
                 <field name="time_to_produce_line" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>

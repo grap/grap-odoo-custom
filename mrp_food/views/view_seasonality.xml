@@ -22,6 +22,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="domain">[('product_seasonality_ids', '=', active_id)]</field>
     </record>
 
+    <template id="assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/mrp_food/static/src/scss/mrp_food.scss"/>
+        </xpath>
+    </template>
+
     <record id="view_seasonality_form" model="ir.ui.view">
         <field name="model">seasonality</field>
         <field name="arch" type="xml">
@@ -45,6 +51,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </button>
                     </div>
 
+                    <div class="alert alert-info col-6 seasonnality_information" role="status">
+                      ℹ️ A seasonality is a period of time in the year, which can be repeated at regular intervals.<br/>
+                      For example, you can create a seasonality "Summer", and then period lines Summer 2023 and Summer 2024, to cover summer Products and Bills of Materials.<br/><br/>
+                      In fact, you will be able to assign seasonality to products and bills of materials.<br/>
+                      The software can then automatically tell you whether or not a product or Bil of Material is in season.
+                    </div>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name"/></h1>

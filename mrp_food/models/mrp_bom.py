@@ -13,7 +13,12 @@ class MrpBom(models.Model):
     image_3 = fields.Binary()
 
     # Seasonality
-    bom_season_ids = fields.Many2many(comodel_name="seasonality", string="Seasonality")
+    bom_season_ids = fields.Many2many(
+        comodel_name="seasonality",
+        string="Seasonality",
+        help="Select the seasonality(s) of this Bill of material. "
+        "Helps visually to know which recipe is in season or not.",
+    )
     is_bom_seasonal = fields.Boolean(default=False, compute="_compute_seasonal")
     are_bom_lines_seasonals = fields.Boolean(default=False, compute="_compute_seasonal")
     products_not_in_season = fields.Char(compute="_compute_products_not_in_season")

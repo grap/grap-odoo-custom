@@ -19,7 +19,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
 msgid "Article"
-msgstr ""
+msgstr "Produit fini (Article)"
 
 #. module: grap_change_views_mrp
 #: model:ir.model,name:grap_change_views_mrp.model_mrp_bom

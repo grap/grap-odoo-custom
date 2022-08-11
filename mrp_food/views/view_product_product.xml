@@ -67,7 +67,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="maker_description"/>
                 <field name="categ_id" readonly="1"/>
                 <field name="currency_id" invisible="1"/>
-                <field name="standard_price" string="PdR" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
+                <field name="standard_price" string="Cost" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                 <field name="uom_id" string="UoM" readonly="1"/>
                 <field name="seller_ids" widget="many2many_tags" readonly="1"/>
                 <field name="date_last_statement_price"/>

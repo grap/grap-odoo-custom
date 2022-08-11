@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 15:05+0000\n"
-"PO-Revision-Date: 2022-08-09 15:05+0000\n"
+"POT-Creation-Date: 2022-08-11 10:00+0000\n"
+"PO-Revision-Date: 2022-08-11 10:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgid "Long description"
 msgstr "Description longue"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:75
+#: code:addons/mrp_business/models/mrp_bom.py:72
 #, python-format
 msgid "No Trigram on product %s "
 msgstr "Aucun trigramme sur l'Article %s "
@@ -89,6 +89,11 @@ msgid "Product Code Generic Tla"
 msgstr ""
 
 #. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_line
+msgid "Real time"
+msgstr "Temps réel"
+
+#. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code
 msgid "Reference ℹ️"
 msgstr "Référence ℹ️"
@@ -104,14 +109,14 @@ msgid "Short description"
 msgstr "Description"
 
 #. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_line_theorical
+msgid "Theorical time"
+msgstr "Temps théo."
+
+#. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_per_unit
 msgid "Theorical time per unit"
 msgstr "Temps théo. par unité"
-
-#. module: mrp_business
-#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_line
-msgid "Time (min)"
-msgstr "Temps (min)"
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__time_to_produce
@@ -135,7 +140,7 @@ msgid "Trigram"
 msgstr "Trigramme"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/product_product.py:67
+#: code:addons/mrp_business/models/product_product.py:65
 #, python-format
 msgid "Trigram already used by an other product : %s."
 msgstr "Trigramme déjà utilisé par un autre produit : %s."
@@ -146,7 +151,7 @@ msgid "You can change it manually here and it will change reference."
 msgstr "Vous pouvez le changer directement ici et ça changera le code de la fiche technique."
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:71
+#: code:addons/mrp_business/models/mrp_bom.py:69
 #, python-format
 msgid "You need to change default trigram on product set to %s."
 msgstr "Vous devez changer le trigramme du produit qui a été défini à %s."
