@@ -65,11 +65,11 @@ class MrpBom(models.Model):
                 self.product_id.write({"tla": self.PRODUCT_CODE_GENERIC_TLA})
                 self.product_id.write({"tla_to_change": True})
                 self.env.user.notify_warning(
-                    message=_(
-                        "You need to change default trigram on product set to %s."
+                    message=(
+                        _("You need to change default trigram on product set to %s.")
                     )
                     % (self.PRODUCT_CODE_GENERIC_TLA),
-                    title=_("No Trigram on product %s " % self.product_id.name),
+                    title=(_("No Trigram on product %s ") % self.product_id.name),
                     sticky=False,
                 )
             bom_code_start += ("-") + self.product_id.tla
