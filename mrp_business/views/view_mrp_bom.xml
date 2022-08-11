@@ -53,7 +53,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
                 <field name="time_to_produce_per_unit"/>
-                <field name="time_to_produce_line" force_save="1"/>
+                <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
+                <field name="time_to_produce_line"/>
             </xpath>
 
         </field>
