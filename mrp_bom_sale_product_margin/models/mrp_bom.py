@@ -25,8 +25,13 @@ class MrpBom(models.Model):
     )
 
     # Fields related to sale price
-    product_sale_price = fields.Float(related="product_id.lst_price")
+    product_sale_price = fields.Float(
+        string="Product Sale Price", related="product_id.lst_price"
+    )
     product_margin_rate = fields.Float(related="product_id.standard_margin_rate")
+    product_margin_rate_percentage = fields.Float(
+        string="Product Margin", compute="_compute_product_margin_rate_percentage"
+    )
 
     #
     # Other functions
@@ -52,6 +57,13 @@ class MrpBom(models.Model):
             bom.diff_product_bom_standard_price = (
                 bom.product_id.standard_price - bom.standard_price_total
             )
+
+    # @api.onchange("product_margin_rate")
+    # def _onchange_product_margin_rate_percentage(self):
+    #     self.product_margin_rate_percentage = self.product_margin_rate / 100
+    @api.depends("product_margin_rate")
+    def _compute_product_margin_rate_percentage(self):
+        self.product_margin_rate_percentage = self.product_margin_rate / 100
 
     # Functions to change product fields
     @api.multi

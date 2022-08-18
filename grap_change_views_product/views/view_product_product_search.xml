@@ -15,10 +15,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mrp.mrp_product_product_search_view" />
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='manufactured_products']" position="attributes">
-              <attribute name="string">Produits finis</attribute>
+              <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//filter[@name='components']" position="attributes">
-              <attribute name="string">Matières premières</attribute>
+            <xpath expr="//filter[@name='filter_is_component']" position="attributes">
+              <attribute name="string">Matières premières 🥕</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='components']" position="after">
+              <filter string="Produits finis 🥧" name="manufactured_products" domain="[('bom_ids', '!=', False)]"/>
             </xpath>
         </field>
     </record>

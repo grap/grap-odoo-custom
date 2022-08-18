@@ -10,6 +10,9 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
     _order = "name"
 
+    _COMPONENT_PRODUCT_EXPENSE_ACCOUNT = "601"
+    _COMPONENT_PRODUCT_INCOME_ACCOUNT = "707"
+
     # Columns Section
     valuation_qty_available = fields.Float(
         compute="_compute_valuation_qty_available",
@@ -34,4 +37,33 @@ class ProductProduct(models.Model):
         for product in self:
             product.valuation_virtual_available = (
                 product.virtual_available * product.standard_price
+            )
+
+    # Useful for accessing product in inline tree views
+    def see_current_product(self):
+        self.ensure_one()
+        result = self.env.ref(
+            "grap_change_views_product.action_product_product"
+        ).read()[0]
+        form_view = self.env.ref("grap_change_views_product.view_product_product_form")
+        result["views"] = [(form_view.id, "form")]
+        result["res_id"] = self.id
+        result["context"] = {
+            "form_view_initial_mode": "edit",
+        }
+        return result
+
+    @api.depends("bom_line_ids", "categ_id")
+    @api.multi
+    def _compute_is_component(self):
+        for product in self:
+            super()._compute_is_component()
+            # Products in 601 Account Expense are components products
+            product.is_component = (
+                True
+                if product.categ_id.global_property_account_expense_categ
+                == self._COMPONENT_PRODUCT_EXPENSE_ACCOUNT
+                and product.categ_id.global_property_account_income_categ
+                == self._COMPONENT_PRODUCT_INCOME_ACCOUNT
+                else False
             )

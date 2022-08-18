@@ -25,7 +25,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="mrp.menu_mrp_root" sequence="15"
         action="action_grap_mrp_bom"/>
 
-    <!-- Hide menu -->
+    <!-- Hide standard menu -->
+    <menuitem id="mrp.menu_mrp_manufacturing"
+        name="(Admin) Opérations"
+        parent="mrp.menu_mrp_root"
+        groups="base.group_no_one"/>
+
     <menuitem id="mrp.menu_mrp_bom"
         name="(Admin) Master Data"
         parent="mrp.menu_mrp_root"
@@ -40,6 +45,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         name="(Admin) Working Times"
         parent="mrp.menu_mrp_configuration"
         groups="base.group_no_one"/>
+
+    <!-- Hide specific menu -->
+    <menuitem id="mrp_food.menu_mrp_editable_views"
+        name="(Admin) Price Lists - Inline editable"
+        parent="mrp.menu_mrp_root" groups="base.group_no_one"/>
 
 
 

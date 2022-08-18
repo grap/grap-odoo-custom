@@ -65,4 +65,30 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Tree -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_tree" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-warning">diff_product_bom_standard_price != 0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_total" string="BoM Standard Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <button name="set_product_standard_price" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}"/>
+                <field name="product_standard_price" string="Product Standard Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="product_sale_price" string="Product Sale Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="product_margin_rate_percentage"
+                       widget="percentage" string="Product Margin Rate" options="{'bg_color': '#e74c3c: product_margin_rate_percentage &lt; 0'}"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

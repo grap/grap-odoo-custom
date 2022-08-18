@@ -29,3 +29,7 @@ class ProductTemplate(models.Model):
         default=False,
         readonly=False,
     )
+
+    is_component = fields.Boolean(
+        related="product_variant_ids.is_component", default=False, readonly=False
+    )

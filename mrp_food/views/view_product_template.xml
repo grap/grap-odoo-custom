@@ -20,6 +20,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
 
             <xpath expr="//field[@name='is_alimentary']" position="after">
+                <field name="is_component" groups="base.group_no_one"/>
                 <field name="is_seasonal" groups="mrp_food.seasonality_manager"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>

@@ -87,6 +87,11 @@ msgid "Code"
 msgstr ""
 
 #. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_all
+msgid "Composants Products 🥕"
+msgstr "Mercuriale - prix articles 🥕"
+
+#. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_mrp_product_composants
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_composants
 msgid "Composants Products"
@@ -506,6 +511,12 @@ msgstr "Valorisation du stock"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Supplier product name"
 msgstr "Nom chez le fournisseur"
+
+
+#. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_supplierinfo_editable
+msgid "Suppliers Informations 🥕"
+msgstr "Mercuriale - prix chez fournisseurs 🥕"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
