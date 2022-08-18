@@ -13,13 +13,48 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="lang" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </field>
             <field name="category_id" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </field>
             <field name="title" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
+            </field>
+            <xpath expr="//field[@name='child_ids']/.." position="attributes">
+              <attribute name="autofocus">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='street2']" position="attributes">
+              <attribute name="attrs">{'invisible':[('street','=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='state_id']" position="attributes">
+              <attribute name="placeholder">Région</attribute>
+            </xpath>
+            <!-- Inclusif et espace insécable -->
+            <xpath expr="//group[@name='sale']/field[@name='customer']" position="attributes">
+              <attribute name="string">Est&#160;un·e&#160;Client·e</attribute>
+            </xpath>
+            <xpath expr="//group[@name='purchase']/field[@name='supplier']" position="attributes">
+              <attribute name="string">Est&#160;un·e&#160;Fournisseur·e</attribute>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+              <attribute name="autofocus">autofocus</attribute>
+            </xpath>
+            <xpath expr="//group[@name='sale']/field[@name='user_id']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='industry_id']/.." position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_product_origin" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="product_origin.res_partner_form_view"/>
+        <field name="arch" type="xml">
+            <field name="distribution_channel_criterion" position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
             </field>
         </field>
     </record>
@@ -29,7 +64,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="stock.view_partner_stock_form"/>
         <field name="arch" type="xml">
             <xpath expr="//group[@name='container_row_stock']" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </xpath>
         </field>
     </record>
@@ -39,7 +74,30 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="purchase.view_partner_property_form"/>
         <field name="arch" type="xml">
             <field name="property_purchase_currency_id" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_product" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="product.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_product_pricelist" position="attributes">
+                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_account" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <field name="property_supplier_payment_term_id" position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
+            </field>
+            <field name="property_payment_term_id" position="attributes">
+                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
             </field>
         </field>
     </record>
@@ -49,7 +107,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
         <field name="arch" type="xml">
             <field name="message_bounce" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </field>
         </field>
     </record>
@@ -59,8 +117,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="delivery.view_partner_property_form"/>
         <field name="arch" type="xml">
             <field name="property_delivery_carrier_id" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_purchase_discount" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="purchase_discount.res_partner_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='default_supplierinfo_discount']" position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='default_supplierinfo_discount']/.." position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
+            </xpath>
         </field>
     </record>
 
@@ -68,11 +139,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="purchase_triple_discount.res_partner_form_view"/>
         <field name="arch" type="xml">
+            <xpath expr="//label[@for='default_supplierinfo_discount2']" position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='default_supplierinfo_discount2']/.." position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
+            </xpath>
             <xpath expr="//label[@for='default_supplierinfo_discount3']" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </xpath>
             <xpath expr="//field[@name='default_supplierinfo_discount3']/.." position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
+                <attribute name="groups">base.group_no_one</attribute>
             </xpath>
         </field>
     </record>
