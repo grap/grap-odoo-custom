@@ -41,4 +41,5 @@ git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=set
 
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_account
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/product_category_global_account_setting
