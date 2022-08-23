@@ -7,6 +7,7 @@ from odoo import _, api, fields, models
 
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
+    _order = "sequence"
 
     # ========== Divers
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
@@ -26,7 +27,6 @@ class MrpBom(models.Model):
     code_nb = fields.Integer(
         string="Bill Of Material Numbering",
         help="You can change it manually here and it will change reference.",
-        default=lambda self: self._default_code_nb(),
         store=True,
     )
     code = fields.Char(
@@ -49,6 +49,15 @@ class MrpBom(models.Model):
     time_to_produce = fields.Float(
         help="Set this time or calculate it with BoM lines time", store=True
     )
+
+    # Overload Section
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        code_nb = self._get_code_nb()
+        default["code_nb"] = code_nb
+        return super().copy(default)
 
     # ========== Methods for Code and Trigram (Three Letter Acronym)
     # _get_bom_code_start → returns "BOM-COMPANYCODE-TLA"
@@ -75,18 +84,33 @@ class MrpBom(models.Model):
             bom_code_start += ("-") + self.product_id.tla
             return bom_code_start
 
-    def _default_code_nb(self):
-        # count archive and active BoMs
-        count = (
-            self.env["mrp.bom"]
-            .with_context(active_test=False)
-            .search_count(
-                [
-                    ("product_id", "=", self.product_id.id),
-                    ("code", "!=", ""),
-                ]
+    def _get_code_nb(self):
+        # Count archive and active BoMs
+        # From the product form with the product already selected
+        if self.id:
+            count = (
+                self.env["mrp.bom"]
+                .with_context(active_test=False)
+                .search_count(
+                    [
+                        ("product_id", "=", self.product_id.id),
+                        ("code", "!=", ""),
+                        ("id", "!=", self.id),
+                    ]
+                )
             )
-        )
+        # When creating a BoM (product not already selected)
+        else:
+            count = (
+                self.env["mrp.bom"]
+                .with_context(active_test=False)
+                .search_count(
+                    [
+                        ("product_id", "=", self.product_id.id),
+                        ("code", "!=", ""),
+                    ]
+                )
+            )
         code_nb = count + 1
         return code_nb
 
@@ -94,6 +118,7 @@ class MrpBom(models.Model):
     @api.depends("product_id", "product_id.tla", "code_nb")
     def _compute_proposal_code(self):
         for bom in self.filtered(lambda x: x.product_id):
+            bom.code_nb = bom._get_code_nb()
             bom.code = bom._get_bom_code_start() + ("-") + str(bom.code_nb)
 
     def generate_product_tla(self):

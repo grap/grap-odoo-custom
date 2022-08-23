@@ -19,6 +19,9 @@ class MrpBomLine(models.Model):
     time_to_produce_line_theorical = fields.Float(
         string="Theorical time",
     )
+    diff_time_product_theorical = fields.Float(
+        string="Diff Time",
+    )
 
     @api.onchange("product_id", "time_to_produce_per_unit", "product_qty")
     def _onchange_time_to_produce_line(self):
@@ -27,3 +30,19 @@ class MrpBomLine(models.Model):
 
     # TODO : faire un notify user quand on change dans le product la quantité ?
     # ou mieux, écire en dessous les fiches qui seront impactés ? ou osef ?
+
+    @api.onchange(
+        "time_to_produce_per_unit",
+        "time_to_produce_line",
+        "time_to_produce_line_theorical",
+    )
+    def _onchange_diff_time_product_theorical(self):
+        self.diff_time_product_theorical = (
+            self.time_to_produce_line - self.time_to_produce_line_theorical
+        )
+
+    @api.multi
+    def set_time_product_theorical(self):
+        for bomline in self:
+            bomline.time_to_produce_line = bomline.time_to_produce_line_theorical
+            bomline.diff_time_product_theorical = 0
