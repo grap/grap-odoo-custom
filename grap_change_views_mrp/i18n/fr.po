@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 14:53+0000\n"
-"PO-Revision-Date: 2022-08-09 14:53+0000\n"
+"POT-Creation-Date: 2022-08-23 14:54+0000\n"
+"PO-Revision-Date: 2022-08-23 14:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+msgid "Allergens"
+msgstr "Allergènes"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form
@@ -30,11 +35,16 @@ msgstr "Fiche technique"
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
 msgid "Bills of Materials"
-msgstr "Fiches technique"
+msgstr "Fiche technique"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_product_variant
 msgid "Fiche technique"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+msgid "Labels"
 msgstr ""
 
 #. module: grap_change_views_mrp
@@ -59,7 +69,17 @@ msgstr ""
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+msgid "Seasonalities"
+msgstr "Saisonnalités"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
 msgid "Total"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
+msgid "UdM"
 msgstr ""
 
 #. module: grap_change_views_mrp

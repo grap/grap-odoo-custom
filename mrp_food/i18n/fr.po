@@ -209,7 +209,7 @@ msgstr "Fiche technique de saison ?"
 #: model:ir.model.fields,field_description:mrp_food.field_product_product__is_seasonal
 #: model:ir.model.fields,field_description:mrp_food.field_product_template__is_seasonal
 msgid "Is Seasonal"
-msgstr "De saison"
+msgstr "De saison ℹ️"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_label_ids
@@ -380,8 +380,8 @@ msgid "ℹ️ A seasonality is a period of time in the year, which can be repeat
 "                      In fact, you will be able to assign seasonality to products and bills of materials.<br/>\n"
 "                      The software can then automatically tell you whether or not a product or Bil of Material is in season."
 msgstr "ℹ️ Une Saisonnalité est une période sur l'année, période qui peut se répéter à rythme régulier.<br/>\n"
-"                      Par exemple, vous pouvez créer une Saisonnalité "Été", puis des lignes de période Été 2023 et Été 2024, pour couvrir les articles et fiches techniques estivales.<br/><br/>\n"
-"                      En effet, vous pourrez attribuer des Saisonnalités à des Articles et des Fiches techniques.<br/>\n"
+"                      Exemple pour couvrir les articles et fiches techniques estivales : vous pouvez créer une Saisonnalité "Été", puis des lignes pour les périodes Été 2023 et Été 2024, .<br/><br/>\n"
+"                      Les Saisonnalités s'attribuent à des Articles et / ou des Fiches techniques.<br/>\n"
 "                      Le logiciel pourra alors automatiquement vous indiquer que tel Article ou telle Fiche technique est ou n'est pas de saison."
 
 #. module: mrp_food

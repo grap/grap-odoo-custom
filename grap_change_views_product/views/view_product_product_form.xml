@@ -108,7 +108,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <page string="Information">
                             <group col="3">
                                 <group string="General">
-                                    <field name="is_component"/>
                                     <field name="uom_id"/>
                                     <field name="default_code" attrs="{'readonly': [('company_id', '!=', False)]}"/>
                                     <field name="tla_to_change" invisible="1"/>

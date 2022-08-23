@@ -61,9 +61,11 @@ class MrpBom(models.Model):
     # @api.onchange("product_margin_rate")
     # def _onchange_product_margin_rate_percentage(self):
     #     self.product_margin_rate_percentage = self.product_margin_rate / 100
+    @api.multi
     @api.depends("product_margin_rate")
     def _compute_product_margin_rate_percentage(self):
-        self.product_margin_rate_percentage = self.product_margin_rate / 100
+        for bom in self:
+            bom.product_margin_rate_percentage = bom.product_margin_rate / 100
 
     # Functions to change product fields
     @api.multi

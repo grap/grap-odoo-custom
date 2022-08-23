@@ -23,7 +23,7 @@ msgstr "(marge"
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "<span>💵 <span id=\"handling_price_title\">Actual product's variant prices</span></span><br/>"
-msgstr "<span>💶 <span id=\"handling_price_title\">Prix actuels de l'article</span></span><br/>"
+msgstr "<span>💶 <span id=\"handling_price_title\">Prix actuels de l'article lié à la FT</span></span><br/>"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
