@@ -16,6 +16,11 @@ class BomPrintWizard(models.TransientModel):
         default=lambda s: s._default_line_ids(),
     )
 
+    option_allergens_only_code = fields.Boolean(
+        string="Display allergen code instead of their name",
+        default=False,
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -44,7 +49,8 @@ class BomPrintWizard(models.TransientModel):
     def print_report(self):
         self.ensure_one()
         data = self._prepare_data()
-        return self.env.ref("mrp_bom_print.report_bom_allergens").report_action(
+        # Get ir_actions_report bom_allergens
+        return self.env.ref("mrp_bom_print.bom_allergens").report_action(
             self, data=data
         )
 
@@ -52,6 +58,7 @@ class BomPrintWizard(models.TransientModel):
     def _prepare_data(self):
         return {
             "line_data": [x.id for x in self.line_ids],
+            "option_allergens_only_code": self.option_allergens_only_code,
         }
 
     @api.multi
