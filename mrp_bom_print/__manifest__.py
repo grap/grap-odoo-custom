@@ -17,10 +17,10 @@
     ],
     "data": [
         "data/report_paperformat.xml",
-        "views/menu.xml",
         "report/report_bom_allergens.xml",
         "report/ir_actions_report.xml",
         "wizard/view_bom_print_wizard.xml",
+        "views/menu.xml",
     ],
     "installable": True,
 }
