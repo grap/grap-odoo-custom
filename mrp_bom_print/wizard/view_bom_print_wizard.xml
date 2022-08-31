@@ -6,18 +6,30 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <template id="assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/mrp_bom_print/static/src/scss/mrp_bom_print_wizard.scss"/>
+        </xpath>
+    </template>
+
     <record id="view_bom_print_wizard_form" model="ir.ui.view">
         <field name="model">bom.print.wizard</field>
         <field name="arch" type="xml">
-            <form string="Print Bill of Materials">
-                <label for="option_allergens_only_code"/><field name="option_allergens_only_code"/>
+            <form string="Print Allergen table">
+                <div class="wizard_options">
+                  <h5>🔧 Choose option</h5>
+                  <br/>
+                  <label for="option_allergens_only_code"/><field name="option_allergens_only_code" widget="boolean_toggle"/>
+                </div>
+                <div class="wizard_instrutions">
+                  <h5>🖨️ Choose BoMs to print ↓</h5>
+                </div>
                 <group colspan="2">
                     <group col="4" colspan="2">
                         <field name="line_ids" nolabel="1">
                             <tree editable="bottom">
                                 <field name="bom_id"/>
-                                <field name="bom_allergens_ids"/>
-                                <field name="quantity"/>
+                                <field name="bom_allergens_ids" widget="many2many_tags"/>
                             </tree>
                         </field>
                     </group>
@@ -31,12 +43,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="action_mrp_bom_print_wizard" model="ir.actions.act_window">
-        <field name="name">Print Bill of Materials</field>
+        <field name="name">Print Allergen table</field>
         <field name="res_model">bom.print.wizard</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <!-- <field name="binding_model_id" ref="mrp.model_mrp_bom"></field> -->
     </record>
 
 </odoo>
