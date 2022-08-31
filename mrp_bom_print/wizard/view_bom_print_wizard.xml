@@ -28,7 +28,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <group col="4" colspan="2">
                         <field name="line_ids" nolabel="1">
                             <tree editable="bottom">
-                                <field name="bom_id"/>
+                                <field name="bom_id" required="1"/>
                                 <field name="bom_allergens_ids" widget="many2many_tags"/>
                             </tree>
                         </field>

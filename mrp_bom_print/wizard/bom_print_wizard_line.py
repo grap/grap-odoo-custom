@@ -12,9 +12,7 @@ class BomPrintWizardLine(models.TransientModel):
     # Columns Section
     wizard_id = fields.Many2one(comodel_name="bom.print.wizard")
 
-    bom_id = fields.Many2one(
-        comodel_name="mrp.bom", string="Bill Of Material", required=True
-    )
+    bom_id = fields.Many2one(comodel_name="mrp.bom", string="Bill Of Material")
 
     bom_allergens_ids = fields.Many2many(
         comodel_name="product.allergen",
