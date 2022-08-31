@@ -21,12 +21,6 @@ msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
 msgstr ""
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:20
-#, python-format
-msgid "BOM"
-msgstr "FT"
-
-#. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code_nb
 msgid "Bill Of Material Numbering"
 msgstr "Numérotation"
