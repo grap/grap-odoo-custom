@@ -21,6 +21,10 @@ class BomPrintWizard(models.TransientModel):
         default=False,
     )
 
+    option_allergens_only_code_text = fields.Char(
+        compute="_compute_option_allergens_only_code_text",
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -28,7 +32,12 @@ class BomPrintWizard(models.TransientModel):
         bom_obj = self.env["mrp.bom"]
         # Get BoM
         bom_ids = context.get("active_ids", [])
-        boms = bom_obj.browse(bom_ids)
+        # User has selected BoMs
+        if len(bom_ids) > 0:
+            boms = bom_obj.browse(bom_ids)
+        # User has not selected BoMs (click on action button for example)
+        else:
+            boms = bom_obj.search([])
 
         # Initialize lines
         for bom in boms:
@@ -38,13 +47,12 @@ class BomPrintWizard(models.TransientModel):
                     0,
                     {
                         "bom_id": bom.id,
-                        "quantity": 1,
+                        "bom_allergens_ids": bom.bom_allergen_ids,
                     },
                 )
             )
         return lines_vals
 
-    # View Section
     @api.multi
     def print_report(self):
         self.ensure_one()
@@ -59,15 +67,15 @@ class BomPrintWizard(models.TransientModel):
         return {
             "line_data": [x.id for x in self.line_ids],
             "option_allergens_only_code": self.option_allergens_only_code,
+            "option_allergens_only_code_text": self.option_allergens_only_code_text,
         }
 
-    @api.multi
-    def _prepare_product_data(self):
-        self.ensure_one()
-        product_data = {}
-        for line in self.line_ids:
-            if line.product_id.id not in product_data:
-                product_data[line.product_id.id] = line.quantity
-            else:
-                product_data[line.product_id.id] += line.quantity
-        return product_data
+    # Compute Section
+    def _compute_option_allergens_only_code_text(self):
+        allergens_all = self.env["product.allergen"].search([])
+        self.option_allergens_only_code_text = ""
+        for allergen in allergens_all.filtered(lambda x: x.code):
+            self.option_allergens_only_code_text += (
+                str(allergen.code) + " : " + str(allergen.name) + " - "
+            )
+        self.option_allergens_only_code_text = self.option_allergens_only_code_text[:-3]
