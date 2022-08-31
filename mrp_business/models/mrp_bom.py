@@ -18,7 +18,6 @@ class MrpBom(models.Model):
     # bom_line_ids = fields.One2many(track_visibility="onchange")
 
     # ========== Code and Trigram (Three Letter Acronym)
-    BOM_CODE_SEQ_START = _("BOM")
     PRODUCT_CODE_GENERIC_TLA = fields.Char(
         related="product_id.PRODUCT_CODE_GENERIC_TLA"
     )
@@ -67,9 +66,9 @@ class MrpBom(models.Model):
         if not self.product_id:
             return 0
         else:
-            bom_code_start = self.BOM_CODE_SEQ_START
+            bom_code_start = ""
             if self.env.user.company_id.code:
-                bom_code_start += ("-") + self.env.user.company_id.code
+                bom_code_start += self.env.user.company_id.code
             if not self.product_id.tla:
                 self.product_id.write({"tla": self.PRODUCT_CODE_GENERIC_TLA})
                 self.product_id.write({"tla_to_change": True})
