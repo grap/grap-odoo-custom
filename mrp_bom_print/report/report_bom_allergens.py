@@ -5,6 +5,9 @@ class ReportBomAllergens(models.AbstractModel):
     _name = "report.mrp_bom_print.report_bom_allergens"
     _description = "BoM Allergens report"
 
+    # in case code is not ste in allergen and user print report with code
+    _DEFAULT_ALLERGENE_CODE = "XX"
+
     @api.model
     def _get_report_values(self, docids, data=None):
         allergen_obj = self.env["product.allergen"]
@@ -12,6 +15,7 @@ class ReportBomAllergens(models.AbstractModel):
 
         docargs = {
             "allergens": allergens_all,
+            "default_allergen_code": self._DEFAULT_ALLERGENE_CODE,
             "boms_and_allergens": self._prepare_data(data),
         }
         return docargs
@@ -31,7 +35,7 @@ class ReportBomAllergens(models.AbstractModel):
             for allergen in allergens_all:
                 if allergen.id in bom.bom_id.bom_allergen_ids.ids:
                     # we found this allergen
-                    tmpList_allergens.append("x")
+                    tmpList_allergens.append("✔️")
                 else:
                     tmpList_allergens.append(" ")
             boms_and_allergens.append(tmpList_allergens)

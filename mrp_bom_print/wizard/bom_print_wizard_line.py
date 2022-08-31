@@ -19,7 +19,4 @@ class BomPrintWizardLine(models.TransientModel):
     bom_allergens_ids = fields.Many2many(
         comodel_name="product.allergen",
         related="bom_id.bom_allergen_ids",
-        readonly=False,
     )
-
-    quantity = fields.Integer(string="Quantity", required=True, default=1)

@@ -1,25 +1,34 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (C) 2016-Today: La Louve (<http://www.lalouve.net/>)
-@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
-
 <odoo>
 
+    <!-- We add css in assets common, file shared for custom reports -->
+    <template id="css_qweb_template_pricetag_bulk_long" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/mrp_bom_print/static/src/scss/mrp_bom_print_report.scss"/>
+        </xpath>
+    </template>
 
     <template id="report_bom_allergens">
         <t t-call="web.basic_layout">
             <div class="page">
-                <h2>Allergen table</h2>
+                <h2 class="text-center">Allergens table</h2>
                 <br/>
-                <table class="table table-sm table-bordered">
+                <table class="table table-sm">
                     <thead>
                         <tr>
                             <th name="th_product" class="text-center"></th>
                             <t t-foreach="allergens" t-as="allergen">
                               <t t-if="option_allergens_only_code" class="text-center">
-                                <th t-field="allergen.code" class="text-center"/>
+                                <t t-if="allergen.code">
+                                  <th t-field="allergen.code" class="text-center"/>
+                                </t><t t-else="">
+                                  <th t-esc="default_allergen_code" class="text-center"/>
+                                </t>
                               </t><t t-else="">
                                 <th t-field="allergen.name" class="text-center"/>
                               </t>
@@ -40,7 +49,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </table>
                 <t t-if="option_allergens_only_code" class="text-center">
                   <hr/>
-                  <span class="code_explanation">TODO : texte explicatif des codes</span>
+                  <div class="code_explanation">
+                      <span class="code_explanation_title"><b>Allergens: </b></span>
+                      <span class="code_explanation_text" t-esc="option_allergens_only_code_text"></span>
+                  </div>
                 </t>
 
             </div>
