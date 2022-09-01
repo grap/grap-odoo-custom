@@ -35,7 +35,7 @@ msgstr "Fiche technique"
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
 msgid "Bills of Materials"
-msgstr "Fiche technique"
+msgstr "Fiches techniques"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_product_variant

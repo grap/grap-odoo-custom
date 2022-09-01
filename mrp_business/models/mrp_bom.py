@@ -16,6 +16,15 @@ class MrpBom(models.Model):
     description_long = fields.Text(string="Long description")
     # Tracking not possible for One2many
     # bom_line_ids = fields.One2many(track_visibility="onchange")
+    priority = fields.Selection(
+        [("0", "Normal"), ("1", "Low"), ("2", "High"), ("3", "Very High")],
+        string="Priority",
+        help="Helps prioritize BoM.",
+    )
+    category_id = fields.Many2one(
+        comodel_name="mrp.bom.meal.category",
+        string="Meal category",
+    )
 
     # ========== Code and Trigram (Three Letter Acronym)
     PRODUCT_CODE_GENERIC_TLA = fields.Char(

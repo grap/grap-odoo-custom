@@ -20,6 +20,9 @@
         "mrp_bom_product_variant",
     ],
     "data": [
+        "security/ir_rule.xml",
+        "security/ir.model.access.csv",
+        "views/view_mrp_bom_meal_category.xml",
         "views/view_mrp_bom.xml",
         "views/view_product_product.xml",
     ],
