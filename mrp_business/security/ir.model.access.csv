@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bom_meal_category_manager,model_mrp_bom_meal_category Manage BoM Meal Category,model_mrp_bom_meal_category,mrp.group_mrp_manager,1,1,1,1
