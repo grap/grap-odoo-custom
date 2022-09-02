@@ -7,7 +7,6 @@ from odoo import _, api, fields, models
 
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
-    _order = "sequence"
 
     # ========== Divers
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
@@ -16,13 +15,13 @@ class MrpBom(models.Model):
     description_long = fields.Text(string="Long description")
     # Tracking not possible for One2many
     # bom_line_ids = fields.One2many(track_visibility="onchange")
-    priority = fields.Selection(
-        [("0", "Normal"), ("1", "Low"), ("2", "High"), ("3", "Very High")],
-        string="Priority",
+    grade = fields.Selection(
+        [("0", "Low"), ("1", "Normal"), ("2", "High"), ("3", "Very High")],
+        string="Grade",
         help="Helps prioritize BoM.",
     )
-    category_id = fields.Many2one(
-        comodel_name="mrp.bom.meal.category",
+    meal_category_id = fields.Many2one(
+        related="product_id.meal_category_id",
         string="Meal category",
     )
 

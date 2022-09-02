@@ -47,6 +47,12 @@ class ProductProduct(models.Model):
     # ========== Time
     time_to_produce_product = fields.Float(store=True)
 
+    # ========== Others
+    meal_category_id = fields.Many2one(
+        comodel_name="mrp.meal.category",
+        string="Meal category",
+    )
+
     # Methods
     @api.onchange("tla")
     def check_tla_change(self):

@@ -17,9 +17,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form string="Print Allergen table">
                 <div class="wizard_options">
-                  <h5>🔧 Choose option</h5>
-                  <br/>
-                  <label for="option_allergens_only_code"/><field name="option_allergens_only_code" widget="boolean_toggle"/>
+                  <h5>🔧 Choose option</h5><br/>
+                  <label for="option_allergens_only_code"/><field name="option_allergens_only_code" widget="boolean_toggle"/><br/>
+                  <label for="option_group_by_meal_category"/><field name="option_group_by_meal_category" widget="boolean_toggle"/><br/>
                 </div>
                 <div class="wizard_instrutions">
                   <h5>🖨️ Choose BoMs to print ↓</h5>
@@ -27,8 +27,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <group colspan="2">
                     <group col="4" colspan="2">
                         <field name="line_ids" nolabel="1">
-                            <tree editable="bottom">
+                            <tree editable="bottom" default_order="bom_meal_category">
                                 <field name="bom_id" required="1"/>
+                                <field name="bom_meal_category"/>
                                 <field name="bom_allergens_ids" widget="many2many_tags"/>
                             </tree>
                         </field>

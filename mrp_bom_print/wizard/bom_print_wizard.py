@@ -21,6 +21,11 @@ class BomPrintWizard(models.TransientModel):
         default=False,
     )
 
+    option_group_by_meal_category = fields.Boolean(
+        string="Group BoM by meal category",
+        default=True,
+    )
+
     option_allergens_only_code_text = fields.Char(
         compute="_compute_option_allergens_only_code_text",
     )
@@ -47,6 +52,7 @@ class BomPrintWizard(models.TransientModel):
                     0,
                     {
                         "bom_id": bom.id,
+                        "bom_meal_category": bom.meal_category_id,
                         "bom_allergens_ids": bom.bom_allergen_ids,
                     },
                 )
@@ -68,6 +74,7 @@ class BomPrintWizard(models.TransientModel):
             "line_data": [x.id for x in self.line_ids],
             "option_allergens_only_code": self.option_allergens_only_code,
             "option_allergens_only_code_text": self.option_allergens_only_code_text,
+            "option_group_by_meal_category": self.option_group_by_meal_category,
         }
 
     # Compute Section

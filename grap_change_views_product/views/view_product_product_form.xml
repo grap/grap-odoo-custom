@@ -316,12 +316,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </group>
                         </page>
 
-
-<!-- TODO : les menus matières premières affichent des trucs qui sont pas dans des Bom, pourquoi ! -->
-
-
-
-
                         <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
                           <group>
                             <group attrs="{'invisible': [('used_in_bom_count', '!=', 0)]}">
@@ -338,6 +332,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               </div>
                             </group>
                             <group>
+                              <field name="meal_category_id"/>
                               <field name="allergen_ids" widget="many2many_tags"/>
                               <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal"/>

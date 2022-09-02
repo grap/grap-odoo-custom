@@ -18,3 +18,8 @@ class BomPrintWizardLine(models.TransientModel):
         comodel_name="product.allergen",
         related="bom_id.bom_allergen_ids",
     )
+
+    bom_meal_category = fields.Many2one(
+        comodel_name="mrp.meal.category",
+        related="bom_id.meal_category_id",
+    )

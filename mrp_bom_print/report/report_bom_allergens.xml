@@ -18,7 +18,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <div class="page">
                 <h2 class="text-center">Allergens table</h2>
                 <br/>
-                <table class="table table-sm">
+                <table class="table table-sm table-borderless">
                     <thead>
                         <tr>
                             <th name="th_product" class="text-center"></th>
@@ -36,14 +36,43 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </tr>
                     </thead>
                     <tbody class="allergens_tbody">
-                        <t t-foreach="boms_and_allergens" t-as="b_a_a">
-                            <tr>
-                                <t t-foreach="b_a_a" t-as="b_a_a_line">
-                                    <td name="td_allergen_or_not" class="text-center">
-                                      <span t-esc="b_a_a_line"/>
+                        <!-- Initialize category -->
+                        <t t-set="categ_tmp" t-value="" />
+                        <t t-foreach="boms_and_allergens" t-as="prepare_data_line">
+                            <t t-if="option_group_by_meal_category">
+                                <!-- PRINT CATEGORY -->
+                                <!-- New category: print this category -->
+                                <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
+                                <t t-if="prepare_data_line[0] != categ_tmp">
+                                  <tr>
+                                    <td name="new_category" class="text-left">
+                                      <b><span t-esc="prepare_data_line[0]"/></b>
                                     </td>
+                                  </tr>
                                 </t>
+                            </t>
+                            <!-- PRINT LINE -->
+                            <tr>
+                              <t t-foreach="prepare_data_line" t-as="prepare_data_line_element">
+                                <!-- IGNORE FIRST DATA THAT IS CATEGORY -->
+                                <t t-if="prepare_data_line_element_index != 0">
+                                    <t t-if="prepare_data_line_element_index == 1">
+                                        <!-- PRODUCT NAME -->
+                                        <td name="td_allergen_or_not" class="text-left">
+                                          <span t-esc="prepare_data_line_element"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <!-- ALLERGENS -->
+                                        <td name="td_allergen_or_not" class="text-center">
+                                          <span t-esc="prepare_data_line_element"/>
+                                        </td>
+                                    </t>
+                                  </t>
+                              </t>
                             </tr>
+                            <!-- We define the new category -->
+                            <t t-set="categ_tmp" t-value="prepare_data_line[0]"/>
                         </t>
                     </tbody>
                 </table>
