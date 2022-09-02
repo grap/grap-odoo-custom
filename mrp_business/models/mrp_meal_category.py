@@ -4,10 +4,12 @@
 
 from odoo import api, fields, models
 
+# TODO : le mettre sur le product et related sur le bom
 
-class MrpBomCategory(models.Model):
-    _name = "mrp.bom.meal.category"
-    _description = "MRP BoM Meal Category"
+class MrpMealCategory(models.Model):
+    _name = "mrp.meal.category"
+    _description = "MRP Meal Category"
+    _order="sequence"
 
     # Column Section
     name = fields.Char(

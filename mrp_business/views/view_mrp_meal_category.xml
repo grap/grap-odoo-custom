@@ -6,8 +6,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="view_bom_meal_category_form" model="ir.ui.view">
-        <field name="model">mrp.bom.meal.category</field>
+    <record id="view_meal_category_form" model="ir.ui.view">
+        <field name="model">mrp.meal.category</field>
         <field name="arch" type="xml">
             <form>
 
@@ -16,15 +16,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name"/></h1>
                     </div>
-                    <field name="sequence"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
+                    <group>
+                      <field string="Category position number" name="sequence"/>
+                      <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="view_bom_meal_category_tree" model="ir.ui.view">
-        <field name="model">mrp.bom.meal.category</field>
+    <record id="view_meal_category_tree" model="ir.ui.view">
+        <field name="model">mrp.meal.category</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="sequence" widget="handle"/>
@@ -33,16 +35,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="action_bom_meal_category" model="ir.actions.act_window">
+    <record id="action_meal_category" model="ir.actions.act_window">
         <field name="name">Meal Categories</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">mrp.bom.meal.category</field>
+        <field name="res_model">mrp.meal.category</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_mrp_bom_meal_category"
+    <menuitem id="menu_mrp_meal_category"
         parent="mrp.menu_mrp_configuration" sequence="20"
-        action="action_bom_meal_category"/>
+        action="action_meal_category"/>
 
 </odoo>
