@@ -14,6 +14,7 @@
         "mrp",
         # GRAP
         "mrp_food",
+        "mrp_business",
     ],
     "data": [
         "data/report_paperformat.xml",
