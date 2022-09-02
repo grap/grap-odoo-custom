@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-31 09:59+0000\n"
-"PO-Revision-Date: 2022-08-31 09:59+0000\n"
+"POT-Creation-Date: 2022-09-05 09:01+0000\n"
+"PO-Revision-Date: 2022-09-05 09:01+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,17 +18,17 @@ msgstr ""
 #. module: mrp_bom_print
 #: model_terms:ir.ui.view,arch_db:mrp_bom_print.report_bom_allergens
 msgid "<span class=\"code_explanation_title\"><b>Allergens: </b></span>"
-msgstr "<span class=\"code_explanation_title\"><b>Allergènes : </b></span>
-
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.report_bom_allergens
-msgid "Allergen table"
-msgstr "Tableau des allergènes"
+msgstr "<span class=\"code_explanation_title\"><b>Allergènes : </b></span"
 
 #. module: mrp_bom_print
 #: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__bom_allergens_ids
 msgid "Allergens"
 msgstr "Allergènes"
+
+#. module: mrp_bom_print
+#: model_terms:ir.ui.view,arch_db:mrp_bom_print.report_bom_allergens
+msgid "Allergens table"
+msgstr "Tableau des allergènes"
 
 #. module: mrp_bom_print
 #: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__bom_id
@@ -76,6 +76,11 @@ msgid "Display allergen code instead of their name"
 msgstr "Imprimer les codes allergènes au lieu de leur nom complet"
 
 #. module: mrp_bom_print
+#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__option_group_by_meal_category
+msgid "Group BoM by meal category"
+msgstr "Grouper par catégorie de repas"
+
+#. module: mrp_bom_print
 #: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__id
 #: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__id
 #: model:ir.model.fields,field_description:mrp_bom_print.field_report_mrp_bom_print_report_bom_allergens__id
@@ -112,6 +117,11 @@ msgid "Lines"
 msgstr "Lignes"
 
 #. module: mrp_bom_print
+#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__bom_meal_category
+msgid "Meal category"
+msgstr "Catégorie de repas"
+
+#. module: mrp_bom_print
 #: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__option_allergens_only_code_text
 msgid "Option Allergens Only Code Text"
 msgstr ""
@@ -119,7 +129,7 @@ msgstr ""
 #. module: mrp_bom_print
 #: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
 msgid "Print"
-msgstr "Imprimer le PDF"
+msgstr "Imprimer"
 
 #. module: mrp_bom_print
 #: model:ir.actions.act_window,name:mrp_bom_print.action_mrp_bom_print_wizard
