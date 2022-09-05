@@ -17,7 +17,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form string="Print Allergen table">
                 <div class="wizard_options">
-                  <h5>🔧 Choose option</h5><br/>
+                  <h5>🔧 Choose options</h5><br/>
                   <label for="option_allergens_only_code"/><field name="option_allergens_only_code" widget="boolean_toggle"/><br/>
                   <label for="option_group_by_meal_category"/><field name="option_group_by_meal_category" widget="boolean_toggle"/><br/>
                 </div>

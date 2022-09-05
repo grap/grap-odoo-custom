@@ -155,7 +155,7 @@ msgstr ""
 
 #. module: mrp_bom_print
 #: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
-msgid "🔧 Choose option"
+msgid "🔧 Choose options"
 msgstr "🔧 Choisir les options"
 
 #. module: mrp_bom_print
