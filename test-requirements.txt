@@ -2,6 +2,9 @@
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
 
+# Coop It Easy Dependencies
+git+https://github.com/legalsylvain/coopiteasy-addons@12.0-IMP-wallet_grap#subdirectory=setup/account_customer_wallet
+
 # GRAP Dependencies
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/purchase_package_qty
