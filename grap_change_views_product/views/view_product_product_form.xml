@@ -92,6 +92,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <field name="is_impact_standard_price" groups="account.group_account_manager"/>
                                 <label for="is_impact_standard_price" groups="account.group_account_manager"/>
                             </div>
+                            <div>
+                                <field name="is_customer_wallet_product" groups="account.group_account_manager"/>
+                                <label for="is_customer_wallet_product" groups="account.group_account_manager"/>
+                            </div>
                         </group>
                     </div>
                     <notebook>
