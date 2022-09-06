@@ -6,10 +6,11 @@ from odoo import api, fields, models
 
 # TODO : le mettre sur le product et related sur le bom
 
+
 class MrpMealCategory(models.Model):
     _name = "mrp.meal.category"
     _description = "MRP Meal Category"
-    _order="sequence"
+    _order = "sequence"
 
     # Column Section
     name = fields.Char(
