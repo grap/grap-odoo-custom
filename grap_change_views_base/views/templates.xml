@@ -9,7 +9,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
   <template id="assets" inherit_id="web.assets_backend">
       <xpath expr="." position="inside">
-          <link rel="stylesheet" type="text/scss" href="/grap_change_views_partner/static/src/scss/grap_change_views_partner.scss"/>
+          <link rel="stylesheet" type="text/scss" href="/grap_change_views_base/static/src/scss/grap_change_views_base.scss"/>
       </xpath>
   </template>
 

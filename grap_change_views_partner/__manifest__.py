@@ -24,7 +24,6 @@
     ],
     "data": [
         "views/menu.xml",
-        "views/templates.xml",
         "views/view_res_partner_form.xml",
         "views/view_res_partner_tree.xml",
     ],

@@ -111,6 +111,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <field name="message_bounce" position="attributes">
                 <attribute name="groups">base.group_no_one</attribute>
+                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
             </field>
         </field>
     </record>
@@ -135,16 +136,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='default_supplierinfo_discount']/.." position="attributes">
                 <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
-            </xpath>
-        </field>
-    </record>
-
-    <record id="view_res_partner_form_mail" model="ir.ui.view">
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='message_bounce']" position="attributes">
-                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
             </xpath>
         </field>
     </record>
