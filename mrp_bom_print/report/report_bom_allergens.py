@@ -1,6 +1,6 @@
 from operator import itemgetter
 
-from odoo import api, models
+from odoo import _, api, models
 
 
 class ReportBomAllergens(models.AbstractModel):
@@ -9,7 +9,7 @@ class ReportBomAllergens(models.AbstractModel):
 
     # In case allergen's code is not set, and user wants to print with code
     _DEFAULT_ALLERGENE_CODE = "XX"
-    _NO_CATEGORY_STRING = "Others"
+    _NO_CATEGORY_STRING = _("Others")
 
     @api.model
     def _get_report_values(self, docids, data=None):
