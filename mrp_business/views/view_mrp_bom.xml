@@ -20,7 +20,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='product_uom_id']/.." position="after">
               <field name="description_packaging"/>
               <field name="meal_category_id"/>
-              <field name="grade" widget="priority"/>
+              <field name="priority" widget="priority"/>
             </xpath>
             <xpath expr="//field[@name='routing_id']" position="after">
                 <br/>
@@ -77,11 +77,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="description_short"/>
-                <field name="grade" widget="priority"/>
+                <field name="priority" widget="priority"/>
                 <field name="time_to_produce"/>
             </xpath>
             <xpath expr="//tree" position="attributes">
-              <attribute name="default_order">grade desc</attribute>
+              <attribute name="default_order">priority desc</attribute>
             </xpath>
         </field>
     </record>
