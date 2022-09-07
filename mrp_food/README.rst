@@ -29,10 +29,19 @@ Improve Bill Of Materials :
 Add new views :
 - Inline editable tree views for componants and supplier informations
 
+If you have OCA modules web_widget_color, product tree view will be optimized and will display useful information about the validity of the prices
+
 **Table of contents**
 
 .. contents::
    :local:
+
+Known issues / Roadmap
+======================
+
+To replace image2, image3, we can imagine to use this module
+https://github.com/OCA/product-attribute/tree/14.0/product_multi_image and
+develop mrp_multi_image.
 
 Bug Tracker
 ===========

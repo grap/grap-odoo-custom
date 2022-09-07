@@ -12,10 +12,6 @@ class MrpBom(models.Model):
 
     # override to make it related to product_id (and not product_tmpl_id)
     # as it's related to product_id and required with this module
-    product_uom_id = fields.Many2one(
-        "uom.uom",
-        "Product Unit of Measure",
-        related="product_id.uom_id",
-        oldname="product_uom",
-        required=True,
-    )
+    # product_uom_id = fields.Many2one(
+    #     related="product_id.uom_id",
+    # )

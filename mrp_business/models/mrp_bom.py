@@ -15,9 +15,10 @@ class MrpBom(models.Model):
     description_long = fields.Text(string="Long description")
     # Tracking not possible for One2many
     # bom_line_ids = fields.One2many(track_visibility="onchange")
-    grade = fields.Selection(
+    priority = fields.Selection(
         [("0", "Low"), ("1", "Normal"), ("2", "High"), ("3", "Very High")],
-        string="Grade",
+        string="Priority",
+        default="0",
         help="Helps prioritize BoM.",
     )
     meal_category_id = fields.Many2one(

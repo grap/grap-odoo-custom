@@ -6,13 +6,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <!-- We add css in assets common, file shared for custom reports -->
-    <template id="css_qweb_template_pricetag_bulk_long" inherit_id="web.report_assets_common">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/scss" href="/mrp_bom_print/static/src/scss/mrp_bom_print_report.scss"/>
-        </xpath>
-    </template>
-
     <template id="report_bom_allergens">
         <t t-call="web.basic_layout">
             <div class="page">

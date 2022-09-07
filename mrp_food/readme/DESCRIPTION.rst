@@ -7,3 +7,5 @@ Improve Bill Of Materials :
 
 Add new views :
 - Inline editable tree views for componants and supplier informations
+
+If you have OCA modules web_widget_color, product tree view will be optimized and will display useful information about the validity of the prices

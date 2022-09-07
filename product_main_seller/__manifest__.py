@@ -15,7 +15,8 @@
         "purchase",
     ],
     "data": [
-        "views/product_template.xml",
+        "views/view_product_product.xml",
+        "views/view_product_template.xml",
     ],
     "installable": True,
 }

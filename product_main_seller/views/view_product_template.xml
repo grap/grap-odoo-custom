@@ -6,6 +6,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <!-- ************************************************************ -->
+    <!-- Product.template Form View -->
+    <!-- ************************************************************ -->
+
     <record id="view_product_main_seller" model="ir.ui.view">
         <field name="model">product.template</field>
         <field name="inherit_id" ref="purchase.view_product_supplier_inherit"/>

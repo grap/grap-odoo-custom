@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 14:34+0000\n"
-"PO-Revision-Date: 2022-08-11 14:34+0000\n"
+"POT-Creation-Date: 2022-09-08 10:27+0000\n"
+"PO-Revision-Date: 2022-09-08 10:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: mrp_food
+#: model:ir.ui.menu,name:mrp_food.menu_mrp_editable_views
+msgid "(Admin) Price Lists - Inline editable"
+msgstr "(Admin) Mercuriales"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
@@ -45,12 +50,12 @@ msgstr "Se base sur la dernière période de cette saisonnalité, crée une autr
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_mrp_bom
 msgid "Bill of Material"
-msgstr "Fiche technique"
+msgstr "Nomenclature"
 
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_mrp_bom_line
 msgid "Bill of Material Line"
-msgstr "Ligne de fiche technique"
+msgstr "Ligne de nomenclature"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
@@ -63,7 +68,7 @@ msgstr "Fiche technique"
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_allergen_form
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
 msgid "Bills of Materials"
-msgstr "Fiche technique"
+msgstr "Fiches techniques"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_product_allergen__bom_qty
@@ -88,11 +93,6 @@ msgid "By Category"
 msgstr "Par Catégorie"
 
 #. module: mrp_food
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_product_product_search
-msgid "By Main Vendor"
-msgstr "Par Fournisseur principal"
-
-#. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__color
 msgid "Color Index"
 msgstr "Couleur"
@@ -100,17 +100,14 @@ msgstr "Couleur"
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__company_id
 msgid "Company"
-msgstr ""
-
-#. module: mrp_food
-#: model:ir.ui.menu,name:mrp_food.menu_product_product_all
-msgid "Composants Products"
-msgstr "Matières premières"
+msgstr "Société"
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_product_product_mrp_tree
-msgid "Composants Products - Inline editable"
-msgstr "Produits Matières Premières - Éditable en ligne"
+#: model:ir.ui.menu,name:mrp_food.menu_product_product_all
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_product_product_search
+msgid "Components Products"
+msgstr "Matières premières"
 
 #. module: mrp_food
 #: model:ir.model.fields,help:mrp_food.field_mrp_bom_line__is_seasonal
@@ -122,7 +119,7 @@ msgstr "Calculé en fonction des saisons choisis.              Il suffit qu'une 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
 msgid "Cost"
-msgstr "PdR"
+msgstr "Coût"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__create_uid
@@ -153,6 +150,12 @@ msgid "Date Start"
 msgstr "À partir du"
 
 #. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_product_product__date_last_statement_price
+#: model:ir.model.fields,help:mrp_food.field_product_template__date_last_statement_price
+msgid "Date of last standard price change. Automatically sets to the date of the day you changed the standard price"
+msgstr "Date de la dernière modification du prix de revient. Cette date est automatiquement fixée à la date du jour où vous l'avez modifié la dernière fois."
+
+#. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
 msgid "Def code"
 msgstr "Code"
@@ -167,6 +170,11 @@ msgstr "Nom affiché"
 #: model:ir.model.fields,field_description:mrp_food.field_product_product__end_date_of_market_price_list
 msgid "End Date of Market Price List"
 msgstr "Fin de validité de la mercuriale"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_product_product__end_date_of_market_price_list
+msgid "End date of validity of the market price list. After this date, you can consider that your standard price is certainly not up to date."
+msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre prix de revient n'est plus à jour."
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__id
@@ -203,6 +211,12 @@ msgstr "Inclus les allergènes du produit et de ses composants"
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__is_bom_seasonal
 msgid "Is Bom Seasonal"
 msgstr "Fiche technique de saison ?"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__is_component
+#: model:ir.model.fields,field_description:mrp_food.field_product_template__is_component
+msgid "Is Component"
+msgstr "Est une matière première"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_line__is_seasonal
@@ -243,11 +257,6 @@ msgstr "Dernière mise à jour le"
 #: model:res.groups,name:mrp_food.seasonality_manager
 msgid "Manage Seasonality"
 msgstr "Gérer les saisonnalités"
-
-#. module: mrp_food
-#: model:ir.ui.menu,name:mrp_food.menu_mrp_editable_views
-msgid "Price Lists - Inline editable"
-msgstr "Mercuriales"
 
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_product_product
@@ -343,8 +352,8 @@ msgstr "Prix fournisseur·es"
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_product_supplierinfo_mrp_tree
-msgid "Suppliers informations - Inline editable"
-msgstr "Prix fournisseur·es - Éditable en ligne"
+msgid "Suppliers informations"
+msgstr ""
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/seasonality_line.py:32
@@ -380,7 +389,7 @@ msgid "ℹ️ A seasonality is a period of time in the year, which can be repeat
 "                      In fact, you will be able to assign seasonality to products and bills of materials.<br/>\n"
 "                      The software can then automatically tell you whether or not a product or Bil of Material is in season."
 msgstr "ℹ️ Une Saisonnalité est une période sur l'année, période qui peut se répéter à rythme régulier.<br/>\n"
-"                      Exemple pour couvrir les articles et fiches techniques estivales : vous pouvez créer une Saisonnalité "Été", puis des lignes pour les périodes Été 2023 et Été 2024, .<br/><br/>\n"
+"                      Exemple pour couvrir les articles et fiches techniques estivales : vous pouvez créer une Saisonnalité \"Été\", puis des lignes pour les périodes Été 2023 et Été 2024, .<br/><br/>\n"
 "                      Les Saisonnalités s'attribuent à des Articles et / ou des Fiches techniques.<br/>\n"
 "                      Le logiciel pourra alors automatiquement vous indiquer que tel Article ou telle Fiche technique est ou n'est pas de saison."
 

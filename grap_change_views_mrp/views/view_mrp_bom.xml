@@ -21,7 +21,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <attribute name="groups">base.group_no_one</attribute>
             </xpath>
             <xpath expr="//field[@name='product_id']" position="attributes">
-              <attribute name="string">Article</attribute>
+              <attribute name="string">Product</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_uom_id']" position="attributes">
+              <attribute name="readonly">True</attribute>
             </xpath>
             <xpath expr="//field[@name='type']" position="attributes">
               <attribute name="groups">base.group_no_one</attribute>
@@ -45,13 +48,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <attribute name="groups">base.group_no_one</attribute>
             </xpath>
             <xpath expr="//field[@name='product_id']" position="attributes">
-              <attribute name="string">Article</attribute>
+              <attribute name="string">Product</attribute>
             </xpath>
             <xpath expr="//field[@name='code']" position="attributes">
-              <attribute name="string">Référence</attribute>
+              <attribute name="string">Reference</attribute>
             </xpath>
             <xpath expr="//field[@name='product_uom_id']" position="attributes">
-              <attribute name="string">UdM</attribute>
+              <attribute name="string">UoM</attribute>
             </xpath>
             <xpath expr="//field[@name='product_uom_id']" position="after">
               <field name="active" widget="boolean_toggle"/>
@@ -74,7 +77,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//div[@name='bom_title']" position="after">
                 <div class="oe_title" name="bom_title">
-                    <label for="product_name" string="Fiche technique" style="margin-left:5px;"/>
+                    <label for="product_name" string="Data sheet" style="margin-left:5px;"/>
                     <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
                 </div>
             </xpath>
@@ -86,12 +89,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- ************************************************************ -->
     <!-- MRP Bill of Materials - Form With Sections and Notes -->
     <!-- ************************************************************ -->
-
-    <template id="assets" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/scss" href="/grap_change_views_mrp/static/src/scss/grap_change_views_mrp.scss"/>
-        </xpath>
-    </template>
 
     <record id="view_mrp_bom_form_sections_notes" model="ir.ui.view">
         <field name="model">mrp.bom</field>

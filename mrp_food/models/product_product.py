@@ -8,8 +8,17 @@ from odoo import api, fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    date_last_statement_price = fields.Date(string="Date Last Statement Price")
-    end_date_of_market_price_list = fields.Date(string="End Date of Market Price List")
+    date_last_statement_price = fields.Date(
+        string="Date Last Statement Price",
+        help="Date of last standard price change. "
+        "Automatically sets to the date of the day you changed the standard price",
+    )
+    end_date_of_market_price_list = fields.Date(
+        string="End Date of Market Price List",
+        help="End date of validity of the market price list. "
+        "After this date, you can consider that your standard price is "
+        "certainly not up to date.",
+    )
 
     product_seasonality_ids = fields.Many2many(
         comodel_name="seasonality", string="Seasonalities"

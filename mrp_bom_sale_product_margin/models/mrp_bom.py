@@ -73,13 +73,25 @@ class MrpBom(models.Model):
         for bom in self.filtered(lambda x: x.product_id):
             old_product_standard_price = bom.product_id.standard_price
             bom.product_id.standard_price = bom.standard_price_total
+            diff_percentage = (
+                (bom.product_id.standard_price - old_product_standard_price)
+                / old_product_standard_price
+                * 100
+                if old_product_standard_price != 0
+                else 100
+            )
+            diff_percentage_str = str(round(diff_percentage, 1)) + "%"
             self.env.user.notify_success(
-                message=(
-                    _("Cost price is set to $ %s former price was $ %s")
-                    % (
-                        round(bom.product_id.standard_price, 2),
-                        round(old_product_standard_price, 2),
-                    )
-                ),
+                message=(_("Price difference : %s") % (diff_percentage_str,)),
                 title=(_("New standard price for %s") % bom.product_id.name),
             )
+            # self.env.user.notify_success(
+            #     message=(
+            #         _("Cost price is set to $ %s former price was $ %s")
+            #         % (
+            #             round(bom.product_id.standard_price, 2),
+            #             round(old_product_standard_price, 2),
+            #         )
+            #     ),
+            #     title=(_("New standard price for %s") % bom.product_id.name),
+            # )

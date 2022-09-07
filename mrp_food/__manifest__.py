@@ -17,7 +17,6 @@
         # GRAP modules,
         "product_food",
         "product_label",
-        "product_main_seller",
         "mrp_bom_sale_product_margin",
     ],
     "demo": [
@@ -37,6 +36,7 @@
         "views/view_product_product.xml",
         "views/view_product_template.xml",
         "views/view_seasonality.xml",
+        "views/templates.xml",
     ],
     "images": [
         "./static/img/tomato_pie.png",

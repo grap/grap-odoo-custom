@@ -22,12 +22,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="domain">[('product_seasonality_ids', '=', active_id)]</field>
     </record>
 
-    <template id="assets" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/scss" href="/mrp_food/static/src/scss/mrp_food.scss"/>
-        </xpath>
-    </template>
-
     <record id="view_seasonality_form" model="ir.ui.view">
         <field name="model">seasonality</field>
         <field name="arch" type="xml">
