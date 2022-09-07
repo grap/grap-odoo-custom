@@ -28,19 +28,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <attribute name="attrs">{'invisible':[('street','=', False)]}</attribute>
             </xpath>
             <xpath expr="//field[@name='state_id']" position="attributes">
-              <attribute name="placeholder">Région</attribute>
+              <attribute name="placeholder">Region</attribute>
             </xpath>
-            <!-- Inclusif et espace insécable -->
+            <!-- Non-breaking space  -->
             <xpath expr="//group[@name='sale']/field[@name='customer']" position="attributes">
-              <attribute name="string">Est&#160;un·e&#160;Client·e</attribute>
+              <attribute name="string">Is&#160;a&#160;Client</attribute>
             </xpath>
             <xpath expr="//group[@name='purchase']/field[@name='supplier']" position="attributes">
-              <attribute name="string">Est&#160;un·e&#160;Fournisseur·e</attribute>
+              <attribute name="string">Is&#160;a&#160;Supplier</attribute>
             </xpath>
+            <!-- Autofocus on main tab -->
             <xpath expr="//page[@name='sales_purchases']" position="attributes">
               <attribute name="autofocus">autofocus</attribute>
             </xpath>
+            <!-- Hide fields -->
             <xpath expr="//group[@name='sale']/field[@name='user_id']" position="attributes">
+                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
                 <attribute name="groups">base.group_no_one</attribute>
             </xpath>
             <xpath expr="//field[@name='industry_id']/.." position="attributes">
@@ -118,6 +121,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <field name="property_delivery_carrier_id" position="attributes">
                 <attribute name="groups">base.group_no_one</attribute>
+                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
             </field>
         </field>
     </record>
@@ -135,6 +139,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_res_partner_form_mail" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='message_bounce']" position="attributes">
+                <attribute name="attrs">{'invisible':[('customer','=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record id="view_res_partner_form_purchase_triple_discount" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="purchase_triple_discount.res_partner_form_view"/>
@@ -146,9 +160,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
             </xpath>
             <xpath expr="//label[@for='default_supplierinfo_discount3']" position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
                 <attribute name="groups">base.group_no_one</attribute>
             </xpath>
             <xpath expr="//field[@name='default_supplierinfo_discount3']/.." position="attributes">
+                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
                 <attribute name="groups">base.group_no_one</attribute>
             </xpath>
         </field>
