@@ -21,6 +21,7 @@
         "report/report_bom_allergens.xml",
         "report/ir_actions_report.xml",
         "wizard/view_bom_print_wizard.xml",
+        "views/assets.xml",
         "views/menu.xml",
     ],
     "installable": True,
