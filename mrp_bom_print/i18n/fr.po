@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-05 09:01+0000\n"
-"PO-Revision-Date: 2022-09-05 09:01+0000\n"
+"POT-Creation-Date: 2022-09-08 13:23+0000\n"
+"PO-Revision-Date: 2022-09-08 13:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -125,6 +125,12 @@ msgstr "Catégorie de repas"
 #: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__option_allergens_only_code_text
 msgid "Option Allergens Only Code Text"
 msgstr ""
+
+#. module: mrp_bom_print
+#: code:addons/mrp_bom_print/report/report_bom_allergens.py:12
+#, python-format
+msgid "Others"
+msgstr "Autres"
 
 #. module: mrp_bom_print
 #: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
