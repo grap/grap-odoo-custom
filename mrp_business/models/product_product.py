@@ -126,11 +126,3 @@ class ProductProduct(models.Model):
                         i += 1
                 tmp_created_onfly_tla.append(new_tla)
                 product.tla = new_tla
-
-    @api.onchange("time_to_produce_product")
-    def _onchange_time_to_produce_product(self):
-        self.env.user.notify_warning(
-            message=(_("This changes all BoM containing this product.")),
-            # title=(_("Warning ")),
-            sticky=False,
-        )
