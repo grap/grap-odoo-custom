@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 12:18+0000\n"
-"PO-Revision-Date: 2022-09-08 12:18+0000\n"
+"POT-Creation-Date: 2022-09-08 15:43+0000\n"
+"PO-Revision-Date: 2022-09-08 15:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,6 @@ msgstr "<span class=\"o_stat_text\">Disponible</span>"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
 msgstr ""
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "<span><b>Date last statement price</b>: only configurable for products that are part of at least <u>one</u> bill of material.</span>"
-msgstr "<span><b>Date relevé prix</b> : activé seulement si le produit est utilisé dans au moins une fiche technique.</span>"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -74,6 +69,11 @@ msgstr "Catégorie"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Category in POS"
 msgstr "Catégorie de PdV"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Changing this value will change all BoM containing this product."
+msgstr "Changer cette valeur entraînera le changement de toutes les fiches techniques contenant ce produit."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -135,6 +135,11 @@ msgstr "Rem. 2 (%)"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Extra Informations"
 msgstr "Informations complémentaires"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Fields only configurable for raw materials."
+msgstr "Champs modifiables seulement pour les articles de matières premières"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_grap_mrp_product_product_search
@@ -203,6 +208,11 @@ msgstr "Notes internes"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Inventory"
 msgstr "Inventaire"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Is seasonal ?"
+msgstr "De saison ?"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -575,6 +585,11 @@ msgstr "⇒ Augmenter le prix"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "⌛ Handling time"
+msgstr "⌛ Gestion du temps"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "✅ Notations"
 msgstr ""
 
@@ -590,5 +605,15 @@ msgstr "🍴 Informations alimentaire"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "📜 Market price list"
+msgstr "📜 Mercuriale"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "🚩 Production place"
 msgstr "🚩 Lieu de production"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "🥕 Food informations"
+msgstr "🥕 Informations alimentaires"

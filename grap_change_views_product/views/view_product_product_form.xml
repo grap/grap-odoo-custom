@@ -318,24 +318,36 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                         <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
                           <group>
-                            <group attrs="{'invisible': [('used_in_bom_count', '!=', 0)]}">
-                              <span><b>Date last statement price</b>: only configurable for products that are part of at least <u>one</u> bill of material.</span>
-                            </group>
-                            <group>
-                              <field name="date_last_statement_price" attrs="{'invisible': [('used_in_bom_count', '=', 0)]}" help="Only for the raw materials"/>
-                            </group>
-                            <group>
-                              <label for="time_to_produce_product"/>
-                              <div>
-                                <field name="time_to_produce_product" class="oe_inline" widget="numeric_step"/>
-                                <span class="unity_for_time_to_produce"> minutes</span>
-                              </div>
-                            </group>
-                            <group>
+                            <group string="🥕 Food informations">
                               <field name="meal_category_id"/>
                               <field name="allergen_ids" widget="many2many_tags"/>
                               <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
-                              <field name="is_seasonal"/>
+                              <field name="is_seasonal" string="Is seasonal ?"/>
+                            </group>
+                            <group string="📜 Market price list">
+                              <field name="is_component" invisible="1"/>
+                              <group attrs="{'invisible': [('is_component', '=', True)]}">
+                                <p class="alert alert-info" role="alert">Fields only configurable for raw materials.</p>
+                              </group>
+                              <group>
+                                <field name="date_last_statement_price" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
+                                <field name="end_date_of_market_price_list" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
+                              </group>
+                            </group>
+                            <br/>
+                            <group string="⌛ Handling time">
+                              <group>
+                                <p class="alert alert-warning alert-dismissable" role="alert" groups="mrp.group_mrp_user">
+                                Changing this value will change all BoM containing this product.
+                                </p>
+                              </group><br/>
+                              <group>
+                                <label for="time_to_produce_product"/>
+                                <div>
+                                  <field name="time_to_produce_product" class="oe_inline" widget="numeric_step"/>
+                                  <span class="unity_for_time_to_produce"> minutes</span>
+                                </div>
+                              </group>
                             </group>
                           </group>
                         </page>
