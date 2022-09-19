@@ -10,6 +10,9 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
+        # Coop It Easy
+        "account_customer_wallet",
+        # Odoo
         "product",
         "purchase",
         "sale",
