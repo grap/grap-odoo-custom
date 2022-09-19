@@ -209,9 +209,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         <field name="zip"/>,
                                         <field name="city"/>
                                     </li>
-                                    <li t-if="record.phone.raw_value">
-                                        <field name="phone" widget="phone"/> -
-                                        <a t-att-href="record.website.value" target="_blank"><i class="fa fa-globe" role="img"  aria-label="Website" title="Website" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                    <li>
+                                        <field t-if="record.phone.raw_value" name="phone" widget="phone"/>
+                                        <span t-if="record.phone.raw_value and record.website.raw_value"> - </span>
+                                        <a t-if="record.website.raw_value" t-att-href="record.website.value" target="_blank"><i class="fa fa-globe" role="img"  aria-label="Website" title="Website" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
                                     </li>
                                 </ul>
                             </div>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-26 15:06+0000\n"
-"PO-Revision-Date: 2022-04-26 15:06+0000\n"
+"POT-Creation-Date: 2022-08-01 09:43+0000\n"
+"PO-Revision-Date: 2022-08-01 09:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
 msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
 msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_kanban_directory
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;line-height:1\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Site web\" title=\"Site web\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;line-height:1\"/>"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__accounting_interlocutor_id
@@ -44,7 +49,7 @@ msgstr "Activités"
 #: model:ir.actions.act_window,name:grap_cooperative.action_res_company_editable
 #: model:ir.ui.menu,name:grap_cooperative.menu_company_editable
 msgid "Activities (Editable View)"
-msgstr "Activités (Vue Éditable)"
+msgstr "Activités (Vue éditable)"
 
 #. module: grap_cooperative
 #: model:ir.actions.act_window,name:grap_cooperative.action_company_category
@@ -190,8 +195,8 @@ msgstr "Affiché dans l'annuaire"
 
 #. module: grap_cooperative
 #: model:ir.ui.menu,name:grap_cooperative.menu_editable_view
-msgid "Editable View"
-msgstr "Vue éditable"
+msgid "Editable Views"
+msgstr "Vues éditables"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__first_name
@@ -227,7 +232,7 @@ msgstr "Interlocuteur·ice social"
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__hr_referent_id
 msgid "HR Referent"
-msgstr "Référent social"
+msgstr "Référent·e social"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_college__id
