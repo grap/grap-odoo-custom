@@ -1,6 +1,7 @@
 # Unmerged OCA Contributions
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
+git+https://github.com/OCA/manufacture@refs/pull/798/head#subdirectory=setup/mrp_bom_widget_section_and_note_one2many
 
 # GRAP Dependencies
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
@@ -40,3 +41,5 @@ git+https://github.com/grap/odoo-addons-intercompany-trade@12.0#subdirectory=set
 
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_base
 git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_product
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/fiscal_company_account
+git+https://github.com/grap/odoo-addons-cae@12.0#subdirectory=setup/product_category_global_account_setting

@@ -3,6 +3,7 @@
 Copyright (C) 2013-Today GRAP (http://www.grap.coop)
 @author: Julien WESTE
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
@@ -58,6 +59,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <span class="o_stat_text">Forecasted</span>
                             </div>
                         </button>
+                        <button class="oe_stat_button" name="action_view_bom"
+                                type="object" icon="fa-flask"
+                                groups="mrp.group_mrp_user">
+                            <field string="Bill of Materials" name="bom_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" name="action_used_in_bom" type="object"
+                                icon="fa-level-up" groups="mrp.group_mrp_user">
+                            <field string="Used In" name="used_in_bom_count" widget="statinfo" />
+                        </button>
                         <button type="object" name="action_view_stock_move_lines" string="Product Moves"
                                 attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}"
                                 class="oe_stat_button" icon="fa-arrows-v"/>
@@ -100,6 +110,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group string="General">
                                     <field name="uom_id"/>
                                     <field name="default_code" attrs="{'readonly': [('company_id', '!=', False)]}"/>
+                                    <field name="tla_to_change" invisible="1"/>
+                                    <label for="tla" groups="mrp.group_mrp_manager"/>
+                                    <div groups="mrp.group_mrp_manager">
+                                      <field name="tla" class="oe_inline"/>
+                                      <button name="generate_tla" string="⇒ Generate new trigram"
+                                              type="object" class="oe_link" attrs="{'invisible': [('tla_to_change', '!=', True)]}"
+                                              help="Create an automatic trigram. Change its BoM references with this trigram."/>
+                                    </div>
                                     <field name="type"/>
                                     <field name="is_alimentary"/>
                                     <field name="categ_id"/>
@@ -193,6 +211,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group string="Vendors" colspan="4">
                                     <field name="seller_ids" nolabel="1">
                                         <tree editable="bottom">
+                                            <field name="sequence" widget="handle"/>
                                             <field name="name"/>
                                             <field name="product_name" string="Supplier product name"
                                                 attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
@@ -285,13 +304,52 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </page>
                         <page string="Alimentary Composition">
                             <group>
-                                <group string="Ingredients">
+                                <group col="12" string="Ingredients">
                                     <field name="ingredients" widget="html" nolabel="1"/>
                                 </group>
                                 <group string="Allergens">
+                                    <p class="alert alert-warning alert-dismissable" role="alert" groups="mrp.group_mrp_user">
+                                      Text field for labels, not for tracking allergens in production (see dedicated tab)
+                                    </p>
                                     <field name="allergens" widget="html" nolabel="1"/>
                                 </group>
                             </group>
+                        </page>
+
+                        <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
+                          <group>
+                            <group string="🥕 Food informations">
+                              <field name="meal_category_id"/>
+                              <field name="allergen_ids" widget="many2many_tags"/>
+                              <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                              <field name="is_seasonal" string="Is seasonal ?"/>
+                            </group>
+                            <group string="📜 Market price list">
+                              <field name="is_component" invisible="1"/>
+                              <group attrs="{'invisible': [('is_component', '=', True)]}">
+                                <p class="alert alert-info" role="alert">Fields only configurable for raw materials.</p>
+                              </group>
+                              <group>
+                                <field name="date_last_statement_price" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
+                                <field name="end_date_of_market_price_list" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
+                              </group>
+                            </group>
+                            <br/>
+                            <group string="⌛ Handling time">
+                              <group>
+                                <p class="alert alert-warning alert-dismissable" role="alert" groups="mrp.group_mrp_user">
+                                Changing this value will change all BoM containing this product.
+                                </p>
+                              </group><br/>
+                              <group>
+                                <label for="time_to_produce_product"/>
+                                <div>
+                                  <field name="time_to_produce_product" class="oe_inline" widget="numeric_step"/>
+                                  <span class="unity_for_time_to_produce"> minutes</span>
+                                </div>
+                              </group>
+                            </group>
+                          </group>
                         </page>
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">
                             <group string="Scale Communication">

@@ -3,7 +3,7 @@
 # @author Julien WESTE
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "GRAP - Change Product Views",
+    "name": "GRAP - Change Views Product",
     "version": "12.0.0.1.15",
     "category": "GRAP - Custom",
     "author": "GRAP",
@@ -16,6 +16,7 @@
         "point_of_sale",
         "stock",
         "sale_invoice_policy",
+        "mrp",
         # OCA
         "product_margin_classification",
         "product_pricelist_margin",
@@ -28,7 +29,10 @@
         "purchase_triple_discount",
         "product_standard_price_tax_included",
         "product_sale_tax_price_included",
+        "web_widget_numeric_step",
+        "product_category_global_account_setting",
         # GRAP
+        "grap_change_views_mrp",
         "fiscal_company_product",
         "stock_preparation_category",
         "recurring_consignment",
@@ -36,6 +40,7 @@
         "sale_eshop",
         "product_food",
         "product_label",
+        "product_main_seller",
         "product_print_category",
         "product_simple_pricelist",
         "product_print_category_food_report",
@@ -47,6 +52,8 @@
         "pos_sector",
         "intercompany_trade_product",
         "joint_buying_product",
+        "mrp_food",
+        "mrp_business",
     ],
     "data": [
         "views/menu.xml",
@@ -57,6 +64,7 @@
         "views/view_product_product_stock.xml",
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
+        "views/view_product_product_search.xml",
     ],
     "installable": True,
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="report_bom_allergens">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2 class="text-center">Allergens table</h2>
+                <br/>
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th name="th_product" class="text-center"></th>
+                            <t t-foreach="allergens" t-as="allergen">
+                              <t t-if="option_allergens_only_code" class="text-center">
+                                <t t-if="allergen.code">
+                                  <th t-field="allergen.code" class="text-center"/>
+                                </t><t t-else="">
+                                  <th t-esc="default_allergen_code" class="text-center"/>
+                                </t>
+                              </t><t t-else="">
+                                <th t-field="allergen.name" class="text-center"/>
+                              </t>
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody class="allergens_tbody">
+                        <!-- Initialize category -->
+                        <t t-set="categ_tmp" t-value="" />
+                        <t t-foreach="boms_and_allergens" t-as="prepare_data_line">
+                            <t t-if="option_group_by_meal_category">
+                                <!-- PRINT CATEGORY -->
+                                <!-- New category: print this category -->
+                                <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
+                                <t t-if="prepare_data_line[0] != categ_tmp">
+                                  <tr>
+                                    <td name="new_category" class="text-left">
+                                      <b><span t-esc="prepare_data_line[0]"/></b>
+                                    </td>
+                                  </tr>
+                                </t>
+                            </t>
+                            <!-- PRINT LINE -->
+                            <tr>
+                              <t t-foreach="prepare_data_line" t-as="prepare_data_line_element">
+                                <!-- IGNORE FIRST DATA THAT IS CATEGORY -->
+                                <t t-if="prepare_data_line_element_index != 0">
+                                    <t t-if="prepare_data_line_element_index == 1">
+                                        <!-- PRODUCT NAME -->
+                                        <td name="td_allergen_or_not" class="text-left">
+                                          <span t-esc="prepare_data_line_element"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <!-- ALLERGENS -->
+                                        <td name="td_allergen_or_not" class="text-center">
+                                          <span t-esc="prepare_data_line_element"/>
+                                        </td>
+                                    </t>
+                                  </t>
+                              </t>
+                            </tr>
+                            <!-- We define the new category -->
+                            <t t-set="categ_tmp" t-value="prepare_data_line[0]"/>
+                        </t>
+                    </tbody>
+                </table>
+                <t t-if="option_allergens_only_code" class="text-center">
+                  <hr/>
+                  <div class="code_explanation">
+                      <span class="code_explanation_title"><b>Allergens: </b></span>
+                      <span class="code_explanation_text" t-esc="option_allergens_only_code_text"></span>
+                  </div>
+                </t>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Form -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_business_bom_form" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_uom_id']/.." position="after">
+              <field name="description_packaging"/>
+              <field name="meal_category_id"/>
+              <field name="priority" widget="priority"/>
+            </xpath>
+            <xpath expr="//field[@name='routing_id']" position="after">
+                <br/>
+                <br/>
+                <field name="diff_time_to_produce_bom_and_lines" invisible="1"/>
+                <label for="time_to_produce"/>
+                <div>
+                  <field name="time_to_produce" class="oe_inline" widget="numeric_step"/>
+                  <span class="unity_for_time_to_produce"> minutes</span>
+                  <button name="generate_proposal_bom_time" string="⇒ Set Time with BoM lines"
+                          type="object" class="oe_link"
+                          attrs="{'invisible': [('diff_time_to_produce_bom_and_lines', '=', False)]}"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="tla_to_change" invisible="1"/>
+                <label for="code"/>
+                <div>
+                  <field name="code" class="oe_inline"/>
+                  <button name="generate_product_tla" string="⇒ Set Code"
+                          type="object" class="oe_link"
+                          attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
+                </div>
+                <field name="description_short"/>
+                <field name="description_long"/>
+            </xpath>
+
+            <xpath expr="//field[@name='ready_to_produce']/../..//field[@name='sequence']" position="before">
+              <field name="code_nb"/><br/>
+            </xpath>
+
+            <!-- BoM Lines -->
+            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
+                <field name="time_to_produce_per_unit"/>
+                <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
+                <field name="diff_time_product_theorical" invisible="1" force_save="1"/>
+                <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
+                <field name="time_to_produce_line"/>
+            </xpath>
+            <xpath expr="//field[@name='bom_line_ids']/tree" position="attributes">
+                <attribute name="decoration-info">diff_time_product_theorical != 0</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Tree -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_tree" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="description_short"/>
+                <field name="priority" widget="priority"/>
+                <field name="time_to_produce"/>
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+              <attribute name="default_order">priority desc</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- BoM menus -->
+    <menuitem id="menu_mrp_bom_products"
+      name="Products"
+      parent="mrp.menu_mrp_root" sequence="10"/>
+
+    <record id="action_grap_mrp_bom" model="ir.actions.act_window">
+        <field name="name">Bills of Materials</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mrp.bom</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="mrp.mrp_bom_tree_view"/>
+    </record>
+
+    <menuitem id="menu_grap_mrp_bom"
+        name="Bills of Materials"
+        parent="mrp.menu_mrp_root" sequence="15"
+        action="action_grap_mrp_bom"/>
+
+    <!-- Hide standard menu -->
+    <menuitem id="mrp.menu_mrp_manufacturing"
+        name="(Admin) Opérations"
+        parent="mrp.menu_mrp_root"
+        groups="base.group_no_one"/>
+
+    <menuitem id="mrp.menu_mrp_bom"
+        name="(Admin) Master Data"
+        parent="mrp.menu_mrp_root"
+        groups="base.group_no_one"/>
+
+    <menuitem id="mrp.menu_mrp_production_report"
+        name="(Admin) Report"
+        parent="mrp.menu_mrp_root"
+        groups="base.group_no_one"/>
+
+    <menuitem id="mrp.menu_view_resource_calendar_search_mrp"
+        name="(Admin) Working Times"
+        parent="mrp.menu_mrp_configuration"
+        groups="base.group_no_one"/>
+
+    <!-- Hide specific menu -->
+    <menuitem id="mrp_food.menu_mrp_editable_views"
+        name="(Admin) Price Lists - Inline editable"
+        parent="mrp.menu_mrp_root" groups="base.group_no_one"/>
+
+
+
+  </odoo>

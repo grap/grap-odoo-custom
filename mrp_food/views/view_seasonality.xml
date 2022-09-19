@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="action_mrp_season_2_mrp_bom" model="ir.actions.act_window">
+        <field name="name">Bills of Materials</field>
+        <field name="res_model">mrp.bom</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('bom_season_ids', '=', active_id)]</field>
+    </record>
+
+    <record id="action_mrp_season_2_product_product" model="ir.actions.act_window">
+        <field name="name">Products Variants</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('product_seasonality_ids', '=', active_id)]</field>
+    </record>
+
+    <record id="view_seasonality_form" model="ir.ui.view">
+        <field name="model">seasonality</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                  <button class="btn btn-primary" type="object"
+                    string="Add next period with one more year" name="add_seasonality_line_one_more_year"
+                    action="add_seasonality_line_one_more_year" attrs="{'invisible': [('seasonality_line_ids', '=', [])]}"
+                    help="Based on last period of this seasonality, it creates an other period with one more year"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_right oe_button_box" name="buttons">
+                        <button class="oe_stat_button" type="action" icon="fa-flask"
+                            name="%(action_mrp_season_2_mrp_bom)d">
+                            <field string="Bills of Materials" name="bom_qty" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="action" icon="fa-list"
+                            name="%(action_mrp_season_2_product_product)d">
+                            <field string="Products Variants" name="product_product_qty" widget="statinfo"/>
+                        </button>
+                    </div>
+
+                    <div class="alert alert-info col-6 seasonnality_information" role="status">
+                      ℹ️ A seasonality is a period of time in the year, which can be repeated at regular intervals.<br/>
+                      For example, you can create a seasonality "Summer", and then period lines Summer 2023 and Summer 2024, to cover summer Products and Bills of Materials.<br/><br/>
+                      In fact, you will be able to assign seasonality to products and bills of materials.<br/>
+                      The software can then automatically tell you whether or not a product or Bil of Material is in season.
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <p class="alert alert-info" role="status"
+                       attrs="{'invisible': [('seasonality_line_ids', '!=', [])]}">
+                      ℹ️ Complete the <i>Seasonality lines</i> to define the different periods of this seasonality.
+                    </p>
+                    <group>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="seasonality_line_ids">
+                            <tree editable="bottom">
+                                <field name="name" placeholder="e.g. The name of the season and year of the seasonal line : Summer (2022)"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_seasonality_tree" model="ir.ui.view">
+        <field name="model">seasonality</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="bom_qty"/>
+                <field name="product_product_qty"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_seasonality" model="ir.actions.act_window">
+        <field name="name">Seasonalities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">seasonality</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_mrp_seasonality"
+        parent="mrp.menu_mrp_configuration" sequence="10"
+        action="action_seasonality"/>
+
+</odoo>

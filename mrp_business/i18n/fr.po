@@ -1,0 +1,294 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_business
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-08 10:09+0000\n"
+"PO-Revision-Date: 2022-09-08 10:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
+msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code_nb
+msgid "Bill Of Material Numbering"
+msgstr "Numérotation"
+
+#. module: mrp_business
+#: model:ir.model,name:mrp_business.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Fiche technique"
+
+#. module: mrp_business
+#: model:ir.model,name:mrp_business.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de fiche technique"
+
+#. module: mrp_business
+#: sql_constraint:mrp.meal.category:0
+msgid "Category name already exists"
+msgstr "Ce nom de catégorie est déjà utilisé"
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_meal_category_form
+msgid "Category position number"
+msgstr "Ordre de la catégorie"
+
+#. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_bom__code
+msgid "Code of the BoM, composed of the trigram of your activity, the trigram of the product (which can be modified on its form) and a unique number"
+msgstr "Code de la fiche technique, composé du trigramme de votre activité, du trigramme du produit (modifiable sur sa fiche) et d'un numéro unique"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_product_form
+msgid "Create an automatic trigram. Change its BoM references with this trigram."
+msgstr "Générer un trigramme automatiquement. Cela change les codes références des fiches techniques du produit."
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__diff_time_product_theorical
+msgid "Diff Time"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__diff_time_to_produce_bom_and_lines
+msgid "Diff Time To Produce Bom And Lines"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_bom__priority
+msgid "Helps prioritize BoM."
+msgstr "Aide à prioriser les fiches techniques."
+
+#. module: mrp_business
+#: selection:mrp.bom,priority:0
+msgid "High"
+msgstr "Haute"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__id
+msgid "ID"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_long
+msgid "Long description"
+msgstr "Description longue"
+
+#. module: mrp_business
+#: selection:mrp.bom,priority:0
+msgid "Low"
+msgstr "Basse"
+
+#. module: mrp_business
+#: model:ir.model,name:mrp_business.model_mrp_bom_meal_category
+msgid "MRP BoM Meal Category"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model,name:mrp_business.model_mrp_meal_category
+msgid "MRP Meal Category"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.actions.act_window,name:mrp_business.action_meal_category
+#: model:ir.ui.menu,name:mrp_business.menu_mrp_meal_category
+msgid "Meal Categories"
+msgstr "Catégories de repas"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__name
+msgid "Meal Category"
+msgstr "Catégorie de repas"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__meal_category_id
+#: model:ir.model.fields,field_description:mrp_business.field_product_product__meal_category_id
+msgid "Meal category"
+msgstr "Catégorie de repas"
+
+#. module: mrp_business
+#: code:addons/mrp_business/models/mrp_bom.py:88
+#, python-format
+msgid "No Trigram on product %s "
+msgstr "Aucun trigramme sur l'Article %s "
+
+#. module: mrp_business
+#: selection:mrp.bom,priority:0
+msgid "Normal"
+msgstr "Normale"
+
+#. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_meal_category__sequence
+msgid "Order Meal Category. Used for printing documents"
+msgstr "Classe les catégories de repas. Utilisé pour imprimer certains documents."
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_packaging
+msgid "Packaging description"
+msgstr "Description de conditionnement"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__priority
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: mrp_business
+#: model:ir.model,name:mrp_business.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__PRODUCT_CODE_GENERIC_TLA
+#: model:ir.model.fields,field_description:mrp_business.field_product_product__PRODUCT_CODE_GENERIC_TLA
+msgid "Product Code Generic Tla"
+msgstr ""
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_line
+msgid "Real time"
+msgstr "Temps réel"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code
+msgid "Reference ℹ️"
+msgstr "Référence ℹ️"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_bom__time_to_produce
+msgid "Set this time or calculate it with BoM lines time"
+msgstr "Temps à écrire ou à générer automatiquement avec la somme des temps composant la fiche technique"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_short
+msgid "Short description"
+msgstr "Description"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_line_theorical
+msgid "Theorical time"
+msgstr "Temps théo."
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__time_to_produce_per_unit
+msgid "Theorical time per unit"
+msgstr "Temps théo. par unité"
+
+#. module: mrp_business
+#: code:addons/mrp_business/models/product_product.py:133
+#, python-format
+msgid "This changes all BoM containing this product."
+msgstr "Cela change toutes les fiches techniques contenant ce produit."
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__time_to_produce
+msgid "Time To Produce"
+msgstr "Temps"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_product_product__time_to_produce_product
+msgid "Time To Produce Product"
+msgstr "Temps de production"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__tla_to_change
+#: model:ir.model.fields,field_description:mrp_business.field_product_product__tla_to_change
+msgid "Tla To Change"
+msgstr "Trigramme à changer"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_product_product__tla
+msgid "Trigram"
+msgstr "Trigramme"
+
+#. module: mrp_business
+#: code:addons/mrp_business/models/product_product.py:71
+#, python-format
+msgid "Trigram already used by an other product : %s."
+msgstr "Trigramme déjà utilisé par un autre produit : %s."
+
+#. module: mrp_business
+#: selection:mrp.bom,priority:0
+msgid "Very High"
+msgstr "Très haute"
+
+#. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_bom__code_nb
+msgid "You can change it manually here and it will change reference."
+msgstr "Vous pouvez le changer directement ici et ça changera le code de la fiche technique."
+
+#. module: mrp_business
+#: code:addons/mrp_business/models/mrp_bom.py:85
+#, python-format
+msgid "You need to change default trigram on product set to %s."
+msgstr "Vous devez changer le trigramme du produit qui a été défini à %s."
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_product_form
+msgid "⇒ Generate new trigram"
+msgstr "⇒ Générer un nouveau trigramme"
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
+msgid "⇒ Set Code"
+msgstr "⇒ Définir la Référence"
+
+#. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
+msgid "⇒ Set Time with BoM lines"
+msgstr "⇒ Définir avec le temps des lignes de la FT"

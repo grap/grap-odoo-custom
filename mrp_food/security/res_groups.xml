@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="seasonality_manager" model="res.groups">
+        <field name="name">Manage Seasonality</field>
+        <field name="category_id" ref="base.module_category_manufacturing"/>
+    </record>
+
+</odoo>

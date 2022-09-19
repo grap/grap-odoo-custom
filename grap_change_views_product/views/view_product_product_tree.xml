@@ -33,6 +33,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="barcode" position="after">
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </field>
+            <xpath expr="//field[@name='standard_price']" position="after">
+                <field name="product_main_seller_partner_id" string="Main Seller"/>
+            </xpath>
         </field>
     </record>
 
@@ -48,10 +51,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     decoration-danger="margin_state == 'too_cheap'"
                 >
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="fiscal_classification_id" required="1"/>
                 <field name="consignor_partner_id" invisible="1"/>
                 <field name="standard_price"/>
+                <field name="product_main_seller_partner_id" string="Main Seller"/>
                 <field name="list_price"/>
                 <field name="standard_margin_rate"/>
                 <field name="margin_classification_id"/>
@@ -98,6 +103,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="categ_id"/>
                 <field name="label_ids" widget="many2many_tags"/>
@@ -133,6 +139,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="country_id"/>
                 <field name="state_id"/>
@@ -168,6 +175,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree string="Products (Price Tags)" editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="print_category_id"/>
                 <field name="pricetag_type_id"/>
@@ -202,6 +210,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree string="Products (Categories)" editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="categ_id"/>
                 <field name="fiscal_classification_id" required="1"/>
@@ -240,6 +249,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree string="Products (Alcohol)" editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="categ_id"/>
                 <field name="is_alcohol"/>
@@ -273,6 +283,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="available_in_pos"/>
                 <field name="to_weight"/>
@@ -309,6 +320,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="scale_group_id"/>
                 <field name="tare_weight"/>
@@ -365,6 +377,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     decoration-info="eshop_state == 'disabled'"
                     decoration-muted="eshop_state == 'unavailable'">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="eshop_minimum_qty"/>
                 <field name="eshop_rounded_qty"/>
@@ -403,6 +416,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom" decoration-info="joint_buying_product_id != False">
                 <field name="default_code" readonly="1"/>
+                <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
                 <field name="joint_buying_product_id" readonly="1"/>
                 <button string="Offer For joint Buying" type="object" name="create_joint_buying_product"
@@ -428,5 +442,31 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_product_product_editable_view" sequence="20"
         groups="joint_buying_base.group_joint_buying_user"
         action="action_product_product_joint_buying"/>
+
+<!-- ************************************************************ -->
+<!-- 30 - MRP Products -->
+<!-- ************************************************************ -->
+
+    <menuitem id="menu_product_product_all"
+        name="Composants Products 🥕"
+        parent="menu_product_product_editable_view" sequence="30"
+        groups="mrp.group_mrp_user"
+        action="mrp_food.action_product_product_mrp_tree"/>
+
+    <record id="view_grap_mrp_food_product_tree" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="mrp_food.view_product_product_mrp_tree" />
+        <field name="arch" type="xml">
+          <xpath expr="//tree//field[@name='name']" position="before">
+              <button name="see_current_product" type="object" string="↗️"/>
+          </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_product_supplierinfo_editable"
+        name="Suppliers Informations 🥕"
+        parent="menu_product_product_editable_view" sequence="31"
+        groups="mrp.group_mrp_user"
+        action="mrp_food.action_product_supplierinfo_mrp_tree"/>
 
 </odoo>

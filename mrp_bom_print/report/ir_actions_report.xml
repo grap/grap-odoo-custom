@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <report
+        id="bom_allergens"
+        model="report.bom.allergens"
+        string="BoM Allergens"
+        report_type="qweb-pdf"
+        name="mrp_bom_print.report_bom_allergens"
+        file="mrp_bom_print.report_bom_allergens"
+        attachment_use="False"
+    />
+
+    <record id="bom_allergens" model="ir.actions.report">
+        <field name="paperformat_id" ref="paper_format_allergens"/>
+    </record>
+
+</odoo>

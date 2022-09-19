@@ -1,0 +1,414 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_food
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-08 10:27+0000\n"
+"PO-Revision-Date: 2022-09-08 10:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_food
+#: model:ir.ui.menu,name:mrp_food.menu_mrp_editable_views
+msgid "(Admin) Price Lists - Inline editable"
+msgstr "(Admin) Mercuriales"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "Add next period with one more year"
+msgstr "Ajoute une nouvelle période avec un an de plus"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_product_allergen
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_allergen_ids
+#: model:ir.ui.menu,name:mrp_food.menu_mrp_product_allergen
+msgid "Allergens"
+msgstr "Allergènes"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_line__allergen_ids
+msgid "Allergens on product"
+msgstr "Allergènes du produit"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__are_bom_lines_seasonals
+msgid "Are Bom Lines Seasonals"
+msgstr "Composants de saison ?"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "Based on last period of this seasonality, it creates an other period with one more year"
+msgstr "Se base sur la dernière période de cette saisonnalité, crée une autre période avant un an de plus"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de nomenclature"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
+msgid "Bill of Materials"
+msgstr "Fiche technique"
+
+#. module: mrp_food
+#: model:ir.actions.act_window,name:mrp_food.action_mrp_season_2_mrp_bom
+#: model:ir.actions.act_window,name:mrp_food.action_product_allergens_2_mrp_bom
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_allergen_form
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "Bills of Materials"
+msgstr "Fiches techniques"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_allergen__bom_qty
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__bom_qty
+msgid "BoM Quantity"
+msgstr "Quantité de fiches techniques"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_mrp_bom__bom_label_ids
+msgid "BoM labels are not computed, you have to define them by hand"
+msgstr "Les étiquettes des recettes ne sont pas définies automatiquement, vous devez les paramétrer à la main."
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_allergen__bom_ids
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__bom_ids
+msgid "Bom"
+msgstr "Fiche technique"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_product_product_search
+msgid "By Category"
+msgstr "Par Catégorie"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__color
+msgid "Color Index"
+msgstr "Couleur"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: mrp_food
+#: model:ir.actions.act_window,name:mrp_food.action_product_product_mrp_tree
+#: model:ir.ui.menu,name:mrp_food.menu_product_product_all
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_product_product_search
+msgid "Components Products"
+msgstr "Matières premières"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_mrp_bom_line__is_seasonal
+#: model:ir.model.fields,help:mrp_food.field_product_product__is_seasonal
+#: model:ir.model.fields,help:mrp_food.field_product_template__is_seasonal
+msgid "Computed thanks to choosen seasonalities.              It is enough that a selected season matches"
+msgstr "Calculé en fonction des saisons choisis.              Il suffit qu'une saison 'matche'."
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
+msgid "Cost"
+msgstr "Coût"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__create_uid
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__create_date
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__date_end
+msgid "Date End"
+msgstr "Date de fin"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__date_last_statement_price
+#: model:ir.model.fields,field_description:mrp_food.field_product_template__date_last_statement_price
+msgid "Date Last Statement Price"
+msgstr "Date relevé prix"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__date_start
+msgid "Date Start"
+msgstr "À partir du"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_product_product__date_last_statement_price
+#: model:ir.model.fields,help:mrp_food.field_product_template__date_last_statement_price
+msgid "Date of last standard price change. Automatically sets to the date of the day you changed the standard price"
+msgstr "Date de la dernière modification du prix de revient. Cette date est automatiquement fixée à la date du jour où vous l'avez modifié la dernière fois."
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
+msgid "Def code"
+msgstr "Code"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__display_name
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__end_date_of_market_price_list
+msgid "End Date of Market Price List"
+msgstr "Fin de validité de la mercuriale"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_product_product__end_date_of_market_price_list
+msgid "End date of validity of the market price list. After this date, you can consider that your standard price is certainly not up to date."
+msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre prix de revient n'est plus à jour."
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__id
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__id
+msgid "ID"
+msgstr ""
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__image
+msgid "Image"
+msgstr ""
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__image_2
+msgid "Image 2"
+msgstr ""
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__image_3
+msgid "Image 3"
+msgstr ""
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
+msgid "Images"
+msgstr ""
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_mrp_bom__bom_allergen_ids
+msgid "Includes allergens of the product and its components"
+msgstr "Inclus les allergènes du produit et de ses composants"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__is_bom_seasonal
+msgid "Is Bom Seasonal"
+msgstr "Fiche technique de saison ?"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__is_component
+#: model:ir.model.fields,field_description:mrp_food.field_product_template__is_component
+msgid "Is Component"
+msgstr "Est une matière première"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_line__is_seasonal
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__is_seasonal
+#: model:ir.model.fields,field_description:mrp_food.field_product_template__is_seasonal
+msgid "Is Seasonal"
+msgstr "De saison ℹ️"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_label_ids
+msgid "Labels"
+msgstr ""
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_line__label_ids
+msgid "Labels on product"
+msgstr "Labels du produit"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality____last_update
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__write_uid
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__write_date
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: mrp_food
+#: model:res.groups,name:mrp_food.seasonality_manager
+msgid "Manage Seasonality"
+msgstr "Gérer les saisonnalités"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_product_product
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
+msgid "Product"
+msgstr "Article"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__product_product_ids
+msgid "Product Product"
+msgstr "Produit"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__product_product_qty
+msgid "Product Variant Quantity"
+msgstr "Quantité de produits"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__products_not_in_season
+msgid "Products Not In Season"
+msgstr "Articles hors saison"
+
+#. module: mrp_food
+#: model:ir.actions.act_window,name:mrp_food.action_mrp_season_2_product_product
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "Products Variants"
+msgstr "Produits"
+
+#. module: mrp_food
+#: model:ir.actions.act_window,name:mrp_food.action_seasonality
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__product_seasonality_ids
+#: model:ir.model.fields,field_description:mrp_food.field_product_template__product_seasonality_ids
+#: model:ir.ui.menu,name:mrp_food.menu_mrp_seasonality
+msgid "Seasonalities"
+msgstr "Saisonnalités"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom_line__seasonality_ids
+msgid "Seasonalities of the product"
+msgstr "Saisonnalité du produit"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_seasonality
+#: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_season_ids
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__seasonality_id
+msgid "Seasonality"
+msgstr "Saisonnalité"
+
+#. module: mrp_food
+#: model:ir.model,name:mrp_food.model_seasonality_line
+msgid "Seasonality Line"
+msgstr "Période de la saisonnalité"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__name
+msgid "Seasonality line name"
+msgstr "Nom de la période"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__seasonality_line_ids
+msgid "Seasonality lines"
+msgstr "Période de la saisonnalité"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__name
+msgid "Seasonality name"
+msgstr "Nom de la Saisonnalité"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
+msgid "Seasonality ℹ️"
+msgstr "Saisonnalité ℹ️"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_mrp_bom__bom_season_ids
+msgid "Select the seasonality(s) of this Bill of material. Helps visually to know which recipe is in season or not."
+msgstr "Sélectionner la ou les saisonnalités de cette fiche technique. Aide visuellement à savoir quelle fiche technique est de saison ou non."
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: mrp_food
+#: model:ir.ui.menu,name:mrp_food.menu_product_supplierinfo_editable
+msgid "Suppliers Informations"
+msgstr "Prix fournisseur·es"
+
+#. module: mrp_food
+#: model:ir.actions.act_window,name:mrp_food.action_product_supplierinfo_mrp_tree
+msgid "Suppliers informations"
+msgstr ""
+
+#. module: mrp_food
+#: code:addons/mrp_food/models/seasonality_line.py:32
+#, python-format
+msgid "The end date cannot be earlier than the start date."
+msgstr "La date de fin ne peut être antérieur à la date de début"
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_mrp_bom__image
+msgid "This field holds the image used as image for the product, limited to 1024x1024px."
+msgstr "Ce champ contient l'image utilisée pour cet article, limitée à 1024x1024 px."
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp_food
+#: code:addons/mrp_food/models/seasonality.py:75
+#, python-format
+msgid "You cannot use this button. Fill one period for this seasonality before."
+msgstr "Tu ne peux pas utiliser ce bouton. Remplis avant une saisonnalité."
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "e.g. The name of the season and year of the seasonal line : Summer (2022)"
+msgstr "ex : Le nom de la saison et l'année de cette période : Été (2022)"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "ℹ️ A seasonality is a period of time in the year, which can be repeated at regular intervals.<br/>\n"
+"                      For example, you can create a seasonality \"Summer\", and then period lines Summer 2023 and Summer 2024, to cover summer Products and Bills of Materials.<br/><br/>\n"
+"                      In fact, you will be able to assign seasonality to products and bills of materials.<br/>\n"
+"                      The software can then automatically tell you whether or not a product or Bil of Material is in season."
+msgstr "ℹ️ Une Saisonnalité est une période sur l'année, période qui peut se répéter à rythme régulier.<br/>\n"
+"                      Exemple pour couvrir les articles et fiches techniques estivales : vous pouvez créer une Saisonnalité \"Été\", puis des lignes pour les périodes Été 2023 et Été 2024, .<br/><br/>\n"
+"                      Les Saisonnalités s'attribuent à des Articles et / ou des Fiches techniques.<br/>\n"
+"                      Le logiciel pourra alors automatiquement vous indiquer que tel Article ou telle Fiche technique est ou n'est pas de saison."
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_seasonality_form
+msgid "ℹ️ Complete the <i>Seasonality lines</i> to define the different periods of this seasonality."
+msgstr "ℹ️ Complétez les <i>lignes de saisonnalité</i> pour définir ses différentes périodes"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
+msgid "⚠️ Some composants are not in season:"
+msgstr "⚠️ Certains composants ne sont pas de saison :"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
+msgid "⚠️ This Bill Of Materials is not in season (according to seasonality bom field)."
+msgstr "⚠️ Cette fiche technique n'est pas de saison (selon le champ Saisonnalité rempli ici sur la fiche technique)"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
+msgid "⚠️ This Bill Of Materials is not in season, and neither are these components:"
+msgstr "⚠️ Cette fiche technique n'est pas de saison, ni certains de ces composants :"

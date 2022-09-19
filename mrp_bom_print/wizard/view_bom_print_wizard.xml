@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_bom_print_wizard_form" model="ir.ui.view">
+        <field name="model">bom.print.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Allergen table">
+                <div class="wizard_options">
+                  <h5>🔧 Choose options</h5><br/>
+                  <label for="option_allergens_only_code"/><field name="option_allergens_only_code" widget="boolean_toggle"/><br/>
+                  <label for="option_group_by_meal_category"/><field name="option_group_by_meal_category" widget="boolean_toggle"/><br/>
+                </div>
+                <div class="wizard_instrutions">
+                  <h5>🖨️ Choose BoMs to print ↓</h5>
+                </div>
+                <group colspan="2">
+                    <group col="4" colspan="2">
+                        <field name="line_ids" nolabel="1">
+                            <tree editable="bottom" default_order="bom_meal_category">
+                                <field name="bom_id" required="1"/>
+                                <field name="bom_meal_category"/>
+                                <field name="bom_allergens_ids" widget="many2many_tags"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" icon="fa-print" class="oe_highlight"/>
+                        <button icon="fa-ban" special="cancel" string="Cancel"/>
+                    </footer>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mrp_bom_print_wizard" model="ir.actions.act_window">
+        <field name="name">Print Allergen table</field>
+        <field name="res_model">bom.print.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
