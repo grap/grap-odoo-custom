@@ -5,7 +5,7 @@
 {
     "name": "MRP BoM Tag",
     "summary": "Add tags on your BoM to find it easily",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.1.1",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
