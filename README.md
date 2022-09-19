@@ -33,9 +33,9 @@ addon | version | maintainers | summary
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.3 |  | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.1.2 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | GRAP - Change Mail Views
 [grap_change_views_mrp](grap_change_views_mrp/) | 12.0.1.1.1 |  | GRAP - Change Views MRP
-[grap_change_views_partner](grap_change_views_partner/) | 12.0.0.0.17 |  | GRAP - Change Partner Views
+[grap_change_views_partner](grap_change_views_partner/) | 12.0.0.0.18 |  | GRAP - Change Partner Views
 [grap_change_views_pos](grap_change_views_pos/) | 12.0.1.1.8 |  | GRAP - Change POS Views
-[grap_change_views_product](grap_change_views_product/) | 12.0.0.1.16 |  | GRAP - Change Views Product
+[grap_change_views_product](grap_change_views_product/) | 12.0.0.1.17 |  | GRAP - Change Views Product
 [grap_change_views_project](grap_change_views_project/) | 12.0.1.0.3 |  | GRAP - Change Project Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.3.0.3 |  | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.11 |  | GRAP - Change Sale Views
