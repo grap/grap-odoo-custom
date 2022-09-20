@@ -59,6 +59,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_res_company_map" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <leaflet_map
+                    field_latitude="partner_latitude"
+                    field_longitude="partner_longitude"
+                    field_title="clean_name"
+                    field_address="map_display_address"
+                    field_marker_icon_image="logo_web"
+                    default_zoom="9"
+                    zoom_snap="0.1"
+                >
+                <field name="__last_update"/>
+                <field name="partner_latitude"/>
+                <field name="partner_longitude"/>
+                <field name="clean_name"/>
+                <field name="map_display_address"/>
+            </leaflet_map>
+        </field>
+    </record>
+
     <record id="view_res_company_form_directory" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="priority">100</field>
@@ -259,7 +280,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="res_model">res.company</field>
         <field name="view_type">form</field>
         <field name="view_id" ref="view_res_company_kanban_directory"/>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">kanban,tree,form,leaflet_map</field>
         <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
         <field name="context">
             {
