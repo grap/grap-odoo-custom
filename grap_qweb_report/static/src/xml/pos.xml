@@ -26,6 +26,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <t t-jquery="t[t-if='taxincluded']" t-operation="replace">
         </t>
 
+        <t t-jquery="line[class='total_foodprint_amount']" t-operation="replace">
+        </t>
+
         <t t-jquery="div[class='before-footer']" t-operation="before">
 
             <div>------------------------------------------</div>
@@ -64,6 +67,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <div>------------------------------------------</div>
             </t>
 
+            <t t-if='receipt.client and receipt.customer_wallet_balance'>
+                <div font='b'>
+                    Customer Wallet Balance:
+                </div>
+                <div font='b'>
+                    <t t-esc='widget.format_currency(receipt.customer_wallet_balance)' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
         </t>
     </t>
 
@@ -71,6 +83,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <t t-extend="PosTicket">
 
         <t t-jquery="t[t-foreach='order.get_tax_details()']" t-operation="replace">
+        </t>
+
+        <t t-jquery="table[class='receipt-customer-wallet-balance']" t-operation="replace">
         </t>
 
         <t t-jquery="div[class='receipt-phone']" t-operation="before">
@@ -136,6 +151,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
                 <div font='b'>
                     <t t-esc='receipt.pricelist_name' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.client and receipt.customer_wallet_balance'>
+                <div font='b'>
+                    Customer Wallet Balance:
+                </div>
+                <div font='b'>
+                    <t t-esc='widget.format_currency(receipt.customer_wallet_balance)' />
                 </div>
                 <div>------------------------------------------</div>
             </t>
