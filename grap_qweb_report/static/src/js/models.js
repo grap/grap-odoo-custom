@@ -39,6 +39,20 @@ odoo.define('grap_qweb_report.models', function (require) {
                         };
                     }
                 }
+                // Handle case where there is no tax
+                if (line_detail.tax === 0 && line_detail.priceWithTax !== 0) {
+                    if (0.0 in tax_dict) {
+                        tax_dict[0.0].tax_amount += 0.0;
+                        tax_dict[0.0].tax_base += line_detail.priceWithoutTax;
+
+                    } else {
+                        tax_dict[0.0] = {
+                            'tax_amount': 0.0,
+                            'tax_base': line_detail.priceWithoutTax,
+                        };
+                    }
+
+                }
             });
             $.each(tax_dict, function (key, value) {
                 var tax_name = String(key) + '%';
