@@ -38,8 +38,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </line>
                 <line t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
                     <left><t t-esc='line_tax.tax_name_with_underscore' /></left>
-                    <left><t t-esc='widget.format_currency(line_tax.amount)' /></left>
-                    <right><t t-esc='widget.format_currency(line_tax.base)' /></right>
+                    <left><t t-esc='widget.format_currency(line_tax.base)' /></left>
+                    <right><t t-esc='widget.format_currency(line_tax.amount)' /></right>
                 </line>
                 <div>------------------------------------------</div>
             </t>
@@ -112,8 +112,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <t t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
                         <tr>
                             <td><t t-esc='line_tax.name' /></td>
-                            <td><t t-esc='widget.format_currency(line_tax.amount)' /></td>
                             <td><t t-esc='widget.format_currency(line_tax.base)' /></td>
+                            <td><t t-esc='widget.format_currency(line_tax.amount)' /></td>
                         </tr>
                     </t>
                 </table>
