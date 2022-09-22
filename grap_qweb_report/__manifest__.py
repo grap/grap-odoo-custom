@@ -25,6 +25,8 @@
         "product_origin_l10n_fr_department",
         "product_print_category_food_report",
         "stock_inventory_valuation",
+        # Coop It Easy
+        "pos_customer_wallet",
     ],
     "data": [
         "security/ir.model.access.csv",
