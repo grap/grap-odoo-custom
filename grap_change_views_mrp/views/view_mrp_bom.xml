@@ -7,122 +7,293 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- ************************************************************ -->
-    <!-- MRP Bill of Materials - Original View -->
+    <!-- MRP Bill of Materials - New View From Scratch -->
     <!-- ************************************************************ -->
 
-    <!-- Besoin d'avoir une priorité basse (enfin haute) pour que ça cache bien les bons élements -->
-    <record id="view_mrp_bom_form" model="ir.ui.view">
+    <record id="view_mrp_bom_form_grap" model="ir.ui.view">
         <field name="model">mrp.bom</field>
-        <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
-        <field name="priority" eval="10"/>
+        <field name="priority" eval="1"/>
         <field name="arch" type="xml">
+          <form string="Bill of Material">
+            <sheet>
+              <div class="oe_button_box" name="button_box">
+                  <button name="845" type="action" class="oe_stat_button" icon="fa-bars" string="Structure &amp; Cost" attrs="{'invisible': [('bom_line_ids', '=', [])]}"/>
+                  <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                      <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                  </button>
+              </div>
+              <!-- grap custom -->
+              <field name="image" widget="image" class="oe_avatar"/>
+              <div class="oe_title" name="bom_title">
+                <label for="product_name" string="Data sheet" style="margin-left:5px;"/>
+                <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
+              </div>
+              <!-- / grap custom -->
 
-            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
-              <attribute name="groups">base.group_no_one</attribute>
-            </xpath>
-            <xpath expr="//field[@name='product_id']" position="attributes">
-              <attribute name="string">Product</attribute>
-            </xpath>
-            <xpath expr="//field[@name='product_uom_id']" position="attributes">
-              <attribute name="readonly">True</attribute>
-            </xpath>
-            <xpath expr="//field[@name='type']" position="attributes">
-              <attribute name="groups">base.group_no_one</attribute>
-            </xpath>
-            <xpath expr="//field[@name='ready_to_produce']/../../.." position="attributes">
-              <attribute name="groups">base.group_no_one</attribute>
-            </xpath>
+              <!-- mrp_food : Main image and seasonality-->
+              <span attrs="{'invisible': [('product_id', '=', False)]}">
+                <p class="alert alert-warning" role="alert" groups="mrp_food.seasonality_manager" attrs="{'invisible': ['|', ('is_bom_seasonal', '=', True), '&amp;', ('is_bom_seasonal', '=', False), ('are_bom_lines_seasonals', '=', False)]}">
+                  ⚠️ This Bill Of Materials is not in season (according to seasonality bom field).
+                </p>
+                <p class="alert alert-warning" role="alert" groups="mrp_food.seasonality_manager" attrs="{'invisible': ['|', ('are_bom_lines_seasonals', '=', True), '&amp;', ('is_bom_seasonal', '=', False), ('are_bom_lines_seasonals', '=', False)]}">
+                  ⚠️ Some composants are not in season:
+                  <b><field name="products_not_in_season" readonly="1"/></b>
+                </p>
+                <p class="alert alert-warning" role="alert" groups="mrp_food.seasonality_manager" attrs="{'invisible': ['|', ('is_bom_seasonal', '=', True), ('are_bom_lines_seasonals', '=', True)]}">
+                  ⚠️ This Bill Of Materials is not in season, and neither are these components:
+                  <b><field name="products_not_in_season" readonly="1"/></b>
+                </p>
+              </span>
+              <!-- / mrp_food -->
 
+              <group>
+                  <group string="Main informations">
+                      <field name="product_tmpl_id" context="{'default_type': 'product'}" groups="base.group_no_one"/>
+                      <!-- required for mrp_bom_product_variant -->
+                      <field name="product_id" required="1" string="Product" groups="product.group_product_variant" context="{'default_type': 'product'}"/>
+                      <label for="product_qty" string="BoM for"/>
+                      <div class="o_row">
+                          <field name="product_qty"/>
+                          <field name="product_uom_id" readonly="1" style="pointer-events:none;" groups="uom.group_uom"/>
+                      </div>
+
+                      <!-- mrp_business -->
+                      <field name="description_packaging"/>
+                      <field name="priority" widget="priority" string="Grade"/>
+                      <!-- / mrp_business -->
+
+                  </group>
+                  <group string="BoM configuration">
+                      <field name="code" invisible="1"/>
+                      <!-- mrp_business -->
+                      <field name="tla_to_change" invisible="1"/>
+                      <label for="code"/>
+                      <div>
+                        <field name="code" class="oe_inline"/>
+                        <button name="generate_product_tla" string="⇒ Set Code"
+                          type="object" class="oe_link"
+                          attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
+                        </div>
+                        <field name="description_short"/>
+                        <field name="description_long"/>
+                      <!-- / mrp_business -->
+                      <!-- mrp_bom_tag -->
+                      <field name="bom_tag_ids" widget="many2many_tags"
+                        options="{'color_field': 'color', 'no_quick_create': True}"
+                        context="{'display_complete_name': True}"/>
+                      <!-- / mrp_bom_tag -->
+                      <field name="type" widget="radio" groups="base.group_no_one"/>
+                      <p colspan="2" class="oe_grey oe_edit_only" attrs="{'invisible': [('type','=','normal')]}">
+                      <ul>
+                          <li>
+                              If the product is a finished product: When processing a sales
+                              order for this product, the delivery order will contain the raw
+                              materials, instead of the finished product.
+                          </li>
+                          <li>
+                              If the product is a semi-finished product: When processing a
+                              manufacturing order that contains that product as component,
+                              the raw materials of that product will be added to the
+                              manufacturing order of the final product.
+                          </li>
+                      </ul>
+                      </p>
+                      <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                  </group>
+                  <group string="Handle prices and time">
+                      <!-- mrp_bom_sale_product_margin -->
+                      <field name="currency_id" invisible="1"/>
+                      <!-- Standard price -->
+                      <field name="diff_product_bom_standard_price" invisible="1"/>
+                      <field name="standard_price_total" string="Cost" class="oe_inline" widget="monetary"
+                             options="{'currency_field': 'currency_id'}"
+                             attrs="{'invisible': [('diff_product_bom_standard_price', '!=', 0)]}"/>
+                      <label for="standard_price_total" string="Cost"
+                             attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}"/>
+                      <div attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">
+                          <field name="standard_price_total" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                          <span> (for </span><field name="product_uom_id" readonly="1" style="pointer-events:none;"/><span>)</span>
+                          <button name="set_product_standard_price" string="⇒ Update Product variant cost"
+                                  type="object" class="oe_link"
+                                  help="It will set product variant's standard price with this price"/>
+                      </div>
+
+                      <!-- Theorical price -->
+                      <br/>
+                      <div class="handling_product_variant_price" attrs="{'invisible': [('product_id', '=', False)]}">
+                        <span>💵 <span id="handling_price_title">Actual product's variant prices</span></span><br/>
+                        <span>
+                          Actual cost: <b><field name="product_standard_price" widget="monetary" nolabel="1"/></b>
+                          <span attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">❗</span>
+                          <span attrs="{'invisible': [('diff_product_bom_standard_price', '!=', 0)]}"> ✅</span>
+                          <br/>
+                        </span>
+                        <span>
+                          Actual sale: <b><field name="product_sale_price" widget="monetary" nolabel="1"/></b>
+                          (margin <b><field name="product_margin_rate" nolabel="1"/>&#x25;</b>).
+                        </span>
+                        <br/>
+                      </div>
+                      <!-- / mrp_bom_sale_product_margin -->
+                      <!-- mrp_business -->
+                      <field name="diff_time_to_produce_bom_and_lines" invisible="1"/>
+                      <label for="time_to_produce"/>
+                      <div>
+                        <field name="time_to_produce" class="oe_inline" widget="numeric_step"/>
+                        <span class="unity_for_time_to_produce"> minutes</span>
+                        <button name="generate_proposal_bom_time" string="⇒ Set Time with BoM lines"
+                                type="object" class="oe_link"
+                                attrs="{'invisible': [('diff_time_to_produce_bom_and_lines', '=', False)]}"/>
+                      </div>
+                      <!-- / mrp_business -->
+                      <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                  </group>
+                  <group string="Food informations">
+                    <!-- mrp_food -->
+                    <field name="bom_season_ids" string="Seasonality ℹ️" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                    <field name="is_bom_seasonal" groups="base.group_no_one"/>
+                    <field name="are_bom_lines_seasonals" groups="base.group_no_one"/>
+                    <field name="bom_label_ids" widget="many2many_tags"/>
+                    <field name="bom_allergen_ids" widget="many2many_tags"/>
+                    <!-- / mrp_food -->
+                  </group>
+              </group>
+              <notebook>
+                  <page string="Components (admin)" groups="base.group_no_one">
+                      <field name="bom_line_ids" widget="one2many_list" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
+                          <tree string="Components" editable="bottom">
+                              <field name="sequence" widget="handle"/>
+                              <field name="product_id" context="{'default_type': 'product'}"/>
+                              <field name="has_attachments" invisible="1"/>
+                              <button name="action_see_attachments" type="object" icon="fa-files-o" attrs="{'invisible': [('has_attachments', '=', True)]}" aria-label="No attachment" title="No attachment"/>
+                              <button name="action_see_attachments" type="object" icon="fa-file" attrs="{'invisible': [('has_attachments', '=', False)]}" aria-label="Attachments" title="Attachments"/>
+                              <field name="product_qty"/>
+                              <!-- mrp_business -->
+                              <field name="time_to_produce_per_unit"/>
+                              <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
+                              <field name="diff_time_product_theorical" invisible="1" force_save="1"/>
+                              <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
+                              <field name="time_to_produce_line"/>
+                              <!-- / mrp_business -->
+                              <!-- mrp_food -->
+                              <field name="label_ids" widget="many2many_tags"/>
+                              <field name="allergen_ids" widget="many2many_tags"/>
+                              <field name="seasonality_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                              <field name="is_seasonal" groups="base.group_no_one"/>
+                              <!-- / mrp_food -->
+                              <!-- mrp_bom_sale_product_margin -->
+                              <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                              <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                              <!-- / mrp_bom_sale_product_margin -->
+                              <field name="parent_product_tmpl_id" invisible="1"/>
+                              <field name="valid_product_attribute_value_ids" invisible="1"/>
+                              <field name="valid_product_attribute_value_wnva_ids" invisible="1"/>
+                              <field name="product_uom_id" options="{'no_open':True,'no_create':True}" groups="uom.group_uom"/>
+                              <field name="attribute_value_ids" widget="many2many_tags" domain="[('id', 'in', valid_product_attribute_value_wnva_ids)]" options="{'no_create': True}" attrs="{'column_invisible': [('parent.product_id', '!=', False)]}" groups="product.group_product_variant"/>
+                              <field name="operation_id" groups="mrp.group_mrp_routings" domain="[('routing_id', '=', parent.routing_id)]" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                          </tree>
+                      </field>
+                  </page>
+                  <page string="Components">
+                      <field name="bom_line_with_sectionnote_ids" widget="section_and_note_one2many" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
+                          <tree string="Components" editable="bottom" decoration-info="diff_time_product_theorical != 0">
+                              <control>
+                                  <create name="add_product_control" string="Add a product"/>
+                                  <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
+                                  <create name="add_note_control" string="Add a note" context="{'default_display_type': 'line_note'}"/>
+                              </control>
+                              <field name="sequence" widget="handle"/>
+                              <field name="display_type" invisible="1"/>
+                              <field name="product_id" context="{'default_type': 'product'}" attrs="{'required': [('display_type', '=', False)]}"/>
+                              <field name="name" widget="section_and_note_text"/>
+                              <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
+
+                              <field name="product_uom_id" string="UoM" readonly="1"/>
+                              <field name="currency_id" invisible="1"/>
+                              <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                              <field name="time_to_produce_per_unit"/>
+                              <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
+                              <field name="diff_time_product_theorical" groups="base.group_no_one" force_save="1"/>
+                              <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
+                              <field name="time_to_produce_line" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
+                              <field name="label_ids" widget="many2many_tags" string="Labels"/>
+                              <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>
+                              <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                              <field name="is_seasonal" groups="base.group_no_one"/>
+                              <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+
+                          </tree>
+                      </field>
+                  </page>
+                  <page string="Miscellaneous" groups="base.group_no_one">
+                      <group>
+                          <group>
+                              <!-- mrp_business -->
+                              <field name="code_nb"/><br/>
+                              <!-- / mrp_business -->
+                              <field name="sequence"/>
+                          </group>
+                          <group>
+                              <field name="ready_to_produce" string="Manufacturing Readiness"/>
+                              <field name="picking_type_id" string="Operation"/>
+                          </group>
+                      </group>
+                  </page>
+                  <!-- mrp_food -->
+                  <page class="notebook_images" string="Images">
+                      <group>
+                        <field name="image_2" widget="image" class="oe_avatar"/>
+                      </group>
+                      <group>
+                        <field name="image_3" widget="image" class="oe_avatar"/>
+                      </group>
+                  </page>
+                  <!-- / mrp_food -->
+              </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                 <field name="message_follower_ids" widget="mail_followers"/>
+                 <field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+            </div>
+          </form>
         </field>
     </record>
 
     <!-- ************************************************************ -->
-    <!-- MRP Bill of Materials - Tree -->
+    <!-- MRP Bill of Materials - New Tree View From Scratch -->
     <!-- ************************************************************ -->
 
-    <record id="view_mrp_bom_tree" model="ir.ui.view">
+    <record id="view_mrp_bom_tree_grap" model="ir.ui.view">
         <field name="model">mrp.bom</field>
-        <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
+        <field name="priority" eval="1"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
-              <attribute name="groups">base.group_no_one</attribute>
-            </xpath>
-            <xpath expr="//field[@name='product_id']" position="attributes">
-              <attribute name="string">Product</attribute>
-            </xpath>
-            <xpath expr="//field[@name='code']" position="attributes">
-              <attribute name="string">Reference</attribute>
-            </xpath>
-            <xpath expr="//field[@name='product_uom_id']" position="attributes">
-              <attribute name="string">UoM</attribute>
-            </xpath>
-            <xpath expr="//field[@name='product_uom_id']" position="after">
-              <field name="active" widget="boolean_toggle"/>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- ************************************************************ -->
-    <!-- MRP Bill of Materials - MRP Food View -->
-    <!-- ************************************************************ -->
-
-    <!-- Change product_template link name to product name -->
-    <record id="view_mrp_bom_form_product_variant" model="ir.ui.view">
-        <field name="model">mrp.bom</field>
-        <field name="inherit_id" ref="mrp_food.view_mrp_bom_form" />
-        <field name="arch" type="xml">
-
-            <xpath expr="//div[@name='bom_title']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <xpath expr="//div[@name='bom_title']" position="after">
-                <div class="oe_title" name="bom_title">
-                    <label for="product_name" string="Data sheet" style="margin-left:5px;"/>
-                    <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
-                </div>
-            </xpath>
-
-        </field>
-    </record>
-
-
-    <!-- ************************************************************ -->
-    <!-- MRP Bill of Materials - Form With Sections and Notes -->
-    <!-- ************************************************************ -->
-
-    <record id="view_mrp_bom_form_sections_notes" model="ir.ui.view">
-        <field name="model">mrp.bom</field>
-        <field name="inherit_id" ref="mrp_bom_widget_section_and_note_one2many.mrp_bom_form_view_section" />
-        <field name="arch" type="xml">
-            <!-- BoM Lines -->
-            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_qty']" position="attributes">
-                <attribute name="widget">numeric_step</attribute>
-                <attribute name="options">{'step': 0.1, 'min': 0}</attribute>
-            </xpath>
-            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_uom_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <xpath expr="//button[@name='action_see_attachments']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="product_uom_id" string="UoM" readonly="1"/>
+            <tree string="Bills of Materials" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+                <!-- odoo code  -->
+                <field name="code" string="Reference"/>
+                <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
+                <field name="product_id" string="Product"/>
+                <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
+                <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                <!-- mrp_business and mrp_bom_tag-->
+                <field name="description_short"/>
+                <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="priority" widget="priority"/>
+                <field name="time_to_produce"/>
+                <!-- mrp_bom_sale_product_margin -->
+                <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
                 <field name="currency_id" invisible="1"/>
-                <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                <field name="time_to_produce_per_unit"/>
-                <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
-                <field name="diff_time_product_theorical" groups="base.group_no_one" force_save="1"/>
-                <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
-                <field name="time_to_produce_line" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
-                <field name="label_ids" widget="many2many_tags" string="Labels"/>
-                <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>
-                <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
-                <field name="is_seasonal" groups="base.group_no_one"/>
-                <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
-            </xpath>
-            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree" position="attributes">
-                <attribute name="decoration-info">diff_time_product_theorical != 0</attribute>
-            </xpath>
+                <field name="standard_price_total" string="BoM&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <button name="set_product_standard_price" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}" help="It will set product variant's standard price with this price"/>
+                <field name="product_standard_price" string="Product&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="product_sale_price" string="Product&#160;Sale&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="product_margin_rate_percentage"
+                       widget="percentage" string="Product&#160;Margin&#160;Rate" options="{'bg_color': '#e74c3c: product_margin_rate_percentage &lt; 0'}"/>
+                <!-- mrp_food -->
+                <field name="bom_season_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_label_ids" widget="many2many_tags"/>
+                <field name="bom_allergen_ids" widget="many2many_tags"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
         </field>
     </record>
 
