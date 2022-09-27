@@ -17,7 +17,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="res_model">mrp.bom</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" ref="view_mrp_bom_tree_grap"/>
+        <field name="view_id" ref="grap_change_views_mrp.view_mrp_bom_tree_grap"/>
     </record>
 
     <menuitem id="menu_grap_mrp_bom"
