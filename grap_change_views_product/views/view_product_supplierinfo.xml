@@ -38,8 +38,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="package_qty"/>
             </xpath>
             <xpath expr="//field[@name='product_uom']" position="after">
-                <field name="discount"/>
-                <field name="discount2"/>
+                <field name="discount" string="Disc. 1 %"/>
+                <field name="discount2" string="Disc. 2 %"/>
             </xpath>
         </field>
     </record>
