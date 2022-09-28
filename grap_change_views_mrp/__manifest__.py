@@ -31,8 +31,8 @@
         "mrp_bom_product_variant",
     ],
     "data": [
-        "views/menu.xml",
         "views/view_mrp_bom.xml",
+        "views/menu.xml",
     ],
     "installable": True,
 }
