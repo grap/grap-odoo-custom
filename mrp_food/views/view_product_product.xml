@@ -66,21 +66,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">product.product</field>
         <field name="arch" type="xml">
             <tree editable="bottom" create="false">
-                <field name="default_code" string="Def code" readonly="1"/>
-                <field name="name" readonly="1"/>
-                <field name="maker_description"/>
+                <field name="default_code"/>
+                <field name="name"/>
                 <field name="categ_id"/>
                 <field name="currency_id" invisible="1"/>
-                <field name="standard_price" string="Cost" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
+                <field name="standard_price" string="Price" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                 <field name="uom_id" string="UoM" readonly="1"/>
-                <field name="seller_ids" widget="many2many_tags" readonly="1"/>
                 <field name="date_last_statement_price"/>
                 <field name="end_date_of_market_price_list"
-                      options="{'bg_color': '#e74c3c: end_date_of_market_price_list &lt; current_date and end_date_of_market_price_list != False;'}"/>
+                  options="{'bg_color': '#e74c3c: end_date_of_market_price_list &lt; current_date and end_date_of_market_price_list != False;'}"/>
+                <field name="seller_ids" widget="many2many_tags" readonly="1"/>
+                <field name="product_main_seller_partner_id"/>
+                <field name="maker_description"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>
                 <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="is_seasonal"/>
+                <field name="is_seasonal" string="Is seasonal"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
@@ -110,15 +111,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_supplierinfo_mrp_tree" model="ir.ui.view">
         <field name="model">product.supplierinfo</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" create="false">
+            <tree editable="bottom" create="false" decoration-info="diff_supplierinfo_product_standard_price != 0">
                 <field name="product_tmpl_id" string="Product" readonly="1"/>
                 <field name="display_name" string="Supplier" readonly="1"/>
-                <field name="product_name"/>
-                <field name="product_code"/>
-                <field name="min_qty"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="price" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
-                <field name="product_uom" readonly="1"/>
+                <field name="product_uom" readonly="1" string="UoM"/>
+                <field name="supplierinfo_standard_price_w_discount" string="New Price" groups="base.group_no_one"/>
+                <field name="diff_supplierinfo_product_standard_price" string="Diff" groups="base.group_no_one"/>
+                <button name="set_product_standard_price_from_supplierinfo" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}" help="It will set product variant's standard price with this supplier info price"/>
+                <field name="product_standard_price" string="Product price"/>
+                <field name="product_name" string="Supplier product name"/>
+                <field name="product_code" string="Supplier product code"/>
+                <field name="min_qty" string="Min qty"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
