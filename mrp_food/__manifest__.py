@@ -14,9 +14,11 @@
         "mrp",
         # OCA modules
         "web_widget_color",
+        "purchase_triple_discount",
         # GRAP modules,
         "product_food",
         "product_label",
+        "product_main_seller",
         "mrp_bom_sale_product_margin",
     ],
     "demo": [
