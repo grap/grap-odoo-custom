@@ -46,11 +46,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </span>
               <!-- / mrp_food -->
 
+              <!-- grap custom-->
+              <span attrs="{'invisible': [('product_id', '=', False)]}">
+                <p class="alert alert-info alert-dismissable" role="status" attrs="{'invisible': [('product_sale_ok','=','True')]}">
+                  ⚠️ This Bill Of Material is for an intermediate product (it is not saleable)
+                </p>
+              </span>
+              <!-- / grap custom -->
+
               <group>
                   <group string="Main informations">
                       <field name="product_tmpl_id" context="{'default_type': 'product'}" groups="base.group_no_one"/>
                       <!-- required for mrp_bom_product_variant -->
                       <field name="product_id" required="1" string="Product" groups="product.group_product_variant" context="{'default_type': 'product'}"/>
+                      <field name="product_sale_ok" groups="base.group_no_one"/>
                       <label for="product_qty" string="BoM for"/>
                       <div class="o_row">
                           <field name="product_qty"/>
