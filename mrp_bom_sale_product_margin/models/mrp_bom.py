@@ -58,9 +58,6 @@ class MrpBom(models.Model):
                 bom.product_id.standard_price - bom.standard_price_total
             )
 
-    # @api.onchange("product_margin_rate")
-    # def _onchange_product_margin_rate_percentage(self):
-    #     self.product_margin_rate_percentage = self.product_margin_rate / 100
     @api.multi
     @api.depends("product_margin_rate")
     def _compute_product_margin_rate_percentage(self):
@@ -85,13 +82,3 @@ class MrpBom(models.Model):
                 message=(_("Price difference : %s") % (diff_percentage_str,)),
                 title=(_("New standard price for %s") % bom.product_id.name),
             )
-            # self.env.user.notify_success(
-            #     message=(
-            #         _("Cost price is set to $ %s former price was $ %s")
-            #         % (
-            #             round(bom.product_id.standard_price, 2),
-            #             round(old_product_standard_price, 2),
-            #         )
-            #     ),
-            #     title=(_("New standard price for %s") % bom.product_id.name),
-            # )
