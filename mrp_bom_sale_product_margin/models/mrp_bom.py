@@ -46,8 +46,9 @@ class MrpBom(models.Model):
     @api.depends("product_id", "bom_line_ids")
     def _compute_standard_price_total(self):
         for bom in self:
-            bom.standard_price_total = sum(
-                x.standard_price_subtotal for x in bom.bom_line_ids
+            qty_to_divide = bom.product_qty if bom.product_qty != 0 else 1
+            bom.standard_price_total = (
+                sum(x.standard_price_subtotal for x in bom.bom_line_ids) / qty_to_divide
             )
 
     @api.multi

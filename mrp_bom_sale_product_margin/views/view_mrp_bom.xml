@@ -33,6 +33,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                        attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}"/>
                 <div attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">
                     <field name="standard_price_total" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <span> (for </span><field name="product_uom_id" readonly="1" style="pointer-events:none;"/><span>)</span>
                     <button name="set_product_standard_price" string="⇒ Update Product variant cost"
                             type="object" class="oe_link"
                             help="It will set product variant's standard price with this price"/>
