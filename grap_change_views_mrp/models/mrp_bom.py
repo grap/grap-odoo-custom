@@ -15,3 +15,8 @@ class MrpBom(models.Model):
     # product_uom_id = fields.Many2one(
     #     related="product_id.uom_id",
     # )
+
+    product_sale_ok = fields.Boolean(
+        related="product_id.sale_ok",
+        string="Saleable product",
+    )
