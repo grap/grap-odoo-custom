@@ -47,7 +47,7 @@ addon | version | maintainers | summary
 [grap_theme](grap_theme/) | 12.0.1.3.3 |  | Customize Odoo web User Interface
 [mrp_bom_print](mrp_bom_print/) | 12.0.1.1.1 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.1 |  | MRP - BoM Product Variant
-[mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.1.1 |  | Handle Sale price for product's bom with margin
+[mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.1.2 |  | Handle Sale price for product's bom with margin
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.1 |  | Add tags on your BoM to find it easily
 [mrp_business](mrp_business/) | 12.0.1.1.1 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_food](mrp_food/) | 12.0.1.1.1 |  | MRP modules adapted for food-related professions
