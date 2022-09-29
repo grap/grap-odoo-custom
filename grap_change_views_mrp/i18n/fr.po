@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 12:51+0000\n"
-"PO-Revision-Date: 2022-09-27 12:51+0000\n"
+"POT-Creation-Date: 2022-09-29 08:04+0000\n"
+"PO-Revision-Date: 2022-09-29 08:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,17 @@ msgstr "(marge"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
 msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<span style=\"margin-left:6.5px;\"><b>Data sheet</b></span>\n"
+"                <span attrs=\"{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}\">\n"
+"                    - intermediate product 🧩\n"
+"                </span>"
+msgstr "<span style=\"margin-left:6.5px;\"><b>Fiche technique</b></span>\n"
+"                <span attrs=\"{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}\">\n"
+"                    - produit intermédiaire 🧩\n"
+"                </span>"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -112,11 +123,6 @@ msgstr "Composants (admin)"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Cost"
 msgstr "Coût"
-
-#. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "Data sheet"
-msgstr "Fiche technique"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
@@ -234,6 +240,11 @@ msgstr "Article - PdR"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "Reference"
 msgstr "Référence"
+
+#. module: grap_change_views_mrp
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_sale_ok
+msgid "Saleable product"
+msgstr "Produit fini"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap

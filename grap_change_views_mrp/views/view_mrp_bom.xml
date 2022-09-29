@@ -25,8 +25,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <!-- grap custom -->
               <field name="image" widget="image" class="oe_avatar"/>
               <div class="oe_title" name="bom_title">
-                <label for="product_name" string="Data sheet" style="margin-left:5px;"/>
+                <span style="margin-left:6.5px;"><b>Data sheet</b></span>
+                <span attrs="{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}">
+                    - intermediate product 🧩
+                </span>
+                <!-- / grap custom -->
                 <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
+                <!-- grap custom-->
               </div>
               <!-- / grap custom -->
 
@@ -46,13 +51,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </span>
               <!-- / mrp_food -->
 
-              <!-- grap custom-->
-              <span attrs="{'invisible': [('product_id', '=', False)]}">
-                <p class="alert alert-info alert-dismissable" role="status" attrs="{'invisible': [('product_sale_ok','=','True')]}">
-                  ⚠️ This Bill Of Material is for an intermediate product (it is not saleable)
-                </p>
-              </span>
-              <!-- / grap custom -->
 
               <group>
                   <group string="Main informations">
