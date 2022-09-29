@@ -6,11 +6,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <!-- BoM menus -->
-    <menuitem id="menu_mrp_bom_products"
-      name="Products"
-      parent="mrp.menu_mrp_root" sequence="10"/>
+    <!-- App menu -->
+    <menuitem id="mrp.menu_mrp_root"
+        name="Food manufacturing"
+        web_icon="grap_change_views_mrp,static/src/img/icon.png"/>
 
+    <!-- BoM menus -->
     <record id="action_grap_mrp_bom" model="ir.actions.act_window">
         <field name="name">Bills of Materials</field>
         <field name="type">ir.actions.act_window</field>
