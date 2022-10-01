@@ -8,34 +8,27 @@ from odoo.tests.common import TransactionCase
 class TestSeller(TransactionCase):
     def setUp(self):
         super(TestSeller, self).setUp()
-        self.product_template_acoustic = self.env.ref(
-            "product.product_product_25_product_template"
-        )
-        self.product_with_var_chair = self.env.ref(
-            "product.product_product_11_product_template"
-        )
-        self.product_without_seller_desk = self.env.ref(
-            "product.product_product_3_product_template"
-        )
+        self.product_workplace = self.env.ref("product.product_product_24")
+        self.product_acoustic = self.env.ref("product.product_product_25")
+        self.product_with_var_chair = self.env.ref("product.product_product_11")
+        self.product_without_seller_desk = self.env.ref("product.product_product_3")
 
         self.partner_woodcorner = self.env.ref("base.res_partner_1")
         self.partner_azure = self.env.ref("base.res_partner_12")
 
     def test_01_computed_main_vendor(self):
         self.assertEqual(
-            self.product_template_acoustic.main_seller_partner_id,
-            self.product_template_acoustic.seller_ids[0].name,
+            self.product_acoustic.product_main_seller_partner_id,
+            self.product_acoustic.seller_ids[0].name,
         )
         self.assertEqual(
-            self.product_with_var_chair.main_seller_variant_partner_id,
-            self.product_template_acoustic.product_variant_ids[0]
-            .variant_seller_ids[0]
-            .name,
+            self.product_with_var_chair.product_main_seller_partner_id,
+            self.product_acoustic.product_variant_ids[0].variant_seller_ids[0].name,
         )
 
     def test_02_replace_vendor(self):
-        self.product_template_acoustic.write({"seller_ids": [(5, 0)]})
-        self.product_template_acoustic.write(
+        self.product_acoustic.write({"seller_ids": [(5, 0)]})
+        self.product_acoustic.write(
             {
                 "seller_ids": [
                     (0, 0, {"name": self.partner_azure.id}),
@@ -43,7 +36,7 @@ class TestSeller(TransactionCase):
             }
         )
         self.assertEqual(
-            self.product_template_acoustic.main_seller_partner_id.id,
+            self.product_acoustic.product_main_seller_partner_id.id,
             self.partner_azure.id,
         )
 
@@ -58,18 +51,18 @@ class TestSeller(TransactionCase):
             }
         )
         self.assertEqual(
-            self.product_without_seller_desk.main_seller_partner_id.id,
+            self.product_without_seller_desk.product_main_seller_partner_id.id,
             self.partner_azure.id,
         )
         # -- For product who had vendor
-        self.product_template_acoustic.write(
+        self.product_workplace.write(
             {
                 "seller_ids": [
-                    (0, 0, {"name": self.partner_azure.id}),
+                    (0, 0, {"sequence": 100, "name": self.partner_azure.id}),
                 ]
             }
         )
         self.assertNotEqual(
-            self.product_template_acoustic.main_seller_partner_id.id,
+            self.product_workplace.product_main_seller_partner_id.id,
             self.partner_azure.id,
         )
