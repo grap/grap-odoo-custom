@@ -5,7 +5,7 @@
 {
     "name": "Product Main Seller",
     "summary": "Product Attribute - Main seller for a product",
-    "version": "12.0.1.1.1",
+    "version": "12.0.1.1.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -16,7 +16,6 @@
     ],
     "data": [
         "views/view_product_product.xml",
-        "views/view_product_template.xml",
     ],
     "installable": True,
 }
