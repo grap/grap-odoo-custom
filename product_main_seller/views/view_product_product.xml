@@ -7,6 +7,23 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- ************************************************************ -->
+    <!-- Product.template Form View -->
+    <!-- ************************************************************ -->
+
+    <record id="view_product_main_seller_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='vendors']" position="before">
+              <group string="Main Vendor" name="main_vendor">
+                  <field name="product_main_seller_partner_id"/>
+              </group>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- ************************************************************ -->
     <!-- Product.product Search View -->
     <!-- ************************************************************ -->
 
