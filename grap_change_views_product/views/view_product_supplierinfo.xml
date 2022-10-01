@@ -35,7 +35,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mrp_food.view_product_supplierinfo_mrp_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_code']" position="after">
-                <field name="package_qty"/>
+                <field name="package_qty" string="Package Qty"/>
             </xpath>
             <xpath expr="//field[@name='product_uom']" position="after">
                 <field name="discount" string="Disc. 1 %"/>
