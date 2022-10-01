@@ -57,6 +57,7 @@ class ProductProduct(models.Model):
     @api.onchange("tla")
     def check_tla_change(self):
         if self.tla is not False:
+            self.tla = self.tla.upper()
             if (
                 self.env["product.product"].search_count(
                     [
