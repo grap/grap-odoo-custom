@@ -496,7 +496,7 @@ msgstr "Nom chez le fournisseur"
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_supplierinfo_editable
 msgid "Suppliers Informations 🥕"
-msgstr "Mercuriale - prix chez fournisseurs 🥕"
+msgstr "Mercuriale - prix chez les fournisseur·e·s 🥕"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
