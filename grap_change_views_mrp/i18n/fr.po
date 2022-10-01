@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-29 08:04+0000\n"
-"PO-Revision-Date: 2022-09-29 08:04+0000\n"
+"POT-Creation-Date: 2022-10-01 12:07+0000\n"
+"PO-Revision-Date: 2022-10-01 12:07+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -88,11 +88,28 @@ msgid "Bill of Material"
 msgstr "Fiche technique"
 
 #. module: grap_change_views_mrp
-#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_all
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "Bills of Materials"
 msgstr "Fiches techniques"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_all
+msgid "BoM - All"
+msgstr "Toutes les fiches techniques"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_finished_products
+msgid "BoM - Finished products"
+msgstr "FT de produits finis"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_intermediate_products
+msgid "BoM - Intermediate products"
+msgstr "FT de produits intermédiaires"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -165,6 +182,11 @@ msgid "Images"
 msgstr ""
 
 #. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
+msgid "Intermediate products"
+msgstr "Produits intermédiaires"
+
+#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "It will set product variant's standard price with this price"
@@ -217,11 +239,6 @@ msgid "Product template (admin)"
 msgstr ""
 
 #. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_mrp_bom_products
-msgid "Products"
-msgstr "Articles"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "Product Margin Rate"
 msgstr "Article - Marge"
@@ -245,6 +262,11 @@ msgstr "Référence"
 #: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_sale_ok
 msgid "Saleable product"
 msgstr "Produit fini"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
+msgid "Saleable products"
+msgstr "Produits finis"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
