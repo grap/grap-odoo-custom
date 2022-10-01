@@ -271,7 +271,7 @@ msgstr "Gérer les saisonnalités"
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
 msgid "Min qty"
-msgstr "Qté min."
+msgstr "Qté min."
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/product_supplierinfo.py:68
