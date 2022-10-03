@@ -15,6 +15,10 @@ class SupplierInfo(models.Model):
         compute="_compute_product_standard_price",
     )
 
+    product_tmpl_code = fields.Char(related="product_tmpl_id.default_code")
+
+    product_tmpl_name = fields.Char(related="product_tmpl_id.name")
+
     # Should be in a specific glue module i think
     supplierinfo_standard_price_w_discount = fields.Float(
         string="Supplier info price with discount",
