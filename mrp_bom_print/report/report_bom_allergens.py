@@ -41,7 +41,7 @@ class ReportBomAllergens(models.AbstractModel):
             if bom.bom_id.meal_category_id:
                 tmpList_allergens.append(bom.bom_id.meal_category_id.name)
             else:
-                tmpList_allergens.append(self._NO_CATEGORY_STRING)
+                tmpList_allergens.append(_(self._NO_CATEGORY_STRING))
             # Product name
             tmpList_allergens.append(bom.bom_id.product_id.name)
             # Allergens
