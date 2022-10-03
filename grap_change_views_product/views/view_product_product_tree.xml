@@ -110,6 +110,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="is_alimentary"/>
                 <field name="certifier_organization_id"/>
+                <field name="allergen_ids" widget="many2many_tags" groups="mrp.group_mrp_user"/>
+                <field name="product_seasonality_ids" widget="many2many_tags" groups="mrp.group_mrp_user"/>
                 <field name="is_alcohol"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
