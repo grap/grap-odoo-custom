@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="report_bom_purchase_list">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2 class="text-center">Purchase list</h2>
+                <br/>
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th name="th_product" class="text-left">Product</th>
+                            <th name="th_qty" class="text-right">Quantity</th>
+                            <th name="th_uom">UoM</th>
+                            <th name="th_blank"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="purchase_list_tbody">
+                        <!-- Initialize category -->
+                        <t t-set="categ_tmp" t-value="" />
+                        <t t-foreach="purchase_list" t-as="purchase_list_line">
+                            <t t-if="option_group_by_product_category">
+                                <!-- PRINT A NEW CATEGORY -->
+                                <!-- New category: print this category -->
+                                <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
+                                <t t-if="purchase_list_line[0] != categ_tmp">
+                                  <tr>
+                                    <td name="new_category" class="text-left">
+                                      <b><span t-esc="purchase_list_line[0]"/></b>
+                                    </td>
+                                  </tr>
+                                </t>
+                            </t>
+                            <!-- PRINT A NEW PRODUCT LINE WITH QUANTITY -->
+                            <tr>
+                              <!-- purchase_list_line[0] is the product category -->
+                              <td name="td_product" class="text-left">
+                                <span t-esc="purchase_list_line[1]"/>
+                              </td>
+                              <td name="td_qty" class="text-right">
+                                <span t-esc="purchase_list_line[2]"/>
+                              </td>
+                              <td name="td_uom" class="text-left">
+                                <span t-esc="purchase_list_line[3]"/>
+                              </td>
+                              <td name="td_blank" class="text-center">   
+                              </td>
+                            </tr>
+                            <!-- We define the new category -->
+                            <t t-set="categ_tmp" t-value="purchase_list_line[0]"/>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
