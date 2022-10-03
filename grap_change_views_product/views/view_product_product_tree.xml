@@ -473,4 +473,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         groups="mrp.group_mrp_user"
         action="mrp_food.action_product_supplierinfo_mrp_tree"/>
 
+
+    <record id="view_grap_mrp_food_product_tree" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="mrp_food.view_product_supplierinfo_mrp_tree" />
+        <field name="arch" type="xml">
+          <xpath expr="//tree//field[@name='product_tmpl_name']" position="before">
+              <button name="see_current_product_from_supplierinfo" type="object" string="↗️"/>
+          </xpath>
+        </field>
+    </record>
+
 </odoo>
