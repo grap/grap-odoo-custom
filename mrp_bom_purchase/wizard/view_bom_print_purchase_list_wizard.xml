@@ -23,7 +23,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <field name="line_ids" nolabel="1">
                             <tree editable="bottom">
                                 <field name="bom_id" required="1"/>
-                                <field name="bom_qty" required="1"/>
+                                <field name="bom_product_qty" readonly="1"/>
+                                <field name="bom_uom_id" readonly="1"/>
+                                <field name="bom_qty" required="1" widget="numeric_step"/>
+                                <field name="bom_uom_id" readonly="1"/>
                             </tree>
                         </field>
                     </group>

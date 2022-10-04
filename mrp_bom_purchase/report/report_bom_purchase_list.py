@@ -19,8 +19,6 @@ class ReportBomPurchaseList(models.AbstractModel):
         line_obj = self.env["bom.print.purchase.list.wizard.line"]
         bom_line_obj = self.env["mrp.bom.line"]
 
-        # TODO : rajouter la quantité demandé dans le wizard
-
         # Preparing data for report → dict of list
         # It looks like this
         # {product_id1: [categ1, p  roduct_name1, qty1, uom1],
