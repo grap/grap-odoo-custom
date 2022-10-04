@@ -43,7 +43,9 @@ class BomPrintPurchaseListWizard(models.TransientModel):
                     0,
                     {
                         "bom_id": bom.id,
-                        "bom_qty": 1,
+                        "bom_product_qty": bom.product_qty,
+                        "bom_qty": bom.product_qty,
+                        "bom_uom_id": bom.product_uom_id,
                     },
                 )
             )
