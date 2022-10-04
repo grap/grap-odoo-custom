@@ -217,7 +217,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                               <field name="product_uom_id" string="UoM" readonly="1"/>
                               <field name="currency_id" invisible="1"/>
-                              <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                              <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                               <field name="time_to_produce_per_unit"/>
                               <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
                               <field name="diff_time_product_theorical" groups="base.group_no_one" force_save="1"/>
@@ -227,7 +227,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>
                               <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal" groups="base.group_no_one"/>
-                              <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                              <field name="standard_price_subtotal" string="ST" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
 
                           </tree>
                       </field>
