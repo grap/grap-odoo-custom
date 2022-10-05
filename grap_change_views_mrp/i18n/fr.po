@@ -104,12 +104,12 @@ msgstr "Toutes les fiches techniques"
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_finished_products
 msgid "BoM - Finished products"
-msgstr "FT de produits finis"
+msgstr "FT de produits finis 🥧"
 
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_intermediate_products
 msgid "BoM - Intermediate products"
-msgstr "FT de produits intermédiaires"
+msgstr "FT de produits intermédiaires 🧩"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
