@@ -21,6 +21,11 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         default=True,
     )
 
+    option_display_cost = fields.Boolean(
+        string="Handle products standard prices",
+        default=False,
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -37,19 +42,31 @@ class BomPrintPurchaseListWizard(models.TransientModel):
 
         # Initialize lines
         for bom in boms:
+            # import pdb; pdb.set_trace()
             lines_vals.append(
                 (
                     0,
                     0,
                     {
                         "bom_id": bom.id,
-                        "bom_product_qty": bom.product_qty,
-                        "bom_qty": bom.product_qty,
+                        "currency_id": bom.currency_id,
                         "bom_uom_id": bom.product_uom_id,
+                        "bom_description": bom.description_short,
+                        "bom_product_qty": bom.product_qty,
+                        "quantity": bom.product_qty,
+                        "wizard_line_subtotal": bom.standard_price_total,
                     },
                 )
             )
         return lines_vals
+
+    @api.multi
+    def _prepare_data(self):
+        return {
+            "line_data": [x.id for x in self.line_ids],
+            "option_group_by_product_category": self.option_group_by_product_category,
+            "option_display_cost": self.option_display_cost,
+        }
 
     @api.multi
     def print_report(self):
@@ -59,10 +76,3 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         return self.env.ref("mrp_bom_purchase.bom_purchase_list").report_action(
             self, data=data
         )
-
-    @api.multi
-    def _prepare_data(self):
-        return {
-            "line_data": [x.id for x in self.line_ids],
-            "option_group_by_product_category": self.option_group_by_product_category,
-        }

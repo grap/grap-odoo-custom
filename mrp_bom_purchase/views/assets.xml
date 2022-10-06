@@ -7,16 +7,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- We add css in assets common, file shared for custom reports -->
-    <!-- <template id="mrp_bom_print_report_assets" inherit_id="web.report_assets_common">
+    <template id="mrp_bom_purchase_report_assets" inherit_id="web.report_assets_common">
         <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/scss" href="/mrp_bom_print/static/src/scss/mrp_bom_print_report.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/mrp_bom_purchase/static/src/scss/mrp_bom_purchase.scss"/>
         </xpath>
     </template>
 
-    <template id="mrp_bom_print_report_wizard_assets" inherit_id="web.assets_backend">
+    <template id="mrp_bom_purchase_wizard_assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/scss" href="/mrp_bom_print/static/src/scss/mrp_bom_print_wizard.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/mrp_bom_purchase/static/src/scss/mrp_bom_purchase_wizard.scss"/>
         </xpath>
-    </template> -->
+    </template>
 
 </odoo>
