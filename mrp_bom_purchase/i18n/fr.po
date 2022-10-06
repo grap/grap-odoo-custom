@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mrp_bom_print
+#	* mrp_bom_purchase
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 13:23+0000\n"
-"PO-Revision-Date: 2022-09-08 13:23+0000\n"
+"POT-Creation-Date: 2022-10-06 15:24+0000\n"
+"PO-Revision-Date: 2022-10-06 15:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,156 +15,198 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.report_bom_allergens
-msgid "<span class=\"code_explanation_title\"><b>Allergens: </b></span>"
-msgstr "<span class=\"code_explanation_title\"><b>Allergènes : </b></span"
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Total:</b>"
+msgstr ""
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__bom_allergens_ids
-msgid "Allergens"
-msgstr "Allergènes"
-
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.report_bom_allergens
-msgid "Allergens table"
-msgstr "Tableau des allergènes"
-
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__bom_id
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_id
 msgid "Bill Of Material"
 msgstr "Fiche technique"
 
-#. module: mrp_bom_print
-#: model:ir.actions.report,name:mrp_bom_print.bom_allergens
-msgid "BoM Allergens"
+#. module: mrp_bom_purchase
+#: model:ir.actions.report,name:mrp_bom_purchase.bom_purchase_list
+msgid "BoM Purchase List"
 msgstr ""
 
-#. module: mrp_bom_print
-#: model:ir.model,name:mrp_bom_print.model_report_bom_allergens
-#: model:ir.model,name:mrp_bom_print.model_report_mrp_bom_print_report_bom_allergens
-msgid "BoM Allergens report"
+#. module: mrp_bom_purchase
+#: model:ir.model,name:mrp_bom_purchase.model_report_mrp_bom_purchase_report_bom_purchase_list
+msgid "BoM Purchase list"
 msgstr ""
 
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_product_qty
+msgid "Bom made for this quantity"
+msgstr "Qté de la FT"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_uom_id
+msgid "Bom uom"
+msgstr "UdM"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "Cancel"
-msgstr "Fermer cette fenêtre"
+msgstr "Annuler"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__create_uid
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__create_uid
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__wizard_line_subtotal
+msgid "Cost"
+msgstr "Coût"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__create_uid
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__create_date
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__create_date
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__create_date
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__create_date
 msgid "Created on"
 msgstr "Créé le"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__display_name
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__display_name
-#: model:ir.model.fields,field_description:mrp_bom_print.field_report_mrp_bom_print_report_bom_allergens__display_name
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_description
+msgid "Description"
+msgstr ""
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__quantity
+msgid "Desired Quantity"
+msgstr "Qté voulue"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__display_name
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__display_name
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_report_mrp_bom_purchase_report_bom_purchase_list__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__option_allergens_only_code
-msgid "Display allergen code instead of their name"
-msgstr "Imprimer les codes allergènes au lieu de leur nom complet"
+#. module: mrp_bom_purchase
+#: model:ir.actions.act_window,name:mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard
+#: model:ir.ui.menu,name:mrp_bom_purchase.menu_mrp_bom_purchase_list_print
+msgid "Generate Purchase list"
+msgstr "Générer une liste d'achats"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__option_group_by_meal_category
-msgid "Group BoM by meal category"
-msgstr "Grouper par catégorie de repas"
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__option_group_by_product_category
+msgid "Group product by product category"
+msgstr "Grouper les produits par leur catégorie"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__id
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__id
-#: model:ir.model.fields,field_description:mrp_bom_print.field_report_mrp_bom_print_report_bom_allergens__id
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__option_display_cost
+msgid "Handle products standard prices"
+msgstr "Gérer le prix des produits"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__id
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__id
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_report_mrp_bom_purchase_report_bom_purchase_list__id
 msgid "ID"
 msgstr ""
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,help:mrp_bom_print.field_bom_print_wizard_line__bom_allergens_ids
-msgid "Includes allergens of the product and its components"
-msgstr "Inclus les allergènes du produit et de ses composants"
-
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard____last_update
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line____last_update
-#: model:ir.model.fields,field_description:mrp_bom_print.field_report_mrp_bom_print_report_bom_allergens____last_update
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard____last_update
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line____last_update
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_report_mrp_bom_purchase_report_bom_purchase_list____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__write_uid
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__write_uid
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__write_uid
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__write_date
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__write_date
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__write_date
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__line_ids
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__line_ids
 msgid "Lines"
 msgstr "Lignes"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__bom_meal_category
-msgid "Meal category"
-msgstr "Catégorie de repas"
-
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard__option_allergens_only_code_text
-msgid "Option Allergens Only Code Text"
-msgstr ""
-
-#. module: mrp_bom_print
-#: code:addons/mrp_bom_print/report/report_bom_allergens.py:12
-#, python-format
-msgid "Others"
-msgstr "Autres"
-
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "Print"
 msgstr "Imprimer"
 
-#. module: mrp_bom_print
-#: model:ir.actions.act_window,name:mrp_bom_print.action_mrp_bom_print_wizard
-#: model:ir.ui.menu,name:mrp_bom_print.menu_mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
-msgid "Print Allergen table"
-msgstr "Imprimer le tableau des allergènes"
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
+msgid "Print Purchase list"
+msgstr "Imprimer la liste d'achats"
 
-#. module: mrp_bom_print
-#: model:ir.model.fields,field_description:mrp_bom_print.field_bom_print_wizard_line__wizard_id
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Product"
+msgstr "Article"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Purchase list 🛒"
+msgstr "Liste d'achats 🛒"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Standard Price Unit"
+msgstr "Prix unitaire"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Subtotal"
+msgstr "Sous-total"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
+msgid "Total Cost"
+msgstr "Coût total"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,help:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_uom_id
+msgid "Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control"
+msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "UoM"
+msgstr "UdM"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__wizard_id
 msgid "Wizard"
 msgstr "Assistant"
 
-#. module: mrp_bom_print
-#: model:ir.model,name:mrp_bom_print.model_bom_print_wizard
+#. module: mrp_bom_purchase
+#: model:ir.model,name:mrp_bom_purchase.model_bom_print_purchase_list_wizard
 msgid "Wizard for printing bill of materials"
 msgstr ""
 
-#. module: mrp_bom_print
-#: model:ir.model,name:mrp_bom_print.model_bom_print_wizard_line
-msgid "Wizard line for printing bill of materials"
+#. module: mrp_bom_purchase
+#: model:ir.model,name:mrp_bom_purchase.model_bom_print_purchase_list_wizard_line
+msgid "Wizard line for printing purchase list from selected bill of materials"
 msgstr ""
 
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "🔧 Choose options"
 msgstr "🔧 Choisir les options"
 
-#. module: mrp_bom_print
-#: model_terms:ir.ui.view,arch_db:mrp_bom_print.view_bom_print_wizard_form
-msgid "🖨️ Choose BoMs to print ↓"
-msgstr "🖨️ Choisir les fiches techniques à imprimer ↓"
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
+msgid "🖨️ Choose the quantity of each BoMs"
+msgstr "🖨️ Choisir les quantités voulues"

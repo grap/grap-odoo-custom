@@ -13,8 +13,7 @@
     "depends": [
         "mrp",
         # GRAP
-        # "mrp_food",
-        # "mrp_business",
+        "mrp_business",
     ],
     "data": [
         "data/report_paperformat.xml",
