@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-01 14:44+0000\n"
-"PO-Revision-Date: 2022-10-01 14:44+0000\n"
+"POT-Creation-Date: 2022-10-05 12:29+0000\n"
+"PO-Revision-Date: 2022-10-05 12:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -208,6 +208,11 @@ msgstr "Ingrédients"
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_editable_view
 msgid "Inline editable"
 msgstr "Vues éditables en ligne"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_grap_mrp_product_product_search
+msgid "Intermediate products 🧩"
+msgstr "Produits intermédiaires 🧩"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -502,6 +507,11 @@ msgstr "Etat des stocks"
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock_valuation
 msgid "Stock Valuation"
 msgstr "Valorisation du stock"
+
+#. module: grap_change_views_product
+#: model:ir.model,name:grap_change_views_product.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Liste de prix du fournisseur"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

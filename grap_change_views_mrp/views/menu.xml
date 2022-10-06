@@ -43,6 +43,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_grap_mrp_bom" sequence="10"
         action="action_grap_mrp_bom_all"/>
 
+    <record id="action_grap_mrp_bom_intermediate_products" model="ir.actions.act_window">
+      <field name="name">Bills of Materials</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
+      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_bom_intermediate_products"
+      name="BoM - Intermediate products"
+      parent="menu_grap_mrp_bom" sequence="20"
+      action="action_grap_mrp_bom_intermediate_products"/>
+
     <record id="action_grap_mrp_bom_finished_products" model="ir.actions.act_window">
       <field name="name">Bills of Materials</field>
       <field name="type">ir.actions.act_window</field>
@@ -55,23 +70,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <menuitem id="menu_grap_mrp_bom_finished_products"
         name="BoM - Finished products"
-        parent="menu_grap_mrp_bom" sequence="20"
-        action="action_grap_mrp_bom_finished_products"/>
-
-    <record id="action_grap_mrp_bom_intermediate_products" model="ir.actions.act_window">
-      <field name="name">Bills of Materials</field>
-      <field name="type">ir.actions.act_window</field>
-      <field name="res_model">mrp.bom</field>
-      <field name="view_type">form</field>
-      <field name="view_mode">kanban,tree,form</field>
-      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
-      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
-    </record>
-
-    <menuitem id="menu_grap_mrp_bom_intermediate_products"
-        name="BoM - Intermediate products"
         parent="menu_grap_mrp_bom" sequence="30"
-        action="action_grap_mrp_bom_intermediate_products"/>
+        action="action_grap_mrp_bom_finished_products"/>
 
     <!-- Hide standard menu -->
     <menuitem id="mrp.menu_mrp_manufacturing"
