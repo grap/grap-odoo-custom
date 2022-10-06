@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-04 16:00+0000\n"
-"PO-Revision-Date: 2022-10-04 16:00+0000\n"
+"POT-Creation-Date: 2022-10-05 22:03+0000\n"
+"PO-Revision-Date: 2022-10-05 22:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,24 +22,23 @@ msgstr "(marge"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<b>Data sheet</b> - finished product 🥧"
+msgstr "<b>Fiche technique</b> - produit fini 🥧"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<b>Data sheet</b> - intermediate product 🧩"
+msgstr "<b>Fiche technique</b> - product intermédiaire 🧩"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
 msgstr ""
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "<span style=\"margin-left:6.5px;\"><b>Data sheet</b></span>\n"
-"                <span attrs=\"{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}\">\n"
-"                    - intermediate product 🧩\n"
-"                </span>"
-msgstr "<span style=\"margin-left:6.5px;\"><b>Fiche technique</b></span>\n"
-"                <span attrs=\"{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}\">\n"
-"                    - produit intermédiaire 🧩\n"
-"                </span>"
-
-#. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "<span> (for </span>"
-msgstr "<span> (pour </span>"
+msgid "<span> (for 1x</span>"
+msgstr "<span> (pour 1x</span>"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -234,6 +233,11 @@ msgid "Product"
 msgstr "Article"
 
 #. module: grap_change_views_mrp
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Unité de mesure d'article"
+
+#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "Product template (admin)"
 msgstr ""
@@ -299,6 +303,11 @@ msgid "Total"
 msgstr ""
 
 #. module: grap_change_views_mrp
+#: model:ir.model.fields,help:grap_change_views_mrp.field_mrp_bom__product_uom_id
+msgid "Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control"
+msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
+
+#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "UoM"
@@ -317,7 +326,7 @@ msgstr "⇒ Définir avec le temps des lignes de la FT"
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "⇒ Update Product variant cost"
-msgstr "⇒ Mettre à jour le PdR du produit fini"
+msgstr "⇒ Mettre à jour le PdR de l'article"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
