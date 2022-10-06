@@ -42,8 +42,9 @@ class MrpBom(models.Model):
         for bom in self:
             bom.product_standard_price = bom.product_id.standard_price
 
+    # probablement un conflit car j'ai pas la dernière version là, chelou
     @api.multi
-    @api.depends("product_id", "bom_line_ids")
+    @api.depends("product_id", "bom_line_ids", "product_qty")
     def _compute_standard_price_total(self):
         for bom in self:
             qty_to_divide = bom.product_qty if bom.product_qty != 0 else 1
