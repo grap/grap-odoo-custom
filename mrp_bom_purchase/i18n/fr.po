@@ -37,12 +37,12 @@ msgstr ""
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_product_qty
-msgid "Bom made for this quantity"
+msgid "BoM Qty"
 msgstr "Qté de la FT"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_uom_id
-msgid "Bom uom"
+msgid "BoM UoM"
 msgstr "UdM"
 
 #. module: mrp_bom_purchase
@@ -79,7 +79,7 @@ msgstr ""
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__quantity
-msgid "Desired Quantity"
+msgid "Desired Quantity"
 msgstr "Qté voulue"
 
 #. module: mrp_bom_purchase

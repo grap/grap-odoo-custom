@@ -82,8 +82,12 @@ class ReportBomPurchaseList(models.AbstractModel):
     def _prepare_total_cost(self, data):
         line_obj = self.env["bom.print.purchase.list.wizard.line"]
         wiz_boms_lines = line_obj.browse([int(x) for x in data["line_data"]])
-        return sum(
-            wiz_boms_line["wizard_line_subtotal"] for wiz_boms_line in wiz_boms_lines
+        return round(
+            sum(
+                wiz_boms_line["wizard_line_subtotal"]
+                for wiz_boms_line in wiz_boms_lines
+            ),
+            2,
         )
 
     @api.model

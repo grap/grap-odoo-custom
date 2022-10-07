@@ -25,17 +25,16 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
         string="Description", compute="_compute_bom_description"
     )
 
-    bom_product_qty = fields.Float(
-        string="Bom made for this quantity", related="bom_id.product_qty"
-    )
+    bom_product_qty = fields.Float(string="BoM Qty", related="bom_id.product_qty")
 
     bom_uom_id = fields.Many2one(
         related="bom_id.product_uom_id",
-        string="Bom uom",
+        string="BoM UoM",
+        # string="Bom uom",
     )
 
     quantity = fields.Float(
-        string="Desired Quantity",
+        string="Desired Quantity",
     )
 
     wizard_line_subtotal = fields.Float(
@@ -48,7 +47,7 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
             line.bom_description = line.bom_id.description_short
 
     @api.onchange("bom_id", "quantity")
-    def _onchange_wizar_line_cost(self):
+    def _onchange_wizard_line_cost(self):
         bom_qty = 1 if self.bom_product_qty == 0 else self.bom_product_qty
         self.wizard_line_subtotal = (
             self.bom_id.standard_price_total * self.quantity / bom_qty
