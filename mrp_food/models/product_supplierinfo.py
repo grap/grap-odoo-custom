@@ -53,7 +53,9 @@ class SupplierInfo(models.Model):
             )
 
     @api.multi
-    @api.depends("price", "product_standard_price")
+    @api.depends(
+        "price", "discount", "discount2", "discount3", "product_standard_price"
+    )
     def _compute_diff_supplierinfo_product_standard_price(self):
         for supplierinfo in self.filtered(lambda x: x.product_tmpl_id):
             supplierinfo.diff_supplierinfo_product_standard_price = (
@@ -87,3 +89,7 @@ class SupplierInfo(models.Model):
                     _("New standard price for %s") % supplierinfo.product_tmpl_id.name
                 ),
             )
+            # Set supplierinfo first seller for this product
+            for _suppinfo in supplierinfo.product_tmpl_id.variant_seller_ids:
+                _suppinfo.sequence = _suppinfo.sequence + 1
+            supplierinfo.sequence = 1
