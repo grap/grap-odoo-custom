@@ -36,6 +36,7 @@
         "views/view_mrp_bom.xml",
         "views/view_product_allergen.xml",
         "views/view_product_product.xml",
+        "views/view_product_supplierinfo.xml",
         "views/view_product_template.xml",
         "views/view_seasonality.xml",
         "views/templates.xml",
