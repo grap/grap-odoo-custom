@@ -282,7 +282,7 @@ msgstr "Nouveau prix de revient pour %s"
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
 msgid "New Price"
-msgstr "Nvo Prix"
+msgstr "Nvo Prix"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
