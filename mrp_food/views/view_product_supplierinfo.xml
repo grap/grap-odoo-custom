@@ -14,7 +14,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">product.supplierinfo</field>
         <field name="arch" type="xml">
             <tree editable="bottom" create="false" decoration-info="diff_supplierinfo_product_standard_price != 0">
-                <field name="sequence"/>
                 <field name="is_main_seller" invisible="1"/>
                 <field name="is_main_seller_icon" string=" " attrs="{'invisible': [('is_main_seller', '=', False)]}"/>
                 <field name="product_tmpl_code" string="Code"/>
@@ -25,7 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_uom" readonly="1" string="UoM"/>
                 <field name="supplierinfo_standard_price_w_discount" string="New Price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
                 <field name="diff_supplierinfo_product_standard_price" string="Diff" groups="base.group_no_one"/>
-                <button name="set_product_standard_price_from_supplierinfo" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}" help="It will set product variant's standard price with this supplier info price"/>
+                <button name="set_product_standard_price_from_supplierinfo" help="Use this price for product standard price" string="Use this price" class="btn-primary btn_price_from_supplierinfo" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}"/>
                 <field name="product_standard_price" string="Product price"/>
                 <field name="product_name" string="Supplier product name"/>
                 <field name="product_code" string="Supplier product code"/>

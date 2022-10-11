@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-28 11:07+0000\n"
-"PO-Revision-Date: 2022-09-28 11:07+0000\n"
+"POT-Creation-Date: 2022-10-11 10:27+0000\n"
+"PO-Revision-Date: 2022-10-11 10:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -91,6 +91,11 @@ msgstr "Fiche technique"
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_product_product_search
 msgid "By Category"
 msgstr "Par Catégorie"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
+msgid "Code"
+msgstr ""
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__color
@@ -208,6 +213,11 @@ msgid "Includes allergens of the product and its components"
 msgstr "Inclus les allergènes du produit et de ses composants"
 
 #. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_supplierinfo__product_tmpl_code
+msgid "Internal Reference"
+msgstr "Référence interne"
+
+#. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__is_bom_seasonal
 msgid "Is Bom Seasonal"
 msgstr "Fiche technique de saison ?"
@@ -231,11 +241,6 @@ msgid "Is seasonal"
 msgstr "De saison"
 
 #. module: mrp_food
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
-msgid "It will set product variant's standard price with this supplier info price"
-msgstr "Cela définira le prix de revient de l'article avec le prix fournisseur·e"
-
-#. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_label_ids
 msgid "Labels"
 msgstr ""
@@ -249,7 +254,7 @@ msgstr "Labels du produit"
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality____last_update
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line____last_update
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr "Dernière Modification le"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__write_uid
@@ -274,7 +279,12 @@ msgid "Min qty"
 msgstr "Qté min."
 
 #. module: mrp_food
-#: code:addons/mrp_food/models/product_supplierinfo.py:68
+#: model:ir.model.fields,field_description:mrp_food.field_product_supplierinfo__product_tmpl_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: mrp_food
+#: code:addons/mrp_food/models/product_supplierinfo.py:89
 #, python-format
 msgid "New standard price for %s"
 msgstr "Nouveau prix de revient pour %s"
@@ -290,7 +300,7 @@ msgid "Price"
 msgstr "Prix"
 
 #. module: mrp_food
-#: code:addons/mrp_food/models/product_supplierinfo.py:67
+#: code:addons/mrp_food/models/product_supplierinfo.py:87
 #, python-format
 msgid "Price difference : %s"
 msgstr "Différence de prix : %s"
@@ -395,7 +405,7 @@ msgstr "Fournisseur·e"
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_product_supplierinfo
 msgid "Supplier Pricelist"
-msgstr "Liste de prix du fournisseur"
+msgstr "Liste de prix du fournisseur·e"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_product_supplierinfo__supplierinfo_standard_price_w_discount
@@ -438,6 +448,16 @@ msgstr "Ce champ contient l'image utilisée pour cet article, limitée à 1024x1
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
 msgid "UoM"
 msgstr "UdM"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
+msgid "Use this price"
+msgstr "Utiliser ce prix"
+
+#. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
+msgid "Use this price for product standard price"
+msgstr "Utiliser ce prix pour le prix de revient de l'article"
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/seasonality.py:75
