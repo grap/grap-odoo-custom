@@ -42,14 +42,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </t>
                             </div>
                             <div class="wrap_barcode_image floating_box">
-                                <t t-if="line.product_id.barcode">
+                                <t t-if="line.product_id.barcode and option_print_barcode">
                                     <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
                                     <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
                                     <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
                                 </t>
-                                <t t-else="">
+                                <t t-if="line.product_id.default_code and option_print_code">
                                     <div class="wrap_product_code">
-                                        <t t-if="line.product_id.default_code"><b><t t-esc="line.product_id.default_code"/></b><br/></t>
+                                        <b><t t-esc="line.product_id.default_code"/></b><br/>
                                     </div>
                                 </t>
                             </div>
