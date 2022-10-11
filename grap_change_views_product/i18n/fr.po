@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 12:29+0000\n"
-"PO-Revision-Date: 2022-10-05 12:29+0000\n"
+"POT-Creation-Date: 2022-10-11 10:28+0000\n"
+"PO-Revision-Date: 2022-10-11 10:28+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -120,6 +120,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Description for Customers"
 msgstr "Description pour les clients"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Diff"
+msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -498,6 +503,11 @@ msgid "See Margins per Pricelist"
 msgstr "Voir les marges par liste de prix"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Standard Price"
+msgstr "Coût"
+
+#. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock
 msgid "Stock Situation"
 msgstr "Etat des stocks"
@@ -511,12 +521,12 @@ msgstr "Valorisation du stock"
 #. module: grap_change_views_product
 #: model:ir.model,name:grap_change_views_product.model_product_supplierinfo
 msgid "Supplier Pricelist"
-msgstr "Liste de prix du fournisseur"
+msgstr "Liste de prix du fournisseur·e"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Supplier product name"
-msgstr "Nom chez le fournisseur"
+msgstr "Nom chez le fournisseur·e"
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_supplierinfo_editable
@@ -567,6 +577,16 @@ msgstr "Mettre à jour le produit de commande groupée"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Update Qty On Hand"
 msgstr "Mettre à jour le stock disponible"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Use this price"
+msgstr "Utiliser ce prix"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Use this price for product standard price"
+msgstr "Utiliser ce prix pour le prix de revient de l'article"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
