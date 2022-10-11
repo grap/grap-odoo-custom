@@ -38,7 +38,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </div>
                             <div class="write_date">
                                 <t t-if="line.product_id.write_date">
-                                    Imprimée le <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
+                                    Printed <span t-esc="line.product_id.write_date.strftime('%d/%m/%Y - %H:%M')"/>
+                                </t>
+                                <t t-if="line.product_id.default_code and option_print_code">
+                                  <span class="span_code">- Code: <b><t t-esc="line.product_id.default_code"/></b></span>
                                 </t>
                             </div>
                             <div class="wrap_barcode_image floating_box">
@@ -46,11 +49,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
                                     <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
                                     <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
-                                </t>
-                                <t t-if="line.product_id.default_code and option_print_code">
-                                    <div class="wrap_product_code">
-                                        <b><t t-esc="line.product_id.default_code"/></b><br/>
-                                    </div>
                                 </t>
                             </div>
                         </div>
