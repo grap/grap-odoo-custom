@@ -480,7 +480,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">product.supplierinfo</field>
         <field name="inherit_id" ref="mrp_food.view_product_supplierinfo_mrp_tree" />
         <field name="arch" type="xml">
-          <xpath expr="//tree//field[@name='product_tmpl_name']" position="before">
+          <xpath expr="//tree//field[@name='product_tmpl_id']" position="before">
               <button name="see_current_product_from_supplierinfo" type="object" string="↗️"/>
           </xpath>
         </field>
