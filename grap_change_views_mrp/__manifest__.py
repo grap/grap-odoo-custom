@@ -33,6 +33,7 @@
     "data": [
         "views/view_mrp_bom.xml",
         "views/menu.xml",
+        "views/assets.xml",
     ],
     "installable": True,
 }
