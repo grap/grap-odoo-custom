@@ -39,7 +39,7 @@
         "views/view_product_supplierinfo.xml",
         "views/view_product_template.xml",
         "views/view_seasonality.xml",
-        "views/templates.xml",
+        "views/assets.xml",
     ],
     "images": [
         "./static/img/tomato_pie.png",

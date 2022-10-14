@@ -13,4 +13,17 @@
   line-height: 5px;
   position: relative;
   bottom: 2px;
+  background-color: transparent;
+  font-weight: bold;
+  color: #7c7bad;
+    &:hover {
+      color: #43426c;
+    }
+}
+
+.o_tag_color_0{
+  background-color: #e7e7e7 !important;
+  box-shadow: none !important;
+  font-weight: bold;
+  line-height: 1.3;
 }

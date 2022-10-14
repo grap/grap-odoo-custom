@@ -152,9 +152,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             attrs="{'readonly':[('is_consignment', '=', True)]}"
                                             groups="recurring_consignment.group_consignment_user"/>
                                     <field name="is_consignment" groups="recurring_consignment.group_consignment_manager"/>
-                                    <field name="standard_price" string="Cost Price (VAT Excl.)"/>
+                                    <field name="standard_price" string="Cost Price (VAT Excl.)" widget="monetary" options="{'display_currency': 'currency_id'}"/>
                                     <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
-                                        groups="base.group_erp_manager"/>
+                                        groups="base.group_erp_manager" widget="monetary" options="{'display_currency': 'currency_id'}"/>
                                     <field name="fiscal_classification_id" quick_create="false" required="1"/>
                                 </group>
                                 <group string="Sale">
@@ -232,7 +232,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             <field name="discount3" invisible="1"/>
                                             <field name="supplierinfo_standard_price_w_discount" string="Standard Price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
                                             <field name="diff_supplierinfo_product_standard_price" string="Diff" invisible="1"/>
-                                            <button name="set_product_standard_price_from_supplierinfo" help="Use this price for product standard price" string="Use this price" class="btn-primary btn_price_from_supplierinfo" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}"/>
+                                            <button name="set_product_standard_price_from_supplierinfo" help="Use this price for product standard price" string="Use this price 🎯" class="btn_price_from_supplierinfo" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}"/>
                                             <field name="is_intercompany_trade" invisible="1"/>
                                             <field name="intercompany_trade_id" groups="intercompany_trade_base.intercompany_trade_manager"/>
                                             <field name="catalog_id" quick_create="false" string="IT Catalog"

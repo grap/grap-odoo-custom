@@ -580,8 +580,8 @@ msgstr "Mettre à jour le stock disponible"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Use this price"
-msgstr "Utiliser ce prix"
+msgid "Use this price 🎯"
+msgstr "Utiliser ce prix 🎯"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

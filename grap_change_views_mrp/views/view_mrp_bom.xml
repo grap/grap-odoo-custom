@@ -14,7 +14,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">mrp.bom</field>
         <field name="priority" eval="1"/>
         <field name="arch" type="xml">
-          <form string="Bill of Material">
+          <form string="Bill of Material" class="grap_change_views_mrp_bom">
             <sheet>
               <div class="oe_button_box" name="button_box">
                   <button name="845" type="action" class="oe_stat_button" icon="fa-bars" string="Structure &amp; Cost" attrs="{'invisible': [('bom_line_ids', '=', [])]}"/>
@@ -83,7 +83,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <field name="description_long"/>
                       <!-- / mrp_business -->
                       <!-- mrp_bom_tag -->
-                      <field name="bom_tag_ids" widget="many2many_tags"
+                      <field name="bom_tag_ids" widget="many2many_tags" string="Tags 🎨"
                         options="{'color_field': 'color', 'no_quick_create': True}"
                         context="{'display_complete_name': True}"/>
                       <!-- / mrp_bom_tag -->
