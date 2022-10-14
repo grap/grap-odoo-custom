@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 10:27+0000\n"
-"PO-Revision-Date: 2022-10-11 10:27+0000\n"
+"POT-Creation-Date: 2022-10-14 14:44+0000\n"
+"PO-Revision-Date: 2022-10-14 14:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Ligne de fiche technique"
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
 msgid "Bill of Materials"
-msgstr "Nomenclature"
+msgstr "Fiches techniques"
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_mrp_season_2_mrp_bom
@@ -451,13 +451,13 @@ msgstr "UdM"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
-msgid "Use this price"
-msgstr "Utiliser ce prix"
+msgid "Use this price for product standard price"
+msgstr "Utiliser ce prix pour le prix de revient de l'article"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
-msgid "Use this price for product standard price"
-msgstr "Utiliser ce prix pour le prix de revient de l'article"
+msgid "Use this price 🎯"
+msgstr "Utiliser ce prix 🎯"
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/seasonality.py:75

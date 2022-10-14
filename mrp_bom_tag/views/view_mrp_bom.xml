@@ -15,7 +15,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='code']" position="after">
-                <field name="bom_tag_ids" widget="many2many_tags"
+                <field name="bom_tag_ids" widget="many2many_tags" string="Tags 🎨"
                   options="{'color_field': 'color', 'no_quick_create': True}"
                   context="{'display_complete_name': True}"/>
             </xpath>
