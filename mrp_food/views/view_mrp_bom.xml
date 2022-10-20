@@ -81,10 +81,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- MRP Bill of Materials - Search -->
     <!-- ************************************************************ -->
 
-    <record id="view_mrp_bom_search" model="ir.ui.view">
+    <record id="view_mrp_food_bom_search" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.view_mrp_bom_filter" />
         <field name="arch" type="xml">
+            <xpath expr="//filter[@name='normal']" position="after">
+              <separator/>
+              <filter string="Seasonal ☀️" name="is_bom_seasonal" domain="[('is_bom_seasonal', '=', True)]"/>
+              <separator/>
+            </xpath>
             <xpath expr="//field[@name='product_tmpl_id']" position="after">
                 <field name="bom_season_ids" groups="mrp_food.seasonality_manager"/>
                 <field name="bom_label_ids"/>
