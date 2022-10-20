@@ -302,4 +302,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Override Search -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_search_grap" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.view_mrp_bom_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='phantom']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='normal']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
