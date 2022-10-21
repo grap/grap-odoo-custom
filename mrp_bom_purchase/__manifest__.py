@@ -21,6 +21,7 @@
         "report/report_bom_purchase_list.xml",
         "report/ir_actions_report.xml",
         "wizard/view_bom_print_purchase_list_wizard.xml",
+        "views/action.xml",
         "views/assets.xml",
         "views/menu.xml",
     ],
