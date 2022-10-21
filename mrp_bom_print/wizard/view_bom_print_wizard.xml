@@ -37,12 +37,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="action_mrp_bom_print_wizard" model="ir.actions.act_window">
-        <field name="name">Print Allergen table</field>
-        <field name="res_model">bom.print.wizard</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-    </record>
-
 </odoo>
