@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 10:28+0000\n"
-"PO-Revision-Date: 2022-10-11 10:28+0000\n"
+"POT-Creation-Date: 2022-10-21 13:10+0000\n"
+"PO-Revision-Date: 2022-10-21 13:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -243,7 +243,7 @@ msgstr "Commande groupée"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Main Seller"
-msgstr "Fournisseur·e principal·e"
+msgstr "Fourni. principal·e"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -580,13 +580,13 @@ msgstr "Mettre à jour le stock disponible"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Use this price 🎯"
-msgstr "Utiliser ce prix 🎯"
+msgid "Use this price for product standard price"
+msgstr "Utiliser ce prix pour le prix de revient de l'article"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Use this price for product standard price"
-msgstr "Utiliser ce prix pour le prix de revient de l'article"
+msgid "Use this price 🎯"
+msgstr "Utiliser ce prix 🎯"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

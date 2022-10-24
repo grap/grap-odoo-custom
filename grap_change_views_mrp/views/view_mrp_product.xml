@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- 1 - Products (Price View) -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_product_product_tree_price" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom"
+                    decoration-warning="margin_state == 'too_expensive'"
+                    decoration-danger="margin_state == 'too_cheap'"
+                    create="false"
+                >
+                <field name="default_code" readonly="1" string="Ref."/>
+                <button name="see_current_product" type="object" string="↗️"/>
+                <field name="name" string="Product" readonly="1"/>
+                <field name="fiscal_classification_id" required="1"/>
+                <field name="consignor_partner_id" invisible="1"/>
+                <field name="standard_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="list_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="margin_classification_id"/>
+                <field name="standard_margin_rate"/>
+                <field name="theoretical_price"
+                    widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"
+                    attrs="{'invisible': [('theoretical_difference', '=', 0)]}"
+                    />
+                <field name="margin_state"/>
+                <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-up"
+                    attrs="{'invisible': [('margin_state', '!=', 'too_cheap')]}"
+                    help="Increase the Sale Price up to Theoretical Price"/>
+                <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-down"
+                    attrs="{'invisible': [('margin_state', '!=', 'too_expensive')]}"
+                    help="Decrease the Sale Price down to Theoretical Price"/>
+                <field name="theoretical_difference"
+                    widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mrp_product_product_price_finished" model="ir.actions.act_window">
+        <field name="name">Products - Update Margin and Sale Price</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_mrp_product_product_tree_price"/>
+        <field name="context">{"search_default_finished_products":1}</field>
+    </record>
+
+
+</odoo>

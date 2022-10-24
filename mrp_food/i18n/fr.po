@@ -174,7 +174,7 @@ msgstr "Nom affiché"
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_product_product__end_date_of_market_price_list
 msgid "End Date of Market Price List"
-msgstr "Fin de validité de la mercuriale"
+msgstr "Fin de validité mercuriale"
 
 #. module: mrp_food
 #: model:ir.model.fields,help:mrp_food.field_product_product__end_date_of_market_price_list
@@ -425,17 +425,17 @@ msgstr "Prix fournisseur·es"
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_product_supplierinfo_mrp_tree
 msgid "Suppliers informations"
-msgstr "Prix chez les fournisseur·e·s"
+msgstr "Prix fournisseur·e·s"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
 msgid "Supplier product code"
-msgstr "Code produit"
+msgstr "Code article"
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_supplierinfo_mrp_tree
 msgid "Supplier product name"
-msgstr "Nom chez le fournisseur·e"
+msgstr "Nom de l'article chez la·e fournisseur·e"
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/seasonality_line.py:32
