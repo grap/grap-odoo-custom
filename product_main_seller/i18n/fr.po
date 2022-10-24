@@ -33,7 +33,7 @@ msgstr "Fournisseur·e principal·e du produit"
 #. module: product_main_seller
 #: model_terms:ir.ui.view,arch_db:product_main_seller.view_product_main_seller_form
 msgid "Main Vendor"
-msgstr "Fournisseur·e principal·e"
+msgstr "Fournisseur·e principal·e"
 
 #. module: product_main_seller
 #: model:ir.model,name:product_main_seller.model_product_product
