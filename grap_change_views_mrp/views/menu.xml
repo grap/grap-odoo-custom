@@ -6,12 +6,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <!-- ************************************************************ -->
     <!-- App menu -->
+    <!-- ************************************************************ -->
     <menuitem id="mrp.menu_mrp_root"
         name="Food manufacturing"
         web_icon="grap_change_views_mrp,static/src/img/icon.png"/>
 
-    <!-- Bom filters -->
+    <!-- ************************************************************ -->
+    <!-- Bill of Materials - search filters -->
+    <!-- ************************************************************ -->
     <record id="view_mrp_bom_search" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.view_mrp_bom_filter" />
@@ -24,13 +28,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <!-- BoM menus -->
+    <!-- ************************************************************ -->
+    <!-- Bill of Materials - Menus for Generic Grap View -->
+    <!-- ************************************************************ -->
     <menuitem id="menu_grap_mrp_bom"
-      name="Bills of Materials"
+      name="Bills of Materials 📋"
       parent="mrp.menu_mrp_root" sequence="15"/>
 
     <record id="action_grap_mrp_bom_all" model="ir.actions.act_window">
-      <field name="name">Bills of Materials</field>
+      <field name="name">Bills of Materials 📋</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
@@ -54,7 +60,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_grap_mrp_bom_intermediate_products"
-      name="BoM - Intermediate products"
+      name="BoM - Intermediate products 🧩"
       parent="menu_grap_mrp_bom" sequence="20"
       action="action_grap_mrp_bom_intermediate_products"/>
 
@@ -69,11 +75,91 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_grap_mrp_bom_finished_products"
-        name="BoM - Finished products"
+        name="BoM - Finished products 🥧"
         parent="menu_grap_mrp_bom" sequence="30"
         action="action_grap_mrp_bom_finished_products"/>
 
+    <!-- ************************************************************ -->
+    <!-- Menus and actions for "Handling Prices" -->
+    <!-- ************************************************************ -->
+    <menuitem id="menu_grap_mrp_handle_prices"
+      name="Handle prices 💶"
+      parent="mrp.menu_mrp_root" sequence="5"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_market_pricelist"
+      name="1. Update market price list (Products) 📜"
+      parent="menu_grap_mrp_handle_prices" sequence="10"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_1a_composants"
+        name="Composants Products"
+        parent="menu_grap_mrp_handle_prices_market_pricelist" sequence="1"
+        action="mrp_food.action_product_product_mrp_tree"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_1b_supplierinfos"
+        name="Suppliers Informations"
+        parent="menu_grap_mrp_handle_prices_market_pricelist" sequence="2"
+        action="mrp_food.action_product_supplierinfo_mrp_tree"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_bom_prices"
+      name="2. Update Cost Prices (BoM) 📋"
+      parent="menu_grap_mrp_handle_prices" sequence="20"/>
+
+    <record id="action_grap_mrp_bom_intermediate_products_price" model="ir.actions.act_window">
+      <field name="name">BoM - Update Cost Prices 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2a_intermediate"
+        name="Intermediate products"
+        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="1"
+        action="action_grap_mrp_bom_intermediate_products_price"/>
+
+    <record id="action_grap_mrp_bom_finished_products_price" model="ir.actions.act_window">
+      <field name="name">BoM - Update Cost Prices 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+      <field name="context">{"search_default_filter_product_sale_ok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2b_finished"
+        name="Finished products"
+        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="2"
+        action="action_grap_mrp_bom_finished_products_price"/>
+
+    <record id="action_grap_mrp_bom_all_price" model="ir.actions.act_window">
+      <field name="name">BoM - Update Cost Prices 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+    </record>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2c_all"
+        name="Intermediate and finished products"
+        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="3"
+        action="action_grap_mrp_bom_all_price"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_products"
+      name="3. Update Margin and Sale Price 💶"
+      parent="menu_grap_mrp_handle_prices" sequence="30"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_3a_finished"
+        name="Finished Products"
+        parent="menu_grap_mrp_handle_prices_products" sequence="1"
+        action="action_mrp_product_product_price_finished"/>
+
+    <!-- ************************************************************ -->
     <!-- Hide standard menu -->
+    <!-- ************************************************************ -->
     <menuitem id="mrp.menu_mrp_manufacturing"
         name="(Admin) Opérations"
         parent="mrp.menu_mrp_root"
@@ -94,7 +180,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="mrp.menu_mrp_configuration"
         groups="base.group_no_one"/>
 
-    <!-- Hide specific menu -->
+    <!-- ************************************************************ -->
+    <!-- Hide custom menus -->
+    <!-- ************************************************************ -->
     <menuitem id="mrp_food.menu_mrp_editable_views"
         name="(Admin) Price Lists - Inline editable"
         parent="mrp.menu_mrp_root" groups="base.group_no_one"/>
