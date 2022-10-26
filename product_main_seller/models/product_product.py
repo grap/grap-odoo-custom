@@ -8,6 +8,11 @@ from odoo import api, fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
+    # QuickFIX : Fields from a older version of this module
+    # Had to let them, otherwise Odoo throws an error
+    main_seller_partner_id = fields.Boolean(help="Deprecated")
+    main_seller_variant_partner_id = fields.Boolean(help="Deprecated")
+
     product_main_seller_partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Main Product Seller Partner",
