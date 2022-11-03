@@ -17,10 +17,10 @@ MRP BoM Purchase
     :target: https://github.com/quentinDupont/grap-odoo-custom/tree/12.0_IMP_Beta_changes/mrp_bom_purchase
     :alt: quentinDupont/grap-odoo-custom
 
-|badge1| |badge2| |badge3| 
+|badge1| |badge2| |badge3|
 
 From Bill of Materials, handle the purchase of their components
-First functionnality : print a PDF Pruchase list with some options : group by category and/or display cost price.
+First functionnality : print a PDF Purchase list with some options : group by category and/or display cost price.
 
 .. figure:: https://raw.githubusercontent.com/quentinDupont/grap-odoo-custom/12.0_IMP_Beta_changes/mrp_bom_purchase/static/description/bom_purchase_printing_with_options.gif
 
