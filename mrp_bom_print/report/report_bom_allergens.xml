@@ -38,7 +38,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
                                 <t t-if="prepare_data_line[0] != categ_tmp">
                                   <tr>
-                                    <td colspan="3" name="new_category" class="text-left">
+                                    <td colspan="100%" name="new_category" class="text-left">
                                       <b><span t-esc="prepare_data_line[0]"/></b>
                                     </td>
                                   </tr>
