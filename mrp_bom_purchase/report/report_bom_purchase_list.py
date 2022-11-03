@@ -69,7 +69,6 @@ class ReportBomPurchaseList(models.AbstractModel):
         for pl_line in purchase_list:
             purchaseList_cleaned.append(purchase_list.get(pl_line))
 
-        # import pdb; pdb.set_trace()
         # Step 2 : Sort by alphabetical order or/then category
         if data["option_group_by_product_category"]:
             purchaseList_cleaned.sort(key=itemgetter(0, 1))
