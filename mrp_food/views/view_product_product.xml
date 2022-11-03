@@ -76,7 +76,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="end_date_of_market_price_list"
                   options="{'bg_color': '#e74c3c: end_date_of_market_price_list &lt; current_date and end_date_of_market_price_list != False;'}"/>
                 <field name="seller_ids" widget="many2many_tags" readonly="1"/>
-                <field name="product_main_seller_partner_id"/>
+                <field name="product_main_seller_partner_id" string="Main&#160;seller"/>
                 <field name="maker_description"/>
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="allergen_ids" widget="many2many_tags"/>

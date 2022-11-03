@@ -2,11 +2,15 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models
+from odoo import fields, models
 
 
 class SupplierInfo(models.Model):
     _inherit = "product.supplierinfo"
+
+    product_tmpl_code = fields.Char(related="product_tmpl_id.default_code")
+
+    product_tmpl_name = fields.Char(related="product_tmpl_id.name")
 
     def see_current_product_from_supplierinfo(self):
         self.ensure_one()

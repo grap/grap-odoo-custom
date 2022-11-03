@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-21 13:10+0000\n"
-"PO-Revision-Date: 2022-10-21 13:10+0000\n"
+"POT-Creation-Date: 2022-11-03 22:14+0000\n"
+"PO-Revision-Date: 2022-11-03 22:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_mrp_handle_prices
+msgid "3. Update Margin and Sale Price 💶"
+msgstr "3. Mettre à jour les prix de vente et marges 💶"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -39,6 +44,11 @@ msgstr "Champs Comptables"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Active in POS"
 msgstr "Dispo dans le PdV"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Actual Price"
+msgstr "Prix actuel"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -77,13 +87,9 @@ msgstr "Changer cette valeur entraînera le changement de toutes les fiches tech
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Code"
 msgstr ""
-
-#. module: grap_change_views_product
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_all
-msgid "Composants Products 🥕"
-msgstr "Mercuriale - prix articles 🥕"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
@@ -123,6 +129,7 @@ msgstr "Description pour les clients"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Diff"
 msgstr ""
 
@@ -137,12 +144,12 @@ msgid "Disc. 2 %"
 msgstr "Rem. 2 (%)"
 
 #. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.product_supplierinfo_mrp_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Disc. 1 %"
 msgstr "Rem. 1 %"
 
 #. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.product_supplierinfo_mrp_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Disc. 2 %"
 msgstr "Rem. 2 %"
 
@@ -155,6 +162,11 @@ msgstr "Informations complémentaires"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Fields only configurable for raw materials."
 msgstr "Champs modifiables seulement pour les articles de matières premières"
+
+#. module: grap_change_views_product
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_mrp_handle_prices_standard_prices_3a_finished
+msgid "Finished Products"
+msgstr "Produits finis 🥧"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_grap_mrp_product_product_search
@@ -225,6 +237,11 @@ msgid "Internal Notes"
 msgstr "Notes internes"
 
 #. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_supplierinfo__product_tmpl_code
+msgid "Internal Reference"
+msgstr "Référence interne"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Inventory"
 msgstr "Inventaire"
@@ -240,9 +257,18 @@ msgid "Joint Buying"
 msgstr "Commande groupée"
 
 #. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
+msgid "List Price"
+msgstr "PdV"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Main Seller"
+msgstr "Fourni. principal·e"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+msgid "Main seller"
 msgstr "Fourni. principal·e"
 
 #. module: grap_change_views_product
@@ -257,13 +283,34 @@ msgstr "Informations de production 🥕"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Margin Categ."
 msgstr "Catég. Marge"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
+msgid "Margin state"
+msgstr "État Marge"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Min Qty"
 msgstr "Qté min."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Min qty"
+msgstr "Qté min."
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_supplierinfo__product_tmpl_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "New Price"
+msgstr "Nvo Prix"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -284,10 +331,10 @@ msgstr "Secteur du PdV"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Package Qty"
-msgstr "Qté conditionnement"
+msgstr "Qté Cond."
 
 #. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.product_supplierinfo_mrp_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Package Qty"
 msgstr "Qté cond."
 
@@ -324,6 +371,7 @@ msgstr "Impression des étiquettes"
 
 #. module: grap_change_views_product
 #: model:ir.model,name:grap_change_views_product.model_product_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Product"
 msgstr "Article"
 
@@ -426,6 +474,16 @@ msgid "Products (eShop)"
 msgstr "Articles (eBoutique)"
 
 #. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_tree_finished_products
+msgid "Products - Update Margin and Sale Price"
+msgstr "Articles - Mettre à jour les prix de vente et marges 💶"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Product price"
+msgstr "Prix de l'article"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Purchase Invoicing Fields"
 msgstr "Champs de facturation à l'achat"
@@ -519,6 +577,11 @@ msgid "Stock Valuation"
 msgstr "Valorisation du stock"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Supplier"
+msgstr "Fournisseur·e"
+
+#. module: grap_change_views_product
 #: model:ir.model,name:grap_change_views_product.model_product_supplierinfo
 msgid "Supplier Pricelist"
 msgstr "Liste de prix du fournisseur·e"
@@ -529,9 +592,24 @@ msgid "Supplier product name"
 msgstr "Nom chez le fournisseur·e"
 
 #. module: grap_change_views_product
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_supplierinfo_editable
-msgid "Suppliers Informations 🥕"
-msgstr "Mercuriale - prix chez les fournisseur·e·s 🥕"
+#: model:ir.ui.menu,name:grap_change_views_product.menu_grap_mrp_handle_prices_1b_supplierinfos
+msgid "Suppliers Informations"
+msgstr "Prix fournisseur·es"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_supplierinfo_tree
+msgid "Suppliers informations"
+msgstr "Prix fournisseur·e·s"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Supplier product code"
+msgstr "Code article"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Supplier product name"
+msgstr "Nom chez fournisseur·e"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -542,6 +620,31 @@ msgstr "Approvisionnement"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Text field for labels, not for tracking allergens in production (see dedicated tab)"
 msgstr "Champ du texte s'affichant sur les étiquettes, pas fait pour le suivi des allergènes en production (voir onglet dédié)."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
+msgid "Theorical Margin (%)"
+msgstr "Marge théo %"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
+msgid "Theorical difference"
+msgstr "Diff théorique"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
+msgid "Theorical price"
+msgstr "Prix théorique"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
+msgid "Theorical Price"
+msgstr "Prix théo."
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
+msgid "Theorical difference"
+msgstr "Diff théo."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -565,6 +668,7 @@ msgstr "Unité de mesure"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "UoM"
 msgstr "UdM"
 
@@ -580,11 +684,13 @@ msgstr "Mettre à jour le stock disponible"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Use this price for product standard price"
 msgstr "Utiliser ce prix pour le prix de revient de l'article"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Use this price 🎯"
 msgstr "Utiliser ce prix 🎯"
 

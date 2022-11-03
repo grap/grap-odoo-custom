@@ -15,14 +15,9 @@ class SupplierInfo(models.Model):
         compute="_compute_product_standard_price",
     )
 
-    product_tmpl_code = fields.Char(related="product_tmpl_id.default_code")
-
-    product_tmpl_name = fields.Char(related="product_tmpl_id.name")
-
-    # Should be in a specific glue module i think
-    supplierinfo_standard_price_w_discount = fields.Float(
+    theoritical_standard_price = fields.Float(
         string="Supplier info price with discount",
-        compute="_compute_supplierinfo_standard_price_w_discount",
+        compute="_compute_theoritical_standard_price",
     )
 
     diff_supplierinfo_product_standard_price = fields.Float(
@@ -43,13 +38,24 @@ class SupplierInfo(models.Model):
 
     @api.multi
     @api.depends("price", "discount", "discount2", "discount3")
-    def _compute_supplierinfo_standard_price_w_discount(self):
+    def _compute_theoritical_standard_price(self):
         for supplierinfo in self:
-            supplierinfo.supplierinfo_standard_price_w_discount = (
-                supplierinfo.price
-                * (1 - supplierinfo.discount / 100)
-                * (1 - supplierinfo.discount2 / 100)
-                * (1 - supplierinfo.discount3 / 100)
+            default_uom = self.env["uom.uom"].search([], limit=1, order="id")
+            uom = (
+                supplierinfo.product_uom
+                or supplierinfo.product_tmpl_id.uom_po_id
+                or default_uom
+            )
+            supplierinfo.theoritical_standard_price = supplierinfo.currency_id.round(
+                uom._compute_price(
+                    (
+                        supplierinfo.price
+                        * (1 - supplierinfo.discount / 100)
+                        * (1 - supplierinfo.discount2 / 100)
+                        * (1 - supplierinfo.discount3 / 100)
+                    ),
+                    supplierinfo.product_tmpl_id.uom_po_id or default_uom,
+                )
             )
 
     @api.multi
@@ -60,7 +66,7 @@ class SupplierInfo(models.Model):
         for supplierinfo in self.filtered(lambda x: x.product_tmpl_id):
             supplierinfo.diff_supplierinfo_product_standard_price = (
                 supplierinfo.product_standard_price
-                - supplierinfo.supplierinfo_standard_price_w_discount
+                - supplierinfo.theoritical_standard_price
             )
 
     # Functions to change product fields
@@ -70,7 +76,7 @@ class SupplierInfo(models.Model):
             old_product_standard_price = supplierinfo.product_tmpl_id.standard_price
             # Set new standard_price
             supplierinfo.product_tmpl_id.standard_price = (
-                supplierinfo.supplierinfo_standard_price_w_discount
+                supplierinfo.theoritical_standard_price
             )
             diff_percentage = (
                 (

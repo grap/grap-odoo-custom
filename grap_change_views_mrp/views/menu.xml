@@ -113,10 +113,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_grap_mrp_handle_prices_market_pricelist" sequence="1"
         action="mrp_food.action_product_product_mrp_tree"/>
 
-    <menuitem id="menu_grap_mrp_handle_prices_1b_supplierinfos"
-        name="Suppliers Informations"
-        parent="menu_grap_mrp_handle_prices_market_pricelist" sequence="2"
-        action="mrp_food.action_product_supplierinfo_mrp_tree"/>
+    <!-- Step 1b for "Handling Prices" in grap_change_views_product menu.xml -->
+    <!-- Step 1b : Supplier Informations Editable Views -->
 
     <menuitem id="menu_grap_mrp_handle_prices_bom_prices"
       name="2. Update Cost Prices (BoM) 📋"
@@ -166,14 +164,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_grap_mrp_handle_prices_bom_prices" sequence="3"
         action="action_grap_mrp_bom_all_price"/>
 
-    <menuitem id="menu_grap_mrp_handle_prices_products"
-      name="3. Update Margin and Sale Price 💶"
-      parent="menu_grap_mrp_handle_prices" sequence="30"/>
-
-    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_3a_finished"
-        name="Finished Products"
-        parent="menu_grap_mrp_handle_prices_products" sequence="1"
-        action="action_mrp_product_product_price_finished"/>
+    <!-- Step 3 for "Handling Prices" in grap_change_views_product menu.xml-->
 
     <!-- ************************************************************ -->
     <!-- Hide standard menu -->

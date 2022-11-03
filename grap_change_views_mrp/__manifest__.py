@@ -32,7 +32,6 @@
     ],
     "data": [
         "views/view_mrp_bom.xml",
-        "views/view_mrp_product.xml",
         "views/menu.xml",
         "views/assets.xml",
     ],

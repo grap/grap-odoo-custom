@@ -8,6 +8,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <odoo>
 
+    <!-- ************************************************************ -->
+    <!-- Supplier info (Form View) -->
+    <!-- ************************************************************ -->
     <record id="product_supplierinfo_form" model="ir.ui.view">
         <field name="model">product.supplierinfo</field>
         <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
@@ -30,18 +33,44 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="product_supplierinfo_mrp_tree" model="ir.ui.view">
+    <!-- ************************************************************ -->
+    <!-- Supplier info (Price Lists Tree View) -->
+    <!-- ************************************************************ -->
+    <record id="view_product_supplierinfo_tree" model="ir.ui.view">
         <field name="model">product.supplierinfo</field>
-        <field name="inherit_id" ref="mrp_food.view_product_supplierinfo_mrp_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_code']" position="after">
-                <field name="package_qty" string="Package Qty"/>
-            </xpath>
-            <xpath expr="//field[@name='product_uom']" position="after">
-                <field name="discount" string="Disc. 1 %"/>
-                <field name="discount2" string="Disc. 2 %"/>
-            </xpath>
+          <tree editable="bottom" create="false" decoration-info="diff_supplierinfo_product_standard_price != 0">
+            <field name="currency_id" invisible="1"/>
+            <field name="is_main_seller" invisible="1"/>
+            <field name="is_main_seller_icon" string=" " attrs="{'invisible': [('is_main_seller', '=', False)]}"/>
+            <button name="see_current_product_from_supplierinfo" type="object" string="↗️"/>
+            <field name="product_tmpl_code" string="Code"/>
+            <field name="product_tmpl_name" string="Product"/>
+            <field name="display_name" string="Supplier" readonly="1"/>
+            <field name="product_code" string="Supplier product code"/>
+            <field name="product_name" string="Supplier product name"/>
+            <field name="package_qty" string="Package Qty"/>
+            <field name="min_qty" string="Min qty"/>
+            <field name="price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+            <field name="product_uom" readonly="1" string="UoM"/>
+            <field name="discount" string="Disc. 1 %"/>
+            <field name="discount2" string="Disc. 2 %"/>
+            <field name="theoritical_standard_price" string="New Price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+            <field name="diff_supplierinfo_product_standard_price" string="Diff" groups="base.group_no_one"/>
+            <button name="set_product_standard_price_from_supplierinfo" help="Use this price for product standard price" string="Use this price 🎯" class="btn_price_from_supplierinfo" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}"/>
+            <field name="product_standard_price" string="Actual Price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+            <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+          </tree>
         </field>
+    </record>
+
+    <record id="action_product_supplierinfo_tree" model="ir.actions.act_window">
+        <field name="name">Suppliers informations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.supplierinfo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_supplierinfo_tree"/>
     </record>
 
 </odoo>
