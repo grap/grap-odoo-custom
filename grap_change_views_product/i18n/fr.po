@@ -621,7 +621,7 @@ msgstr "⇒ Baisser le prix"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "⇒ Generate new trigram"
-msgstr "⇒ Générer un nouveau trigramme"
+msgstr "⇒ Générer trigramme"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
