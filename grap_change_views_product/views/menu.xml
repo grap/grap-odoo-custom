@@ -86,25 +86,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         groups="base.group_erp_manager"
         sequence="90"/>
 
-
-    <!-- ************************************************************ -->
-    <!-- MRP Menu Items for "Handling Prices" Menu-->
-    <!-- ************************************************************ -->
-
-    <!-- Step 1b : Supplier Informations Editable Views -->
-    <menuitem id="menu_grap_mrp_handle_prices_1b_supplierinfos"
-        name="Suppliers Informations"
-        parent="grap_change_views_mrp.menu_grap_mrp_handle_prices_market_pricelist" sequence="2"
-        action="grap_change_views_product.action_product_supplierinfo_tree"/>
-
-    <!-- Step 3 : Products Update Margin and Sale Price -->
-    <menuitem id="menu_product_product_mrp_handle_prices"
-      name="3. Update Margin and Sale Price 💶"
-      parent="grap_change_views_mrp.menu_grap_mrp_handle_prices" sequence="30"/>
-
-    <menuitem id="menu_product_product_mrp_handle_prices_standard_prices_3a_finished"
-        name="Finished Products"
-        parent="menu_product_product_mrp_handle_prices" sequence="1"
-        action="grap_change_views_product.action_product_product_tree_finished_products"/>
-
 </odoo>

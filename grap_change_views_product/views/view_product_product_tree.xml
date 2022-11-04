@@ -465,7 +465,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
 
-    <!-- Add view and menu for MRP "Handling Prices" menu -->
+    <!-- MRP Handling Prices Menu Step 3 : Products Update Margin and Sale Price -->
     <record id="view_product_product_tree_mrp" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
@@ -500,5 +500,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="context">{"search_default_finished_products":1}</field>
     </record>
 
+    <menuitem id="menu_product_product_mrp_handle_prices"
+      name="3. Update Margin and Sale Price 💶"
+      parent="grap_change_views_mrp.menu_grap_mrp_handle_prices" sequence="30"/>
+
+    <menuitem id="menu_product_product_mrp_handle_prices_standard_prices_3a_finished"
+        name="Finished Products"
+        parent="menu_product_product_mrp_handle_prices" sequence="1"
+        action="action_product_product_tree_finished_products"/>
 
 </odoo>

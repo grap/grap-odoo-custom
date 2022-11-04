@@ -73,4 +73,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="view_id" ref="view_product_supplierinfo_tree"/>
     </record>
 
+    <!-- MRP Handling Prices Menu Step 1b -->
+    <menuitem id="menu_grap_mrp_handle_prices_1b_supplierinfos"
+        name="Suppliers Informations"
+        parent="grap_change_views_mrp.menu_grap_mrp_handle_prices_market_pricelist" sequence="2"
+        action="action_product_supplierinfo_tree"/>
+
 </odoo>
