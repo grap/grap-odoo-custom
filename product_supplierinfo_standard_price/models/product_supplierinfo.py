@@ -37,26 +37,37 @@ class SupplierInfo(models.Model):
             )
 
     @api.multi
-    @api.depends("price", "discount", "discount2", "discount3")
+    @api.depends(
+        "price",
+        "discount",
+        "discount2",
+        "discount3",
+        "currency_id",
+        "product_id",
+        "product_tmpl_id",
+    )
     def _compute_theoritical_standard_price(self):
         for supplierinfo in self:
-            default_uom = self.env["uom.uom"].search([], limit=1, order="id")
             uom = (
                 supplierinfo.product_uom
                 or supplierinfo.product_tmpl_id.uom_po_id
-                or default_uom
+                or supplierinfo.product_id.uom_po_id
             )
-            supplierinfo.theoritical_standard_price = supplierinfo.currency_id.round(
-                uom._compute_price(
-                    (
-                        supplierinfo.price
-                        * (1 - supplierinfo.discount / 100)
-                        * (1 - supplierinfo.discount2 / 100)
-                        * (1 - supplierinfo.discount3 / 100)
-                    ),
-                    supplierinfo.product_tmpl_id.uom_po_id or default_uom,
+            if uom:
+                supplierinfo.theoritical_standard_price = (
+                    supplierinfo.currency_id.round(
+                        uom._compute_price(
+                            (
+                                supplierinfo.price
+                                * (1 - supplierinfo.discount / 100)
+                                * (1 - supplierinfo.discount2 / 100)
+                                * (1 - supplierinfo.discount3 / 100)
+                            ),
+                            supplierinfo.product_tmpl_id.uom_po_id
+                            or supplierinfo.product_id.uom_po_id,
+                        )
+                    )
                 )
-            )
 
     @api.multi
     @api.depends(
