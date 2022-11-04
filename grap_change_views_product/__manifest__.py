@@ -61,6 +61,7 @@
         "product_supplierinfo_standard_price",
     ],
     "data": [
+        "views/menu.xml",
         "views/view_product_margin_classification.xml",
         "views/view_product_pricelist.xml",
         "views/view_product_pricelist_item.xml",
@@ -69,7 +70,6 @@
         "views/view_product_product_tree.xml",
         "views/view_product_product_form.xml",
         "views/view_product_product_search.xml",
-        "views/menu.xml",
     ],
     "installable": True,
 }
