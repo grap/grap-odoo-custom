@@ -1,19 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * grap_qweb_report
+#	* grap_qweb_report
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 15:18+0000\n"
-"PO-Revision-Date: 2022-02-28 15:18+0000\n"
+"POT-Creation-Date: 2022-10-11 21:14+0000\n"
+"PO-Revision-Date: 2022-10-11 21:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
+msgid "- Code:"
+msgstr "- Code :
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
@@ -28,7 +33,7 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
 msgid "<b>Origine : </b>"
-msgstr ""
+msgstr "<b>Lieu de prod. : </b>"
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
@@ -302,9 +307,15 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
 msgid "Imprimée le"
 msgstr ""
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
+msgid "Internal code:"
+msgstr "Code :"
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice
@@ -362,13 +373,13 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
 msgid "Origine"
-msgstr ""
+msgstr "Lieu de prod."
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
 msgid "Origine :"
-msgstr ""
+msgstr "Lieu de prod. :"
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
@@ -388,6 +399,11 @@ msgstr "Prévisualiser"
 #, python-format
 msgid "Pricelist:"
 msgstr "Liste de prix: "
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
+msgid "Printed"
+msgstr "Imprimée le"
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large

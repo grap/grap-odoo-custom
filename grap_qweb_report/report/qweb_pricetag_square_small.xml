@@ -77,7 +77,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </div>
                         <!-- BARCODE Image -->
                         <div>
-                            <div class="wrap_barcode_image floating_box">
+                            <div class="option_print_code" t-if="option_print_code"><t t-esc="line.product_id.default_code"/></div>
+                            <div class="wrap_barcode_image floating_box and option_print_barcode">
                                 <t t-if="line.product_id.barcode">
                                     <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
                                     <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
