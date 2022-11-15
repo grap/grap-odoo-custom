@@ -43,7 +43,7 @@ addon | version | maintainers | summary
 [grap_cooperative](grap_cooperative/) | 12.0.3.0.4 |  | Add Directories, Companies, Colleges, Peoples, etc.
 [grap_mrp_dev](grap_mrp_dev/) | 12.0.1.0.1 |  | Install all MRP modules for Grap
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
-[grap_qweb_report](grap_qweb_report/) | 12.0.1.2.5 |  | GRAP - Custom Qweb Reports
+[grap_qweb_report](grap_qweb_report/) | 12.0.1.2.6 |  | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.3.3 |  | Customize Odoo web User Interface
 [mrp_bom_print](mrp_bom_print/) | 12.0.1.1.2 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.2 |  | MRP BoM Product Variant
