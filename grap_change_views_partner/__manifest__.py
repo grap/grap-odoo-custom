@@ -19,6 +19,8 @@
         "stock",
         # OCA
         "purchase_triple_discount",
+        # GRAP
+        "product_origin",
     ],
     "data": [
         "views/menu.xml",

@@ -21,6 +21,7 @@
         "views/view_ir_module_module.xml",
         "views/view_ir_actions_act_window.xml",
         "views/menu.xml",
+        "views/templates.xml",
     ],
     "installable": True,
 }

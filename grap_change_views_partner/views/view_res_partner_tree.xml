@@ -17,16 +17,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom" create="false">
                 <field name="name" readonly="1"/>
+                <button name="see_current_partner" type="object" string="↗️"/>
+                <field name="customer" widget="boolean_toggle" string="Customer"/>
+                <field name="supplier" widget="boolean_toggle" string="Supplier"/>
                 <field name="street"/>
                 <field name="city"/>
-                <field name="zip"/>
+                <field name="zip" string="Zip&#160;code"/>
                 <field name="country_id"/>
                 <field name="phone"/>
                 <field name="mobile"/>
                 <field name="email"/>
                 <field name="property_product_pricelist"/>
                 <field name="property_account_position_id"/>
-                <field name="property_payment_term_id"/>
+                <field name="property_payment_term_id" string="Customer&#160;Payment&#160;Terms"/>
+                <field name="distribution_channel_criterion" string="Distrib&#160;channel&#160;criterion"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
