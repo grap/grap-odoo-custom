@@ -5,6 +5,7 @@
 {
     "name": "GRAP - Change Views",
     "version": "12.0.1.1.1",
+    "development_status": "Alpha",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

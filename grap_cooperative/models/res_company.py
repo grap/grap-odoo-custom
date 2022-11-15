@@ -8,6 +8,8 @@ from odoo import api, fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
+    map_display_address = fields.Char(compute="_compute_map_display_address")
+
     clean_name = fields.Char(
         string="Clean name",
         compute="_compute_clean_name",
@@ -88,3 +90,9 @@ class ResCompany(models.Model):
                 company.clean_address += company.zip + " "
             if company.city:
                 company.clean_address += company.city.upper()
+
+    def _compute_map_display_address(self):
+        for company in self:
+            company.map_display_address = company.partner_id._display_address(
+                without_company=True
+            )

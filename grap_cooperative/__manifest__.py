@@ -7,6 +7,7 @@
     "name": "GRAP - Cooperative",
     "summary": "Add Directories, Companies, Colleges, Peoples, etc.",
     "version": "12.0.3.0.4",
+    "development_status": "Alpha",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -14,11 +15,13 @@
     "depends": [
         "base",
         # OCA
+        "base_geolocalize_company",
         "l10n_fr_siret",
         "l10n_fr_department",
         "res_company_active",
         "res_company_category",
         "res_company_code",
+        "web_view_leaflet_map",
         # GRAP
         "base_company_legal_info",
         "fiscal_company_base",
