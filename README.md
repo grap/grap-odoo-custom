@@ -27,7 +27,7 @@ addon | version | maintainers | summary
 [grap_change_email](grap_change_email/) | 12.0.1.1.4 |  | Change default email template for invoices, sale and purchase orders
 [grap_change_precision](grap_change_precision/) | 12.0.1.1.2 |  | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.2.1 |  | Disable the translation mechanism for a many fields
-[grap_change_views](grap_change_views/) | 12.0.1.1.1 |  | GRAP - Change Views
+[grap_change_views](grap_change_views/) | 12.0.1.1.2 |  | GRAP - Change Views
 [grap_change_views_account](grap_change_views_account/) | 12.0.1.1.9 |  | GRAP - Change Views Account
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.1.4 |  | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.3 |  | GRAP - Change Calendar Views
@@ -40,7 +40,7 @@ addon | version | maintainers | summary
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.3.0.3 |  | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.11 |  | GRAP - Change Sale Views
 [grap_change_views_stock](grap_change_views_stock/) | 12.0.0.1.3 |  | GRAP - Change Stock Views
-[grap_cooperative](grap_cooperative/) | 12.0.3.0.4 |  | Add Directories, Companies, Colleges, Peoples, etc.
+[grap_cooperative](grap_cooperative/) | 12.0.3.0.5 |  | Add Directories, Companies, Colleges, Peoples, etc.
 [grap_mrp_dev](grap_mrp_dev/) | 12.0.1.0.1 |  | Install all MRP modules for Grap
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
 [grap_qweb_report](grap_qweb_report/) | 12.0.1.2.6 |  | GRAP - Custom Qweb Reports
