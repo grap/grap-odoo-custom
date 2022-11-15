@@ -5,7 +5,7 @@
 {
     "name": "Product SupplierInfo Standard Price",
     "summary": "Product supplier easily connected to product's standard price",
-    "version": "12.0.0.1.1",
+    "version": "12.0.0.1.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
