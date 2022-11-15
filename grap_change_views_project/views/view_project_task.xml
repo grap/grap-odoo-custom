@@ -12,6 +12,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="planned_hours" widget="float_time"/>
+            </field>
+
           <field name="description" position="after">
             <group>
               <field name="github_link_1" widget="url" placeholder="e.g. https://www.github.com"/>
@@ -34,6 +38,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="stage_id" position="after">
                 <field name="priority" widget="priority"/>
                 <field name="kanban_state" widget="state_selection"/>
+                <field name="planned_hours" widget="float_time" sum="Total"/>
             </field>
         </field>
     </record>
@@ -58,6 +63,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="project.view_task_kanban"/>
         <field name="arch" type="xml">
           <field name="activity_ids" position="after">
+              <field name="planned_hours"/>
               <field name="github_link_1"/>
               <field name="github_link_2"/>
               <field name="github_link_3"/>
@@ -69,6 +75,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <attribute name="invisible">1</attribute>
           </xpath>
           <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
+            <div t-if="record.planned_hours.raw_value" class="text-muted o_kanban_record_subtitle">
+
+                (<field name="planned_hours" widget="float_time"/>)
+            </div>
             <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050;margin-left:7px"/></a></span>
             <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
             <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
