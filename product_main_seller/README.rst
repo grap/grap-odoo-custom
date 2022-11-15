@@ -19,7 +19,7 @@ Product Main Seller
 
 |badge1| |badge2| |badge3| 
 
-Get main seller partner for a product with or without variant.
+Get main seller partner for a product product.
 Main seller is the first in the vendors list.
 
 .. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/product_main_seller/static/description/main_seller.gif
@@ -34,6 +34,7 @@ Known issues / Roadmap
 
 * Main seller partner could be computed according to purchases statistics
 * Company parameter to choose between differents ways to know which seller is the main one
+* A view for product supplier info and make main seller icon readonly on this view
 
 Bug Tracker
 ===========
