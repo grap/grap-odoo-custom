@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 10:34+0000\n"
-"PO-Revision-Date: 2022-09-08 10:34+0000\n"
+"POT-Creation-Date: 2022-10-24 14:26+0000\n"
+"PO-Revision-Date: 2022-10-24 14:26+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,30 +16,275 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "(margin"
+msgstr "(marge"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_market_pricelist
+msgid "1. Update market price list (Products) 📜"
+msgstr "1. Rentrer les mercuriales (Articles) 📜"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_bom_prices
+msgid "2. Update Cost Prices (BoM) 📋"
+msgstr "2. Mettre à jour les Prix de revient (FT) 📋"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_products
+msgid "3. Update Margin and Sale Price 💶"
+msgstr "3. Mettre à jour les prix de vente et marges 💶"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<b>Data sheet</b> - finished product 🥧"
+msgstr "<b>Fiche technique</b> - produit fini 🥧"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<b>Data sheet</b> - intermediate product 🧩"
+msgstr "<b>Fiche technique</b> - product intermédiaire 🧩"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<span> (for 1x</span>"
+msgstr "<span> (pour 1x</span>"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<span>💵 <span id=\"handling_price_title\">Actual product's variant prices</span></span><br/>"
+msgstr "<span>💶 <span id=\"handling_price_title\">Prix actuels de l'article lié à la FT</span></span><br/>"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Actual cost:"
+msgstr "PdR :"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Actual sale:"
+msgstr "PdV :"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Add a note"
+msgstr "Ajouter une note"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Add a product"
+msgstr "Ajouter un produit"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Add a section"
+msgstr "Ajouter une section"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Allergens"
 msgstr "Allergènes"
 
 #. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
+msgid "Apply Margin"
+msgstr "Appliquer la marge"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Attachments"
+msgstr "Pièces jointes"
+
+#. module: grap_change_views_mrp
 #: model:ir.model,name:grap_change_views_mrp.model_mrp_bom
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Bill of Material"
 msgstr "Fiche technique"
 
 #. module: grap_change_views_mrp
-#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 msgid "Bills of Materials"
 msgstr "Fiches techniques"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_product_variant
-msgid "Data sheet"
-msgstr "Fiche technique"
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "Bills of Materials - Handling Prices"
+msgstr "Fiches techniques - Gérer les prix"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_all
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
+msgid "Bills of Materials 📋"
+msgstr "Fiches techniques 📋"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_all
+msgid "BoM - All"
+msgstr "Toutes les fiches techniques"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_finished_products
+msgid "BoM - Finished products 🥧"
+msgstr "FT - Produits finis 🥧"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom_intermediate_products
+msgid "BoM - Intermediate products 🧩"
+msgstr "FT - Produits intermédiaires 🧩"
+
+#. module: grap_change_views_mrp
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_all_price
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products_price
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products_price
+msgid "BoM - Update Cost Prices 📋"
+msgstr "Mettre à jour les Prix de Revient des Fiches techniques 📋"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "BoM configuration"
+msgstr "Informations sur la fiche technique"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "BoM for"
+msgstr "Recette pour"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "BoM Standard Price"
+msgstr "FT - PdR"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Components"
+msgstr "Composants"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Components (admin)"
+msgstr "Composants (admin)"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_1a_composants
+msgid "Composants Products"
+msgstr "Matières Premières"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Cost"
+msgstr "Coût"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
+msgid "Decrease the Sale Price down to Theoretical Price"
+msgstr "Baisser le prix de vente pour atteindre le prix théorique"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "Diff BoM and Product"
+msgstr "Diff FT et Produit"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_3a_finished
+msgid "Finished Products"
+msgstr "Produits finis"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2b_finished
+msgid "Finished products"
+msgstr "Produits finis"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Food informations"
+msgstr "Informations alimentaire"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Grade"
+msgstr "Note"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Handle prices and time"
+msgstr "Gestion des prix et du temps"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices
+msgid "Handle prices 💶"
+msgstr "Gérer les prix 💶"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "If the product is a finished product: When processing a sales\n"
+"                              order for this product, the delivery order will contain the raw\n"
+"                              materials, instead of the finished product."
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "If the product is a semi-finished product: When processing a\n"
+"                              manufacturing order that contains that product as component,\n"
+"                              the raw materials of that product will be added to the\n"
+"                              manufacturing order of the final product."
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Images"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
+msgid "Increase the Sale Price up to Theoretical Price"
+msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2c_all
+msgid "Intermediate and finished products"
+msgstr "Produits intermédiaires et produits finis"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2a_intermediate
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
+msgid "Intermediate products"
+msgstr "Produits intermédiaires"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "It will set product variant's standard price with this price"
+msgstr "Cela va définir le prix de revient de l'article avec ce prix."
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Labels"
 msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Main informations"
+msgstr "Informations principales"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Manufacturing Readiness"
+msgstr "Etat de préparation de la fabrication"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Miscellaneous"
+msgstr "Divers"
 
 #. module: grap_change_views_mrp
 #: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_name
@@ -47,33 +292,156 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "No attachment"
+msgstr "Pas de pièces jointes"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Operation"
+msgstr "Opération"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
 msgid "Product"
 msgstr "Article"
 
 #. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_mrp_bom_products
-msgid "Products"
-msgstr "Articles"
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Unité de mesure d'article"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "Product template (admin)"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_mrp_product_product_price_finished
+msgid "Products - Update Margin and Sale Price"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "Product Margin Rate"
+msgstr "Article - Marge"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "Product Sale Price"
+msgstr "Article - PdV"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+msgid "Product Standard Price"
+msgstr "Article - PdR"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
+msgid "Ref."
+msgstr "Réf."
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 msgid "Reference"
 msgstr "Référence"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "ST"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_sale_ok
+msgid "Saleable product"
+msgstr "Produit fini"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
+msgid "Saleable products"
+msgstr "Produits finis"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Seasonalities"
 msgstr "Saisonnalités"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Seasonality ℹ️"
+msgstr "Saisonnalité ℹ️"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Standard price unit"
+msgstr "Coût unit."
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Structure & Cost"
+msgstr "Structure & Coût"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_1b_supplierinfos
+msgid "Suppliers Informations"
+msgstr "Prix fournisseur·euse·s"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Tags 🎨"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Total"
 msgstr ""
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_sections_notes
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree
+#: model:ir.model.fields,help:grap_change_views_mrp.field_mrp_bom__product_uom_id
+msgid "Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control"
+msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 msgid "UoM"
 msgstr "UdM"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⇒ Set Code"
+msgstr "⇒ Définir la Référence"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⇒ Set Time with BoM lines"
+msgstr "⇒ Définir avec le temps des lignes de la FT"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⇒ Update Product variant cost"
+msgstr "⇒ Mettre à jour le PdR de l'article"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⚠️ Some composants are not in season:"
+msgstr "⚠️ Certains composants ne sont pas de saison :"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⚠️ This Bill Of Materials is not in season (according to seasonality bom field)."
+msgstr "⚠️ Cette fiche technique n'est pas de saison (selon le champ Saisonnalité rempli ici sur la fiche technique)"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⚠️ This Bill Of Materials is not in season, and neither are these components:"
+msgstr "⚠️ Cette fiche technique n'est pas de saison, ni certains de ces composants :"

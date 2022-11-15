@@ -167,4 +167,4 @@ msgstr ""
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "⇒ Update Product variant cost"
-msgstr "⇒ Mettre à jour le PdR du produit fini"
+msgstr "⇒ Mettre à jour le PdR de l'article"

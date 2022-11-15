@@ -11,7 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <div class="page">
                 <h2 class="text-center">Allergens table</h2>
                 <br/>
-                <table class="table table-sm table-borderless">
+                <table class="table table-sm table-bordered">
                     <thead>
                         <tr>
                             <th name="th_product" class="text-center"></th>
@@ -38,7 +38,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
                                 <t t-if="prepare_data_line[0] != categ_tmp">
                                   <tr>
-                                    <td name="new_category" class="text-left">
+                                    <td colspan="100%" name="new_category" class="text-left">
                                       <b><span t-esc="prepare_data_line[0]"/></b>
                                     </td>
                                   </tr>

@@ -14,10 +14,13 @@
         "mrp",
         # OCA modules
         "web_widget_color",
+        "purchase_triple_discount",
         # GRAP modules,
         "product_food",
         "product_label",
+        "product_main_seller",
         "mrp_bom_sale_product_margin",
+        "product_supplierinfo_standard_price",
     ],
     "demo": [
         "demo/allergens.xml",
@@ -36,7 +39,7 @@
         "views/view_product_product.xml",
         "views/view_product_template.xml",
         "views/view_seasonality.xml",
-        "views/templates.xml",
+        "views/assets.xml",
     ],
     "images": [
         "./static/img/tomato_pie.png",

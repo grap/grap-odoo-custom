@@ -20,8 +20,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//filter[@name='filter_is_component']" position="attributes">
               <attribute name="string">Raw Materials 🥕</attribute>
             </xpath>
-            <xpath expr="//filter[@name='components']" position="after">
-              <filter string="Finished products 🥧" name="manufactured_products" domain="[('bom_ids', '!=', False)]"/>
+            <xpath expr="//filter[@name='filter_is_component']" position="after">
+              <filter string="Intermediate products 🧩" name="intermediate_products" domain="[('bom_ids', '!=', False), ('sale_ok', '=', False)]"/>
+              <filter string="Finished products 🥧" name="finished_products" domain="[('bom_ids', '!=', False), ('sale_ok', '=', True)]"/>
             </xpath>
         </field>
     </record>

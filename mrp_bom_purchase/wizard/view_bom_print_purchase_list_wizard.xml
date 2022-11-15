@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_bom_print_purchase_list_wizard_form" model="ir.ui.view">
+        <field name="model">bom.print.purchase.list.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Purchase list">
+                <div class="wizard_options">
+                  <h5>🔧 Choose options</h5><br/>
+                  <label for="option_group_by_product_category"/><field name="option_group_by_product_category" widget="boolean_toggle"/><br/>
+                  <label for="option_display_cost"/><field name="option_display_cost" widget="boolean_toggle"/><br/>
+                </div>
+                <div class="wizard_instrutions">
+                  <h5>🖨️ Choose the quantity of each BoMs</h5>
+                </div>
+                <group colspan="2">
+                    <group col="4" colspan="2">
+                        <field name="line_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="bom_id" required="1"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="bom_description"/>
+                                <field name="bom_product_qty"/>
+                                <field name="quantity" required="1" widget="numeric_step"/>
+                                <field name="bom_uom_id"/>
+                                <field name="wizard_line_subtotal" sum="Total Cost" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'column_invisible': [('parent.option_display_cost', '=', False)]}"/>
+                             </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" icon="fa-print" class="oe_highlight"/>
+                        <button icon="fa-ban" special="cancel" string="Cancel"/>
+                        <button icon="fa-shopping-cart" special="cancel" string="Create Purchase Orders (in coming)"/>
+                    </footer>
+                </group>
+            </form>
+        </field>
+    </record>
+
+</odoo>

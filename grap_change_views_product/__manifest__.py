@@ -57,6 +57,8 @@
         "joint_buying_product",
         "mrp_food",
         "mrp_business",
+        "mrp_bom_tag",
+        "product_supplierinfo_standard_price",
     ],
     "data": [
         "views/menu.xml",

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_supplierinfo_tree" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="arch" type="xml">
+          <xpath expr="//tree//field[@name='date_start']" position="before">
+          <field name="theoritical_standard_price" string="New Price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+              <field name="diff_supplierinfo_product_standard_price" string="Diff" groups="base.group_no_one"/>
+              <button name="set_product_standard_price_from_supplierinfo" help="Use this price for product standard price" string="Use this price 🎯" class="btn_price_from_supplierinfo" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}"/>
+              <field name="product_standard_price" string="Product price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+          </xpath>
+        </field>
+    </record>
+
+</odoo>

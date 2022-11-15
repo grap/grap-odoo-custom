@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-08 10:32+0000\n"
-"PO-Revision-Date: 2022-09-08 10:32+0000\n"
+"POT-Creation-Date: 2022-11-03 21:18+0000\n"
+"PO-Revision-Date: 2022-11-03 21:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,17 +18,29 @@ msgstr ""
 #. module: product_main_seller
 #: model_terms:ir.ui.view,arch_db:product_main_seller.view_product_main_seller_search
 msgid "By Main Vendor"
-msgstr "Par Fournisseur principal"
+msgstr "Par Fournisseur·e principal·e"
+
+#. module: product_main_seller
+#: model:ir.model.fields,help:product_main_seller.field_product_product__main_seller_partner_id
+#: model:ir.model.fields,help:product_main_seller.field_product_product__main_seller_variant_partner_id
+#: model:ir.model.fields,help:product_main_seller.field_product_template__main_seller_partner_id
+#: model:ir.model.fields,help:product_main_seller.field_product_template__main_seller_variant_partner_id
+msgid "Deprecated"
+msgstr ""
+
+#. module: product_main_seller
+#: model:ir.model.fields,field_description:product_main_seller.field_product_supplierinfo__is_main_seller
+msgid "Is Main Seller"
+msgstr "Fournisseur·e principal·e"
+
+#. module: product_main_seller
+#: model:ir.model.fields,field_description:product_main_seller.field_product_supplierinfo__is_main_seller_icon
+msgid "Is Main Seller Icon"
+msgstr ""
 
 #. module: product_main_seller
 #: model:ir.model.fields,field_description:product_main_seller.field_product_product__product_main_seller_partner_id
 msgid "Main Product Seller Partner"
-msgstr "Fournisseur·e principal·e"
-
-#. module: product_main_seller
-#: model:ir.model.fields,field_description:product_main_seller.field_product_product__main_seller_variant_partner_id
-#: model:ir.model.fields,field_description:product_main_seller.field_product_template__main_seller_variant_partner_id
-msgid "Main Product Variant Seller Partner"
 msgstr "Fournisseur·e principal·e"
 
 #. module: product_main_seller
@@ -43,24 +55,13 @@ msgid "Main Seller Partner of the product"
 msgstr "Fournisseur·e principal·e du produit"
 
 #. module: product_main_seller
-#: model:ir.model.fields,help:product_main_seller.field_product_product__main_seller_partner_id
-#: model:ir.model.fields,help:product_main_seller.field_product_template__main_seller_partner_id
-msgid "Main Seller Partner of the product template"
-msgstr "Fournisseur·e principal·e"
+#: model:ir.model.fields,field_description:product_main_seller.field_product_product__main_seller_variant_partner_id
+#: model:ir.model.fields,field_description:product_main_seller.field_product_template__main_seller_variant_partner_id
+msgid "Main Seller Variant Partner"
+msgstr ""
 
 #. module: product_main_seller
-#: model:ir.model.fields,help:product_main_seller.field_product_product__main_seller_variant_partner_id
-#: model:ir.model.fields,help:product_main_seller.field_product_template__main_seller_variant_partner_id
-msgid "Main Seller Partner of the product variant"
-msgstr "Fournisseur·e principal·e"
-
-#. module: product_main_seller
-#: model_terms:ir.ui.view,arch_db:product_main_seller.view_product_main_seller
-msgid "Main Variant Vendor"
-msgstr "Fournisseur·e principal·e"
-
-#. module: product_main_seller
-#: model_terms:ir.ui.view,arch_db:product_main_seller.view_product_main_seller
+#: model_terms:ir.ui.view,arch_db:product_main_seller.view_product_main_seller_form_2
 msgid "Main Vendor"
 msgstr "Fournisseur·e principal·e"
 
@@ -73,3 +74,8 @@ msgstr "Article"
 #: model:ir.model,name:product_main_seller.model_product_template
 msgid "Product Template"
 msgstr "Modèle d'article"
+
+#. module: product_main_seller
+#: model:ir.model,name:product_main_seller.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Liste de prix du fournisseur·e"

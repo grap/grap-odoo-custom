@@ -6,26 +6,169 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <!-- BoM menus -->
-    <menuitem id="menu_mrp_bom_products"
-      name="Products"
-      parent="mrp.menu_mrp_root" sequence="10"/>
+    <!-- ************************************************************ -->
+    <!-- App menu -->
+    <!-- ************************************************************ -->
+    <menuitem id="mrp.menu_mrp_root"
+        name="Food manufacturing"
+        web_icon="grap_change_views_mrp,static/src/img/icon.png"/>
 
-    <record id="action_grap_mrp_bom" model="ir.actions.act_window">
-        <field name="name">Bills of Materials</field>
+    <!-- ************************************************************ -->
+    <!-- Bill of Materials - search filters -->
+    <!-- ************************************************************ -->
+    <record id="view_mrp_bom_search" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.view_mrp_bom_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='normal']" position="after">
+              <separator/>
+              <filter string="Saleable products" name="filter_product_sale_ok" domain="[('product_sale_ok', '=', True)]"/>
+              <filter string="Intermediate products" name="filter_product_sale_nok" domain="[('product_sale_ok', '=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ************************************************************ -->
+    <!-- Bill of Materials - Menus for Generic Grap View -->
+    <!-- ************************************************************ -->
+    <menuitem id="menu_grap_mrp_bom"
+      name="Bills of Materials 📋"
+      parent="mrp.menu_mrp_root" sequence="15"/>
+
+    <record id="action_grap_mrp_bom_all" model="ir.actions.act_window">
+      <field name="name">Bills of Materials 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
+    </record>
+
+    <menuitem id="menu_grap_mrp_bom_all"
+        name="BoM - All"
+        parent="menu_grap_mrp_bom" sequence="10"
+        action="action_grap_mrp_bom_all"/>
+
+    <record id="action_grap_mrp_bom_intermediate_products" model="ir.actions.act_window">
+      <field name="name">Bills of Materials 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
+      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_bom_intermediate_products"
+      name="BoM - Intermediate products 🧩"
+      parent="menu_grap_mrp_bom" sequence="20"
+      action="action_grap_mrp_bom_intermediate_products"/>
+
+    <record id="action_grap_mrp_bom_finished_products" model="ir.actions.act_window">
+      <field name="name">Bills of Materials 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
+      <field name="context">{"search_default_filter_product_sale_ok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_bom_finished_products"
+        name="BoM - Finished products 🥧"
+        parent="menu_grap_mrp_bom" sequence="30"
+        action="action_grap_mrp_bom_finished_products"/>
+
+    <!-- Standard view for admin -->
+    <record id="menu_grap_mrp_bom_all_admin" model="ir.actions.act_window">
+        <field name="name">Bills of Materials 📋</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">mrp.bom</field>
         <field name="view_type">form</field>
-        <field name="view_mode">kanban,tree,form</field>
-        <field name="view_id" ref="mrp.mrp_bom_tree_view"/>
+        <field name="view_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="view_mode">form,tree,tree</field>
     </record>
 
-    <menuitem id="menu_grap_mrp_bom"
-        name="Bills of Materials"
-        parent="mrp.menu_mrp_root" sequence="15"
-        action="action_grap_mrp_bom"/>
+    <menuitem id="menu_product_product_admin"
+        name="Bom - All (Admin)"
+        parent="menu_grap_mrp_bom"
+        action="menu_grap_mrp_bom_all_admin"
+        groups="base.group_erp_manager"
+        sequence="90"/>
 
+
+    <!-- ************************************************************ -->
+    <!-- Menus and actions for "Handling Prices" -->
+    <!-- ************************************************************ -->
+    <menuitem id="menu_grap_mrp_handle_prices"
+      name="Handle prices 💶"
+      parent="mrp.menu_mrp_root" sequence="5"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_market_pricelist"
+      name="1. Update market price list (Products) 📜"
+      parent="menu_grap_mrp_handle_prices" sequence="10"/>
+
+    <menuitem id="menu_grap_mrp_handle_prices_1a_composants"
+        name="Composants Products"
+        parent="menu_grap_mrp_handle_prices_market_pricelist" sequence="1"
+        action="mrp_food.action_product_product_mrp_tree"/>
+
+    <!-- Step 1b for "Handling Prices" in grap_change_views_product menu.xml -->
+    <!-- Step 1b : Supplier Informations Editable Views -->
+
+    <menuitem id="menu_grap_mrp_handle_prices_bom_prices"
+      name="2. Update Cost Prices (BoM) 📋"
+      parent="menu_grap_mrp_handle_prices" sequence="20"/>
+
+    <record id="action_grap_mrp_bom_intermediate_products_price" model="ir.actions.act_window">
+      <field name="name">BoM - Update Cost Prices 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2a_intermediate"
+        name="Intermediate products"
+        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="1"
+        action="action_grap_mrp_bom_intermediate_products_price"/>
+
+    <record id="action_grap_mrp_bom_finished_products_price" model="ir.actions.act_window">
+      <field name="name">BoM - Update Cost Prices 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+      <field name="context">{"search_default_filter_product_sale_ok":1}</field>
+    </record>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2b_finished"
+        name="Finished products"
+        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="2"
+        action="action_grap_mrp_bom_finished_products_price"/>
+
+    <record id="action_grap_mrp_bom_all_price" model="ir.actions.act_window">
+      <field name="name">BoM - Update Cost Prices 📋</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+    </record>
+
+    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2c_all"
+        name="Intermediate and finished products"
+        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="3"
+        action="action_grap_mrp_bom_all_price"/>
+
+    <!-- Step 3 for "Handling Prices" in grap_change_views_product menu.xml-->
+
+    <!-- ************************************************************ -->
     <!-- Hide standard menu -->
+    <!-- ************************************************************ -->
     <menuitem id="mrp.menu_mrp_manufacturing"
         name="(Admin) Opérations"
         parent="mrp.menu_mrp_root"
@@ -46,7 +189,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="mrp.menu_mrp_configuration"
         groups="base.group_no_one"/>
 
-    <!-- Hide specific menu -->
+    <!-- ************************************************************ -->
+    <!-- Hide custom menus -->
+    <!-- ************************************************************ -->
     <menuitem id="mrp_food.menu_mrp_editable_views"
         name="(Admin) Price Lists - Inline editable"
         parent="mrp.menu_mrp_root" groups="base.group_no_one"/>

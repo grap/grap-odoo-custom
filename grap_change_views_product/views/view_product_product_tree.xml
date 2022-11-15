@@ -34,7 +34,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </field>
             <xpath expr="//field[@name='standard_price']" position="after">
-                <field name="product_main_seller_partner_id" string="Main Seller"/>
+                <field name="product_main_seller_partner_id" string="Main&#160;seller"/>
             </xpath>
         </field>
     </record>
@@ -60,19 +60,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_main_seller_partner_id" string="Main Seller"/>
                 <field name="list_price"/>
                 <field name="standard_margin_rate"/>
-                <field name="margin_classification_id"/>
-                <field name="theoretical_price"
+                <field name="margin_classification_id" string="Margin Categ."/>
+                <field name="theoretical_price" string="Theorical price"
                     widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"
                     attrs="{'invisible': [('theoretical_difference', '=', 0)]}"
                     />
-                <field name="margin_state"/>
+                <field name="margin_state" string="Margin state"/>
                 <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-up"
                     attrs="{'invisible': [('margin_state', '!=', 'too_cheap')]}"
                     help="Increase the Sale Price up to Theoretical Price"/>
                 <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-down"
                     attrs="{'invisible': [('margin_state', '!=', 'too_expensive')]}"
                     help="Decrease the Sale Price down to Theoretical Price"/>
-                <field name="theoretical_difference"
+                <field name="theoretical_difference" string="Theorical difference"
                     widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="sale_ok"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
@@ -110,6 +110,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="label_ids" widget="many2many_tags"/>
                 <field name="is_alimentary"/>
                 <field name="certifier_organization_id"/>
+                <field name="allergen_ids" widget="many2many_tags" groups="mrp.group_mrp_user"/>
+                <field name="product_seasonality_ids" widget="many2many_tags" groups="mrp.group_mrp_user"/>
                 <field name="is_alcohol"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
@@ -447,16 +449,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         groups="joint_buying_base.group_joint_buying_user"
         action="action_product_product_joint_buying"/>
 
-<!-- ************************************************************ -->
-<!-- 30 - MRP Products -->
-<!-- ************************************************************ -->
+    <!-- ************************************************************ -->
+    <!-- 30 - MRP Products -->
+    <!-- ************************************************************ -->
 
-    <menuitem id="menu_product_product_all"
-        name="Composants Products 🥕"
-        parent="menu_product_product_editable_view" sequence="30"
-        groups="mrp.group_mrp_user"
-        action="mrp_food.action_product_product_mrp_tree"/>
-
+    <!-- Improve mrp_food view -->
     <record id="view_grap_mrp_food_product_tree" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="inherit_id" ref="mrp_food.view_product_product_mrp_tree" />
@@ -467,10 +464,49 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <menuitem id="menu_product_supplierinfo_editable"
-        name="Suppliers Informations 🥕"
-        parent="menu_product_product_editable_view" sequence="31"
-        groups="mrp.group_mrp_user"
-        action="mrp_food.action_product_supplierinfo_mrp_tree"/>
+
+    <!-- MRP Handling Prices Menu Step 3 : Products Update Margin and Sale Price -->
+    <record id="view_product_product_tree_mrp" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" decoration-warning="margin_state == 'too_expensive'" decoration-danger="margin_state == 'too_cheap'" create="false">
+              <field name="default_code" readonly="1" string="Ref."/>
+              <button name="see_current_product" type="object" string="↗️"/>
+              <field name="name" string="Product" readonly="1"/>
+              <field name="fiscal_classification_id" required="1"/>
+              <field name="consignor_partner_id" invisible="1"/>
+              <field name="standard_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+              <field name="currency_id" invisible="1"/>
+              <field name="list_price" string="List&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+              <field name="margin_classification_id"/>
+              <field name="standard_margin_rate" string="Theorical Margin (%)"/>
+              <field name="theoretical_price" string="Theorical&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" attrs="{'invisible': [('theoretical_difference', '=', 0)]}"/>
+              <field name="margin_state"/>
+              <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-up" attrs="{'invisible': [('margin_state', '!=', 'too_cheap')]}" help="Increase the Sale Price up to Theoretical Price"/>
+              <button name="use_theoretical_price" type="object" string="Apply Margin" icon="fa-arrow-down" attrs="{'invisible': [('margin_state', '!=', 'too_expensive')]}" help="Decrease the Sale Price down to Theoretical Price"/>
+              <field name="theoretical_difference" string="Theorical&#160;difference" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+              <field name="company_id" groups="base.group_multi_company" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_product_product_tree_finished_products" model="ir.actions.act_window">
+        <field name="name">Products - Update Margin and Sale Price</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_product_tree_mrp"/>
+        <field name="context">{"search_default_finished_products":1}</field>
+    </record>
+
+    <menuitem id="menu_product_product_mrp_handle_prices"
+      name="3. Update Margin and Sale Price 💶"
+      parent="grap_change_views_mrp.menu_grap_mrp_handle_prices" sequence="30"/>
+
+    <menuitem id="menu_product_product_mrp_handle_prices_standard_prices_3a_finished"
+        name="Finished Products"
+        parent="menu_product_product_mrp_handle_prices" sequence="1"
+        action="action_product_product_tree_finished_products"/>
 
 </odoo>

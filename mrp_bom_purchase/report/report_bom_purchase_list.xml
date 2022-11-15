@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="report_bom_purchase_list">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2 class="text-center">Purchase list 🛒</h2>
+                <br/>
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr class="bom_purchase_thead">
+                            <th name="th_product" class="text-left">Product</th>
+                            <th name="th_qty" class="text-right">Quantity</th>
+                            <th name="th_uom">UoM</th>
+                            <t t-if="option_display_cost">
+                              <th name="th_standard_price_unit" class="text-right">Standard Price Unit</th>
+                              <th name="th_subtotal" class="text-right">Subtotal</th>
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody class="purchase_list_tbody">
+                        <!-- Initialize category -->
+                        <t t-set="categ_tmp" t-value="" />
+                        <t t-foreach="purchase_list" t-as="purchase_list_line">
+                            <t t-if="option_group_by_product_category">
+                                <!-- PRINT A NEW CATEGORY -->
+                                <!-- New category: print this category -->
+                                <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
+                                <t t-if="purchase_list_line[0] != categ_tmp">
+                                  <tr>
+                                    <td name="new_category" class="text-left" colspan="5">
+                                      <b><span t-esc="purchase_list_line[0]"/></b>
+                                    </td>
+                                  </tr>
+                                </t>
+                            </t>
+                            <!-- PRINT A NEW PRODUCT LINE WITH QUANTITY -->
+                            <tr>
+                              <!-- purchase_list_line[0] is the product category -->
+                              <td name="td_product" class="text-left">
+                                <span t-esc="purchase_list_line[1]"/>
+                              </td>
+                              <td name="td_qty" class="text-right">
+                                <span t-esc="purchase_list_line[2]"/>
+                              </td>
+                              <td name="td_uom" class="text-left">
+                                <span t-esc="purchase_list_line[3]"/>
+                              </td>
+                              <t t-if="option_display_cost">
+                                <td name="td_standard_price_unit" class="text-right">
+                                  <span t-esc="purchase_list_line[4]"/> <span t-esc="currency_symbol"/>
+                                </td>
+                                <td name="td_subtotal" class="text-right">
+                                  <span t-esc="purchase_list_line[5]"/> <span t-esc="currency_symbol"/>
+                                </td>
+                              </t>
+                            </tr>
+                            <!-- We define the new category -->
+                            <t t-set="categ_tmp" t-value="purchase_list_line[0]"/>
+                        </t>
+                        <t t-if="option_display_cost">
+                          <tr class="bom_purchase_total_cost_tr">
+                            <td name="purchase_total_cost_name" class="text-right" colspan="4">
+                              <b>Total:</b>
+                            </td>
+                            <td name="purchase_total_cost" class="text-right" colspan="1">
+                              <b><span t-esc="purchase_total_cost"/> <span t-esc="currency_symbol"/></b>
+                            </td>
+                          </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
