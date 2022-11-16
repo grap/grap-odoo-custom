@@ -34,6 +34,7 @@ class ProductProduct(models.Model):
 
     is_component = fields.Boolean(
         compute="_compute_is_component",
+        compute_sudo=True,
         store=True,
         default=False,
     )
