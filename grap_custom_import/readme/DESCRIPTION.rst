@@ -21,4 +21,12 @@ Partners
 **Question:**
 
 * Est-ce qu'on rajoute le nom de l'interlocteur / téléphone de l'interlocuteur ?
-ex : Christine, 06.11.11.11.11
+  ex : Christine, 06.11.11.11.11
+
+
+Products
+~~~~~~~~
+
+**Question:**
+
+* Peut-être vendu : non repris. Usage ?

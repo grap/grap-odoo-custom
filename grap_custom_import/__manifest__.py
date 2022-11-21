@@ -15,7 +15,10 @@
         "point_of_sale",
         # OCA
         "purchase_triple_discount",
+        "product_net_weight",
+        "account_product_fiscal_classification",
         # grap
+        "purchase_package_qty",
         "recurring_consignment",
         "product_label",
         "product_print_category",

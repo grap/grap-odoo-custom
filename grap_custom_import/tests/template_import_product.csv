@@ -1,4 +1,4 @@
-name,uom_id,categ_id,pos_categ_id,barcode,grap_import_supplier_name,grap_import_supplier_product_code,grap_import_supplier_product_name,grap_import_supplier_gross_price,grap_import_supplier_discount_1,grap_import_supplier_discount_2,grap_import_supplier_uom_purchase_qty,grap_import_supplier_uom_packaging_qty,print_category_id,country_id,state_id,department_id,grap_import_label_1,grap_import_label_2,grap_import_label_3
-Coincoin A,Unit(s),All / Saleable / Office Furniture,Miscellaneous,,,,,,,,,,,France,,Var,AB,MH,
-Produit B,Unit(s),All / Saleable / Office Furniture,Chairs,,,,,,,,,,,,,,Organic Food,,
-Produit C,Unit(s),All / Saleable,,,,,,,,,,,,,,,Organic Food,,
+name,uom_id,categ_id,pos_categ_id,barcode,grap_import_supplier_name,grap_import_supplier_product_code,grap_import_supplier_product_name,grap_import_supplier_gross_price,grap_import_supplier_discount_1,grap_import_supplier_discount_2,grap_import_supplier_uom_purchase_qty,grap_import_supplier_uom_packaging_qty,print_category_id,country_id,state_id,department_id,origin_description,maker_description,grap_import_label_1,grap_import_label_2,grap_import_label_3,volume,net_weight,grap_import_fiscal_classification,grap_import_margin_classification,XX,XX,standard_price_NOT,list_price_NOT,grap_import_qty_on_hand,grap_import_qty_to_purchase
+Coca Cola (Import),Unit(s),All / Saleable / Office Furniture,Miscellaneous,5000112602791,Ready Mat,CC,BOTTLE 33CL,"21,35",10%,5%,6,1,,France,,Var,,,AB,MH,Organic Food,"0,33",,"5,5%",20%,,,,,50,
+Produit B,Unit(s),All / Saleable / Office Furniture,Chairs,,,,,,,,,,,,,,,,Organic Food,,,,2,,,,,,,,
+Produit C,Unit(s),All / Saleable,,,,,,,,,,,,,,,,,Organic Food,,,,,,,,,,,,
