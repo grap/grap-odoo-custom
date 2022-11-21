@@ -4,7 +4,7 @@
 
 {
     "name": "MRP for Food",
-    "summary": "MRP modules adapted for food-related professions",
+    "summary": "MRP modules adapted for food-related professions. super description",
     "version": "12.0.1.1.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
