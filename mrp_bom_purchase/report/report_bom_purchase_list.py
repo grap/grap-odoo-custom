@@ -39,7 +39,13 @@ class ReportBomPurchaseList(models.AbstractModel):
             # Get bom_lines of selected BoM
             bom = wiz_bom_line.bom_id
             bom_id = bom.id
-            bomlines = bom_line_obj.search([("bom_id.id", "=", bom_id)])
+            # Get bomlines which are not notes or sections
+            bomlines = bom_line_obj.search(
+                [
+                    ("bom_id.id", "=", bom_id),
+                    ("display_type", "=", False),
+                ]
+            )
 
             # Add entry in dictionnary for each new product or add quantity
             for bomline in bomlines:
