@@ -68,9 +68,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
                 <attribute name="string">Disc. 1 (%)</attribute>
             </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
-                <attribute name="string">S.T.</attribute>
-            </xpath>
+            <field name="fiscal_position_id" position="after">
+                <field name="price_unit_include_taxes" invisible="1"/>
+            </field>
+            <!-- Reset annoying groups -->
+            <field name="price_total" position="attributes">
+                <attribute name="groups">account.group_show_line_subtotals_tax_excluded</attribute>
+            </field>
+            <!--  Display the right column -->
+            <field name="price_subtotal" position="replace">
+                <field name="price_subtotal" string="Sous-Total (HT)" attrs="{'column_invisible': [('parent.price_unit_include_taxes', '=', True)]}"/>
+            </field>
+            <field name="price_total" position="replace">
+                <field name="price_total" string="Sous-Total (TTC)" attrs="{'column_invisible': [('parent.price_unit_include_taxes', '=', False)]}"/>
+            </field>
+
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
                 <attribute name="attrs">{'readonly': 1}</attribute>
                 <attribute name="force_save">1</attribute>

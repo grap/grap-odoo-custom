@@ -2,6 +2,7 @@
 <!--
 Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
@@ -11,6 +12,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <!-- Add Custom Message -->
         <xpath expr="//div[hasclass('page')]/h2/.." position="before">
             <t t-raw="doc.report_custom_message"/>
+        <!-- Colonne Prix Unitaire : Pas de HT ou TTC dans le nom car ça depend des lignes -->
+        <xpath expr="//th[@name='th_priceunit']" position="replace">
+            <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>Prix&#160;unitaire</span></th>
+        </xpath>
+
+        <!-- Colonne Sous-Total : Choix HT ou TTC selon facture sur Odoo -->
+         <xpath expr="//th[@name='th_subtotal']" position="replace">
+            <th t-if="doc.price_unit_include_taxes" name="th_subtotal" class="text-right">
+                <span>S.T&#160;(TTC)</span>
+            </th>
+            <th t-else="" name="th_subtotal" class="text-right">
+                <span>S.T&#160;(HT)</span>
+            </th>
+        </xpath>
+        <xpath expr="//td[@name='td_subtotal']" position="replace">
+            <td t-if="doc.price_unit_include_taxes" class="text-right">
+                <span t-field="line.price_total"/>
+            </td>
+            <td t-else="" class="text-right">
+                <span t-field="line.price_subtotal"/>
+            </td>
         </xpath>
 
     </template>

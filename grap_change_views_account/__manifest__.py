@@ -22,6 +22,7 @@
         "web_tree_dynamic_colored_field",
         # GRAP
         "account_invoice_supplierinfo_update_standard_price",
+        "grap_qweb_report",
     ],
     "data": [
         "views/menu.xml",

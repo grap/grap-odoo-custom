@@ -38,6 +38,8 @@
         "report/qweb_template_purchase_order.xml",
         "report/qweb_template_sale_order.xml",
         "report/qweb_template_stock_picking.xml",
+        "report/qweb_template_sale_order.xml",
+        "report/qweb_template_stock_deliveryslip.xml",
         "report/qweb_template_stock_inventory.xml",
         "report/qweb_pricetag_square_small.xml",
         "report/qweb_pricetag_square_large.xml",

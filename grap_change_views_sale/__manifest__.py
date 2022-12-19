@@ -16,6 +16,7 @@
         # OCA
         "sale_margin",
         "product_margin_classification",
+        "grap_qweb_report",
     ],
     "data": [
         "views/menu.xml",
