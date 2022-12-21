@@ -106,7 +106,3 @@ class SupplierInfo(models.Model):
                     _("New standard price for %s") % supplierinfo.product_tmpl_id.name
                 ),
             )
-            # Set supplierinfo first seller for this product
-            for _suppinfo in supplierinfo.product_tmpl_id.variant_seller_ids:
-                _suppinfo.sequence = _suppinfo.sequence + 1
-            supplierinfo.sequence = 1
