@@ -43,6 +43,9 @@ class ReportBomPurchaseList(models.AbstractModel):
 
             # Add entry in dictionnary for each new product or add quantity
             for bomline in bomlines:
+                # Skip bomlines without products (ex: with notes or sections)
+                if not bomline.product_id:
+                    continue
                 if bomline.product_id.id in purchase_list.keys():
                     qty = purchase_list[bomline.product_id.id][
                         2
