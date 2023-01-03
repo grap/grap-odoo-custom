@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "GRAP - Change Accesses",
-    "version": "12.0.1.0.15",
+    "version": "12.0.1.0.16",
     "summary": "Add new groups for specific models"
     " and change accesses for a number of models.",
     "category": "GRAP - Custom",
