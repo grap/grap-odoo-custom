@@ -20,7 +20,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[grap_change_access](grap_change_access/) | 12.0.1.0.15 |  | Add new groups for specific models and change accesses for a number of models.
+[grap_change_access](grap_change_access/) | 12.0.1.0.16 |  | Add new groups for specific models and change accesses for a number of models.
 [grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.1.1 |  | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
 [grap_change_data](grap_change_data/) | 12.0.1.0.9 |  | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.1.4 |  | GRAP - Change Default
@@ -51,7 +51,7 @@ addon | version | maintainers | summary
 [mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.1.3 |  | Handle Sale price for product's bom with margin
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.2 |  | Add tags on your BoM to find it easily
 [mrp_business](mrp_business/) | 12.0.1.1.2 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
-[mrp_food](mrp_food/) | 12.0.1.1.3 |  | MRP modules adapted for food-related professions
+[mrp_food](mrp_food/) | 12.0.1.1.4 |  | MRP modules adapted for food-related professions
 [product_main_seller](product_main_seller/) | 12.0.1.1.3 |  | Product Attribute - Main seller for a product
 [product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.2 |  | Product supplier easily connected to product's standard price
 [server_environment_files](server_environment_files/) | 12.0.1.0.3 |  | Add custom CSS and extra text on PoS ticket depending on the environment
