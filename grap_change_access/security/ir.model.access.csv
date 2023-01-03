@@ -18,3 +18,5 @@ sale_order_template manager,sale_order_template manager,sale_management.model_sa
 sale_order_template_line manager,sale_order_template_line manager,sale_management.model_sale_order_template_line,sales_team.group_sale_salesman_all_leads,1,1,1,1
 sale_order_template_option manager,sale_order_template_option manager,sale_management.model_sale_order_template_option,sales_team.group_sale_salesman_all_leads,1,1,1,1
 sale_order user,sale_order user,sale.model_sale_order,sales_team.group_sale_salesman,1,1,1,1
+access_mrp_bom_user,Grap MRP User,mrp.model_mrp_bom,mrp.group_mrp_user,1,1,1,1
+access_mrp_bom_line_user,Grap MRP User,mrp.model_mrp_bom_line,mrp.group_mrp_user,1,1,1,1
