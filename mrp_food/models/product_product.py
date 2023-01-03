@@ -31,9 +31,11 @@ class ProductProduct(models.Model):
         compute="_compute_is_seasonal",
         default=False,
     )
-
+    # because the computation is based on mrp.bom.line,
+    # that is not available for user that doesn't belong to mrp user group
     is_component = fields.Boolean(
         compute="_compute_is_component",
+        compute_sudo=True,
         store=True,
         default=False,
     )
