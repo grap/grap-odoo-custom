@@ -7,6 +7,6 @@ It adds two settings, depending on the environment :
 
 .. figure:: ../static/description/login_page.png
 
-* messages on the PoS Bill if the server is a non production server
+* messages on the Point of Sale Bill if the server is a non production server
 
 .. figure:: ../static/description/point_of_sale_ticket.png
