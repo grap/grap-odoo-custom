@@ -28,7 +28,7 @@ It adds two settings, depending on the environment :
 
 .. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/server_environment_files/static/description/login_page.png
 
-* messages on the PoS Bill if the server is a non production server
+* messages on the Point of Sale Bill if the server is a non production server
 
 .. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/server_environment_files/static/description/point_of_sale_ticket.png
 
