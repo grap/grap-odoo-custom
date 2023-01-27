@@ -4,8 +4,6 @@
 
 from odoo import api, fields, models
 
-# TODO : le mettre sur le product et related sur le bom
-
 
 class MrpMealCategory(models.Model):
     _name = "mrp.meal.category"
