@@ -14,4 +14,4 @@ class SupplierInfo(models.Model):
     @api.depends("sequence")
     def _compute_is_main_seller(self):
         for supplierinfo in self:
-            supplierinfo.is_main_seller = True if supplierinfo.sequence == 1 else False
+            supplierinfo.is_main_seller = supplierinfo.sequence == 1
