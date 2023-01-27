@@ -115,8 +115,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="uom_id"/>
                                     <field name="default_code" attrs="{'readonly': [('company_id', '!=', False)]}"/>
                                     <field name="tla_to_change" invisible="1"/>
-                                    <label for="tla" groups="mrp.group_mrp_manager"/>
-                                    <div groups="mrp.group_mrp_manager">
+                                    <label for="tla" groups="mrp.group_mrp_user"/>
+                                    <div groups="mrp.group_mrp_user">
                                       <field name="tla" class="oe_inline"/>
                                       <button name="generate_tla" string="⇒ Generate new trigram"
                                               type="object" class="oe_link" attrs="{'invisible': [('tla_to_change', '!=', True)]}"
@@ -152,9 +152,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             attrs="{'readonly':[('is_consignment', '=', True)]}"
                                             groups="recurring_consignment.group_consignment_user"/>
                                     <field name="is_consignment" groups="recurring_consignment.group_consignment_manager"/>
-                                    <field name="standard_price" string="Cost Price (VAT Excl.)" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+                                    <field name="standard_price" string="Cost Price (VAT Excl.)" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                                     <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
-                                        groups="base.group_erp_manager" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+                                        groups="base.group_erp_manager" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                                     <field name="fiscal_classification_id" quick_create="false" required="1"/>
                                 </group>
                                 <group string="Sale">
@@ -216,7 +216,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="seller_ids" nolabel="1">
                                         <tree editable="bottom" decoration-info="diff_supplierinfo_product_standard_price != 0">
                                             <field name="sequence" widget="handle"/>
-                                            <field name="currency_id" invisible="1"/>
                                             <field name="is_main_seller" invisible="1"/>
                                             <field class="is_main_seller_icon" name="is_main_seller_icon" string=" " readonly="1" attrs="{'invisible': [('is_main_seller', '=', False)]}"/>
                                             <field name="name"/>
@@ -226,11 +225,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                 attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
                                             <field name="package_qty" string="Package Qty"/>
                                             <field name="min_qty" string="Min Qty"/>
-                                            <field name="price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+                                            <field name="price" widget="monetary" options="{'field_digits': True}"/>
                                             <field name="discount" string="Disc. 1 %"/>
                                             <field name="discount2"  string="Disc. 2 %"/>
                                             <field name="discount3" invisible="1"/>
-                                            <field name="theoritical_standard_price" string="Standard Price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
+                                            <field name="theoritical_standard_price" string="Standard Price" widget="monetary" options="{'field_digits': True}"/>
                                             <field name="diff_supplierinfo_product_standard_price" string="Diff" invisible="1"/>
                                             <button name="set_product_standard_price_from_supplierinfo" help="Use this price for product standard price" string="Use this price 🎯" class="btn_price_from_supplierinfo" type="object" attrs="{'invisible': [('diff_supplierinfo_product_standard_price', '=', 0)]}"/>
                                             <field name="is_intercompany_trade" invisible="1"/>
