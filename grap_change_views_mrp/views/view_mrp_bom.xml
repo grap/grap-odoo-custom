@@ -141,15 +141,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </div>
                       <!-- / mrp_bom_sale_product_margin -->
                       <!-- mrp_business -->
-                      <field name="diff_time_to_produce_bom_and_lines" invisible="1"/>
-                      <label for="time_to_produce"/>
-                      <div>
-                        <field name="time_to_produce" class="oe_inline" widget="numeric_step"/>
-                        <span class="unity_for_time_to_produce"> minutes</span>
-                        <button name="generate_proposal_bom_time" string="⇒ Set Time with BoM lines"
-                                type="object" class="oe_link"
-                                attrs="{'invisible': [('diff_time_to_produce_bom_and_lines', '=', False)]}"/>
-                      </div>
+                      <field name="time_to_produce"/>
                       <!-- / mrp_business -->
                       <field name="routing_id" groups="mrp.group_mrp_routings"/>
                   </group>
@@ -174,11 +166,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <button name="action_see_attachments" type="object" icon="fa-file" attrs="{'invisible': [('has_attachments', '=', False)]}" aria-label="Attachments" title="Attachments"/>
                               <field name="product_qty"/>
                               <!-- mrp_business -->
-                              <field name="time_to_produce_per_unit"/>
-                              <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
-                              <field name="diff_time_product_theorical" invisible="1" force_save="1"/>
-                              <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
-                              <field name="time_to_produce_line"/>
+                              <field name="line_qty_percentage" widget="percentage"/>
                               <!-- / mrp_business -->
                               <!-- mrp_food -->
                               <field name="label_ids" widget="many2many_tags"/>
@@ -201,7 +189,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   </page>
                   <page string="Components">
                       <field name="bom_line_with_sectionnote_ids" widget="section_and_note_one2many" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
-                          <tree string="Components" editable="bottom" decoration-info="diff_time_product_theorical != 0">
+                          <tree string="Components" editable="bottom">
                               <control>
                                   <create name="add_product_control" string="Add a product"/>
                                   <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
@@ -211,22 +199,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="display_type" invisible="1"/>
                               <field name="product_id" context="{'default_type': 'product'}" attrs="{'required': [('display_type', '=', False)]}"/>
                               <field name="name" widget="section_and_note_text"/>
-                              <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
-
+                              <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}" sum="Total Qty"/>
                               <field name="product_uom_id" options="{'no_open':True,'no_create':True}" string="UoM" groups="uom.group_uom" readonly="1" force_save="1"/>
+                              <field name="line_qty_percentage" widget="percentage"/>
                               <field name="currency_id" invisible="1"/>
                               <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                              <field name="time_to_produce_per_unit"/>
-                              <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
-                              <field name="diff_time_product_theorical" groups="base.group_no_one" force_save="1"/>
-                              <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
-                              <field name="time_to_produce_line" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
                               <field name="label_ids" widget="many2many_tags" string="Labels"/>
                               <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>
                               <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal" groups="base.group_no_one"/>
                               <field name="standard_price_subtotal" string="ST" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
-
                           </tree>
                       </field>
                   </page>
