@@ -9,7 +9,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <template id="report_bom_purchase_list">
         <t t-call="web.basic_layout">
             <div class="page">
-                <h2 class="text-center">Purchase list 🛒</h2>
+                <h2 class="text-center">Purchase list</h2>
                 <br/>
                 <table class="table table-sm table-bordered">
                     <thead>

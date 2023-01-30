@@ -47,7 +47,7 @@ class ReportBomAllergens(models.AbstractModel):
             # Allergens
             for allergen in allergens_all:
                 if allergen.id in bom.bom_id.bom_allergen_ids.ids:
-                    tmpList_allergens.append("✔️")
+                    tmpList_allergens.append("X")
                 else:
                     tmpList_allergens.append(" ")
             boms_and_allergens.append(tmpList_allergens)
