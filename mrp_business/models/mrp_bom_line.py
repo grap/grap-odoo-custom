@@ -13,7 +13,6 @@ class MrpBomLine(models.Model):
     line_qty_percentage = fields.Float(
         string="Qty %",
         compute="_compute_line_qty_percentage",
-        store=True,
         digits=(16, 3),
     )
 
