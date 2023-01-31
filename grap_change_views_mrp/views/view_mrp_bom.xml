@@ -177,6 +177,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <!-- mrp_bom_sale_product_margin -->
                               <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                               <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                              <field name="standard_price_subtotal_percentage" string="ST %" widget="percentage" options="{'field_digits': True}"/>
                               <!-- / mrp_bom_sale_product_margin -->
                               <field name="parent_product_tmpl_id" invisible="1"/>
                               <field name="valid_product_attribute_value_ids" invisible="1"/>
@@ -209,6 +210,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal" groups="base.group_no_one"/>
                               <field name="standard_price_subtotal" string="ST" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                              <field name="standard_price_subtotal_percentage" string="ST %" widget="percentage" options="{'field_digits': True}"/>
                           </tree>
                       </field>
                   </page>
