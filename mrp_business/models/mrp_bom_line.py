@@ -9,8 +9,12 @@ class MrpBomLine(models.Model):
     _inherit = "mrp.bom.line"
 
     # Column Section
+    # Percentage float, so 25% is 0,25. For one number behind decimal, needs 3 digits
     line_qty_percentage = fields.Float(
-        string="Qty %", compute="_compute_line_qty_percentage", store=True
+        string="Qty %",
+        compute="_compute_line_qty_percentage",
+        store=True,
+        digits=(16, 3),
     )
 
     @api.depends("product_qty", "bom_id.bom_line_ids.product_qty")
