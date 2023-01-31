@@ -62,10 +62,11 @@ class ProductProduct(models.Model):
     def _compute_is_component(self):
         for product in self:
             super()._compute_is_component()
-            # Products in 601 Account Expense are components products
-            product.is_component = (
-                product.categ_id.global_property_account_expense_categ
-                == self._COMPONENT_PRODUCT_EXPENSE_ACCOUNT
-                and product.categ_id.global_property_account_income_categ
-                == self._COMPONENT_PRODUCT_INCOME_ACCOUNT
-            )
+            if not product.is_component:
+                # Products in 601 Account Expense are also components products
+                product.is_component = (
+                    product.categ_id.global_property_account_expense_categ
+                    == self._COMPONENT_PRODUCT_EXPENSE_ACCOUNT
+                    and product.categ_id.global_property_account_income_categ
+                    == self._COMPONENT_PRODUCT_INCOME_ACCOUNT
+                )
