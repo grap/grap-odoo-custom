@@ -16,7 +16,9 @@ class WizardUpdateInvoiceSupplierinfoLine(models.TransientModel):
 
     def _prepare_supplierinfo_update(self):
         res = super()._prepare_supplierinfo_update()
-        # Arbitrarily we set a big sequence for this supplier info
-        # not to be in sequence=1 and be falsely main seller
-        res["sequence"] = 100
+        if not self.is_line_main_seller_price:
+            # By default, when we add a supplierinfo, it sets sequence=1
+            # Arbitrarily we set a big sequence for supplier info that are not
+            # main seller
+            res["sequence"] = 100
         return res
