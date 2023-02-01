@@ -25,5 +25,5 @@ class ProductProduct(models.Model):
     @api.depends("variant_seller_ids.sequence")
     def _compute_main_seller_partner_id(self):
         for prod in self:
-            if len(prod.variant_seller_ids) > 0:
+            if len(prod.variant_seller_ids):
                 prod.product_main_seller_partner_id = prod.variant_seller_ids[0].name

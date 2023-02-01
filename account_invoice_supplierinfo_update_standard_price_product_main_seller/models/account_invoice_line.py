@@ -15,4 +15,8 @@ class AccountInvoiceLine(models.Model):
         res["is_line_main_seller_price"] = (
             supplierinfo and supplierinfo.is_main_seller or False
         )
+        if supplierinfo and supplierinfo.is_main_seller:
+            res["is_line_main_seller_price_icon"] = "🥇"
+        else:
+            res["is_line_main_seller_price_icon"] = "✖️"
         return res

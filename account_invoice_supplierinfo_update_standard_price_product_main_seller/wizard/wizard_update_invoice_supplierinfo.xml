@@ -11,7 +11,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="account_invoice_supplierinfo_update_standard_price.view_wizard_update_invoice_supplierinfo_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='line_ids']/tree/field[@name='new_standard_price']" position="after">
-                <field name="is_line_main_seller_price"/>
+                <field name="is_line_main_seller_price" invisible="1"/>
+                <field name="is_line_main_seller_price_icon" readonly="1"/>
             </xpath>
         </field>
     </record>

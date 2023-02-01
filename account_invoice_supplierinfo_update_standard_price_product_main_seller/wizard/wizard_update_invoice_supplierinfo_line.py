@@ -12,6 +12,7 @@ class WizardUpdateInvoiceSupplierinfoLine(models.TransientModel):
         string="Main seller",
         readonly=True,
     )
+    is_line_main_seller_price_icon = fields.Char(string="Main seller", default="🥇")
 
     def _prepare_supplierinfo_update(self):
         res = super()._prepare_supplierinfo_update()
