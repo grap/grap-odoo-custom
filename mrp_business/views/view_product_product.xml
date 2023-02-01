@@ -27,8 +27,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </div>
           </xpath>
 
-          <!-- TODO : ajouter time_to_produce_product -->
-
         </field>
     </record>
 

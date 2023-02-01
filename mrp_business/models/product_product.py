@@ -44,9 +44,6 @@ class ProductProduct(models.Model):
     #     ("unique_tla", "unique(tla)", "Trigram should be unique"),
     # ]
 
-    # ========== Time
-    time_to_produce_product = fields.Float(store=True)
-
     # ========== Others
     meal_category_id = fields.Many2one(
         comodel_name="mrp.meal.category",
