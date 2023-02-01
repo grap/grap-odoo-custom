@@ -12,3 +12,10 @@ class WizardUpdateInvoiceSupplierinfoLine(models.TransientModel):
         string="Main seller",
         readonly=True,
     )
+
+    def _prepare_supplierinfo_update(self):
+        res = super()._prepare_supplierinfo_update()
+        # Arbitrarily we set a big sequence for this supplier info
+        # not to be in sequence=1 and be falsely main seller
+        res["sequence"] = 100
+        return res
