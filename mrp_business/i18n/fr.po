@@ -241,11 +241,6 @@ msgid "Time To Produce"
 msgstr "Temps"
 
 #. module: mrp_business
-#: model:ir.model.fields,field_description:mrp_business.field_product_product__time_to_produce_product
-msgid "Time To Produce Product"
-msgstr "Temps de production"
-
-#. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__tla_to_change
 #: model:ir.model.fields,field_description:mrp_business.field_product_product__tla_to_change
 msgid "Tla To Change"
