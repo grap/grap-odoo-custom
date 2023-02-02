@@ -667,6 +667,7 @@ msgid "Unit of measure"
 msgstr "Unité de mesure"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "UoM"

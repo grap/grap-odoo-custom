@@ -226,6 +226,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                             <field name="package_qty" string="Package Qty"/>
                                             <field name="min_qty" string="Min Qty"/>
                                             <field name="price" widget="monetary" options="{'field_digits': True}"/>
+                                            <field name="product_uom" string="UoM"/>
                                             <field name="discount" string="Disc. 1 %"/>
                                             <field name="discount2"  string="Disc. 2 %"/>
                                             <field name="discount3" invisible="1"/>
