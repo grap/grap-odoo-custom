@@ -589,7 +589,7 @@ msgstr "Liste de prix du fournisseur·e"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Supplier product name"
-msgstr "Nom chez le fournisseur·e"
+msgstr "Nom chez fourni."
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_grap_mrp_handle_prices_1b_supplierinfos
