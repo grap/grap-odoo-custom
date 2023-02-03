@@ -54,5 +54,6 @@
     "qweb": [
         "static/src/xml/pos.xml",
     ],
+    "external_dependencies": {"python": ["slugify"]},
     "installable": True,
 }

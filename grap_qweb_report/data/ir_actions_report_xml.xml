@@ -15,12 +15,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <!--
+        - Use the same name for the saved file as for the downloaded file
+        - Do not store files for supplier invoices (and refund)
+    -->
     <record id="account.account_invoices" model="ir.actions.report">
-        <field name="print_report_name">
-            "Facture__%s__%s" % (
-                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
-                object.date_invoice if object.date_invoice else ""
-            )
+        <field name="attachment">(object.state in ('open','in_payment','paid') and object.type in ('out_invoice', 'out_refund')) and (object._get_report_base_filename())
+        </field>
+    </record>
+
+    <record id="account.account_invoices_without_payment" model="ir.actions.report">
+        <field name="attachment">(object.state in ('open','in_payment','paid') and object.type in ('out_invoice', 'out_refund')) and (object._get_report_base_filename())
         </field>
     </record>
 
