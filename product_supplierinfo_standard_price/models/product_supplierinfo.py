@@ -57,7 +57,7 @@ class SupplierInfo(models.Model):
             destination_uom = (
                 supplierinfo.product_tmpl_id.uom_id or supplierinfo.product_id.uom_id
             )
-            if uom and currency and destination_uom:
+            if uom:
                 supplierinfo.theoritical_standard_price = currency.round(
                     uom._compute_price(
                         (
