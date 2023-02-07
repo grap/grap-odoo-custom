@@ -15,11 +15,10 @@ class ProductProduct(models.Model):
 
     tla = fields.Char(
         string="Trigram",
-        # compute="_compute_tla",
-        # inverse="_inverse_tla",
         size=3,
         copy=False,
-        store=True,
+        help="A three-letter acronym (TLA), or three-letter abbreviation,"
+        " is an abbreviation consisting of three letters.",
     )
 
     tla_to_change = fields.Boolean(
