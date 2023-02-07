@@ -7,12 +7,11 @@ import re
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
+_PRODUCT_CODE_GENERIC_TLA = "XXX"
+
 
 class ProductProduct(models.Model):
     _inherit = "product.product"
-
-    # ========== Trigram
-    PRODUCT_CODE_GENERIC_TLA = fields.Char(default="XXX")
 
     tla = fields.Char(
         string="Trigram",
@@ -90,7 +89,7 @@ class ProductProduct(models.Model):
             # Simpligy name : keep only alphanumeric
             simple_name = re.sub(r"[^A-Za-z0-9]+", "", product.name)
             if 1 <= len(simple_name) <= 2:
-                product.tla = self.PRODUCT_CODE_GENERIC_TLA
+                product.tla = _PRODUCT_CODE_GENERIC_TLA
                 product.tla_to_change = True
             else:
                 product.tla_to_change = False
@@ -111,9 +110,7 @@ class ProductProduct(models.Model):
                 ):
                     # End ot the product's name → Add generic letters and break
                     if i + 1 >= len(simple_name):
-                        new_tla = (
-                            new_tla_start[0:1] + self.PRODUCT_CODE_GENERIC_TLA[0:2]
-                        )
+                        new_tla = new_tla_start[0:1] + _PRODUCT_CODE_GENERIC_TLA[0:2]
                         product.tla_to_change = True
                         break
                     # Next letter is space, but it's not the end of the name
