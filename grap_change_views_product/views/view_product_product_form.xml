@@ -91,10 +91,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <label for="sale_ok"/>
                             </div>
                             <div>
-                                <field name="is_consignment_commission" groups="recurring_consignment.group_consignment_manager"/>
-                                <label for="is_consignment_commission" groups="recurring_consignment.group_consignment_manager"/>
-                            </div>
-                            <div>
                                 <field name="cae_administrative_ok" groups="fiscal_company_base.fiscal_company_manager"/>
                                 <label for="cae_administrative_ok" groups="fiscal_company_base.fiscal_company_manager"/>
                             </div>
