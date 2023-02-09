@@ -14,10 +14,15 @@
     "depends": [
         "mrp",
         # OCA modules
+        "product_net_weight",
         "res_company_code",
         "web_notify",
         # GRAP Modules
         "mrp_bom_product_variant",
+    ],
+    "demo": [
+        "demo/product.xml",
+        "demo/bom.xml",
     ],
     "data": [
         "security/ir_rule.xml",

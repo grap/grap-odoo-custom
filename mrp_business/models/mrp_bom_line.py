@@ -21,7 +21,7 @@ class MrpBomLine(models.Model):
         digits=(16, 3),
     )
 
-    @api.depends("product_qty", "product_uom_id", "product_id")
+    @api.depends("product_qty", "product_uom_id", "product_id", "product_id.net_weight")
     def _compute_line_weight(self):
         for line in self:
             if line.product_uom_id.category_id.measure_type == "weight":
