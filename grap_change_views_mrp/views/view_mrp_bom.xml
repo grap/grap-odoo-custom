@@ -63,7 +63,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </div>
 
                       <!-- mrp_business -->
-                      <field name="bom_components_total_weight"/>
+                      <label for="bom_components_total_weight"/>
+                      <div class="o_row" name="bom_components_total_weight">
+                          <field name="bom_components_total_weight"/>
+                          <span>kg</span>
+                      </div>
+                      <!-- <field name="bom_components_total_weight"/> -->
                       <field name="description_packaging"/>
                       <field name="priority" widget="priority" string="Grade"/>
                       <!-- / mrp_business -->
