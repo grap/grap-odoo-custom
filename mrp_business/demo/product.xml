@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record model="product.product" id="demo_product_spinach">
+        <field name="name">Spinach</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">4</field>
+    </record>
+
+    <record model="product.product" id="demo_product_tomato">
+        <field name="name">Tomatoes</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">3</field>
+    </record>
+
+    <record model="product.product" id="demo_product_mustard">
+        <field name="name">Mustard</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">10</field>
+    </record>
+
+    <record model="product.product" id="demo_product_pie">
+        <field name="name">Pie</field>
+        <field name="standard_price">3</field>
+        <field name="net_weight">0.2</field>
+    </record>
+
+    <record model="product.template" id="demo_product_template_tomato_pie">
+        <field name="name">Tomato pie</field>
+    </record>
+
+
+</odoo>
