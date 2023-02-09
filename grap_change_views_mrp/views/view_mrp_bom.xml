@@ -63,7 +63,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </div>
 
                       <!-- mrp_business -->
-                      <field name="bom_components_total_weight" groups="base.group_no_one"/>
+                      <field name="bom_components_total_weight"/>
                       <field name="description_packaging"/>
                       <field name="priority" widget="priority" string="Grade"/>
                       <!-- / mrp_business -->
