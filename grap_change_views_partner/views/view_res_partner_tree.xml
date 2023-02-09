@@ -6,48 +6,129 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
 <odoo>
-
-
 <!-- ************************************************************ -->
-<!-- 1 - Partner (Editable View) -->
+<!-- 1 - Customers (Editable View) -->
 <!-- ************************************************************ -->
 
-    <record id="view_res_partner_tree" model="ir.ui.view">
+    <record id="view_res_partner_tree_customers" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
             <tree editable="bottom" create="false">
-                <field name="name" readonly="1"/>
+                <field name="name"/>
                 <button name="see_current_partner" type="object" string="↗️"/>
-                <field name="customer" widget="boolean_toggle" string="Customer"/>
-                <field name="supplier" widget="boolean_toggle" string="Supplier"/>
                 <field name="street"/>
+                <field name="zip"/>
                 <field name="city"/>
-                <field name="zip" string="Zip&#160;code"/>
-                <field name="country_id"/>
-                <field name="phone"/>
                 <field name="mobile"/>
+                <field name="phone"/>
                 <field name="email"/>
+                <field name="property_payment_term_id"/>
                 <field name="property_product_pricelist"/>
-                <field name="property_account_position_id"/>
-                <field name="property_payment_term_id" string="Customer&#160;Payment&#160;Terms"/>
-                <field name="distribution_channel_criterion" string="Distrib&#160;channel&#160;criterion"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>
 
-    <record id="action_res_partner_editable_view" model="ir.actions.act_window">
-        <field name="name">Partner</field>
+    <record id="action_res_partner_tree_customers" model="ir.actions.act_window">
+        <field name="name">Customers</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.partner</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_res_partner_tree"/>
+        <field name="view_id" ref="view_res_partner_tree_customers"/>
+        <field name="context">
+            {
+                "search_default_customer": 1,
+            }
+        </field>
     </record>
 
-    <menuitem id="menu_res_partner_editable_view"
-        name="Inline editable"
-        parent="contacts.menu_contacts" sequence="3"
-        action="action_res_partner_editable_view"/>
+    <menuitem id="menu_res_partner_tree_customers"
+        name="Customers"
+        parent="menu_res_partner_editable_view" sequence="1"
+        action="action_res_partner_tree_customers"/>
+
+<!-- ************************************************************ -->
+<!-- 2 - Suppliers (Editable View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_res_partner_tree_suppliers" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="false">
+                <field name="name"/>
+                <button name="see_current_partner" type="object" string="↗️"/>
+                <field name="street"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="country_id"/>
+                <field name="mobile"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="website"/>
+                <field name="property_account_position_id"/>
+                <field name="distribution_channel_criterion"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_res_partner_tree_suppliers" model="ir.actions.act_window">
+        <field name="name">Suppliers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_res_partner_tree_suppliers"/>
+        <field name="context">
+            {
+                "search_default_supplier": 1,
+            }
+        </field>
+    </record>
+
+    <menuitem id="menu_res_partner_tree_suppliers"
+        name="Suppliers"
+        parent="menu_res_partner_editable_view" sequence="2"
+        action="action_res_partner_tree_suppliers"/>
+
+
+<!-- ************************************************************ -->
+<!-- 3 - Partners (Editable View) -->
+<!-- ************************************************************ -->
+
+    <record id="view_res_partner_tree_all_partners" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="false">
+                <field name="name"/>
+                <button name="see_current_partner" type="object" string="↗️"/>
+                <field name="customer" widget="boolean_toggle"/>
+                <field name="supplier" widget="boolean_toggle"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="zip"/>
+                <field name="country_id"/>
+                <field name="phone"/>
+                <field name="mobile"/>
+                <field name="email"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_res_partner_tree_all_partners" model="ir.actions.act_window">
+        <field name="name">All Contacts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_res_partner_tree_all_partners"/>
+    </record>
+
+    <menuitem id="menu_res_partner_tree_all_partners"
+        name="All Contacts"
+        parent="menu_res_partner_editable_view" sequence="3"
+        action="action_res_partner_tree_all_partners"/>
 
 </odoo>
