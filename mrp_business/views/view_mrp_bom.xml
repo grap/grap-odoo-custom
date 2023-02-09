@@ -45,7 +45,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="line_qty_percentage" widget="percentage"/>
+                <field name="line_weight"/>
+                <field name="line_weight_percentage" widget="percentage"/>
             </xpath>
 
         </field>

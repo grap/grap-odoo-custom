@@ -27,6 +27,11 @@ class MrpBom(models.Model):
         related="product_id.meal_category_id",
         string="Meal category",
     )
+    # ========== Fields related to weight
+    bom_components_total_weight = fields.Float(
+        string="Bom Components Total Weight",
+        compute="_compute_bom_components_total_weight",
+    )
 
     # ========== Code and Trigram (Three Letter Acronym)
     tla_to_change = fields.Boolean(related="product_id.tla_to_change")
@@ -123,3 +128,11 @@ class MrpBom(models.Model):
     def generate_product_tla(self):
         for bom in self.filtered(lambda x: x.product_id):
             bom.product_id.generate_tla()
+
+    # ========== Methods related to Weight
+    @api.depends("bom_line_ids.line_weight")
+    def _compute_bom_components_total_weight(self):
+        for bom in self:
+            bom.bom_components_total_weight = sum(
+                bom.bom_line_ids.mapped("line_weight")
+            )
