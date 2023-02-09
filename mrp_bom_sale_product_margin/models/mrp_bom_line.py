@@ -43,5 +43,5 @@ class MrpBomLine(models.Model):
             bom = line.bom_id
             total_price = sum(line.standard_price_subtotal for line in bom.bom_line_ids)
             line.standard_price_subtotal_percentage = (
-                line.standard_price_subtotal / total_price
+                line.standard_price_subtotal / total_price if total_price != 0 else 0
             )

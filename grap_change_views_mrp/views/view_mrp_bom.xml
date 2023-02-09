@@ -63,6 +63,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </div>
 
                       <!-- mrp_business -->
+                      <field name="bom_components_total_weight" groups="base.group_no_one"/>
                       <field name="description_packaging"/>
                       <field name="priority" widget="priority" string="Grade"/>
                       <!-- / mrp_business -->
@@ -166,7 +167,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <button name="action_see_attachments" type="object" icon="fa-file" attrs="{'invisible': [('has_attachments', '=', False)]}" aria-label="Attachments" title="Attachments"/>
                               <field name="product_qty"/>
                               <!-- mrp_business -->
-                              <field name="line_qty_percentage" widget="percentage"/>
+                              <field name="line_weight"/>
+                              <field name="line_weight_percentage" widget="percentage"/>
                               <!-- / mrp_business -->
                               <!-- mrp_food -->
                               <field name="label_ids" widget="many2many_tags"/>
@@ -200,9 +202,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="display_type" invisible="1"/>
                               <field name="product_id" context="{'default_type': 'product'}" attrs="{'required': [('display_type', '=', False)]}"/>
                               <field name="name" widget="section_and_note_text"/>
-                              <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}" sum="Total Qty"/>
+                              <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
                               <field name="product_uom_id" options="{'no_open':True,'no_create':True}" string="UoM" groups="uom.group_uom" readonly="1" force_save="1"/>
-                              <field name="line_qty_percentage" widget="percentage"/>
+                              <field name="line_weight"/>
+                              <field name="line_weight_percentage" widget="percentage"/>
                               <field name="currency_id" invisible="1"/>
                               <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                               <field name="label_ids" widget="many2many_tags" string="Labels"/>
