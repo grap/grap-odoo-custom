@@ -12,7 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <form string="Create range from BoM with differents packaging">
                 <group colspan="6">
                     <group string="BoM to duplicate">
-                        <label for="bom_id" string="You are going to duplicate:"/>
+                        <label for="bom_id"/>
                         <div class="o_row">
                             <field name="bom_id" readonly="1"/>
                         </div>
@@ -32,8 +32,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </tree>
                         </field>
                     </group>
+                    <p col="4" colspan="2" class="alert alert-info">Only not used Packaging products are displayed by default</p>
                     <footer>
-                        <button name="create_bom_with_packagins" string="Create range of Bills of Materials" type="object" icon="fa-check-circle" class="oe_highlight"/>
+                        <button name="create_bom_with_packagins"
+                          string="Create range of Bills of Materials"
+                          type="object" icon="fa-check-circle" class="oe_highlight"
+                          attrs="{'invisible': [('product_packaging_ids', '&lt;', 1)]}"/>
                         <button icon="fa-ban" special="cancel" string="Cancel"/>
                     </footer>
                 </group>

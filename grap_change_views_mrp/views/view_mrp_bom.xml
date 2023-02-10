@@ -63,9 +63,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </div>
 
                       <!-- mrp_business -->
+                      <label for="bom_components_total_weight" string="Total weight"/>
+                      <div class="o_row" name="bom_components_total_weight">
+                          <field name="bom_components_total_weight"/>
+                          <span>kg</span>
+                      </div>
+                      <!-- <field name="bom_components_total_weight"/> -->
+                      <field name="packaging_on_bom_lines" groups="base.group_no_one"/>
+                      <label for="packaging"/>
+                      <div>
+                        <field name="packaging" class="oe_inline"/>
+                        <button name="add_packaging_to_bom_lines"
+                          type="object" class="oe_link"
+                          string="⇒ Add to BOM"
+                          attrs="{'invisible': ['|', ('packaging_on_bom_lines', '=', True), ('packaging', '=', False)]}"/>
+                      </div>
                       <field name="description_packaging"/>
-                      <field name="packaging"/>
-                      <field name="priority" widget="priority" string="Grade"/>
                       <!-- / mrp_business -->
 
                   </group>
@@ -79,15 +92,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <button name="generate_product_tla" string="⇒ Set Code"
                           type="object" class="oe_link"
                           attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
-                        </div>
-                        <field name="description_short"/>
-                        <field name="description_long"/>
+                      </div>
+                      <field name="description_short"/>
+                      <field name="description_long"/>
                       <!-- / mrp_business -->
                       <!-- mrp_bom_tag -->
                       <field name="bom_tag_ids" widget="many2many_tags" string="Tags 🎨"
                         options="{'color_field': 'color', 'no_quick_create': True}"
                         context="{'display_complete_name': True}"/>
                       <!-- / mrp_bom_tag -->
+                      <!-- mrp_business -->
+                      <field name="priority" widget="priority" string="Grade"/>
+                      <!-- / mrp_business -->
                       <field name="type" widget="radio" groups="base.group_no_one"/>
                       <p colspan="2" class="oe_grey oe_edit_only" attrs="{'invisible': [('type','=','normal')]}">
                       <ul>

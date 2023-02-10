@@ -94,7 +94,17 @@ class BomWizardCreateRange(models.TransientModel):
         for packaging in self.product_packaging_ids:
             new_bom = self.bom_id.copy()
             new_bom.packaging = packaging.product_id
+            # TODO : add on option
+            # Add Packaging product at the end
+            new_bom.bom_line_ids.create(
+                {
+                    "product_id": packaging.product_id.id,
+                    "bom_id": new_bom.id,
+                    "sequence": 1000,
+                }
+            )
             new_boms.append(new_bom.id)
+
         # Return view with this new BoMs
         result = self.env.ref("mrp.mrp_bom_form_action").read()[0]
         result["domain"] = [("id", "in", new_boms)]
