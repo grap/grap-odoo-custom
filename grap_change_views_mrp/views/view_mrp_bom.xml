@@ -64,6 +64,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                       <!-- mrp_business -->
                       <field name="description_packaging"/>
+                      <field name="packaging"/>
                       <field name="priority" widget="priority" string="Grade"/>
                       <!-- / mrp_business -->
 
@@ -280,6 +281,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_id" string="Product"/>
                 <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
                 <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                <!-- mrp_bom_range_with_packaging -->
+                <field name="packaging_name"/>
                 <!-- mrp_business and mrp_bom_tag-->
                 <field name="description_short"/>
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>

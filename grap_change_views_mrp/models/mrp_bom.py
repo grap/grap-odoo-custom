@@ -20,3 +20,7 @@ class MrpBom(models.Model):
         related="product_id.sale_ok",
         string="Saleable product",
     )
+    packaging_name = fields.Char(
+        related="packaging.name",
+        string="Packaging",
+    )
