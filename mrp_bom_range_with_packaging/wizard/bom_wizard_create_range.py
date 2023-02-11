@@ -95,14 +95,24 @@ class BomWizardCreateRange(models.TransientModel):
             new_bom = self.bom_id.copy()
             new_bom.packaging = packaging.product_id
             # TODO : add on option
-            # Add Packaging product at the end
-            new_bom.bom_line_ids.create(
-                {
-                    "product_id": packaging.product_id.id,
-                    "bom_id": new_bom.id,
-                    "sequence": 1000,
-                }
+            old_packaging_bom_line = new_bom.bom_line_ids.filtered(
+                lambda line: line.product_id == self.bom_id.packaging
             )
+            if old_packaging_bom_line:
+                old_packaging_bom_line.write(
+                    {
+                        "product_id": packaging.product_id.id,
+                    }
+                )
+            else:
+                # Add Packaging product at the end
+                new_bom.bom_line_ids.create(
+                    {
+                        "product_id": packaging.product_id.id,
+                        "bom_id": new_bom.id,
+                        "sequence": 1000,
+                    }
+                )
             new_boms.append(new_bom.id)
 
         # Return view with this new BoMs
