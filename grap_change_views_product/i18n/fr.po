@@ -264,12 +264,12 @@ msgstr "PdV"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Main Seller"
-msgstr "Fourni. principal·e"
+msgstr "Frs principal·e"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Main seller"
-msgstr "Fourni. principal·e"
+msgstr "Frs principal·e"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -599,7 +599,7 @@ msgstr "Prix fournisseur·es"
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_supplierinfo_tree
 msgid "Suppliers informations"
-msgstr "Prix fournisseur·e·s"
+msgstr "Prix fournisseur·es"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree

@@ -41,8 +41,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
           <tree editable="bottom" create="false" decoration-info="diff_supplierinfo_product_standard_price != 0">
             <field name="currency_id" invisible="1"/>
-            <field name="is_main_seller" invisible="1"/>
-            <field name="is_main_seller_icon" string=" " attrs="{'invisible': [('is_main_seller', '=', False)]}"/>
             <button name="see_current_product_from_supplierinfo" type="object" string="↗️"/>
             <field name="product_tmpl_code" string="Code"/>
             <field name="product_tmpl_name" string="Product"/>
