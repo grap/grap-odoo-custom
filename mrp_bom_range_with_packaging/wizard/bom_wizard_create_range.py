@@ -14,10 +14,27 @@ class BomWizardCreateRange(models.TransientModel):
         comodel_name="mrp.bom",
         default=lambda s: s._default_bom_id(),
     )
+    bom_product_net_weight = fields.Float(
+        string="BoM Product Net Weight",
+        compute="_compute_bom_product_net_weight",
+        inverse="_inverse_bom_product_net_weight",
+    )
+
+    # TODO : comment gérre faire comprendre les liens déjàfaits entre article et bom
+
+    @api.depends("bom_id.product_tmpl_id.net_weight")
+    def _compute_bom_product_net_weight(self):
+        for record in self:
+            record.bom_product_net_weight = record.bom_id.product_tmpl_id.net_weight
+
+    def _inverse_bom_product_net_weight(self):
+        for record in self:
+            record.bom_id.product_tmpl_id.net_weight = record.bom_product_net_weight
+
     range_bom_ids = fields.One2many(
         comodel_name="bom.wizard.range.bom.line",
         inverse_name="wizard_id",
-        string="Actual range of BoM",
+        string="Actual BoM range",
         default=lambda s: s._default_range_bom_ids(),
     )
     product_packaging_ids = fields.One2many(
@@ -81,6 +98,7 @@ class BomWizardCreateRange(models.TransientModel):
                     0,
                     {
                         "product_id": product.id,
+                        "bom_and_article_to_create": True,
                     },
                 )
             )

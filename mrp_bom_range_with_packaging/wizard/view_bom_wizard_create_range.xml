@@ -16,6 +16,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <div class="o_row">
                             <field name="bom_id" readonly="1"/>
                         </div>
+                        <label for="bom_product_net_weight"/>
+                        <div class="o_row">
+                            <field name="bom_product_net_weight"/>
+                            <span>kg</span>
+                        </div>
                     </group>
                     <group col="4" colspan="2" string="Actual BoM range">
                         <field name="range_bom_ids" nolabel="1">
@@ -25,14 +30,19 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </tree>
                         </field>
                     </group>
+                    <button name="create_finished_products_with_packaging"
+                      string="Create range of finished products"
+                      type="object" icon="fa-check-circle" class="oe_highlight"/>
                     <group col="4" colspan="2" string="Create range with this packagings">
                         <field name="product_packaging_ids" nolabel="1">
                             <tree editable="bottom">
                                 <field name="product_id" string="Product packaging"/>
+                                <field name="packaging_uom" string="Packaging UoM"/>
+                                <field name="bom_and_article_to_create" string="To create"/>
                             </tree>
                         </field>
                     </group>
-                    <p col="4" colspan="2" class="alert alert-info">Only not used Packaging products are displayed by default</p>
+                    <p col="4" colspan="2" class="alert alert-info" role="status">Only not used Packaging products are displayed here by default</p>
                     <footer>
                         <button name="create_bom_with_packagins"
                           string="Create range of Bills of Materials"

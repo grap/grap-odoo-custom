@@ -71,6 +71,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <!-- <field name="bom_components_total_weight"/> -->
                       <field name="description_packaging"/>
                       <!-- / mrp_business -->
+                      <field name="packaging_on_bom_lines" groups="base.group_no_one"/>
+                      <label for="packaging"/>
+                      <div>
+                        <field name="packaging" class="oe_inline"/>
+                        <button name="add_packaging_to_bom_lines"
+                          type="object" class="oe_link"
+                          string="⇒ Add to BOM"
+                          attrs="{'invisible': ['|', ('packaging_on_bom_lines', '=', True), ('packaging', '=', False)]}"/>
+                      </div>
 
                   </group>
                   <group string="BoM configuration">

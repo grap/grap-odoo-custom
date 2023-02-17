@@ -15,3 +15,9 @@ class BomWizardRangePackagingLine(models.TransientModel):
         comodel_name="product.product",
         domain="[('is_packaging', '=', True)]",
     )
+    packaging_uom = fields.Many2one(
+        comodel_name="uom.uom",
+    )
+    bom_and_article_to_create = fields.Boolean(
+        default=True,
+    )

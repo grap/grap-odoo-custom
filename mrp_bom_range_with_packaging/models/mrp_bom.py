@@ -11,7 +11,10 @@ class MrpBom(models.Model):
     packaging = fields.Many2one(
         comodel_name="product.product", domain="[('is_packaging', '=', True)]"
     )
-
+    packaging_name = fields.Char(
+        related="packaging.name",
+        string="Packaging",
+    )
     packaging_on_bom_lines = fields.Boolean(compute="_compute_packaging_on_bom_lines")
 
     @api.multi
