@@ -330,13 +330,9 @@ msgstr "Secteur du PdV"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Package Qty"
 msgstr "Qté Cond."
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
-msgid "Package Qty"
-msgstr "Qté cond."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

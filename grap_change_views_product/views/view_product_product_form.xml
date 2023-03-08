@@ -224,7 +224,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                 attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
                                             <field name="product_code" string="Code"
                                                 attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
-                                            <field name="package_qty" string="Package Qty"/>
+                                            <field name="multiplier_qty" string="Multiplier Qty"/>
                                             <field name="min_qty" string="Min Qty"/>
                                             <field name="price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
                                             <field name="discount" string="Disc. 1 %"/>

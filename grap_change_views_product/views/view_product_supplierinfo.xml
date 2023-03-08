@@ -49,7 +49,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="display_name" string="Supplier" readonly="1"/>
             <field name="product_code" string="Supplier product code"/>
             <field name="product_name" string="Supplier product name"/>
-            <field name="package_qty" string="Package Qty"/>
+            <field name="multiplier_qty" string="Multiplier Qty"/>
             <field name="min_qty" string="Min qty"/>
             <field name="price" widget="monetary" options="{'display_currency': 'currency_id'}"/>
             <field name="product_uom" readonly="1" string="UoM"/>

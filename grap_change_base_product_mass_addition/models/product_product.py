@@ -12,7 +12,7 @@ class ProductProduct(models.Model):
         compute="_compute_mass_addition_purchase",
     )
 
-    mass_addition_purchase_package_qty = fields.Float(
+    mass_addition_purchase_multiplier_qty = fields.Float(
         compute="_compute_mass_addition_purchase",
     )
 
@@ -32,7 +32,7 @@ class ProductProduct(models.Model):
         compute="_compute_mass_addition_purchase_bad",
     )
 
-    mass_addition_purchase_package_qty_bad = fields.Boolean(
+    mass_addition_purchase_multiplier_qty_bad = fields.Boolean(
         compute="_compute_mass_addition_purchase_bad",
     )
 
@@ -40,7 +40,7 @@ class ProductProduct(models.Model):
     @api.depends(
         "qty_to_process",
         "mass_addition_purchase_min_qty",
-        "mass_addition_purchase_package_qty",
+        "mass_addition_purchase_multiplier_qty",
     )
     def _compute_mass_addition_purchase_bad(self):
         for product in self.filtered(
@@ -50,10 +50,10 @@ class ProductProduct(models.Model):
                 product.qty_to_process < product.mass_addition_purchase_min_qty
             )
         for product in self.filtered(
-            lambda x: x.qty_to_process and x.mass_addition_purchase_package_qty
+            lambda x: x.qty_to_process and x.mass_addition_purchase_multiplier_qty
         ):
-            product.mass_addition_purchase_package_qty_bad = (
-                product.qty_to_process % product.mass_addition_purchase_package_qty
+            product.mass_addition_purchase_multiplier_qty_bad = (
+                product.qty_to_process % product.mass_addition_purchase_multiplier_qty
             )
 
     @api.multi
@@ -71,7 +71,9 @@ class ProductProduct(models.Model):
 
             if sellers:
                 product.mass_addition_purchase_min_qty = sellers[0].min_qty
-                product.mass_addition_purchase_package_qty = sellers[0].package_qty
+                product.mass_addition_purchase_multiplier_qty = sellers[
+                    0
+                ].multiplier_qty
                 product.mass_addition_purchase_price = sellers[0].price
                 product.mass_addition_purchase_discount = sellers[0].discount
                 product.mass_addition_purchase_discount2 = sellers[0].discount2

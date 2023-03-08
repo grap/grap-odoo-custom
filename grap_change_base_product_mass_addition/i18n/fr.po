@@ -46,13 +46,13 @@ msgid "Mass Addition Purchase Min Qty Bad"
 msgstr ""
 
 #. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_package_qty
-msgid "Mass Addition Purchase Package Qty"
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_multiplier_qty
+msgid "Mass Addition Purchase Multiplier Qty"
 msgstr ""
 
 #. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_package_qty_bad
-msgid "Mass Addition Purchase Package Qty Bad"
+#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_multiplier_qty_bad
+msgid "Mass Addition Purchase Multiplier Qty Bad"
 msgstr ""
 
 #. module: grap_change_base_product_mass_addition
@@ -67,7 +67,7 @@ msgstr "Qté Min."
 
 #. module: grap_change_base_product_mass_addition
 #: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
-msgid "Package Qty"
+msgid "Multiplier Qty"
 msgstr "Qté Cond."
 
 #. module: grap_change_base_product_mass_addition
