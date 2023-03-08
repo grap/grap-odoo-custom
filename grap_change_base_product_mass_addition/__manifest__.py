@@ -15,10 +15,9 @@
         "base_product_mass_addition",
         "purchase_quick",
         "onchange_helper",
+        "product_supplierinfo_qty_multiplier",
         "purchase_discount",
         "purchase_triple_discount",
-        # GRAP
-        "purchase_package_qty",
     ],
     "data": [
         "views/view_product_product.xml",
