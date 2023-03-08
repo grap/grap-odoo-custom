@@ -22,9 +22,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="uom_po_id" string="Purchase UoM" readonly="1"/>
             </field>
             <field name="incoming_qty" position="after">
-                <field name="mass_addition_purchase_package_qty" string="Package Qty"
-                    attrs="{'invisible': [('mass_addition_purchase_package_qty', '=', 0)]}"
-                    options="{'bg_color': '#FF0000: mass_addition_purchase_package_qty_bad;'}"/>
+                <field name="mass_addition_purchase_multiplier_qty" string="Multiplier Qty"
+                    attrs="{'invisible': [('mass_addition_purchase_multiplier_qty', '=', 0)]}"
+                    options="{'bg_color': '#FF0000: mass_addition_purchase_multiplier_qty_bad;'}"/>
                 <field name="mass_addition_purchase_min_qty" string="Min Qty"
                     attrs="{'invisible': [('mass_addition_purchase_min_qty', '=', 0)]}"
                     options="{'bg_color': '#FF0000: mass_addition_purchase_min_qty_bad;'}"/>
@@ -34,7 +34,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     attrs="{'invisible': [('mass_addition_purchase_discount', '=', 0)]}"/>
                 <field name="mass_addition_purchase_discount2" string="Disc 2"
                     attrs="{'invisible': [('mass_addition_purchase_discount2', '=', 0)]}"/>
-                <field name="mass_addition_purchase_package_qty_bad" invisible="1"/>
+                <field name="mass_addition_purchase_multiplier_qty_bad" invisible="1"/>
                 <field name="mass_addition_purchase_min_qty_bad" invisible="1"/>
             </field>
             <button name="button_quick_open_product" position="replace"/>
