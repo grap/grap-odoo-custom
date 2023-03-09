@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 14:55+0000\n"
-"PO-Revision-Date: 2022-02-28 14:55+0000\n"
+"POT-Creation-Date: 2023-03-09 22:03+0000\n"
+"PO-Revision-Date: 2023-03-09 22:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,53 +46,35 @@ msgid "Companies"
 msgstr "Sociétés"
 
 #. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
-msgid "Current Disc. 1 (%)"
-msgstr "Actuelle Rem. 1 (%)"
-
-#. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
-msgid "Current Disc. 2 (%)"
-msgstr "Actuelle Rem. 2 (%)"
-
-#. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
-msgid "Current Disc. 3 (%)"
-msgstr "Actuelle Rem. 3 (%)"
-
-#. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_dtandard_price
-msgid "Current SP"
-msgstr "Actuel PdR"
-
-#. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
-msgid "Current U.P."
-msgstr "Actuel P.U."
-
-#. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "Disc. 1 (%)"
-msgstr "Rem. 1 (%)"
+msgstr "Rem. 1"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier_triple_discount
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_triple_discount_customer
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "Disc. 2 (%)"
-msgstr "Rem. 2 (%)"
+msgstr "Rem. 2"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier_triple_discount
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_triple_discount_customer
 msgid "Disc. 3 (%)"
-msgstr "Rem. 3 (%)"
+msgstr "Rem. 3"
 
 #. module: grap_change_views_account
 #: model:ir.model.fields,field_description:grap_change_views_account.field_account_account_template__xml_id
 #: model:ir.model.fields,field_description:grap_change_views_account.field_account_account_type__xml_id
 msgid "External ID"
 msgstr "ID Externe"
+
+#. module: grap_change_views_account
+#: model:ir.model.fields,field_description:grap_change_views_account.field_account_invoice__fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Position fiscale"
 
 #. module: grap_change_views_account
 #: model:ir.model.fields,field_description:grap_change_views_account.field_overdue_reminder_start__up_to_date
@@ -110,29 +92,39 @@ msgid "Journal Entries"
 msgstr "Pièces comptables"
 
 #. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_discount
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "Mult. Qty."
+msgstr "Cond."
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "New Disc. 1 (%)"
-msgstr "Nouvelle Rem. 1 (%)"
+msgstr "Nouvelle Rem. 1"
 
 #. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "New Disc. 2 (%)"
-msgstr "Nouvelle Rem. 2 (%)"
+msgstr "Nouvelle Rem. 2"
 
 #. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_triple_discount
-msgid "New Disc. 3 (%)"
-msgstr "Nouvelle Rem. 3 (%)"
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "New Mult. Qty."
+msgstr "Nouveau Cond."
 
 #. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form_dtandard_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "New SP"
 msgstr "Nouveau PdR"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
-msgid "New U.P."
-msgstr "Nouveau P.U."
+msgid "New UP"
+msgstr "Nouveau PU"
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "New UoM"
+msgstr "Nouvelle UdM"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_search
@@ -164,17 +156,17 @@ msgstr "Qté"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
 msgid "S.T."
-msgstr ""
+msgstr "S.T."
+
+#. module: grap_change_views_account
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
+msgid "SP"
+msgstr "PdR"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 msgid "Send by Email"
 msgstr "Envoyer par email"
-
-#. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_supplier_tree
-msgid "Supplier"
-msgstr "Fournisseur"
 
 #. module: grap_change_views_account
 #: model:ir.model,name:grap_change_views_account.model_account_tax_group
@@ -194,19 +186,16 @@ msgstr "A traiter"
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "U.P."
 msgstr "P.U."
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_supplier
+#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "UoM"
 msgstr "UdM"
-
-#. module: grap_change_views_account
-#: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
-msgid "Update Supplier Informations"
-msgstr "Mettre à jour les informations fournisseurs"
 
 #. module: grap_change_views_account
 #: model:ir.model.fields,help:grap_change_views_account.field_account_move__post_at_bank_rec_journal
