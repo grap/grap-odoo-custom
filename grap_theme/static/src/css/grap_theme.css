@@ -31,3 +31,14 @@ Change display of user image, in the menu
     height: 40px;
     width: 40px;
 }
+
+/* ****************************************************
+Center Boolean toggle widget
+**************************************************** */
+.o_boolean_toggle_cell{
+  text-align: center;
+}
+
+.table th, .table td {
+    border-left: 1px solid #dee2e6;
+}
