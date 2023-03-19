@@ -29,7 +29,7 @@ addon | version | maintainers | summary
 [grap_change_precision](grap_change_precision/) | 12.0.1.1.2 |  | Change the precisions names and values of some fields
 [grap_change_translation](grap_change_translation/) | 12.0.1.2.1 |  | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.1.2 |  | GRAP - Change Views
-[grap_change_views_account](grap_change_views_account/) | 12.0.1.1.9 |  | GRAP - Change Views Account
+[grap_change_views_account](grap_change_views_account/) | 12.0.1.1.10 |  | GRAP - Change Views Account
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.1.4 |  | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.3 |  | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.1.2 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | GRAP - Change Mail Views
