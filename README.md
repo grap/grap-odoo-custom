@@ -30,7 +30,7 @@ addon | version | maintainers | summary
 [grap_change_translation](grap_change_translation/) | 12.0.1.2.1 |  | Disable the translation mechanism for a many fields
 [grap_change_views](grap_change_views/) | 12.0.1.1.2 |  | GRAP - Change Views
 [grap_change_views_account](grap_change_views_account/) | 12.0.1.1.11 |  | GRAP - Change Views Account
-[grap_change_views_base](grap_change_views_base/) | 12.0.0.1.4 |  | GRAP - Change Base Views
+[grap_change_views_base](grap_change_views_base/) | 12.0.0.1.5 |  | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.3 |  | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.1.2 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | GRAP - Change Mail Views
 [grap_change_views_mrp](grap_change_views_mrp/) | 12.0.1.1.3 |  | GRAP - Change Views MRP
@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [grap_mrp_dev](grap_mrp_dev/) | 12.0.1.0.1 |  | Install all MRP modules for Grap
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
 [grap_qweb_report](grap_qweb_report/) | 12.0.2.0.1 |  | GRAP - Custom Qweb Reports
-[grap_theme](grap_theme/) | 12.0.1.3.3 |  | Customize Odoo web User Interface
+[grap_theme](grap_theme/) | 12.0.1.3.4 |  | Customize Odoo web User Interface
 [mrp_bom_print](mrp_bom_print/) | 12.0.1.1.2 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.2 |  | MRP BoM Product Variant
 [mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.1.3 |  | Handle purchase from your Bill of Materials
