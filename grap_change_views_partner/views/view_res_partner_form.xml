@@ -52,16 +52,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_res_partner_form_product_origin" model="ir.ui.view">
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="product_origin.res_partner_form_view"/>
-        <field name="arch" type="xml">
-            <field name="distribution_channel_criterion" position="attributes">
-                <attribute name="attrs">{'invisible':[('supplier','=', False)]}</attribute>
-            </field>
-        </field>
-    </record>
-
     <record id="view_res_partner_form_stock_2" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="stock.view_partner_stock_form"/>
