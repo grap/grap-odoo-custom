@@ -4,6 +4,8 @@
 
 from odoo import _, api, fields, models
 
+from .product_product import _PRODUCT_CODE_GENERIC_TLA
+
 
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
@@ -27,9 +29,6 @@ class MrpBom(models.Model):
     )
 
     # ========== Code and Trigram (Three Letter Acronym)
-    PRODUCT_CODE_GENERIC_TLA = fields.Char(
-        related="product_id.PRODUCT_CODE_GENERIC_TLA"
-    )
     tla_to_change = fields.Boolean(related="product_id.tla_to_change")
 
     code_nb = fields.Integer(
@@ -79,13 +78,13 @@ class MrpBom(models.Model):
             if self.env.user.company_id.code:
                 bom_code_start += self.env.user.company_id.code
             if not self.product_id.tla:
-                self.product_id.write({"tla": self.PRODUCT_CODE_GENERIC_TLA})
+                self.product_id.write({"tla": _PRODUCT_CODE_GENERIC_TLA})
                 self.product_id.write({"tla_to_change": True})
                 self.env.user.notify_warning(
                     message=(
                         _("You need to change default trigram on product set to %s.")
                     )
-                    % (self.PRODUCT_CODE_GENERIC_TLA),
+                    % (_PRODUCT_CODE_GENERIC_TLA),
                     title=(_("No Trigram on product %s ") % self.product_id.name),
                     sticky=False,
                 )
