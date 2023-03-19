@@ -224,6 +224,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="date_due"/>
             </field>
             <!-- Move company -->
+            <field name="company_id" position="replace"/>
             <field name="state" position="after">
                 <field name="company_id" groups="base.group_multi_company"/>
             </field>
