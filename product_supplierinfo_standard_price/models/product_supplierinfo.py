@@ -53,19 +53,20 @@ class SupplierInfo(models.Model):
                 or supplierinfo.product_tmpl_id.uom_po_id
                 or supplierinfo.product_id.uom_po_id
             )
+            currency = supplierinfo.currency_id
+            destination_uom = (
+                supplierinfo.product_tmpl_id.uom_id or supplierinfo.product_id.uom_id
+            )
             if uom:
-                supplierinfo.theoritical_standard_price = (
-                    supplierinfo.currency_id.round(
-                        uom._compute_price(
-                            (
-                                supplierinfo.price
-                                * (1 - supplierinfo.discount / 100)
-                                * (1 - supplierinfo.discount2 / 100)
-                                * (1 - supplierinfo.discount3 / 100)
-                            ),
-                            supplierinfo.product_tmpl_id.uom_po_id
-                            or supplierinfo.product_id.uom_po_id,
-                        )
+                supplierinfo.theoritical_standard_price = currency.round(
+                    uom._compute_price(
+                        (
+                            supplierinfo.price
+                            * (1 - supplierinfo.discount / 100)
+                            * (1 - supplierinfo.discount2 / 100)
+                            * (1 - supplierinfo.discount3 / 100)
+                        ),
+                        destination_uom,
                     )
                 )
 
@@ -106,7 +107,3 @@ class SupplierInfo(models.Model):
                     _("New standard price for %s") % supplierinfo.product_tmpl_id.name
                 ),
             )
-            # Set supplierinfo first seller for this product
-            for _suppinfo in supplierinfo.product_tmpl_id.variant_seller_ids:
-                _suppinfo.sequence = _suppinfo.sequence + 1
-            supplierinfo.sequence = 1
