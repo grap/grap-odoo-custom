@@ -93,6 +93,11 @@ msgid "By Category"
 msgstr "Par Catégorie"
 
 #. module: mrp_food
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
+msgid "Categ."
+msgstr "Catég."
+
+#. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__color
 msgid "Color Index"
 msgstr "Couleur"

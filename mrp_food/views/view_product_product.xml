@@ -68,7 +68,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <tree editable="bottom" create="false">
                 <field name="default_code" string="Ref."/>
                 <field name="name"/>
-                <field name="categ_id"/>
+                <field name="categ_id" string="Categ."/>
                 <field name="currency_id" invisible="1"/>
                 <field name="standard_price" string="Price" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                 <field name="uom_id" string="UoM" readonly="1"/>
@@ -76,12 +76,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="end_date_of_market_price_list"
                   options="{'bg_color': '#e74c3c: end_date_of_market_price_list &lt; current_date and end_date_of_market_price_list != False;'}"/>
                 <field name="seller_ids" widget="many2many_tags" readonly="1"/>
-                <field name="product_main_seller_partner_id" string="Main&#160;seller"/>
                 <field name="maker_description"/>
-                <field name="label_ids" widget="many2many_tags"/>
-                <field name="allergen_ids" widget="many2many_tags"/>
-                <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                <field name="is_seasonal" string="Is&#160;seasonal"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>
