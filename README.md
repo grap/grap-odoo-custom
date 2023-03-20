@@ -36,7 +36,7 @@ addon | version | maintainers | summary
 [grap_change_views_mrp](grap_change_views_mrp/) | 12.0.1.1.4 |  | GRAP - Change Views MRP
 [grap_change_views_partner](grap_change_views_partner/) | 12.0.0.0.20 |  | GRAP - Change Partner Views
 [grap_change_views_pos](grap_change_views_pos/) | 12.0.1.1.9 |  | GRAP - Change POS Views
-[grap_change_views_product](grap_change_views_product/) | 12.0.0.1.20 |  | GRAP - Change Views Product
+[grap_change_views_product](grap_change_views_product/) | 12.0.0.1.21 |  | GRAP - Change Views Product
 [grap_change_views_project](grap_change_views_project/) | 12.0.1.0.4 |  | GRAP - Change Project Views
 [grap_change_views_purchase](grap_change_views_purchase/) | 12.0.3.0.3 |  | GRAP - Change Purchase Views
 [grap_change_views_sale](grap_change_views_sale/) | 12.0.1.0.11 |  | GRAP - Change Sale Views
