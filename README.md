@@ -46,9 +46,9 @@ addon | version | maintainers | summary
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
 [grap_qweb_report](grap_qweb_report/) | 12.0.2.0.1 |  | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.3.4 |  | Customize Odoo web User Interface
-[mrp_bom_print](mrp_bom_print/) | 12.0.1.1.2 |  | Manage the various useful prints for Bill of Materials
+[mrp_bom_print](mrp_bom_print/) | 12.0.1.1.3 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.2 |  | MRP BoM Product Variant
-[mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.1.3 |  | Handle purchase from your Bill of Materials
+[mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.1.4 |  | Handle purchase from your Bill of Materials
 [mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.1.3 |  | Handle Sale price for product's bom with margin
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.3 |  | Add tags on your BoM to find it easily
 [mrp_business](mrp_business/) | 12.0.1.1.4 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
