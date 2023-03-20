@@ -15,6 +15,12 @@ class MrpBomLine(models.Model):
     standard_price_subtotal = fields.Float(
         string="Subtotal price", compute="_compute_standard_price_subtotal"
     )
+    # Percentage float, so 25% is 0,25. For one number behind decimal, needs 3 digits
+    standard_price_subtotal_percentage = fields.Float(
+        string="Subtotal price %",
+        compute="_compute_standard_price_subtotal_percentage",
+        digits=(16, 3),
+    )
 
     @api.multi
     @api.depends("standard_price_unit", "product_qty")
@@ -27,3 +33,15 @@ class MrpBomLine(models.Model):
     def _compute_standard_price_unit(self):
         for line in self:
             line.standard_price_unit = line.product_id.standard_price
+
+    @api.multi
+    @api.depends(
+        "standard_price_subtotal", "bom_id.bom_line_ids.standard_price_subtotal"
+    )
+    def _compute_standard_price_subtotal_percentage(self):
+        for line in self:
+            bom = line.bom_id
+            total_price = sum(line.standard_price_subtotal for line in bom.bom_line_ids)
+            line.standard_price_subtotal_percentage = (
+                line.standard_price_subtotal / total_price if total_price != 0 else 0
+            )

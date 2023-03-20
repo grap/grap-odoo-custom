@@ -345,20 +345,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               </group>
                             </group>
                             <br/>
-                            <group string="⌛ Handling time">
-                              <group>
-                                <p class="alert alert-warning alert-dismissable" role="alert" groups="mrp.group_mrp_user">
-                                Changing this value will change all BoM containing this product.
-                                </p>
-                              </group><br/>
-                              <group>
-                                <label for="time_to_produce_product"/>
-                                <div>
-                                  <field name="time_to_produce_product" class="oe_inline" widget="numeric_step"/>
-                                  <span class="unity_for_time_to_produce"> minutes</span>
-                                </div>
-                              </group>
-                            </group>
                           </group>
                         </page>
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">

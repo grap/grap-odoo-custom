@@ -8,41 +8,31 @@ from odoo import api, fields, models
 class MrpBomLine(models.Model):
     _inherit = "mrp.bom.line"
 
-    # ======== TIME
-    time_to_produce_per_unit = fields.Float(
-        string="Theorical time per unit",
-        related="product_id.time_to_produce_product",
-    )
-    time_to_produce_line = fields.Float(
-        string="Real time",
-    )
-    time_to_produce_line_theorical = fields.Float(
-        string="Theorical time",
-    )
-    diff_time_product_theorical = fields.Float(
-        string="Diff Time",
+    # Column Section
+    # Percentage float, so 25% is 0,25. For one number behind decimal, needs 3 digits
+    line_weight = fields.Float(
+        string="Weight",
+        compute="_compute_line_weight",
     )
 
-    @api.onchange("product_id", "time_to_produce_per_unit", "product_qty")
-    def _onchange_time_to_produce_line(self):
-        self.time_to_produce_line = self.time_to_produce_per_unit * self.product_qty
-        self.time_to_produce_line_theorical = self.time_to_produce_line
-
-    # TODO : faire un notify user quand on change dans le product la quantité ?
-    # ou mieux, écire en dessous les fiches qui seront impactés ? ou osef ?
-
-    @api.onchange(
-        "time_to_produce_per_unit",
-        "time_to_produce_line",
-        "time_to_produce_line_theorical",
+    line_weight_percentage = fields.Float(
+        string="Weight %",
+        compute="_compute_line_weight_percentage",
+        digits=(16, 3),
     )
-    def _onchange_diff_time_product_theorical(self):
-        self.diff_time_product_theorical = (
-            self.time_to_produce_line - self.time_to_produce_line_theorical
-        )
 
-    @api.multi
-    def set_time_product_theorical(self):
-        for bomline in self:
-            bomline.time_to_produce_line = bomline.time_to_produce_line_theorical
-            bomline.diff_time_product_theorical = 0
+    @api.depends("product_qty", "product_uom_id", "product_id", "product_id.net_weight")
+    def _compute_line_weight(self):
+        for line in self:
+            if line.product_uom_id.category_id.measure_type == "weight":
+                line.line_weight = line.product_qty / line.product_uom_id.factor
+            else:
+                line.line_weight = line.product_id.net_weight * line.product_qty
+
+    @api.depends("product_qty", "bom_id.bom_line_ids.product_qty")
+    def _compute_line_weight_percentage(self):
+        for line in self:
+            bom_total_weight = line.bom_id.bom_components_total_weight
+            line.line_weight_percentage = (
+                line.line_weight / bom_total_weight if bom_total_weight != 0 else 0
+            )

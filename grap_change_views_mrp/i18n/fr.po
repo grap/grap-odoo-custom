@@ -43,7 +43,7 @@ msgstr "<b>Fiche technique</b> - produit fini 🥧"
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "<b>Data sheet</b> - intermediate product 🧩"
-msgstr "<b>Fiche technique</b> - product intermédiaire 🧩"
+msgstr "<b>Fiche technique</b> - produit intermédiaire 🧩"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap

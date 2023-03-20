@@ -27,6 +27,11 @@ class MrpBom(models.Model):
         related="product_id.meal_category_id",
         string="Meal category",
     )
+    # ========== Fields related to weight
+    bom_components_total_weight = fields.Float(
+        string="Bom Components Total Weight",
+        compute="_compute_bom_components_total_weight",
+    )
 
     # ========== Code and Trigram (Three Letter Acronym)
     tla_to_change = fields.Boolean(related="product_id.tla_to_change")
@@ -45,14 +50,6 @@ class MrpBom(models.Model):
     )
 
     # ========== Methods for Time
-    # Trop "compliqué" pour l'usage ? → remplacer par affichage de "min" aux bons endroits
-    # uom_time_to_produce = fields.Many2one(
-    #     comodel_name="uom.uom",
-    #     domain=[("measure_type", "=", "time")]
-    # )
-    diff_time_to_produce_bom_and_lines = fields.Boolean(
-        compute="_compute_diff_time_to_produce_bom_and_lines"
-    )
     time_to_produce = fields.Float(
         help="Set this time or calculate it with BoM lines time", store=True
     )
@@ -132,16 +129,10 @@ class MrpBom(models.Model):
         for bom in self.filtered(lambda x: x.product_id):
             bom.product_id.generate_tla()
 
-    # ========== Methods for Time
-    # Let user write by hand this time or generate thanks to this method
-    def generate_proposal_bom_time(self):
+    # ========== Methods related to Weight
+    @api.depends("bom_line_ids.line_weight")
+    def _compute_bom_components_total_weight(self):
         for bom in self:
-            bom.time_to_produce = sum(bom.bom_line_ids.mapped("time_to_produce_line"))
-
-    @api.depends("bom_line_ids", "time_to_produce")
-    def _compute_diff_time_to_produce_bom_and_lines(self):
-        for bom in self:
-            time_theoric_lines = sum(bom.bom_line_ids.mapped("time_to_produce_line"))
-            bom.diff_time_to_produce_bom_and_lines = (
-                True if time_theoric_lines != bom.time_to_produce else False
+            bom.bom_components_total_weight = sum(
+                bom.bom_line_ids.mapped("line_weight")
             )

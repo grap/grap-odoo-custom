@@ -25,15 +25,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='routing_id']" position="after">
                 <br/>
                 <br/>
-                <field name="diff_time_to_produce_bom_and_lines" invisible="1"/>
-                <label for="time_to_produce"/>
-                <div>
-                  <field name="time_to_produce" class="oe_inline" widget="numeric_step"/>
-                  <span class="unity_for_time_to_produce"> minutes</span>
-                  <button name="generate_proposal_bom_time" string="⇒ Set Time with BoM lines"
-                          type="object" class="oe_link"
-                          attrs="{'invisible': [('diff_time_to_produce_bom_and_lines', '=', False)]}"/>
-                </div>
+                <field name="time_to_produce"/>
             </xpath>
             <xpath expr="//field[@name='code']" position="after">
                 <field name="tla_to_change" invisible="1"/>
@@ -51,17 +43,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='ready_to_produce']/../..//field[@name='sequence']" position="before">
               <field name="code_nb"/><br/>
             </xpath>
-
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="time_to_produce_per_unit"/>
-                <field name="time_to_produce_line_theorical" readonly="1" force_save="1"/>
-                <field name="diff_time_product_theorical" invisible="1" force_save="1"/>
-                <button name="set_time_product_theorical" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_time_product_theorical', '=', 0)]}"/>
-                <field name="time_to_produce_line"/>
-            </xpath>
-            <xpath expr="//field[@name='bom_line_ids']/tree" position="attributes">
-                <attribute name="decoration-info">diff_time_product_theorical != 0</attribute>
+                <field name="line_weight"/>
+                <field name="line_weight_percentage" widget="percentage"/>
             </xpath>
 
         </field>
