@@ -6,7 +6,7 @@
     "name": "MRP Business Modules",
     "summary": "MRP functions that meet the business needs of GRAP,"
     "adapted for food-related professions",
-    "version": "12.0.1.1.4",
+    "version": "12.0.1.1.5",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
