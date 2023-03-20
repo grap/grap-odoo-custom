@@ -54,7 +54,7 @@ addon | version | maintainers | summary
 [mrp_business](mrp_business/) | 12.0.1.1.5 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_food](mrp_food/) | 12.0.1.1.5 |  | MRP modules adapted for food-related professions
 [product_main_seller](product_main_seller/) | 12.0.1.1.4 |  | Product Attribute - Main seller for a product
-[product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.2 |  | Product supplier easily connected to product's standard price
+[product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.3 |  | Product supplier easily connected to product's standard price
 [server_environment_files](server_environment_files/) | 12.0.1.0.4 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_fix_stock_move_line](stock_fix_stock_move_line/) | 12.0.1.1.1 |  | Stock - Fix Stock Move Lines
 [stock_merge_quant](stock_merge_quant/) | 12.0.1.1.2 |  | Stock - Merge Quants Tools
