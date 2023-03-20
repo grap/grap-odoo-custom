@@ -5,7 +5,7 @@
 {
     "name": "MRP BoM Sale Product Margin",
     "summary": "Handle Sale price for product's bom with margin",
-    "version": "12.0.1.1.3",
+    "version": "12.0.1.1.4",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
