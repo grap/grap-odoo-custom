@@ -196,6 +196,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         name="(Admin) Price Lists - Inline editable"
         parent="mrp.menu_mrp_root" groups="base.group_no_one"/>
 
-
+    <!-- ************************************************************ -->
+    <!-- Display standard menu -->
+    <!-- ************************************************************ -->
+    <menuitem id="mrp.menu_mrp_configuration"
+        parent="mrp.menu_mrp_root"
+        groups="mrp.group_mrp_user"/>
 
   </odoo>
