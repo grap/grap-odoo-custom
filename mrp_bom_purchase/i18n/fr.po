@@ -153,8 +153,8 @@ msgstr "Article"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
-msgid "Purchase list 🛒"
-msgstr "Liste d'achats 🛒"
+msgid "Purchase list"
+msgstr "Liste d'achats"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
