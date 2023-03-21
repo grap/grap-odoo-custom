@@ -1,5 +1,8 @@
 # Unmerged OCA Contributions
-git+https://github.com/OCA/account-invoicing@refs/pull/1404/head#subdirectory=setup/account_invoice_supplierinfo_update
+git+https://github.com/legalsylvain/account-invoicing@12.0-TEMP-1404-AND-1405#subdirectory=setup/account_invoice_supplierinfo_update
+git+https://github.com/legalsylvain/account-invoicing@12.0-TEMP-1404-AND-1405#subdirectory=setup/account_invoice_supplierinfo_update_discount
+git+https://github.com/legalsylvain/account-invoicing@12.0-TEMP-1404-AND-1405#subdirectory=setup/account_invoice_supplierinfo_update_triple_discount
+
 git+https://github.com/OCA/account-invoicing@refs/pull/1413/head#subdirectory=setup/account_invoice_supplierinfo_update_qty_multiplier
 git+https://github.com/OCA/geospatial@refs/pull/310/head#subdirectory=setup/web_view_leaflet_map
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
