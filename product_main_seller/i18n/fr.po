@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-03 21:18+0000\n"
-"PO-Revision-Date: 2022-11-03 21:18+0000\n"
+"POT-Creation-Date: 2023-02-17 10:29+0000\n"
+"PO-Revision-Date: 2023-02-17 10:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,16 +29,6 @@ msgid "Deprecated"
 msgstr ""
 
 #. module: product_main_seller
-#: model:ir.model.fields,field_description:product_main_seller.field_product_supplierinfo__is_main_seller
-msgid "Is Main Seller"
-msgstr "Fournisseur·e principal·e"
-
-#. module: product_main_seller
-#: model:ir.model.fields,field_description:product_main_seller.field_product_supplierinfo__is_main_seller_icon
-msgid "Is Main Seller Icon"
-msgstr ""
-
-#. module: product_main_seller
 #: model:ir.model.fields,field_description:product_main_seller.field_product_product__product_main_seller_partner_id
 msgid "Main Product Seller Partner"
 msgstr "Fournisseur·e principal·e"
@@ -48,11 +38,6 @@ msgstr "Fournisseur·e principal·e"
 #: model:ir.model.fields,field_description:product_main_seller.field_product_template__main_seller_partner_id
 msgid "Main Seller Partner"
 msgstr "Fournisseur·e principal·e"
-
-#. module: product_main_seller
-#: model:ir.model.fields,help:product_main_seller.field_product_product__product_main_seller_partner_id
-msgid "Main Seller Partner of the product"
-msgstr "Fournisseur·e principal·e du produit"
 
 #. module: product_main_seller
 #: model:ir.model.fields,field_description:product_main_seller.field_product_product__main_seller_variant_partner_id
@@ -74,6 +59,11 @@ msgstr "Article"
 #: model:ir.model,name:product_main_seller.model_product_template
 msgid "Product Template"
 msgstr "Modèle d'article"
+
+#. module: product_main_seller
+#: model:ir.model.fields,help:product_main_seller.field_product_product__product_main_seller_partner_id
+msgid "Put your supplier info in first position to set as main supplier"
+msgstr "Mettez la ligne d'information fournisseur·e en première position pour le définir comme fournisseur·e principal·e."
 
 #. module: product_main_seller
 #: model:ir.model,name:product_main_seller.model_product_supplierinfo

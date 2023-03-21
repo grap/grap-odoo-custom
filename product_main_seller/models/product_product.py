@@ -11,7 +11,7 @@ class ProductProduct(models.Model):
     product_main_seller_partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Main Product Seller Partner",
-        help="Main Seller Partner of the product",
+        help="Put your supplier info in first position to set as main supplier",
         compute="_compute_main_seller_partner_id",
         store=True,
     )
