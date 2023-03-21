@@ -303,6 +303,12 @@ msgid "Min qty"
 msgstr "Qté min."
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
+msgid "Multiplier Qty"
+msgstr "Conditionnement"
+
+#. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_supplierinfo__product_tmpl_name
 msgid "Name"
 msgstr "Nom"
@@ -327,16 +333,6 @@ msgstr "Seulement pour les matières premières"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "POS Sector"
 msgstr "Secteur du PdV"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Package Qty"
-msgstr "Qté Cond."
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
-msgid "Package Qty"
-msgstr "Qté cond."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

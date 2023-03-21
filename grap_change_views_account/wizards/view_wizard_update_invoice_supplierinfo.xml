@@ -11,80 +11,104 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_wizard_update_invoice_supplierinfo_form" model="ir.ui.view">
         <field name="model">wizard.update.invoice.supplierinfo</field>
         <field name="inherit_id" ref="account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form"/>
+        <field name="priority">999</field>
         <field name="arch" type="xml">
-            <field name="current_min_quantity" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </field>
-            <field name="new_min_quantity" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </field>
-            <field name="current_price" position="attributes">
-                <attribute name="string">Current U.P.</attribute>
-            </field>
-            <field name="new_price" position="attributes">
-                <attribute name="string">New U.P.</attribute>
-                <attribute name="options">{"bg_color": "#DD3640:new_price&gt;current_price;#6BE86B:new_price&lt;current_price;"}</attribute>
-            </field>
-            <field name="price_variation" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </field>
+            <xpath expr="//field[@name='line_ids']/tree" position="replace">
+                <tree create="false" editable="0" decoration-info="supplierinfo_id == False">
+                    <field name="product_id" readonly="1" force_save="1"/>
+                    <field name="has_uom_different" invisible="1" force_save="1"/>
+                    <field name="supplierinfo_id" invisible="1" force_save="1"/>
+
+                    <field name="current_multiplier_qty"
+                        string="Mult. Qty."
+                        force_save="True"
+                        options="{'bg_color': '#EEE: True;'}"
+                        attrs="{'invisible': [('supplierinfo_id', '=', False)]}"/>
+                    <field name="current_price"
+                        string="U.P."
+                        force_save="True"
+                        options="{'bg_color': '#EEE: True;'}"
+                        attrs="{'invisible': [('supplierinfo_id', '=', False)]}"/>
+                    <field name="current_uom_id"
+                        string="UoM"
+                        force_save="True"
+                        options="{'bg_color': '#EEE: True;'}"
+                        attrs="{'invisible': [('supplierinfo_id', '=', False)]}"/>
+                    <field name="current_discount"
+                        string="Disc. 1 (%)"
+                        force_save="True"
+                        options="{'bg_color': '#EEE: True;'}"
+                        attrs="{
+                        'invisible': [('supplierinfo_id', '=', False)],
+                        'column_invisible': [('parent.display_discount', '=', False)],
+                        }"/>
+                    <field name="current_discount2"
+                        string="Disc. 2 (%)"
+                        force_save="True"
+                        options="{'bg_color': '#EEE: True;'}"
+                        attrs="{
+                        'invisible': [('supplierinfo_id', '=', False)],
+                        'column_invisible': [('parent.display_discount2', '=', False)],
+                        }"/>
+                    <field name="current_discount3" invisible="1"/>
+                    <field name="current_standard_price"
+                        string="SP"
+                        force_save="True"
+                        options="{'bg_color': '#EEE: True;'}"
+                         attrs="{'invisible': [('supplierinfo_id', '=', False)]}"/>
+
+                    <field name="new_multiplier_qty"
+                        string="New Mult. Qty."
+                        options="{'bg_color': '
+                            #FFFFFF:supplierinfo_id == False;
+                            #FFFFC8:current_multiplier_qty&lt;&gt;new_multiplier_qty;
+                        '}"
+                        />
+                    <field name="new_price"
+                        string="New U.P."
+                        options="{'bg_color': '
+                            #FFFFFF:supplierinfo_id == False;
+                            #FFFFC8:current_price&lt;&gt;new_price;
+                        '}"
+                        />
+                    <field name="new_uom_id"
+                        string="New UoM"
+                        options='{"bg_color": "
+                            #FFFFFF:supplierinfo_id == False;
+                            #FFFFC8:has_uom_different == True;
+                        "}'
+                        />
+                    <field name="new_discount"
+                        string="New Disc. 1 (%)"
+                        options="{'bg_color': '
+                            #FFFFFF:supplierinfo_id == False;
+                            #FFFFC8:current_discount&lt;&gt;new_discount;
+                        '}"
+                        attrs="{'column_invisible': [('parent.display_discount', '=', False)]}"/>
+                    <field name="new_discount2"
+                        string="New Disc. 2 (%)"
+                        options="{'bg_color': '
+                            #FFFFFF:supplierinfo_id == False;
+                            #FFFFC8:current_discount2&lt;&gt;new_discount2;
+                        '}"
+                        attrs="{'column_invisible': [('parent.display_discount2', '=', False)]}"/>
+                    <field name="new_discount3" invisible="1"/>
+                    <field name="new_standard_price"
+                        string="New SP"
+                        options="{'bg_color': '
+                            #FFFFFF:supplierinfo_id == False;
+                            #FF6060:new_standard_price&gt;current_standard_price;
+                            #60FF60:new_standard_price&lt;current_standard_price;
+                        '}"
+                        />
+                </tree>
+            </xpath>
             <xpath expr="//button[@name='update_supplierinfo_validate']" position="attributes">
                 <attribute name="groups">base.group_erp_manager</attribute>
             </xpath>
             <xpath expr="//button[@name='update_supplierinfo']" position="attributes">
                 <attribute name="string">Update Supplier Informations</attribute>
             </xpath>
-        </field>
-    </record>
-
-    <record id="view_wizard_update_invoice_supplierinfo_form_discount" model="ir.ui.view">
-        <field name="model">wizard.update.invoice.supplierinfo</field>
-        <field name="inherit_id" ref="account_invoice_supplierinfo_update_discount.view_wizard_update_invoice_supplierinfo_form"/>
-        <field name="arch" type="xml">
-            <field name="current_discount" position="attributes">
-                <attribute name="string">Current Disc. 1 (%)</attribute>
-            </field>
-            <field name="new_discount" position="attributes">
-                <attribute name="string">New Disc. 1 (%)</attribute>
-                <attribute name="options">{"bg_color": "#DD3640:new_discount&lt;current_discount;#6BE86B:new_discount&gt;current_discount;"}</attribute>
-            </field>
-        </field>
-    </record>
-
-    <record id="view_wizard_update_invoice_supplierinfo_form_triple_discount" model="ir.ui.view">
-        <field name="model">wizard.update.invoice.supplierinfo</field>
-        <field name="inherit_id" ref="account_invoice_supplierinfo_update_triple_discount.view_wizard_update_invoice_supplierinfo_form"/>
-        <field name="arch" type="xml">
-            <field name="current_discount2" position="attributes">
-                <attribute name="string">Current Disc. 2 (%)</attribute>
-            </field>
-            <field name="new_discount2" position="attributes">
-                <attribute name="string">New Disc. 2 (%)</attribute>
-                <attribute name="options">{"bg_color": "#DD3640:new_discount2&lt;current_discount2;#6BE86B:new_discount2&gt;current_discount2;"}</attribute>
-            </field>
-            <field name="current_discount3" position="attributes">
-                <attribute name="string">Current Disc. 3 (%)</attribute>
-                <attribute name="groups">base.group_erp_manager</attribute>
-            </field>
-            <field name="new_discount3" position="attributes">
-                <attribute name="groups">base.group_erp_manager</attribute>
-                <attribute name="string">New Disc. 3 (%)</attribute>
-                <attribute name="options">{"bg_color": "#DD3640:new_discount3&gt;current_discount3;#6BE86B:new_discount3&lt;current_discount3;"}</attribute>
-            </field>
-        </field>
-    </record>
-
-    <record id="view_wizard_update_invoice_supplierinfo_form_dtandard_price" model="ir.ui.view">
-        <field name="model">wizard.update.invoice.supplierinfo</field>
-        <field name="inherit_id" ref="account_invoice_supplierinfo_update_standard_price.view_wizard_update_invoice_supplierinfo_form"/>
-        <field name="arch" type="xml">
-            <field name="current_standard_price" position="attributes">
-                <attribute name="string">Current SP</attribute>
-            </field>
-            <field name="new_standard_price" position="attributes">
-                <attribute name="string">New SP</attribute>
-                <attribute name="options">{"bg_color": "#DD3640:new_standard_price&gt;current_standard_price;#6BE86B:new_standard_price&lt;current_standard_price;"}</attribute>
-            </field>
         </field>
     </record>
 
