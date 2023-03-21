@@ -14,7 +14,7 @@ class AccountInvoice(models.Model):
     def _get_report_base_filename(self):
         self.ensure_one()
         return _("Invoice__{number}__{partner}__{date}").format(
-            number=slugify(self.number, lowercase=False)
+            number=slugify(self.number or "", lowercase=False)
             or (self.state == "draft" and _("Draft"))
             or "",
             partner=self.partner_id and slugify(self.partner_id.name) or _("Anonymous"),
