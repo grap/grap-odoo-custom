@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [grap_change_access](grap_change_access/) | 12.0.1.0.16 |  | Add new groups for specific models and change accesses for a number of models.
-[grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.1.2 |  | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
+[grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.1.3 |  | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
 [grap_change_data](grap_change_data/) | 12.0.1.0.9 |  | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.1.4 |  | GRAP - Change Default
 [grap_change_email](grap_change_email/) | 12.0.1.1.4 |  | Change default email template for invoices, sale and purchase orders
