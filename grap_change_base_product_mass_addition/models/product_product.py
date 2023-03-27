@@ -103,9 +103,9 @@ class ProductProduct(models.Model):
                         "partner_id": order.partner_id,
                         "product_qty": new_qty,
                     }
-                    vals = PurchaseOrderLine.play_onchanges(
-                        vals, ["product_id", "product_qty"]
-                    )
+                    vals = PurchaseOrderLine.with_context(
+                        no_multiplier_qty_message=True
+                    ).play_onchanges(vals, ["product_id", "product_qty"])
                     # We pop related fields like product_image,
                     # to avoid a useless write to ir.attachment
                     for k in [x for x in vals]:
