@@ -27,6 +27,7 @@
         "barcodes_generator_product",
         "product_form_purchase_link",
         "pos_meal_voucher",
+        "pos_product_mergeable_line",
         "pos_tare",
         "product_net_weight",
         "purchase_discount",

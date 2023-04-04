@@ -293,6 +293,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="tare_weight"/>
                 <field name="pos_categ_id" options="{'quick_create':false}"/>
                 <field name="barcode"/>
+                <field name="pos_mergeable_line"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
         </field>

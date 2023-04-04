@@ -8,6 +8,7 @@ git+https://github.com/OCA/geospatial@refs/pull/310/head#subdirectory=setup/web_
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
 git+https://github.com/OCA/purchase-workflow@refs/pull/1783/head#subdirectory=setup/product_supplierinfo_qty_multiplier
+git+https://github.com/OCA/pos@refs/pull/952/head#subdirectory=setup/pos_product_mergeable_line
 git+https://github.com/OCA/manufacture@refs/pull/798/head#subdirectory=setup/mrp_bom_widget_section_and_note_one2many
 
 # Coop It Easy Dependencies
