@@ -16,6 +16,8 @@
         "point_of_sale",
         "l10n_fr",
         # OCA
+        "pos_ticket_extra_company_info",
+        "pos_ticket_extra_company_info_l10n_fr",
         # GRAP
         "base_company_legal_info",
         "fiscal_company_base",
