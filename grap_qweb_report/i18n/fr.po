@@ -372,8 +372,8 @@ msgstr ""
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
-msgid "Origine"
-msgstr "Lieu de prod."
+msgid "Document d'origine"
+msgstr ""
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
