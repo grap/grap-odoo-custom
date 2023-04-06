@@ -24,6 +24,9 @@ class ProductProduct(models.Model):
         string="Valuation of Virtual Quantity",
     )
 
+    # Overload Column Section
+    standard_price = fields.Float(copy=True)
+
     # Compute Section
     @api.multi
     def _compute_valuation_qty_available(self):

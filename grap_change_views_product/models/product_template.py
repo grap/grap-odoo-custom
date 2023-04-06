@@ -8,6 +8,8 @@ from odoo import api, fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
+    # Overload Column Section
+    seller_ids = fields.One2many(copy=True)
     list_price = fields.Float(
         track_visibility="onchange",
     )
