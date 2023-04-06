@@ -28,7 +28,7 @@ msgstr "1. Rentrer les mercuriales (Articles) 📜"
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_bom_prices
 msgid "2. Update Cost Prices (BoM) 📋"
-msgstr "2. Mettre à jour les Prix de revient (FT) 📋"
+msgstr "2. Mettre à jour les coûts (FT) 📋"
 
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_products
@@ -63,7 +63,7 @@ msgstr "<span>💶 <span id=\"handling_price_title\">Prix actuels de l'article l
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Actual cost:"
-msgstr "PdR :"
+msgstr "Coût :"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -144,7 +144,7 @@ msgstr "FT - Produits intermédiaires 🧩"
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products_price
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products_price
 msgid "BoM - Update Cost Prices 📋"
-msgstr "Mettre à jour les Prix de Revient des Fiches techniques 📋"
+msgstr "Mettre à jour les coûts des Fiches techniques 📋"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -160,7 +160,7 @@ msgstr "Recette pour"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 msgid "BoM Standard Price"
-msgstr "FT - PdR"
+msgstr "FT - Coût"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -264,7 +264,7 @@ msgstr "Produits intermédiaires"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 msgid "It will set product variant's standard price with this price"
-msgstr "Cela va définir le prix de revient de l'article avec ce prix."
+msgstr "Cela va définir le coût de l'article avec ce prix."
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -341,7 +341,7 @@ msgstr "Article - PdV"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 msgid "Product Standard Price"
-msgstr "Article - PdR"
+msgstr "Article - Coût"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
@@ -429,7 +429,7 @@ msgstr "⇒ Définir avec le temps des lignes de la FT"
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "⇒ Update Product variant cost"
-msgstr "⇒ Mettre à jour le PdR de l'article"
+msgstr "⇒ Mettre à jour le coût de l'article"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap

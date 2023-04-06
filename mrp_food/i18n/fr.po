@@ -153,7 +153,7 @@ msgstr "À partir du"
 #: model:ir.model.fields,help:mrp_food.field_product_product__date_last_statement_price
 #: model:ir.model.fields,help:mrp_food.field_product_template__date_last_statement_price
 msgid "Date of last standard price change. Automatically sets to the date of the day you changed the standard price"
-msgstr "Date de la dernière modification du prix de revient. Cette date est automatiquement fixée à la date du jour où vous l'avez modifié la dernière fois."
+msgstr "Date de la dernière modification du coût. Cette date est automatiquement fixée à la date du jour où vous l'avez modifié la dernière fois."
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
@@ -174,7 +174,7 @@ msgstr "Fin mercuriale"
 #. module: mrp_food
 #: model:ir.model.fields,help:mrp_food.field_product_product__end_date_of_market_price_list
 msgid "End date of validity of the market price list. After this date, you can consider that your standard price is certainly not up to date."
-msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre prix de revient n'est plus à jour."
+msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre coût n'est plus à jour."
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__id
