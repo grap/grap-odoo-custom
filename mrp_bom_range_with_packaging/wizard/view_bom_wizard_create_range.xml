@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_bom_wizard_create_range" model="ir.ui.view">
+        <field name="model">bom.wizard.create.range</field>
+        <field name="arch" type="xml">
+            <form string="Create range from BoM with differents packaging">
+                <group colspan="6">
+                    <group string="BoM to duplicate">
+                        <label for="bom_id"/>
+                        <div class="o_row">
+                            <field name="bom_id" readonly="1"/>
+                        </div>
+                        <label for="bom_product_net_weight"/>
+                        <div class="o_row">
+                            <field name="bom_product_net_weight"/>
+                            <span>kg</span>
+                        </div>
+                    </group>
+                    <group col="4" colspan="2" string="Actual BoM range">
+                        <field name="range_bom_ids" nolabel="1">
+                            <tree create="false" delete="false" editable="false">
+                                <field name="bom_id" string="BoM"/>
+                                <field name="packaging" string="Packaging"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <button name="create_finished_products_with_packaging"
+                      string="Create range of finished products"
+                      type="object" icon="fa-check-circle" class="oe_highlight"/>
+                    <group col="4" colspan="2" string="Create range with this packagings">
+                        <field name="product_packaging_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_id" string="Product packaging"/>
+                                <field name="packaging_uom" string="Packaging UoM"/>
+                                <field name="bom_and_article_to_create" string="To create"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <p col="4" colspan="2" class="alert alert-info" role="status">Only not used Packaging products are displayed here by default</p>
+                    <footer>
+                        <button name="create_bom_with_packagins"
+                          string="Create range of Bills of Materials"
+                          type="object" icon="fa-check-circle" class="oe_highlight"
+                          attrs="{'invisible': [('product_packaging_ids', '&lt;', 1)]}"/>
+                        <button icon="fa-ban" special="cancel" string="Cancel"/>
+                    </footer>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bom_wizard_create_range" model="ir.actions.act_window">
+        <field name="name">Create BoM Range 🪄</field>
+        <field name="res_model">bom.wizard.create.range</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="mrp.model_mrp_bom"/>
+    </record>
+
+</odoo>

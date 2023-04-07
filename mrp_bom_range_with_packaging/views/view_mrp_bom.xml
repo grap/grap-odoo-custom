@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Form -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_range_with_packaging_form" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="packaging_on_bom_lines" groups="base.group_no_one"/>
+                <label for="packaging"/>
+                <div>
+                  <field name="packaging" class="oe_inline"/>
+                  <button name="add_packaging_to_bom_lines"
+                    type="object" class="oe_link"
+                    string="⇒ Add to BOM"
+                    attrs="{'invisible': ['|', ('packaging_on_bom_lines', '=', True), ('packaging', '=', False)]}"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Tree -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_range_with_packaging_tree" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_id']" position="after">
+                <field name="packaging"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
