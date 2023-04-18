@@ -24,7 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <th t-if="o.date_invoice">Date de facture</th>
                                 <th t-if="o.date_due">Date d'échéance</th>
                                 <th t-if="o.name">Description</th>
-                                <th t-if="o.origin">Origine</th>
+                                <th t-if="o.origin">Document d'origine</th>
                             </tr>
                         </thead>
                         <tbody class="invoice_tbody">
