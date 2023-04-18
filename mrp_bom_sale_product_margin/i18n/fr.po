@@ -28,7 +28,7 @@ msgstr "<span>💶 <span id=\"handling_price_title\">Prix actuels de l'article l
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "Actual cost:"
-msgstr "PdR :"
+msgstr "Coût :"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
@@ -48,12 +48,12 @@ msgstr "Ligne de fiche technique"
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__standard_price_total
 msgid "BoM Cost"
-msgstr "Prix de revient"
+msgstr "Coût"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_tree
 msgid "BoM Standard Price"
-msgstr "FT - PdR"
+msgstr "FT - Coût"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_product_product__standard_price
@@ -79,13 +79,13 @@ msgstr "Diff FT et Produit"
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__diff_product_bom_standard_price
 msgid "Diff Product Bom Standard Price"
-msgstr "Diff entre le prix de revient du produit et de la fiche technique"
+msgstr "Différence entre le coût de l'article et de la fiche technique"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_tree
 msgid "It will set product variant's standard price with this price"
-msgstr "Cela va définir le prix de revient de l'article avec ce prix."
+msgstr "Cela va définir le coût de l'article avec ce montant."
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,help:mrp_bom_sale_product_margin.field_mrp_bom__product_margin_rate
@@ -96,7 +96,7 @@ msgstr ""
 #: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:86
 #, python-format
 msgid "New standard price for %s"
-msgstr "Nouveau Prix de Revient %s"
+msgstr "Nouveau coût %s"
 
 #. module: mrp_bom_sale_product_margin
 #: code:addons/mrp_bom_sale_product_margin/models/mrp_bom.py:85
@@ -122,7 +122,7 @@ msgstr "Article - PdV"
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom__product_standard_price
 msgid "Product Standard Price"
-msgstr "Article - PdR"
+msgstr "Article - Coût"
 
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_tree
@@ -137,7 +137,7 @@ msgstr "Article - PdV"
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_tree
 msgid "Product Standard Price"
-msgstr "Article - PdR"
+msgstr "Article - Coût"
 
 #. module: mrp_bom_sale_product_margin
 #: model:ir.model.fields,field_description:mrp_bom_sale_product_margin.field_mrp_bom_line__standard_price_unit
@@ -167,4 +167,4 @@ msgstr ""
 #. module: mrp_bom_sale_product_margin
 #: model_terms:ir.ui.view,arch_db:mrp_bom_sale_product_margin.view_mrp_bom_sale_product_margin_form
 msgid "⇒ Update Product variant cost"
-msgstr "⇒ Mettre à jour le PdR de l'article"
+msgstr "⇒ Mettre à jour le coût de l'article"

@@ -94,17 +94,17 @@ msgstr ""
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Cost P."
-msgstr "PdR"
+msgstr "Coût"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Cost Price (VAT Excl.)"
-msgstr "PdR HT"
+msgstr "Coût HT"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Cost Price (VAT Incl.)"
-msgstr "PdR TTC"
+msgstr "Coût TTC"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -683,7 +683,7 @@ msgstr "Mettre à jour le stock disponible"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Use this price for product standard price"
-msgstr "Utiliser ce prix pour le prix de revient de l'article"
+msgstr "Utiliser ce prix pour le coût de l'article"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

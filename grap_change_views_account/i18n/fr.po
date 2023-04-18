@@ -114,7 +114,7 @@ msgstr "Nouveau Cond."
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "New SP"
-msgstr "Nouveau PdR"
+msgstr "Nouveau coût"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
@@ -161,7 +161,7 @@ msgstr "S.T."
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_wizard_update_invoice_supplierinfo_form
 msgid "SP"
-msgstr "PdR"
+msgstr "Coût"
 
 #. module: grap_change_views_account
 #: model_terms:ir.ui.view,arch_db:grap_change_views_account.view_account_invoice_form_customer

@@ -29,12 +29,12 @@ msgstr ""
 #: code:addons/product_supplierinfo_standard_price/models/product_supplierinfo.py:96
 #, python-format
 msgid "New standard price for %s"
-msgstr "Nouveau prix de revient pour %s"
+msgstr "Nouveau coût pour %s"
 
 #. module: product_supplierinfo_standard_price
 #: model_terms:ir.ui.view,arch_db:product_supplierinfo_standard_price.view_product_supplierinfo_tree
 msgid "New Price"
-msgstr "Nvo Prix"
+msgstr "Nouveau Prix"
 
 #. module: product_supplierinfo_standard_price
 #: code:addons/product_supplierinfo_standard_price/models/product_supplierinfo.py:94
@@ -45,7 +45,7 @@ msgstr "Différence de prix : %s"
 #. module: product_supplierinfo_standard_price
 #: model:ir.model.fields,field_description:product_supplierinfo_standard_price.field_product_supplierinfo__product_standard_price
 msgid "Product actual standard price"
-msgstr "Actuel prix de revient"
+msgstr "Actuel coût"
 
 #. module: product_supplierinfo_standard_price
 #: model_terms:ir.ui.view,arch_db:product_supplierinfo_standard_price.view_product_supplierinfo_tree
@@ -65,7 +65,7 @@ msgstr ""
 #. module: product_supplierinfo_standard_price
 #: model_terms:ir.ui.view,arch_db:product_supplierinfo_standard_price.view_product_supplierinfo_tree
 msgid "Use this price for product standard price"
-msgstr "Utiliser ce prix pour le prix de revient de l'article"
+msgstr "Utiliser ce montant pour le coût de l'article"
 
 #. module: product_supplierinfo_standard_price
 #: model_terms:ir.ui.view,arch_db:product_supplierinfo_standard_price.view_product_supplierinfo_tree
