@@ -56,6 +56,7 @@ class MrpBom(models.Model):
 
     # Overload Section
     @api.multi
+    @api.returns("self", lambda value: value.id)
     def copy(self, default=None):
         self.ensure_one()
         default = default or {}
