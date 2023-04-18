@@ -213,6 +213,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="date_invoice" position="before">
                 <field name="number"/>
             </field>
+            <!-- hide reference, and replace by 'supplier_invoice_number'-->
+            <field name="reference" position="before">
+                <field name="supplier_invoice_number"/>
+            </field>
+            <field name="reference" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </field>
+
             <!-- Move Due Date -->
             <field name="date_due" position="replace"/>
             <field name="residual_signed" position="after">
