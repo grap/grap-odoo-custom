@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 14:26+0000\n"
-"PO-Revision-Date: 2022-10-24 14:26+0000\n"
+"POT-Creation-Date: 2023-04-20 12:23+0000\n"
+"PO-Revision-Date: 2023-04-20 12:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,11 +31,6 @@ msgid "2. Update Cost Prices (BoM) 📋"
 msgstr "2. Mettre à jour les coûts (FT) 📋"
 
 #. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_products
-msgid "3. Update Margin and Sale Price 💶"
-msgstr "3. Mettre à jour les prix de vente et marges 💶"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "<b>Data sheet</b> - finished product 🥧"
 msgstr "<b>Fiche technique</b> - produit fini 🥧"
@@ -47,13 +42,13 @@ msgstr "<b>Fiche technique</b> - produit intermédiaire 🧩"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
-msgstr ""
+msgid "<span> (for 1x</span>"
+msgstr "<span> (pour 1x</span>"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "<span> (for 1x</span>"
-msgstr "<span> (pour 1x</span>"
+msgid "<span>kg</span>"
+msgstr ""
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -91,11 +86,6 @@ msgid "Allergens"
 msgstr "Allergènes"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
-msgid "Apply Margin"
-msgstr "Appliquer la marge"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Attachments"
 msgstr "Pièces jointes"
@@ -107,19 +97,20 @@ msgid "Bill of Material"
 msgstr "Fiche technique"
 
 #. module: grap_change_views_mrp
-#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products
-#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
-msgid "Bills of Materials"
-msgstr "Fiches techniques"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 msgid "Bills of Materials - Handling Prices"
 msgstr "Fiches techniques - Gérer les prix"
 
 #. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+msgid "Bills of Materials Intermediate - Handling Prices"
+msgstr "Fiches techniques de produits intermédiaires - Gérer les prix"
+
+#. module: grap_change_views_mrp
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_all
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products
+#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products
+#: model:ir.actions.act_window,name:grap_change_views_mrp.menu_grap_mrp_bom_all_admin
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_bom
 msgid "Bills of Materials 📋"
 msgstr "Fiches techniques 📋"
@@ -140,7 +131,6 @@ msgid "BoM - Intermediate products 🧩"
 msgstr "FT - Produits intermédiaires 🧩"
 
 #. module: grap_change_views_mrp
-#: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_all_price
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_finished_products_price
 #: model:ir.actions.act_window,name:grap_change_views_mrp.action_grap_mrp_bom_intermediate_products_price
 msgid "BoM - Update Cost Prices 📋"
@@ -159,8 +149,15 @@ msgstr "Recette pour"
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "BoM Standard Price"
 msgstr "FT - Coût"
+
+#. module: grap_change_views_mrp
+#: model:ir.ui.menu,name:grap_change_views_mrp.menu_product_product_admin
+msgid "Bom - All (Admin)"
+msgstr "Fiches Techniques (Admin)"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -183,20 +180,12 @@ msgid "Cost"
 msgstr "Coût"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
-msgid "Decrease the Sale Price down to Theoretical Price"
-msgstr "Baisser le prix de vente pour atteindre le prix théorique"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "Diff BoM and Product"
 msgstr "Diff FT et Produit"
-
-#. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_3a_finished
-msgid "Finished Products"
-msgstr "Produits finis"
 
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2b_finished
@@ -244,16 +233,6 @@ msgid "Images"
 msgstr ""
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
-msgid "Increase the Sale Price up to Theoretical Price"
-msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
-
-#. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2c_all
-msgid "Intermediate and finished products"
-msgstr "Produits intermédiaires et produits finis"
-
-#. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2a_intermediate
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
 msgid "Intermediate products"
@@ -263,6 +242,8 @@ msgstr "Produits intermédiaires"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "It will set product variant's standard price with this price"
 msgstr "Cela va définir le coût de l'article avec ce prix."
 
@@ -305,7 +286,8 @@ msgstr "Opération"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "Product"
 msgstr "Article"
 
@@ -317,12 +299,9 @@ msgstr "Unité de mesure d'article"
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "Product template (admin)"
-msgstr ""
-
-#. module: grap_change_views_mrp
-#: model:ir.actions.act_window,name:grap_change_views_mrp.action_mrp_product_product_price_finished
-msgid "Products - Update Margin and Sale Price"
 msgstr ""
 
 #. module: grap_change_views_mrp
@@ -340,23 +319,27 @@ msgstr "Article - PdV"
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "Product Standard Price"
 msgstr "Article - Coût"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
-msgid "Ref."
-msgstr "Réf."
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "Reference"
 msgstr "Référence"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "ST"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "ST %"
 msgstr ""
 
 #. module: grap_change_views_mrp
@@ -390,11 +373,6 @@ msgid "Structure & Cost"
 msgstr "Structure & Coût"
 
 #. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_1b_supplierinfos
-msgid "Suppliers Informations"
-msgstr "Prix fournisseur·euse·s"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Tags 🎨"
 msgstr ""
@@ -413,6 +391,8 @@ msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "UoM"
 msgstr "UdM"
 
@@ -420,11 +400,6 @@ msgstr "UdM"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "⇒ Set Code"
 msgstr "⇒ Définir la Référence"
-
-#. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "⇒ Set Time with BoM lines"
-msgstr "⇒ Définir avec le temps des lignes de la FT"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap

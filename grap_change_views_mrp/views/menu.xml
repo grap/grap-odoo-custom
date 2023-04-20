@@ -55,7 +55,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
       <field name="view_mode">kanban,tree,form</field>
-      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_intermediate"/>
       <field name="context">{"search_default_filter_product_sale_nok":1}</field>
     </record>
 
@@ -125,8 +125,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
-      <field name="view_mode">kanban,tree,form</field>
-      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price_sale_nok"/>
       <field name="context">{"search_default_filter_product_sale_nok":1}</field>
     </record>
 
@@ -140,7 +140,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,form</field>
       <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
       <field name="context">{"search_default_filter_product_sale_ok":1}</field>
     </record>
@@ -149,20 +149,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         name="Finished products"
         parent="menu_grap_mrp_handle_prices_bom_prices" sequence="2"
         action="action_grap_mrp_bom_finished_products_price"/>
-
-    <record id="action_grap_mrp_bom_all_price" model="ir.actions.act_window">
-      <field name="name">BoM - Update Cost Prices 📋</field>
-      <field name="type">ir.actions.act_window</field>
-      <field name="res_model">mrp.bom</field>
-      <field name="view_type">form</field>
-      <field name="view_mode">kanban,tree,form</field>
-      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
-    </record>
-
-    <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2c_all"
-        name="Intermediate and finished products"
-        parent="menu_grap_mrp_handle_prices_bom_prices" sequence="3"
-        action="action_grap_mrp_bom_all_price"/>
 
     <!-- Step 3 for "Handling Prices" in grap_change_views_product menu.xml-->
 

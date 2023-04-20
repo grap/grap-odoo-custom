@@ -263,9 +263,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- Main Grap BoM Tree View with all fields -->
     <record id="view_mrp_bom_tree_grap" model="ir.ui.view">
         <field name="model">mrp.bom</field>
-        <!-- <field name="priority" eval="1"/> -->
         <field name="arch" type="xml">
-            <tree string="Bills of Materials" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+            <tree default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
                 <!-- odoo code  -->
                 <field name="code" string="Reference"/>
                 <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
@@ -295,7 +294,61 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <!-- Main Grap BoM Tree View for Intermediate BoMs -->
+    <record id="view_mrp_bom_tree_grap_intermediate" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="arch" type="xml">
+            <tree default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+                <!-- odoo code  -->
+                <field name="code" string="Reference"/>
+                <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
+                <field name="product_id" string="Product"/>
+                <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
+                <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                <!-- mrp_business and mrp_bom_tag-->
+                <field name="description_short"/>
+                <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="priority" widget="priority"/>
+                <field name="time_to_produce"/>
+                <!-- mrp_bom_sale_product_margin -->
+                <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_total" string="BoM&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <button name="set_product_standard_price" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}" help="It will set product variant's standard price with this price"/>
+                <field name="product_standard_price" string="Product&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <!-- mrp_food -->
+                <field name="bom_season_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_label_ids" widget="many2many_tags"/>
+                <field name="bom_allergen_ids" widget="many2many_tags"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+
     <!-- Tree view to handle prices  -->
+    <record id="view_mrp_bom_tree_grap_handle_price_sale_nok" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="arch" type="xml">
+            <tree string="Bills of Materials Intermediate - Handling Prices" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+                <!-- odoo code  -->
+                <field name="code" string="Reference"/>
+                <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
+                <field name="product_id" string="Product"/>
+                <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
+                <!-- mrp_business and mrp_bom_tag-->
+                <field name="description_short"/>
+                <field name="priority" widget="priority"/>
+                <!-- mrp_bom_sale_product_margin -->
+                <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_total" string="BoM&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <button name="set_product_standard_price" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}" help="It will set product variant's standard price with this price"/>
+                <field name="product_standard_price" string="Product&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="view_mrp_bom_tree_grap_handle_price" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="arch" type="xml">
@@ -320,7 +373,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </tree>
         </field>
     </record>
-
 
     <!-- ************************************************************ -->
     <!-- MRP Bill of Materials - Override Search -->
