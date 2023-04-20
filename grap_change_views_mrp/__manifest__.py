@@ -30,6 +30,7 @@
         "mrp_business",
         "mrp_bom_product_variant",
         "mrp_bom_tag",
+        "mrp_bom_line_has_bom",
     ],
     "data": [
         "views/view_mrp_bom.xml",

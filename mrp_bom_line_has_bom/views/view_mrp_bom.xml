@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Form -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_form" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
+        <field name="arch" type="xml">
+            <!-- BoM Lines -->
+            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_id']" position="before">
+                <field name="has_bom" invisible="1"/>
+                <button class="text-center" name="go_to_bom" string="🧩" type="object" attrs="{'invisible': [('has_bom', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
