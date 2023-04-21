@@ -33,7 +33,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="product_food.view_product_allergen_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                <field name="bom_qty"/>
+                <field name="bom_qty" groups="mrp.group_mrp_user"/>
             </xpath>
         </field>
     </record>
