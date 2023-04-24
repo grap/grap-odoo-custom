@@ -146,6 +146,11 @@ msgid "Cooperative Directory Manager"
 msgstr "Responsable de l'annuaire de la coopérative"
 
 #. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_res_company__cooperative_joining_date
+msgid "Cooperative Joining Date"
+msgstr "Date d'adhésion à la coopérative"
+
+#. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__mandate_ids
 msgid "Cooperative mandates"
 msgstr "Mandats de la coopérative"
@@ -163,6 +168,11 @@ msgstr "Créé par"
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__create_date
 msgid "Created on"
 msgstr "Créé le"
+
+#. module: grap_cooperative
+#: model:ir.model.fields,help:grap_cooperative.field_res_company__cooperative_joining_date
+msgid "Date of the commission in which the cooperative accepted the entry of this activity"
+msgstr "Date de la commission à laquelle la coopérative a accepté l'entrée de cette activité"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
@@ -432,6 +442,11 @@ msgstr "👥 Référent·es dans l'activité"
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
 msgid "📗 Cooperative informations"
 msgstr "📗 Informations coopératives"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
+msgid "📗 Legal informations"
+msgstr "📗 Informations Juridiques"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_res_company_form_directory
