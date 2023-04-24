@@ -125,6 +125,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="legal_name" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
                             <field name="report_legal_description" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
                             <h3>📗 Cooperative informations</h3>
+                            <field name="cooperative_joining_date"/>
                             <field name="fiscal_type" readonly="True"/>
                             <field name="category_id"/><br/>
                             <field name="manager_ids" widget="many2many_tags"/><br/>
