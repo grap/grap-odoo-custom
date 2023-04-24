@@ -31,11 +31,6 @@ class ResCompany(models.Model):
     )
 
     # Cooperative informations
-    state_id = fields.Many2one(
-        string="State",
-        comodel_name="res.country.state",
-    )
-
     clean_address = fields.Char(
         string="Clean address",
         compute="_compute_clean_adress",
