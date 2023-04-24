@@ -49,6 +49,11 @@ class ResCompany(models.Model):
         string="Displayed in Directory", default=True
     )
 
+    cooperative_joining_date = fields.Date(
+        help="Date of the commission in which the cooperative"
+        " accepted the entry of this activity"
+    )
+
     # Referents in Company
     accounting_referent_id = fields.Many2one(
         string="Accounting Referent", comodel_name="grap.people"
