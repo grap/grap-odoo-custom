@@ -105,20 +105,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <h3>📭 Public informations</h3>
                             <field name="email" widget="email" readonly="True"/>
                             <field name="phone" widget="phone"/>
-                            <field name="website" widget="url"/><br/>
+                            <field name="website" widget="url"/>
                             <field name="street"/>
                             <field name="city"/>
                             <field name="zip"/>
                             <field name="state_id" string="State"/>
-                            <field name="clean_address"/><br/>
+                            <field name="clean_address"/>
+                            <field name="partner_latitude"/>
+                            <field name="partner_longitude"/>
+                            <field name="social_facebook"/>
+                            <field name="social_instagram"/>
+                            <field name="social_linkedin"/>
+                       </group>
+                        <group>
+                            <h3>📗 Legal informations</h3>
+                            <field name="siret"/>
+                            <field name="vat"/>
                             <field name="legal_type" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
                             <field name="legal_name" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
                             <field name="report_legal_description" attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
-                            <br attrs="{'invisible': [('fiscal_type', 'in', ['fiscal_mother','fiscal_child'])]}"/>
-                            <field name="siret"/>
-                            <field name="vat"/>
-                       </group>
-                        <group>
                             <h3>📗 Cooperative informations</h3>
                             <field name="fiscal_type" readonly="True"/>
                             <field name="category_id"/><br/>
