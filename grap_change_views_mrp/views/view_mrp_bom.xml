@@ -25,8 +25,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <!-- grap custom -->
               <field name="image" widget="image" class="oe_avatar"/>
               <div class="oe_title" name="bom_title">
-                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}"><b>Data sheet</b> - intermediate product 🧩</p>
-                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', False)]}"><b>Data sheet</b> - finished product 🥧</p>
+                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_finished', '=', False), ('product_intermediate', '=', False)]}"><b>Data sheet</b> - Finished 🥧 and intermediate product 🧩</p>
+                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_finished', '=', False), '&amp;', ('product_finished', '=', True), ('product_intermediate', '=', True)]}"
+><b>Data sheet</b> - finished product 🥧</p>
+                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_intermediate', '=', False), '&amp;', ('product_finished', '=', True), ('product_intermediate', '=', True)]}"><b>Data sheet</b> - intermediate product 🧩</p>
                 <!-- / grap custom -->
                 <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
                 <!-- grap custom-->
@@ -55,7 +57,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <field name="product_tmpl_id" context="{'default_type': 'product'}" groups="base.group_no_one"/>
                       <!-- required for mrp_bom_product_variant -->
                       <field name="product_id" required="1" string="Product" groups="product.group_product_variant" context="{'default_type': 'product'}"/>
-                      <field name="product_sale_ok" groups="base.group_no_one"/>
+                      <field name="product_intermediate" groups="base.group_no_one"/>
+                      <field name="product_finished" groups="base.group_no_one"/>
                       <label for="product_qty" string="BoM for"/>
                       <div class="o_row">
                           <field name="product_qty"/>

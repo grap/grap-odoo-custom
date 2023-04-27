@@ -22,8 +22,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='normal']" position="after">
               <separator/>
-              <filter string="Saleable products" name="filter_product_sale_ok" domain="[('product_sale_ok', '=', True)]"/>
-              <filter string="Intermediate products" name="filter_product_sale_nok" domain="[('product_sale_ok', '=', False)]"/>
+              <filter string="Intermediate products 🧩" name="filter_product_intermediate" domain="[('product_intermediate', '=', True)]"/>
+              <filter string="Finished products 🥧" name="filter_product_finished" domain="[('product_finished', '=', True)]"/>
             </xpath>
         </field>
     </record>
@@ -55,8 +55,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
       <field name="view_mode">kanban,tree,form</field>
-      <field name="view_id" ref="view_mrp_bom_tree_grap"/>
-      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_intermediate"/>
+      <field name="context">{"search_default_filter_product_intermediate":1}</field>
     </record>
 
     <menuitem id="menu_grap_mrp_bom_intermediate_products"
@@ -71,7 +71,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="view_type">form</field>
       <field name="view_mode">kanban,tree,form</field>
       <field name="view_id" ref="view_mrp_bom_tree_grap"/>
-      <field name="context">{"search_default_filter_product_sale_ok":1}</field>
+      <field name="context">{"search_default_filter_product_finished":1}</field>
     </record>
 
     <menuitem id="menu_grap_mrp_bom_finished_products"
@@ -125,9 +125,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
-      <field name="view_mode">kanban,tree,form</field>
-      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
-      <field name="context">{"search_default_filter_product_sale_nok":1}</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price_sale_nok"/>
+      <field name="context">{"search_default_filter_product_intermediate":1}</field>
     </record>
 
     <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2a_intermediate"
@@ -140,9 +140,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">mrp.bom</field>
       <field name="view_type">form</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,form</field>
       <field name="view_id" ref="view_mrp_bom_tree_grap_handle_price"/>
-      <field name="context">{"search_default_filter_product_sale_ok":1}</field>
+      <field name="context">{"search_default_filter_product_finished":1}</field>
     </record>
 
     <menuitem id="menu_grap_mrp_handle_prices_standard_prices_2b_finished"

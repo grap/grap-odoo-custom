@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-24 14:26+0000\n"
-"PO-Revision-Date: 2022-10-24 14:26+0000\n"
+"POT-Creation-Date: 2023-04-27 10:37+0000\n"
+"PO-Revision-Date: 2023-04-27 10:37+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,6 +34,11 @@ msgstr "2. Mettre à jour les coûts (FT) 📋"
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_products
 msgid "3. Update Margin and Sale Price 💶"
 msgstr "3. Mettre à jour les prix de vente et marges 💶"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<b>Data sheet</b> - Finished 🥧 and intermediate product 🧩"
+msgstr "<b>Fiche technique</b> - produit fini 🥧 et intermédiaire 🧩"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -194,12 +199,13 @@ msgid "Diff BoM and Product"
 msgstr "Diff FT et Produit"
 
 #. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_3a_finished
-msgid "Finished Products"
-msgstr "Produits finis"
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_finished
+msgid "Finished product"
+msgstr "Produit fini"
 
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2b_finished
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
 msgid "Finished products"
 msgstr "Produits finis"
 
@@ -244,14 +250,9 @@ msgid "Images"
 msgstr ""
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_product_product_tree_price
-msgid "Increase the Sale Price up to Theoretical Price"
-msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
-
-#. module: grap_change_views_mrp
-#: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2c_all
-msgid "Intermediate and finished products"
-msgstr "Produits intermédiaires et produits finis"
+#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_intermediate
+msgid "Intermediate product"
+msgstr "Produit intermédiaire"
 
 #. module: grap_change_views_mrp
 #: model:ir.ui.menu,name:grap_change_views_mrp.menu_grap_mrp_handle_prices_standard_prices_2a_intermediate
@@ -360,14 +361,9 @@ msgid "ST"
 msgstr ""
 
 #. module: grap_change_views_mrp
-#: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_sale_ok
-msgid "Saleable product"
-msgstr "Produit fini"
-
-#. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_search
-msgid "Saleable products"
-msgstr "Produits finis"
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "ST %"
+msgstr ""
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
