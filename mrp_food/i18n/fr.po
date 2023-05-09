@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-03 21:03+0000\n"
-"PO-Revision-Date: 2022-11-03 21:03+0000\n"
+"POT-Creation-Date: 2023-05-05 12:44+0000\n"
+"PO-Revision-Date: 2023-05-05 12:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Ligne de fiche technique"
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
 msgid "Bill of Materials"
-msgstr "Fiches techniques"
+msgstr "Fiche technique"
 
 #. module: mrp_food
 #: model:ir.actions.act_window,name:mrp_food.action_mrp_season_2_mrp_bom
@@ -153,7 +153,7 @@ msgstr "À partir du"
 #: model:ir.model.fields,help:mrp_food.field_product_product__date_last_statement_price
 #: model:ir.model.fields,help:mrp_food.field_product_template__date_last_statement_price
 msgid "Date of last standard price change. Automatically sets to the date of the day you changed the standard price"
-msgstr "Date de la dernière modification du coût. Cette date est automatiquement fixée à la date du jour où vous l'avez modifié la dernière fois."
+msgstr "Date de la dernière modification du prix de revient. Cette date est automatiquement fixée à la date du jour où vous l'avez modifié la dernière fois."
 
 #. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
@@ -174,7 +174,7 @@ msgstr "Fin mercuriale"
 #. module: mrp_food
 #: model:ir.model.fields,help:mrp_food.field_product_product__end_date_of_market_price_list
 msgid "End date of validity of the market price list. After this date, you can consider that your standard price is certainly not up to date."
-msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre coût n'est plus à jour."
+msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre prix de revient n'est plus à jour."
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__id
@@ -208,6 +208,11 @@ msgid "Includes allergens of the product and its components"
 msgstr "Inclus les allergènes du produit et de ses composants"
 
 #. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_product_product__is_intermediate
+msgid "Intermediate product"
+msgstr "Produit intermédiaire"
+
+#. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_product_product__is_component
 #: model:ir.model.fields,field_description:mrp_food.field_product_template__is_component
 msgid "Is Component"
@@ -219,11 +224,6 @@ msgstr "Est une matière première"
 #: model:ir.model.fields,field_description:mrp_food.field_product_template__is_seasonal
 msgid "Is Seasonal"
 msgstr "De saison ☀️"
-
-#. module: mrp_food
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
-msgid "Is seasonal"
-msgstr "De saison"
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_label_ids
@@ -252,11 +252,6 @@ msgstr "Dernière mise à jour par"
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
-
-#. module: mrp_food
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
-msgid "Main seller"
-msgstr "Fourni. principal·e"
 
 #. module: mrp_food
 #: model:res.groups,name:mrp_food.seasonality_manager
@@ -363,21 +358,6 @@ msgstr "Saisonnalité ℹ️"
 #: model:ir.model.fields,help:mrp_food.field_mrp_bom__bom_season_ids
 msgid "Select the seasonality(s) of this Bill of material. Helps visually to know which recipe is in season or not."
 msgstr "Sélectionner la ou les saisonnalités de cette fiche technique. Aide visuellement à savoir quelle fiche technique est de saison ou non."
-
-#. module: mrp_food
-#: model:ir.model,name:mrp_food.model_product_supplierinfo
-msgid "Supplier Pricelist"
-msgstr "Liste de prix du fournisseur·e"
-
-#. module: mrp_food
-#: model:ir.ui.menu,name:mrp_food.menu_product_supplierinfo_editable
-msgid "Suppliers Informations"
-msgstr "Prix fournisseur·es"
-
-#. module: mrp_food
-#: model:ir.actions.act_window,name:mrp_food.action_product_supplierinfo_mrp_tree
-msgid "Suppliers informations"
-msgstr "Prix fournisseur·e·s"
 
 #. module: mrp_food
 #: code:addons/mrp_food/models/seasonality_line.py:32

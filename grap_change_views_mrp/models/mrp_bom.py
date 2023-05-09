@@ -16,7 +16,12 @@ class MrpBom(models.Model):
         related="product_id.uom_id",
     )
 
-    product_sale_ok = fields.Boolean(
+    product_finished = fields.Boolean(
+        string="Finished product",
         related="product_id.sale_ok",
-        string="Saleable product",
+    )
+
+    product_intermediate = fields.Boolean(
+        string="Intermediate product",
+        related="product_id.is_intermediate",
     )
