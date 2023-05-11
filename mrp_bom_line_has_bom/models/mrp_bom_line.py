@@ -16,7 +16,7 @@ class MrpBomLine(models.Model):
     )
 
     @api.multi
-    @api.depends("product_id", "product_id.used_in_bom_count")
+    @api.depends("product_id", "product_id.bom_count")
     def _compute_has_bom(self):
         for bom_line in self:
             bom_line.has_bom = bom_line.product_id.bom_count
@@ -34,7 +34,8 @@ class MrpBomLine(models.Model):
             }
         # Show different BoMs
         else:
-            self.env.ref("mrp.mrp_bom_tree_view")
+            tree_view = self.env.ref("mrp.mrp_bom_tree_view")
             boms = self.product_id.mapped("bom_ids")
+            result["views"] = [(tree_view.id, "tree")]
             result["domain"] = [("id", "in", boms.ids)]
         return result

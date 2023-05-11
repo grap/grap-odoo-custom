@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record model="product.product" id="demo_product_vegan_french_bourguignon">
+        <field name="name">Seitan french bourguignon vegan</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">7</field>
+    </record>
+
+    <record model="product.product" id="demo_product_seitan">
+        <field name="name">Seitan</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">3</field>
+    </record>
+
+    <record model="product.product" id="demo_product_carrot">
+        <field name="name">Carrots</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">10</field>
+    </record>
+
+    <record model="product.product" id="demo_product_onion">
+        <field name="name">Onions</field>
+        <field name="standard_price">1</field>
+    </record>
+
+    <record model="product.template" id="demo_product_template_vegan_french_bourguignon">
+        <field name="name">Seitan french bourguignon vegan</field>
+        <field name="image" type="base64" file="mrp_bom_line_has_bom/static/img/seitan-bourguignon.jpg"/>
+    </record>
+
+</odoo>
