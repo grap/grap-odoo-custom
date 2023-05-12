@@ -37,12 +37,16 @@ class ProductProduct(models.Model):
         compute="_compute_is_component_intermediate",
         compute_sudo=True,
         store=True,
+        help="Is component a product which has no BoM based on it +\
+              not to sale + is used in a BoM line",
     )
     is_intermediate = fields.Boolean(
         string="Intermediate product",
         compute="_compute_is_component_intermediate",
         compute_sudo=True,
         store=True,
+        help="Is intermediate a product which has a BoM based on it +\
+              is or is not to sale + is used in a BoM line",
     )
 
     @api.onchange("standard_price")
