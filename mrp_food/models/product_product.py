@@ -37,14 +37,12 @@ class ProductProduct(models.Model):
         compute="_compute_is_component_intermediate",
         compute_sudo=True,
         store=True,
-        default=False,
     )
     is_intermediate = fields.Boolean(
         string="Intermediate product",
         compute="_compute_is_component_intermediate",
         compute_sudo=True,
         store=True,
-        default=False,
     )
 
     @api.onchange("standard_price")
@@ -69,3 +67,6 @@ class ProductProduct(models.Model):
                 # Difference is having a BoM with this product or not
                 product.is_intermediate = True if product.bom_count else False
                 product.is_component = not product.is_intermediate
+            else:
+                product.is_intermediate = False
+                product.is_component = False
