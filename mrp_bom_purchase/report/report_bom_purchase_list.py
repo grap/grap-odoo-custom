@@ -63,16 +63,19 @@ class ReportBomPurchaseList(models.AbstractModel):
 
                     # INTERMEDIATE PRODUCT TO PRODUCE
                     # Calculate values of this line
-                    produce_product_qty = bom_line.product_qty
-                    produce_subtotal = (
-                        bom_line.product_qty * bom_line.standard_price_unit
+                    produce_product_qty = self.calculate_qty_for_one_product(
+                        bom_line.product_qty, bom_qty, wiz_bom_line.quantity, 3
                     )
+                    produce_subtotal = round(
+                        produce_product_qty * bom_line.standard_price_unit, 3
+                    )
+
                     # Add quantity if product is already there
                     if product_id in produce_list:
                         produce_list[product_id]["to_produce_quantity"] = round(
                             produce_list[product_id]["to_produce_quantity"]
                             + produce_product_qty,
-                            3,
+                            4,
                         )
                         produce_list[product_id]["to_produce_subtotal"] = round(
                             produce_list[product_id]["to_produce_subtotal"]
@@ -85,7 +88,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                             "to_produce_quantity": round(produce_product_qty, 3),
                             "to_produce_uom": bom_line.product_uom_id.name,
                             "to_produce_price_unit": bom_line.standard_price_unit,
-                            "to_produce_subtotal": round(produce_subtotal, 2),
+                            "to_produce_subtotal": round(produce_subtotal, 3),
                         }
 
             # COMPONENTS PRODUCTS to purchase_list
@@ -94,7 +97,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                 product_qty = self.calculate_qty_for_one_product(
                     bom_line.product_qty, bom_qty, wiz_bom_line.quantity, 3
                 )
-                bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 2)
+                bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 3)
                 # Add quantity if product is already there
                 if product_id in bom_lines_by_product:
                     bom_lines_by_product[product_id]["quantity"] = round(
