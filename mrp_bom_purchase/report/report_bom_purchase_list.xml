@@ -8,19 +8,110 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="report_bom_purchase_list">
         <t t-call="web.basic_layout">
-            <div class="page">
+            <div class="page small-font-size">
                 <h2 class="text-center">Purchase list</h2>
+                <div>
+                  <div class="production_date">
+                    <t t-if="option_production_date">
+                        Production date: <span t-esc="option_production_date"/>
+                        <br/><br/>
+                    </t>
+                  </div>
+                  <h6 class="title-h6"><b>Reminder of the quantities to prepare:</b></h6>
+                  <table class="table table-sm table-bordered">
+                      <thead>
+                          <tr class="reminder_bom_to_prepare_thead th-colored">
+                              <th name="th_reminder_product" class="text-left">Bill of Material</th>
+                              <th name="th_reminder_qty" class="text-center width-qty-and-unit">Quantity</th>
+                              <th name="th_reminder_uom" class="text-left width-qty-and-unit">UoM</th>
+                              <t t-if="option_display_cost">
+                                <th name="th_reminder_standard_price_unit" class="text-center width-fixed-small">Price Unit</th>
+                                <th name="th_reminder_subtotal" class="text-center width-fixed-small">Subtotal</th>
+                              </t>
+                              <th name="th_reminder_free_comment" class="text-center width-fixed-large">Free comment</th>
+                          </tr>
+                      </thead>
+                      <tbody class="reminder_bom_to_prepare_tbody">
+                          <t t-foreach="manufacture_list" t-as="manufacture_list_line">
+                              <tr>
+                                <td name="td_reminder_product" class="text-left">
+                                  <span t-esc="manufacture_list_line[0]"/>
+                                </td>
+                                <td name="td_reminder_qty" class="text-center width-qty-and-unit">
+                                  <span t-esc="manufacture_list_line[1]"/>
+                                </td>
+                                <td name="td_reminder_uom" class="text-left width-qty-and-unit">
+                                  <span t-esc="manufacture_list_line[2]"/>
+                                </td>
+                                <t t-if="option_display_cost">
+                                  <td name="td_reminder_standard_price_unit" class="text-center width-fixed-small">
+                                    <span t-esc="manufacture_list_line[3]"/> <span t-esc="currency_symbol"/>
+                                  </td>
+                                  <td name="td_reminder_subtotal" class="text-center width-fixed-small">
+                                    <span t-esc="manufacture_list_line[4]"/> <span t-esc="currency_symbol"/>
+                                  </td>
+                                </t>
+                                <td name="td_reminder_free_comment" class="width-fixed-large"></td>
+                              </tr>
+                          </t>
+                      </tbody>
+                  </table>
+                </div>
+
                 <br/>
+                <h6 class="title-h6"><b>Intermediate products to produce:</b></h6>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <tr class="bom_purchase_thead">
-                            <th name="th_product" class="text-left">Product</th>
-                            <th name="th_qty" class="text-right">Quantity</th>
-                            <th name="th_uom">UoM</th>
+                        <tr class="products_to_produce_thead th-colored">
+                            <th name="th_products_to_produce_product" class="text-left">Bill of Material</th>
+                            <th name="th_products_to_produce_qty" class="text-center width-qty-and-unit">Quantity</th>
+                            <th name="th_products_to_produce_uom" class="text-left width-qty-and-unit">UoM</th>
                             <t t-if="option_display_cost">
-                              <th name="th_standard_price_unit" class="text-right">Standard Price Unit</th>
-                              <th name="th_subtotal" class="text-right">Subtotal</th>
+                              <th name="th_products_to_produce_standard_price_unit" class="text-center width-fixed-small">Price Unit</th>
+                              <th name="th_products_to_produce_subtotal" class="text-center width-fixed-small">Subtotal</th>
                             </t>
+                            <th name="th_products_to_produce_free_comment" class="text-center width-fixed-large">Free comment</th>
+                        </tr>
+                    </thead>
+                    <tbody class="products_to_produce_tbody">
+                        <t t-foreach="produce_list" t-as="produce_list_line">
+                            <tr>
+                              <td name="td_products_to_produce_product" class="text-left">
+                                <span t-esc="produce_list_line[0]"/>
+                              </td>
+                              <td name="td_products_to_produce_qty" class="text-center width-qty-and-unit">
+                                <span t-esc="produce_list_line[1]"/>
+                              </td>
+                              <td name="td_products_to_produce_uom" class="text-left width-qty-and-unit">
+                                <span t-esc="produce_list_line[2]"/>
+                              </td>
+                              <t t-if="option_display_cost">
+                                <td name="td_products_to_produce_standard_price_unit" class="text-center width-fixed-small">
+                                  <span t-esc="produce_list_line[3]"/> <span t-esc="currency_symbol"/>
+                                </td>
+                                <td name="td_products_to_produce_subtotal" class="text-center width-fixed-small">
+                                  <span t-esc="produce_list_line[4]"/> <span t-esc="currency_symbol"/>
+                                </td>
+                              </t>
+                              <td name="td_products_to_produce_free_comment" class="width-fixed-large"></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <br/>
+                <h6 class="title-h6"><b>To order:</b></h6>
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr class="to_purchase_thead th-colored">
+                            <th name="th_to_purchase_product" class="text-left">Product</th>
+                            <th name="th_to_purchase_qty" class="text-center width-qty-and-unit">Quantity</th>
+                            <th name="th_to_purchase_uom" class="text-left width-qty-and-unit">UoM</th>
+                            <t t-if="option_display_cost">
+                              <th name="th_to_purchase_standard_price_unit" class="text-center width-fixed-small">Price Unit</th>
+                              <th name="th_to_purchase_subtotal" class="text-center width-fixed-small">Subtotal</th>
+                            </t>
+                            <th name="th_to_purchase_free_comment" class="text-center width-fixed-large">Free comment</th>
                         </tr>
                     </thead>
                     <tbody class="purchase_list_tbody">
@@ -33,7 +124,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
                                 <t t-if="purchase_list_line[0] != categ_tmp">
                                   <tr>
-                                    <td name="new_category" class="text-left" colspan="5">
+                                    <td name="new_category" class="text-left" colspan="6">
                                       <b><span t-esc="purchase_list_line[0]"/></b>
                                     </td>
                                   </tr>
@@ -42,33 +133,34 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <!-- PRINT A NEW PRODUCT LINE WITH QUANTITY -->
                             <tr>
                               <!-- purchase_list_line[0] is the product category -->
-                              <td name="td_product" class="text-left">
+                              <td name="td_to_purchase_product" class="text-left">
                                 <span t-esc="purchase_list_line[1]"/>
                               </td>
-                              <td name="td_qty" class="text-right">
+                              <td name="td_to_purchase_qty" class="text-center width-qty-and-unit">
                                 <span t-esc="purchase_list_line[2]"/>
                               </td>
-                              <td name="td_uom" class="text-left">
+                              <td name="td_to_purchase_uom" class="text-left width-qty-and-unit">
                                 <span t-esc="purchase_list_line[3]"/>
                               </td>
                               <t t-if="option_display_cost">
-                                <td name="td_standard_price_unit" class="text-right">
+                                <td name="td_to_purchase_standard_price_unit" class="text-center width-fixed-small">
                                   <span t-esc="purchase_list_line[4]"/> <span t-esc="currency_symbol"/>
                                 </td>
-                                <td name="td_subtotal" class="text-right">
+                                <td name="td_to_purchase_subtotal" class="text-center width-fixed-small">
                                   <span t-esc="purchase_list_line[5]"/> <span t-esc="currency_symbol"/>
                                 </td>
                               </t>
+                              <td name="td_to_purchase_free_comment width-fixed-large"></td>
                             </tr>
                             <!-- We define the new category -->
                             <t t-set="categ_tmp" t-value="purchase_list_line[0]"/>
                         </t>
                         <t t-if="option_display_cost">
                           <tr class="bom_purchase_total_cost_tr">
-                            <td name="purchase_total_cost_name" class="text-right" colspan="4">
-                              <b>Total:</b>
+                            <td name="to_purchase_total_cost_name" class="text-right" colspan="4">
+                              <b>Total to order:</b>
                             </td>
-                            <td name="purchase_total_cost" class="text-right" colspan="1">
+                            <td name="to_purchase_total_cost" class="text-center" colspan="1">
                               <b><span t-esc="purchase_total_cost"/> <span t-esc="currency_symbol"/></b>
                             </td>
                           </tr>

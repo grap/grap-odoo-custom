@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 15:24+0000\n"
-"PO-Revision-Date: 2022-10-06 15:24+0000\n"
+"POT-Creation-Date: 2023-05-12 13:25+0000\n"
+"PO-Revision-Date: 2023-05-12 13:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,12 +17,32 @@ msgstr ""
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
-msgid "<b>Total:</b>"
-msgstr ""
+msgid "<b>Intermediate products to produce:</b>"
+msgstr "<b>Produits intermédiaires à produire :</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Reminder of the quantities to prepare:</b>"
+msgstr "<b>Rappel des quantités à préparer :</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>To order:</b>"
+msgstr "<b>À acheter:</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Total to order:</b>"
+msgstr "<b>Total à acheter :</b>"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_id
 msgid "Bill Of Material"
+msgstr "Fiche technique"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Bill of Material"
 msgstr "Fiche technique"
 
 #. module: mrp_bom_purchase
@@ -41,11 +61,6 @@ msgid "BoM Qty"
 msgstr "Qté de la FT"
 
 #. module: mrp_bom_purchase
-#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_uom_id
-msgid "BoM UoM"
-msgstr "UdM"
-
-#. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "Cancel"
 msgstr "Annuler"
@@ -54,6 +69,11 @@ msgstr "Annuler"
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__wizard_line_subtotal
 msgid "Cost"
 msgstr "Coût"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
+msgid "Create Purchase Orders (in coming)"
+msgstr "Créer les Bons de Commandes (fonction à venir)"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__create_uid
@@ -88,6 +108,11 @@ msgstr "Qté voulue"
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_report_mrp_bom_purchase_report_bom_purchase_list__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Free comment"
+msgstr "Commentaire libre"
 
 #. module: mrp_bom_purchase
 #: model:ir.actions.act_window,name:mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard
@@ -137,9 +162,9 @@ msgid "Lines"
 msgstr "Lignes"
 
 #. module: mrp_bom_purchase
-#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
-msgid "Print"
-msgstr "Imprimer"
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Price Unit"
+msgstr "Coût unitaire"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
@@ -152,6 +177,16 @@ msgid "Product"
 msgstr "Article"
 
 #. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__option_production_date
+msgid "Production Date"
+msgstr "Date de production"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Production date:"
+msgstr "Date de production :"
+
+#. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "Purchase list"
 msgstr "Liste d'achats"
@@ -160,11 +195,6 @@ msgstr "Liste d'achats"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "Quantity"
 msgstr "Quantité"
-
-#. module: mrp_bom_purchase
-#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
-msgid "Standard Price Unit"
-msgstr "Prix unitaire"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
@@ -182,6 +212,7 @@ msgid "Unit of Measure (Unit of Measure) is the unit of measurement for the inve
 msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
 
 #. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_uom_id
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "UoM"
 msgstr "UdM"
@@ -200,6 +231,11 @@ msgstr ""
 #: model:ir.model,name:mrp_bom_purchase.model_bom_print_purchase_list_wizard_line
 msgid "Wizard line for printing purchase list from selected bill of materials"
 msgstr ""
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
+msgid "📆 Production Date"
+msgstr "📆 Date de production"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form

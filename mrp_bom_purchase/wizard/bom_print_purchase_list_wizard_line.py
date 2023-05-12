@@ -4,6 +4,8 @@
 
 from odoo import api, fields, models
 
+from odoo.addons import decimal_precision as dp
+
 
 class BomPrintPurchaseListWizardLine(models.TransientModel):
     _name = "bom.print.purchase.list.wizard.line"
@@ -29,16 +31,17 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
 
     bom_uom_id = fields.Many2one(
         related="bom_id.product_uom_id",
-        string="BoM UoM",
-        # string="Bom uom",
+        string="UoM",
     )
 
     quantity = fields.Float(
         string="Desired Quantity",
+        default=1,
     )
 
     wizard_line_subtotal = fields.Float(
         string="Cost",
+        digits=dp.get_precision("Product Price"),
     )
 
     @api.depends("bom_id")
