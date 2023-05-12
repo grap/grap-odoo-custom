@@ -12,7 +12,6 @@ class MrpBomLine(models.Model):
     has_bom = fields.Boolean(
         compute="_compute_has_bom",
         help="Click to access BoM of this product.",
-        default=False,
     )
 
     @api.multi
