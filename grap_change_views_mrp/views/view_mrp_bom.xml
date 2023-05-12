@@ -215,7 +215,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="display_type" invisible="1"/>
                               <!-- mrp_bom_line_has_bom -->
                               <field name="has_bom" invisible="1"/>
-                              <button class="text-center" name="go_to_bom" string="🧩" type="object" attrs="{'invisible': [('has_bom', '=', False)]}"/>
+                              <button class="text-center" name="go_to_bom" string="🧩" type="object" attrs="{'invisible': [('has_bom', '=', False)]}" help="See related Bill of Material"/>
                               <!-- / mrp_bom_line_has_bom -->
                               <field name="product_id" context="{'default_type': 'product'}" attrs="{'required': [('display_type', '=', False)]}"/>
                               <field name="name" widget="section_and_note_text"/>
