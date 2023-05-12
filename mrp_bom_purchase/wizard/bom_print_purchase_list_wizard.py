@@ -26,6 +26,10 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         default=False,
     )
 
+    option_production_date = fields.Date(
+        string="Production Date",
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -42,7 +46,6 @@ class BomPrintPurchaseListWizard(models.TransientModel):
 
         # Initialize lines
         for bom in boms:
-            # import pdb; pdb.set_trace()
             lines_vals.append(
                 (
                     0,
@@ -66,6 +69,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             "line_data": [x.id for x in self.line_ids],
             "option_group_by_product_category": self.option_group_by_product_category,
             "option_display_cost": self.option_display_cost,
+            "option_production_date": self.option_production_date,
         }
 
     @api.multi

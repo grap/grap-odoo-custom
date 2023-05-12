@@ -1,12 +1,35 @@
-#report_bom_purchase_list{
-  position: relative;
-  top:-100px;
+.title-h6{
+  color : #2d3436; // grey
 }
 
 .bom_purchase_total_cost_tr{
-  background-color: #fdcb6e
+  background-color: #fdcb6e;
 }
 
 .bom_purchase_thead{
-  background-color: #e17055
+  background-color: #e17055;
+}
+
+.reminder_bom_to_prepare_thead{
+    color : #0984e3;
+}
+
+.th-colored{
+    color : #6c5ce7; // exodus fruit
+}
+
+.width-fixed-small {
+  width: 100px;
+}
+
+.width-fixed-large {
+  width: 250px;
+}
+
+.width-qty-and-unit {
+  width: 10px;
+}
+
+.small-font-size{
+  font-size: 12px;
 }
