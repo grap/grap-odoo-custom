@@ -38,7 +38,8 @@ class ReportBomPurchaseList(models.AbstractModel):
         wiz_boms_lines = self.env["bom.print.purchase.list.wizard.line"].browse(
             data["line_data"]
         )
-        bom_lines_by_product = {}
+
+        purchase_list = {}
         produce_list = {}
         for wiz_bom_line in wiz_boms_lines:
             bom = wiz_bom_line.bom_id
@@ -72,6 +73,14 @@ class ReportBomPurchaseList(models.AbstractModel):
 
                     # Add quantity if product is already there
                     if product_id in produce_list:
+                        produce_list[product_id][
+                            "to_produce_product_in_bom_name"
+                        ] += str(
+                            ", "
+                            + wiz_bom_line.bom_id.display_name
+                            + " x"
+                            + str(produce_product_qty)
+                        )
                         produce_list[product_id]["to_produce_quantity"] = round(
                             produce_list[product_id]["to_produce_quantity"]
                             + produce_product_qty,
@@ -85,6 +94,9 @@ class ReportBomPurchaseList(models.AbstractModel):
                     else:
                         produce_list[product_id] = {
                             "to_produce_product_name": bom_line.product_id.name.capitalize(),
+                            "to_produce_product_in_bom_name": wiz_bom_line.bom_id.display_name
+                            + " x"
+                            + str(produce_product_qty),
                             "to_produce_quantity": round(produce_product_qty, 3),
                             "to_produce_uom": bom_line.product_uom_id.name,
                             "to_produce_price_unit": bom_line.standard_price_unit,
@@ -99,17 +111,16 @@ class ReportBomPurchaseList(models.AbstractModel):
                 )
                 bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 3)
                 # Add quantity if product is already there
-                if product_id in bom_lines_by_product:
-                    bom_lines_by_product[product_id]["quantity"] = round(
-                        bom_lines_by_product[product_id]["quantity"] + product_qty, 3
+                if product_id in purchase_list:
+                    purchase_list[product_id]["quantity"] = round(
+                        purchase_list[product_id]["quantity"] + product_qty, 3
                     )
-                    bom_lines_by_product[product_id]["subtotal"] = round(
-                        bom_lines_by_product[product_id]["subtotal"]
-                        + bom_line_subtotal,
+                    purchase_list[product_id]["subtotal"] = round(
+                        purchase_list[product_id]["subtotal"] + bom_line_subtotal,
                         3,
                     )
                 else:
-                    bom_lines_by_product[product_id] = {
+                    purchase_list[product_id] = {
                         "category": bom_line.product_id.categ_id.complete_name,
                         "product_name": bom_line.product_id.name.capitalize(),
                         "quantity": round(product_qty, 3),
@@ -119,9 +130,9 @@ class ReportBomPurchaseList(models.AbstractModel):
                     }
 
         # Formate purchase_list dict in list the way we want
-        purchase_list = []
-        for bom_line in bom_lines_by_product.values():
-            purchase_list.append(
+        purchase_list_clean = []
+        for bom_line in purchase_list.values():
+            purchase_list_clean.append(
                 [
                     bom_line[field]
                     for field in [
@@ -135,7 +146,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                 ]
             )
         # Sort the purchase list by product name and, optionally, category
-        purchase_list.sort(
+        purchase_list_clean.sort(
             key=itemgetter(1, 0)
             if data["option_group_by_product_category"]
             else itemgetter(1)
@@ -149,6 +160,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                     bom[field]
                     for field in [
                         "to_produce_product_name",
+                        "to_produce_product_in_bom_name",
                         "to_produce_quantity",
                         "to_produce_uom",
                         "to_produce_price_unit",
@@ -157,7 +169,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                 ]
             )
 
-        return purchase_list, produce_list_clean
+        return purchase_list_clean, produce_list_clean
 
     @api.model
     def _prepare_data_to_manufacture(self, data):

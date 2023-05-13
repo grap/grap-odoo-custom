@@ -77,20 +77,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <t t-foreach="produce_list" t-as="produce_list_line">
                             <tr>
                               <td name="td_products_to_produce_product" class="text-left">
-                                <span t-esc="produce_list_line[0]"/>
+                                <span t-esc="produce_list_line[0]"/><span class="smaller-font-size"> (for <span t-esc="produce_list_line[1]"/>)</span>
                               </td>
                               <td name="td_products_to_produce_qty" class="text-center width-qty-and-unit">
-                                <span t-esc="produce_list_line[1]"/>
+                                <span t-esc="produce_list_line[2]"/>
                               </td>
                               <td name="td_products_to_produce_uom" class="text-left width-qty-and-unit">
-                                <span t-esc="produce_list_line[2]"/>
+                                <span t-esc="produce_list_line[3]"/>
                               </td>
                               <t t-if="option_display_cost">
                                 <td name="td_products_to_produce_standard_price_unit" class="text-center width-fixed-small">
-                                  <span t-esc="produce_list_line[3]"/> <span t-esc="currency_symbol"/>
+                                  <span t-esc="produce_list_line[4]"/> <span t-esc="currency_symbol"/>
                                 </td>
                                 <td name="td_products_to_produce_subtotal" class="text-center width-fixed-small">
-                                  <span t-esc="produce_list_line[4]"/> <span t-esc="currency_symbol"/>
+                                  <span t-esc="produce_list_line[5]"/> <span t-esc="currency_symbol"/>
                                 </td>
                               </t>
                               <td name="td_products_to_produce_free_comment" class="width-fixed-large"></td>
