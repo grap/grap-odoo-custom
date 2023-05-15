@@ -1,13 +1,12 @@
 .title-h6{
   color : #2d3436; // grey
 }
+.title-h3{
+  color : #2a3836;
+}
 
 .bom_purchase_total_cost_tr{
   background-color: #fdcb6e;
-}
-
-.bom_purchase_thead{
-  background-color: #e17055;
 }
 
 .reminder_bom_to_prepare_thead{
@@ -36,4 +35,8 @@
 
 .smaller-font-size{
   font-size: 10px;
+}
+
+.bom-desired-quantity{
+  color: #500782;
 }
