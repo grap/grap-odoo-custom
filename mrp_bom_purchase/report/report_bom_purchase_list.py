@@ -215,6 +215,8 @@ class ReportBomPurchaseList(models.AbstractModel):
                     round(wiz_bom.bom_id.standard_price_total, 3),
                     round(wiz_bom.wizard_line_subtotal, 3),
                     tmp_bom_lines,
+                    bom.description_short,
+                    bom.description_long,
                 ]
             )
         # manufacture_bom_list = [['SEITAN_BOM', 2.0, 'Unit(s)', 55.0, 110.0,
