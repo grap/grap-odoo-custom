@@ -10,8 +10,9 @@ class ReportBomPurchaseList(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         data_purchase, data_produce = self._prepare_data_to_purchase_and_produce(data)
+        manufacture_bom_list = self._prepare_data_to_manufacture(data)
         docargs = {
-            "manufacture_list": self._prepare_data_to_manufacture(data),
+            "manufacture_bom_list": manufacture_bom_list,
             "purchase_list": data_purchase,
             "produce_list": data_produce,
             "purchase_total_cost": self._prepare_total_cost(data),
@@ -174,25 +175,51 @@ class ReportBomPurchaseList(models.AbstractModel):
     @api.model
     def _prepare_data_to_manufacture(self, data):
         line_obj = self.env["bom.print.purchase.list.wizard.line"]
+        bom_line_obj = self.env["mrp.bom.line"]
+        wiz_boms = line_obj.browse([int(x) for x in data["line_data"]])
 
-        # Preparing data for report → dict of list
-        # It looks like this
-        # { wiz_bom_id1 : [bom1_name, qty, uom],
-        #   wiz_bom_id2: [bom2_name, qty, uom]
-        # }
-        wiz_boms_lines = line_obj.browse([int(x) for x in data["line_data"]])
-        manufacture_list = []
-        for wiz_bom_line in wiz_boms_lines:
-            manufacture_list.append(
+        # Get all BOM lines without bomlines of notes or sections
+        bom_lines = bom_line_obj.search(
+            [
+                ("bom_id", "in", wiz_boms.mapped("bom_id").ids),
+                ("product_id", "!=", False),
+            ]
+        )
+
+        manufacture_bom_list = []
+        for wiz_bom in wiz_boms:
+            bom = wiz_bom.bom_id
+            bom_qty = bom.product_qty
+            desired_bom_qty = wiz_bom.quantity
+
+            filtered_bom_lines = bom_lines.filtered(lambda line: line.bom_id == bom)
+
+            tmp_bom_lines = []
+            for bom_line in filtered_bom_lines:
+                product_qty = self.calculate_qty_for_one_product(
+                    bom_line.product_qty, bom_qty, desired_bom_qty, 3
+                )
+                tmp_bom_lines.append(
+                    [
+                        bom_line.product_id.display_name,
+                        product_qty,
+                        bom_line.product_uom_id.name,
+                    ]
+                )
+
+            manufacture_bom_list.append(
                 [
-                    wiz_bom_line.bom_id.display_name,
-                    round(wiz_bom_line.quantity, 3),
-                    wiz_bom_line.bom_uom_id.name,
-                    round(wiz_bom_line.bom_id.standard_price_total, 3),
-                    round(wiz_bom_line.wizard_line_subtotal, 3),
+                    bom.display_name,
+                    desired_bom_qty,
+                    wiz_bom.bom_uom_id.name,
+                    round(wiz_bom.bom_id.standard_price_total, 3),
+                    round(wiz_bom.wizard_line_subtotal, 3),
+                    tmp_bom_lines,
                 ]
             )
-        return manufacture_list
+        # manufacture_bom_list = [['SEITAN_BOM', 2.0, 'Unit(s)', 55.0, 110.0,
+        #   [['Carrots', 10.0, 'kg'], ['Onions', 4.0, 'Unit(s)']]] , bom2]
+        return manufacture_bom_list
 
     @api.model
     def _prepare_total_cost(self, data):
