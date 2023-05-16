@@ -11,7 +11,7 @@ class MrpBomLine(models.Model):
     # New fields
     has_bom = fields.Boolean(
         compute="_compute_has_bom",
-        help="Click to access BoM of this product.",
+        help="Indicates that the product has at least one BoM.",
     )
 
     @api.multi
