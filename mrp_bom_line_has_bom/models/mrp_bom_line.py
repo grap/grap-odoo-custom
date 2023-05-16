@@ -33,8 +33,6 @@ class MrpBomLine(models.Model):
             }
         # Show different BoMs
         else:
-            tree_view = self.env.ref("mrp.mrp_bom_tree_view")
             boms = self.product_id.mapped("bom_ids")
-            result["views"] = [(tree_view.id, "tree")]
             result["domain"] = [("id", "in", boms.ids)]
         return result
