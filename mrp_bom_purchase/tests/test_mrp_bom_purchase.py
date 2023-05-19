@@ -31,3 +31,13 @@ class TestMrpBomPurchase(TransactionCase):
         first_line = wizard.line_ids[0]
         # Check
         self.assertEqual(first_line.bom_description, new_description)
+
+    def test_03_report_bom_purchase_check_default(self):
+        # Create wizard with Table "desk"
+        wizard_obj = self.env["bom.print.purchase.list.wizard"]
+        wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})
+        data = wizard._prepare_data()
+        # Check default values
+        self.assertEqual(data["option_group_by_product_category"], True)
+        self.assertEqual(data["option_print_bom"], False)
+        self.assertEqual(data["option_production_date"], False)
