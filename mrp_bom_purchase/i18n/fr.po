@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 13:25+0000\n"
-"PO-Revision-Date: 2023-05-12 13:25+0000\n"
+"POT-Creation-Date: 2023-05-19 13:14+0000\n"
+"PO-Revision-Date: 2023-05-19 13:14+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,13 +17,33 @@ msgstr ""
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "(for"
+msgstr "(pour"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Intermediate products to produce:</b>"
 msgstr "<b>Produits intermédiaires à produire :</b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Long description: </b>"
+msgstr "<b>Description longue : </b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Quantity: </b>"
+msgstr "<b>Quantité : </b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Reminder of the quantities to prepare:</b>"
 msgstr "<b>Rappel des quantités à préparer :</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Short description: </b>"
+msgstr "<b>Description courte : </b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
@@ -34,6 +54,11 @@ msgstr "<b>À acheter:</b>"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Total to order:</b>"
 msgstr "<b>Total à acheter :</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<span>Bill of Material</span>"
+msgstr "<span>Fiche Technique</span>"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__bom_id
@@ -64,6 +89,11 @@ msgstr "Qté de la FT"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "Cancel"
 msgstr "Annuler"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Component"
+msgstr "Matière Première"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__wizard_line_subtotal
@@ -128,7 +158,7 @@ msgstr "Grouper les produits par leur catégorie"
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__option_display_cost
 msgid "Handle products standard prices"
-msgstr "Gérer le prix des produits"
+msgstr "Afficher le coût des produits"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__id
@@ -170,6 +200,11 @@ msgstr "Coût unitaire"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "Print Purchase list"
 msgstr "Imprimer la liste d'achats"
+
+#. module: mrp_bom_purchase
+#: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__option_print_bom
+msgid "Print bill of materials"
+msgstr "Imprimer les fiches techniques"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list

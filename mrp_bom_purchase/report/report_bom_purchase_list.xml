@@ -173,51 +173,53 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
             </div>
 
-            <t t-foreach="manufacture_bom_list" t-as="manufacture_bom">
-              <!-- One page per BoM -->
-              <div class="page small-font-size" style="page-break-before:always;">
-                <span>Bill of Material</span>
-                <h3 class="title-h3"><b><span t-esc="manufacture_bom[0]"/></b></h3>
-                <t t-if="manufacture_bom[6]">
-                  <br/><span class="bom-description"><b>Short description: </b><span t-esc="manufacture_bom[6]"/></span>
-                </t>
-                <t t-if="manufacture_bom[7]">
-                  <br/><span class="bom-description"><b>Long description: </b><span t-esc="manufacture_bom[7]"/></span>
+            <t t-if="option_print_bom">
+              <t t-foreach="manufacture_bom_list" t-as="manufacture_bom">
+                <!-- One page per BoM -->
+                <div class="page small-font-size" style="page-break-before:always;">
+                  <span>Bill of Material</span>
+                  <h3 class="title-h3"><b><span t-esc="manufacture_bom[0]"/></b></h3>
+                  <t t-if="manufacture_bom[6]">
+                    <br/><span class="bom-description"><b>Short description: </b><span t-esc="manufacture_bom[6]"/></span>
+                  </t>
+                  <t t-if="manufacture_bom[7]">
+                    <br/><span class="bom-description"><b>Long description: </b><span t-esc="manufacture_bom[7]"/></span>
+                    <br/><br/>
+                  </t>
+                  <span class="bom-desired-quantity"><b>Quantity: </b><span t-esc="manufacture_bom[1]"/> <span t-esc="manufacture_bom[2]"/></span>
+                  <t t-if="manufacture_bom[8]">
+                    - <span t-esc="manufacture_bom[8]"/>
+                  </t>
                   <br/><br/>
-                </t>
-                <span class="bom-desired-quantity"><b>Quantity: </b><span t-esc="manufacture_bom[1]"/> <span t-esc="manufacture_bom[2]"/></span>
-                <t t-if="manufacture_bom[8]">
-                  - <span t-esc="manufacture_bom[8]"/>
-                </t>
-                <br/><br/>
-                <table class="table table-sm table-bordered">
-                    <thead>
-                        <tr class="bom_to_prepare_thead th-colored">
-                            <th name="th_bom_line_product" class="text-left">Component</th>
-                            <th name="th_bom_line_qty" class="text-center width-qty-and-unit">Quantity</th>
-                            <th name="th_bom_line_uom" class="text-left width-qty-and-unit">UoM</th>
-                            <th name="th_bom_line_free_comment" class="text-center width-fixed-large">Free comment</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bom_to_prepare_tbody">
-                      <!-- manufacture_bom[5] are bom lines -->
-                      <t t-foreach="manufacture_bom[5]" t-as="manufacture_bom_line">
-                        <tr>
-                          <td name="td_bom_line_product" class="text-left">
-                            <span t-esc="manufacture_bom_line[0]"/>
-                          </td>
-                          <td name="td_bom_line_qty" class="text-center width-qty-and-unit">
-                            <span t-esc="manufacture_bom_line[1]"/>
-                          </td>
-                          <td name="td_bom_line_uom" class="text-left width-qty-and-unit">
-                            <span t-esc="manufacture_bom_line[2]"/>
-                          </td>
-                          <td name="td_bom_line_free_comment" class="width-fixed-large"></td>
-                        </tr>
-                      </t>
-                    </tbody>
-                </table>
-              </div>
+                  <table class="table table-sm table-bordered">
+                      <thead>
+                          <tr class="bom_to_prepare_thead th-colored">
+                              <th name="th_bom_line_product" class="text-left">Component</th>
+                              <th name="th_bom_line_qty" class="text-center width-qty-and-unit">Quantity</th>
+                              <th name="th_bom_line_uom" class="text-left width-qty-and-unit">UoM</th>
+                              <th name="th_bom_line_free_comment" class="text-center width-fixed-large">Free comment</th>
+                          </tr>
+                      </thead>
+                      <tbody class="bom_to_prepare_tbody">
+                        <!-- manufacture_bom[5] are bom lines -->
+                        <t t-foreach="manufacture_bom[5]" t-as="manufacture_bom_line">
+                          <tr>
+                            <td name="td_bom_line_product" class="text-left">
+                              <span t-esc="manufacture_bom_line[0]"/>
+                            </td>
+                            <td name="td_bom_line_qty" class="text-center width-qty-and-unit">
+                              <span t-esc="manufacture_bom_line[1]"/>
+                            </td>
+                            <td name="td_bom_line_uom" class="text-left width-qty-and-unit">
+                              <span t-esc="manufacture_bom_line[2]"/>
+                            </td>
+                            <td name="td_bom_line_free_comment" class="width-fixed-large"></td>
+                          </tr>
+                        </t>
+                      </tbody>
+                  </table>
+                </div>
+              </t>
             </t>
         </t>
     </template>

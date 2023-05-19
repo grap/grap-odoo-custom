@@ -26,6 +26,11 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         default=False,
     )
 
+    option_print_bom = fields.Boolean(
+        string="Print bill of materials",
+        default=False,
+    )
+
     option_production_date = fields.Date(
         string="Production Date",
     )
@@ -69,6 +74,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             "line_data": [x.id for x in self.line_ids],
             "option_group_by_product_category": self.option_group_by_product_category,
             "option_display_cost": self.option_display_cost,
+            "option_print_bom": self.option_print_bom,
             "option_production_date": self.option_production_date,
         }
 
