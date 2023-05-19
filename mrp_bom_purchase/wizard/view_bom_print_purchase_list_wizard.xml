@@ -14,6 +14,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <h5>🔧 Choose options</h5><br/>
                   <label for="option_group_by_product_category"/><field name="option_group_by_product_category" widget="boolean_toggle"/><br/>
                   <label for="option_display_cost"/><field name="option_display_cost" widget="boolean_toggle"/><br/>
+                  <label for="option_print_bom"/><field name="option_print_bom" widget="boolean_toggle"/><br/>
                 </div>
                 <div class="wizard_date">
                   <h5>📆 Production Date</h5><br/>
