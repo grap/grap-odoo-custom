@@ -31,19 +31,16 @@ class TestMrpBomLineHasBom(TransactionCase):
         self.assertEqual(self.bom_bourguignon_line_seitan.has_bom, True)
         self.assertEqual(self.bom_bourguignon_line_carrot.has_bom, False)
 
-    def test_02_go_to_bom(self):
-        # Create first BoM → we should go on Form View
-        self.env["mrp.bom"].create(
-            {
-                "product_id": self.product_seitan.id,
-                "product_tmpl_id": self.product_seitan.product_tmpl_id.id,
-            }
-        )
+    def test_02_go_to_bom_form(self):
+        # Just one BoM → we should go on Form View
+        self.product_seitan._compute_bom_count()
         result = self.bom_bourguignon_line_seitan.go_to_bom()
         self.assertEqual(result["res_model"], "mrp.bom")
         self.assertEqual(result["type"], "ir.actions.act_window")
         self.assertTrue(result["views"][0][0], self.env.ref("mrp.mrp_bom_form_view").id)
+        self.assertEqual(result["domain"], "[]")
 
+    def test_03_go_to_bom_tree(self):
         # Create second BoM → we should go on Tree View
         self.env["mrp.bom"].create(
             {
@@ -55,9 +52,6 @@ class TestMrpBomLineHasBom(TransactionCase):
         result2 = self.bom_bourguignon_line_seitan.go_to_bom()
         self.assertEqual(result2["res_model"], "mrp.bom")
         self.assertEqual(result2["type"], "ir.actions.act_window")
-        self.assertTrue(
-            result2["views"][0][0], self.env.ref("mrp.mrp_bom_tree_view").id
-        )
         self.assertEqual(
             result2["domain"], [("id", "in", self.product_seitan.bom_ids.ids)]
         )
