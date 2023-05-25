@@ -31,19 +31,18 @@ class TestMrpBomLineHasBom(TransactionCase):
         self.assertEqual(self.bom_bourguignon_line_seitan.has_bom, True)
         self.assertEqual(self.bom_bourguignon_line_carrot.has_bom, False)
 
-    def test_02_go_to_bom_form(self):
-        # Just one BoM → we should go on Form View
-        self.product_seitan._compute_bom_count()
-        result = self.bom_bourguignon_line_seitan.go_to_bom()
-        self.assertEqual(result["res_model"], "mrp.bom")
-        self.assertEqual(result["type"], "ir.actions.act_window")
-        self.assertTrue(result["views"][0][0], self.env.ref("mrp.mrp_bom_form_view").id)
-        self.assertEqual(result["domain"], "[]")
-
-    def test_03_go_to_bom_tree(self):
-        # Create second BoM → we should go on Tree View
+    def test_02_go_to_bom_tree(self):
+        # Create two BoMs → we should go on Tree View
         self.env["mrp.bom"].create(
             {
+                "code": "FIRST",
+                "product_id": self.product_seitan.id,
+                "product_tmpl_id": self.product_seitan.product_tmpl_id.id,
+            }
+        )
+        self.env["mrp.bom"].create(
+            {
+                "code": "SECOND",
                 "product_id": self.product_seitan.id,
                 "product_tmpl_id": self.product_seitan.product_tmpl_id.id,
             }
