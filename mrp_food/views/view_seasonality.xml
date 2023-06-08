@@ -61,6 +61,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </p>
                     <group>
                         <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="use_by_default_product"/>
+                        <field name="use_by_default_bom"/>
                         <field name="seasonality_line_ids">
                             <tree editable="bottom">
                                 <field name="name" placeholder="e.g. The name of the season and year of the seasonal line : Summer (2022)"/>
@@ -81,6 +83,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="name"/>
                 <field name="bom_qty"/>
                 <field name="product_product_qty"/>
+                <field name="use_by_default_product" widget="boolean_toggle"/>
+                <field name="use_by_default_bom" widget="boolean_toggle"/>
                 <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>

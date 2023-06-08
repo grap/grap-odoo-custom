@@ -50,6 +50,18 @@ class Seasonality(models.Model):
         store=True,
     )
 
+    use_by_default_product = fields.Boolean(
+        string="By default for Product",
+        help="For each new product, this seasonality will be chosen",
+        default=False,
+    )
+
+    use_by_default_bom = fields.Boolean(
+        string="By default for Bill of Material",
+        help="For each new BoM, this seasonality will be chosen",
+        default=False,
+    )
+
     # Compute methods
     @api.depends("bom_ids")
     def _compute_bom_qty(self):

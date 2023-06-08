@@ -20,8 +20,16 @@ class ProductProduct(models.Model):
         "certainly not up to date.",
     )
 
+    @api.model
+    def _get_default_seasonalities(self):
+        return (
+            self.env["seasonality"].search([("use_by_default_product", "=", True)]).ids
+        )
+
     product_seasonality_ids = fields.Many2many(
-        comodel_name="seasonality", string="Seasonalities"
+        comodel_name="seasonality",
+        string="Seasonalities",
+        default=lambda self: self._get_default_seasonalities(),
     )
 
     is_seasonal = fields.Boolean(

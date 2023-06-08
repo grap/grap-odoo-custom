@@ -12,12 +12,17 @@ class MrpBom(models.Model):
     image_2 = fields.Binary()
     image_3 = fields.Binary()
 
+    @api.model
+    def _get_bom_default_seasonalities(self):
+        return self.env["seasonality"].search([("use_by_default_bom", "=", True)]).ids
+
     # Seasonality
     bom_season_ids = fields.Many2many(
         comodel_name="seasonality",
         string="Seasonality",
         help="Select the seasonality(s) of this Bill of material. "
         "Helps visually to know which recipe is in season or not.",
+        default=lambda self: self._get_bom_default_seasonalities(),
     )
     is_bom_seasonal = fields.Boolean(
         string="Seasonal", default=False, compute="_compute_seasonal", store=True
