@@ -41,3 +41,13 @@ class TestMrpBomPurchase(TransactionCase):
         self.assertEqual(data["option_group_by_product_category"], True)
         self.assertEqual(data["option_print_bom"], False)
         self.assertEqual(data["option_production_date"], False)
+
+    def test_04_report_bom_purchase_check_data(self):
+        # Create wizard with Table "desk"
+        wizard_obj = self.env["bom.print.purchase.list.wizard"]
+        wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})
+        data = wizard._prepare_data()
+        # Create wizard with Table "desk"
+        report_obj = self.env["report.mrp_bom_purchase.report_bom_purchase_list"]
+        values = report_obj._get_report_values(0, data)
+        self.assertEqual(values["purchase_total_cost"], 283.0)

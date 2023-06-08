@@ -75,14 +75,18 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             "option_group_by_product_category": self.option_group_by_product_category,
             "option_display_cost": self.option_display_cost,
             "option_print_bom": self.option_print_bom,
-            "option_production_date": self.option_production_date,
+            "option_production_date": self.option_production_date.strftime(
+                "%A %-d %B %Y"
+            )
+            if self.option_production_date is True
+            else False,
         }
 
     @api.multi
     def print_report(self):
         self.ensure_one()
         data = self._prepare_data()
-        # Get ir_actions_report bom_allergens
+        # Get ir_actions_report
         return self.env.ref("mrp_bom_purchase.bom_purchase_list").report_action(
             self, data=data
         )
