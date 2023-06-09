@@ -20,3 +20,42 @@ class TestSeasonality(TransactionCase):
         self.assertEqual(
             self.seasonality_spring.seasonality_line_ids[1].name, "Spring (2023)"
         )
+
+    def test_02_seasonality_check_default_product(self):
+        self.seasonality_spring.use_by_default_product = True
+        product = self.env["product.product"].create(
+            {
+                "name": "Product",
+            }
+        )
+        self.assertEqual(len(product.product_seasonality_ids), 1)
+        self.assertEqual(
+            product.product_seasonality_ids[0].id, self.seasonality_spring.id
+        )
+
+    def test_03_seasonality_check_default_bom(self):
+        # First test
+        # Create product and bom
+        product2 = self.env["product.product"].create(
+            {
+                "name": "Test product",
+            }
+        )
+        bom = self.env["mrp.bom"].create(
+            {
+                "product_id": product2.id,
+                "product_tmpl_id": product2.product_tmpl_id.id,
+            }
+        )
+        self.assertEqual(len(bom.bom_season_ids), 0)
+        # Set season
+        self.seasonality_spring.use_by_default_bom = True
+        # Second test
+        bom2 = self.env["mrp.bom"].create(
+            {
+                "product_id": product2.id,
+                "product_tmpl_id": product2.product_tmpl_id.id,
+            }
+        )
+        self.assertEqual(len(bom2.bom_season_ids), 1)
+        self.assertEqual(bom2.bom_season_ids[0].id, self.seasonality_spring.id)
