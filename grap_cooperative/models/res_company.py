@@ -31,11 +31,6 @@ class ResCompany(models.Model):
     )
 
     # Cooperative informations
-    state_id = fields.Many2one(
-        string="State",
-        comodel_name="res.country.state",
-    )
-
     clean_address = fields.Char(
         string="Clean address",
         compute="_compute_clean_adress",
@@ -47,6 +42,11 @@ class ResCompany(models.Model):
 
     is_displayed_in_directory = fields.Boolean(
         string="Displayed in Directory", default=True
+    )
+
+    cooperative_joining_date = fields.Date(
+        help="Date of the commission in which the cooperative"
+        " accepted the entry of this activity"
     )
 
     # Referents in Company

@@ -13,7 +13,7 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "base",
+        "social_media",
         # OCA
         "base_geolocalize_company",
         "l10n_fr_siret",
