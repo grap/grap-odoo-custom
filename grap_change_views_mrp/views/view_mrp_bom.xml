@@ -25,9 +25,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <!-- grap custom -->
               <field name="image" widget="image" class="oe_avatar"/>
               <div class="oe_title" name="bom_title">
-                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', True)]}"><b>Data sheet</b> - intermediate product 🧩</p>
-                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_id', '=', False), ('product_sale_ok', '=', False)]}"><b>Data sheet</b> - finished product 🥧</p>
-                <!-- / grap custom -->
+                <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_finished', '=', False), ('product_intermediate', '=', False)]}"><b>Data sheet</b> - Finished 🥧 and intermediate product 🧩</p>
+                 <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_finished', '=', False), '&amp;', ('product_finished', '=', True), ('product_intermediate', '=', True)]}"><b>Data sheet</b> - finished product 🥧</p>
+                 <p style="margin-left:6.5px;" attrs="{'invisible': ['|', ('product_intermediate', '=', False), '&amp;', ('product_finished', '=', True), ('product_intermediate', '=', True)]}"><b>Data sheet</b> - intermediate product 🧩</p>
+                 <!-- / grap custom -->
                 <h1><field style="margin-left:5px;" name="product_name" readonly="1"/></h1>
                 <!-- grap custom-->
               </div>
@@ -55,7 +56,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <field name="product_tmpl_id" context="{'default_type': 'product'}" groups="base.group_no_one"/>
                       <!-- required for mrp_bom_product_variant -->
                       <field name="product_id" required="1" string="Product" groups="product.group_product_variant" context="{'default_type': 'product'}"/>
-                      <field name="product_sale_ok" groups="base.group_no_one"/>
+                      <field name="product_intermediate" groups="base.group_no_one"/>
+                      <field name="product_finished" groups="base.group_no_one"/>
                       <label for="product_qty" string="BoM for"/>
                       <div class="o_row">
                           <field name="product_qty"/>
@@ -263,9 +265,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- Main Grap BoM Tree View with all fields -->
     <record id="view_mrp_bom_tree_grap" model="ir.ui.view">
         <field name="model">mrp.bom</field>
-        <!-- <field name="priority" eval="1"/> -->
         <field name="arch" type="xml">
-            <tree string="Bills of Materials" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+            <tree default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
                 <!-- odoo code  -->
                 <field name="code" string="Reference"/>
                 <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
@@ -295,7 +296,61 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <!-- Main Grap BoM Tree View for Intermediate BoMs -->
+    <record id="view_mrp_bom_tree_grap_intermediate" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="arch" type="xml">
+            <tree default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+                <!-- odoo code  -->
+                <field name="code" string="Reference"/>
+                <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
+                <field name="product_id" string="Product"/>
+                <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
+                <field name="routing_id" groups="mrp.group_mrp_routings"/>
+                <!-- mrp_business and mrp_bom_tag-->
+                <field name="description_short"/>
+                <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="priority" widget="priority"/>
+                <field name="time_to_produce"/>
+                <!-- mrp_bom_sale_product_margin -->
+                <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_total" string="BoM&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <button name="set_product_standard_price" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}" help="It will set product variant's standard price with this price"/>
+                <field name="product_standard_price" string="Product&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <!-- mrp_food -->
+                <field name="bom_season_ids" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="bom_label_ids" widget="many2many_tags"/>
+                <field name="bom_allergen_ids" widget="many2many_tags"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+
     <!-- Tree view to handle prices  -->
+    <record id="view_mrp_bom_tree_grap_handle_price_sale_nok" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="arch" type="xml">
+            <tree string="Bills of Materials Intermediate - Handling Prices" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+                <!-- odoo code  -->
+                <field name="code" string="Reference"/>
+                <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
+                <field name="product_id" string="Product"/>
+                <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
+                <!-- mrp_business and mrp_bom_tag-->
+                <field name="description_short"/>
+                <field name="priority" widget="priority"/>
+                <!-- mrp_bom_sale_product_margin -->
+                <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="standard_price_total" string="BoM&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                <button name="set_product_standard_price" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}" help="It will set product variant's standard price with this price"/>
+                <field name="product_standard_price" string="Product&#160;Standard&#160;Price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="view_mrp_bom_tree_grap_handle_price" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="arch" type="xml">
@@ -320,7 +375,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </tree>
         </field>
     </record>
-
 
     <!-- ************************************************************ -->
     <!-- MRP Bill of Materials - Override Search -->

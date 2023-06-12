@@ -34,10 +34,19 @@ class ProductProduct(models.Model):
     # because the computation is based on mrp.bom.line,
     # that is not available for user that doesn't belong to mrp user group
     is_component = fields.Boolean(
-        compute="_compute_is_component",
+        compute="_compute_is_component_intermediate",
         compute_sudo=True,
         store=True,
-        default=False,
+        help="Is component a product which has no BoM based on it +\
+              not to sale + is used in a BoM line",
+    )
+    is_intermediate = fields.Boolean(
+        string="Intermediate product",
+        compute="_compute_is_component_intermediate",
+        compute_sudo=True,
+        store=True,
+        help="Is intermediate a product which has a BoM based on it +\
+              is or is not to sale + is used in a BoM line",
     )
 
     @api.onchange("standard_price")
@@ -56,6 +65,12 @@ class ProductProduct(models.Model):
 
     @api.depends("bom_line_ids")
     @api.multi
-    def _compute_is_component(self):
+    def _compute_is_component_intermediate(self):
         for product in self:
-            product.is_component = True if product.bom_line_ids else False
+            if product.bom_line_ids:
+                # Difference is having a BoM with this product or not
+                product.is_intermediate = True if product.bom_count else False
+                product.is_component = not product.is_intermediate
+            else:
+                product.is_intermediate = False
+                product.is_component = False

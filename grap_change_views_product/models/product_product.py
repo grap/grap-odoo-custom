@@ -62,9 +62,9 @@ class ProductProduct(models.Model):
         "categ_id.global_property_account_income_categ",
     )
     @api.multi
-    def _compute_is_component(self):
+    def _compute_is_component_intermediate(self):
         for product in self:
-            super()._compute_is_component()
+            super()._compute_is_component_intermediate()
             if not product.is_component:
                 # Products in 601 Account Expense are also components products
                 product.is_component = (
