@@ -54,7 +54,7 @@ addon | version | maintainers | summary
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.3 |  | Add tags on your BoM to find it easily
 [mrp_business](mrp_business/) | 12.0.1.1.6 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_food](mrp_food/) | 12.0.1.1.7 |  | MRP modules adapted for food-related professions
-[product_main_seller](product_main_seller/) | 12.0.1.1.5 |  | Product Attribute - Main seller for a product
+[product_main_seller](product_main_seller/) | 12.0.1.1.6 |  | Product Attribute - Main seller for a product
 [product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.4 |  | Product supplier easily connected to product's standard price
 [server_environment_files](server_environment_files/) | 12.0.1.0.4 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_fix_stock_move_line](stock_fix_stock_move_line/) | 12.0.1.1.1 |  | Stock - Fix Stock Move Lines
