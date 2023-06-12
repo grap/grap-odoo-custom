@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record model="mrp.bom" id="demo_bom_french_vegan_bourguignon">
+      <field name="code">PTITE_OKARA_SEITAN_BOURGUIGNON</field>
+      <field name="product_tmpl_id" ref="mrp_bom_line_has_bom.demo_product_template_vegan_french_bourguignon"/>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_french_vegan_bourguignon_line_seitan">
+        <field name="bom_id" ref="mrp_bom_line_has_bom.demo_bom_french_vegan_bourguignon"/>
+        <field name="product_id" ref="mrp_bom_line_has_bom.demo_product_seitan"/>
+        <field name="product_qty">1</field>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_french_vegan_bourguignon_line_carrot">
+        <field name="bom_id" ref="mrp_bom_line_has_bom.demo_bom_french_vegan_bourguignon"/>
+        <field name="product_id" ref="mrp_bom_line_has_bom.demo_product_carrot"/>
+        <field name="product_qty">5</field>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_french_vegan_bourguignon_line_onion">
+        <field name="bom_id" ref="mrp_bom_line_has_bom.demo_bom_french_vegan_bourguignon"/>
+        <field name="product_id" ref="mrp_bom_line_has_bom.demo_product_onion"/>
+        <field name="product_qty">2</field>
+    </record>
+
+</odoo>

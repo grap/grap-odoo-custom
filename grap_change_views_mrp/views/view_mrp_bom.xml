@@ -168,6 +168,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <field name="bom_line_ids" widget="one2many_list" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
                           <tree string="Components" editable="bottom">
                               <field name="sequence" widget="handle"/>
+                              <!-- mrp_bom_line_has_bom -->
+                              <field name="has_bom" invisible="1"/>
+                              <button class="text-center" name="go_to_bom" string="🧩" type="object" attrs="{'invisible': [('has_bom', '=', False)]}"/>
+                              <!-- / mrp_bom_line_has_bom -->
                               <field name="product_id" context="{'default_type': 'product'}"/>
                               <field name="has_attachments" invisible="1"/>
                               <button name="action_see_attachments" type="object" icon="fa-files-o" attrs="{'invisible': [('has_attachments', '=', True)]}" aria-label="No attachment" title="No attachment"/>
@@ -207,6 +211,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               </control>
                               <field name="sequence" widget="handle"/>
                               <field name="display_type" invisible="1"/>
+                              <!-- mrp_bom_line_has_bom -->
+                              <field name="has_bom" invisible="1"/>
+                              <button class="text-center" name="go_to_bom" string="🧩" type="object" attrs="{'invisible': [('has_bom', '=', False)]}" help="See related Bill of Material"/>
+                              <!-- / mrp_bom_line_has_bom -->
                               <field name="product_id" context="{'default_type': 'product'}" attrs="{'required': [('display_type', '=', False)]}"/>
                               <field name="name" widget="section_and_note_text"/>
                               <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
