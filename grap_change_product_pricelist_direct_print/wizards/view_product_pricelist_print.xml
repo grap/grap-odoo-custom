@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_pricelist_print_form" model="ir.ui.view">
+        <field name="model">product.pricelist.print</field>
+        <field name="inherit_id" ref="product_pricelist_direct_print.view_product_pricelist_print"/>
+        <field name="arch" type="xml">
+            <field name="show_product_uom" position="after">
+            <field name="show_eshop_rounded_qty"/>
+            </field>
+        </field>
+    </record>
+</odoo>

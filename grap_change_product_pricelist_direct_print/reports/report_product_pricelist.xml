@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="report_product_pricelist_document" inherit_id="product_pricelist_direct_print.report_product_pricelist_document">
+
+        <xpath expr="//th[@t-if='o.show_product_uom']" position="before">
+            <th t-if="o.show_eshop_rounded_qty" class="text-right">
+                <strong>Pack.</strong>
+            </th>
+        </xpath>
+
+        <xpath expr="//td[@t-if='o.show_product_uom']" position="before">
+            <td t-if="o.show_eshop_rounded_qty" class="text-right">
+                <t t-if="product.eshop_rounded_qty">
+                    (Per <span t-field="product.eshop_rounded_qty"/>)
+                </t>
+            </td>
+        </xpath>
+
+    </template>
+
+</odoo>
