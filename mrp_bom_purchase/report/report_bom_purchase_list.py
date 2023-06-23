@@ -148,7 +148,7 @@ class ReportBomPurchaseList(models.AbstractModel):
             )
         # Sort the purchase list by product name and, optionally, category
         purchase_list_clean.sort(
-            key=itemgetter(1, 0)
+            key=itemgetter(0, 1)
             if data["option_group_by_product_category"]
             else itemgetter(1)
         )
