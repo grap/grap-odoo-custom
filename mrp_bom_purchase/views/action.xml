@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <record id="action_mrp_bom_purchase_list_print_wizard" model="ir.actions.act_window">
-        <field name="name">Generate Purchase list</field>
+        <field name="name">Production assistant</field>
         <field name="res_model">bom.print.purchase.list.wizard</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>

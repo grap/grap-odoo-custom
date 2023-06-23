@@ -16,9 +16,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <label for="option_display_cost"/><field name="option_display_cost" widget="boolean_toggle"/><br/>
                   <label for="option_print_bom"/><field name="option_print_bom" widget="boolean_toggle"/><br/>
                 </div>
-                <div class="wizard_date">
-                  <h5>📆 Production Date</h5><br/>
-                  <label for="option_production_date"/><field name="option_production_date"/><br/>
+                <div class="Notes">
+                  <h5>📝 Informations on PDF</h5><br/>
+                  <group colspan="2">
+                      <group col="4" colspan="2">
+                        <field name="option_production_date"/><br/>
+                        <field name="notes_for_pdf" placeholder="Order of March 18, 1871 for customer Louise Michel"/>
+                      </group>
+                  </group>
                 </div>
                 <br/>
                 <div class="wizard_instrutions">
@@ -40,9 +45,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </group>
                   </div>
                   <footer>
-                      <button name="print_report" string="Print Purchase list" type="object" icon="fa-print" class="oe_highlight"/>
+                      <button name="print_report" string="Print Production Report" type="object" icon="fa-print" class="oe_highlight" attrs="{'invisible': [('option_print_bom', '!=', False)]}"/>
+                      <button name="print_report" string="Print Production Report and BoMs" type="object" icon="fa-print" class="oe_highlight" attrs="{'invisible': [('option_print_bom', '!=', True)]}"/>
                       <button icon="fa-ban" special="cancel" string="Cancel"/>
-                      <button icon="fa-shopping-cart" special="cancel" string="Create Purchase Orders (in coming)"/>
                   </footer>
             </form>
         </field>

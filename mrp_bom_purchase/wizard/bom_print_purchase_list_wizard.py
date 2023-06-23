@@ -35,6 +35,10 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         string="Production Date",
     )
 
+    notes_for_pdf = fields.Char(
+        help="Write whatever you want to be written in PDF headers"
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -72,6 +76,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     def _prepare_data(self):
         return {
             "line_data": [x.id for x in self.line_ids],
+            "notes_for_pdf": self.notes_for_pdf,
             "option_group_by_product_category": self.option_group_by_product_category,
             "option_display_cost": self.option_display_cost,
             "option_print_bom": self.option_print_bom,
