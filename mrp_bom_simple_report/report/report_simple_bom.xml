@@ -13,13 +13,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <div class="page small-font-size" style="page-break-before:always;">
               <span>Bill of Material</span>
               <h3 class="title-h3"><b><span t-esc="bom.display_name"/></b></h3>
-              <t t-if="bom.description_short">
-                <br/><span class="bom.description_short"><b>Short description: </b><span t-esc="bom.description_short"/></span>
-              </t>
-              <t t-if="bom.description_long">
-                <br/><span class="bom.description_long"><b>Long description: </b><span t-esc="bom.description_long"/></span>
-                <br/><br/>
-              </t>
               <span class="bom.product_qty"><b>Quantity: </b><span t-esc="bom.product_qty"/> <span t-esc="bom.product_uom_id.name"/></span>
               <br/><br/>
               <table class="table table-sm table-bordered">
