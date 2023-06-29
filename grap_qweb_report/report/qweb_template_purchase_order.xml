@@ -21,6 +21,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </div>
         </xpath>
 
+        <!-- Modification : texte TVA -->
+        <!-- exemple : TVA achat 05,5% basé sur le prix HT à 05,5% HT -->
+        <xpath expr="//table[1]/tbody/tr/td[2]" position="replace">
+            <td>
+              <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id)).replace('TVA achat','').replace('basé sur le prix ','')"/>
+            </td>
+        </xpath>
+
+        <!-- Suppression : colonne Date Demandée -->
+        <xpath expr="//table[1]/thead/tr/th[3]" position="replace"/>
+        <xpath expr="//table[1]/tbody/tr/td[3]" position="replace"/>
+
     </template>
 
 </odoo>
