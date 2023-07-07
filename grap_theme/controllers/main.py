@@ -25,4 +25,4 @@ class Binary(controllers.main.Binary):
         placeholder = functools.partial(
             get_resource_path, "grap_theme", "static", "src", "img"
         )
-        return http.send_file(placeholder("grap_logo.png"))
+        return http.send_file(placeholder("logo_grap_caap.png"))
