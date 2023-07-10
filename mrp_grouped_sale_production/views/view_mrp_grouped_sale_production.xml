@@ -23,6 +23,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="domain">[('grouped_order_id', 'in', active_ids)]</field>
     </record>
 
+    <record id="action_grouped_sale_prod_2_production_order" model="ir.actions.act_window">
+        <field name="name">Production Orders</field>
+        <field name="res_model">mrp.production</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('sale_order_id', 'in', active_ids)]</field>
+    </record>
+
     <record id="view_grouped_sale_production_form" model="ir.ui.view">
         <field name="model">mrp.grouped.sale.production</field>
         <field name="arch" type="xml">
@@ -33,12 +41,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           icon="fa-edit"/>
                 </header>
                 <sheet>
-                    <div class="oe_right oe_button_box" name="buttons">
+                    <div class="oe_right oe_button_box" name="button_widget_sale_order">
                         <button class="oe_stat_button" type="action" icon="fa-list"
                             name="%(action_grouped_sale_prod_2_sale_order)d"
                             attrs="{'invisible': [('orders_qty', '=', 0)]}">
                             <field string="Sale Orders" name="orders_qty" widget="statinfo"/>
                         </button>
+                        <button type="object"
+                            name="action_view_production"
+                            class="oe_stat_button"
+                            icon="fa-gears"
+                            attrs="{'invisible': [('mrp_production_qty', '=', 0)]}">
+                            <field  string="Production Orders" name="mrp_production_qty" widget="statinfo"/>
+                        </button>
+
                     </div>
 
                     <div class="oe_title">

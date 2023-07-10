@@ -15,6 +15,7 @@
         "sale_management",
         # OCA
         "web_widget_x2many_2d_matrix",
+        "sale_mrp_link",
     ],
     "data": [
         "security/ir.model.access.csv",

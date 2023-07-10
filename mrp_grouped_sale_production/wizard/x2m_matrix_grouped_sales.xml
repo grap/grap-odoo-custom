@@ -9,8 +9,8 @@
             <form>
                 <group>
                   <field name="line_ids" widget="x2many_2d_matrix"
-                         field_x_axis="order_partner_id"
-                         field_y_axis="product_id"
+                         field_x_axis="product_id"
+                         field_y_axis="order_partner_id"
                          field_value="product_uom_qty"
                          nolabel="1">
                       <tree>
