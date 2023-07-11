@@ -11,7 +11,7 @@ class MrpGroupedSaleProduction(models.Model):
 
     name = fields.Char()
     production_date = fields.Date()
-    note = fields.Char()
+    notes = fields.Char()
 
     orders_qty = fields.Integer(
         "Sale Order Quantity",

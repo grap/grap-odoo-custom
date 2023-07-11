@@ -4,7 +4,7 @@
 
 {
     "name": "MRP Grouped Sales and Production",
-    "summary": "Quickly see what you need to produce thanks to grouped sales",
+    "summary": "Quickly manage what you need to produce thanks to grouped sales",
     "version": "12.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",

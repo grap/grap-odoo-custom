@@ -36,7 +36,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form>
                 <header>
-                  <button type="action" string="Update Values"
+                  <button type="action" string="See and Update Values"
                           name="%(mrp_grouped_sale_production.action_grouped_sale_2_wizard_x2m_matrix)d"
                           icon="fa-edit"/>
                 </header>
@@ -62,9 +62,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <h1><field name="name"/></h1>
                     </div>
                     <group>
-                        <field name="note" class="oe_inline"/>
+                        <field name="notes"/>
                         <field name="production_date"/>
-                        <field name="order_ids"/>
+                    </group>
+                    <group>
+                        <field name="order_ids" nolabel="1"/>
                     </group>
                 </sheet>
             </form>
@@ -83,7 +85,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="action_grouped_sale_prod" model="ir.actions.act_window">
-        <field name="name">Grouped Sales Production</field>
+        <field name="name">Grouped Sale Production</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">mrp.grouped.sale.production</field>
         <field name="view_type">form</field>

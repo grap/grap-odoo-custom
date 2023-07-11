@@ -1,0 +1,186 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_grouped_sale_production
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-11 15:02+0000\n"
+"PO-Revision-Date: 2023-07-11 15:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_grouped_sale_production
+#: model_terms:ir.ui.view,arch_db:mrp_grouped_sale_production.x2many_2d_matrix_grouped_sales
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__create_uid
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__create_date
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__display_name
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_sale_order__grouped_order_id
+msgid "Grouped Sale Production"
+msgstr "Ventes et productions groupées"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_mrp_grouped_sale_production
+msgid "Grouped Sale and Production"
+msgstr "Ventes et productions groupées"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_mrp_grouped_sale_prod_line
+msgid "Grouped Sale and Production Line"
+msgstr "Lignes de ventes et de productions groupées"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.actions.act_window,name:mrp_grouped_sale_production.action_grouped_sale_prod
+#: model:ir.ui.menu,name:mrp_grouped_sale_production.menu_grouped_sale_prod
+msgid "Grouped Sales Production"
+msgstr "Ventes et productions groupées"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__id
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production____last_update
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__write_uid
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__write_date
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_x2m_matrix_grouped_sales_wizard__line_ids
+msgid "Line"
+msgstr "Ligne"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__mrp_production_ids
+msgid "Mrp Production"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__mrp_production_qty
+msgid "Mrp Production Qty"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__notes
+msgid "Notes"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,help:mrp_grouped_sale_production.field_mrp_grouped_sale_production__orders_qty
+msgid "Number of Sales associated in the grouped Sale Production"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__production_date
+msgid "Production Date"
+msgstr "Date de production"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.actions.act_window,name:mrp_grouped_sale_production.action_grouped_sale_prod_2_production_order
+#: model_terms:ir.ui.view,arch_db:mrp_grouped_sale_production.view_grouped_sale_production_form
+msgid "Production Orders"
+msgstr "Ordres de production"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_sale_order
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__orders_qty
+msgid "Sale Order Quantity"
+msgstr "Quantités de bons de commande"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.actions.act_window,name:mrp_grouped_sale_production.action_grouped_sale_prod_2_sale_order
+#: model_terms:ir.ui.view,arch_db:mrp_grouped_sale_production.view_grouped_sale_production_form
+msgid "Sale Orders"
+msgstr "Commandes de vente"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model.fields,field_description:mrp_grouped_sale_production.field_mrp_grouped_sale_production__order_ids
+msgid "Sales Orders"
+msgstr "Bons de commandes"
+
+#. module: mrp_grouped_sale_production
+#: model_terms:ir.ui.view,arch_db:mrp_grouped_sale_production.x2many_2d_matrix_grouped_sales
+msgid "Save and Close"
+msgstr "Enregistrer et fermer"
+
+#. module: mrp_grouped_sale_production
+#: model_terms:ir.ui.view,arch_db:mrp_grouped_sale_production.view_grouped_sale_production_form
+msgid "See and Update Values"
+msgstr "Voir et mettre à jour les quantités"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.actions.act_window,name:mrp_grouped_sale_production.action_grouped_sale_2_wizard_x2m_matrix
+msgid "Update Values"
+msgstr "Mettre à jour les quantités"
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_x2m_demo
+msgid "X2Many Demo"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_x2m_demo_line
+msgid "X2Many Demo Line"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_x2m_matrix_demo_wiz
+msgid "X2Many Matrix Demo Wizard"
+msgstr ""
+
+#. module: mrp_grouped_sale_production
+#: model:ir.model,name:mrp_grouped_sale_production.model_x2m_matrix_grouped_sales_wizard
+msgid "X2Many Matrix Grouped Sales Wizard"
+msgstr ""

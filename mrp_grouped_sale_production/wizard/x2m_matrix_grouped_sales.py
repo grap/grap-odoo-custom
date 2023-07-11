@@ -16,5 +16,7 @@ class X2mMatrixGroupedSalesWizard(models.TransientModel):
         grouped_sale_prod = self.env["mrp.grouped.sale.production"].browse(
             self.env.context.get("active_id")
         )
-        # import pdb; pdb.set_trace()
         return grouped_sale_prod.mapped("order_ids.order_line")
+
+    def save_close(self):
+        return
