@@ -66,7 +66,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <field name="production_date"/>
                     </group>
                     <group>
-                        <field name="order_ids" nolabel="1"/>
+                        <field name="order_ids" nolabel="1" widget="many2many">
+                          <tree>
+                            <field name="name"/>
+                            <field name="confirmation_date"/>
+                            <field name="partner_id"/>
+                            <field name="amount_untaxed" sum="Total Tax Excluded"/>
+                            <field name="amount_total" sum="Total Tax Included"/>
+                            <field name="invoice_status"/>
+                            <field name="state"/>
+                            <field name="company_id"/>
+                          </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>

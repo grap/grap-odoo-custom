@@ -11,6 +11,4 @@ class SaleOrder(models.Model):
     grouped_order_id = fields.Many2one(
         comodel_name="mrp.grouped.sale.production",
         string="Grouped Sale Production",
-        index=True,
-        ondelete="cascade",
     )
