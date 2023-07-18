@@ -14,14 +14,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <group colspan="2">
                   <group col="4" colspan="2">
                       <field name="line_ids" nolabel="1">
-                          <tree editable="bottom">
-                              <field name="sale_id" required="1"/>
-                              <!-- <field name="currency_id" invisible="1"/>
-                              <field name="bom_description"/>
-                              <field name="bom_product_qty"/>
-                              <field name="quantity" required="1" widget="numeric_step"/>
-                              <field name="bom_uom_id"/>
-                              <field name="wizard_line_subtotal" sum="Total Cost" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'column_invisible': [('parent.option_display_cost', '=', False)]}"/> -->
+                          <tree>
+                              <field name="sale_id"/>
+                              <field name="sale_partner_id"/>
                            </tree>
                       </field>
                   </group>
