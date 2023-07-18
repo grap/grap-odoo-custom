@@ -13,7 +13,7 @@ class X2mMatrixGroupedSalesWizard(models.TransientModel):
     )
 
     def _default_line_ids(self):
-        grouped_sale_prod = self.env["mrp.grouped.sale.production"].browse(
+        grouped_sale_prod = self.env["mrp.sale.grouped"].browse(
             self.env.context.get("active_id")
         )
         return grouped_sale_prod.mapped("order_ids.order_line")

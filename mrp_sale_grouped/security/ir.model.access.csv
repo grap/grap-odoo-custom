@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_sale_grouped_all,MRP Grouped Sale Production All,mrp_sale_grouped.model_mrp_sale_grouped,mrp.group_mrp_user,1,1,1,1

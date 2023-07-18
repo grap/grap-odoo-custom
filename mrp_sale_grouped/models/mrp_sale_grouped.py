@@ -5,8 +5,8 @@
 from odoo import api, fields, models
 
 
-class MrpGroupedSaleProduction(models.Model):
-    _name = "mrp.grouped.sale.production"
+class MrpSaleGrouped(models.Model):
+    _name = "mrp.sale.grouped"
     _description = "Grouped Sale and Production"
 
     name = fields.Char()
@@ -37,8 +37,8 @@ class MrpGroupedSaleProduction(models.Model):
 
     @api.depends("order_ids")
     def _compute_orders_qty(self):
-        for mrp_grouped_sale_prod in self:
-            mrp_grouped_sale_prod.orders_qty = len(mrp_grouped_sale_prod.order_ids)
+        for mrp_sale_grouped in self:
+            mrp_sale_grouped.orders_qty = len(mrp_sale_grouped.order_ids)
 
     @api.depends("order_ids")
     def _compute_mrp_production_ids(self):
@@ -64,3 +64,16 @@ class MrpGroupedSaleProduction(models.Model):
             ]
             action["res_id"] = self.mrp_production_ids.id
         return action
+
+    # @api.model
+    # def _get_report_values(self, docids, data=None):
+    #     data_purchase, data_produce = self._prepare_data_to_purchase_and_produce(data)
+    #     manufacture_bom_list = self._prepare_data_to_manufacture(data)
+    #     docargs = {
+    #         "manufacture_bom_list": manufacture_bom_list,
+    #         "purchase_list": data_purchase,
+    #         "produce_list": data_produce,
+    #         "purchase_total_cost": self._prepare_total_cost(data),
+    #         "currency_symbol": self._prepare_currency(data),
+    #     }
+    #     return docargs
