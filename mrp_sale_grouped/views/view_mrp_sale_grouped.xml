@@ -69,7 +69,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <field name="date"/>
                     </group>
                     <group>
-                        <field name="order_ids" nolabel="1" widget="many2many" options="{'not_delete': True}"/>
+                        <field name="order_ids" nolabel="1" widget="many2many" domain="['|', ('state', '=', 'sent'), ('state', '=', 'draft')]">
+                            <tree>
+                              <field name="name"/>
+                              <field name="partner_id"/>
+                              <field name="user_id"/>
+                              <field name="amount_untaxed"/>
+                              <field name="amount_tax"/>
+                              <field name="amount_total" sum="Total"/>
+                              <field name="state"/>
+                            </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>
