@@ -19,13 +19,11 @@ class MrpSaleGrouped(models.Model):
         help="Number of Sales associated in the grouped Sale Production",
     )
 
-    # Matrix 2d
     order_ids = fields.One2many(
         string="Sales Orders",
         comodel_name="sale.order",
         inverse_name="grouped_order_id",
     )
-    # End Matrix 2D
 
     mrp_production_ids = fields.One2many(
         comodel_name="mrp.production", compute="_compute_mrp_production_ids"
