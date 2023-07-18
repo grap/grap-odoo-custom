@@ -38,6 +38,7 @@ class SaleGroupedWizard(models.TransientModel):
                     0,
                     {
                         "sale_id": sale_order.id,
+                        "sale_partner_id": sale_order.partner_id.id,
                         # "currency_id": sale_order.currency_id,
                         # "sale_order_uom_id": sale_order.product_uom_id,
                         # "sale_order_description": sale_order.description_short,

@@ -10,7 +10,7 @@ class MrpSaleGrouped(models.Model):
     _description = "Grouped Sale and Production"
 
     name = fields.Char()
-    production_date = fields.Date()
+    date = fields.Date()
     notes = fields.Char()
 
     orders_qty = fields.Integer(
@@ -64,16 +64,3 @@ class MrpSaleGrouped(models.Model):
             ]
             action["res_id"] = self.mrp_production_ids.id
         return action
-
-    # @api.model
-    # def _get_report_values(self, docids, data=None):
-    #     data_purchase, data_produce = self._prepare_data_to_purchase_and_produce(data)
-    #     manufacture_bom_list = self._prepare_data_to_manufacture(data)
-    #     docargs = {
-    #         "manufacture_bom_list": manufacture_bom_list,
-    #         "purchase_list": data_purchase,
-    #         "produce_list": data_produce,
-    #         "purchase_total_cost": self._prepare_total_cost(data),
-    #         "currency_symbol": self._prepare_currency(data),
-    #     }
-    #     return docargs

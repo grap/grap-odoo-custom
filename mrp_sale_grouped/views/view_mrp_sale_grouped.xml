@@ -39,6 +39,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <button type="action" string="See and Update Values"
                           name="%(mrp_sale_grouped.action_grouped_sale_2_wizard_x2m_matrix)d"
                           icon="fa-edit"/>
+                  <button type="action" string="Print Production Plan"
+                          name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
+                          icon="fa-print"/>
                 </header>
                 <sheet>
                     <div class="oe_right oe_button_box" name="button_widget_sale_order">
@@ -63,7 +66,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </div>
                     <group>
                         <field name="notes"/>
-                        <field name="production_date"/>
+                        <field name="date"/>
                     </group>
                     <group>
                         <field name="order_ids" nolabel="1" widget="many2many" options="{'not_delete': True}"/>
@@ -78,7 +81,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="production_date"/>
+                <field name="date"/>
                 <field name="orders_qty"/>
             </tree>
         </field>
