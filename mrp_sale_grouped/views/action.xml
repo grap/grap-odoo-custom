@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <!-- Button for wizard -->
+    <record id="mrp_sale_grouped_report_wizard" model="ir.actions.act_window">
+        <field name="name">Production plan</field>
+        <field name="res_model">sale.grouped.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="mrp_sale_grouped.model_mrp_sale_grouped"/>
+    </record>
+
+</odoo>
