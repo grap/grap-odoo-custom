@@ -42,6 +42,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <button type="action" string="Print Production Plan"
                           name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
                           icon="fa-print"/>
+                  <button type="object" string="Confirme all Sales Orders"
+                          name="confirm_all_sale_order"
+                          icon="fa-check"/>
                 </header>
                 <sheet>
                     <div class="oe_right oe_button_box" name="button_widget_sale_order">
@@ -78,6 +81,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="amount_tax"/>
                               <field name="amount_total" sum="Total"/>
                               <field name="state"/>
+                              <button name="action_confirm" type="object" class="oe_highlight" string="Confirme Quotation" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                              <field name="invoice_status"/>
                             </tree>
                         </field>
                     </group>
