@@ -7,6 +7,9 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form>
+                <div class="alert alert-info col-6" role="status">
+                  ℹ️ Only show draft and sent quotations (not confirmed quotations)
+                </div>
                 <group>
                   <field name="line_ids" widget="x2many_2d_matrix"
                          field_x_axis="order_id"

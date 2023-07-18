@@ -39,12 +39,6 @@ class SaleGroupedWizard(models.TransientModel):
                     {
                         "sale_id": sale_order.id,
                         "sale_partner_id": sale_order.partner_id.id,
-                        # "currency_id": sale_order.currency_id,
-                        # "sale_order_uom_id": sale_order.product_uom_id,
-                        # "sale_order_description": sale_order.description_short,
-                        # "sale_order_product_qty": sale_order.product_qty,
-                        # "quantity": sale_order.product_qty,
-                        # "wizard_line_subtotal": sale_order.standard_price_total,
                     },
                 )
             )
@@ -54,15 +48,6 @@ class SaleGroupedWizard(models.TransientModel):
     def _prepare_data(self):
         return {
             "line_data": [x.sale_id.id for x in self.line_ids],
-            # "notes_for_pdf": self.notes_for_pdf,
-            # "option_group_by_product_category": self.option_group_by_product_category,
-            # "option_display_cost": self.option_display_cost,
-            # "option_print_sale_order": self.option_print_sale_order,
-            # "option_production_date": self.option_production_date.strftime(
-            #     "%A %-d %B %Y"
-            # )
-            # if self.option_production_date is True
-            # else False,
         }
 
     @api.multi

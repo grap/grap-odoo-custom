@@ -16,7 +16,10 @@ class X2mMatrixGroupedSalesWizard(models.TransientModel):
         grouped_sale_prod = self.env["mrp.sale.grouped"].browse(
             self.env.context.get("active_id")
         )
-        return grouped_sale_prod.mapped("order_ids.order_line")
+        orders = grouped_sale_prod.mapped("order_ids").filtered(
+            lambda o: o.state in ["draft", "sent"]
+        )
+        return orders.mapped("order_line")
 
     def save_close(self):
         return
