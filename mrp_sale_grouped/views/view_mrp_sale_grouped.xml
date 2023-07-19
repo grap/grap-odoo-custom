@@ -28,7 +28,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="res_model">mrp.production</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <!-- <field name="domain">[('sale_order_id', 'in', active_ids)]</field> -->
     </record>
 
     <record id="view_grouped_sale_production_form" model="ir.ui.view">

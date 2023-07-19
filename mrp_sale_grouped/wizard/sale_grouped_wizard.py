@@ -16,6 +16,11 @@ class SaleGroupedWizard(models.TransientModel):
         default=lambda s: s._default_line_ids(),
     )
 
+    option_print_bom = fields.Boolean(
+        string="Print BoM",
+        default=True,
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
