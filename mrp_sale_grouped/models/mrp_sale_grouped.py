@@ -8,10 +8,35 @@ from odoo import api, fields, models
 class MrpSaleGrouped(models.Model):
     _name = "mrp.sale.grouped"
     _description = "Grouped Sale and Production"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
+
+    _SALES_STATE_SELECTION = [
+        ("sales_in_progress", "Sales in progress"),
+        ("all_sales_confirmed", "Sales confirmed"),
+    ]
+
+    _PROD_STATE_SELECTION = [
+        ("prod_in_progress", "Production in progress"),
+        ("all_production_done", "Production done"),
+    ]
 
     name = fields.Char()
     date = fields.Date()
     notes = fields.Char()
+
+    sales_state = fields.Selection(
+        selection=_SALES_STATE_SELECTION,
+        string="Sales State",
+        default="sales_in_progress",
+        track_visibility=True,
+    )
+
+    production_state = fields.Selection(
+        selection=_PROD_STATE_SELECTION,
+        string="Production State",
+        default="prod_in_progress",
+        track_visibility=True,
+    )
 
     orders_qty = fields.Integer(
         "Sale Order Quantity",
