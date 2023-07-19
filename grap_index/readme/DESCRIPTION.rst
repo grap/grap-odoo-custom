@@ -19,3 +19,8 @@ This module add extra postgresql indexes to speed up SELECT queries.
 - ``account_bank_statement_line``, on ``pos_statement_id``
 - ``pos_order``, on ``returned_order_id`` and ``company_id``
 - ``pos_order_line``, on ``order_id``
+
+
+**"Product" performance**
+
+- ``product_price_history``, on ``product_id``

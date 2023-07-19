@@ -13,6 +13,7 @@ def drop_indexes(cr, registry):
         "account_bank_statement_line": ["pos_statement_id"],
         "pos_order": ["returned_order_id", "company_id"],
         "pos_order_line": ["order_id"],
+        "product_price_history": ["product_id"],
         "stock_move": ["created_purchase_line_id", "inventory_id"],
         "stock_move_line": ["picking_id"],
         "stock_picking": ["group_id", "sale_id"],
