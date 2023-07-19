@@ -28,7 +28,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="res_model">mrp.production</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('sale_order_id', 'in', active_ids)]</field>
+        <!-- <field name="domain">[('sale_order_id', 'in', active_ids)]</field> -->
     </record>
 
     <record id="view_grouped_sale_production_form" model="ir.ui.view">
@@ -38,13 +38,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <header>
                   <button type="action" string="See and Update Values"
                           name="%(mrp_sale_grouped.action_grouped_sale_2_wizard_x2m_matrix)d"
+                          attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
                           icon="fa-edit"/>
+                  <button type="object" string="Confirme all Sales Orders"
+                          name="confirm_all_sale_order"
+                          attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
+                          icon="fa-check"/>
                   <button type="action" string="Print Production Plan"
                           name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
                           icon="fa-print"/>
-                  <button type="object" string="Confirme all Sales Orders"
-                          name="confirm_all_sale_order"
-                          icon="fa-check"/>
+                  <field name="sales_state" widget="statusbar" clickable="True"/>
+                  <field name="production_state" widget="statusbar" clickable="True"/>
                 </header>
                 <sheet>
                     <div class="oe_right oe_button_box" name="button_widget_sale_order">
@@ -56,7 +60,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <button type="object"
                             name="action_view_production"
                             class="oe_stat_button"
-                            icon="fa-gears"
+                            icon="fa-wrench"
                             attrs="{'invisible': [('mrp_production_qty', '=', 0)]}">
                             <field  string="Production Orders" name="mrp_production_qty" widget="statinfo"/>
                         </button>
@@ -65,7 +69,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
-                        <h1><field name="name"/></h1>
+                        <h1><field name="name" placeholder="Week n°63 production"/></h1>
                     </div>
                     <group>
                         <field name="notes"/>
@@ -81,12 +85,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="amount_tax"/>
                               <field name="amount_total" sum="Total"/>
                               <field name="state"/>
-                              <button name="action_confirm" type="object" class="oe_highlight" string="Confirme Quotation" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                              <button name="action_confirm" type="object" class="oe_highlight" string="Confirme Quotation" attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
                               <field name="invoice_status"/>
                             </tree>
                         </field>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
@@ -98,6 +107,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="name"/>
                 <field name="date"/>
                 <field name="orders_qty"/>
+                <field name="sales_state"/>
+                <field name="production_state"/>
             </tree>
         </field>
     </record>
