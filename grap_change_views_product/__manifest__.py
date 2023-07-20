@@ -23,6 +23,7 @@
         "mrp",
         # OCA
         "product_margin_classification",
+        "product_price_history",
         "product_pricelist_margin",
         "barcodes_generator_product",
         "product_form_purchase_link",
