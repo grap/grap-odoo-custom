@@ -5,6 +5,7 @@
 import functools
 
 from odoo import http
+from odoo.http import db_monodb, request
 from odoo.modules import get_resource_path
 
 from odoo.addons.web import controllers
@@ -22,7 +23,17 @@ class Binary(controllers.main.Binary):
         cors="*",
     )
     def company_logo(self, dbname=None, **kw):
+        if request.session.db:
+            dbname = request.session.db
+        elif dbname is None:
+            dbname = db_monodb()
+
         placeholder = functools.partial(
             get_resource_path, "grap_theme", "static", "src", "img"
         )
-        return http.send_file(placeholder("grap_logo.png"))
+        if dbname.startswith("grap"):
+            return http.send_file(placeholder("grap.png"))
+        elif dbname.startswith("caap"):
+            return http.send_file(placeholder("caap.png"))
+        else:
+            return http.send_file(placeholder("undefined_database.png"))
