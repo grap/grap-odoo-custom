@@ -53,6 +53,5 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
     @api.depends("bom_id", "quantity")
     def _compute_wizard_line_subtotal(self):
         # standard_price_total is already divide for product unit
-        # bom_qty = 1 if self.bom_product_qty == 0 else self.bom_product_qty
         for line in self.filtered(lambda x: x.bom_id):
             line.wizard_line_subtotal = line.bom_id.standard_price_total * line.quantity

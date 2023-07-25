@@ -122,7 +122,6 @@ class ReportBomPurchaseList(models.AbstractModel):
             for bom_lines_with_quantity in bom_lines_with_factor:
                 parent_bom_factor_qty = bom_lines_with_quantity[1]
                 for bom_line in bom_lines_with_quantity[0]:
-                    # import pdb; pdb.set_trace()
                     product_id = bom_line.product_id.id
                     product_qty = self.calculate_qty_for_one_product(
                         bom_line.product_qty,
