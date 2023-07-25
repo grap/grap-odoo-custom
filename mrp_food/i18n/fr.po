@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-25 12:04+0000\n"
-"PO-Revision-Date: 2023-07-25 12:04+0000\n"
+"POT-Creation-Date: 2023-05-05 12:44+0000\n"
+"PO-Revision-Date: 2023-05-05 12:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -244,17 +244,6 @@ msgstr "Est une matière première"
 #: model:ir.model.fields,field_description:mrp_food.field_product_template__is_seasonal
 msgid "Is Seasonal"
 msgstr "De saison ☀️"
-
-#. module: mrp_food
-#: model:ir.model.fields,help:mrp_food.field_product_product__is_component
-#: model:ir.model.fields,help:mrp_food.field_product_template__is_component
-msgid "Is component a product which has no BoM based on it +              not to sale + is used in a BoM line"
-msgstr "Est une matière première un article où il n'y a pas Fiche Technique basé sur celui-ci +              qui n'est pas à vendre + est utilisé dans une Fiche technique comme composants."
-
-#. module: mrp_food
-#: model:ir.model.fields,help:mrp_food.field_product_product__is_intermediate
-msgid "Is intermediate a product which has a BoM based on it +              is or is not to sale + is used in a BoM line"
-msgstr "Est produit intermédiaire un article qui a une Fiche Technique basé sur celui-ci +              qui est à vendre ou pas + est utilisé dans une Fiche technique comme composants."
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_label_ids
