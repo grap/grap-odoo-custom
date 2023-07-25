@@ -10,21 +10,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <t t-call="web.basic_layout">
             <!-- ======= PRODUCTS TO PREPARE =======  -->
             <div class="page_qty_to_prepare small-font-size">
-              <div class="page_header">
-                <h2 class="text-left title-h2">Quantities to be prepared</h2>
-                <span t-esc="notes_for_pdf"/>
-              </div>
-              <br/>
               <div>
                 <div class="print_date">
-                  Printed on: <span class="date_today" t-esc="time.strftime('%%d %%B %%Y')" />
-                  <br/><br/>
+                    Printed on: <span class="date_today" t-esc="time.strftime('%%d %%B %%Y')" />
+                    <br/>
                 </div>
-                <div class="production_date">
-                  <t t-if="option_production_date">
+                <t t-if="option_production_date">
+                  <div class="production_date">
                       Production date: <span t-esc="option_production_date"/>
                       <br/><br/>
-                  </t>
+                  </div>
+                </t>
+                <div class="page_header">
+                    <h2 class="text-left title-h2">Quantities to be prepared</h2>
+                    <span t-esc="notes_for_pdf"/>
                 </div>
                 <table class="table table-sm table-bordered">
                     <thead>
@@ -68,7 +67,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </div>
 
             <!-- ======= INTERMEDIATE PRODUCTS =======  -->
-            <div class="page_intermediate_to_prepare small-font-size" style="page-break-before:always;">
+            <div class="page_intermediate_to_prepare small-font-size new_section">
               <t t-if="produce_list">
                 <div class="page_header">
                   <h2 class="text-left title-h2">Intermediate products to produce</h2>
@@ -117,7 +116,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </div>
 
             <!-- ======= COMPONENTS =======  -->
-            <div class="page_components_requirements small-font-size" style="page-break-before:always;">
+            <div class="page_components_requirements small-font-size new_section">
               <div class="page_header">
                 <h2 class="text-left title-h2">Components requirements</h2>
                 <span t-esc="notes_for_pdf"/>
@@ -205,11 +204,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <br/><span class="bom-description"><b>Long description: </b><span t-esc="manufacture_bom[7]"/></span>
                     <br/><br/>
                   </t>
-                  <span class="bom-desired-quantity"><b>Quantity: </b><span t-esc="manufacture_bom[1]"/> <span t-esc="manufacture_bom[2]"/></span>
-                  <t t-if="manufacture_bom[8]">
-                    - <span t-esc="manufacture_bom[8]"/>
-                  </t>
-                  <br/><br/>
+                  <h6>
+                    <span class="bom-desired-quantity"><b>Quantity: </b><span t-esc="manufacture_bom[1]"/> <span t-esc="manufacture_bom[2]"/></span>
+                    <t t-if="manufacture_bom[8]">
+                      - <span t-esc="manufacture_bom[8]"/>
+                    </t>
+                  </h6>
+                  <br/>
                   <table class="table table-sm table-bordered">
                       <thead>
                           <tr class="bom_to_prepare_thead th-colored">

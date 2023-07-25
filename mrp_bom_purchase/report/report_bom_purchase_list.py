@@ -28,8 +28,8 @@ class ReportBomPurchaseList(models.AbstractModel):
         return round(bom_line_product_qty * desired_qty / _bom_qty, digits)
 
     # Returns two lists purchase_list, produce_list
-    # INTERMEDIATES PRODUCTS to produce_list = [bom_id1, bom_id2]
-    # COMPONENTS PRODUCTS to purchase_list = [
+    # Intermediates products to PRODUCE_LIST = [bom_id1, bom_id2]
+    # Components products to PURCHASE_LIST = [
     #       ['category', 'product_name', quantity, uom, price_unit, subtotal], ... ]
     @api.model
     def _prepare_data_to_purchase_and_produce(self, data):
@@ -49,21 +49,30 @@ class ReportBomPurchaseList(models.AbstractModel):
             bom_lines = bom_line_obj.search(
                 [("bom_id", "=", bom.id), ("product_id", "!=", False)]
             )
+            # bom_lines_with_factor = [[bom_lines1, factor1],[bom_lines2, factor2],...]
+            bom_lines_with_factor = []
+            # Nested BoMs
+            # Add BoM product to PRODUCE_LIST and their bom lines for PURCHASE_LIST
             for bom_line in bom_lines:
                 product = bom_line.product_id
                 product_id = product.id
-                # Check if product has a nested BoM and get the FIRST ONE
+                # /!\ Limitation : only get the first nested BoM
                 if product.bom_ids:
                     nested_bom = product.bom_ids[0]
                     nested_bom_lines = bom_line_obj.search(
                         [("bom_id", "=", nested_bom.id), ("product_id", "!=", False)]
                     )
-                    # Add its bom lines them to the set of bom_lines..
-                    bom_lines += nested_bom_lines
-                    # And remove intermediate product from it as it will be in produce_list
+                    # PURCHASE_LIST
+                    # Add nested bom lines with factor which is bom_line parent quantity
+                    parent_bom_factor_qty = bom_line.product_qty
+                    bom_lines_with_factor.append(
+                        [nested_bom_lines, parent_bom_factor_qty]
+                    )
+                    # And remove this intermediate product which will be in PRODUCE_LIST
                     bom_lines = bom_lines.filtered(lambda line: line != bom_line)
 
-                    # INTERMEDIATE PRODUCT TO PRODUCE
+                    # PRODUCE_LIST
+                    # Add intermediate product
                     # Calculate values of this line
                     produce_product_qty = self.calculate_qty_for_one_product(
                         bom_line.product_qty, bom_qty, wiz_bom_line.quantity, 3
@@ -72,7 +81,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                         produce_product_qty * bom_line.standard_price_unit, 3
                     )
 
-                    # Add quantity if product is already there
+                    # Add product or just quantity if product is already there
                     if product_id in produce_list:
                         produce_list[product_id][
                             "to_produce_product_in_bom_name"
@@ -104,31 +113,44 @@ class ReportBomPurchaseList(models.AbstractModel):
                             "to_produce_subtotal": round(produce_subtotal, 3),
                         }
 
-            # COMPONENTS PRODUCTS to purchase_list
-            for bom_line in bom_lines:
-                product_id = bom_line.product_id.id
-                product_qty = self.calculate_qty_for_one_product(
-                    bom_line.product_qty, bom_qty, wiz_bom_line.quantity, 3
-                )
-                bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 3)
-                # Add quantity if product is already there
-                if product_id in purchase_list:
-                    purchase_list[product_id]["quantity"] = round(
-                        purchase_list[product_id]["quantity"] + product_qty, 3
-                    )
-                    purchase_list[product_id]["subtotal"] = round(
-                        purchase_list[product_id]["subtotal"] + bom_line_subtotal,
+            # PURCHASE_LIST
+            # Components products to PURCHASE_LIST
+            # Formate bom_lines to be add with nested bom lines, factor is 1
+            bom_lines_with_factor.append([bom_lines, 1])
+
+            # Nested BoMs Lines
+            for bom_lines_with_quantity in bom_lines_with_factor:
+                parent_bom_factor_qty = bom_lines_with_quantity[1]
+                for bom_line in bom_lines_with_quantity[0]:
+                    # import pdb; pdb.set_trace()
+                    product_id = bom_line.product_id.id
+                    product_qty = self.calculate_qty_for_one_product(
+                        bom_line.product_qty,
+                        bom_qty,
+                        wiz_bom_line.quantity * parent_bom_factor_qty,
                         3,
                     )
-                else:
-                    purchase_list[product_id] = {
-                        "category": bom_line.product_id.categ_id.complete_name,
-                        "product_name": bom_line.product_id.name.capitalize(),
-                        "quantity": round(product_qty, 3),
-                        "uom": bom_line.product_uom_id.name,
-                        "price_unit": round(bom_line.standard_price_unit, 3),
-                        "subtotal": round(bom_line_subtotal, 3),
-                    }
+                    bom_line_subtotal = round(
+                        product_qty * bom_line.standard_price_unit, 3
+                    )
+                    # Add quantity if product is already there
+                    if product_id in purchase_list:
+                        purchase_list[product_id]["quantity"] = round(
+                            purchase_list[product_id]["quantity"] + product_qty, 3
+                        )
+                        purchase_list[product_id]["subtotal"] = round(
+                            purchase_list[product_id]["subtotal"] + bom_line_subtotal,
+                            3,
+                        )
+                    else:
+                        purchase_list[product_id] = {
+                            "category": bom_line.product_id.categ_id.complete_name,
+                            "product_name": bom_line.product_id.name.capitalize(),
+                            "quantity": round(product_qty, 3),
+                            "uom": bom_line.product_uom_id.name,
+                            "price_unit": round(bom_line.standard_price_unit, 3),
+                            "subtotal": round(bom_line_subtotal, 3),
+                        }
 
         # Formate purchase_list dict in list the way we want
         purchase_list_clean = []
@@ -146,14 +168,14 @@ class ReportBomPurchaseList(models.AbstractModel):
                     ]
                 ]
             )
-        # Sort the purchase list by product name and, optionally, category
+        # Sort the PURCHASE_LIST by product name and, optionally, category
         purchase_list_clean.sort(
             key=itemgetter(0, 1)
             if data["option_group_by_product_category"]
             else itemgetter(1)
         )
 
-        # Formate produce_list dict in list the way we want
+        # Formate PRODUCE_LIST dict in list the way we want
         produce_list_clean = []
         for bom in produce_list.values():
             produce_list_clean.append(

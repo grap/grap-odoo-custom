@@ -83,7 +83,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             "option_production_date": self.option_production_date.strftime(
                 "%A %-d %B %Y"
             )
-            if self.option_production_date is True
+            if self.option_production_date is not False
             else False,
         }
 
