@@ -42,6 +42,7 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
     wizard_line_subtotal = fields.Float(
         string="Cost",
         digits=dp.get_precision("Product Price"),
+        compute="_compute_wizard_line_subtotal",
     )
 
     @api.depends("bom_id")
@@ -49,9 +50,9 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
         for line in self.filtered(lambda x: x.bom_id):
             line.bom_description = line.bom_id.description_short
 
-    @api.onchange("bom_id", "quantity")
-    def _onchange_wizard_line_cost(self):
-        bom_qty = 1 if self.bom_product_qty == 0 else self.bom_product_qty
-        self.wizard_line_subtotal = (
-            self.bom_id.standard_price_total * self.quantity / bom_qty
-        )
+    @api.depends("bom_id", "quantity")
+    def _compute_wizard_line_subtotal(self):
+        # standard_price_total is already divide for product unit
+        # bom_qty = 1 if self.bom_product_qty == 0 else self.bom_product_qty
+        for line in self.filtered(lambda x: x.bom_id):
+            line.wizard_line_subtotal = line.bom_id.standard_price_total * line.quantity
