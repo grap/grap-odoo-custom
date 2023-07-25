@@ -188,7 +188,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         % if object.state=='paid':
             <strong>Cette facture est déjà payée.</strong>
         % else:
-            Merci de bien vouloir nous faire parvenir votre règlement à réception, au plus tard le ${format_tz(object.date_due)}.
+            Merci de bien vouloir nous faire parvenir votre règlement à réception, au plus tard le ${format_tz(object.date_due, format='%d/%m/%Y')}.
         % endif
 
         <br/><br/>
