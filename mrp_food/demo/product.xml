@@ -11,6 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Spinach</field>
         <field name="uom_id" ref="uom.product_uom_kgm"/>
         <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
         <field name="standard_price">4</field>
         <field name="is_alimentary">1</field>
         <field name="product_seasonality_ids" eval="[
@@ -25,6 +26,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Tomatoes</field>
         <field name="uom_id" ref="uom.product_uom_kgm"/>
         <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
         <field name="standard_price">3</field>
         <field name="is_alimentary">1</field>
         <field name="product_seasonality_ids" eval="[
@@ -39,6 +41,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Mustard</field>
         <field name="uom_id" ref="uom.product_uom_kgm"/>
         <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
         <field name="standard_price">10</field>
         <field name="is_alimentary">1</field>
         <field name="allergen_ids" eval="[
@@ -51,6 +54,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record model="product.product" id="demo_product_pie">
         <field name="name">Pie</field>
+        <field name="categ_id" ref="product.product_category_all"/>
         <field name="standard_price">3</field>
         <field name="is_alimentary">1</field>
         <field name="allergen_ids" eval="[
@@ -63,12 +67,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record model="product.product" id="demo_product_chickpea_no_season">
         <field name="name">Chickpea</field>
+        <field name="categ_id" ref="product.product_category_all"/>
         <field name="is_alimentary">1</field>
         <field name="standard_price">3</field>
     </record>
 
     <record model="product.product" id="demo_product_peach_no_season">
         <field name="name">Peach</field>
+        <field name="categ_id" ref="product.product_category_all"/>
         <field name="is_alimentary">1</field>
         <field name="standard_price">3</field>
     </record>
