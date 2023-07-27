@@ -63,6 +63,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </tr>
                         </t>
                     </tbody>
+                    <t t-if="option_display_cost">
+                      <tr class="bom_manufacture_total_cost_tr">
+                        <td name="to_manufacture_total_cost_name" class="text-right" colspan="4">
+                          <b>Total based on BoMs cost:</b>
+                        </td>
+                        <td name="to_manufacture_total_cost" class="text-center" colspan="1">
+                          <b><span t-esc="manufacture_total_cost"/> <span t-esc="currency_symbol"/></b>
+                        </td>
+                      </tr>
+                    </t>
                 </table>
               </div>
             </div>
@@ -180,7 +190,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <t t-if="option_display_cost">
                         <tr class="bom_purchase_total_cost_tr">
                           <td name="to_purchase_total_cost_name" class="text-right" colspan="4">
-                            <b>Total to order:</b>
+                            <b>Total based on Products cost:</b>
                           </td>
                           <td name="to_purchase_total_cost" class="text-center" colspan="1">
                             <b><span t-esc="purchase_total_cost"/> <span t-esc="currency_symbol"/></b>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-23 09:00+0000\n"
-"PO-Revision-Date: 2023-06-23 09:00+0000\n"
+"POT-Creation-Date: 2023-07-27 12:59+0000\n"
+"PO-Revision-Date: 2023-07-27 12:59+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,8 +37,13 @@ msgstr "<b>Description courte : </b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
-msgid "<b>Total to order:</b>"
-msgstr "<b>Total à acheter :</b>"
+msgid "<b>Total based on BoMs cost:</b>"
+msgstr "<b>Total basé sur le côut des fiches techniques :</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<b>Total based on Products cost:</b>"
+msgstr "<b>Total basé sur le coût des Produits :</b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
@@ -89,11 +94,6 @@ msgstr "Matières premières nécessaires"
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard_line__wizard_line_subtotal
 msgid "Cost"
 msgstr "Coût"
-
-#. module: mrp_bom_purchase
-#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
-msgid "Create Purchase Orders (in coming)"
-msgstr "Créer les Bons de Commandes (fonction à venir)"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__create_uid
@@ -204,6 +204,11 @@ msgstr "Imprimer le récap de production"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
 msgid "Print Production Report and BoMs"
 msgstr "Imprimer le récap de production et les fiches techniques"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.view_bom_print_purchase_list_wizard_form
+msgid "Print Purchase list"
+msgstr "Imprimer la liste d'achats"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__option_print_bom
