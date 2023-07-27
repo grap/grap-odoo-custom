@@ -12,7 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <div class="page_qty_to_prepare small-font-size">
               <div>
                 <div class="print_date">
-                    Printed on: <span class="date_today" t-esc="time.strftime('%%d %%B %%Y')" />
+                    Printed on: <span class="date_today" t-esc="time.strftime('%d/%m/%Y')" />
                     <br/>
                 </div>
                 <t t-if="option_production_date">
