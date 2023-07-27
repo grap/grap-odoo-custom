@@ -35,23 +35,26 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form>
                 <header>
-                  <button type="action" string="See and Update Values"
+                  <button type="action" string="See and update values"
                           name="%(mrp_sale_grouped.action_grouped_sale_2_wizard_x2m_matrix)d"
                           attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
                           icon="fa-edit"/>
-                  <button type="object" string="Confirme all Sales Orders"
+                  <button type="object" string="Confirme all sales orders"
                           name="confirm_all_sale_order"
                           attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
                           icon="fa-check"/>
-                  <button type="action" string="Print Production Plan"
+                  <button type="action" string="Print sales sum up"
                           name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
                           icon="fa-print"/>
+                  <button type="action" string="Production assistant"
+                          name="%(mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard)d"
+                          icon="fa-print" context="{'sale_grouped':True}"/>
                   <field name="sales_state" widget="statusbar" clickable="True"/>
                   <field name="production_state" widget="statusbar" clickable="True"/>
                 </header>
                 <sheet>
                     <div class="oe_right oe_button_box" name="button_widget_sale_order">
-                        <button class="oe_stat_button" type="action" icon="fa-list"
+                        <button class="oe_stat_button" type="action" icon="fa-dollar"
                             name="%(action_grouped_sale_prod_2_sale_order)d"
                             attrs="{'invisible': [('orders_qty', '=', 0)]}">
                             <field string="Sale Orders" name="orders_qty" widget="statinfo"/>

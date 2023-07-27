@@ -10,11 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">sale.grouped.wizard</field>
         <field name="arch" type="xml">
             <form string="Print Producion Plan">
-              <div class="wizard_options">
-                <h5>🔧 Choose options</h5><br/>
-                <label for="option_print_bom"/><field name="option_print_bom" widget="boolean_toggle"/><br/>
-              </div>
-              <h5>🖨️ Sum up sales concerned</h5>
+              <h5>📈 Sales concerned</h5>
               <group colspan="2">
                   <group col="4" colspan="2">
                       <field name="line_ids" nolabel="1">
@@ -26,7 +22,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   </group>
               </group>
               <footer>
-                  <button name="print_report" string="Print Production Plan" type="object" icon="fa-print" class="oe_highlight"/>
+                  <button name="print_sale_sum_up" string="Print sales sum up" type="object" icon="fa-print" class="oe_highlight"/>
                   <button icon="fa-ban" special="cancel" string="Cancel"/>
               </footer>
             </form>

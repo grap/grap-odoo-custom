@@ -16,11 +16,6 @@ class SaleGroupedWizard(models.TransientModel):
         default=lambda s: s._default_line_ids(),
     )
 
-    option_print_bom = fields.Boolean(
-        string="Print BoM",
-        default=True,
-    )
-
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -56,7 +51,7 @@ class SaleGroupedWizard(models.TransientModel):
         }
 
     @api.multi
-    def print_report(self):
+    def print_sale_sum_up(self):
         self.ensure_one()
         data = self._prepare_data()
         # Get ir_actions_report
