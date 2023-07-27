@@ -10,12 +10,14 @@ class ReportBomPurchaseList(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         data_purchase, data_produce = self._prepare_data_to_purchase_and_produce(data)
+        purchase_total_cost = round(sum(map(lambda x: x[5], data_purchase)), 2)
         manufacture_bom_list = self._prepare_data_to_manufacture(data)
         docargs = {
             "manufacture_bom_list": manufacture_bom_list,
             "purchase_list": data_purchase,
             "produce_list": data_produce,
-            "purchase_total_cost": self._prepare_total_cost(data),
+            "manufacture_total_cost": self._prepare_manufacture_total_cost(data),
+            "purchase_total_cost": purchase_total_cost,
             "currency_symbol": self._prepare_currency(data),
         }
         return docargs
@@ -251,7 +253,7 @@ class ReportBomPurchaseList(models.AbstractModel):
         return manufacture_bom_list
 
     @api.model
-    def _prepare_total_cost(self, data):
+    def _prepare_manufacture_total_cost(self, data):
         line_obj = self.env["bom.print.purchase.list.wizard.line"]
         wiz_boms_lines = line_obj.browse([int(x) for x in data["line_data"]])
         return round(sum(wiz_boms_lines.mapped("wizard_line_subtotal")), 3)
