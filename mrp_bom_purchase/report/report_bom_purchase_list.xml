@@ -25,6 +25,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <h2 class="text-left title-h2">Quantities to be prepared</h2>
                     <span t-esc="notes_for_pdf"/>
                 </div>
+                <br/>
                 <table class="table table-sm table-bordered">
                     <thead>
                         <tr class="reminder_bom_to_prepare_thead th-colored">
