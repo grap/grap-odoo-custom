@@ -231,7 +231,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         (document associé n°${object.origin}).
         % endif
         <br/>
-        La date prévue de livraison est le ${format_tz(object.scheduled_date, tz=user.tz, context={'lang':object.partner_id.lang})}.
+        Date de livraison : ${format_tz(object.scheduled_date, tz=user.tz, context={'lang':object.partner_id.lang})}.
         <br/><br/>
         Si vous avez des questions, n'hésitez pas à nous contacter.
         <br/><br/>
