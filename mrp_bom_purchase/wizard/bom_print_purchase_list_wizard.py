@@ -81,9 +81,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             "option_group_by_product_category": self.option_group_by_product_category,
             "option_display_cost": self.option_display_cost,
             "option_print_bom": self.option_print_bom,
-            "option_production_date": self.option_production_date.strftime(
-                "%A %-d %B %Y"
-            )
+            "option_production_date": self.option_production_date.strftime("%d/%m/%Y")
             if self.option_production_date is not False
             else False,
         }
