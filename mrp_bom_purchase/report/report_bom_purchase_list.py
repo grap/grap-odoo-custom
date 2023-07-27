@@ -63,8 +63,11 @@ class ReportBomPurchaseList(models.AbstractModel):
                         [("bom_id", "=", nested_bom.id), ("product_id", "!=", False)]
                     )
                     # PURCHASE_LIST
-                    # Add nested bom lines with factor which is bom_line parent quantity
-                    parent_bom_factor_qty = bom_line.product_qty
+                    # Add nested bom lines with factor which is
+                    # bom_line parent quantity divided by nested bom quantity
+                    parent_bom_factor_qty = (
+                        bom_line.product_qty / nested_bom.product_qty
+                    )
                     bom_lines_with_factor.append(
                         [nested_bom_lines, parent_bom_factor_qty]
                     )
