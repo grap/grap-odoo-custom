@@ -66,7 +66,8 @@ class BomPrintPurchaseListWizard(models.TransientModel):
                         "bom_description": bom.description_short,
                         "bom_product_qty": bom.product_qty,
                         "quantity": bom.product_qty,
-                        "wizard_line_subtotal": bom.standard_price_total,
+                        "wizard_line_subtotal": bom.standard_price_total
+                        * bom.product_qty,
                     },
                 )
             )
