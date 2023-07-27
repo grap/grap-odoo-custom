@@ -16,6 +16,9 @@
         # OCA
         "web_widget_x2many_2d_matrix",
         "sale_mrp_link",
+        # GRAP
+        "mrp_bom_simple_report",
+        "mrp_bom_purchase",
     ],
     "data": [
         "data/report_paperformat.xml",
