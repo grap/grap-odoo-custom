@@ -67,6 +67,8 @@ class ReportBomPurchaseList(models.AbstractModel):
                     # bom_line parent quantity divided by nested bom quantity
                     parent_bom_factor_qty = (
                         bom_line.product_qty / nested_bom.product_qty
+                        if nested_bom.product_qty != 0
+                        else 1
                     )
                     bom_lines_with_factor.append(
                         [nested_bom_lines, parent_bom_factor_qty]
