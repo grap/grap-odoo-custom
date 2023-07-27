@@ -38,12 +38,12 @@ msgstr "<b>Description courte : </b>"
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Total based on BoMs cost:</b>"
-msgstr "<b>Total basé sur le côut des fiches techniques :</b>"
+msgstr "<b>Total basé sur le coût des fiches techniques :</b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Total based on Products cost:</b>"
-msgstr "<b>Total basé sur le coût des Produits :</b>"
+msgstr "<b>Total basé sur le coût des produits :</b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
