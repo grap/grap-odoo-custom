@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 12:44+0000\n"
-"PO-Revision-Date: 2023-05-05 12:44+0000\n"
+"POT-Creation-Date: 2023-07-25 12:04+0000\n"
+"PO-Revision-Date: 2023-07-25 12:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,6 +93,16 @@ msgid "By Category"
 msgstr "Par Catégorie"
 
 #. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__use_by_default_bom
+msgid "By default for Bill of Material"
+msgstr "Par défaut pour les nouvelles Fiches Techniques"
+
+#. module: mrp_food
+#: model:ir.model.fields,field_description:mrp_food.field_seasonality__use_by_default_product
+msgid "By default for Product"
+msgstr "Par défaut pour les nouveaux Articles"
+
+#. module: mrp_food
 #: model_terms:ir.ui.view,arch_db:mrp_food.view_product_product_mrp_tree
 msgid "Categ."
 msgstr "Catég."
@@ -175,6 +185,16 @@ msgstr "Fin mercuriale"
 #: model:ir.model.fields,help:mrp_food.field_product_product__end_date_of_market_price_list
 msgid "End date of validity of the market price list. After this date, you can consider that your standard price is certainly not up to date."
 msgstr "Date de fin de validité de la mercuriale. Après cette date, vous pouvez considérer que votre prix de revient n'est plus à jour."
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_seasonality__use_by_default_bom
+msgid "For each new BoM, this seasonality will be chosen"
+msgstr "Pour chaque nouvelle Fiche technique, cette saisonnalité sera choisie par défaut."
+
+#. module: mrp_food
+#: model:ir.model.fields,help:mrp_food.field_seasonality__use_by_default_product
+msgid "For each new product, this seasonality will be chosen"
+msgstr "Pour chaque nouvel Article, cette saisonnalité sera choisie par défaut."
 
 #. module: mrp_food
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__id
