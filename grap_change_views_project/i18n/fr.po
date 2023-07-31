@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* grap_change_views_project
+#   * grap_change_views_project
 #
 msgid ""
 msgstr ""
@@ -81,6 +81,16 @@ msgid "Pull request n°3"
 msgstr ""
 
 #. module: grap_change_views_project
+#: model:ir.model.fields,field_description:grap_change_views_project.field_project_task__requesting_company_ids
+msgid "Requesting Companies"
+msgstr "Sociétés demandeuses"
+
+#. module: grap_change_views_project
+#: model:ir.model.fields,field_description:grap_change_views_project.field_project_task__requesting_people_ids
+msgid "Requesting Persons"
+msgstr "Personnes demandeuses"
+
+#. module: grap_change_views_project
 #: model:ir.model.fields,field_description:grap_change_views_project.field_project_task__sql_request
 msgid "SQL request"
 msgstr "Requête SQL"
@@ -91,6 +101,12 @@ msgid "Task"
 msgstr "Tâche"
 
 #. module: grap_change_views_project
+#: model_terms:ir.ui.view,arch_db:grap_change_views_project.project_task_code_tree_view
+msgid "Total"
+msgstr ""
+
+#. module: grap_change_views_project
 #: model_terms:ir.ui.view,arch_db:grap_change_views_project.view_project_task_form2
 msgid "e.g. https://www.github.com"
 msgstr "par exemple https://www.github.com"
+

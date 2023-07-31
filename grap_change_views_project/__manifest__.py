@@ -12,6 +12,8 @@
         "project",
         # OCA
         "project_task_add_very_high",
+        # GRAP
+        "grap_cooperative",
     ],
     "data": [
         "views/templates.xml",
