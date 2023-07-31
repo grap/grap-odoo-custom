@@ -26,6 +26,19 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         default=False,
     )
 
+    option_print_bom = fields.Boolean(
+        string="Print bill of materials",
+        default=False,
+    )
+
+    option_production_date = fields.Date(
+        string="Production Date",
+    )
+
+    notes_for_pdf = fields.Char(
+        help="Write whatever you want to be written in PDF headers"
+    )
+
     @api.model
     def _default_line_ids(self):
         lines_vals = []
@@ -42,7 +55,6 @@ class BomPrintPurchaseListWizard(models.TransientModel):
 
         # Initialize lines
         for bom in boms:
-            # import pdb; pdb.set_trace()
             lines_vals.append(
                 (
                     0,
@@ -54,7 +66,8 @@ class BomPrintPurchaseListWizard(models.TransientModel):
                         "bom_description": bom.description_short,
                         "bom_product_qty": bom.product_qty,
                         "quantity": bom.product_qty,
-                        "wizard_line_subtotal": bom.standard_price_total,
+                        "wizard_line_subtotal": bom.standard_price_total
+                        * bom.product_qty,
                     },
                 )
             )
@@ -64,15 +77,20 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     def _prepare_data(self):
         return {
             "line_data": [x.id for x in self.line_ids],
+            "notes_for_pdf": self.notes_for_pdf,
             "option_group_by_product_category": self.option_group_by_product_category,
             "option_display_cost": self.option_display_cost,
+            "option_print_bom": self.option_print_bom,
+            "option_production_date": self.option_production_date.strftime("%d/%m/%Y")
+            if self.option_production_date is not False
+            else False,
         }
 
     @api.multi
     def print_report(self):
         self.ensure_one()
         data = self._prepare_data()
-        # Get ir_actions_report bom_allergens
+        # Get ir_actions_report
         return self.env.ref("mrp_bom_purchase.bom_purchase_list").report_action(
             self, data=data
         )
