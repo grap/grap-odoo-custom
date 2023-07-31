@@ -8,6 +8,7 @@ from odoo.tests.common import TransactionCase
 class TestSeasonality(TransactionCase):
     def setUp(self):
         super(TestSeasonality, self).setUp()
+        self.main_category = self.env.ref("product.product_category_all")
         self.seasonality_spring = self.env.ref("mrp_food.demo_seasonality_spring")
 
     def test_01_seasonality_add_period(self):
@@ -26,6 +27,7 @@ class TestSeasonality(TransactionCase):
         product = self.env["product.product"].create(
             {
                 "name": "Product",
+                "categ_id": self.main_category.id,
             }
         )
         self.assertEqual(len(product.product_seasonality_ids), 1)
@@ -39,6 +41,7 @@ class TestSeasonality(TransactionCase):
         product2 = self.env["product.product"].create(
             {
                 "name": "Test product",
+                "categ_id": self.main_category.id,
             }
         )
         bom = self.env["mrp.bom"].create(
