@@ -7,7 +7,7 @@
     "name": "GRAP - Configuration Environment Files",
     "summary": "Add custom CSS and extra text on PoS ticket"
     " depending on the environment",
-    "version": "12.0.1.0.4",
+    "version": "12.0.1.0.5",
     "website": "https://github.com/grap/grap-odoo-custom",
     "category": "GRAP - Custom",
     "author": "GRAP",
