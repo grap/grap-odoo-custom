@@ -41,6 +41,11 @@ This module add extra postgresql indexes to speed up SELECT queries.
 - ``pos_order``, on ``returned_order_id`` and ``company_id``
 - ``pos_order_line``, on ``order_id``
 
+
+**"Product" performance**
+
+- ``product_price_history``, on ``product_id``
+
 **Table of contents**
 
 .. contents::
