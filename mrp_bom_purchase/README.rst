@@ -19,10 +19,15 @@ MRP BoM Purchase
 
 |badge1| |badge2| |badge3| 
 
-From Bill of Materials, handle the purchase of their components
-First functionnality : print a PDF Purchase list with some options : group by category and/or display cost price.
+From Bill of Materials, handle the purchase of their components with wizard.
+Print a PDF Purchase with three tables :
+- reminder of quantities to prepare
+- table of intermediate products to produce
+- table of components products to purchase
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/mrp_bom_purchase/static/description/bom_purchase_printing_with_options.gif
+You can choose some options : group products to order by category and/or display cost price.
+
+.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/mrp_bom_purchase/static/description/bom_purchase_printing_wizard.png
 
 .. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/12.0/mrp_bom_purchase/static/description/bom_purchase_printing_with_options_pdf.png
 
@@ -35,6 +40,7 @@ Known issues / Roadmap
 ======================
 
 Button in wizard to create purchase orders
+How to handle nested of nested boms ? At the moment, take one level into account
 
 Bug Tracker
 ===========
