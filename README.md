@@ -51,12 +51,12 @@ addon | version | maintainers | summary
 [mrp_bom_line_has_bom](mrp_bom_line_has_bom/) | 12.0.1.1.1 |  | MRP BoM Line Has BoM
 [mrp_bom_print](mrp_bom_print/) | 12.0.1.1.3 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.2 |  | MRP BoM Product Variant
-[mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.1.4 |  | Handle purchase from your Bill of Materials
+[mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.1.5 |  | Handle purchase from your Bill of Materials
 [mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.1.5 |  | Handle Sale price for product's bom with margin
 [mrp_bom_simple_report](mrp_bom_simple_report/) | 12.0.1.0.1 |  | Print simple report for your Bill of Materials
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.3 |  | Add tags on your BoM to find it easily
 [mrp_business](mrp_business/) | 12.0.1.1.6 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
-[mrp_food](mrp_food/) | 12.0.2.0.2 |  | MRP modules adapted for food-related professions
+[mrp_food](mrp_food/) | 12.0.2.0.3 |  | MRP modules adapted for food-related professions
 [product_main_seller](product_main_seller/) | 12.0.1.1.6 |  | Product Attribute - Main seller for a product
 [product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.4 |  | Product supplier easily connected to product's standard price
 [server_environment_files](server_environment_files/) | 12.0.1.0.5 |  | Add custom CSS and extra text on PoS ticket depending on the environment
