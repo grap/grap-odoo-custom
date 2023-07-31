@@ -53,6 +53,7 @@ addon | version | maintainers | summary
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.2 |  | MRP BoM Product Variant
 [mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.1.4 |  | Handle purchase from your Bill of Materials
 [mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.1.5 |  | Handle Sale price for product's bom with margin
+[mrp_bom_simple_report](mrp_bom_simple_report/) | 12.0.1.0.0 |  | Print simple report for your Bill of Materials
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.3 |  | Add tags on your BoM to find it easily
 [mrp_business](mrp_business/) | 12.0.1.1.6 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_food](mrp_food/) | 12.0.2.0.1 |  | MRP modules adapted for food-related professions
