@@ -49,8 +49,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <button type="action" string="Production assistant"
                           name="%(mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard)d"
                           icon="fa-print" context="{'sale_grouped':True}"/>
-                  <field name="sales_state" widget="statusbar" clickable="True"/>
-                  <field name="production_state" widget="statusbar" clickable="True"/>
+                  <field name="sales_state" widget="statusbar"/>
+                  <field name="production_state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <div class="oe_right oe_button_box" name="button_widget_sale_order">
