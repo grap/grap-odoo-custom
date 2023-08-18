@@ -29,6 +29,7 @@ class MrpSaleGrouped(models.Model):
         string="Sales State",
         default="sales_in_progress",
         track_visibility=True,
+        compute="_compute_sales_state",
     )
 
     production_state = fields.Selection(
@@ -36,6 +37,7 @@ class MrpSaleGrouped(models.Model):
         string="Production State",
         default="prod_in_progress",
         track_visibility=True,
+        compute="_compute_production_state",
     )
 
     orders_qty = fields.Integer(
@@ -57,6 +59,28 @@ class MrpSaleGrouped(models.Model):
     mrp_production_qty = fields.Integer(
         compute="_compute_production_qty",
     )
+
+    @api.depends("order_ids")
+    def _compute_sales_state(self):
+        for mrp_sale_grouped in self:
+            if any(
+                order.state in ["draft", "sent"]
+                for order in mrp_sale_grouped.mapped("order_ids")
+            ):
+                mrp_sale_grouped.sales_state = "sales_in_progress"
+            else:
+                mrp_sale_grouped.sales_state = "all_sales_confirmed"
+
+    @api.depends("mrp_production_ids")
+    def _compute_production_state(self):
+        for mrp_sale_grouped in self:
+            if any(
+                prods.state not in ["done", "cancel"]
+                for prods in mrp_sale_grouped.mapped("mrp_production_ids")
+            ):
+                mrp_sale_grouped.production_state = "prod_in_progress"
+            else:
+                mrp_sale_grouped.production_state = "all_production_done"
 
     @api.depends("order_ids")
     def _compute_orders_qty(self):
