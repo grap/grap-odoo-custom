@@ -242,7 +242,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-danger">amount_total_signed&lt;0</attribute>
-                <attribute name="decoration-muted">state == 'paid'</attribute>
+                <attribute name="decoration-it">state == 'paid'</attribute>
             </xpath>
             <field name="user_id" position="attributes">
                 <attribute name="invisible">1</attribute>
