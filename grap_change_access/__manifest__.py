@@ -17,6 +17,7 @@
         "purchase",
         "pos_restaurant",
         # OCA
+        "attachment_delete_restrict",
         "product_margin_classification",
         # GRAP
         "product_print_category_food_report",
@@ -27,6 +28,7 @@
         "security/ir_module_category.xml",
         "security/res_groups.xml",
         "security/ir.model.access.csv",
+        "data/ir_model.xml",
     ],
     "qweb": [
         "static/src/xml/grap_change_access.xml",
