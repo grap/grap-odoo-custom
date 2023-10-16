@@ -39,7 +39,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           name="%(mrp_sale_grouped.action_grouped_sale_2_wizard_x2m_matrix)d"
                           attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
                           icon="fa-edit"/>
-                  <button type="object" string="Confirme all sales orders"
+                  <button type="object" string="Confirme all quotations"
                           name="confirm_all_sale_order"
                           attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
                           icon="fa-check"/>
@@ -69,6 +69,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                     </div>
 
+                    <div class="alert alert-warning col-8" role="status" attrs="{'invisible': [('order_ids', '!=', [])]}">
+                      📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale.
+                    </div>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" placeholder="Week n°63 production"/></h1>
@@ -117,7 +120,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="action_sale_grouped" model="ir.actions.act_window">
-        <field name="name">Grouped Sale Production</field>
+        <field name="name">Grouped sales and production</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">mrp.sale.grouped</field>
         <field name="view_type">form</field>
@@ -125,7 +128,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_sale_grouped"
-        parent="mrp.menu_mrp_manufacturing" sequence="100"
+        parent="mrp.menu_mrp_root" sequence="40"
         action="action_sale_grouped"/>
 
 

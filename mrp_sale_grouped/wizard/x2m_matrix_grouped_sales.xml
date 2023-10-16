@@ -7,7 +7,7 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form>
-                <div class="alert alert-info col-6" role="status">
+                <div class="alert alert-info col-8" role="status">
                   ℹ️ Only show draft and sent quotations (not confirmed quotations)
                 </div>
                 <group>
@@ -28,7 +28,7 @@
                 </group>
                 <footer>
                     <button name="save_close"
-                            string="Save and Close"
+                            string="Save new values and Close"
                             type="object"
                             class="oe_highlight"/>
                     <button string="Cancel" class="oe_link" special="cancel"/>

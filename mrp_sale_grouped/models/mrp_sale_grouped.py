@@ -20,7 +20,9 @@ class MrpSaleGrouped(models.Model):
         ("all_production_done", "Production done"),
     ]
 
-    name = fields.Char()
+    name = fields.Char(
+        required=True,
+    )
     date = fields.Date()
     notes = fields.Char()
 
@@ -52,6 +54,7 @@ class MrpSaleGrouped(models.Model):
         inverse_name="grouped_order_id",
     )
 
+    # Quick access to MRP Production Orders
     mrp_production_ids = fields.One2many(
         comodel_name="mrp.production", compute="_compute_mrp_production_ids"
     )

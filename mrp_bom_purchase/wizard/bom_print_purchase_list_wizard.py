@@ -43,18 +43,28 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     def _default_line_ids(self):
         lines_vals = []
         context = self.env.context
+
         bom_obj = self.env["mrp.bom"]
-        # Get BoM
-        bom_ids = context.get("active_ids", [])
-        # User has selected BoMs
-        if len(bom_ids) > 0:
-            boms = bom_obj.browse(bom_ids)
-        # User has not selected BoMs (click on action button for example)
-        else:
-            boms = bom_obj.search([])
+        boms_and_quantities = context.get("boms_and_quantities", [])
+
+        # Classic selection or button on BoMs
+        if len(boms_and_quantities) == 0:
+            bom_ids = context.get("active_ids", [])
+            # User has selected BoMs
+            if len(bom_ids) > 0:
+                boms = bom_obj.browse(bom_ids)
+            # User has not selected BoMs (click on action button for example)
+            else:
+                boms = bom_obj.search([])
+            for bom in boms:
+                boms_and_quantities.append({"bom": bom, "bom_qty": 1})
 
         # Initialize lines
-        for bom in boms:
+        for bom_and_quantity in boms_and_quantities:
+            bom = bom_and_quantity["bom"]
+            _bom_description = bom_and_quantity["bom_description"]
+            if bom.description_short:
+                _bom_description += bom.description_short
             lines_vals.append(
                 (
                     0,
@@ -63,11 +73,12 @@ class BomPrintPurchaseListWizard(models.TransientModel):
                         "bom_id": bom.id,
                         "currency_id": bom.currency_id,
                         "bom_uom_id": bom.product_uom_id,
-                        "bom_description": bom.description_short,
+                        "bom_description": _bom_description,
                         "bom_product_qty": bom.product_qty,
-                        "quantity": bom.product_qty,
+                        "quantity": bom_and_quantity["bom_qty"],
+                        # standard_price_total is already divide for product unit
                         "wizard_line_subtotal": bom.standard_price_total
-                        * bom.product_qty,
+                        * bom_and_quantity["bom_qty"],
                     },
                 )
             )
