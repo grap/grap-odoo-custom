@@ -77,6 +77,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="email_template_purchase_order_report_xlsx" model="mail.template.report">
+        <field name="mail_template_id" ref="grap_change_email.email_template_purchase_order"/>
+        <field name="report_template_id" ref="grap_qweb_report.purchase_order_xlsx"/>
+        <field name="report_name">Bon_de_commande_${(object.name or '').replace('/','_')}</field>
+    </record>
+
+
 <!--*********************************************************************** -->
 <!--model sale.order - Bon de commande                                      -->
 <!--*********************************************************************** -->
