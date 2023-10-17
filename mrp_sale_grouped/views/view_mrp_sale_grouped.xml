@@ -77,8 +77,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <h1><field name="name" placeholder="Week n°63 production"/></h1>
                     </div>
                     <group>
-                        <field name="notes"/>
                         <field name="date"/>
+                        <field name="notes"/>
                     </group>
                     <group>
                         <field name="order_ids" nolabel="1" widget="many2many" domain="['|', ('state', '=', 'sent'), ('state', '=', 'draft')]">

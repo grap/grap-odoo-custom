@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 14:45+0000\n"
-"PO-Revision-Date: 2023-10-13 14:45+0000\n"
+"POT-Creation-Date: 2023-10-17 09:01+0000\n"
+"PO-Revision-Date: 2023-10-17 09:01+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -97,15 +97,19 @@ msgid "Followers (Partners)"
 msgstr "Abonnés (Partenaires)"
 
 #. module: mrp_sale_grouped
-#: model:ir.actions.act_window,name:mrp_sale_grouped.action_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_order__grouped_order_id
-#: model:ir.ui.menu,name:mrp_sale_grouped.menu_sale_grouped
 msgid "Grouped Sale Production"
 msgstr "Gestion groupée des ventes et de la production"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_mrp_sale_grouped
 msgid "Grouped Sale and Production"
+msgstr "Gestion groupée des ventes et de la production"
+
+#. module: mrp_sale_grouped
+#: model:ir.actions.act_window,name:mrp_sale_grouped.action_sale_grouped
+#: model:ir.ui.menu,name:mrp_sale_grouped.menu_sale_grouped
+msgid "Grouped sales and production"
 msgstr "Gestion groupée des ventes et de la production"
 
 #. module: mrp_sale_grouped
@@ -230,7 +234,7 @@ msgstr "Nombre d'actions"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__orders_qty
 msgid "Number of Sales associated in the grouped Sale Production"
-msgstr ""
+msgstr "Nombre de ventes liées"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_has_error_counter
@@ -328,7 +332,7 @@ msgstr ""
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order
 msgid "Sale Order"
-msgstr "Ventes"
+msgstr "Vente"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__orders_qty
@@ -344,7 +348,7 @@ msgstr "Ventes"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard_line__sale_id
 msgid "Sale order"
-msgstr ""
+msgstr "Vente"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order_line
@@ -354,7 +358,7 @@ msgstr "Ligne de bons de commande"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__order_ids
 msgid "Sales Orders"
-msgstr "Bon de commandes"
+msgstr "Ventes"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__sales_state
@@ -470,4 +474,9 @@ msgstr "ℹ️ Affiche seulement les devis brouillons et envoyées (pas les vent
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form
 msgid "📈 Sales concerned"
-msgstr "📈 Ventes concernés"
+msgstr "📈 Ventes concernées"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale."
+msgstr "📌 Après avoir donné un nom, remplissez les ventes liées en cliquant sur 'ajouter une ligne' et en séléctionnant une ou plusieurs ventes."
