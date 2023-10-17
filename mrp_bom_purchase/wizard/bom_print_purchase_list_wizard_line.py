@@ -27,6 +27,12 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
         string="Description", compute="_compute_bom_description"
     )
 
+    # Fill in when assistant is called by other module
+    bom_origin = fields.Char(
+        string="Origin",
+        readonly=True,
+    )
+
     bom_product_qty = fields.Float(string="BoM Qty", related="bom_id.product_qty")
 
     bom_uom_id = fields.Many2one(
