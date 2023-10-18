@@ -7,11 +7,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <odoo>
 
-    <!-- PDF report called from wizard -->
+    <!-- PDF report called from action -->
     <report
         id="report_sale_grouped"
         model="report.sale.grouped"
-        string="Production plan"
+        string="Print sales sum up"
         report_type="qweb-pdf"
         name="mrp_sale_grouped.report_sale_grouped"
         attachment_use="False"
