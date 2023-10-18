@@ -9,7 +9,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_sale_grouped_wizard_form" model="ir.ui.view">
         <field name="model">sale.grouped.wizard</field>
         <field name="arch" type="xml">
-            <form string="Print Producion Plan">
+            <form string="Print sales sum up">
               <h5>📈 Sales concerned</h5>
               <group colspan="2">
                   <group col="4" colspan="2">

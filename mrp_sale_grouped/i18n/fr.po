@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 09:01+0000\n"
-"PO-Revision-Date: 2023-10-17 09:01+0000\n"
+"POT-Creation-Date: 2023-10-17 15:24+0000\n"
+"PO-Revision-Date: 2023-10-17 15:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -310,9 +310,13 @@ msgstr "Production en cours"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.mrp_sale_grouped_report_wizard
-#: model:ir.actions.report,name:mrp_sale_grouped.report_sale_grouped
 msgid "Production plan"
 msgstr "Plan de production"
+
+#. module: mrp_sale_grouped
+#: model:ir.actions.report,name:mrp_sale_grouped.report_sale_grouped
+msgid "Report Sale Grouped"
+msgstr "Résumé des ventes"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_report_mrp_sale_grouped_report_sale_grouped
@@ -332,7 +336,7 @@ msgstr ""
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order
 msgid "Sale Order"
-msgstr "Vente"
+msgstr ""
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__orders_qty
@@ -358,7 +362,7 @@ msgstr "Ligne de bons de commande"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__order_ids
 msgid "Sales Orders"
-msgstr "Ventes"
+msgstr "Bon de commandes"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__sales_state

@@ -44,9 +44,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
                           icon="fa-check"/>
                   <button type="action" string="Print sales sum up"
+                          attrs="{'invisible': [('order_ids', '=', [])]}"
                           name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
                           icon="fa-print"/>
                   <button type="action" string="Production assistant"
+                          attrs="{'invisible': [('order_ids', '=', [])]}"
                           name="%(mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard)d"
                           icon="fa-print" context="{'sale_grouped':True}"/>
                   <field name="sales_state" widget="statusbar"/>
