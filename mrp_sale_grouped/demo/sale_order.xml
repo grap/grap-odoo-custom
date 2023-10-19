@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- Sale for Gemini Furniture  -->
+    <record model="sale.order" id="demo_sale_gemini">
+      <field name="partner_id" eval="ref('base.res_partner_3')" />
+    </record>
+
+    <!-- Sale for Ready Mat  -->
+    <record model="sale.order" id="demo_sale_ready_mat">
+      <field name="partner_id" eval="ref('base.res_partner_4')" />
+    </record>
+
+</odoo>
