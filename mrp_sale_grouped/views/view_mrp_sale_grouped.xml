@@ -20,7 +20,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="res_model">sale.order</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('grouped_order_id', 'in', active_ids)]</field>
+        <field name="domain">[('mrp_sale_grouped_id', 'in', active_ids)]</field>
     </record>
 
     <record id="action_grouped_sale_prod_2_production_order" model="ir.actions.act_window">

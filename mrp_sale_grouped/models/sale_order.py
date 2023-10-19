@@ -8,7 +8,7 @@ from odoo import fields, models
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    grouped_order_id = fields.Many2one(
+    mrp_sale_grouped_id = fields.Many2one(
         comodel_name="mrp.sale.grouped",
         string="Grouped Sale Production",
         index=True,
