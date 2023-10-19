@@ -9,7 +9,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- Button for wizard -->
     <record id="mrp_sale_grouped_report_wizard" model="ir.actions.act_window">
-        <field name="name">Production plan</field>
+        <field name="name">Print sales sum up</field>
         <field name="res_model">sale.grouped.wizard</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>

@@ -51,7 +51,7 @@ class MrpSaleGrouped(models.Model):
     order_ids = fields.One2many(
         string="Sales Orders",
         comodel_name="sale.order",
-        inverse_name="grouped_order_id",
+        inverse_name="mrp_sale_grouped_id",
     )
 
     # Quick access to MRP Production Orders
