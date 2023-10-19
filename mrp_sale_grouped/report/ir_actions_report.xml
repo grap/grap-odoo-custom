@@ -9,15 +9,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- PDF report called from action -->
     <report
-        id="report_sale_grouped"
+        id="sale_grouped"
         model="report.sale.grouped"
         string="Print sales sum up"
         report_type="qweb-pdf"
         name="mrp_sale_grouped.report_sale_grouped"
+        file="mrp_sale_grouped.report_sale_grouped"
         attachment_use="False"
     />
 
-    <record id="report_sale_grouped" model="ir.actions.report">
+    <record id="sale_grouped" model="ir.actions.report">
       <field name="paperformat_id" ref="paper_format_mrp_sale_grouped_report"/>
     </record>
 
