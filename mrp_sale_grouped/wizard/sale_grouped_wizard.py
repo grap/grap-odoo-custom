@@ -55,6 +55,6 @@ class SaleGroupedWizard(models.TransientModel):
         self.ensure_one()
         data = self._prepare_data()
         # Get ir_actions_report
-        return self.env.ref("mrp_sale_grouped.report_sale_grouped").report_action(
+        return self.env.ref("mrp_sale_grouped.sale_grouped").report_action(
             self, data=data
         )

@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <odoo>
 
-    <!-- Button for wizard -->
+    <!-- Button to call wizard -->
     <record id="mrp_sale_grouped_report_wizard" model="ir.actions.act_window">
         <field name="name">Print sales sum up</field>
         <field name="res_model">sale.grouped.wizard</field>

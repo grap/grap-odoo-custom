@@ -6,9 +6,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-<!-- ************************************************************ -->
-    <!-- Hide menu -->
-<!-- ************************************************************ -->
+    <!-- ************************************************************** -->
+    <!-- Hide mrp_bom_purchase menu as it is duplicate with this module -->
+    <!-- ************************************************************** -->
 
     <record model="ir.ui.menu" id="mrp_bom_purchase.menu_mrp_bom_purchase_list_print">
         <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
