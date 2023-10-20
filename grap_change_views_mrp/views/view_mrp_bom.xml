@@ -176,7 +176,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="has_attachments" invisible="1"/>
                               <button name="action_see_attachments" type="object" icon="fa-files-o" attrs="{'invisible': [('has_attachments', '=', True)]}" aria-label="No attachment" title="No attachment"/>
                               <button name="action_see_attachments" type="object" icon="fa-file" attrs="{'invisible': [('has_attachments', '=', False)]}" aria-label="Attachments" title="Attachments"/>
-                              <field name="product_qty"/>
+                              <!-- mrp_bom_line_net_qty -->
+                              <field name="diff_product_qty_gross_net" invisible="1"/>
+                              <field name="product_qty" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
+                              <button name="set_product_qty_gross" icon="fa-arrow-left" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product gross quantity with net quantity and loss percentage"/>
+                              <field name="loss_percentage" widget="numeric_step" options="{'step': 1}"/>
+                              <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
+                              <field name="product_qty_net"/>
+                              <!-- / mrp_bom_line_net_qty -->
                               <!-- mrp_business -->
                               <field name="line_weight"/>
                               <field name="line_weight_percentage" widget="percentage"/>
@@ -203,7 +210,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   </page>
                   <page string="Components">
                       <field name="bom_line_with_sectionnote_ids" widget="section_and_note_one2many" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
-                          <tree editable="bottom">
+                          <tree editable="bottom" decoration-warning="diff_product_qty_gross_net != 0">
                               <control>
                                   <create name="add_product_control" string="Add a product"/>
                                   <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
@@ -217,12 +224,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <!-- / mrp_bom_line_has_bom -->
                               <field name="product_id" context="{'default_type': 'product'}" attrs="{'required': [('display_type', '=', False)]}"/>
                               <field name="name" widget="section_and_note_text"/>
+                              <field name="diff_product_qty_gross_net" invisible="1"/>
                               <field name="product_qty" attrs="{'required': [('display_type', '=', False)]}" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
+                              <button name="set_product_qty_gross" icon="fa-arrow-left" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product gross quantity with net quantity and loss percentage"/>
+                              <field name="loss_percentage" widget="numeric_step" options="{'step': 1}"/>
+                              <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
+                              <field name="product_qty_net"/>
                               <field name="product_uom_id" options="{'no_open':True,'no_create':True}" string="UoM" groups="uom.group_uom" readonly="1" force_save="1"/>
-                              <field name="line_weight"/>
+                              <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                              <field name="line_weight" sum="Net weight"/>
                               <field name="line_weight_percentage" widget="percentage"/>
                               <field name="currency_id" invisible="1"/>
-                              <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                               <field name="label_ids" widget="many2many_tags" string="Labels"/>
                               <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>
                               <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
