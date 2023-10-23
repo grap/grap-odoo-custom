@@ -22,6 +22,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
                 <field name="product_qty_net"/>
             </xpath>
+            <xpath expr="//field[@name='bom_line_ids']/tree" position="attributes">>
+                <attribute name="decoration-warning">diff_product_qty_gross_net != 0</attribute>
+            </xpath>
         </field>
     </record>
 

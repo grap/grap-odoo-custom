@@ -45,19 +45,17 @@ class MrpBomLine(models.Model):
     # Two buttons to handle two cases : you base your price on net qty or gross qty
     @api.multi
     def set_product_qty_net(self):
-        for bom_line in self:
-            if bom_line.product_qty:
-                bom_line.product_qty_net = self.calculate_qty_net_theoretical(
-                    bom_line.product_qty, bom_line.loss_percentage
-                )
+        for bom_line in self.filtered(lambda x: x.product_qty):
+            bom_line.product_qty_net = self.calculate_qty_net_theoretical(
+                bom_line.product_qty, bom_line.loss_percentage
+            )
 
     @api.multi
     def set_product_qty_gross(self):
-        for bom_line in self:
-            if bom_line.product_qty_net:
-                bom_line.product_qty = bom_line.product_qty_net / (
-                    1 - bom_line.loss_percentage / 100
-                )
+        for bom_line in self.filtered(lambda x: x.product_qty_net):
+            bom_line.product_qty = bom_line.product_qty_net / (
+                1 - bom_line.loss_percentage / 100
+            )
 
     # If you change mandatory field product_qty (gross qty), the net quantity adapts
     @api.onchange("product_qty")
