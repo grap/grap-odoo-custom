@@ -4,4 +4,5 @@ Fill loss percentage, Odoo will show two buttons to calculate net or 'gross quan
 You can also set 'net quantity' and calculate 'gross quantity' with loss percentage
 
 .. figure:: ../static/description/mrp_bom_line_net_qty.gif
-*Line with difference with theorical values are set in yellow
+
+/!\ Line with difference with theorical values are set in yellow
