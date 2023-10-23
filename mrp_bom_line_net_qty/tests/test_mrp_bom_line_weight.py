@@ -25,9 +25,6 @@ class TestMrpBomLineWeight(TransactionCase):
     def test_01_set_products_weight_check_bom(self):
         # Values from demo datas
         total_weight_theorical = 0.5 + 0.3 + 0.1 + 0.2
-        # Manually launch onchange to set product_qty_net
-        for bom_line in self.bom_tomato_pie.bom_line_ids:
-            bom_line._onchange_product_qty()
         self.assertEqual(
             self.bom_tomato_pie.bom_components_total_weight, total_weight_theorical
         )
@@ -35,9 +32,6 @@ class TestMrpBomLineWeight(TransactionCase):
     def test_02_change_bom_line_qty(self):
         # Double mustard
         self.bom_tomato_pie_mustard.product_qty = 0.2
-        # Manually launch onchange to set product_qty_net
-        for bom_line in self.bom_tomato_pie.bom_line_ids:
-            bom_line._onchange_product_qty()
         total_weight_theorical = 0.5 + 0.3 + 0.2 + 0.2
         self.assertEqual(
             self.bom_tomato_pie.bom_components_total_weight, total_weight_theorical

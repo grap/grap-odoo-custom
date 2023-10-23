@@ -17,8 +17,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
                 <field name="diff_product_qty_gross_net" invisible="1"/>
-                <field name="loss_percentage"/>
-                <button name="set_product_qty" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product quantity with gross quantity and loss percentage"/>
+                <button name="set_product_qty_gross" icon="fa-arrow-left" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product gross quantity with net quantity and loss percentage"/>
+                <field name="loss_percentage" widget="numeric_step" options="{'step': 1}"/>
+                <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
                 <field name="product_qty_net"/>
             </xpath>
         </field>
