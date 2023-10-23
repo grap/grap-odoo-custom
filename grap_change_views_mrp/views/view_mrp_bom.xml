@@ -231,7 +231,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
                               <field name="product_qty_net"/>
                               <field name="product_uom_id" options="{'no_open':True,'no_create':True}" string="UoM" groups="uom.group_uom" readonly="1" force_save="1"/>
-                              <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                               <field name="line_weight" sum="Net weight"/>
                               <field name="line_weight_percentage" widget="percentage"/>
                               <field name="currency_id" invisible="1"/>
@@ -239,6 +238,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>
                               <field name="seasonality_ids" groups="mrp_food.seasonality_manager" string="Seasonalities" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                               <field name="is_seasonal" groups="base.group_no_one"/>
+                              <field name="standard_price_unit" string="Standard price unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                               <field name="standard_price_subtotal" string="ST" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
                               <field name="standard_price_subtotal_percentage" string="ST %" widget="percentage" options="{'field_digits': True}"/>
                           </tree>

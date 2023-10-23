@@ -18,6 +18,7 @@
         "res_company_code",
         "web_notify",
         # GRAP Modules
+        "mrp_bom_line_net_qty",
         "mrp_bom_product_variant",
     ],
     "demo": [

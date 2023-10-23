@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mrp_bom_line_gross_qty
+#	* mrp_bom_line_net_qty
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 13:40+0000\n"
-"PO-Revision-Date: 2023-10-20 13:40+0000\n"
+"POT-Creation-Date: 2023-10-23 09:53+0000\n"
+"PO-Revision-Date: 2023-10-23 09:53+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,37 +15,37 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: mrp_bom_line_gross_qty
-#: model:ir.model,name:mrp_bom_line_gross_qty.model_mrp_bom_line
+#. module: mrp_bom_line_net_qty
+#: model:ir.model,name:mrp_bom_line_net_qty.model_mrp_bom_line
 msgid "Bill of Material Line"
 msgstr "Ligne de fiche technique"
 
-#. module: mrp_bom_line_gross_qty
-#: model:ir.model.fields,field_description:mrp_bom_line_gross_qty.field_mrp_bom_line__diff_product_qty_gross_net
+#. module: mrp_bom_line_net_qty
+#: model:ir.model.fields,field_description:mrp_bom_line_net_qty.field_mrp_bom_line__diff_product_qty_gross_net
 msgid "Diff Product Qty Gross Net"
 msgstr ""
 
-#. module: mrp_bom_line_gross_qty
-#: model_terms:ir.ui.view,arch_db:mrp_bom_line_gross_qty.view_mrp_bom_form
+#. module: mrp_bom_line_net_qty
+#: model_terms:ir.ui.view,arch_db:mrp_bom_line_net_qty.view_mrp_bom_form
 msgid "It will set product quantity with gross quantity and loss percentage"
 msgstr "Cela définira la quantité de produits grâce à la quantité brute et le pourcentage de perte."
 
-#. module: mrp_bom_line_gross_qty
-#: model:ir.model.fields,field_description:mrp_bom_line_gross_qty.field_mrp_bom_line__loss_percentage
+#. module: mrp_bom_line_net_qty
+#: model:ir.model.fields,field_description:mrp_bom_line_net_qty.field_mrp_bom_line__loss_percentage
 msgid "Loss %"
 msgstr "Perte %"
 
-#. module: mrp_bom_line_gross_qty
-#: model:ir.model.fields,field_description:mrp_bom_line_gross_qty.field_mrp_bom_line__product_qty_net
+#. module: mrp_bom_line_net_qty
+#: model:ir.model.fields,field_description:mrp_bom_line_net_qty.field_mrp_bom_line__product_qty_net
 msgid "Net quantity"
 msgstr "Qté net"
 
-#. module: mrp_bom_line_gross_qty
-#: model:ir.model.fields,help:mrp_bom_line_gross_qty.field_mrp_bom_line__loss_percentage
+#. module: mrp_bom_line_net_qty
+#: model:ir.model.fields,help:mrp_bom_line_net_qty.field_mrp_bom_line__loss_percentage
 msgid "Percentage loss, for example, when grating carrots"
 msgstr "Pourcentage de perte, après avoir râper des carottes par exemple."
 
-#. module: mrp_bom_line_gross_qty
-#: model:ir.model.fields,help:mrp_bom_line_gross_qty.field_mrp_bom_line__product_qty_net
+#. module: mrp_bom_line_net_qty
+#: model:ir.model.fields,help:mrp_bom_line_net_qty.field_mrp_bom_line__product_qty_net
 msgid "Weight after any preparation, e.g. weight of carrots after they are grated "
 msgstr "Poids net après une préparation, après avoir râper des carottes par exemple."
