@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 14:10+0000\n"
-"PO-Revision-Date: 2023-02-09 14:10+0000\n"
+"POT-Creation-Date: 2023-10-23 09:49+0000\n"
+"PO-Revision-Date: 2023-10-23 09:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "Ligne de fiche technique"
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__bom_components_total_weight
 msgid "Bom Components Total Weight"
-msgstr "Poids total des Composants"
+msgstr "Poids total"
 
 #. module: mrp_business
 #: sql_constraint:mrp.meal.category:0
@@ -148,7 +148,7 @@ msgid "Meal category"
 msgstr "Catégorie de repas"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:85
+#: code:addons/mrp_business/models/mrp_bom.py:86
 #, python-format
 msgid "No Trigram on product %s "
 msgstr "Aucun trigramme sur l'Article %s "
@@ -241,7 +241,7 @@ msgid "You can change it manually here and it will change reference."
 msgstr "Vous pouvez le changer directement ici et ça changera le code de la fiche technique."
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:82
+#: code:addons/mrp_business/models/mrp_bom.py:83
 #, python-format
 msgid "You need to change default trigram on product set to %s."
 msgstr "Vous devez changer le trigramme du produit qui a été défini à %s."
@@ -249,7 +249,7 @@ msgstr "Vous devez changer le trigramme du produit qui a été défini à %s."
 #. module: mrp_business
 #: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_product_form
 msgid "⇒ Generate new trigram"
-msgstr "⇒ Générer un nouveau trigramme"
+msgstr "⇒ Générer trigramme"
 
 #. module: mrp_business
 #: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
