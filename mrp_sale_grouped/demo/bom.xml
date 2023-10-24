@@ -11,6 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record model="mrp.bom" id="demo_bom_tomato_tart">
       <field name="code">TOMATO_PIE</field>
       <field name="product_tmpl_id" ref="mrp_sale_grouped.demo_product_template_tomato_tart"/>
+      <field name="product_id" ref="mrp_sale_grouped.demo_product_tomato_tart"/>
     </record>
 
     <record model="mrp.bom.line" id="demo_bom_tomato_tart_line_pie">
