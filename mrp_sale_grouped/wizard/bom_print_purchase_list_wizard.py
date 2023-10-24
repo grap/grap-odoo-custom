@@ -12,7 +12,6 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     @api.model
     def _default_no_origin(self):
         context = self.env.context
-
         active_model = context.get("active_model")
         if active_model == "mrp.sale.grouped":
             sale_grouped_active_id = context.get("active_ids", [])

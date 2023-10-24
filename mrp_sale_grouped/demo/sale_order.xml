@@ -16,4 +16,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
       <field name="partner_id" eval="ref('base.res_partner_4')" />
     </record>
 
+    <!-- Sale for Deco Addict - with products with BoMs -->
+    <record model="sale.order" id="demo_sale_deco_addict">
+      <field name="partner_id" eval="ref('base.res_partner_2')" />
+    </record>
+
 </odoo>
