@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 15:24+0000\n"
-"PO-Revision-Date: 2023-10-17 15:24+0000\n"
+"POT-Creation-Date: 2023-11-02 14:51+0000\n"
+"PO-Revision-Date: 2023-11-02 14:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,11 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Confirme Quotation"
 msgstr "Confirmer le devis"
@@ -70,7 +75,7 @@ msgstr "Créé le"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__date
 msgid "Date"
-msgstr ""
+msgstr "Date "
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__display_name
@@ -202,6 +207,12 @@ msgid "Mrp Production Qty"
 msgstr ""
 
 #. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_mustard
+#: model:product.template,name:mrp_sale_grouped.demo_product_mustard_product_template
+msgid "Mustard"
+msgstr "Moutarde"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__name
 msgid "Name"
 msgstr "Nom"
@@ -267,20 +278,38 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_pie
+#: model:product.template,name:mrp_sale_grouped.demo_product_pie_product_template
+msgid "Pie"
+msgstr "Tarte"
+
+#. module: mrp_sale_grouped
 #: selection:mrp.sale.grouped,activity_state:0
 msgid "Planned"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form
-msgid "Print Producion Plan"
-msgstr "Imprimer le plan de production"
-
-#. module: mrp_sale_grouped
+#: model:ir.actions.act_window,name:mrp_sale_grouped.mrp_sale_grouped_report_wizard
+#: model:ir.actions.report,name:mrp_sale_grouped.sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form
 msgid "Print sales sum up"
 msgstr "Imprimer le résumé des ventes"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__product_wo_bom_ids
+msgid "Product Wo Bom"
+msgstr ""
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__product_wo_bom_qty
+msgid "Product Wo Bom Qty"
+msgstr ""
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Product w/o BoM"
+msgstr "Articles sans FT"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_production_order
@@ -309,14 +338,9 @@ msgid "Production in progress"
 msgstr "Production en cours"
 
 #. module: mrp_sale_grouped
-#: model:ir.actions.act_window,name:mrp_sale_grouped.mrp_sale_grouped_report_wizard
-msgid "Production plan"
-msgstr "Plan de production"
-
-#. module: mrp_sale_grouped
-#: model:ir.actions.report,name:mrp_sale_grouped.report_sale_grouped
-msgid "Report Sale Grouped"
-msgstr "Résumé des ventes"
+#: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_product_product
+msgid "Products"
+msgstr "Articles"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_report_mrp_sale_grouped_report_sale_grouped
@@ -336,7 +360,7 @@ msgstr ""
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order
 msgid "Sale Order"
-msgstr ""
+msgstr "Commande client"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__orders_qty
@@ -362,7 +386,7 @@ msgstr "Ligne de bons de commande"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__order_ids
 msgid "Sales Orders"
-msgstr "Bon de commandes"
+msgstr "Bons de commandes"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__sales_state
@@ -390,6 +414,12 @@ msgid "See and update values"
 msgstr "Voir et mettre à jour les quantités"
 
 #. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_spinach
+#: model:product.template,name:mrp_sale_grouped.demo_product_spinach_product_template
+msgid "Spinach"
+msgstr "Épinard"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_state
 msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
@@ -406,14 +436,42 @@ msgid "Technical field, used to display matrix with web_widget_x2many_2d_matrix 
 msgstr "Champ technique, utilisé pour afficher la matrice de produit, via le module web_widget_x2many_2d_matrix."
 
 #. module: mrp_sale_grouped
+#: code:addons/mrp_sale_grouped/wizard/bom_print_purchase_list_wizard.py:130
+#, python-format
+msgid "These products don't have any Bill Of Material: %s                          \n"
+"Create them before launching the assistant again."
+msgstr "Ces articles n'ont pas de Fiche Technique : %s                          \n"
+"Les créer avant de relancer l'assistant."
+
+#. module: mrp_sale_grouped
 #: selection:mrp.sale.grouped,activity_state:0
 msgid "Today"
-msgstr ""
+msgstr "Aujourd'hui"
+
+#. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_tomato_tart
+#: model:product.template,name:mrp_sale_grouped.demo_product_template_tomato_tart
+msgid "Tomato pie"
+msgstr "Tarte à la tomate"
+
+#. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_tomato
+#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_product_template
+msgid "Tomatoes"
+msgstr "Tomates"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Total"
 msgstr ""
+
+#. module: mrp_sale_grouped
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_pie
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_tomato_tart
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_pie_product_template
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_template_tomato_tart
+msgid "Unit(s)"
+msgstr "Unité(s)"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_unread
@@ -471,9 +529,34 @@ msgid "X2Many Matrix Grouped Sales Wizard"
 msgstr ""
 
 #. module: mrp_sale_grouped
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_mustard
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_spinach
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_tomato
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_mustard
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_pie
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_spinach
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_tomato
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_tomato_tart
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_mustard_product_template
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_spinach_product_template
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_tomato_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_mustard_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_pie_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_spinach_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_template_tomato_tart
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_tomato_product_template
+msgid "kg"
+msgstr ""
+
+#. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.x2many_2d_matrix_grouped_sales
 msgid "ℹ️ Only show draft and sent quotations (not confirmed quotations)"
 msgstr "ℹ️ Affiche seulement les devis brouillons et envoyées (pas les ventes confirmés)"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "ℹ️ Sales contains severals products that don't have any associated bill of material. Access them with the smart button on the right."
+msgstr "ℹ️ Les ventes contiennent des articles qui ne sont pas associés à une fiche technique. Accéder à ces articles par le bouton de raccourci à droite."
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form

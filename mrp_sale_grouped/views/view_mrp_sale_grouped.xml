@@ -23,6 +23,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="domain">[('mrp_sale_grouped_id', 'in', active_ids)]</field>
     </record>
 
+    <record id="action_grouped_sale_prod_2_product_product" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('id', 'in', context.get('product_wo_bom_ids',False))]</field>
+    </record>
+
+    <!--  Useless ? -->
     <record id="action_grouped_sale_prod_2_production_order" model="ir.actions.act_window">
         <field name="name">Production Orders</field>
         <field name="res_model">mrp.production</field>
@@ -52,7 +61,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           name="%(mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard)d"
                           icon="fa-print" context="{'sale_grouped':True}"/>
                   <field name="sales_state" widget="statusbar"/>
-                  <field name="production_state" widget="statusbar"/>
+                  <field name="production_state" widget="statusbar" groups="mrp.group_mrp_routings"/>
                 </header>
                 <sheet>
                     <div class="oe_right oe_button_box" name="button_widget_sale_order">
@@ -61,16 +70,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             attrs="{'invisible': [('orders_qty', '=', 0)]}">
                             <field string="Sale Orders" name="orders_qty" widget="statinfo"/>
                         </button>
+                        <field name="product_wo_bom_ids" invisible="1"/>
+                        <button class="oe_stat_button" type="action" icon="fa-list"
+                            name="%(action_grouped_sale_prod_2_product_product)d"
+                            context="{'product_wo_bom_ids': product_wo_bom_ids}"
+                            attrs="{'invisible': [('product_wo_bom_qty', '=', 0)]}">
+                            <field string="Product w/o BoM" name="product_wo_bom_qty" widget="statinfo"/>
+                        </button>
                         <button type="object"
                             name="action_view_production"
                             class="oe_stat_button"
                             icon="fa-wrench"
-                            attrs="{'invisible': [('mrp_production_qty', '=', 0)]}">
-                            <field  string="Production Orders" name="mrp_production_qty" widget="statinfo"/>
+                            attrs="{'invisible': [('mrp_production_qty', '=', 0)]}"
+                            groups="mrp.group_mrp_routings">
+                            <field string="Production Orders" name="mrp_production_qty" widget="statinfo"/>
                         </button>
-
                     </div>
-
                     <div class="alert alert-warning col-8" role="status" attrs="{'invisible': [('order_ids', '!=', [])]}">
                       📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale.
                     </div>
@@ -82,6 +97,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <field name="date"/>
                         <field name="notes"/>
                     </group>
+                    <div class="alert alert-info col-8" role="status" attrs="{'invisible': [('product_wo_bom_qty', '==', 0)]}">
+                      ℹ️ Sales contains severals products that don't have any associated bill of material. Access them with the smart button on the right.
+                    </div>
                     <group>
                         <field name="order_ids" nolabel="1" widget="many2many" domain="['|', ('state', '=', 'sent'), ('state', '=', 'draft')]">
                             <tree>
@@ -116,7 +134,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="date"/>
                 <field name="orders_qty"/>
                 <field name="sales_state"/>
-                <field name="production_state"/>
+                <field name="production_state" groups="mrp.group_mrp_routings"/>
             </tree>
         </field>
     </record>
