@@ -2,7 +2,7 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, models
+from odoo import _, api, models
 from odoo.exceptions import UserError
 
 
@@ -99,13 +99,13 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             sale_grouped = sale_grouped_obj.browse(sale_grouped_active_id)
             order_ids = sale_grouped.mapped("order_ids")
 
-            missing_boms = []
+            missing_boms = {}
             boms_and_quantities = {}
 
             for order in order_ids:
                 for order_line in order.order_line:
                     if not order_line.product_id.bom_ids:
-                        missing_boms.append(order_line.product_id.name)
+                        missing_boms[order_line.product_id] = order_line.product_id.name
                     else:
                         bom = order_line.product_id.bom_ids[0]
                         bom_qty = order_line.product_uom_qty
@@ -125,11 +125,15 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             boms_and_quantities = list(boms_and_quantities.values())
 
             if missing_boms:
-                boms_text = ", ".join(missing_boms)
+                boms_text = ", ".join(missing_boms.values())
                 message = (
-                    "These products don't have any Bill Of Material: "
-                    + boms_text
-                    + "\nCreate them before launching the assistant again."
+                    (
+                        _(
+                            "These products don't have any Bill Of Material: %s \
+                         \nCreate them before launching the assistant again."
+                        )
+                    )
+                    % boms_text
                 )
                 raise UserError(message)
         else:

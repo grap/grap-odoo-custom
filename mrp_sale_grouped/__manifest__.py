@@ -28,6 +28,7 @@
     ],
     "data": [
         "data/report_paperformat.xml",
+        "security/ir_rule.xml",
         "security/ir.model.access.csv",
         "report/report_sale_grouped.xml",
         "report/ir_actions_report.xml",

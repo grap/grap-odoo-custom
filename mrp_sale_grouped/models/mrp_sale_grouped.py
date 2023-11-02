@@ -20,6 +20,12 @@ class MrpSaleGrouped(models.Model):
         ("all_production_done", "Production done"),
     ]
 
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        string="Company",
+        default=lambda s: s._default_company_id(),
+    )
+
     name = fields.Char(
         required=True,
     )
@@ -63,6 +69,20 @@ class MrpSaleGrouped(models.Model):
         compute="_compute_production_qty",
     )
 
+    # Quick access to Products withour any BoM
+    product_wo_bom_ids = fields.One2many(
+        comodel_name="product.product", compute="_compute_product_wo_bom_ids"
+    )
+
+    product_wo_bom_qty = fields.Integer(
+        compute="_compute_product_wo_bom_qty",
+    )
+
+    # Default methods
+    @api.model
+    def _default_company_id(self):
+        return self.env.user.company_id.id
+
     @api.depends("order_ids")
     def _compute_sales_state(self):
         for mrp_sale_grouped in self:
@@ -90,6 +110,7 @@ class MrpSaleGrouped(models.Model):
         for mrp_sale_grouped in self:
             mrp_sale_grouped.orders_qty = len(mrp_sale_grouped.order_ids)
 
+    # MRP Production
     @api.depends("order_ids")
     def _compute_mrp_production_ids(self):
         for grouped_prod in self:
@@ -102,6 +123,19 @@ class MrpSaleGrouped(models.Model):
     def _compute_production_qty(self):
         for grouped_prod in self:
             grouped_prod.mrp_production_qty = len(grouped_prod.mrp_production_ids)
+
+    # Products without any BoM
+    @api.depends("order_ids")
+    def _compute_product_wo_bom_ids(self):
+        for grouped_prod in self.filtered(lambda x: x.order_ids):
+            grouped_prod.product_wo_bom_ids = grouped_prod.mapped(
+                "order_ids.order_line.product_id"
+            ).filtered(lambda r: r.bom_count == 0)
+
+    @api.depends("product_wo_bom_ids")
+    def _compute_product_wo_bom_qty(self):
+        for grouped_prod in self:
+            grouped_prod.product_wo_bom_qty = len(grouped_prod.product_wo_bom_ids)
 
     @api.multi
     def confirm_all_sale_order(self):

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 12:33+0000\n"
-"PO-Revision-Date: 2023-10-17 12:33+0000\n"
+"POT-Creation-Date: 2023-10-30 13:02+0000\n"
+"PO-Revision-Date: 2023-10-30 13:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -265,6 +265,11 @@ msgstr "Quantité"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "Subtotal"
 msgstr "Sous-total"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "Sum um quantities per bills of materials"
+msgstr "Résumé des quantités par fiche technique"
 
 #. module: mrp_bom_purchase
 #: model:ir.model.fields,field_description:mrp_bom_purchase.field_bom_print_purchase_list_wizard__title_for_pdf
