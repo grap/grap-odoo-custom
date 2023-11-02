@@ -176,7 +176,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_product_tree_pricetag" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" string="Products (Price Tags)" create="false">
+            <tree editable="bottom" create="false">
                 <field name="default_code" readonly="1"/>
                 <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
@@ -211,7 +211,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_product_tree_category" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" string="Products (Categories)" create="false">
+            <tree editable="bottom" create="false">
                 <field name="default_code" readonly="1"/>
                 <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
@@ -250,7 +250,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_product_tree_alcohol" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" string="Products (Alcohol)" create="false">
+            <tree editable="bottom" create="false">
                 <field name="default_code" readonly="1"/>
                 <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
