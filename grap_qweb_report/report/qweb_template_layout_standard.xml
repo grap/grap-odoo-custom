@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
 
-    <template id="grap_external_layout" inherit_id="web.external_layout_standard">
+    <template id="grap_external_layout" inherit_id="web.external_layout_standard" priority="110">
 <!--                 -->
 <!--Overwrite header -->
 <!--                 -->

@@ -6,7 +6,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <template id="template_purchaseorder" inherit_id="purchase.report_purchaseorder_document">
+    <template id="template_purchaseorder" inherit_id="purchase.report_purchaseorder_document" priority="110">
 
         <!-- Add Custom Message -->
         <xpath expr="//div[hasclass('page')]/h2/.." position="before">
