@@ -4,6 +4,8 @@
 
 from odoo import _, api, fields, models
 
+from odoo.addons import decimal_precision as dp
+
 from .product_product import _PRODUCT_CODE_GENERIC_TLA
 
 
@@ -27,11 +29,6 @@ class MrpBom(models.Model):
         related="product_id.meal_category_id",
         string="Meal category",
     )
-    # ========== Fields related to weight
-    bom_components_total_weight = fields.Float(
-        string="Bom Components Total Weight",
-        compute="_compute_bom_components_total_weight",
-    )
 
     # ========== Code and Trigram (Three Letter Acronym)
     tla_to_change = fields.Boolean(related="product_id.tla_to_change")
@@ -49,9 +46,14 @@ class MrpBom(models.Model):
         store=True,
     )
 
-    # ========== Methods for Time
+    # ========== Fields for Time
     time_to_produce = fields.Float(
-        help="Set this time or calculate it with BoM lines time", store=True
+        help="Set this time with the unity of measure you want", store=True
+    )
+    # ========== Fields for mrp_bom_line_net_qty
+    diff_bom_qty_and_net_quantities = fields.Float(
+        digits=dp.get_precision("Product Price"),
+        compute="_compute_diff_bom_qty_and_net_quantities",
     )
 
     # Overload Section
@@ -129,11 +131,3 @@ class MrpBom(models.Model):
     def generate_product_tla(self):
         for bom in self.filtered(lambda x: x.product_id):
             bom.product_id.generate_tla()
-
-    # ========== Methods related to Weight
-    @api.depends("bom_line_ids.line_weight")
-    def _compute_bom_components_total_weight(self):
-        for bom in self:
-            bom.bom_components_total_weight = sum(
-                bom.bom_line_ids.mapped("line_weight")
-            )
