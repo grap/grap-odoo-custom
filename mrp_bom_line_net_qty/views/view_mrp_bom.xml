@@ -14,13 +14,29 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_id']/.." position="after">
+              <field name="diff_bom_qty_and_net_quantities" invisible="1"/>
+              <field name="display_set_quantity_with_net_quantities" invisible="1"/>
+              <label for="bom_components_total_net_weight"/>
+              <div>
+                <field name="bom_components_total_net_weight" class="oe_inline"/>
+                <button name="set_bom_quantity_with_net_quantities" string="⇑ Update BoM quantity"
+                  type="object" class="oe_link"
+                  help="It will set BoM quantity with sum of net weight quantities"
+                  attrs="{'invisible': ['|', ('diff_bom_qty_and_net_quantities', '=', 0), ('display_set_quantity_with_net_quantities', '=', False)]}"/>
+              </div>
+              <field name="bom_components_total_gross_weight" class="oe_inline"/>
+            </xpath>
             <!-- BoM Lines -->
             <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
+                <field name="line_gross_weight" groups="base.group_no_one"/>
                 <field name="diff_product_qty_gross_net" invisible="1"/>
                 <button name="set_product_qty_gross" icon="fa-arrow-left" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product gross quantity with net quantity and loss percentage"/>
                 <field name="loss_percentage" widget="numeric_step" options="{'step': 1}"/>
                 <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
                 <field name="product_qty_net"/>
+                <field name="line_net_weight"/>
+                <field name="line_net_weight_percentage" widget="percentage"/>
             </xpath>
             <xpath expr="//field[@name='bom_line_ids']/tree" position="attributes">>
                 <attribute name="decoration-warning">diff_product_qty_gross_net != 0</attribute>

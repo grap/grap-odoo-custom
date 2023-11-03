@@ -58,7 +58,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
 
             <!-- BoM Lines -->
-            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
+            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_uom_id']" position="before">
                 <field name="standard_price_unit" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                 <field name="standard_price_subtotal" readonly="1" sum="Total" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
                 <field name="standard_price_subtotal_percentage" string="ST %" widget="percentage" options="{'field_digits': True}"/>

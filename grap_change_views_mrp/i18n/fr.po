@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-05 12:23+0000\n"
-"PO-Revision-Date: 2023-05-05 12:23+0000\n"
+"POT-Creation-Date: 2023-11-03 14:54+0000\n"
+"PO-Revision-Date: 2023-11-03 14:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,11 @@ msgstr "<b>Fiche technique</b> - produit intermédiaire 🧩"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "<span> (for 1x</span>"
 msgstr "<span> (pour 1x</span>"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "<span> kg</span>"
+msgstr ""
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -100,6 +105,11 @@ msgstr "Pièces jointes"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Bill of Material"
 msgstr "Fiche technique"
+
+#. module: grap_change_views_mrp
+#: model:ir.model,name:grap_change_views_mrp.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de fiche technique"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
@@ -180,11 +190,6 @@ msgid "Composants Products"
 msgstr "Matières Premières"
 
 #. module: grap_change_views_mrp
-#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
-msgid "Cost"
-msgstr "Coût"
-
-#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price_sale_nok
@@ -263,6 +268,26 @@ msgid "Intermediate products 🧩"
 msgstr "Produits intermédiaires 🧩"
 
 #. module: grap_change_views_mrp
+#: model:ir.model.fields,help:grap_change_views_mrp.field_mrp_bom__product_intermediate
+msgid "Is intermediate a product which has a BoM based on it +              is or is not to sale + is used in a BoM line"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "It will set BoM quantity with sum of net weight quantities"
+msgstr "Cela définira la quantité de la recette avec la somme des poids nets des matières premières"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "It will set product gross quantity with net quantity and loss percentage"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "It will set product net quantity with gross quantity and loss percentage"
+msgstr "Cela définira la quantité de produits grâce à la quantité brute et le pourcentage de perte."
+
+#. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_handle_price
@@ -295,6 +320,16 @@ msgstr "Divers"
 #: model:ir.model.fields,field_description:grap_change_views_mrp.field_mrp_bom__product_name
 msgid "Name"
 msgstr "Nom"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Net cost ℹ️"
+msgstr "Coût net ℹ️"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "Net weight"
+msgstr "Poids net"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
@@ -378,6 +413,11 @@ msgstr "Saisonnalité ℹ️"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "See related Bill of Material"
+msgstr ""
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
 msgid "Standard price unit"
 msgstr "Coût unit."
 
@@ -409,6 +449,11 @@ msgstr "L'unité de mesure est l'unité utilisée dans la gestion du stock"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_tree_grap_intermediate
 msgid "UoM"
 msgstr "UdM"
+
+#. module: grap_change_views_mrp
+#: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap
+msgid "⇑ Update BoM quantity❗"
+msgstr "⇑ Mettre à jour la quantité❗"
 
 #. module: grap_change_views_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_mrp.view_mrp_bom_form_grap

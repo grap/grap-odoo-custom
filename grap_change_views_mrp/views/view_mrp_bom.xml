@@ -64,16 +64,26 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           <field name="product_uom_id" readonly="1" style="pointer-events:none;" groups="uom.group_uom"/>
                       </div>
 
-                      <!-- mrp_business -->
-                      <label for="bom_components_total_weight"/>
-                      <div class="o_row" name="bom_components_total_weight">
-                          <field name="bom_components_total_weight"/>
+                      <!-- mrp_bom_line_net_qty -->
+                      <field name="diff_bom_qty_and_net_quantities" invisible="1"/>
+                      <field name="display_set_quantity_with_net_quantities" invisible="1"/>
+                      <label for="bom_components_total_net_weight"/>
+                      <div>
+                        <field name="bom_components_total_net_weight" class="oe_inline"/><span> kg</span>
+                        <button name="set_bom_quantity_with_net_quantities" string="⇑ Update BoM quantity❗"
+                          type="object" class="oe_link"
+                          help="It will set BoM quantity with sum of net weight quantities"
+                          attrs="{'invisible': ['|', ('diff_bom_qty_and_net_quantities', '=', 0), ('display_set_quantity_with_net_quantities', '=', False)]}"/>
+                      </div>
+                      <label for="bom_components_total_gross_weight"/>
+                      <div class="o_row" name="bom_components_total_gross_weight">
+                          <field name="bom_components_total_gross_weight"/>
                           <span>kg</span>
                       </div>
-                      <!-- <field name="bom_components_total_weight"/> -->
+                      <!-- / mrp_bom_line_net_qty -->
+
                       <field name="description_packaging"/>
                       <field name="priority" widget="priority" string="Grade"/>
-                      <!-- / mrp_business -->
 
                   </group>
                   <group string="BoM configuration">
@@ -118,10 +128,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <field name="currency_id" invisible="1"/>
                       <!-- Standard price -->
                       <field name="diff_product_bom_standard_price" invisible="1"/>
-                      <field name="standard_price_total" string="Cost" class="oe_inline" widget="monetary"
+                      <field name="standard_price_total" string="Net cost ℹ️" class="oe_inline" widget="monetary"
                              options="{'currency_field': 'currency_id'}"
                              attrs="{'invisible': [('diff_product_bom_standard_price', '!=', 0)]}"/>
-                      <label for="standard_price_total" string="Cost"
+                      <label for="standard_price_total" string="Net cost ℹ️"
                              attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}"/>
                       <div attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">
                           <field name="standard_price_total" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
@@ -177,17 +187,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <button name="action_see_attachments" type="object" icon="fa-files-o" attrs="{'invisible': [('has_attachments', '=', True)]}" aria-label="No attachment" title="No attachment"/>
                               <button name="action_see_attachments" type="object" icon="fa-file" attrs="{'invisible': [('has_attachments', '=', False)]}" aria-label="Attachments" title="Attachments"/>
                               <!-- mrp_bom_line_net_qty -->
+                              <field name="line_gross_weight"/>
                               <field name="diff_product_qty_gross_net" invisible="1"/>
                               <field name="product_qty" widget="numeric_step" options="{'step': 0.1, 'min': 0}"/>
                               <button name="set_product_qty_gross" icon="fa-arrow-left" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product gross quantity with net quantity and loss percentage"/>
                               <field name="loss_percentage" widget="numeric_step" options="{'step': 1}"/>
                               <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
                               <field name="product_qty_net"/>
+                              <field name="line_net_weight"/>
+                              <field name="line_net_weight_percentage" widget="percentage"/>
                               <!-- / mrp_bom_line_net_qty -->
-                              <!-- mrp_business -->
-                              <field name="line_weight"/>
-                              <field name="line_weight_percentage" widget="percentage"/>
-                              <!-- / mrp_business -->
                               <!-- mrp_food -->
                               <field name="label_ids" widget="many2many_tags"/>
                               <field name="allergen_ids" widget="many2many_tags"/>
@@ -231,8 +240,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <button name="set_product_qty_net" icon="fa-arrow-right" type="object" attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}" help="It will set product net quantity with gross quantity and loss percentage"/>
                               <field name="product_qty_net"/>
                               <field name="product_uom_id" options="{'no_open':True,'no_create':True}" string="UoM" groups="uom.group_uom" readonly="1" force_save="1"/>
-                              <field name="line_weight" sum="Net weight"/>
-                              <field name="line_weight_percentage" widget="percentage"/>
+                              <field name="line_net_weight" sum="Net weight"/>
+                              <field name="line_net_weight_percentage" widget="percentage"/>
                               <field name="currency_id" invisible="1"/>
                               <field name="label_ids" widget="many2many_tags" string="Labels"/>
                               <field name="allergen_ids" widget="many2many_tags" string="Allergens"/>

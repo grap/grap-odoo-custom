@@ -10,6 +10,8 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
+        # OCA modules
+        "product_net_weight",
     ],
     "data": [
         "views/view_mrp_bom.xml",

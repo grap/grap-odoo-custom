@@ -190,8 +190,8 @@ msgstr "Séquence"
 
 #. module: mrp_business
 #: model:ir.model.fields,help:mrp_business.field_mrp_bom__time_to_produce
-msgid "Set this time or calculate it with BoM lines time"
-msgstr "Temps à écrire ou à générer automatiquement avec la somme des temps composant la fiche technique"
+msgid "Set this time with the unity of measure you want"
+msgstr "Temps à écrire avec l'unité de mesure que vous voulez."
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_short

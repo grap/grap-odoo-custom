@@ -18,6 +18,7 @@ class MrpBom(models.Model):
         track_visibility="onchange",
         digits=dp.get_precision("Product Price"),
         compute="_compute_standard_price_total",
+        help="Calculate from the cost of raw components DIVIDED by the BoM quantity.",
     )
     diff_product_bom_standard_price = fields.Float(
         digits=dp.get_precision("Product Price"),
