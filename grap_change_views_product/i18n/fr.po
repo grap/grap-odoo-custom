@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-03 22:14+0000\n"
-"PO-Revision-Date: 2022-11-03 22:14+0000\n"
+"POT-Creation-Date: 2023-11-10 16:19+0000\n"
+"PO-Revision-Date: 2023-11-10 16:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,6 @@ msgstr "<span class=\"o_stat_text\">Prévisions</span>"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "<span class=\"o_stat_text\">On Hand</span>"
 msgstr "<span class=\"o_stat_text\">Disponible</span>"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "<span class=\"unity_for_time_to_produce\"> minutes</span>"
-msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -61,6 +56,7 @@ msgid "Allergens"
 msgstr "Allergènes"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Apply Margin"
 msgstr "Appliquer la marge"
@@ -82,14 +78,14 @@ msgstr "Catégorie de PdV"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "Changing this value will change all BoM containing this product."
-msgstr "Changer cette valeur entraînera le changement de toutes les fiches techniques contenant ce produit."
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Code"
 msgstr ""
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__standard_price
+msgid "Cost"
+msgstr "Coût"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
@@ -107,15 +103,27 @@ msgid "Cost Price (VAT Incl.)"
 msgstr "Coût TTC"
 
 #. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__standard_price
+msgid "Cost used for stock valuation in standard price and as a first price to set in average/fifo. Also used as a base price for pricelists. Expressed in the default unit of measure of the product."
+msgstr "Également utilisé comme prix de base pour les listes. Exprimé dans l'unité de mesure par défaut du produit."
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Create an automatic trigram. Change its BoM references with this trigram."
 msgstr "Générer un trigramme automatiquement. Cela change les codes références des fiches techniques du produit."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Decrease the Sale Price down to Theoretical Price"
 msgstr "Baisser le prix de vente pour atteindre le prix théorique"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__seller_ids
+#: model:ir.model.fields,help:grap_change_views_product.field_product_template__seller_ids
+msgid "Define vendor pricelists."
+msgstr "Définissez les listes de prix des fournisseurs."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -207,6 +215,7 @@ msgstr "TI - Article chez l'acti"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_price
 msgid "Increase the Sale Price up to Theoretical Price"
 msgstr "Augmenter le prix de vente pour atteindre le prix théorique"
@@ -372,6 +381,7 @@ msgstr "Impression des étiquettes"
 
 #. module: grap_change_views_product
 #: model:ir.model,name:grap_change_views_product.model_product_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Product"
 msgstr "Article"
@@ -480,11 +490,6 @@ msgid "Products - Update Margin and Sale Price"
 msgstr "Articles - Mettre à jour les prix de vente et marges 💶"
 
 #. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
-msgid "Product price"
-msgstr "Prix de l'article"
-
-#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Purchase Invoicing Fields"
 msgstr "Champs de facturation à l'achat"
@@ -509,6 +514,11 @@ msgstr "Matières premières 🥕"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree
 msgid "Ref"
 msgstr "Réf"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_tree_mrp
+msgid "Ref."
+msgstr "Réf."
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -595,12 +605,12 @@ msgstr "Nom chez frs."
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_grap_mrp_handle_prices_1b_supplierinfos
 msgid "Suppliers Informations"
-msgstr "Prix fournisseur·es"
+msgstr "Prix fournisseur·e·s"
 
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_supplierinfo_tree
 msgid "Suppliers informations"
-msgstr "Prix fournisseur·es"
+msgstr "Prix fournisseur·e·s"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
@@ -712,6 +722,8 @@ msgid "Valuation of Virtual Quantity"
 msgstr "Valorisation du stock virtuel"
 
 #. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__seller_ids
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_template__seller_ids
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Vendors"
 msgstr "Fournisseurs"
@@ -738,33 +750,28 @@ msgstr "⇒ Augmenter le prix"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "⌛ Handling time"
-msgstr "⌛ Gestion du temps"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "✅ Notations"
 msgstr ""
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "🌱 Organic informations"
-msgstr "🌱 Informations bio"
+msgid "🌱 Organic informations - Labels"
+msgstr "🌱 Infos réglementaires bio - labels"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "🍴 Alimentary informations"
-msgstr "🍴 Informations alimentaire"
+msgid "🌱 Organic informations - Raw materials origin 🥕"
+msgstr "🌱 Infos réglementaires bio - origine matières premières 🥕"
+
+#. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "🍴 Alimentary and production informations 🚩"
+msgstr "🍴 Infos alimentaires et de production 🚩"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "📜 Market price list"
 msgstr "📜 Mercuriale"
-
-#. module: grap_change_views_product
-#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "🚩 Production place"
-msgstr "🚩 Lieu de production"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form

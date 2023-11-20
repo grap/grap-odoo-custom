@@ -38,6 +38,9 @@
         padding-top: 0.2cm;
         font-size: 12px;
     }
+    .info_underline {
+      text-decoration: underline;
+    }
     .product_price {
         position: relative;
         text-align: center;
@@ -57,7 +60,6 @@
         word-wrap: normal;
     }
     .product_price_big {
-        font-family: Open Sans;
         font-weight: lighter;
         font-size: 38px;
         margin: 0.1cm 0;

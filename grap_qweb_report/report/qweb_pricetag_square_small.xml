@@ -12,6 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <xpath expr="." position="inside">
             <!-- pricetag_base.scss et pricetag_square.scss sont importés dans product_print_category_food_report -->
             <link href="/grap_qweb_report/static/css/pricetag_square_small.scss" rel="stylesheet" type="text/scss"/>
+            <link href="/product_print_category_food_report/static/css/font.less" rel="stylesheet" type="text/less"/>
         </xpath>
     </template>
 
@@ -19,7 +20,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <t t-call="web.basic_layout">
         <t t-foreach="category_data['lines']" t-as="line">
             <t t-foreach="line.quantity" t-as="q">
-                <div class="square_pricetag_small floating_box">
+                <div class="square_pricetag_small floating_box pricetag-font">
                         <!-- Write date -->
                         <div class="write_date">
                             <t t-if="line.product_id.write_date">
@@ -59,32 +60,40 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <t t-esc="'%0.2f' % (line.product_id.list_price)"/> €
                                 </div>
                                 <!-- Le kilo // La pièce -->
-                                <t t-if="line.product_id.uom_id.category_id.measure_type == 'weight'"><div class="product_sell_by_weight">le kilo</div></t>
-                                <t t-else=""><div class="product_sell_by_weight">la pièce</div></t>
+                                <div class="product_sell_by_weight">
+                                  <t t-if="line.product_id.uom_id.category_id.measure_type == 'weight'">le kilo</t>
+                                  <t t-else="">la pièce</t>
+                                </div>
                                 <!-- Prix au Kg ou au L -->
-                                <t t-if="line.product_id.pricetag_is_second_price">
-                                    <div class="product_price_per_uom_price">
-                                        <t t-if="line.product_id.pricetag_is_second_price">
-                                            <t t-esc="line.product_id.pricetag_second_price_uom_text"/>:
-                                            <b><t t-esc="'%0.2f' % (line.product_id.pricetag_second_price)"/> €</b>
-                                        </t>
-                                    </div>
-                                </t>
-                                <t t-else="">
-                                    <div class="product_price_per_uom_price"></div>
-                                </t>
+                                <div class="product_price_per_uom_price">
+                                  <t t-if="line.product_id.pricetag_is_second_price">
+                                          <t t-if="line.product_id.pricetag_is_second_price">
+                                              <t t-esc="line.product_id.pricetag_second_price_uom_text"/> :
+                                              <t t-esc="'%0.2f' % (line.product_id.pricetag_second_price)"/> €
+                                          </t>
+                                  </t>
+                              </div>
                             </t>
                         </div>
                         <!-- BARCODE Image -->
                         <div>
-                            <div class="option_print_code" t-if="option_print_code"><t t-esc="line.product_id.default_code"/></div>
-                            <div class="wrap_barcode_image floating_box and option_print_barcode">
-                                <t t-if="line.product_id.barcode">
-                                    <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
-                                    <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
-                                    <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
-                                </t>
+                            <div class="option_print_codes">
+                              <t t-if="option_print_code">
+                                [<t t-esc="line.product_id.default_code"/>]
+                              </t>
+                              <t t-if="line.product_id.barcode and option_print_barcode_digits">
+                                <span class="barcode_digits"> <t t-esc="line.product_id.barcode"/></span>
+                              </t>
                             </div>
+                            <t t-if="option_print_barcode and (not option_print_code and not option_print_barcode_digits)">
+                              <div class="wrap_barcode_image floating_box">
+                                  <t t-if="line.product_id.barcode and option_print_barcode">
+                                      <img t-if="len(line.product_id.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN13', line.product_id.barcode)"/>
+                                      <img t-elif="len(line.product_id.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('EAN8', line.product_id.barcode)"/>
+                                      <img t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;' % ('Code128', line.product_id.barcode)"/>
+                                  </t>
+                              </div>
+                            </t>
                         </div>
                 </div>
             </t>
