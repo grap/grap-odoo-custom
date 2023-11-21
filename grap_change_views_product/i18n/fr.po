@@ -388,7 +388,7 @@ msgstr "Historique des coûts"
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Price Supp UoM"
-msgstr "Prix UdM Frs"
+msgstr "Prix brut UdM Frs"
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,help:grap_change_views_product.field_product_product__list_price
