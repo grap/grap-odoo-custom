@@ -26,6 +26,18 @@ class ProductProduct(models.Model):
 
     # Overload Column Section
     standard_price = fields.Float(copy=True)
+    country_group_id = fields.Many2one(
+        string="Country Group (Components)",
+    )
+    country_id = fields.Many2one(
+        string="Country (Components)",
+    )
+    state_id = fields.Many2one(
+        string="State (Components)",
+    )
+    department_id = fields.Many2one(
+        string="Department (Components)",
+    )
 
     # Compute Section
     @api.multi

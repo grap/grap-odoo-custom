@@ -228,7 +228,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                 attrs="{'readonly': [('is_intercompany_trade', '=', True)]}"/>
                                             <field name="multiplier_qty" string="Multiplier Qty"/>
                                             <field name="min_qty" string="Min Qty"/>
-                                            <field name="price" widget="monetary" options="{'field_digits': True}"/>
+                                            <field name="price" string="Price Supp UoM" widget="monetary" options="{'field_digits': True}"/>
                                             <field name="product_uom" string="UoM"/>
                                             <field name="discount" string="Disc. 1 %"/>
                                             <field name="discount2"  string="Disc. 2 %"/>

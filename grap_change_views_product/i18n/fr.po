@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-10 16:19+0000\n"
-"PO-Revision-Date: 2023-11-10 16:19+0000\n"
+"POT-Creation-Date: 2023-11-21 08:16+0000\n"
+"PO-Revision-Date: 2023-11-21 08:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -108,6 +108,26 @@ msgid "Cost used for stock valuation in standard price and as a first price to s
 msgstr "Également utilisé comme prix de base pour les listes. Exprimé dans l'unité de mesure par défaut du produit."
 
 #. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__country_id
+msgid "Country (Components)"
+msgstr "Pays (MP)"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__country_group_id
+msgid "Country Group (Components)"
+msgstr "Groupe de pays (MP)"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_group_id
+msgid "Country group of production of the product"
+msgstr "Groupe de pays de production du produit"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_id
+msgid "Country of production of the product"
+msgstr "Pays de production du pays"
+
+#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Create an automatic trigram. Change its BoM references with this trigram."
 msgstr "Générer un trigramme automatiquement. Cela change les codes références des fiches techniques du produit."
@@ -124,6 +144,16 @@ msgstr "Baisser le prix de vente pour atteindre le prix théorique"
 #: model:ir.model.fields,help:grap_change_views_product.field_product_template__seller_ids
 msgid "Define vendor pricelists."
 msgstr "Définissez les listes de prix des fournisseurs."
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__department_id
+msgid "Department (Components)"
+msgstr "Département (MP)"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__department_id
+msgid "Department of production of the product"
+msgstr "Département de production de l'article"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -359,6 +389,11 @@ msgid "Price History"
 msgstr "Historique des coûts"
 
 #. module: grap_change_views_product
+#: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
+msgid "Price Supp UoM"
+msgstr "Prix UdM Frs"
+
+#. module: grap_change_views_product
 #: model:ir.model.fields,help:grap_change_views_product.field_product_product__list_price
 #: model:ir.model.fields,help:grap_change_views_product.field_product_template__list_price
 msgid "Price at which the product is sold to customers."
@@ -436,6 +471,12 @@ msgid "Products (Categories)"
 msgstr "Articles (Catégories)"
 
 #. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_origin
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_origin
+msgid "Products (Components origin)"
+msgstr "Articles (Origine Matières Premières)"
+
+#. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_food
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_food
 msgid "Products (Food)"
@@ -446,12 +487,6 @@ msgstr "Articles (Alimentaire)"
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_joint_buying
 msgid "Products (Joint Buying)"
 msgstr "Articles (Commandes groupées)"
-
-#. module: grap_change_views_product
-#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_origin
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_origin
-msgid "Products (Origin)"
-msgstr "Articles (Origine)"
 
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_pos
@@ -575,6 +610,16 @@ msgstr "Voir les marges par liste de prix"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Standard Price"
 msgstr "Coût"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__state_id
+msgid "State (Components)"
+msgstr "Région (MP)"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__state_id
+msgid "State of production of the product"
+msgstr "Région de production de l'article"
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock
@@ -704,7 +749,7 @@ msgstr "Utiliser ce prix pour le coût de l'article"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Use this price 🎯"
-msgstr "Utiliser ce prix 🎯"
+msgstr "Utiliser ce coût 🎯"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
