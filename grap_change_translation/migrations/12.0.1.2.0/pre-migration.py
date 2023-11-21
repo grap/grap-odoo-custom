@@ -4,6 +4,7 @@
 
 from openupgradelib import openupgrade
 
+# pylint: disable=odoo-addons-relative-import
 from odoo.addons.grap_change_translation import preserve_translation
 
 
