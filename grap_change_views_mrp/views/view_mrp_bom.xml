@@ -166,7 +166,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <notebook>
                   <page string="Components (admin)" groups="base.group_no_one">
                       <field name="bom_line_ids" widget="one2many_list" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
-                          <tree string="Components" editable="bottom">
+                          <tree editable="bottom">
                               <field name="sequence" widget="handle"/>
                               <!-- mrp_bom_line_has_bom -->
                               <field name="has_bom" invisible="1"/>
@@ -203,7 +203,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   </page>
                   <page string="Components">
                       <field name="bom_line_with_sectionnote_ids" widget="section_and_note_one2many" context="{'default_parent_product_tmpl_id': product_tmpl_id}">
-                          <tree string="Components" editable="bottom">
+                          <tree editable="bottom">
                               <control>
                                   <create name="add_product_control" string="Add a product"/>
                                   <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
@@ -340,7 +340,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_mrp_bom_tree_grap_handle_price_sale_nok" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="arch" type="xml">
-            <tree string="Bills of Materials Intermediate - Handling Prices" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+            <tree default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
                 <!-- odoo code  -->
                 <field name="code" string="Reference"/>
                 <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
@@ -362,7 +362,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_mrp_bom_tree_grap_handle_price" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="arch" type="xml">
-            <tree string="Bills of Materials - Handling Prices" default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
+            <tree default_order="priority desc, product_id" decoration-warning="diff_product_bom_standard_price != 0">
                 <!-- odoo code  -->
                 <field name="code" string="Reference"/>
                 <field name="product_tmpl_id" groups="base.group_no_one" string="Product template (admin)"/>
