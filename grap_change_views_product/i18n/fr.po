@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-21 08:16+0000\n"
-"PO-Revision-Date: 2023-11-21 08:16+0000\n"
+"POT-Creation-Date: 2023-11-21 11:20+0000\n"
+"PO-Revision-Date: 2023-11-21 11:20+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -109,23 +109,13 @@ msgstr "Également utilisé comme prix de base pour les listes. Exprimé dans l'
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__country_id
-msgid "Country (Components)"
-msgstr "Pays (MP)"
+msgid "Country (Ingredients)"
+msgstr "Pays (ingrédients)"
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__country_group_id
-msgid "Country Group (Components)"
-msgstr "Groupe de pays (MP)"
-
-#. module: grap_change_views_product
-#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_group_id
-msgid "Country group of production of the product"
-msgstr "Groupe de pays de production du produit"
-
-#. module: grap_change_views_product
-#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_id
-msgid "Country of production of the product"
-msgstr "Pays de production du pays"
+msgid "Country Group (Ingredients)"
+msgstr "Groupe de pays (ingrédients)"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -147,13 +137,8 @@ msgstr "Définissez les listes de prix des fournisseurs."
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__department_id
-msgid "Department (Components)"
-msgstr "Département (MP)"
-
-#. module: grap_change_views_product
-#: model:ir.model.fields,help:grap_change_views_product.field_product_product__department_id
-msgid "Department of production of the product"
-msgstr "Département de production de l'article"
+msgid "Department (Ingredients)"
+msgstr "Département (ingrédients)"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -200,6 +185,18 @@ msgstr "Informations complémentaires"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Fields only configurable for raw materials."
 msgstr "Champs modifiables seulement pour les articles de matières premières"
+
+#. module: grap_change_views_product
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_group_id
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_id
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__department_id
+#: model:ir.model.fields,help:grap_change_views_product.field_product_product__state_id
+msgid "Fill in the origin of the ingredients. \n"
+" If it has several ingredients, take the widest denominator of origin. Example 1 for crunchy: EU / non-EU because the chocolate comes from South America. Example 2 coelslaw with local products: choose the Puy-de-dôme department. \n"
+" Mandatory for Fruits & Vegetables, and meat."
+msgstr "Remplir l'origine des ingrédients. \n"
+" S'il a plusieurs ingrédients, prendre le dénominateur d'origine le plus large. Exemple 1 pour du crunchy : UE / non UE car le chocolat vient d'Amérique du sud. Exemple 2 coelslaw avec des produits locaux : choisir le département du Puy-de-dôme. \n"
+" Obligatoire pour les Fruits & Légumes et la viande."
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_mrp_handle_prices_standard_prices_3a_finished
@@ -471,16 +468,16 @@ msgid "Products (Categories)"
 msgstr "Articles (Catégories)"
 
 #. module: grap_change_views_product
-#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_origin
-#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_origin
-msgid "Products (Components origin)"
-msgstr "Articles (Origine Matières Premières)"
-
-#. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_food
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_food
 msgid "Products (Food)"
 msgstr "Articles (Alimentaire)"
+
+#. module: grap_change_views_product
+#: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_origin
+#: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_origin
+msgid "Products (Ingredients origin)"
+msgstr "Articles (origine ingrédients)"
 
 #. module: grap_change_views_product
 #: model:ir.actions.act_window,name:grap_change_views_product.action_product_product_joint_buying
@@ -613,13 +610,8 @@ msgstr "Coût"
 
 #. module: grap_change_views_product
 #: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__state_id
-msgid "State (Components)"
-msgstr "Région (MP)"
-
-#. module: grap_change_views_product
-#: model:ir.model.fields,help:grap_change_views_product.field_product_product__state_id
-msgid "State of production of the product"
-msgstr "Région de production de l'article"
+msgid "State (Ingredients)"
+msgstr "Région (Ingrédients)"
 
 #. module: grap_change_views_product
 #: model:ir.ui.menu,name:grap_change_views_product.menu_product_product_stock
@@ -743,7 +735,7 @@ msgstr "Mettre à jour le stock disponible"
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_supplierinfo_tree
 msgid "Use this price for product standard price"
-msgstr "Utiliser ce prix pour le coût de l'article"
+msgstr "Utiliser ce montant pour le coût de l'article"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
@@ -805,8 +797,8 @@ msgstr "🌱 Infos réglementaires bio - labels"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
-msgid "🌱 Organic informations - Raw materials origin 🥕"
-msgstr "🌱 Infos réglementaires bio - origine matières premières 🥕"
+msgid "🌱 Organic informations - Ingredients origin"
+msgstr "🌱 Infos réglementaires bio - origine des ingrédients"
 
 #. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
