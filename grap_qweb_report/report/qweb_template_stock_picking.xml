@@ -14,7 +14,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </xpath>
     </template>
 
-    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document">
+    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document" priority="1000">
 
         <!-- Add Custom Message -->
         <xpath expr="//div[hasclass('page')]/h2/.." position="before">

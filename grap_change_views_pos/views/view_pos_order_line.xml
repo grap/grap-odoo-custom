@@ -12,7 +12,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">pos.order.line</field>
         <field name="priority" eval="15"/>
         <field name="arch" type="xml">
-            <tree colors="blue:state == 'draft';gray:state in ('done','cancel');black:state not in('done','cancel')" create="false" delete="false">
+            <tree
+                decoration-info="state == 'draft'"
+                decoration-muted="state in ('done','cancel')"
+                create="false" delete="false">
                 <field name="create_date"/>
                 <field name="partner_id"/>
                 <field name="product_id"/>
@@ -24,6 +27,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="margin_percent"/>
                 <field name="price_subtotal" sum="Total Excl"/>
                 <field name="price_subtotal_incl" sum="Total Incl"/>
+                <field name="state" invisible="1"/>
             </tree>
         </field>
     </record>
