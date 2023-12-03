@@ -11,7 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <field name="payment_term_id" position="after">
-                <field name="mrp_sale_grouped_id"/>
+                <field name="mrp_sale_grouped_id" groups="mrp.group_mrp_user"/>
             </field>
         </field>
     </record>
