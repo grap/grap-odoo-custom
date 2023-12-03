@@ -31,6 +31,7 @@
         "mrp_bom_product_variant",
         "mrp_bom_tag",
         "mrp_bom_line_has_bom",
+        "mrp_bom_line_net_qty",
     ],
     "data": [
         "views/view_mrp_bom.xml",

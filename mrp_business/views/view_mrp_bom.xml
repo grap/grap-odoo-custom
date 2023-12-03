@@ -43,11 +43,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='ready_to_produce']/../..//field[@name='sequence']" position="before">
               <field name="code_nb"/><br/>
             </xpath>
-            <!-- BoM Lines -->
-            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_qty']" position="after">
-                <field name="line_weight"/>
-                <field name="line_weight_percentage" widget="percentage"/>
-            </xpath>
 
         </field>
     </record>
