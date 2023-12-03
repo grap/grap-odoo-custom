@@ -84,4 +84,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         print_report_name="'Self-Adhesive Barcode Sheet - %s' % (object.name)"
         paperformat="paperformat_grap_no_margin"
     />
+
+    <report
+        id="purchase_order_xlsx"
+        model="purchase.order"
+        string="Purchase Order (XLSX)"
+        report_type="xlsx"
+        name="report_xlsx.purchase_order_xlsx"
+        print_report_name="'Bon_de_commande__%s__%s' % (
+                object.partner_id.name.replace('&quot;', '_').replace('\'', '_').replace('/', '_'),
+                object.name.replace('/', '_')
+            )"
+
+    />
 </odoo>

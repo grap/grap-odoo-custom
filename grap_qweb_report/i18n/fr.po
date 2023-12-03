@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* grap_qweb_report
+#   * grap_qweb_report
 #
 msgid ""
 msgstr ""
@@ -148,7 +148,7 @@ msgstr "Anonyme"
 
 #. module: grap_qweb_report
 #. openerp-web
-#: code:addons/grap_qweb_report/static/src/xml/pos.xml:109
+#: code:addons/grap_qweb_report/static/src/xml/pos.xml:90
 #, python-format
 msgid "Base"
 msgstr ""
@@ -226,13 +226,22 @@ msgid "Date de facture"
 msgstr ""
 
 #. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:53
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
+#, python-format
 msgid "Description"
 msgstr ""
 
 #. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:82
+#, python-format
+msgid "Discount %s %%"
+msgstr "Remise %s %%"
+
+#. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__display_name
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message_mixin__display_name
+#: model:ir.model.fields,field_description:grap_qweb_report.field_report_report_xlsx_purchase_order_xlsx__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
 
@@ -306,6 +315,7 @@ msgstr "Hauteur du message, exprimé en pixel"
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__id
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message_mixin__id
+#: model:ir.model.fields,field_description:grap_qweb_report.field_report_report_xlsx_purchase_order_xlsx__id
 msgid "ID"
 msgstr ""
 
@@ -341,6 +351,7 @@ msgstr "Facture__{number}__{partner}__{date}"
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message____last_update
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message_mixin____last_update
+#: model:ir.model.fields,field_description:grap_qweb_report.field_report_report_xlsx_purchase_order_xlsx____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
@@ -404,6 +415,12 @@ msgid "Preview"
 msgstr "Prévisualiser"
 
 #. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:91
+#, python-format
+msgid "Price Subtotal VAT Excl."
+msgstr "Sous Total HT"
+
+#. module: grap_qweb_report
 #. openerp-web
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:52
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:115
@@ -417,6 +434,12 @@ msgid "Printed"
 msgstr "Imprimée le"
 
 #. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:47
+#, python-format
+msgid "Product Name"
+msgstr "Nom Frs"
+
+#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
 msgid "Producteur·rice :"
@@ -427,6 +450,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.view_report_custom_message_form
 msgid "Purchase Order"
 msgstr "Commande fournisseur"
+
+#. module: grap_qweb_report
+#: model:ir.actions.report,name:grap_qweb_report.purchase_order_xlsx
+msgid "Purchase Order (XLSX)"
+msgstr "Commande fournisseur (XLSX)"
+
+#. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:59
+#, python-format
+msgid "Quantity"
+msgstr "Quantité"
 
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_account_invoice__report_custom_message
@@ -494,6 +528,18 @@ msgid "Transfer"
 msgstr "Transfert"
 
 #. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:65
+#, python-format
+msgid "Unit"
+msgstr "Unité"
+
+#. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:71
+#, python-format
+msgid "Unit Price"
+msgstr "Prix Unitaire"
+
+#. module: grap_qweb_report
 #. openerp-web
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:29
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:89
@@ -533,3 +579,20 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
 msgid "le kilo"
 msgstr ""
+
+#. module: grap_qweb_report
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:41
+#, python-format
+msgid "product Code"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_report_report_xlsx_partner_xlsx
+msgid "report.report_xlsx.partner_xlsx"
+msgstr ""
+
+#. module: grap_qweb_report
+#: model:ir.model,name:grap_qweb_report.model_report_report_xlsx_purchase_order_xlsx
+msgid "report.report_xlsx.purchase_order_xlsx"
+msgstr ""
+

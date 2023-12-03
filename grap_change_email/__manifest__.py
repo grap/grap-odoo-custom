@@ -14,8 +14,11 @@
     "depends": [
         "purchase",
         "sale",
+        # OCA
+        "mail_template_multi_attachment",
         # GRAP
         "sale_recovery_moment",
+        "grap_qweb_report",
     ],
     "data": [
         "data/mail_data.xml",

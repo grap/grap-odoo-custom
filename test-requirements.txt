@@ -7,6 +7,7 @@ git+https://github.com/OCA/account-invoicing@refs/pull/1413/head#subdirectory=se
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_discount
 git+https://github.com/OCA/purchase-workflow@refs/pull/1185/head#subdirectory=setup/purchase_triple_discount
 git+https://github.com/OCA/purchase-workflow@refs/pull/1783/head#subdirectory=setup/product_supplierinfo_qty_multiplier
+git+https://github.com/OCA/social@refs/pull/1238/head#subdirectory=setup/mail_template_multi_attachment
 git+https://github.com/OCA/manufacture@refs/pull/798/head#subdirectory=setup/mrp_bom_widget_section_and_note_one2many
 
 # Coop It Easy Dependencies
