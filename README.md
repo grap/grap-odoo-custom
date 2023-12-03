@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [grap_change_base_product_mass_addition](grap_change_base_product_mass_addition/) | 12.0.0.1.4 |  | Fix slow call to odoo.tests.Form, used in base_product_mass_addition, for purchase_quick module
 [grap_change_data](grap_change_data/) | 12.0.1.0.9 |  | GRAP - Change Data
 [grap_change_default](grap_change_default/) | 12.0.1.1.4 |  | GRAP - Change Default
-[grap_change_email](grap_change_email/) | 12.0.1.1.5 |  | Change default email template for invoices, sale and purchase orders
+[grap_change_email](grap_change_email/) | 12.0.1.2.0 |  | Change default email template for invoices, sale and purchase orders
 [grap_change_precision](grap_change_precision/) | 12.0.1.1.2 |  | Change the precisions names and values of some fields
 [grap_change_product_pricelist_direct_print](grap_change_product_pricelist_direct_print/) | 12.0.1.0.1 |  | Display custom fields in Pricelist report
 [grap_change_translation](grap_change_translation/) | 12.0.1.2.1 |  | Disable the translation mechanism for a many fields
@@ -46,7 +46,7 @@ addon | version | maintainers | summary
 [grap_index](grap_index/) | 12.0.1.0.3 |  | Add Extra postgresql Indexes
 [grap_mrp_dev](grap_mrp_dev/) | 12.0.1.0.1 |  | Install all MRP modules for Grap
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
-[grap_qweb_report](grap_qweb_report/) | 12.0.2.0.5 |  | GRAP - Custom Qweb Reports
+[grap_qweb_report](grap_qweb_report/) | 12.0.2.1.0 |  | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.3.5 |  | Customize Odoo web User Interface
 [mrp_bom_line_has_bom](mrp_bom_line_has_bom/) | 12.0.1.1.1 |  | MRP BoM Line Has BoM
 [mrp_bom_print](mrp_bom_print/) | 12.0.1.1.3 |  | Manage the various useful prints for Bill of Materials
