@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 21:14+0000\n"
-"PO-Revision-Date: 2022-10-11 21:14+0000\n"
+"POT-Creation-Date: 2023-11-20 13:58+0000\n"
+"PO-Revision-Date: 2023-11-20 13:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
 msgid "- Code:"
-msgstr "- Code :"
+msgstr "- Code : "
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
@@ -32,8 +32,8 @@ msgstr ""
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "<b>Origine : </b>"
-msgstr "<b>Lieu de prod. : </b>"
+msgid "Origine : "
+msgstr ""
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
@@ -53,8 +53,18 @@ msgid "<br/>\n"
 msgstr ""
 
 #. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
+msgid "<br/>Origin:"
+msgstr "<br/>Origine : "
+
+#. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
+msgid "<br/>Origine :"
+msgstr ""
+
+#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "<span class=\"empty_field\"><b>Ingrédients</b></span><br/>"
+msgid "<span class=\"empty_field\">Ingrédients</span><br/>"
 msgstr ""
 
 #. module: grap_qweb_report
@@ -147,6 +157,11 @@ msgid "Anonymous"
 msgstr "Anonyme"
 
 #. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
+msgid "Barcode:"
+msgstr "Code barre :"
+
+#. module: grap_qweb_report
 #. openerp-web
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:90
 #, python-format
@@ -181,7 +196,7 @@ msgstr "Sociétés"
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__company_id
 msgid "Company"
-msgstr "Société"
+msgstr ""
 
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__create_uid
@@ -276,6 +291,11 @@ msgid "Document Template"
 msgstr "Modèle de document"
 
 #. module: grap_qweb_report
+#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
+msgid "Document d'origine"
+msgstr ""
+
+#. module: grap_qweb_report
 #: code:addons/grap_qweb_report/models/account_invoice.py:18
 #, python-format
 msgid "Draft"
@@ -329,8 +349,8 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Internal code:"
-msgstr "Code :"
+msgid "Internal code: ["
+msgstr "Code : ["
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice
@@ -391,17 +411,6 @@ msgstr ""
 #: model:product.print.category,name:grap_qweb_report.category_pricetag_small
 msgid "Normal (small) - 76x33mm"
 msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
-msgid "Document d'origine"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Origine :"
-msgstr "Lieu de prod. :"
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
@@ -563,7 +572,7 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "kg"
+msgid "kg<br/>"
 msgstr ""
 
 #. module: grap_qweb_report
