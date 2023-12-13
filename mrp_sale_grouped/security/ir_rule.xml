@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="rule_mrp_sale_grouped" model="ir.rule">
+        <field name="name">MRP Sale Grouped Rule</field>
+        <field name="model_id" ref="model_mrp_sale_grouped" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[
+            '|',
+            ('company_id', '=', user.company_id.id),
+            ('company_id','=',False)
+        ]</field>
+    </record>
+
+</odoo>

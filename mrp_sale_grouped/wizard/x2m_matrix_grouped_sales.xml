@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="x2many_2d_matrix_grouped_sales" model="ir.ui.view">
+        <field name="name">x2m.matrix.grouped.sales.wizard</field>
+        <field name="model">x2m.matrix.grouped.sales.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="alert alert-info col-8" role="status">
+                  ℹ️ Only show draft and sent quotations (not confirmed quotations)
+                </div>
+                <group>
+                  <field name="line_ids" widget="x2many_2d_matrix"
+                         field_x_axis="order_id"
+                         field_y_axis="product_id"
+                         field_label_x_axis="sale_grouped_display_name"
+                         field_value="product_uom_qty"
+                         show_column_totals="False"
+                         nolabel="1">
+                      <tree>
+                          <field name="order_id"/>
+                          <field name="product_id"/>
+                          <field name="sale_grouped_display_name"/>
+                          <field name="product_uom_qty"/>
+                      </tree>
+                  </field>
+                </group>
+                <footer>
+                    <button name="save_close"
+                            string="Save new values and Close"
+                            type="object"
+                            class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

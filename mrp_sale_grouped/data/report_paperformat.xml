@@ -6,8 +6,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-        <record id="paper_format_purchase_list" model="report.paperformat">
-            <field name="name">BoM Purchase Print Format</field>
+        <record id="paper_format_mrp_sale_grouped_report" model="report.paperformat">
+            <field name="name">MRP Sale Grouped Report</field>
             <field name="format">A4</field>
             <field name="page_height">0</field>
             <field name="page_width">0</field>

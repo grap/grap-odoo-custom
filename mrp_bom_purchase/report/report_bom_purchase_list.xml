@@ -8,6 +8,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="report_bom_purchase_list">
         <t t-call="web.basic_layout">
+            <div class="title">
+              <h1><span t-esc="title_for_pdf"/></h1>
+            </div>
             <!-- ======= PRODUCTS TO PREPARE =======  -->
             <div class="page_qty_to_prepare small-font-size">
               <div>
@@ -21,6 +24,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <br/><br/>
                   </div>
                 </t>
+                <br/>
                 <div class="page_header">
                     <h2 class="text-left title-h2">Quantities to be prepared</h2>
                     <span t-esc="notes_for_pdf"/>
@@ -200,6 +204,45 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   </tbody>
               </table>
             </div>
+
+            <!--  PRODUCTS PER BOMS -->
+            <div class="page_product_bom_qty small-font-size new_section" style="page-break-before:always;">
+              <div class="page_header">
+                <h2 class="text-left title-h2">Sum um quantities per bills of materials</h2>
+              </div>
+              <br/>
+              <table class="table table-sm table-bordered">
+                  <thead>
+                      <tr class="th-colored">
+                          <th name="th_customer" class="text-center"></th>
+                          <t t-foreach="data_all_bom" t-as="data_bom">
+                              <th name="th_sale_order_customer" class="text-center"><span t-esc="data_bom"/></th>
+                          </t>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <t t-foreach="data_list_matrix_product_bom" t-as="line_product_bom_qty">
+                          <tr>
+                            <t t-set="i" t-value="0"/>
+                            <t t-foreach="line_product_bom_qty" t-as="product_then_quantities">
+                              <t t-if="i &lt; 1">
+                                <td name="td_product_then_quantites" class="text-left">
+                                  <b><span t-esc="product_then_quantities"/></b>
+                                </td>
+                              </t>
+                              <t t-else="">
+                                <td name="td_product_then_quantites" class="text-center">
+                                  <span t-esc="product_then_quantities" style="white-space: nowrap;"/>
+                                </td>
+                              </t>
+                              <t t-set="i" t-value="i+1"/>
+                            </t>
+                          </tr>
+                      </t>
+                  </tbody>
+              </table>
+            </div>
+
 
             <!-- ======= BOMS =======  -->
             <t t-if="option_print_bom">

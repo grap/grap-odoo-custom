@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_sale_grouped_wizard_form" model="ir.ui.view">
+        <field name="model">sale.grouped.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print sales sum up">
+              <h5>📈 Sales concerned</h5>
+              <group colspan="2">
+                  <group col="4" colspan="2">
+                      <field name="line_ids" nolabel="1">
+                          <tree create="false" editable="0">
+                              <field name="sale_id"/>
+                              <field name="sale_partner_id"/>
+                           </tree>
+                      </field>
+                  </group>
+              </group>
+              <footer>
+                  <button name="print_sale_sum_up" string="Print sales sum up" type="object" icon="fa-print" class="oe_highlight"/>
+                  <button icon="fa-ban" special="cancel" string="Cancel"/>
+              </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

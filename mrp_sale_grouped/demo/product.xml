@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record model="product.product" id="demo_product_spinach">
+        <field name="name">Spinach</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="standard_price">4</field>
+    </record>
+
+    <record model="product.product" id="demo_product_tomato">
+        <field name="name">Tomatoes</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="standard_price">3</field>
+    </record>
+
+    <record model="product.product" id="demo_product_mustard">
+        <field name="name">Mustard</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="standard_price">10</field>
+    </record>
+
+    <record model="product.product" id="demo_product_pie">
+        <field name="name">Pie</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="standard_price">3</field>
+    </record>
+
+    <record model="product.template" id="demo_product_template_tomato_tart">
+        <field name="name">Tomato pie - template</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="image" type="base64" file="mrp_sale_grouped/static/img/tomato_pie.png"/>
+    </record>
+
+    <record model="product.product" id="demo_product_tomato_tart">
+      <field name="name">Tomato pie</field>
+      <field name="categ_id" ref="product.product_category_all"/>
+      <field name="product_tmpl_id" ref="mrp_sale_grouped.demo_product_template_tomato_tart"/>
+    </record>
+
+
+</odoo>

@@ -20,6 +20,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <h5>📝 Informations on PDF</h5><br/>
                   <group colspan="2">
                       <group col="4" colspan="2">
+                        <field name="title_for_pdf"/><br/>
                         <field name="option_production_date"/><br/>
                         <field name="notes_for_pdf" placeholder="Order of March 18, 1871 for customer Louise Michel"/>
                       </group>
@@ -28,12 +29,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <br/>
                 <div class="wizard_instrutions">
                   <h5>🖨️ Choose the quantity of each BoMs</h5>
+                  <field name="no_origin" invisible="1"/>
                   <group colspan="2">
                       <group col="4" colspan="2">
                           <field name="line_ids" nolabel="1">
                               <tree editable="bottom">
                                   <field name="bom_id" required="1"/>
                                   <field name="currency_id" invisible="1"/>
+                                  <field name="bom_origin" attrs="{'column_invisible': [('parent.no_origin', '=', True)]}"/>
                                   <field name="bom_description"/>
                                   <field name="bom_product_qty"/>
                                   <field name="quantity" required="1" widget="numeric_step"/>

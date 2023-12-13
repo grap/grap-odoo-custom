@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="action_grouped_sale_2_wizard_x2m_matrix" model="ir.actions.act_window">
+        <field name="name">Update Values</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">x2m.matrix.grouped.sales.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_grouped_sale_prod_2_sale_order" model="ir.actions.act_window">
+        <field name="name">Sale Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('mrp_sale_grouped_id', 'in', active_ids)]</field>
+    </record>
+
+    <record id="action_grouped_sale_prod_2_product_product" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('id', 'in', context.get('product_wo_bom_ids',False))]</field>
+    </record>
+
+    <!--  Useless ? -->
+    <record id="action_grouped_sale_prod_2_production_order" model="ir.actions.act_window">
+        <field name="name">Production Orders</field>
+        <field name="res_model">mrp.production</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_grouped_sale_production_form" model="ir.ui.view">
+        <field name="model">mrp.sale.grouped</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                  <button type="action" string="See and update values"
+                          name="%(mrp_sale_grouped.action_grouped_sale_2_wizard_x2m_matrix)d"
+                          attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
+                          icon="fa-edit"/>
+                  <button type="object" string="Confirme all quotations"
+                          name="confirm_all_sale_order"
+                          attrs="{'invisible': [('sales_state', 'in', ['all_sales_confirmed'])]}"
+                          icon="fa-check"/>
+                  <button type="action" string="Print sales sum up"
+                          attrs="{'invisible': [('order_ids', '=', [])]}"
+                          name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
+                          icon="fa-print"/>
+                  <button type="action" string="Production assistant"
+                          attrs="{'invisible': [('order_ids', '=', [])]}"
+                          name="%(mrp_bom_purchase.action_mrp_bom_purchase_list_print_wizard)d"
+                          icon="fa-print" context="{'sale_grouped':True}"/>
+                  <field name="sales_state" widget="statusbar"/>
+                  <field name="production_state" widget="statusbar" groups="mrp.group_mrp_routings"/>
+                </header>
+                <sheet>
+                    <div class="oe_right oe_button_box" name="button_widget_sale_order">
+                        <button class="oe_stat_button" type="action" icon="fa-dollar"
+                            name="%(action_grouped_sale_prod_2_sale_order)d"
+                            attrs="{'invisible': [('orders_qty', '=', 0)]}">
+                            <field string="Sale Orders" name="orders_qty" widget="statinfo"/>
+                        </button>
+                        <field name="product_wo_bom_ids" invisible="1"/>
+                        <button class="oe_stat_button" type="action" icon="fa-list"
+                            name="%(action_grouped_sale_prod_2_product_product)d"
+                            context="{'product_wo_bom_ids': product_wo_bom_ids}"
+                            attrs="{'invisible': [('product_wo_bom_qty', '=', 0)]}">
+                            <field string="Product w/o BoM" name="product_wo_bom_qty" widget="statinfo"/>
+                        </button>
+                        <button type="object"
+                            name="action_view_production"
+                            class="oe_stat_button"
+                            icon="fa-wrench"
+                            attrs="{'invisible': [('mrp_production_qty', '=', 0)]}"
+                            groups="mrp.group_mrp_routings">
+                            <field string="Production Orders" name="mrp_production_qty" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="alert alert-warning col-8" role="status" attrs="{'invisible': [('order_ids', '!=', [])]}">
+                      📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale.
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="Week n°63 production"/></h1>
+                    </div>
+                    <group>
+                        <field name="date"/>
+                        <field name="notes"/>
+                    </group>
+                    <div class="alert alert-info col-8" role="status" attrs="{'invisible': [('product_wo_bom_qty', '==', 0)]}">
+                      ℹ️ Sales contains severals products that don't have any associated bill of material. Access them with the smart button on the right.
+                    </div>
+                    <group>
+                        <field name="order_ids" nolabel="1" widget="many2many" domain="['|', ('state', '=', 'sent'), ('state', '=', 'draft')]">
+                            <tree>
+                              <field name="name"/>
+                              <field name="date_order"/>
+                              <field name="partner_id"/>
+                              <field name="user_id"/>
+                              <field name="amount_untaxed"/>
+                              <field name="amount_tax"/>
+                              <field name="amount_total" sum="Total"/>
+                              <field name="state"/>
+                              <button name="action_confirm" type="object" class="oe_highlight" string="Confirme Quotation" attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
+                              <field name="invoice_status"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_grouped_sale_production_tree" model="ir.ui.view">
+        <field name="model">mrp.sale.grouped</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="orders_qty"/>
+                <field name="sales_state"/>
+                <field name="production_state" groups="mrp.group_mrp_routings"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_sale_grouped" model="ir.actions.act_window">
+        <field name="name">Grouped sales and production</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mrp.sale.grouped</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_sale_grouped"
+        parent="mrp.menu_mrp_root" sequence="40"
+        action="action_sale_grouped"/>
+
+
+</odoo>
