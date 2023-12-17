@@ -30,11 +30,10 @@ class PurchaseOrderXlsx(models.AbstractModel):
 
     def _get_columns_spec(self, order_lines):
         supplierinfo_render = (
-            "order_line.product_id.seller_ids.filtered("
-            "lambda x: x.name == order_line.order_id.partner_id "
-            " and (not x.product_id or x.product_id == order_line.product_id))"
-            ".sorted(key=lambda x: x.min_qty)"
+            "order_line.product_id"
+            "._get_supplierinfo_from_purchase_order_line(order_line)"
         )
+
         res = [
             {
                 "name": "product_code",
