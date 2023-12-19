@@ -46,7 +46,7 @@ addon | version | maintainers | summary
 [grap_index](grap_index/) | 12.0.1.0.3 |  | Add Extra postgresql Indexes
 [grap_mrp_dev](grap_mrp_dev/) | 12.0.1.0.1 |  | Install all MRP modules for Grap
 [grap_must_have](grap_must_have/) | 12.0.1.1.2 |  | Install must have modules
-[grap_qweb_report](grap_qweb_report/) | 12.0.2.1.1 |  | GRAP - Custom Qweb Reports
+[grap_qweb_report](grap_qweb_report/) | 12.0.2.1.2 |  | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.3.5 |  | Customize Odoo web User Interface
 [mrp_bom_line_has_bom](mrp_bom_line_has_bom/) | 12.0.1.1.1 |  | MRP BoM Line Has BoM
 [mrp_bom_line_net_qty](mrp_bom_line_net_qty/) | 12.0.1.1.0 |  | MRP BoM Line Net and Gross Quantity
