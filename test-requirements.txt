@@ -26,8 +26,12 @@ git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/base_com
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/stock_inventory_valuation
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/product_uom_package
 
+git+https://github.com/legalsylvain/grap-odoo-business@12.0-REF-ADD-product_food_certification#subdirectory=setup/product_origin
+git+https://github.com/legalsylvain/grap-odoo-business@12.0-REF-ADD-product_food_certification#subdirectory=setup/product_print_category_food_report
+git+https://github.com/legalsylvain/grap-odoo-business@12.0-REF-ADD-product_food_certification#subdirectory=setup/product_food
+git+https://github.com/legalsylvain/grap-odoo-business@12.0-REF-ADD-product_food_certification#subdirectory=setup/product_food_certification
+
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/technical_partner_access
-git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_print_category_food_report
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_recovery_moment
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/account_invoice_supplierinfo_update_standard_price
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/stock_preparation_category
@@ -35,9 +39,7 @@ git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/recurring
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/recurring_consignment_purchase
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_to_scale_bizerba
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_eshop
-git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_food
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_label
-git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_origin
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_origin_l10n_fr_department
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_notation
 
