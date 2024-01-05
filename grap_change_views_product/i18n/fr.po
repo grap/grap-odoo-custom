@@ -113,11 +113,6 @@ msgid "Country (Ingredients)"
 msgstr "Pays (ingrédients)"
 
 #. module: grap_change_views_product
-#: model:ir.model.fields,field_description:grap_change_views_product.field_product_product__country_group_id
-msgid "Country Group (Ingredients)"
-msgstr "Groupe de pays (ingrédients)"
-
-#. module: grap_change_views_product
 #: model_terms:ir.ui.view,arch_db:grap_change_views_product.view_product_product_form
 msgid "Create an automatic trigram. Change its BoM references with this trigram."
 msgstr "Générer un trigramme automatiquement. Cela change les codes références des fiches techniques du produit."
@@ -187,7 +182,6 @@ msgid "Fields only configurable for raw materials."
 msgstr "Champs modifiables seulement pour les articles de matières premières"
 
 #. module: grap_change_views_product
-#: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_group_id
 #: model:ir.model.fields,help:grap_change_views_product.field_product_product__country_id
 #: model:ir.model.fields,help:grap_change_views_product.field_product_product__department_id
 #: model:ir.model.fields,help:grap_change_views_product.field_product_product__state_id

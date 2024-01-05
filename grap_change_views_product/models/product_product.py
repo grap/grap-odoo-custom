@@ -26,14 +26,7 @@ class ProductProduct(models.Model):
 
     # Overload Column Section
     standard_price = fields.Float(copy=True)
-    country_group_id = fields.Many2one(
-        string="Country Group (Ingredients)",
-        help="Fill in the origin of the ingredients. \n If it has several ingredients, "
-        "take the widest denominator of origin. Example 1 for crunchy: EU / non-EU because"
-        " the chocolate comes from South America. Example 2 coelslaw"
-        " with local products: choose the Puy-de-dôme department. \n"
-        " Mandatory for Fruits & Vegetables, and meat.",
-    )
+
     country_id = fields.Many2one(
         string="Country (Ingredients)",
         help="Fill in the origin of the ingredients. \n If it has several ingredients, "

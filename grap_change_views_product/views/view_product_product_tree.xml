@@ -144,7 +144,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="default_code" readonly="1"/>
                 <button name="see_current_product" type="object" string="↗️"/>
                 <field name="name" readonly="1"/>
-                <field name="country_group_id"/>
                 <field name="country_id"/>
                 <field name="state_id"/>
                 <field name="department_id"/>

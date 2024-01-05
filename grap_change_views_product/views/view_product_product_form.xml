@@ -286,9 +286,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                   <field name="is_uncertifiable" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
                                   <field name="label_ids" widget="many2many_tags"/>
                                   <field name="organic_type"/>
+                                  <field name="ingredient_origin_type"/>
                                 </group>
                                 <group string="🌱 Organic informations - Ingredients origin">
-                                    <field name="country_group_id"/>
                                     <field name="country_id"/>
                                     <field name="state_id"/>
                                     <field name="department_id"/>
