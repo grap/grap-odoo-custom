@@ -41,7 +41,6 @@ git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_t
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/sale_eshop
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_label
 git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_origin_l10n_fr_department
-git+https://github.com/grap/grap-odoo-business@12.0#subdirectory=setup/product_notation
 
 git+https://github.com/grap/odoo-addons-logistics@12.0#subdirectory=setup/joint_buying_base
 git+https://github.com/grap/odoo-addons-logistics@12.0#subdirectory=setup/joint_buying_product

@@ -303,19 +303,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="is_alcohol" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
                                     <field name="best_before_date_day" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
                                 </group>
-                                <group string="✅ Notations">
-                                    <group>
-                                        <field name="local_notation"/>
-                                        <field name="social_notation"/>
-                                        <field name="packaging_notation"/>
-                                        <field name="organic_notation"/>
-                                    </group>
-                                    <group>
-                                        <field name="spider_chart_image" widget="image"
-                                            class="spider_chart"
-                                            nolabel="1" colspan="2"/>
-                                    </group>
-                                </group>
                             </group>
                         </page>
                         <page string="Alimentary Composition">
