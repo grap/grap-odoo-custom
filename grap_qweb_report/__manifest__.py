@@ -21,13 +21,9 @@
         "purchase_triple_discount",
         "report_xlsx_helper",
         # GRAP
+        "product_food",  # TODO, remove. For demo data only
         "base_company_legal_info",
         "fiscal_company_base",
-        "product_print_category",
-        "product_label",
-        "product_origin",
-        "product_origin_l10n_fr_department",
-        "product_print_category_food_report",
         "stock_inventory_valuation",
         # Coop It Easy
         "pos_customer_wallet",
@@ -43,13 +39,8 @@
         "report/qweb_template_sale_order.xml",
         "report/qweb_template_stock_picking.xml",
         "report/qweb_template_stock_inventory.xml",
-        "report/qweb_pricetag_square_small.xml",
-        "report/qweb_pricetag_square_large.xml",
-        "report/qweb_pricetag_normal_small.xml",
-        "report/qweb_pricetag_normal_large.xml",
         "data/report_paperformat.xml",
         "data/ir_actions_report_xml.xml",
-        "data/product_print_category.xml",
     ],
     "demo": [
         "demo/res_groups.xml",
