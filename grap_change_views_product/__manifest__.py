@@ -45,6 +45,7 @@
         "product_to_scale_bizerba",
         "sale_eshop",
         "product_food",
+        "product_food_certification",
         "product_label",
         "product_main_seller",
         "product_print_category",
