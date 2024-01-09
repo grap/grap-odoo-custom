@@ -303,16 +303,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="is_alcohol" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
                                     <field name="best_before_date_day" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
                                 </group>
-                            </group>
-                        </page>
-                        <page string="Alimentary Composition">
-                            <group>
-                                <group col="12" string="Ingredients">
+                                <group string="Ingredients">
                                     <field name="ingredients" widget="html" nolabel="1"/>
                                 </group>
                             </group>
                         </page>
-
                         <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
                           <group>
                             <group string="🥕 Food informations">
