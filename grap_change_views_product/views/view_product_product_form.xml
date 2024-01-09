@@ -291,7 +291,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                   <field name="organic_type"/>
                                   <field name="ingredient_origin_type"/>
                                 </group>
-                                <group string="🌱 Organic informations - Ingredients origin">
+                                <group string="Place of Manufacture">
                                     <field name="country_id"/>
                                     <field name="state_id"/>
                                     <field name="department_id"/>
