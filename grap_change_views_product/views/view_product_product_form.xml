@@ -158,6 +158,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="standard_price" string="Cost Price (VAT Excl.)" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                                     <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
                                         groups="base.group_erp_manager" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
+                                    <field name="is_component" invisible="1"/>
+                                    <field name="date_last_statement_price" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
+                                    <field name="end_date_of_market_price_list" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
                                     <field name="product_main_seller_partner_id"/>
                                     <field name="fiscal_classification_id" quick_create="false" required="1"/>
                                 </group>
@@ -310,21 +313,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="ingredients" widget="html" nolabel="1"/>
                                 </group>
                             </group>
-                        </page>
-                        <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
-                          <group>
-                            <group string="📜 Market price list">
-                              <field name="is_component" invisible="1"/>
-                              <group attrs="{'invisible': [('is_component', '=', True)]}">
-                                <p class="alert alert-info" role="alert">Fields only configurable for raw materials.</p>
-                              </group>
-                              <group>
-                                <field name="date_last_statement_price" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
-                                <field name="end_date_of_market_price_list" attrs="{'invisible': [('is_component', '=', False)]}" help="Only for the raw materials"/>
-                              </group>
-                            </group>
-                            <br/>
-                          </group>
                         </page>
                         <page string="Scale" groups="product_to_scale_bizerba.group_user">
                             <group string="Scale Communication">
