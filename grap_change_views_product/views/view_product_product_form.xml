@@ -297,8 +297,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <br/>
                                 </group>
                                 <group string="🍴 Alimentary and production informations 🚩">
+                                    <field name="allergen_ids" widget="many2many_tags"/>
+                                    <field name="meal_category_id" groups="mrp.group_mrp_user"/>
+                                    <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}" groups="mrp.group_mrp_user"/>
+                                    <field name="is_seasonal" groups="mrp.group_mrp_user"/>
                                     <field name="maker_description"/>
-                                    <br/>
                                     <field name="is_vegan"/>
                                     <field name="is_alcohol" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
                                     <field name="best_before_date_day" attrs="{'invisible': [('is_alimentary', '=', False)]}"/>
@@ -310,12 +313,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </page>
                         <page string="Manufacturing Informations 🥕" groups="mrp.group_mrp_user">
                           <group>
-                            <group string="🥕 Food informations">
-                              <field name="meal_category_id"/>
-                              <field name="allergen_ids" widget="many2many_tags"/>
-                              <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
-                              <field name="is_seasonal" string="Is seasonal ?"/>
-                            </group>
                             <group string="📜 Market price list">
                               <field name="is_component" invisible="1"/>
                               <group attrs="{'invisible': [('is_component', '=', True)]}">
