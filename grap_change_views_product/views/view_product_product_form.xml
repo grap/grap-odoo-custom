@@ -310,12 +310,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <group col="12" string="Ingredients">
                                     <field name="ingredients" widget="html" nolabel="1"/>
                                 </group>
-                                <group string="Allergens">
-                                    <p class="alert alert-warning alert-dismissable" role="alert" groups="mrp.group_mrp_user">
-                                      Text field for labels, not for tracking allergens in production (see dedicated tab)
-                                    </p>
-                                    <field name="allergens" widget="html" nolabel="1"/>
-                                </group>
                             </group>
                         </page>
 
