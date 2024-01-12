@@ -19,7 +19,7 @@ class X2mMatrixGroupedSalesWizard(models.TransientModel):
         orders = grouped_sale_prod.mapped("order_ids").filtered(
             lambda o: o.state in ["draft", "sent"]
         )
-        return orders.mapped("order_line")
+        return orders.mapped("order_line").filtered(lambda x: not x.display_type)
 
     def save_close(self):
         return
