@@ -103,7 +103,9 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             boms_and_quantities = {}
 
             for order in order_ids:
-                for order_line in order.order_line:
+                for order_line in order.order_line.filtered(
+                    lambda x: not x.display_type
+                ):
                     if not order_line.product_id.bom_ids:
                         missing_boms[order_line.product_id] = order_line.product_id.name
                     else:
