@@ -18,10 +18,11 @@ class ProductProduct(models.Model):
         )
         if len(supplierinfos) <= 1:
             return supplierinfos
+
         # Try to guess supplierinfo, from the code set in the order line name
-        regex_result = re.search(r"\[(\w+)\].*", order_line.name).groups()
-        if len(regex_result) == 1:
-            product_code = regex_result[0]
+        regex_result = re.search(r"\[(.+)\].*", order_line.name)
+        if regex_result and len(regex_result.groups()) == 1:
+            product_code = regex_result.groups()[0]
             supplierinfos = supplierinfos.filtered(
                 lambda x: x.product_code == product_code
             )
