@@ -65,11 +65,16 @@ class ProductProduct(models.Model):
     @api.multi
     def _compute_is_seasonal(self):
         today = fields.Date.today()
+        _is_seasonal = False
         for product in self:
             for seasonality in product.product_seasonality_ids:
                 for period in seasonality.seasonality_line_ids:
                     if today >= period.date_start and today <= period.date_end:
-                        product.is_seasonal = True
+                        _is_seasonal = True
+                        break  # One is enough to write that this is seasonal
+                if _is_seasonal:
+                    break
+            product.is_seasonal = _is_seasonal
 
     @api.depends("bom_line_ids")
     @api.multi

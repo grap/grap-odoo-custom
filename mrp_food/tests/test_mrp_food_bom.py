@@ -2,6 +2,7 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from odoo.exceptions import ValidationError
 from odoo.tests.common import TransactionCase
 
 
@@ -38,7 +39,14 @@ class TestMrpFoodBom(TransactionCase):
             0,
         )
 
-    def test_03_bom_seasonality(self):
+    def test_03_seasonality_check_constrains(self):
+        new_seasonality_line = self.env["seasonality.line"].create(
+            {"name": "Wrong line", "date_start": "2024-01-01", "date_end": "2025-01-01"}
+        )
+        with self.assertRaises(ValidationError):
+            new_seasonality_line.write({"date_end": "2023-01-01"})
+
+    def test_04_bom_seasonality(self):
         self.bom_tomato_tart.write({"bom_season_ids": [(5, 0)]})
         self.assertEqual(
             self.bom_tomato_tart.is_bom_seasonal,
@@ -50,7 +58,7 @@ class TestMrpFoodBom(TransactionCase):
             True,
         )
 
-    def test_04_bom_lines_seasonalities(self):
+    def test_05_bom_lines_seasonalities(self):
         self.assertEqual(self.bom_not_seasonal.products_not_in_season, "Chickpea.")
         self.bom_not_seasonal.write(
             {"bom_line_ids": [(0, 0, {"product_id": self.peach.id, "product_qty": 1})]}
