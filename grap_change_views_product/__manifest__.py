@@ -52,7 +52,7 @@
         "product_simple_pricelist",
         "product_print_category_food_report",
         "product_origin",
-        "product_origin_l10n_fr_department",
+        "l10n_fr_department_product_origin",
         "account_invoice_supplierinfo_update_standard_price",
         "pos_sector",
         "intercompany_trade_product",
