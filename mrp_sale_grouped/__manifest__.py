@@ -38,6 +38,7 @@
         "views/view_sale_order.xml",
         "wizard/view_sale_grouped_wizard.xml",
         "wizard/x2m_matrix_grouped_sales.xml",
+        "wizard/view_production_assistant_wizard.xml",
         "views/action.xml",
     ],
     "installable": True,

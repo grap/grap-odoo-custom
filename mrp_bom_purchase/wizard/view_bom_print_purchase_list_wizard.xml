@@ -10,14 +10,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">bom.print.purchase.list.wizard</field>
         <field name="arch" type="xml">
             <form string="Print Purchase list">
-                <div class="wizard_options">
+                <div name="wizard_options" class="wizard_options">
                   <h5>🔧 Choose options</h5><br/>
                   <label for="option_group_by_product_category"/><field name="option_group_by_product_category" widget="boolean_toggle"/><br/>
                   <label for="option_display_cost"/><field name="option_display_cost" widget="boolean_toggle"/><br/>
                   <label for="option_print_bom"/><field name="option_print_bom" widget="boolean_toggle"/><br/>
                 </div>
                 <div class="Notes">
-                  <h5>📝 Informations on PDF</h5><br/>
+                  <h5>📝 Informations on PDF</h5>
                   <group colspan="2">
                       <group col="4" colspan="2">
                         <field name="title_for_pdf"/><br/>
