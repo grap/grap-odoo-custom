@@ -2,23 +2,26 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import _, api, models
-from odoo.exceptions import UserError
+from odoo import api, fields, models
 
 
 class BomPrintPurchaseListWizard(models.TransientModel):
     _inherit = "bom.print.purchase.list.wizard"
 
+    missing_boms_text = fields.Char(
+        default=lambda s: s._default_missing_boms_text(),
+    )
+
+    def _get_sale_grouped_from_context(self):
+        return self.env["mrp.sale.grouped"].browse(
+            self.env.context.get("active_ids", [])
+        )
+
     @api.model
     def _default_no_origin(self):
         context = self.env.context
-        active_model = context.get("active_model")
-        if active_model == "mrp.sale.grouped":
-            sale_grouped_active_id = context.get("active_ids", [])
-            sale_grouped_obj = self.env["mrp.sale.grouped"]
-            sale_grouped_obj.browse(sale_grouped_active_id)
 
-            # Handle production_date
+        if context.get("active_model") == "mrp.sale.grouped":
             no_origin = False
         else:
             no_origin = True
@@ -32,13 +35,8 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     def _default_title_for_pdf(self):
         context = self.env.context
 
-        active_model = context.get("active_model")
-        if active_model == "mrp.sale.grouped":
-            sale_grouped_active_id = context.get("active_ids", [])
-            sale_grouped_obj = self.env["mrp.sale.grouped"]
-            sale_grouped = sale_grouped_obj.browse(sale_grouped_active_id)
-
-            # Handle production_date
+        if context.get("active_model") == "mrp.sale.grouped":
+            sale_grouped = self._get_sale_grouped_from_context()
             title_for_pdf = sale_grouped.name
         else:
             title_for_pdf = False
@@ -52,13 +50,8 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     def _default_notes(self):
         context = self.env.context
 
-        active_model = context.get("active_model")
-        if active_model == "mrp.sale.grouped":
-            sale_grouped_active_id = context.get("active_ids", [])
-            sale_grouped_obj = self.env["mrp.sale.grouped"]
-            sale_grouped = sale_grouped_obj.browse(sale_grouped_active_id)
-
-            # Handle production_date
+        if context.get("active_model") == "mrp.sale.grouped":
+            sale_grouped = self._get_sale_grouped_from_context()
             notes_for_pdf = sale_grouped.notes
         else:
             notes_for_pdf = False
@@ -72,13 +65,8 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     def _default_production_date(self):
         context = self.env.context
 
-        active_model = context.get("active_model")
-        if active_model == "mrp.sale.grouped":
-            sale_grouped_active_id = context.get("active_ids", [])
-            sale_grouped_obj = self.env["mrp.sale.grouped"]
-            sale_grouped = sale_grouped_obj.browse(sale_grouped_active_id)
-
-            # Handle production_date
+        if context.get("active_model") == "mrp.sale.grouped":
+            sale_grouped = self._get_sale_grouped_from_context()
             production_date = sale_grouped.date
         else:
             production_date = False
@@ -89,14 +77,26 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         )._default_production_date()
 
     @api.model
+    def _default_missing_boms_text(self):
+        context = self.env.context
+
+        if context.get("active_model") == "mrp.sale.grouped":
+            sale_grouped = self._get_sale_grouped_from_context()
+            # Get name of products without any BoM
+            missing_boms_text = ", ".join(
+                sale_grouped.product_wo_bom_ids.mapped("display_name")
+            )
+        else:
+            missing_boms_text = False
+
+        return missing_boms_text
+
+    @api.model
     def _default_line_ids(self):
         context = self.env.context
-        active_model = context.get("active_model")
 
-        if active_model == "mrp.sale.grouped":
-            sale_grouped_active_id = context.get("active_ids", [])
-            sale_grouped_obj = self.env["mrp.sale.grouped"]
-            sale_grouped = sale_grouped_obj.browse(sale_grouped_active_id)
+        if context.get("active_model") == "mrp.sale.grouped":
+            sale_grouped = self._get_sale_grouped_from_context()
             order_ids = sale_grouped.mapped("order_ids")
 
             missing_boms = {}
@@ -126,18 +126,6 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             # Change boms_and_quantities for the expected format
             boms_and_quantities = list(boms_and_quantities.values())
 
-            if missing_boms:
-                boms_text = ", ".join(missing_boms.values())
-                message = (
-                    (
-                        _(
-                            "These products don't have any Bill Of Material: %s \
-                         \nCreate them before launching the assistant again."
-                        )
-                    )
-                    % boms_text
-                )
-                raise UserError(message)
         else:
             boms_and_quantities = []
 
