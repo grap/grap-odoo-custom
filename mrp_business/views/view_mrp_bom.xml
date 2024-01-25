@@ -30,7 +30,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <field name="time_to_produce" widget="float_time"/>
                     <span> hours</span>
                 </div>
-                <!-- <span><field name="time_to_produce" widget="float_time"/> hours</span> -->
             </xpath>
             <xpath expr="//field[@name='code']" position="after">
                 <field name="tla_to_change" invisible="1"/>
