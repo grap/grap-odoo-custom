@@ -31,7 +31,7 @@ class MrpSaleGrouped(models.Model):
     )
     date = fields.Date(
         string="Production date",
-        help="For example, it will be used for production assistant PDF.",
+        help="For example, it will be used for production wizard PDF.",
     )
     notes = fields.Char()
 
