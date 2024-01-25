@@ -29,7 +29,10 @@ class MrpSaleGrouped(models.Model):
     name = fields.Char(
         required=True,
     )
-    date = fields.Date()
+    date = fields.Date(
+        string="Production date",
+        help="For example, it will be used for production assistant PDF.",
+    )
     notes = fields.Char()
 
     sales_state = fields.Selection(

@@ -344,6 +344,7 @@ msgstr "Saisonnalité du produit"
 
 #. module: mrp_food
 #: model:ir.model,name:mrp_food.model_seasonality
+#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
 #: model:ir.model.fields,field_description:mrp_food.field_mrp_bom__bom_season_ids
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality_line__seasonality_id
 msgid "Seasonality"
@@ -368,11 +369,6 @@ msgstr "Période de la saisonnalité"
 #: model:ir.model.fields,field_description:mrp_food.field_seasonality__name
 msgid "Seasonality name"
 msgstr "Nom de la Saisonnalité"
-
-#. module: mrp_food
-#: model_terms:ir.ui.view,arch_db:mrp_food.view_mrp_bom_form
-msgid "Seasonality ℹ️"
-msgstr "Saisonnalité ℹ️"
 
 #. module: mrp_food
 #: model:ir.model.fields,help:mrp_food.field_mrp_bom__bom_season_ids

@@ -128,10 +128,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       <field name="currency_id" invisible="1"/>
                       <!-- Standard price -->
                       <field name="diff_product_bom_standard_price" invisible="1"/>
-                      <field name="standard_price_total" string="Net cost ℹ️" class="oe_inline" widget="monetary"
+                      <field name="standard_price_total" string="Net cost" class="oe_inline" widget="monetary"
                              options="{'currency_field': 'currency_id'}"
                              attrs="{'invisible': [('diff_product_bom_standard_price', '!=', 0)]}"/>
-                      <label for="standard_price_total" string="Net cost ℹ️"
+                      <label for="standard_price_total" string="Net cost"
                              attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}"/>
                       <div attrs="{'invisible': [('diff_product_bom_standard_price', '=', 0)]}">
                           <field name="standard_price_total" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
@@ -159,13 +159,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </div>
                       <!-- / mrp_bom_sale_product_margin -->
                       <!-- mrp_business -->
-                      <field name="time_to_produce"/>
+                      <label for="time_to_produce"/>
+                      <div class="o_row" name="time_to_produce">
+                          <field name="time_to_produce" widget="float_time"/>
+                          <span> hours</span>
+                      </div>
                       <!-- / mrp_business -->
                       <field name="routing_id" groups="mrp.group_mrp_routings"/>
                   </group>
                   <group string="Food informations">
                     <!-- mrp_food -->
-                    <field name="bom_season_ids" string="Seasonality ℹ️" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                    <field name="bom_season_ids" string="Seasonality" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                     <field name="is_bom_seasonal" groups="base.group_no_one"/>
                     <field name="are_bom_lines_seasonals" groups="base.group_no_one"/>
                     <field name="bom_label_ids" widget="many2many_tags"/>

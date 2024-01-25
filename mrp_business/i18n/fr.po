@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-23 09:49+0000\n"
-"PO-Revision-Date: 2023-10-23 09:49+0000\n"
+"POT-Creation-Date: 2024-01-25 13:25+0000\n"
+"PO-Revision-Date: 2024-01-25 13:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mrp_business
+#: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_bom_form
+msgid "<span> hours</span>"
+msgstr "<span> heures</span>"
+
+#. module: mrp_business
 #: model:ir.model.fields,help:mrp_business.field_product_product__tla
 msgid "A three-letter acronym (TLA), or three-letter abbreviation, is an abbreviation consisting of three letters."
-msgstr ""
+msgstr "Un trigramme est une abréviation constituée de trois lettres."
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code_nb
@@ -34,11 +39,6 @@ msgstr "Fiche technique"
 #: model:ir.model,name:mrp_business.model_mrp_bom_line
 msgid "Bill of Material Line"
 msgstr "Ligne de fiche technique"
-
-#. module: mrp_business
-#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__bom_components_total_weight
-msgid "Bom Components Total Weight"
-msgstr "Poids total"
 
 #. module: mrp_business
 #: sql_constraint:mrp.meal.category:0
@@ -58,7 +58,7 @@ msgstr "Code de la fiche technique, composé du trigramme de votre activité, du
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__company_id
 msgid "Company"
-msgstr "Société"
+msgstr ""
 
 #. module: mrp_business
 #: model_terms:ir.ui.view,arch_db:mrp_business.view_mrp_business_product_form
@@ -79,6 +79,11 @@ msgstr "Créé le"
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__currency_id
 msgid "Currency"
 msgstr "Devise"
+
+#. module: mrp_business
+#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__diff_bom_qty_and_net_quantities
+msgid "Diff Bom Qty And Net Quantities"
+msgstr ""
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__display_name
@@ -148,7 +153,7 @@ msgid "Meal category"
 msgstr "Catégorie de repas"
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:86
+#: code:addons/mrp_business/models/mrp_bom.py:88
 #, python-format
 msgid "No Trigram on product %s "
 msgstr "Aucun trigramme sur l'Article %s "
@@ -180,18 +185,13 @@ msgstr "Article"
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__code
-msgid "Reference ℹ️"
-msgstr "Référence ℹ️"
+msgid "Reference"
+msgstr "Référence"
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_meal_category__sequence
 msgid "Sequence"
 msgstr "Séquence"
-
-#. module: mrp_business
-#: model:ir.model.fields,help:mrp_business.field_mrp_bom__time_to_produce
-msgid "Set this time with the unity of measure you want"
-msgstr "Temps à écrire avec l'unité de mesure que vous voulez."
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__description_short
@@ -201,7 +201,12 @@ msgstr "Description"
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__time_to_produce
 msgid "Time To Produce"
-msgstr "Temps"
+msgstr "Temps de production"
+
+#. module: mrp_business
+#: model:ir.model.fields,help:mrp_business.field_mrp_bom__time_to_produce
+msgid "Time in hour to produce this BoM."
+msgstr "Temps en heures de production de la Fiche Technique."
 
 #. module: mrp_business
 #: model:ir.model.fields,field_description:mrp_business.field_mrp_bom__tla_to_change
@@ -226,22 +231,12 @@ msgid "Very High"
 msgstr "Très haute"
 
 #. module: mrp_business
-#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__line_weight
-msgid "Weight"
-msgstr "Poids (kg)"
-
-#. module: mrp_business
-#: model:ir.model.fields,field_description:mrp_business.field_mrp_bom_line__line_weight_percentage
-msgid "Weight %"
-msgstr "Poids %"
-
-#. module: mrp_business
 #: model:ir.model.fields,help:mrp_business.field_mrp_bom__code_nb
 msgid "You can change it manually here and it will change reference."
 msgstr "Vous pouvez le changer directement ici et ça changera le code de la fiche technique."
 
 #. module: mrp_business
-#: code:addons/mrp_business/models/mrp_bom.py:83
+#: code:addons/mrp_business/models/mrp_bom.py:85
 #, python-format
 msgid "You need to change default trigram on product set to %s."
 msgstr "Vous devez changer le trigramme du produit qui a été défini à %s."

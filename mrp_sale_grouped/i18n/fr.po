@@ -104,18 +104,18 @@ msgstr "Abonnés (Partenaires)"
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_order__mrp_sale_grouped_id
 msgid "Grouped Sale Production"
-msgstr "Gestion groupée des ventes et de la production"
+msgstr "Groupe de ventes à produire"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_mrp_sale_grouped
 msgid "Grouped Sale and Production"
-msgstr "Gestion groupée des ventes et de la production"
+msgstr "Groupe de ventes à produire"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_sale_grouped
 #: model:ir.ui.menu,name:mrp_sale_grouped.menu_sale_grouped
 msgid "Grouped sales and production"
-msgstr "Gestion groupée des ventes et de la production"
+msgstr "Groupe de ventes à produire"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__id
