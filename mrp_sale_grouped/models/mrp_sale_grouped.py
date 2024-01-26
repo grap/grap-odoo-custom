@@ -7,7 +7,7 @@ from odoo import api, fields, models
 
 class MrpSaleGrouped(models.Model):
     _name = "mrp.sale.grouped"
-    _description = "Grouped Sale and Production"
+    _description = "Grouped Sale Production"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     _SALES_STATE_SELECTION = [

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 14:51+0000\n"
-"PO-Revision-Date: 2023-11-02 14:51+0000\n"
+"POT-Creation-Date: 2024-01-26 14:32+0000\n"
+"PO-Revision-Date: 2024-01-26 14:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -73,11 +73,6 @@ msgid "Created on"
 msgstr "Créé le"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__date
-msgid "Date"
-msgstr "Date "
-
-#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__display_name
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_report_mrp_sale_grouped_report_sale_grouped__display_name
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard__display_name
@@ -102,19 +97,16 @@ msgid "Followers (Partners)"
 msgstr "Abonnés (Partenaires)"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_order__mrp_sale_grouped_id
-msgid "Grouped Sale Production"
-msgstr "Groupe de ventes à produire"
-
-#. module: mrp_sale_grouped
-#: model:ir.model,name:mrp_sale_grouped.model_mrp_sale_grouped
-msgid "Grouped Sale and Production"
-msgstr "Groupe de ventes à produire"
+#: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__date
+msgid "For example, it will be used for production wizard PDF."
+msgstr "Cette date sera utilisée par exemple dans le PDF issu de l'assistant de production."
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_sale_grouped
+#: model:ir.model,name:mrp_sale_grouped.model_mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_order__mrp_sale_grouped_id
 #: model:ir.ui.menu,name:mrp_sale_grouped.menu_sale_grouped
-msgid "Grouped sales and production"
+msgid "Grouped Sale Production"
 msgstr "Groupe de ventes à produire"
 
 #. module: mrp_sale_grouped
@@ -197,6 +189,11 @@ msgid "Messages"
 msgstr ""
 
 #. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_bom_print_purchase_list_wizard__missing_boms_text
+msgid "Missing Boms Text"
+msgstr "Texte des Fiches Techniques manquantes"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__mrp_production_ids
 msgid "Mrp Production"
 msgstr ""
@@ -205,12 +202,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__mrp_production_qty
 msgid "Mrp Production Qty"
 msgstr ""
-
-#. module: mrp_sale_grouped
-#: model:product.product,name:mrp_sale_grouped.demo_product_mustard
-#: model:product.template,name:mrp_sale_grouped.demo_product_mustard_product_template
-msgid "Mustard"
-msgstr "Moutarde"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__name
@@ -278,12 +269,6 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: mrp_sale_grouped
-#: model:product.product,name:mrp_sale_grouped.demo_product_pie
-#: model:product.template,name:mrp_sale_grouped.demo_product_pie_product_template
-msgid "Pie"
-msgstr "Tarte"
-
-#. module: mrp_sale_grouped
 #: selection:mrp.sale.grouped,activity_state:0
 msgid "Planned"
 msgstr ""
@@ -326,6 +311,11 @@ msgstr "État de la Production"
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Production assistant"
 msgstr "Assistant de production"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__date
+msgid "Production date"
+msgstr "Date de production"
 
 #. module: mrp_sale_grouped
 #: selection:mrp.sale.grouped,production_state:0
@@ -414,12 +404,6 @@ msgid "See and update values"
 msgstr "Voir et mettre à jour les quantités"
 
 #. module: mrp_sale_grouped
-#: model:product.product,name:mrp_sale_grouped.demo_product_spinach
-#: model:product.template,name:mrp_sale_grouped.demo_product_spinach_product_template
-msgid "Spinach"
-msgstr "Épinard"
-
-#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_state
 msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
@@ -436,12 +420,10 @@ msgid "Technical field, used to display matrix with web_widget_x2many_2d_matrix 
 msgstr "Champ technique, utilisé pour afficher la matrice de produit, via le module web_widget_x2many_2d_matrix."
 
 #. module: mrp_sale_grouped
-#: code:addons/mrp_sale_grouped/wizard/bom_print_purchase_list_wizard.py:130
-#, python-format
-msgid "These products don't have any Bill Of Material: %s                          \n"
-"Create them before launching the assistant again."
-msgstr "Ces articles n'ont pas de Fiche Technique : %s                          \n"
-"Les créer avant de relancer l'assistant."
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_production_assistant_wizard
+msgid "These products are sold but don't have any Bill Of Material, so they can't be\n"
+"                   in this Production assistant:"
+msgstr ""
 
 #. module: mrp_sale_grouped
 #: selection:mrp.sale.grouped,activity_state:0
@@ -449,29 +431,9 @@ msgid "Today"
 msgstr "Aujourd'hui"
 
 #. module: mrp_sale_grouped
-#: model:product.product,name:mrp_sale_grouped.demo_product_tomato_tart
-#: model:product.template,name:mrp_sale_grouped.demo_product_template_tomato_tart
-msgid "Tomato pie"
-msgstr "Tarte à la tomate"
-
-#. module: mrp_sale_grouped
-#: model:product.product,name:mrp_sale_grouped.demo_product_tomato
-#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_product_template
-msgid "Tomatoes"
-msgstr "Tomates"
-
-#. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Total"
 msgstr ""
-
-#. module: mrp_sale_grouped
-#: model:product.product,uom_name:mrp_sale_grouped.demo_product_pie
-#: model:product.product,uom_name:mrp_sale_grouped.demo_product_tomato_tart
-#: model:product.template,uom_name:mrp_sale_grouped.demo_product_pie_product_template
-#: model:product.template,uom_name:mrp_sale_grouped.demo_product_template_tomato_tart
-msgid "Unit(s)"
-msgstr "Unité(s)"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_unread
@@ -526,26 +488,6 @@ msgstr ""
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_x2m_matrix_grouped_sales_wizard
 msgid "X2Many Matrix Grouped Sales Wizard"
-msgstr ""
-
-#. module: mrp_sale_grouped
-#: model:product.product,uom_name:mrp_sale_grouped.demo_product_mustard
-#: model:product.product,uom_name:mrp_sale_grouped.demo_product_spinach
-#: model:product.product,uom_name:mrp_sale_grouped.demo_product_tomato
-#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_mustard
-#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_pie
-#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_spinach
-#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_tomato
-#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_tomato_tart
-#: model:product.template,uom_name:mrp_sale_grouped.demo_product_mustard_product_template
-#: model:product.template,uom_name:mrp_sale_grouped.demo_product_spinach_product_template
-#: model:product.template,uom_name:mrp_sale_grouped.demo_product_tomato_product_template
-#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_mustard_product_template
-#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_pie_product_template
-#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_spinach_product_template
-#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_template_tomato_tart
-#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_tomato_product_template
-msgid "kg"
 msgstr ""
 
 #. module: mrp_sale_grouped
