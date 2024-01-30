@@ -65,7 +65,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_product_product_mrp_tree" model="ir.ui.view">
         <field name="model">product.product</field>
         <field name="arch" type="xml">
-            <tree editable="bottom" create="false">
+            <tree editable="bottom" create="false" decoration-danger="standard_price == 0">
                 <field name="default_code" string="Ref."/>
                 <field name="name"/>
                 <field name="categ_id" string="Categ."/>
