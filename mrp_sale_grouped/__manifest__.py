@@ -5,7 +5,7 @@
 {
     "name": "MRP Grouped Sales and Production",
     "summary": "Quickly manage what you need to produce thanks to grouped sales",
-    "version": "12.0.1.2.0",
+    "version": "12.0.1.2.1",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
