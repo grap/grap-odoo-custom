@@ -40,6 +40,7 @@
         "views/view_product_template.xml",
         "views/view_seasonality.xml",
         "views/assets.xml",
+        "data/ir_cron.xml",
     ],
     "images": [
         "./static/img/tomato_pie.png",

@@ -57,18 +57,23 @@ class MrpBom(models.Model):
                 bom.bom_allergen_ids = [x.id for x in bom_line.product_id.allergen_ids]
 
     @api.multi
+    def _is_bom_seasonal(self):
+        self.ensure_one()
+        # One Tag is in season, and we considere the BoM in season
+        today = fields.Date.today()
+        for period in self.mapped("bom_season_ids.seasonality_line_ids"):
+            if period.date_start <= today <= period.date_end:
+                return True
+        return False
+
+    @api.multi
     @api.depends("product_id", "bom_season_ids", "bom_line_ids")
     def _compute_seasonal(self):
         for bom in self:
             # Handling BoM Seasonalities
             # One Tag is in season, and we considere the BoM in season
-            today = fields.Date.today()
-            # for seasonality in bom.bom_season_ids:
-            #     for period in seasonality.seasonality_line_ids:
-            for period in bom.mapped("bom_season_ids.seasonality_line_ids"):
-                if period.date_start <= today <= period.date_end:
-                    bom.is_bom_seasonal = True
-                    break
+            bom.is_bom_seasonal = bom._is_bom_seasonal()
+
             #  Handling BoM Lines Seasonalities.
             #  One Line not in season and we considere the BoM Lines not in season
             bom.are_bom_lines_seasonals = True
@@ -88,3 +93,23 @@ class MrpBom(models.Model):
             ):
                 bom.products_not_in_season += str(bom_line.product_id.name) + ", "
             bom.products_not_in_season = bom.products_not_in_season[:-2] + "."
+
+    @api.model
+    def cron_seasonality_bom_check_state(self):
+        self.update_seasonality_value()
+
+    @api.model
+    def update_seasonality_value(self):
+        all_boms = self.env["mrp.bom"].search([("bom_season_ids", "!=", False)])
+
+        # Search values that will be updated
+        boms_to_update = {}
+        for bom in all_boms:
+            new_is_seasonal = bom._is_bom_seasonal()
+            if bom.is_bom_seasonal != new_is_seasonal:
+                boms_to_update[bom.id] = {"is_bom_seasonal": new_is_seasonal}
+
+        # Update all products in one write call
+        if boms_to_update:
+            for bom_id, values in boms_to_update.items():
+                self.env["mrp.bom"].browse(bom_id).write(values)
