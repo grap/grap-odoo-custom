@@ -14,10 +14,12 @@ class MrpBomLine(models.Model):
     line_gross_weight = fields.Float(
         string="Gross weight",
         compute="_compute_line_gross_weight",
+        digits=dp.get_precision("Product Unit of Measure"),
     )
     line_net_weight = fields.Float(
         string="Net weight",
         compute="_compute_line_net_weight",
+        digits=dp.get_precision("Product Unit of Measure"),
     )
     line_net_weight_percentage = fields.Float(
         string="Net weight %",
