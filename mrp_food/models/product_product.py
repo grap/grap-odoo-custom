@@ -62,6 +62,7 @@ class ProductProduct(models.Model):
         for product in self:
             product.date_last_statement_price = fields.Date.today()
 
+    @api.depends("product_seasonality_ids")
     @api.multi
     def _compute_is_seasonal(self):
         today = fields.Date.today()
