@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2024 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_production_assistant_wizard" model="ir.ui.view">
+        <field name="model">bom.print.purchase.list.wizard</field>
+        <field name="inherit_id" ref="mrp_bom_purchase.view_bom_print_purchase_list_wizard_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='wizard_options']" position="before">
+                <div class="other_text alert alert-info col-8" role="status">
+                   These products are sold but don't have any Bill Of Material, so they can't be
+                   in this Production assistant:
+                   <b><field name="missing_boms_text" readonly="1"/></b>
+                </div>
+                <br/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

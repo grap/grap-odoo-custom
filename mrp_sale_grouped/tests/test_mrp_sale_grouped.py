@@ -2,7 +2,6 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.exceptions import Warning as UserError
 from odoo.tests.common import TransactionCase
 
 
@@ -65,9 +64,3 @@ class TestMrpSaleGrouped(TransactionCase):
             active_ids=[self.mrp_sale_grouped_with_boms.id],
             active_model="mrp.sale.grouped",
         ).create({})
-
-    def test_06_check_wizard_production_without_boms(self):
-        with self.assertRaises(UserError):
-            self.wizard_purchase_list_obj.with_context(
-                active_ids=[self.mrp_sale_grouped_1.id], active_model="mrp.sale.grouped"
-            ).create({})
