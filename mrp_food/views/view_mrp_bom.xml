@@ -34,7 +34,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
             <xpath expr="//field[@name='company_id']" position="after">
                 <br/>
-                <field name="bom_season_ids" string="Seasonality ℹ️" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
+                <field name="bom_season_ids" string="Seasonality" groups="mrp_food.seasonality_manager" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}"/>
                 <field name="is_bom_seasonal" groups="base.group_no_one"/>
                 <field name="are_bom_lines_seasonals" groups="base.group_no_one"/>
                 <field name="bom_allergen_ids" widget="many2many_tags"/>

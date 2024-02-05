@@ -39,7 +39,7 @@ class MrpBom(models.Model):
         store=True,
     )
     code = fields.Char(
-        string="Reference ℹ️",
+        string="Reference",
         compute="_compute_proposal_code",
         help="Code of the BoM, composed of the trigram of your activity, the "
         "trigram of the product (which can be modified on its form) and a unique number",
@@ -47,9 +47,7 @@ class MrpBom(models.Model):
     )
 
     # ========== Fields for Time
-    time_to_produce = fields.Float(
-        help="Set this time with the unity of measure you want", store=True
-    )
+    time_to_produce = fields.Float(help="Time in hour to produce this BoM.", store=True)
     # ========== Fields for mrp_bom_line_net_qty
     diff_bom_qty_and_net_quantities = fields.Float(
         digits=dp.get_precision("Product Price"),
