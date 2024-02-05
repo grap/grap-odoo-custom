@@ -5,7 +5,7 @@
 {
     "name": "MRP for Food",
     "summary": "MRP modules adapted for food-related professions",
-    "version": "12.0.2.1.0",
+    "version": "12.0.2.2.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

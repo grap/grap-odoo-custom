@@ -34,7 +34,7 @@ addon | version | maintainers | summary
 [grap_change_views_base](grap_change_views_base/) | 12.0.0.1.5 |  | GRAP - Change Base Views
 [grap_change_views_calendar](grap_change_views_calendar/) | 12.0.1.0.3 |  | GRAP - Change Calendar Views
 [grap_change_views_mail](grap_change_views_mail/) | 12.0.1.1.2 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | GRAP - Change Mail Views
-[grap_change_views_mrp](grap_change_views_mrp/) | 12.0.1.2.0 |  | GRAP - Change Views MRP
+[grap_change_views_mrp](grap_change_views_mrp/) | 12.0.1.3.0 |  | GRAP - Change Views MRP
 [grap_change_views_partner](grap_change_views_partner/) | 12.0.0.0.20 |  | GRAP - Change Partner Views
 [grap_change_views_pos](grap_change_views_pos/) | 12.0.1.1.9 |  | GRAP - Change POS Views
 [grap_change_views_product](grap_change_views_product/) | 12.0.0.1.31 |  | GRAP - Change Views Product
@@ -56,9 +56,9 @@ addon | version | maintainers | summary
 [mrp_bom_sale_product_margin](mrp_bom_sale_product_margin/) | 12.0.1.2.0 |  | Handle Sale price for product's bom with margin
 [mrp_bom_simple_report](mrp_bom_simple_report/) | 12.0.1.0.1 |  | Print simple report for your Bill of Materials
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.3 |  | Add tags on your BoM to find it easily
-[mrp_business](mrp_business/) | 12.0.1.2.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
-[mrp_food](mrp_food/) | 12.0.2.1.0 |  | MRP modules adapted for food-related professions
-[mrp_sale_grouped](mrp_sale_grouped/) | 12.0.1.3.0 |  | Quickly manage what you need to produce thanks to grouped sales
+[mrp_business](mrp_business/) | 12.0.1.3.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
+[mrp_food](mrp_food/) | 12.0.2.2.0 |  | MRP modules adapted for food-related professions
+[mrp_sale_grouped](mrp_sale_grouped/) | 12.0.1.4.0 |  | Quickly manage what you need to produce thanks to grouped sales
 [product_main_seller](product_main_seller/) | 12.0.1.1.6 |  | Product Attribute - Main seller for a product
 [product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.4 |  | Product supplier easily connected to product's standard price
 [server_environment_files](server_environment_files/) | 12.0.1.0.5 |  | Add custom CSS and extra text on PoS ticket depending on the environment

@@ -4,7 +4,7 @@
 
 {
     "name": "GRAP - Change Views MRP",
-    "version": "12.0.1.2.0",
+    "version": "12.0.1.3.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
