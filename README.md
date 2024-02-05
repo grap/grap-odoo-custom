@@ -49,7 +49,7 @@ addon | version | maintainers | summary
 [grap_qweb_report](grap_qweb_report/) | 12.0.2.1.3 |  | GRAP - Custom Qweb Reports
 [grap_theme](grap_theme/) | 12.0.1.3.5 |  | Customize Odoo web User Interface
 [mrp_bom_line_has_bom](mrp_bom_line_has_bom/) | 12.0.1.1.1 |  | MRP BoM Line Has BoM
-[mrp_bom_line_net_qty](mrp_bom_line_net_qty/) | 12.0.1.1.0 |  | MRP BoM Line Net and Gross Quantity
+[mrp_bom_line_net_qty](mrp_bom_line_net_qty/) | 12.0.1.1.1 |  | MRP BoM Line Net and Gross Quantity
 [mrp_bom_print](mrp_bom_print/) | 12.0.1.1.3 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_product_variant](mrp_bom_product_variant/) | 12.0.0.1.2 |  | MRP BoM Product Variant
 [mrp_bom_purchase](mrp_bom_purchase/) | 12.0.1.3.0 |  | Handle purchase from your Bill of Materials
