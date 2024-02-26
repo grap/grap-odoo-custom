@@ -10,7 +10,6 @@ from odoo.addons import decimal_precision as dp
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
-    # ========== Fields related to weight
     bom_components_total_net_weight = fields.Float(
         string="Net weight of components",
         compute="_compute_bom_components_total_net_weight",

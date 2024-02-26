@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_bom_weight
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-26 14:51+0000\n"
+"PO-Revision-Date: 2024-02-26 14:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_bom_weight
+#: model:ir.model,name:mrp_bom_weight.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Fiche technique"
+
+#. module: mrp_bom_weight
+#: model:ir.model,name:mrp_bom_weight.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Ligne de fiche technique"
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom__diff_bom_qty_and_net_quantities
+msgid "Diff Bom Qty And Net Quantities"
+msgstr ""
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom__display_set_quantity_with_net_quantities
+msgid "Display Set Quantity With Net Quantities"
+msgstr ""
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom_line__line_gross_weight
+msgid "Gross weight"
+msgstr "Poids brut"
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom__bom_components_total_gross_weight
+msgid "Gross weight of components"
+msgstr "Poids brut total"
+
+#. module: mrp_bom_weight
+#: model_terms:ir.ui.view,arch_db:mrp_bom_weight.view_mrp_bom_form
+msgid "It will set BoM quantity with sum of net weight quantities"
+msgstr "Cela définira la quantité de la recette avec la somme des poids nets des matières premières"
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom_line__line_net_weight
+msgid "Net weight"
+msgstr "Poids net"
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom_line__line_net_weight_percentage
+msgid "Net weight %"
+msgstr "Poids net %"
+
+#. module: mrp_bom_weight
+#: model:ir.model.fields,field_description:mrp_bom_weight.field_mrp_bom__bom_components_total_net_weight
+msgid "Net weight of components"
+msgstr "Poids net total"
+
+#. module: mrp_bom_weight
+#: model_terms:ir.ui.view,arch_db:mrp_bom_weight.view_mrp_bom_form
+msgid "⇑ Update BoM quantity"
+msgstr "⇑ Mettre à jour la quantité de la recette"
