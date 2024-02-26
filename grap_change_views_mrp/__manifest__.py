@@ -32,6 +32,7 @@
         "mrp_bom_tag",
         "mrp_bom_line_has_bom",
         "mrp_bom_line_net_qty",
+        "mrp_bom_weight",
     ],
     "data": [
         "views/view_mrp_bom.xml",
