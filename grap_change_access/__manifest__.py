@@ -12,6 +12,7 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
+        "mrp",
         "sales_team",
         "point_of_sale",
         "purchase",
