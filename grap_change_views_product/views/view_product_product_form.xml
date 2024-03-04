@@ -159,6 +159,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="standard_price_tax_included" string="Cost Price (VAT Incl.)"
                                         groups="base.group_erp_manager" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
                                     <field name="product_main_seller_partner_id"/>
+                                    <field name="diff_product_main_first_seller" groups="base.group_no_one"/>
+                                    <button name="set_main_seller" string="⇒ Calculate Main supplier"
+                                        type="object" class="oe_link"
+                                        attrs="{'invisible': [('diff_product_main_first_seller', '=', False)]}"
+                                        help="Calculate Main supplier with first seller on suppliers info list."/>
                                     <field name="fiscal_classification_id" quick_create="false" required="1"/>
                                 </group>
                                 <group string="Sale">

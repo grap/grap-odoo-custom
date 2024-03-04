@@ -17,6 +17,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//group[@name='vendors']" position="before">
               <group string="Main Vendor" name="main_vendor">
                   <field name="product_main_seller_partner_id"/>
+                  <field name="diff_product_main_first_seller" groups="base.group_no_one"/>
+                  <button name="set_main_seller" string="⇒ Calculate Main supplier"
+                      type="object" class="oe_link"
+                      attrs="{'invisible': [('diff_product_main_first_seller', '=', False)]}"
+                      help="Calculate Main supplier with first seller on suppliers info list."/>
               </group>
             </xpath>
         </field>
