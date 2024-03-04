@@ -75,3 +75,10 @@ class TestSeller(TransactionCase):
             self.product_workplace.product_main_seller_partner_id.id,
             self.partner_azure.id,
         )
+
+    def test_04_update_supplierinfo(self):
+        self.product_acoustic.seller_ids.write({"name": self.partner_azure.id})
+        self.assertEqual(
+            self.product_acoustic.product_main_seller_partner_id.id,
+            self.partner_azure.id,
+        )

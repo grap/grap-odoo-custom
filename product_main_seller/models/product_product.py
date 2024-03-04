@@ -17,7 +17,7 @@ class ProductProduct(models.Model):
     )
 
     @api.multi
-    @api.depends("variant_seller_ids.sequence")
+    @api.depends("variant_seller_ids.sequence", "variant_seller_ids.name")
     def _compute_main_seller_partner_id(self):
         for prod in self:
             if len(prod.variant_seller_ids):
