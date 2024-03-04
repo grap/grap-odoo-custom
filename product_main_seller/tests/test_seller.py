@@ -82,3 +82,10 @@ class TestSeller(TransactionCase):
             self.product_acoustic.product_main_seller_partner_id.id,
             self.partner_azure.id,
         )
+
+    def test_05_unlink_supplierinfo(self):
+        self.product_acoustic.seller_ids.unlink()
+        self.assertEqual(
+            self.product_acoustic.product_main_seller_partner_id.id,
+            False,
+        )
