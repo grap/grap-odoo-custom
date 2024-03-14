@@ -40,8 +40,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           type="object" class="oe_link"
                           attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
                 </div>
-                <field name="description_short"/>
-                <field name="description_long"/>
             </xpath>
 
             <xpath expr="//field[@name='ready_to_produce']/../..//field[@name='sequence']" position="before">
@@ -60,7 +58,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
-                <field name="description_short"/>
                 <field name="priority" widget="priority"/>
                 <field name="time_to_produce"/>
             </xpath>
