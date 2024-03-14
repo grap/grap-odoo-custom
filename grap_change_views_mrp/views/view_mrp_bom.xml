@@ -97,8 +97,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           type="object" class="oe_link"
                           attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
                         </div>
-                        <field name="description_short"/>
-                        <field name="description_long"/>
                       <!-- / mrp_business -->
                       <!-- mrp_bom_tag -->
                       <field name="bom_tag_ids" widget="many2many_tags" string="Tags 🎨"
@@ -257,6 +255,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           </tree>
                       </field>
                   </page>
+                  <page string="Notes">
+                    <group>
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                  </page>
                   <page string="Miscellaneous" groups="base.group_no_one">
                       <group>
                           <group>
@@ -307,7 +310,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
                 <field name="routing_id" groups="mrp.group_mrp_routings"/>
                 <!-- mrp_business and mrp_bom_tag-->
-                <field name="description_short"/>
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="priority" widget="priority"/>
                 <field name="time_to_produce"/>
@@ -341,7 +343,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
                 <field name="routing_id" groups="mrp.group_mrp_routings"/>
                 <!-- mrp_business and mrp_bom_tag-->
-                <field name="description_short"/>
                 <field name="bom_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="priority" widget="priority"/>
                 <field name="time_to_produce"/>
@@ -372,7 +373,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_id" string="Product"/>
                 <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
                 <!-- mrp_business and mrp_bom_tag-->
-                <field name="description_short"/>
                 <field name="priority" widget="priority"/>
                 <!-- mrp_bom_sale_product_margin -->
                 <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
@@ -394,7 +394,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="product_id" string="Product"/>
                 <field name="product_uom_id" string="UoM" groups="uom.group_uom"/>
                 <!-- mrp_business and mrp_bom_tag-->
-                <field name="description_short"/>
                 <field name="priority" widget="priority"/>
                 <!-- mrp_bom_sale_product_margin -->
                 <field name="diff_product_bom_standard_price" string="Diff BoM and Product" groups="base.group_no_one"/>
