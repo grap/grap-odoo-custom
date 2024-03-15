@@ -26,6 +26,7 @@ def migrate(env, version):
         env.cr,
         """
         UPDATE mrp_bom
-        SET notes = '<p>' || description_short || '<br/>' || description_long || '</p>';
+        SET notes = CONCAT('<p>' || COALESCE(description_short, '') ||
+            '<br/>' || COALESCE(description_long, '') || '</p>');
     """,
     )
