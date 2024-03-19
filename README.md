@@ -57,7 +57,7 @@ addon | version | maintainers | summary
 [mrp_bom_simple_report](mrp_bom_simple_report/) | 12.0.1.0.1 |  | Print simple report for your Bill of Materials
 [mrp_bom_tag](mrp_bom_tag/) | 12.0.1.1.3 |  | Add tags on your BoM to find it easily
 [mrp_bom_weight](mrp_bom_weight/) | 12.0.1.1.1 |  | MRP BoM Weight
-[mrp_business](mrp_business/) | 12.0.1.3.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
+[mrp_business](mrp_business/) | 12.0.1.4.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_food](mrp_food/) | 12.0.2.2.1 |  | MRP modules adapted for food-related professions
 [mrp_sale_grouped](mrp_sale_grouped/) | 12.0.1.4.0 |  | Quickly manage what you need to produce thanks to grouped sales
 [product_main_seller](product_main_seller/) | 12.0.1.2.0 |  | Product Attribute - Main seller for a product
