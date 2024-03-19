@@ -15,6 +15,8 @@
         # GRAP
         "mrp_business",
         "mrp_bom_sale_product_margin",
+        # OCA
+        "mrp_bom_note",
     ],
     "data": [
         "data/report_paperformat.xml",

@@ -51,10 +51,10 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
         compute="_compute_wizard_line_subtotal",
     )
 
-    @api.depends("bom_id")
+    @api.depends("bom_id.description_packaging")
     def _compute_bom_description(self):
         for line in self.filtered(lambda x: x.bom_id):
-            line.bom_description = line.bom_id.description_short
+            line.bom_description = line.bom_id.description_packaging
 
     @api.depends("bom_id", "quantity")
     def _compute_wizard_line_subtotal(self):

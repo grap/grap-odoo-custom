@@ -23,7 +23,7 @@ class TestMrpBomPurchase(TransactionCase):
     def test_02_check_wizard_bom_description(self):
         # Add description in bom
         new_description = "Nice office to work on overturning capitalism"
-        self.bom_desk.description_short = new_description
+        self.bom_desk.description_packaging = new_description
         # Create wizard with Table "desk"
         wizard_obj = self.env["bom.print.purchase.list.wizard"]
         wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})

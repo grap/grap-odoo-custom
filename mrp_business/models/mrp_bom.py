@@ -15,8 +15,6 @@ class MrpBom(models.Model):
     # ========== Divers
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
     description_packaging = fields.Char(string="Packaging description")
-    description_short = fields.Char(string="Short description")
-    description_long = fields.Text(string="Long description")
     # Tracking not possible for One2many
     # bom_line_ids = fields.One2many(track_visibility="onchange")
     priority = fields.Selection(

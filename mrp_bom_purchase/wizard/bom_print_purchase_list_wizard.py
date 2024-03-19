@@ -104,7 +104,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
                         "currency_id": bom.currency_id,
                         "bom_uom_id": bom.product_uom_id,
                         "bom_origin": bom_and_quantity["bom_origin"],
-                        "bom_description": bom.description_short,
+                        "bom_description": bom.description_packaging,
                         "bom_product_qty": bom.product_qty,
                         "quantity": bom_and_quantity["bom_qty"],
                         # standard_price_total is already divide for product unit

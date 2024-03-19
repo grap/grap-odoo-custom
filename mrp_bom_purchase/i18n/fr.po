@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-30 13:02+0000\n"
-"PO-Revision-Date: 2023-10-30 13:02+0000\n"
+"POT-Creation-Date: 2024-03-14 15:44+0000\n"
+"PO-Revision-Date: 2024-03-14 15:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,8 @@ msgstr "(pour"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
-msgid "<b>Long description: </b>"
-msgstr "<b>Description longue : </b>"
-
-#. module: mrp_bom_purchase
-#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Quantity: </b>"
 msgstr "<b>Quantité : </b>"
-
-#. module: mrp_bom_purchase
-#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
-msgid "<b>Short description: </b>"
-msgstr "<b>Description courte : </b>"
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
@@ -44,6 +34,11 @@ msgstr "<b>Total basé sur le coût des fiches techniques :</b>"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
 msgid "<b>Total based on Products cost:</b>"
 msgstr "<b>Total basé sur le coût des produits :</b>"
+
+#. module: mrp_bom_purchase
+#: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
+msgid "<br/><span class=\"bom-description\"><b>Notes</b></span>"
+msgstr ""
 
 #. module: mrp_bom_purchase
 #: model_terms:ir.ui.view,arch_db:mrp_bom_purchase.report_bom_purchase_list
