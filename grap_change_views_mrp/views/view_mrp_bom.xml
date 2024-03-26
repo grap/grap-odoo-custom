@@ -87,17 +87,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                   </group>
                   <group string="BoM configuration">
-                      <field name="code" invisible="1"/>
-                      <!-- mrp_business -->
-                      <field name="tla_to_change" invisible="1"/>
-                      <label for="code"/>
-                      <div>
-                        <field name="code" class="oe_inline"/>
-                        <button name="generate_product_tla" string="⇒ Set Code"
-                          type="object" class="oe_link"
-                          attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
-                        </div>
-                      <!-- / mrp_business -->
+                      <field name="code"/>
                       <!-- mrp_bom_tag -->
                       <field name="bom_tag_ids" widget="many2many_tags" string="Tags 🎨"
                         options="{'color_field': 'color', 'no_quick_create': True}"
@@ -263,9 +253,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <page string="Miscellaneous" groups="base.group_no_one">
                       <group>
                           <group>
-                              <!-- mrp_business -->
-                              <field name="code_nb"/><br/>
-                              <!-- / mrp_business -->
                               <field name="sequence"/>
                           </group>
                           <group>

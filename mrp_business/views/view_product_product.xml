@@ -17,14 +17,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
           <xpath expr="//field[@name='default_code']" position="after">
               <field name="meal_category_id"/>
-              <field name="tla_to_change" invisible="1"/>
-              <label for="tla"/>
-              <div>
-                <field name="tla" class="oe_inline"/>
-                <button name="generate_tla" string="⇒ Generate new trigram"
-                        type="object" class="oe_link"
-                        help="Create an automatic trigram. Change its BoM references with this trigram."/>
-              </div>
           </xpath>
 
         </field>
