@@ -14,9 +14,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='code']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
             <xpath expr="//field[@name='product_uom_id']/.." position="after">
               <field name="description_packaging"/>
               <field name="meal_category_id"/>
@@ -31,21 +28,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <span> hours</span>
                 </div>
             </xpath>
-            <xpath expr="//field[@name='code']" position="after">
-                <field name="tla_to_change" invisible="1"/>
-                <label for="code"/>
-                <div>
-                  <field name="code" class="oe_inline"/>
-                  <button name="generate_product_tla" string="⇒ Set Code"
-                          type="object" class="oe_link"
-                          attrs="{'invisible': [('tla_to_change', '=', False)]}"/>
-                </div>
-            </xpath>
-
-            <xpath expr="//field[@name='ready_to_produce']/../..//field[@name='sequence']" position="before">
-              <field name="code_nb"/><br/>
-            </xpath>
-
         </field>
     </record>
 
