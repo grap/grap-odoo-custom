@@ -34,6 +34,8 @@
         "views/view_grap_mandate.xml",
         "views/view_grap_people.xml",
         "views/view_res_company.xml",
+        "views/view_res_company_lead.xml",
+        "views/view_res_company_lead_stage.xml",
         "views/view_res_company_category.xml",
     ],
     "demo": [
