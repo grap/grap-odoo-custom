@@ -58,6 +58,10 @@ class ResCompany(models.Model):
 
     it_referent_id = fields.Many2one(string="IT Referent", comodel_name="grap.people")
 
+    communication_referent_id = fields.Many2one(
+        string="Communication Referent", comodel_name="grap.people"
+    )
+
     # Interlocutors in Service Team
     accounting_interlocutor_id = fields.Many2one(
         string="Accounting Interlocutor", comodel_name="grap.people"

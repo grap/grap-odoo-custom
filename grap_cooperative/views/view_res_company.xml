@@ -136,6 +136,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="accounting_referent_id"
                                    domain="[('company_id','=', id)]"
                                    context="{'default_last_name': accounting_referent_id}"/>
+                            <field name="communication_referent_id"
+                                   domain="[('company_id','=', id)]"/>
                             <field name="it_referent_id"
                                    domain="[('company_id','=', id)]"/>
                             <field name="hr_referent_id"
