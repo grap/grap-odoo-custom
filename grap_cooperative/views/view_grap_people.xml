@@ -26,6 +26,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <tree>
                 <field name="last_name"/>
                 <field name="first_name"/>
+                <field name="pronouns"/>
                 <field name="company_id" />
                 <field name="working_email" widget="email"/>
                 <field name="working_phone" widget="phone"/>
@@ -47,8 +48,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <h1>
                             <field name="name" attrs="{'readonly': 1}" force_save="1"/>
                         </h1>
-                        <div class="oe_edit_only">
+                        <div>
                             <group>
+                                  <field name="pronouns" placeholder="To be completed with the person's explicit consent"/>
+                            </group>
+                            <group class="oe_edit_only">
                                 <field name="first_name" default_focus="1"/>
                                 <field name="last_name"/>
                             </group>
@@ -105,7 +109,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <div class="o_kanban_record_headings">
                                         <strong class="o_kanban_record_title">
                                             <ul>
-                                              <li><field name="name"/></li>
+                                              <li><field name="name"/> <span t-if="record.pronouns.raw_value">(<field name="pronouns"/>)</span></li>
                                               <li><field name="company_code"/> - <field name="company_id"/></li>
                                             </ul>
                                         </strong>
@@ -155,6 +159,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="name" invisible="1"/>
                 <field name="last_name"/>
                 <field name="first_name"/>
+                <field name="pronouns"/>
                 <field name="company_id" />
                 <field name="working_email" widget="email"/>
                 <field name="working_phone" widget="phone"/>

@@ -380,6 +380,11 @@ msgid "Profession"
 msgstr ""
 
 #. module: grap_cooperative
+#: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__pronouns
+msgid "Pronoun(s)"
+msgstr "Pronoms(s)"
+
+#. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_company_category_kanban
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_college_kanban
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_mandate_kanban
@@ -410,6 +415,11 @@ msgstr "Equipe"
 #: model:ir.ui.menu,name:grap_cooperative.menu_root
 msgid "The Cooperative"
 msgstr "La Coopérative"
+
+#. module: grap_cooperative
+#: model_terms:ir.ui.view,arch_db:grap_cooperative.view_grap_people_form
+msgid "To be completed with the person's explicit consent"
+msgstr "À compléter avec le consentement explicite de la personne"
 
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_res_company__people_ids

@@ -20,6 +20,8 @@ class GrapPeople(models.Model):
 
     last_name = fields.Char(string="Last name", required=True)
 
+    pronouns = fields.Char(string="Pronoun(s)")
+
     image = fields.Binary(string="Image", attachment=True)
 
     image_medium = fields.Binary(string="Medium-sized image", attachment=True)
