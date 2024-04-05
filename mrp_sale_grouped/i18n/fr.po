@@ -139,6 +139,11 @@ msgid "Is Follower"
 msgstr "Est un abonné"
 
 #. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_order_search
+msgid "Last 31 days"
+msgstr "31 derniers jours"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped____last_update
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_report_mrp_sale_grouped_report_sale_grouped____last_update
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard____last_update

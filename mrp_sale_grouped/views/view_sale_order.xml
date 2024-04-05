@@ -16,4 +16,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_sale_order_search" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                <separator/>
+                <filter string="Last 31 days" name="last_31_days_sale" domain="[('date_order', '&gt;=', (context_today() - datetime.timedelta(days=31)).strftime('%Y-%m-%d'))]"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

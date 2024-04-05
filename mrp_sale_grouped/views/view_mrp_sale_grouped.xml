@@ -101,7 +101,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       ℹ️ Sales contains severals products that don't have any associated bill of material. Access them with the smart button on the right.
                     </div>
                     <group>
-                        <field name="order_ids" nolabel="1" widget="many2many">
+                        <field name="order_ids" nolabel="1" context="{'search_default_last_31_days_sale': 1}" widget="many2many" domain="[('state', '!=', 'cancel'), ('state', '!=', 'done')]">
                             <tree>
                               <field name="name"/>
                               <field name="date_order"/>
