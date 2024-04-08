@@ -382,7 +382,7 @@ msgstr ""
 #. module: grap_cooperative
 #: model:ir.model.fields,field_description:grap_cooperative.field_grap_people__pronouns
 msgid "Pronoun(s)"
-msgstr "Pronoms(s)"
+msgstr "Pronom(s)"
 
 #. module: grap_cooperative
 #: model_terms:ir.ui.view,arch_db:grap_cooperative.view_company_category_kanban
