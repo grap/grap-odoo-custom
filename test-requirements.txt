@@ -11,8 +11,8 @@ git+https://github.com/OCA/social@refs/pull/1238/head#subdirectory=setup/mail_te
 git+https://github.com/OCA/manufacture@refs/pull/798/head#subdirectory=setup/mrp_bom_widget_section_and_note_one2many
 
 # Coop It Easy Dependencies
-git+https://github.com/coopiteasy/addons@12.0#subdirectory=setup/account_customer_wallet
-git+https://github.com/coopiteasy/addons@12.0#subdirectory=setup/pos_customer_wallet
+git+https://github.com/legalsylvain/coopiteasy-addons@12.0-TMP-fix-bad-design-demo-data#subdirectory=setup/account_customer_wallet
+git+https://github.com/legalsylvain/coopiteasy-addons@12.0-TMP-fix-bad-design-demo-data#subdirectory=setup/pos_customer_wallet
 
 # GRAP Dependencies
 git+https://github.com/grap/grap-odoo-incubator@12.0#subdirectory=setup/name_search_reset_res_partner
