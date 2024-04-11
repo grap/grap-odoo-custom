@@ -300,6 +300,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </group>
                                 <group string="🍴 Alimentary and production informations 🚩">
                                     <field name="allergen_ids" widget="many2many_tags"/>
+                                    <field name="trace_allergen_ids" widget="many2many_tags"/>
                                     <field name="meal_category_id" groups="mrp.group_mrp_user"/>
                                     <field name="product_seasonality_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create': True}" groups="mrp.group_mrp_user"/>
                                     <field name="is_seasonal" groups="mrp.group_mrp_user"/>
