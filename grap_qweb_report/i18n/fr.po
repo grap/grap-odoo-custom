@@ -6,19 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-20 13:58+0000\n"
-"PO-Revision-Date: 2023-11-20 13:58+0000\n"
+"POT-Creation-Date: 2024-05-17 13:34+0000\n"
+"PO-Revision-Date: 2024-05-17 13:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "- Code:"
-msgstr "- Code : "
 
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
@@ -28,11 +23,6 @@ msgstr ""
 #. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
 msgid "<b> - TVA intracommunautaire : </b>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "Origine : "
 msgstr ""
 
 #. module: grap_qweb_report
@@ -53,47 +43,6 @@ msgid "<br/>\n"
 msgstr ""
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "<br/>Origin:"
-msgstr "<br/>Origine : "
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-msgid "<br/>Origine :"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "<span class=\"empty_field\">Ingrédients</span><br/>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "<span class=\"product_uom\">le kilo</span><br/>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "<span class=\"product_uom\">le litre</span><br/>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
-msgid "<span>Au L : </span>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
-msgid "<span>Au kg : </span>"
-msgstr ""
-
-#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_stock_delivery
 msgid "<span>Bon de livraison n° </span>"
 msgstr ""
@@ -102,14 +51,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.grap_external_layout
 msgid "<span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>\n"
 "                                    <br/>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
-msgid "<span>Pièce : </span>"
 msgstr ""
 
 #. module: grap_qweb_report
@@ -157,11 +98,6 @@ msgid "Anonymous"
 msgstr "Anonyme"
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "Barcode:"
-msgstr "Code barre :"
-
-#. module: grap_qweb_report
 #. openerp-web
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:90
 #, python-format
@@ -172,16 +108,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__border
 msgid "Border"
 msgstr "Bordure"
-
-#. module: grap_qweb_report
-#: model:product.print.category,name:grap_qweb_report.category_pricetag_square_large
-msgid "Carré large - 92x85mm"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model:product.print.category,name:grap_qweb_report.category_pricetag_square_small
-msgid "Carré petit - 30x30mm"
-msgstr ""
 
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__background_color
@@ -196,7 +122,7 @@ msgstr "Sociétés"
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__company_id
 msgid "Company"
-msgstr ""
+msgstr "Société"
 
 #. module: grap_qweb_report
 #: model:ir.model.fields,field_description:grap_qweb_report.field_report_custom_message__create_uid
@@ -241,14 +167,14 @@ msgid "Date de facture"
 msgstr ""
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:53
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:52
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.template_account_invoice
 #, python-format
 msgid "Description"
 msgstr ""
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:82
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:81
 #, python-format
 msgid "Discount %s %%"
 msgstr "Remise %s %%"
@@ -340,19 +266,6 @@ msgid "ID"
 msgstr ""
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
-msgid "Imprimée le"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Internal code: ["
-msgstr "Code : ["
-
-#. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_account_invoice
 msgid "Invoice"
 msgstr "Facture"
@@ -403,28 +316,12 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: grap_qweb_report
-#: model:product.print.category,name:grap_qweb_report.category_pricetag_large
-msgid "Normal (large) - 76x43mm"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model:product.print.category,name:grap_qweb_report.category_pricetag_small
-msgid "Normal (small) - 76x33mm"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Poids net<br/>"
-msgstr ""
-
-#. module: grap_qweb_report
 #: model_terms:ir.ui.view,arch_db:grap_qweb_report.view_report_custom_message_form
 msgid "Preview"
 msgstr "Prévisualiser"
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:91
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:90
 #, python-format
 msgid "Price Subtotal VAT Excl."
 msgstr "Sous Total HT"
@@ -438,21 +335,15 @@ msgid "Pricelist:"
 msgstr "Liste de prix: "
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_large
-msgid "Printed"
-msgstr "Imprimée le"
+#: model:ir.model,name:grap_qweb_report.model_product_product
+msgid "Product"
+msgstr "Article"
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:47
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:46
 #, python-format
 msgid "Product Name"
 msgstr "Nom Frs"
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Producteur·rice :"
-msgstr ""
 
 #. module: grap_qweb_report
 #: model:ir.model,name:grap_qweb_report.model_purchase_order
@@ -466,7 +357,7 @@ msgid "Purchase Order (XLSX)"
 msgstr "Commande fournisseur (XLSX)"
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:59
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:58
 #, python-format
 msgid "Quantity"
 msgstr "Quantité"
@@ -537,13 +428,13 @@ msgid "Transfer"
 msgstr "Transfert"
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:65
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:64
 #, python-format
 msgid "Unit"
 msgstr "Unité"
 
 #. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:71
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:70
 #, python-format
 msgid "Unit Price"
 msgstr "Prix Unitaire"
@@ -557,12 +448,6 @@ msgid "VAT"
 msgstr "TVA"
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "Volume<br/>"
-msgstr ""
-
-#. module: grap_qweb_report
 #. openerp-web
 #: code:addons/grap_qweb_report/static/src/xml/pos.xml:30
 #, python-format
@@ -570,34 +455,9 @@ msgid "______ Base"
 msgstr ""
 
 #. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-msgid "kg<br/>"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
-msgid "la pièce"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_large
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_normal_small
-#: model_terms:ir.ui.view,arch_db:grap_qweb_report.qweb_template_pricetag_square_small
-msgid "le kilo"
-msgstr ""
-
-#. module: grap_qweb_report
-#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:41
+#: code:addons/grap_qweb_report/report/report_purchase_order_xlsx.py:40
 #, python-format
 msgid "product Code"
-msgstr ""
-
-#. module: grap_qweb_report
-#: model:ir.model,name:grap_qweb_report.model_report_report_xlsx_partner_xlsx
-msgid "report.report_xlsx.partner_xlsx"
 msgstr ""
 
 #. module: grap_qweb_report
