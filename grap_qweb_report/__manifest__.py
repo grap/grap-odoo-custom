@@ -21,7 +21,6 @@
         "purchase_triple_discount",
         "report_xlsx_helper",
         # GRAP
-        "product_food",  # TODO, remove. For demo data only
         "base_company_legal_info",
         "fiscal_company_base",
         "stock_inventory_valuation",
