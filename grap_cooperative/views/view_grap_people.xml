@@ -138,7 +138,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="action_grap_people" model="ir.actions.act_window">
         <field name="name">Directory</field>
         <field name="res_model">grap.people</field>
-        <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 
@@ -168,7 +167,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="action_grap_people_editable" model="ir.actions.act_window">
         <field name="name">Directory (Editable View)</field>
         <field name="res_model">grap.people</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree</field>
         <field name="view_id" ref="view_grap_people_tree_editable"/>
     </record>

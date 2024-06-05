@@ -23,7 +23,6 @@ class GrapMandate(models.Model):
         string="People count", compute="_compute_people_qty", store=True
     )
 
-    @api.multi
     @api.depends("people_ids")
     def _compute_people_qty(self):
         for item in self:
