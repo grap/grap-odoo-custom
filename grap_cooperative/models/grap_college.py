@@ -22,7 +22,6 @@ class GrapCollege(models.Model):
         string="Members Quantity", compute="_compute_member_qty", store=True
     )
 
-    @api.multi
     @api.depends("member_ids.college_id")
     def _compute_member_qty(self):
         for item in self:
