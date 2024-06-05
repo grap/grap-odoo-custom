@@ -4,7 +4,6 @@
 
 
 def migrate(cr, version):
-
     # Compute fields for grap.people from grap.member
     cr.execute(
         """
