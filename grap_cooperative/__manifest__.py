@@ -6,7 +6,7 @@
 {
     "name": "GRAP - Cooperative",
     "summary": "Add Directories, Companies, Colleges, Peoples, etc.",
-    "version": "12.0.3.0.6",
+    "version": "12.0.3.1.0",
     "development_status": "Alpha",
     "category": "GRAP - Custom",
     "author": "GRAP",
