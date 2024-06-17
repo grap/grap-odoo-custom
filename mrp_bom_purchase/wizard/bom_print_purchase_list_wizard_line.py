@@ -5,7 +5,6 @@
 from odoo import api, fields, models
 
 
-
 class BomPrintPurchaseListWizardLine(models.TransientModel):
     _name = "bom.print.purchase.list.wizard.line"
     _description = (
@@ -23,7 +22,7 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
     )
 
     bom_description = fields.Char(
-        string="Description", compute="_compute_bom_description"
+        string="Packaging description", compute="_compute_bom_description"
     )
 
     # Fill in when assistant is called by other module
@@ -54,9 +53,13 @@ class BomPrintPurchaseListWizardLine(models.TransientModel):
     def _compute_bom_description(self):
         for line in self.filtered(lambda x: x.bom_id):
             line.bom_description = line.bom_id.description_packaging
+        for line in self.filtered(lambda x: not x.bom_id):
+            line.bom_description = False
 
     @api.depends("bom_id", "quantity")
     def _compute_wizard_line_subtotal(self):
         # standard_price_total is already divide for product unit
         for line in self.filtered(lambda x: x.bom_id):
-            line.wizard_line_subtotal = line.bom_id.standard_price_total * line.quantity
+            line.wizard_line_subtotal = line.bom_id.standard_price * line.quantity
+        for line in self.filtered(lambda x: not x.bom_id):
+            line.wizard_line_subtotal = 0

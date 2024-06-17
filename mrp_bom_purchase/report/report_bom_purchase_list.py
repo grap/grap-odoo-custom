@@ -165,11 +165,15 @@ class ReportBomPurchaseList(models.AbstractModel):
                         3,
                     )
                 else:
-                    data_produce[product_id] = {
-                        "to_produce_product_name": bom_line.product_id.name.capitalize(),
-                        "to_produce_product_in_bom_name": wiz_bom_line.bom_id.display_name
+                    _product_name = bom_line.product_id.name.capitalize()
+                    _product_in_bom_name = (
+                        wiz_bom_line.bom_id.display_name
                         + " x"
-                        + str(produce_product_qty),
+                        + str(produce_product_qty)
+                    )
+                    data_produce[product_id] = {
+                        "to_produce_product_name": _product_name,
+                        "to_produce_product_in_bom_name": _product_in_bom_name,
                         "to_produce_quantity": round(produce_product_qty, 3),
                         "to_produce_uom": bom_line.product_uom_id.name,
                         "to_produce_price_unit": bom_line.standard_price_unit,
@@ -195,7 +199,8 @@ class ReportBomPurchaseList(models.AbstractModel):
         wiz_boms_lines.mapped("bom_id")
 
         # ==== LINE_TEMPLATE and DATA_ALL_BOM
-        # Create template with as many zero as BoM to prepare data_list_matrix_product_bom
+        # Create template with as many zero as BoM
+        # to prepare data_list_matrix_product_bom
         # Look like : {10: [BomName1, 0], 5: [BomName2, 0]}
         # Need to go through nested boms one first time
         line_template = {}
@@ -255,7 +260,8 @@ class ReportBomPurchaseList(models.AbstractModel):
         pre_data_purchase = {}
         data_product_bom_qty = {}
 
-        # ==== Create pre_DATA_PRODUCE, pre_DATA_PURCHASE and pre_DATA_LIST_MATRIX_PRODUCT_BOM
+        # ==== Create pre_DATA_PRODUCE, pre_DATA_PURCHASE
+        #      and pre_DATA_LIST_MATRIX_PRODUCT_BOM
         for wiz_bom_line in wiz_boms_lines:
             bom = wiz_bom_line.bom_id
             bom_qty = bom.product_qty
@@ -364,10 +370,8 @@ class ReportBomPurchaseList(models.AbstractModel):
             bom_qty = bom.product_qty
             desired_bom_qty = wiz_bom.quantity
 
-            filtered_bom_lines = bom_lines.filtered(lambda line: line.bom_id == bom)
-
             tmp_bom_lines = []
-            for bom_line in filtered_bom_lines:
+            for bom_line in bom_lines:
                 product_qty = self.calculate_qty_for_one_product(
                     bom_line.product_qty, bom_qty, desired_bom_qty, 3
                 )
@@ -384,11 +388,11 @@ class ReportBomPurchaseList(models.AbstractModel):
                     bom.display_name,
                     desired_bom_qty,
                     wiz_bom.bom_uom_id.name,
-                    round(wiz_bom.bom_id.standard_price_total, 3),
+                    round(wiz_bom.bom_id.standard_price, 3),
                     round(wiz_bom.wizard_line_subtotal, 3),
                     tmp_bom_lines,
-                    bom.notes,
                     bom.description_packaging,
+                    # bom.notes,
                 ]
             )
         # manufacture_bom_list = [['SEITAN_BOM', 2.0, 'Unit(s)', 55.0, 110.0,

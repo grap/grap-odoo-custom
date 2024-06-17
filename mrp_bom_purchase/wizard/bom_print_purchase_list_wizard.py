@@ -108,7 +108,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
                         "bom_product_qty": bom.product_qty,
                         "quantity": bom_and_quantity["bom_qty"],
                         # standard_price_total is already divide for product unit
-                        "wizard_line_subtotal": bom.standard_price_total
+                        "wizard_line_subtotal": bom.standard_price
                         * bom_and_quantity["bom_qty"],
                     },
                 )

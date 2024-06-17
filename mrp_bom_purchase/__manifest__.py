@@ -12,20 +12,25 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        # GRAP
-        "mrp_business",
-        "mrp_bom_sale_product_margin",
-        # OCA
-        "mrp_bom_note",
+        "mrp_bom_product_price_margin",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/report_paperformat.xml",
         "report/report_bom_purchase_list.xml",
         "report/ir_actions_report.xml",
         "wizard/view_bom_print_purchase_list_wizard.xml",
+        "views/mrp_bom.xml",
         "views/action.xml",
-        "views/assets.xml",
         "views/menu.xml",
     ],
+    "assets": {
+        "web.report_assets_common": [
+            "mrp_bom_purchase/static/src/scss/mrp_bom_purchase.scss",
+        ],
+        "web.assets_backend": [
+            "mrp_bom_purchase/static/src/scss/mrp_bom_purchase.scss",
+        ],
+    },
     "installable": True,
 }
