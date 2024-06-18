@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bom_print_purchase_list_wizard,maccess_bom_print_purchase_list_wizard,mrp_bom_purchase.model_bom_print_purchase_list_wizard,base.group_user,1,1,1,1
-access_bom_print_purchase_list_wizard_line,access_bom_print_purchase_list_wizard_line,mrp_bom_purchase.model_bom_print_purchase_list_wizard_line,base.group_user,1,1,1,1
