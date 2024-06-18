@@ -1,3 +1,6 @@
-body .bg-100 {
+main{
+    background-color:#AAFFAA !important;
+}
+.card-body{
     background-color:#AAFFAA !important;
 }

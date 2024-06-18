@@ -1,19 +1,12 @@
-div .pos-content {
+div .product-list-container {
     background-color:#AAFFFF !important;
 }
-
-div .leftpane {
+div .rightpane-header {
     background-color:#AAFFFF !important;
 }
-
 div .order {
     background-color:#AAFFFF !important;
 }
-
-div .order-container {
-    background-color:#AAFFFF !important;
-}
-
-div .screen {
+div .screen-content {
     background-color:#AAFFFF !important;
 }

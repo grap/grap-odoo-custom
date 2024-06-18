@@ -4,7 +4,7 @@
 
 
 {
-    "name": "GRAP - Configuration Environment Files",
+    "name": "Fermente - Configuration Environment Files",
     "summary": "Add custom CSS and extra text on PoS ticket"
     " depending on the environment",
     "version": "16.0.1.0.0",
