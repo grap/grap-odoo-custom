@@ -11,7 +11,6 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "mrp",
         "mrp_bom_product_price_margin",
     ],
     "data": [
@@ -27,9 +26,6 @@
     "assets": {
         "web.report_assets_common": [
             "mrp_bom_wizard_production/static/src/scss/mrp_bom_wizard_production.scss",
-        ],
-        "web.assets_backend": [
-            "mrp_bom_wizard_production/static/src/scss/mrp_bom_wizard_production_wizard.scss",
         ],
     },
     "installable": True,

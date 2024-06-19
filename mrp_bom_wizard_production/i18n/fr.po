@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-18 08:58+0000\n"
-"PO-Revision-Date: 2024-06-18 08:58+0000\n"
+"POT-Creation-Date: 2024-06-19 11:05+0000\n"
+"PO-Revision-Date: 2024-06-19 11:05+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgstr "Fiche technique"
 #: model:ir.model,name:mrp_bom_wizard_production.model_mrp_bom
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.report_bom_purchase_list
 msgid "Bill of Material"
-msgstr "Fiche technique"
+msgstr "Nomenclature"
 
 #. module: mrp_bom_wizard_production
 #: model:ir.actions.report,name:mrp_bom_wizard_production.bom_purchase_list
@@ -70,6 +70,11 @@ msgstr "Qté de la FT"
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
 msgid "Cancel"
 msgstr "Annuler"
+
+#. module: mrp_bom_wizard_production
+#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
+msgid "Choose the quantity of each BoMs 🖨️"
+msgstr ""
 
 #. module: mrp_bom_wizard_production
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.report_bom_purchase_list
@@ -137,6 +142,11 @@ msgid "ID"
 msgstr ""
 
 #. module: mrp_bom_wizard_production
+#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
+msgid "Informations on PDF"
+msgstr ""
+
+#. module: mrp_bom_wizard_production
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.report_bom_purchase_list
 msgid "Intermediate products to produce"
 msgstr "Produits intermédiaires à produire"
@@ -170,9 +180,19 @@ msgid "No Origin"
 msgstr "Pas d'origine"
 
 #. module: mrp_bom_wizard_production
+#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
+msgid "Notes"
+msgstr ""
+
+#. module: mrp_bom_wizard_production
 #: model:ir.model.fields,field_description:mrp_bom_wizard_production.field_bom_print_purchase_list_wizard__notes_for_pdf
 msgid "Notes For Pdf"
 msgstr "Notes sur le PDF"
+
+#. module: mrp_bom_wizard_production
+#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
+msgid "Options for PDF"
+msgstr "Options du PDF"
 
 #. module: mrp_bom_wizard_production
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
@@ -193,7 +213,7 @@ msgstr "Description de conditionnement"
 #. module: mrp_bom_wizard_production
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.report_bom_purchase_list
 msgid "Price Unit"
-msgstr ""
+msgstr "Prix unitaire"
 
 #. module: mrp_bom_wizard_production
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
@@ -270,6 +290,11 @@ msgid ""
 msgstr ""
 
 #. module: mrp_bom_wizard_production
+#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
+msgid "Title"
+msgstr "Titre"
+
+#. module: mrp_bom_wizard_production
 #: model:ir.model.fields,field_description:mrp_bom_wizard_production.field_bom_print_purchase_list_wizard__title_for_pdf
 msgid "Title For Pdf"
 msgstr "Titre pour le PDF"
@@ -277,7 +302,7 @@ msgstr "Titre pour le PDF"
 #. module: mrp_bom_wizard_production
 #: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
 msgid "Total Cost"
-msgstr ""
+msgstr "Coût total"
 
 #. module: mrp_bom_wizard_production
 #: model:ir.model.fields,help:mrp_bom_wizard_production.field_bom_print_purchase_list_wizard_line__bom_uom_id
@@ -311,19 +336,4 @@ msgstr ""
 #: model:ir.model.fields,help:mrp_bom_wizard_production.field_bom_print_purchase_list_wizard__notes_for_pdf
 #: model:ir.model.fields,help:mrp_bom_wizard_production.field_bom_print_purchase_list_wizard__title_for_pdf
 msgid "Write whatever you want to be written in PDF headers"
-msgstr ""
-
-#. module: mrp_bom_wizard_production
-#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
-msgid "📝 Informations on PDF"
-msgstr "📝 Informations sur le PDF"
-
-#. module: mrp_bom_wizard_production
-#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
-msgid "🔧 Choose options"
-msgstr "🔧 Choisir les options"
-
-#. module: mrp_bom_wizard_production
-#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form
-msgid "🖨️ Choose the quantity of each BoMs"
-msgstr "🖨️ Choisir les quantités voulues"
+msgstr "Ecrivez ce que vous voulez qui apparaisse en entête du PDF"
