@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="report_sale_grouped">
+        <t t-call="web.basic_layout">
+            <div class="main_table">
+              <table class="table table-sm table-bordered">
+                  <thead>
+                      <tr class="th-colored">
+                          <th name="th_customer" class="text-center"></th>
+                          <t t-foreach="all_sale_order" t-as="sale_order">
+                              <th name="th_sale_order_customer" class="text-center"><span t-esc="sale_order.name"/> - <span t-esc="sale_order.partner_id.name"/></th>
+                          </t>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <t t-foreach="list_sale_order_product_quantity" t-as="line_new_product">
+                          <tr>
+                            <t t-set="i" t-value="0"/>
+                            <t t-foreach="line_new_product" t-as="product_then_quantities">
+                              <t t-if="i &lt; 1">
+                                <td name="td_product_then_quantites" class="text-left">
+                                  <b><span t-esc="product_then_quantities"/></b>
+                                </td>
+                              </t>
+                              <t t-else="">
+                                <td name="td_product_then_quantites" class="text-center">
+                                  <span t-esc="product_then_quantities" style="white-space: nowrap;"/>
+                                </td>
+                              </t>
+                              <t t-set="i" t-value="i+1"/>
+                            </t>
+                          </tr>
+                      </t>
+                  </tbody>
+              </table>
+            </div>
+        </t>
+    </template>
+
+</odoo>

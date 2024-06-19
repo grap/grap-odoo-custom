@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2023 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- Sale for Gemini Furniture  -->
+    <record model="sale.order.line" id="demo_sale_order_line_gemini_1">
+      <field name="order_id" ref="mrp_sale_grouped.demo_sale_gemini"/>
+      <field name="product_id" ref="mrp_sale_grouped.demo_product_spinach"/>
+      <field name="product_uom_qty">4</field>
+      <field name="price_unit">3</field>
+    </record>
+
+    <record model="sale.order.line" id="demo_sale_order_line_gemini_2">
+      <field name="order_id" ref="mrp_sale_grouped.demo_sale_gemini"/>
+      <field name="product_id" ref="mrp_sale_grouped.demo_product_tomato"/>
+      <field name="product_uom_qty">1</field>
+      <field name="price_unit">4</field>
+    </record>
+
+    <!-- Sale for Ready Mat  -->
+    <record model="sale.order.line" id="demo_sale_order_line_ready_mat">
+      <field name="order_id" ref="mrp_sale_grouped.demo_sale_ready_mat"/>
+      <field name="product_id" ref="mrp_sale_grouped.demo_product_tomato"/>
+      <field name="product_uom_qty">10</field>
+      <field name="price_unit">4</field>
+    </record>
+
+    <!-- Sale line for Partner 5 - with products with BoMs -->
+    <record model="sale.order.line" id="demo_sale_order_line_deco_addict">
+      <field name="order_id" ref="mrp_sale_grouped.demo_sale_deco_addict"/>
+      <field name="product_id" ref="mrp_sale_grouped.demo_product_tomato_tart"/>
+      <field name="product_uom_qty">2</field>
+      <field name="price_unit">7</field>
+    </record>
+
+</odoo>

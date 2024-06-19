@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_sale_grouped_all,MRP Grouped Sale Production All,mrp_sale_grouped.model_mrp_sale_grouped,mrp.group_mrp_user,1,1,1,1
+mrp_sale_grouped.access_sale_grouped_wizard,access_sale_grouped_wizard,mrp_sale_grouped.model_sale_grouped_wizard,base.group_user,1,1,1,1
+mrp_sale_grouped.access_sale_grouped_wizard_line,access_sale_grouped_wizard_line,mrp_sale_grouped.model_sale_grouped_wizard_line,base.group_user,1,1,1,1
+mrp_sale_grouped.access_x2m_matrix_grouped_sales_wizard,access_x2m_matrix_grouped_sales_wizard,mrp_sale_grouped.model_x2m_matrix_grouped_sales_wizard,base.group_user,1,1,1,1
