@@ -10,13 +10,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">bom.print.purchase.list.wizard</field>
         <field name="inherit_id" ref="mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='wizard_options']" position="before">
-                <div class="other_text alert alert-info" role="status">
-                   These products are sold but don't have any Bill Of Material, so they can't be
-                   in this Production assistant:
-                   <b><field name="missing_boms_text" readonly="1"/></b>
-                </div>
-                <br/>
+            <xpath expr="//group[@name='options_pdf']/.." position="before">
+                <group name="other_text_no_bom" col="12">
+                  <div class="other_text alert alert-info" role="status" colspan="11">
+                     These products are sold but don't have any Bill Of Material, so they can't be
+                     in this Production assistant:
+                     <b><field name="missing_boms_text" readonly="1"/></b>
+                  </div>
+                  <newline/>
+                </group>
             </xpath>
         </field>
     </record>
