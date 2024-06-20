@@ -1,0 +1,24 @@
+/*Background of the kanban,tree views*/
+.o_view_controller {
+    background-color:#AAFFAA !important;
+}
+
+/*Background of the div that contain search bar, breadcrumb, etc...*/
+.o_control_panel {
+    background-color:#AAFFAA !important;
+}
+
+/* background specific for the breadcrumb */
+.breadcrumb {
+    background-color:#AAFFAA !important;
+}
+
+/*Background of the dropdown menus logout, debug, etc...*/
+.o-dropdown--menu,.o-dropdown-menu,.o_NotificationListItem {
+    background-color:#AAFFAA !important;
+}
+
+/* background specific for the module discussion */
+.bg-view {
+    background-color:#AAFFAA !important;
+}
