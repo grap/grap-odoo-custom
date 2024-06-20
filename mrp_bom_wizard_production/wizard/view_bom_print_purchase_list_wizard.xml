@@ -11,7 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form string="Print Purchase list">
                 <group col="12">
-                  <group string="Options for PDF" colspan="6">
+                  <group name="options_pdf" string="Options for PDF" colspan="6">
                     <field name="option_group_by_product_category" widget="boolean_toggle"/>
                     <field name="option_display_cost" widget="boolean_toggle"/>
                     <field name="option_print_bom" widget="boolean_toggle"/>
