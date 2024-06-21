@@ -8,4 +8,7 @@ You can choose some options : group products to order by category and/or display
 
 .. figure:: ../static/description/bom_purchase_printing_wizard.png
 
-.. figure:: ../static/description/bom_purchase_printing_with_options_pdf.png
+.. figure:: ../static/description/bom_purchase_printing_with_options_pdf_01.png
+.. figure:: ../static/description/bom_purchase_printing_with_options_pdf_02.png
+.. figure:: ../static/description/bom_purchase_printing_with_options_pdf_03.png
+.. figure:: ../static/description/bom_purchase_printing_with_options_pdf_04.png
