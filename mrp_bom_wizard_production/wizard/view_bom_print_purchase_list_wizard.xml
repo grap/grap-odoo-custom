@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_bom_print_purchase_list_wizard_form" model="ir.ui.view">
+        <field name="model">bom.print.purchase.list.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Purchase list">
+                <group col="12">
+                  <group name="options_pdf" string="Options for PDF" colspan="6">
+                    <field name="option_group_by_product_category" widget="boolean_toggle"/>
+                    <field name="option_display_cost" widget="boolean_toggle"/>
+                    <field name="option_print_bom" widget="boolean_toggle"/>
+                  </group>
+                  <group string="Informations on PDF" colspan="6">
+                      <field name="title_for_pdf" string="Title"/>
+                      <field name="option_production_date"/>
+                      <field name="notes_for_pdf" string="Notes" placeholder="Order of March 18, 1871 for customer Louise Michel"/>
+                  </group>
+                </group>
+                <group string="Choose the quantity of each BoMs 🖨️" col="12">
+                  <field name="no_origin" invisible="1"/>
+                  <field name="line_ids" nolabel="1" colspan="12">
+                      <tree editable="bottom">
+                          <field name="bom_id" required="1"/>
+                          <field name="currency_id" invisible="1"/>
+                          <field name="bom_origin" attrs="{'column_invisible': [('parent.no_origin', '=', True)]}"/>
+                          <field name="bom_description"/>
+                          <field name="bom_product_qty"/>
+                          <field name="quantity" required="1" widget="numeric_step"/>
+                          <field name="bom_uom_id"/>
+                          <field name="wizard_line_subtotal" sum="Total Cost" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'column_invisible': [('parent.option_display_cost', '=', False)]}"/>
+                       </tree>
+                  </field>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print Production Report" type="object" icon="fa-print" class="oe_highlight" attrs="{'invisible': [('option_print_bom', '!=', False)]}"/>
+                    <button name="print_report" string="Print Production Report and BoMs" type="object" icon="fa-print" class="oe_highlight" attrs="{'invisible': [('option_print_bom', '!=', True)]}"/>
+                    <button icon="fa-ban" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
