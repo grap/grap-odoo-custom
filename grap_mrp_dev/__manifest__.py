@@ -12,18 +12,19 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        "mrp_bom_note",
-        # GRAP
-        "mrp_bom_product_variant",
-        "mrp_bom_tag",
-        "mrp_food",
-        "mrp_bom_sale_product_margin",
-        "mrp_business",
-        "product_main_seller",
-        "grap_change_views_mrp",
-        "grap_change_views_product",
-        # OCA Modules
+        # OCA
         "mrp_bom_widget_section_and_note_one2many",
+        "mrp_bom_line_net_qty",
+        "mrp_bom_simple_report",
+        "mrp_bom_product_price_margin",
+        "mrp_bom_tag",
+        "mrp_bom_select_product_variant",
+        "mrp_bom_order_by_product_name",
+        "mrp_bom_produce_delay",
+        "mrp_product_produce_delay_in_hour",
+        "mrp_bom_produce_delay_in_hour",
+        "mrp_bom_image",
+        "mrp_product_characterisation",
     ],
     "installable": True,
 }
