@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [fermente_product](fermente_product/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
 [fermente_stock](fermente_stock/) | 16.0.1.0.0 |  | Fermente - Stock
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
-[mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.0.0 |  | Wizard linked to Bill of Materials to help your production.
+[mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.0.1 |  | Wizard linked to Bill of Materials to help your production.
 [server_environment_files](server_environment_files/) | 16.0.1.0.0 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 
 [//]: # (end addons)
