@@ -16,6 +16,7 @@
         "grap_cooperative",
     ],
     "data": [
+        "views/menu.xml",
         "views/templates.xml",
         "views/view_project_project.xml",
         "views/view_project_task.xml",
