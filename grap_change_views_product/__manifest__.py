@@ -40,7 +40,6 @@
         # GRAP
         "grap_change_views_mrp",
         "fiscal_company_product",
-        "stock_preparation_category",
         "recurring_consignment",
         "product_to_scale_bizerba",
         "sale_eshop",
