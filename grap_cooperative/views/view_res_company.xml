@@ -12,7 +12,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <field name="fiscal_type" position="after">
                <field name="code"/>
-               <field name="clean_name"/>
                <field name="category_id"/>
                <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
                <field name="accounting_interlocutor_id"/>
@@ -49,7 +48,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree>
                 <field name="code"/>
-                <field name="clean_name"/>
+                <field name="name"/>
                 <field name="zip"/>
                 <field name="city"/>
                 <field name="state_id"/>
@@ -65,7 +64,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <leaflet_map
                     field_latitude="partner_latitude"
                     field_longitude="partner_longitude"
-                    field_title="clean_name"
+                    field_title="name"
                     field_address="map_display_address"
                     field_marker_icon_image="logo_web"
                     default_zoom="9"
@@ -74,7 +73,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="__last_update"/>
                 <field name="partner_latitude"/>
                 <field name="partner_longitude"/>
-                <field name="clean_name"/>
+                <field name="name"/>
                 <field name="map_display_address"/>
             </leaflet_map>
         </field>
@@ -91,12 +90,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="oe_title">
                         <h1>
                             <field name="code" readonly="True"/> -
-                            <field name="clean_name" readonly="True"/>
+                            <field name="name" readonly="True"/>
                         </h1>
                         <div class="oe_edit_only">
                             <group>
-                                <field name="name" readonly="True"/>
                                 <field name="code" readonly="True"/>
+                                <field name="name" readonly="True"/>
                             </group>
                         </div>
                     </div>
@@ -225,7 +224,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </t>
                             <div class="oe_kanban_details">
                                 <strong class="o_kanban_record_title oe_partner_heading">
-                                    <field name="code"/> - <field name="clean_name"/>
+                                    <field name="code"/> - <field name="name"/>
                                 </strong>
                                 <ul>
                                     <li t-if="record.fiscal_type.raw_value" class="o_kanban_record_subtitle">
@@ -259,7 +258,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <tree editable="bottom" create="false">
                 <field name="code" readonly="True"/>
-                <field name="clean_name" readonly="True"/>
+                <field name="name" readonly="True"/>
                 <field name="attendant_interlocutor_id" />
                 <field name="accounting_interlocutor_id"/>
                 <field name="hr_interlocutor_id"/>
