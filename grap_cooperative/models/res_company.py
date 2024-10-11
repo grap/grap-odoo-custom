@@ -10,12 +10,6 @@ class ResCompany(models.Model):
 
     map_display_address = fields.Char(compute="_compute_map_display_address")
 
-    clean_name = fields.Char(
-        string="Clean name",
-        compute="_compute_clean_name",
-        store=True,
-    )
-
     people_ids = fields.One2many(
         string="Workers",
         comodel_name="grap.people",
@@ -78,11 +72,6 @@ class ResCompany(models.Model):
     attendant_interlocutor_id = fields.Many2one(
         string="Attendant Interlocutor", comodel_name="grap.people"
     )
-
-    @api.depends("name")
-    def _compute_clean_name(self):
-        for company in self:
-            company.clean_name = (company.name or "").replace("|", "")
 
     @api.depends("street", "city", "zip")
     def _compute_clean_adress(self):
