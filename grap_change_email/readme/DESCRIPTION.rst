@@ -10,7 +10,7 @@ Model Changes
 
 **email.template**
 
-* add new ``active`` field
+* add new ``active`` field.
 
 
 Mail Templates
