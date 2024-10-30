@@ -78,9 +78,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <field name="sql_request"/>
               <field name="requesting_company_ids"/>
           </field>
-          <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="attributes">
-            <attribute name="invisible">1</attribute>
-          </xpath>
           <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
             <div t-if="record.planned_hours.raw_value" class="text-muted o_kanban_record_subtitle">
 
