@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_res_company_lead_stage_search" model="ir.ui.view">
+        <field name="model">res.company.lead.stage</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="sequence"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_res_company_lead_stage_tree" model="ir.ui.view">
+        <field name="model">res.company.lead.stage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_company_lead_stage_form" model="ir.ui.view">
+        <field name="model">res.company.lead.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="fold"/>
+                    </group>
+                </group>
+                <separator string="Description"/>
+                <field name="description" nolabel="1"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_res_company_lead_stage" model="ir.actions.act_window">
+        <field name="name">Stages</field>
+        <field name="res_model">res.company.lead.stage</field>
+        <field name="view_type">form</field>
+    </record>
+
+    <menuitem id="menu_res_company_lead_stage"
+        name="Activities Leads Stage"
+        parent="menu_root"
+        action="action_res_company_lead_stage"
+        sequence="3"/>
+
+</odoo>

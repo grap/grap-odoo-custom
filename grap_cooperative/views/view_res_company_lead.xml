@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_res_company_lead_search" model="ir.ui.view">
+        <field name="model">res.company.lead</field>
+        <field name="inherit_id" ref="grap_cooperative.view_res_company_search"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="stage_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_company_lead_tree" model="ir.ui.view">
+        <field name="model">res.company.lead</field>
+        <field name="inherit_id" ref="grap_cooperative.view_res_company_tree_directory"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="stage_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_company_lead_form" model="ir.ui.view">
+        <field name="model">res.company.lead</field>
+        <field name="inherit_id" ref="grap_cooperative.view_res_company_form_directory"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="stage_id" invisible="1"/>
+            </field>
+           <field name="code" position="after">
+                <field name="name"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_company_lead_kanban" model="ir.ui.view">
+        <field name="model">res.company.lead</field>
+        <field name="inherit_id" ref="grap_cooperative.view_res_company_kanban_directory"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute  name="default_group_by">stage_id</attribute>
+            </xpath>
+            <field name="code" position="after">
+                <field name="stage_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_res_company_lead" model="ir.actions.act_window">
+        <field name="name">Activities Leads</field>
+        <field name="res_model">res.company.lead</field>
+        <field name="view_type">form</field>
+        <field name="view_id" ref="view_res_company_lead_kanban"/>
+        <field name="domain">[]</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">
+            {}
+        </field>
+    </record>
+
+    <menuitem id="menu_res_company_lead"
+        name="Activities Leads"
+        parent="menu_root"
+        action="action_res_company_lead"
+        sequence="2"/>
+
+</odoo>
