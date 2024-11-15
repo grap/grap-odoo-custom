@@ -8,9 +8,40 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="report_product_pricelist_document" inherit_id="product_pricelist_direct_print.report_product_pricelist_document">
 
+        <!-- Header -->
+        <xpath expr="//th[@t-if='o.show_standard_price']" position="before">
+            <th t-if="o.show_labels">
+                <strong>Labels</strong>
+            </th>
+        </xpath>
+
         <xpath expr="//th[@t-if='o.show_product_uom']" position="before">
             <th t-if="o.show_eshop_rounded_qty" class="text-right">
                 <strong>Pack.</strong>
+            </th>
+        </xpath>
+
+        <!-- Body -->
+        <xpath expr="//span[@t-field='product.display_name']" position="after">
+            <t t-if="o.show_description_eshop">
+                <t t-if="product.eshop_description">
+                    <t t-raw="product.get_eshop_description_without_paragraph()"/>
+                </t>
+            </t>
+            <t t-if="o.show_description_sale">
+                <t t-if="product.description_sale">
+                    <t t-if="not product.eshop_description"><br/></t>
+                    <span style="font-style: italic; color:#333;" t-field="product.description_sale"/>
+                </t>
+            </t>
+        </xpath>
+
+        <xpath expr="//td[@t-if='o.show_standard_price']" position="before">
+            <th t-if="o.show_labels">
+                <t t-foreach="product.label_ids" t-as="label">
+                    <img t-attf-src="data:image/*;base64,{{label.image}}"
+                        style="width: 0.6cm; height: 0.6cm; margin: 0.02cm;"/>
+                </t>
             </th>
         </xpath>
 
