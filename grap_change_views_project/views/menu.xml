@@ -13,9 +13,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="groups_id" eval="[(6, 0, [ref('project.group_project_user')])]"/>
     </record>
 
+    <record model="ir.ui.menu" id="project.menu_project_config_project">
+        <field name="groups_id" eval="[(6, 0, [ref('project.group_project_user')])]"/>
+    </record>
+
     <record model="ir.ui.menu" id="project.menu_project_report">
         <field name="groups_id" eval="[(6, 0, [ref('project.group_project_user')])]"/>
     </record>
+
     <record model="ir.ui.menu" id="project.menu_project_report_task_analysis">
         <field name="groups_id" eval="[(6, 0, [ref('project.group_project_user')])]"/>
     </record>
