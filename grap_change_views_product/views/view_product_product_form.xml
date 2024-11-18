@@ -192,7 +192,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <field name="volume"/>
                                     <field name="net_weight"/>
                                     <field name="weight"/>
-                                    <field name="preparation_categ_id" groups="sale_recovery_moment.recovery_user"/>
                                     <field string="Price per unit" name="pricetag_secondary_price_value" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('pricetag_secondary_price_value', '=', 0)]}"/>
                                 </group>
                                 <group string="Print Options">
