@@ -13,6 +13,7 @@
         # OCA
         "product_pricelist_direct_print",
         # GRAP
+        "product_label",
         "sale_eshop",
     ],
     "data": [

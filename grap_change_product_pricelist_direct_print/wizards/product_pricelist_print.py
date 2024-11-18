@@ -2,10 +2,20 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from odoo import fields, models
 
 
 class ProductPricelistPrint(models.TransientModel):
     _inherit = "product.pricelist.print"
 
     show_eshop_rounded_qty = fields.Boolean(string="Show Packaging")
+
+    show_labels = fields.Boolean(default=True, string="Show Labels")
+
+    show_description_sale = fields.Boolean(
+        default=True, string="Show Description for Customers"
+    )
+
+    show_description_eshop = fields.Boolean(
+        default=True, string="Show Eshop Description"
+    )
