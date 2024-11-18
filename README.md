@@ -60,7 +60,7 @@ addon | version | maintainers | summary
 [mrp_bom_weight](mrp_bom_weight/) | 12.0.1.1.1 |  | MRP BoM Weight
 [mrp_business](mrp_business/) | 12.0.1.5.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_food](mrp_food/) | 12.0.3.0.0 |  | MRP modules adapted for food-related professions
-[mrp_sale_grouped](mrp_sale_grouped/) | 12.0.1.5.0 |  | Quickly manage what you need to produce thanks to grouped sales
+[mrp_sale_grouped](mrp_sale_grouped/) | 12.0.1.6.0 |  | Quickly manage what you need to produce thanks to grouped sales
 [product_main_seller](product_main_seller/) | 12.0.1.2.0 |  | Product Attribute - Main seller for a product
 [product_supplierinfo_standard_price](product_supplierinfo_standard_price/) | 12.0.0.1.4 |  | Product supplier easily connected to product's standard price
 [server_environment_files](server_environment_files/) | 12.0.1.0.5 |  | Add custom CSS and extra text on PoS ticket depending on the environment
