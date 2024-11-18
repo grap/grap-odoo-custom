@@ -199,14 +199,10 @@ msgid "Missing Boms Text"
 msgstr "Texte des Fiches Techniques manquantes"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__mrp_production_ids
-msgid "Mrp Production"
-msgstr ""
-
-#. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__mrp_production_qty
-msgid "Mrp Production Qty"
-msgstr ""
+#: model:product.product,name:mrp_sale_grouped.demo_product_mustard
+#: model:product.template,name:mrp_sale_grouped.demo_product_mustard_product_template
+msgid "Mustard"
+msgstr "Moutarde"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__name
@@ -274,6 +270,12 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_pie
+#: model:product.template,name:mrp_sale_grouped.demo_product_pie_product_template
+msgid "Pie"
+msgstr "Tarte"
+
+#. module: mrp_sale_grouped
 #: selection:mrp.sale.grouped,activity_state:0
 msgid "Planned"
 msgstr ""
@@ -302,17 +304,6 @@ msgid "Product w/o BoM"
 msgstr "Articles sans FT"
 
 #. module: mrp_sale_grouped
-#: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_production_order
-#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
-msgid "Production Orders"
-msgstr "Ordres de production"
-
-#. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__production_state
-msgid "Production State"
-msgstr "État de la Production"
-
-#. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Production assistant"
 msgstr "Assistant de production"
@@ -321,16 +312,6 @@ msgstr "Assistant de production"
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__date
 msgid "Production date"
 msgstr "Date de production"
-
-#. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,production_state:0
-msgid "Production done"
-msgstr "Production finie"
-
-#. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,production_state:0
-msgid "Production in progress"
-msgstr "Production en cours"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_product_product
@@ -409,6 +390,12 @@ msgid "See and update values"
 msgstr "Voir et mettre à jour les quantités"
 
 #. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_spinach
+#: model:product.template,name:mrp_sale_grouped.demo_product_spinach_product_template
+msgid "Spinach"
+msgstr "Epinard"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_state
 msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
@@ -436,9 +423,29 @@ msgid "Today"
 msgstr "Aujourd'hui"
 
 #. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_tomato_tart
+#: model:product.template,name:mrp_sale_grouped.demo_product_template_tomato_tart
+msgid "Tomato pie"
+msgstr "Tarte à la tomate"
+
+#. module: mrp_sale_grouped
+#: model:product.product,name:mrp_sale_grouped.demo_product_tomato
+#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_product_template
+msgid "Tomatoes"
+msgstr "Tomates"
+
+#. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Total"
 msgstr ""
+
+#. module: mrp_sale_grouped
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_pie
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_tomato_tart
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_pie_product_template
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_template_tomato_tart
+msgid "Unit(s)"
+msgstr "Unité(s)"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_unread
@@ -496,6 +503,26 @@ msgid "X2Many Matrix Grouped Sales Wizard"
 msgstr ""
 
 #. module: mrp_sale_grouped
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_mustard
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_spinach
+#: model:product.product,uom_name:mrp_sale_grouped.demo_product_tomato
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_mustard
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_pie
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_spinach
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_tomato
+#: model:product.product,weight_uom_name:mrp_sale_grouped.demo_product_tomato_tart
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_mustard_product_template
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_spinach_product_template
+#: model:product.template,uom_name:mrp_sale_grouped.demo_product_tomato_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_mustard_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_pie_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_spinach_product_template
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_template_tomato_tart
+#: model:product.template,weight_uom_name:mrp_sale_grouped.demo_product_tomato_product_template
+msgid "kg"
+msgstr ""
+
+#. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.x2many_2d_matrix_grouped_sales
 msgid "ℹ️ Only show draft and sent quotations (not confirmed quotations)"
 msgstr "ℹ️ Affiche seulement les devis brouillons et envoyées (pas les ventes confirmés)"
@@ -514,3 +541,4 @@ msgstr "📈 Ventes concernées"
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale."
 msgstr "📌 Après avoir donné un nom, remplissez les ventes liées en cliquant sur 'ajouter une ligne' et en séléctionnant une ou plusieurs ventes."
+
