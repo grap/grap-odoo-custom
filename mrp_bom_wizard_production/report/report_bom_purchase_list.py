@@ -387,7 +387,6 @@ class ReportBomPurchaseList(models.AbstractModel):
 
         manufacture_bom_list = []
         for wiz_bom in wiz_boms:
-            # import pdb; pdb.set_trace()
             bom = wiz_bom.bom_id
             bom_qty = bom.product_qty
             desired_bom_qty = wiz_bom.quantity
