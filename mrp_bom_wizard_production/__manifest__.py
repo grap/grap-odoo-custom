@@ -12,6 +12,7 @@
     "license": "AGPL-3",
     "depends": [
         "mrp_bom_product_price_margin",
+        "mrp_bom_simple_report_with_sections_notes",
     ],
     "data": [
         "security/ir.model.access.csv",
