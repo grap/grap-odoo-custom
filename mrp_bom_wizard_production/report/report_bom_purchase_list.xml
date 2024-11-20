@@ -245,20 +245,20 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </t>
 
         <!--
-          This part is handled by module mrp_bom_simple_report_with_sections_notes
+          This part is handled by module mrp_bom_simple_report
           so we need to extract from t-call web.simple_layout to be handle correctly
         -->
         <!-- ======= BOMS =======  -->
         <t t-if="option_print_bom">
           <t t-foreach="wizard_lines" t-as="wizard_line">
-            <t t-call="mrp_bom_simple_report_with_sections_notes.bom_simple_report_xml">
+            <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
               <t t-set="docs" t-value="wizard_line.bom_id"/>
               <t t-set="bom_qty" t-value="wizard_line.quantity"/>
             </t>
           </t>
           <!-- ======= INTERMEDIATE BOMS TO PRODUCE =======  -->
           <t t-foreach="data_produce_bom_qty" t-as="intermediate_bom">
-            <t t-call="mrp_bom_simple_report_with_sections_notes.bom_simple_report_xml">
+            <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
               <t t-set="docs" t-value="intermediate_bom[0]"/>
               <t t-set="bom_qty" t-value="intermediate_bom[1]"/>
               <t t-set="bom_intermediate_parent_bom_text" t-value="intermediate_bom[2]"/>
