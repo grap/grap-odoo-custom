@@ -1,1 +1,5 @@
 git+https://github.com/OCA/manufacture@refs/pull/1227/head#subdirectory=setup/mrp_bom_product_price_margin
+git+https://github.com/OCA/manufacture@refs/pull/1218/head#subdirectory=setup/mrp_bom_simple_report
+git+https://github.com/OCA/manufacture@refs/pull/1214/head#subdirectory=setup/mrp_bom_line_net_qty
+
+# Placeholder for future PRs
