@@ -12,5 +12,6 @@
     "depends": ["product"],
     "data": [
         "views/view_product_template.xml",
+        "views/view_product_product.xml",
     ],
 }

@@ -7,28 +7,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
 
-    <record id="product.product_template_action" model="ir.actions.act_window">
-        <!--Default: kanban,tree,form -->
-        <field name="view_mode">tree,kanban,form,activity</field>
-    </record>
-
-    <record id="product.product_template_action_all" model="ir.actions.act_window">
-        <!--Default: kanban,tree,form -->
-        <field name="view_mode">tree,kanban,form,activity</field>
-    </record>
-
-
-    <record id="view_product_template_form" model="ir.ui.view">
-        <field name="model">product.template</field>
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
         <field name="priority" eval="100" />
-        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
         <field name="arch" type="xml">
 
             <!-- HIDE fields by default -->
             <field name="priority" position="attributes">
                 <attribute name="optional">hide</attribute>
             </field>
-            <field name="product_tag_ids" position="attributes">
+            <field name="product_template_variant_value_ids" position="attributes">
                 <attribute name="optional">hide</attribute>
             </field>
 
@@ -38,15 +27,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </field>
 
             <!-- MOVE fields -->
-            <field name="name" position="before">
-                <field name="default_code" position="move"/>
-            </field>
             <field name="name" position="after">
                 <field name="categ_id" position="move"/>
             </field>
-            <field name="list_price" position="before">
+            <field name="lst_price" position="before">
                 <field name="standard_price" position="move"/>
             </field>
+
         </field>
     </record>
 
