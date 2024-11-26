@@ -4,7 +4,6 @@
 
 from odoo import fields, models
 
-from odoo.addons import decimal_precision as dp
 
 
 class MrpBom(models.Model):
@@ -14,7 +13,7 @@ class MrpBom(models.Model):
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
     description_packaging = fields.Char(string="Packaging description")
     # Tracking not possible for One2many
-    # bom_line_ids = fields.One2many(track_visibility="onchange")
+    # bom_line_ids = fields.One2many(tracking=True)
     priority = fields.Selection(
         [("0", "Low"), ("1", "Normal"), ("2", "High"), ("3", "Very High")],
         string="Priority",
@@ -30,6 +29,6 @@ class MrpBom(models.Model):
     time_to_produce = fields.Float(help="Time in hour to produce this BoM.", store=True)
     # ========== Fields for mrp_bom_line_net_qty
     diff_bom_qty_and_net_quantities = fields.Float(
-        digits=dp.get_precision("Product Price"),
+        digits="Product Price",
         compute="_compute_diff_bom_qty_and_net_quantities",
     )
