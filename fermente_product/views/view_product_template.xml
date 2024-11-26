@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2024 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record id="product.product_template_action" model="ir.actions.act_window">
+        <!--Default: kanban,tree,form -->
+        <field name="view_mode">tree,kanban,form,activity</field>
+    </record>
+
+    <record id="product.product_template_action_all" model="ir.actions.act_window">
+        <!--Default: kanban,tree,form -->
+        <field name="view_mode">tree,kanban,form,activity</field>
+    </record>
+
+</odoo>
