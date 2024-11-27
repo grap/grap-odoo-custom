@@ -13,13 +13,6 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        # OCA modules
-        "product_net_weight",
-        "res_company_code",
-        "web_notify",
-        # GRAP Modules
-        "mrp_bom_line_net_qty",
-        "mrp_bom_product_variant",
     ],
     "demo": [
         "demo/product.xml",

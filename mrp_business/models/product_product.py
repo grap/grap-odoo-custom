@@ -8,7 +8,7 @@ from odoo import fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    # ========== Others
+    # Column Section
     meal_category_id = fields.Many2one(
         comodel_name="mrp.meal.category",
         string="Meal category",

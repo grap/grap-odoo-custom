@@ -17,16 +17,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='product_uom_id']/.." position="after">
               <field name="description_packaging"/>
               <field name="meal_category_id"/>
-              <field name="priority" widget="priority"/>
-            </xpath>
-            <xpath expr="//field[@name='routing_id']" position="after">
-                <br/>
-                <br/>
-                <label for="time_to_produce"/>
-                <div class="o_row" name="time_to_produce">
-                    <field name="time_to_produce" widget="float_time"/>
-                    <span> hours</span>
-                </div>
+              <!-- <field name="priority" widget="priority"/> -->
             </xpath>
         </field>
     </record>
@@ -35,18 +26,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- MRP Bill of Materials - Tree -->
     <!-- ************************************************************ -->
 
-    <record id="view_mrp_bom_tree" model="ir.ui.view">
+<!--     <record id="view_mrp_bom_tree" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="priority" widget="priority"/>
-                <field name="time_to_produce"/>
             </xpath>
             <xpath expr="//tree" position="attributes">
               <attribute name="default_order">priority desc</attribute>
             </xpath>
         </field>
-    </record>
+    </record> -->
 
 </odoo>

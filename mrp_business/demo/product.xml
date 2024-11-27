@@ -31,7 +31,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record model="product.product" id="demo_product_pie">
         <field name="name">Pie</field>
         <field name="standard_price">3</field>
-        <field name="net_weight">0.2</field>
     </record>
 
     <record model="product.template" id="demo_product_template_tomato_pie">

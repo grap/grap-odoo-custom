@@ -1,1 +1,2 @@
-1) Generate code : Make BoM Numbering work for bom without product_product
+* Migrate mrp_meal_category in product_template
+* Create dedicated module for mrp_bom.priority
