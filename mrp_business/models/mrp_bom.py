@@ -12,13 +12,6 @@ class MrpBom(models.Model):
     description_packaging = fields.Char(string="Packaging description")
     # Tracking not easily possible for One2many in v16
     # bom_line_ids = fields.One2many(tracking=True)
-    # TODO v16 module dédié
-    # priority = fields.Selection(
-    #     [("0", "Low"), ("1", "Normal"), ("2", "High"), ("3", "Very High")],
-    #     string="Priority",
-    #     default="0",
-    #     help="Helps prioritize BoM.",
-    # )
     meal_category_id = fields.Many2one(
         related="product_id.meal_category_id",
         string="Meal category",
