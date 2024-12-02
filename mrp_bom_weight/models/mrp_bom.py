@@ -4,7 +4,6 @@
 
 from odoo import api, fields, models
 
-from odoo.addons import decimal_precision as dp
 
 
 class MrpBom(models.Model):
@@ -19,7 +18,7 @@ class MrpBom(models.Model):
         compute="_compute_bom_components_total_gross_weight",
     )
     diff_bom_qty_and_net_quantities = fields.Float(
-        digits=dp.get_precision("Product Price"),
+        digits="Product Price",
         compute="_compute_diff_bom_qty_and_net_quantities",
     )
     display_set_quantity_with_net_quantities = fields.Boolean(
@@ -41,7 +40,6 @@ class MrpBom(models.Model):
                 bom.bom_line_ids.mapped("line_gross_weight")
             )
 
-    @api.multi
     @api.depends("product_qty", "bom_components_total_net_weight")
     def _compute_diff_bom_qty_and_net_quantities(self):
         for bom in self:
@@ -50,7 +48,6 @@ class MrpBom(models.Model):
             )
             bom.diff_bom_qty_and_net_quantities = _diff_bom_qty_and_net_quantities
 
-    @api.multi
     @api.depends("product_tmpl_id.uom_id")
     def _compute_display_set_quantity_with_net_quantities(self):
         for bom in self.filtered(lambda x: x.product_tmpl_id):
@@ -58,7 +55,6 @@ class MrpBom(models.Model):
                 True if bom.product_tmpl_id.uom_id.measure_type == "weight" else False
             )
 
-    @api.multi
     def set_bom_quantity_with_net_quantities(self):
         for bom in self:
             bom.product_qty = bom.bom_components_total_net_weight
