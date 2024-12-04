@@ -142,3 +142,9 @@ class TestMrpBomWeight(TransactionCase):
         self.bom_cookie_line_1.product_qty_net = 2
         self.bom_cookie._compute_display_set_quantity_with_net_quantities()
         self.assertEqual(self.bom_cookie.display_set_quantity_with_net_quantities, True)
+
+        # Use button to adjust quantity
+        self.bom_cookie.set_bom_quantity_with_net_quantities()
+        self.assertEqual(
+            self.bom_cookie.display_set_quantity_with_net_quantities, False
+        )
