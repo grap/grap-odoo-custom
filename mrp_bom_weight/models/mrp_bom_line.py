@@ -5,28 +5,33 @@
 from odoo import api, fields, models
 
 
-
 class MrpBomLine(models.Model):
     _inherit = "mrp.bom.line"
 
-    # Percentage float, so 25% is 0,25. For one number behind decimal, needs 3 digits
     line_gross_weight = fields.Float(
-        string="Gross weight",
+        string="Gross weight (kg)",
         compute="_compute_line_gross_weight",
         digits="Product Unit of Measure",
     )
     line_net_weight = fields.Float(
-        string="Net weight",
+        string="Net weight (kg)",
         compute="_compute_line_net_weight",
         digits="Product Unit of Measure",
     )
     line_net_weight_percentage = fields.Float(
         string="Net weight %",
         compute="_compute_line_net_weight_percentage",
-        digits=(16, 3),
     )
 
     # Line weight
+    @api.depends("product_qty_net", "product_uom_id", "product_id", "product_id.weight")
+    def _compute_line_gross_weight(self):
+        for line in self:
+            if line.product_uom_id.category_id.measure_type == "weight":
+                line.line_gross_weight = line.product_qty / line.product_uom_id.factor
+            else:
+                line.line_gross_weight = line.product_id.weight * line.product_qty_net
+
     @api.depends(
         "product_qty_net", "product_uom_id", "product_id", "product_id.net_weight"
     )
@@ -37,18 +42,13 @@ class MrpBomLine(models.Model):
             else:
                 line.line_net_weight = line.product_id.net_weight * line.product_qty_net
 
-    @api.depends("product_qty_net", "product_uom_id", "product_id", "product_id.weight")
-    def _compute_line_gross_weight(self):
-        for line in self:
-            if line.product_uom_id.category_id.measure_type == "weight":
-                line.line_gross_weight = line.product_qty / line.product_uom_id.factor
-            else:
-                line.line_gross_weight = line.product_id.weight * line.product_qty_net
-
+    # depends on other bom_line to compute on fly other bom_lines
     @api.depends("product_qty_net", "bom_id.bom_line_ids.product_qty_net")
     def _compute_line_net_weight_percentage(self):
         for line in self:
             bom_total_weight = line.bom_id.bom_components_total_net_weight
             line.line_net_weight_percentage = (
-                line.line_net_weight / bom_total_weight if bom_total_weight != 0 else 0
+                line.line_net_weight / bom_total_weight * 100
+                if bom_total_weight != 0
+                else 0
             )

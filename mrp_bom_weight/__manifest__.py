@@ -10,7 +10,10 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
-        # GRAP modules
+        # OCA
+        "product_uom_measure_type",
+        "product_net_weight",
+        # GRAP modules proposed to OCA
         "mrp_bom_line_net_qty",
     ],
     "data": [
