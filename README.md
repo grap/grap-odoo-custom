@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [fermente_main_menu](fermente_main_menu/) | 16.0.1.0.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.0.0 |  | Fermente - MRP
+[fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.0.0 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
 [fermente_product](fermente_product/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
 [fermente_stock](fermente_stock/) | 16.0.1.0.0 |  | Fermente - Stock
