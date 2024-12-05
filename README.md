@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[fermente_main_menu](fermente_main_menu/) | 16.0.1.0.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.0.0 |  | Fermente - MRP
 [fermente_pos](fermente_pos/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
 [fermente_product](fermente_product/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
