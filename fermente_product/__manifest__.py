@@ -3,11 +3,15 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Fermente - Point Of Sale",
+    "name": "Fermente - Product",
     "version": "16.0.1.0.0",
-    "category": "Web",
+    "category": "Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["point_of_sale"],
+    "depends": ["product"],
+    "data": [
+        "views/view_product_template.xml",
+        "views/view_product_product.xml",
+    ],
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2024 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="priority" eval="100" />
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+
+            <!-- HIDE fields by default -->
+            <field name="priority" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+            <field name="product_template_variant_value_ids" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+
+            <!-- SHOW fields by default -->
+            <field name="categ_id" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+
+            <!-- MOVE fields -->
+            <field name="name" position="after">
+                <field name="categ_id" position="move"/>
+            </field>
+            <field name="lst_price" position="before">
+                <field name="standard_price" position="move"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>
