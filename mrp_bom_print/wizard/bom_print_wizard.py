@@ -59,7 +59,6 @@ class BomPrintWizard(models.TransientModel):
             )
         return lines_vals
 
-    @api.multi
     def print_report(self):
         self.ensure_one()
         data = self._prepare_data()
@@ -68,7 +67,6 @@ class BomPrintWizard(models.TransientModel):
             self, data=data
         )
 
-    @api.multi
     def _prepare_data(self):
         return {
             "line_data": [x.id for x in self.line_ids],
