@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="rule_meal_category" model="ir.rule">
+        <field name="name">Meal Category Rule</field>
+        <field name="model_id" ref="model_mrp_meal_category" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[
+            '|',
+            ('company_id', '=', user.company_id.id),
+            ('company_id','=',False)
+        ]</field>
+    </record>
+
+</odoo>
