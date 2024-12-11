@@ -11,15 +11,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
             <form string="Print sales sum up">
               <h5>📈 Sales concerned</h5>
-              <group colspan="2">
-                  <group col="4" colspan="2">
-                      <field name="line_ids" nolabel="1">
-                          <tree create="false" editable="0">
-                              <field name="sale_id"/>
-                              <field name="sale_partner_id"/>
-                           </tree>
-                      </field>
-                  </group>
+              <group col="12">
+                <field colspan="12" name="line_ids" nolabel="1">
+                    <tree create="false" editable="0">
+                        <field name="sale_id"/>
+                        <field name="sale_partner_id"/>
+                     </tree>
+                </field>
               </group>
               <footer>
                   <button name="print_sale_sum_up" string="Print sales sum up" type="object" icon="fa-print" class="oe_highlight"/>

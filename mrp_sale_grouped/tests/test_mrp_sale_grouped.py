@@ -7,7 +7,7 @@ from odoo.tests.common import TransactionCase
 
 class TestMrpSaleGrouped(TransactionCase):
     def setUp(self):
-        super(TestMrpSaleGrouped, self).setUp()
+        super().setUp()
         # Objects
         self.mrp_sale_grouped_obj = self.env["mrp.sale.grouped"]
         self.wizard_obj = self.env["sale.grouped.wizard"]
@@ -19,9 +19,7 @@ class TestMrpSaleGrouped(TransactionCase):
             "mrp_sale_grouped.demo_sale_deco_addict"
         )
         self.bom_pie = self.env.ref("mrp_sale_grouped.demo_bom_tomato_tart")
-        self.product_tmpl_pie = self.env.ref(
-            "mrp_sale_grouped.demo_product_template_tomato_tart"
-        )
+
         # Create one sale_grouped with sales
         self.mrp_sale_grouped_1 = self.mrp_sale_grouped_obj.create(
             {"name": "TEST Grouped Sale"}
@@ -46,6 +44,11 @@ class TestMrpSaleGrouped(TransactionCase):
         self.assertEqual(self.mrp_sale_grouped_1.order_ids[1].state, "sale")
         self.mrp_sale_grouped_1._compute_sales_state()
         self.assertEqual(self.mrp_sale_grouped_1.sales_state, "all_sales_confirmed")
+
+    # def test_03_check_mrp_grouped_production_state(self):
+    #     self.assertEqual(
+    #         self.mrp_sale_grouped_1.production_state, "all_production_done"
+    #     )
 
     def test_04_sale_grouped_report(self):
         # Launch wizard and report action

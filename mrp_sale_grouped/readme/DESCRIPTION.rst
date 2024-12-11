@@ -12,6 +12,6 @@ Quickly manage what you need to produce thanks to grouped sales
 you have to buy, intermediate and finished products you have to produce.
 
 .. figure:: ../static/description/report_sales_sum_up.png
-
+.. figure:: ../static/description/mrp_sale_grouped_sales_matrix2d.png
 .. figure:: ../static/description/production_wizard.png
 .. figure:: ../static/description/production_wizard_report.png

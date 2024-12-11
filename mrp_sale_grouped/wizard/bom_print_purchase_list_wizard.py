@@ -31,6 +31,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             self.with_context(context, no_origin=no_origin),
         )._default_no_origin()
 
+    # Set PDF Title with sale_grouped Title
     @api.model
     def _default_title_for_pdf(self):
         context = self.env.context
@@ -46,6 +47,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             self.with_context(context, title_for_pdf=title_for_pdf),
         )._default_title_for_pdf()
 
+    # Set PDF notes with sale_grouped Notes
     @api.model
     def _default_notes(self):
         context = self.env.context
@@ -61,6 +63,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             self.with_context(context, notes_for_pdf=notes_for_pdf),
         )._default_notes()
 
+    # Set PDF production date with sale_grouped production date
     @api.model
     def _default_production_date(self):
         context = self.env.context
@@ -91,6 +94,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
 
         return missing_boms_text
 
+    # Override method to add "Origin" field that precise Sales linked to BoM
     @api.model
     def _default_line_ids(self):
         context = self.env.context

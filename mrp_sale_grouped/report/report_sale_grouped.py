@@ -64,7 +64,8 @@ class ReportSaleGrouped(models.AbstractModel):
             # Browse each sale_order_line
             for line in order.order_line:
                 product = line.product_id
-                # Get quantity with product uom (convert if uom of sale_order_line is different)
+                # Get quantity with product uom
+                # (convert if uom of sale_order_line is different)
                 quantity = line.product_uom._compute_quantity(
                     line.product_uom_qty,
                     line.product_id.uom_id,

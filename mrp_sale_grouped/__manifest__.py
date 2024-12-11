@@ -15,9 +15,10 @@
         "sale_management",
         # OCA
         "web_widget_x2many_2d_matrix",
-        # GRAP
         "mrp_bom_simple_report",
-        "mrp_bom_purchase",
+        "mrp_bom_wizard_production",
+        # "sale_mrp_link",
+        # GRAP
     ],
     "demo": [
         "demo/product.xml",
