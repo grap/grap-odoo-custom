@@ -19,11 +19,7 @@
         "demo/bom.xml",
     ],
     "data": [
-        "security/ir_rule.xml",
-        "security/ir.model.access.csv",
         "views/view_mrp_bom.xml",
-        "views/view_mrp_meal_category.xml",
-        "views/view_product_product.xml",
     ],
     "installable": True,
 }
