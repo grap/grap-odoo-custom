@@ -10,7 +10,3 @@ class MrpBom(models.Model):
 
     # Column Section
     description_packaging = fields.Char(string="Packaging description")
-    meal_category_id = fields.Many2one(
-        related="product_id.meal_category_id",
-        string="Meal category",
-    )
