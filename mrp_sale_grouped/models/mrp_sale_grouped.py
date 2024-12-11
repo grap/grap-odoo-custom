@@ -98,7 +98,6 @@ class MrpSaleGrouped(models.Model):
         for grouped_prod in self:
             grouped_prod.product_wo_bom_qty = len(grouped_prod.product_wo_bom_ids)
 
-    @api.multi
     def confirm_all_sale_order(self):
         for sale_grouped in self:
             sale_grouped.mapped("order_ids").action_confirm()

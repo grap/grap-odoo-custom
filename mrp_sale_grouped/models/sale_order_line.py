@@ -14,7 +14,6 @@ class SaleOrderLine(models.Model):
         " with web_widget_x2many_2d_matrix module.",
     )
 
-    @api.multi
     def _compute_sale_grouped_display_name(self):
         for sale_order_line in self:
             sale_order_line.sale_grouped_display_name = (

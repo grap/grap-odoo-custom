@@ -10,7 +10,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Update Values</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">x2m.matrix.grouped.sales.wizard</field>
-        <field name="view_type">form</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
@@ -18,7 +17,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="action_grouped_sale_prod_2_sale_order" model="ir.actions.act_window">
         <field name="name">Sale Orders</field>
         <field name="res_model">sale.order</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[('mrp_sale_grouped_id', 'in', active_ids)]</field>
     </record>
@@ -26,7 +24,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="action_grouped_sale_prod_2_product_product" model="ir.actions.act_window">
         <field name="name">Products</field>
         <field name="res_model">product.product</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[('id', 'in', context.get('product_wo_bom_ids',False))]</field>
     </record>
@@ -125,7 +122,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Grouped Sale Production</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">mrp.sale.grouped</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 

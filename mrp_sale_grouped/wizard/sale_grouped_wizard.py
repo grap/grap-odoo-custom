@@ -44,13 +44,11 @@ class SaleGroupedWizard(models.TransientModel):
             )
         return lines_vals
 
-    @api.multi
     def _prepare_data(self):
         return {
             "line_data": [x.sale_id.id for x in self.line_ids],
         }
 
-    @api.multi
     def print_sale_sum_up(self):
         self.ensure_one()
         data = self._prepare_data()
