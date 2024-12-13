@@ -1,1 +1,0 @@
-- Add to comment all fields related to module sale_mrp_link that has been deprecated and replace by mrp_sale_info

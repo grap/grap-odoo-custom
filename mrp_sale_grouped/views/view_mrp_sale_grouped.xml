@@ -57,10 +57,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           name="%(mrp_bom_wizard_production.action_mrp_bom_wizard_production_list_print_wizard)d"
                           icon="fa-print" context="{'sale_grouped':True}"/>
                   <field name="sales_state" widget="statusbar"/>
-                  <!-- <field name="production_state" widget="statusbar" groups="mrp.group_mrp_routings"/> -->
+                  <field name="production_state" widget="statusbar" groups="mrp.group_mrp_routings"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
+                        <field name="product_wo_bom_ids" invisible="1"/>
+                        <button class="oe_stat_button" type="action" icon="fa-warning"
+                            name="%(action_grouped_sale_prod_2_product_product)d"
+                            context="{'product_wo_bom_ids': product_wo_bom_ids}"
+                            attrs="{'invisible': [('product_wo_bom_qty', '=', 0)]}">
+                            <div class="o_field_widget o_stat_info">
+                              <span><field name="product_wo_bom_qty" widget="statinfo" nolabel="1"/></span>
+                              <span class="o_stat_text">Product w/o BoM</span>
+                            </div>
+                        </button>
+
                         <button class="oe_stat_button" type="action" icon="fa-dollar"
                             name="%(action_grouped_sale_prod_2_sale_order)d"
                             attrs="{'invisible': [('orders_qty', '=', 0)]}">
@@ -70,25 +81,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </div>
                         </button>
 
-                        <field name="product_wo_bom_ids" invisible="1"/>
-
-                        <button class="oe_stat_button" type="action" icon="fa-list icon"
-                            name="%(action_grouped_sale_prod_2_product_product)d"
-                            context="{'product_wo_bom_ids': product_wo_bom_ids}"
-                            attrs="{'invisible': [('product_wo_bom_qty', '=', 0)]}">
-                            <div class="o_field_widget o_stat_info">
-                              <span><field name="product_wo_bom_qty" widget="statinfo" nolabel="1"/></span>
-                              <span class="o_stat_text">Product w/o BoM</span>
-                            </div>
-                        </button>
-                        <!-- <button type="object"
+                        <button type="object"
                             name="action_view_production"
                             class="oe_stat_button"
                             icon="fa-wrench"
                             attrs="{'invisible': [('mrp_production_qty', '=', 0)]}"
                             groups="mrp.group_mrp_routings">
                             <field string="Production Orders" name="mrp_production_qty" widget="statinfo"/>
-                        </button> -->
+                        </button>
                     </div>
                     <div class="alert alert-warning col-8" role="status" attrs="{'invisible': [('order_ids', '!=', [])]}">
                       📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale.
@@ -104,19 +104,63 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <div class="alert alert-info col-8" role="status" attrs="{'invisible': [('product_wo_bom_qty', '==', 0)]}">
                       ℹ️ Sales contains severals products that don't have any associated bill of material. Access them with the smart button on the right.
                     </div>
+                    <h2>Sales</h2>
                     <group col="12">
                         <field colspan="12" name="order_ids" nolabel="1" context="{'search_default_last_31_days_sale': 1}" widget="many2many" domain="[('state', '!=', 'cancel'), ('state', '!=', 'done')]">
-                            <tree>
-                              <field name="name"/>
-                              <field name="date_order"/>
-                              <field name="partner_id"/>
-                              <field name="user_id"/>
-                              <field name="amount_untaxed"/>
-                              <field name="amount_tax"/>
-                              <field name="amount_total" sum="Total"/>
-                              <field name="state"/>
-                              <button name="action_confirm" type="object" class="oe_highlight" string="Confirme Quotation" attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
-                              <field name="invoice_status"/>
+                        <tree string="Sales Orders" sample="1" decoration-info="invoice_status == 'to invoice'" decoration-muted="state == 'cancel'">
+                            <field name="message_needaction" invisible="1"/>
+                            <field name="name" string="Number" readonly="1" decoration-bf="1"/>
+                            <field name="date_order" string="Order Date" widget="date" optional="show"/>
+                            <field name="commitment_date" optional="hide"/>
+                            <field name="expected_date" optional="hide"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="user_id" optional="show" widget="many2one_avatar_user"/>
+                            <field name="activity_ids" widget="list_activity" optional="show"/>
+                            <field name="team_id" optional="hide"/>
+                            <field name="company_id" groups="base.group_multi_company" optional="show" readonly="1"/>
+                            <field name="amount_untaxed" sum="Total Tax Excluded" widget="monetary" optional="show"/>
+                            <field name="amount_tax" sum="Tax Total" widget="monetary" optional="show"/>
+                            <field name="amount_total" sum="Total Tax Included" widget="monetary" decoration-bf="1" optional="show"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="invoice_status" decoration-success="invoice_status == 'invoiced'" decoration-info="invoice_status == 'to invoice'" decoration-warning="invoice_status == 'upselling'" widget="badge" optional="show"/>
+                            <field name="tag_ids" optional="hide" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <button name="action_confirm" type="object" class="oe_highlight" string="Confirme Quotation" attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
+                            <field name="state" optional="hide"/>
+                        </tree>
+                        </field>
+                    </group>
+                    <h2>Manufacturing Orders</h2>
+                    <group col="12">
+                        <field colspan="12" name="mrp_production_ids" nolabel="1" context="{'search_default_last_31_days_sale': 1}" widget="many2many" domain="[('state', '!=', 'cancel'), ('state', '!=', 'done')]">
+                            <tree string="Manufacturing Orders" multi_edit="1" sample="1" decoration-info="state == 'draft'">
+                                <field name="company_id" invisible="1"/>
+                                <field name="product_uom_category_id" invisible="1"/>
+                                <field name="priority" optional="show" widget="priority" nolabel="1"/>
+                                <field name="message_needaction" invisible="1"/>
+                                <field name="name" decoration-bf="1"/>
+                                <field name="date_planned_start" optional="show" widget="remaining_days"/>
+                                <field name="date_deadline" widget="remaining_days" attrs="{'invisible': [('state', 'in', ['done', 'cancel'])]}" optional="hide"/>
+                                <field name="product_id" readonly="1" optional="show"/>
+                                <field name="lot_producing_id" optional="hide"/>
+                                <field name="bom_id" readonly="1" optional="hide"/>
+                                <field name="activity_ids" string="Next Activity" widget="list_activity" optional="hide"/>
+                                <field name="origin" optional="show"/>
+                                <field name="user_id" optional="hide" widget="many2one_avatar_user"/>
+                                <field name="components_availability_state" invisible="1" options="{&quot;lazy&quot;: true}"/>
+                                <field name="components_availability" options="{&quot;lazy&quot;: true}" attrs="{'invisible': [('state', 'not in', ['confirmed', 'progress'])]}" optional="show" decoration-success="reservation_state == 'assigned' or components_availability_state == 'available'" decoration-warning="reservation_state != 'assigned' and components_availability_state in ('expected', 'available')" decoration-danger="reservation_state != 'assigned' and components_availability_state == 'late'"/>
+                                <field name="reservation_state" optional="hide" decoration-danger="reservation_state == 'confirmed'" decoration-success="reservation_state == 'assigned'"/>
+                                <field name="product_qty" sum="Total Qty" string="Quantity" readonly="1" optional="show"/>
+                                <field name="product_uom_id" string="UoM" readonly="1" options="{'no_open':True,'no_create':True}" groups="uom.group_uom" optional="show"/>
+                                <field name="production_duration_expected" attrs="{'invisible': [('production_duration_expected', '=', 0)]}" groups="mrp.group_mrp_routings" widget="float_time" sum="Total expected duration" optional="hide"/>
+                                <field name="production_real_duration" attrs="{'invisible': [('production_real_duration', '=', 0)]}" groups="mrp.group_mrp_routings" widget="float_time" sum="Total real duration" optional="hide"/>
+                                <field name="company_id" readonly="1" groups="base.group_multi_company" optional="hide"/>
+                                <field name="state" decoration-success="state in ('done', 'to_close')" decoration-warning="state == 'progress'" decoration-info="state == 'confirmed'" decoration-danger="state == 'cancel'" decoration-muted="state == 'draft'" optional="show" widget="badge" class="text-dark"/>
+                                <field name="activity_exception_decoration" widget="activity_exception"/>
+                                <field name="delay_alert_date" invisible="1"/>
+                                <field nolabel="1" name="json_popover" widget="stock_rescheduling_popover" attrs="{'invisible': [('json_popover', '=', False)]}"/>
+
+                                <button name="button_mark_done" attrs="{'invisible': [('state', 'not in', ('confirmed', 'progress', 'to_close'))]}" string="Mark as Done" type="object" class="oe_highlight" data-hotkey="g"/>
+
                             </tree>
                         </field>
                     </group>
@@ -137,8 +181,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="name"/>
                 <field name="date"/>
                 <field name="orders_qty"/>
-                <field name="sales_state"/>
-                <!-- <field name="production_state" groups="mrp.group_mrp_routings"/> -->
+                <field name="sales_state" widget="badge" decoration-success="sales_state == 'all_sales_confirmed'" decoration-info="sales_state == 'sales_in_progress'"/>
+                <field name="production_state" widget="badge" decoration-success="production_state == 'all_production_done'" decoration-info="production_state == 'prod_in_progress'"/>
             </tree>
         </field>
     </record>

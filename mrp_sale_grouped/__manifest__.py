@@ -17,7 +17,6 @@
         "web_widget_x2many_2d_matrix",
         "mrp_bom_simple_report",
         "mrp_bom_wizard_production",
-        # "sale_mrp_link",
         # GRAP
     ],
     "demo": [

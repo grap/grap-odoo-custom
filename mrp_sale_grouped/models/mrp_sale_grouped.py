@@ -11,11 +11,13 @@ class MrpSaleGrouped(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     _SALES_STATE_SELECTION = [
+        ("draft", "Draft"),
         ("sales_in_progress", "Sales in progress"),
         ("all_sales_confirmed", "Sales confirmed"),
     ]
 
     _PROD_STATE_SELECTION = [
+        ("no_production", "No Production"),
         ("prod_in_progress", "Production in progress"),
         ("all_production_done", "Production done"),
     ]
@@ -37,18 +39,18 @@ class MrpSaleGrouped(models.Model):
 
     sales_state = fields.Selection(
         selection=_SALES_STATE_SELECTION,
-        default="sales_in_progress",
+        default="draft",
         tracking=True,
         compute="_compute_sales_state",
     )
 
-    # production_state = fields.Selection(
-    #     selection=_PROD_STATE_SELECTION,
-    #     string="Production State",
-    #     default="prod_in_progress",
-    #     tracking=True,
-    #     compute="_compute_production_state",
-    # )
+    production_state = fields.Selection(
+        selection=_PROD_STATE_SELECTION,
+        string="Production State",
+        default="draft",
+        tracking=True,
+        compute="_compute_production_state",
+    )
 
     orders_qty = fields.Integer(
         string="Sale Order Quantity",
@@ -63,13 +65,13 @@ class MrpSaleGrouped(models.Model):
     )
 
     # Quick access to MRP Production Orders
-    # mrp_production_ids = fields.One2many(
-    #     comodel_name="mrp.production", compute="_compute_mrp_production_ids"
-    # )
-    #
-    # mrp_production_qty = fields.Integer(
-    #     compute="_compute_production_qty",
-    # )
+    mrp_production_ids = fields.One2many(
+        comodel_name="mrp.production", compute="_compute_mrp_production_ids"
+    )
+    
+    mrp_production_qty = fields.Integer(
+        compute="_compute_production_qty",
+    )
 
     # Quick access to Products withour any BoM
     product_wo_bom_ids = fields.One2many(
@@ -89,7 +91,9 @@ class MrpSaleGrouped(models.Model):
     @api.depends("order_ids")
     def _compute_sales_state(self):
         for mrp_sale_grouped in self:
-            if any(
+            if not mrp_sale_grouped.order_ids:
+                mrp_sale_grouped.sales_state = "draft"
+            elif any(
                 order.state in ["draft", "sent"]
                 for order in mrp_sale_grouped.mapped("order_ids")
             ):
@@ -97,17 +101,20 @@ class MrpSaleGrouped(models.Model):
             else:
                 mrp_sale_grouped.sales_state = "all_sales_confirmed"
 
-    #
-    # @api.depends("mrp_production_ids")
-    # def _compute_production_state(self):
-    #     for mrp_sale_grouped in self:
-    #         if any(
-    #             prods.state not in ["done", "cancel"]
-    #             for prods in mrp_sale_grouped.mapped("mrp_production_ids")
-    #         ):
-    #             mrp_sale_grouped.production_state = "prod_in_progress"
-    #         else:
-    #             mrp_sale_grouped.production_state = "all_production_done"
+
+    
+    @api.depends("mrp_production_ids")
+    def _compute_production_state(self):
+        for mrp_sale_grouped in self:
+            if not mrp_sale_grouped.mrp_production_ids:
+                mrp_sale_grouped.production_state = "no_production"
+            elif any(
+                prods.state not in ["done", "cancel"]
+                for prods in mrp_sale_grouped.mapped("mrp_production_ids")
+            ):
+                mrp_sale_grouped.production_state = "prod_in_progress"
+            else:
+                mrp_sale_grouped.production_state = "all_production_done"
 
     @api.depends("order_ids")
     def _compute_orders_qty(self):
@@ -115,18 +122,17 @@ class MrpSaleGrouped(models.Model):
             mrp_sale_grouped.orders_qty = len(mrp_sale_grouped.order_ids)
 
     # MRP Production
-    # @api.depends("order_ids")
-    # def _compute_mrp_production_ids(self):
-    #     for grouped_prod in self:
-    #         # production_ids is a sale_mrp_link field
-    #         grouped_prod.mrp_production_ids = grouped_prod.order_ids.mapped(
-    #             "production_ids"
-    #         )
-    #
-    # @api.depends("mrp_production_ids")
-    # def _compute_production_qty(self):
-    #     for grouped_prod in self:
-    #         grouped_prod.mrp_production_qty = len(grouped_prod.mrp_production_ids)
+    @api.depends("order_ids")
+    def _compute_mrp_production_ids(self):
+        for grouped_prod in self:
+            grouped_prod.mrp_production_ids = grouped_prod.order_ids.mapped(
+                "mrp_production_ids"
+            )
+    
+    @api.depends("mrp_production_ids")
+    def _compute_production_qty(self):
+        for grouped_prod in self:
+            grouped_prod.mrp_production_qty = len(grouped_prod.mrp_production_ids)
 
     # Products without any BoM
     @api.depends("order_ids")
