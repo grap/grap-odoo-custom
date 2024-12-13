@@ -107,7 +107,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <h2>Sales</h2>
                     <group col="12">
                         <field colspan="12" name="order_ids" nolabel="1" context="{'search_default_last_31_days_sale': 1}" widget="many2many" domain="[('state', '!=', 'cancel'), ('state', '!=', 'done')]">
-                        <tree string="Sales Orders" sample="1" decoration-info="invoice_status == 'to invoice'" decoration-muted="state == 'cancel'">
+                        <tree sample="1" decoration-info="invoice_status == 'to invoice'" decoration-muted="state == 'cancel'">
                             <field name="message_needaction" invisible="1"/>
                             <field name="name" string="Number" readonly="1" decoration-bf="1"/>
                             <field name="date_order" string="Order Date" widget="date" optional="show"/>
@@ -132,7 +132,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <h2>Manufacturing Orders</h2>
                     <group col="12">
                         <field colspan="12" name="mrp_production_ids" nolabel="1" context="{'search_default_last_31_days_sale': 1}" widget="many2many" domain="[('state', '!=', 'cancel'), ('state', '!=', 'done')]">
-                            <tree string="Manufacturing Orders" multi_edit="1" sample="1" decoration-info="state == 'draft'">
+                            <tree multi_edit="1" sample="1" decoration-info="state == 'draft'">
                                 <field name="company_id" invisible="1"/>
                                 <field name="product_uom_category_id" invisible="1"/>
                                 <field name="priority" optional="show" widget="priority" nolabel="1"/>

@@ -46,7 +46,6 @@ class MrpSaleGrouped(models.Model):
 
     production_state = fields.Selection(
         selection=_PROD_STATE_SELECTION,
-        string="Production State",
         default="draft",
         tracking=True,
         compute="_compute_production_state",
@@ -68,7 +67,7 @@ class MrpSaleGrouped(models.Model):
     mrp_production_ids = fields.One2many(
         comodel_name="mrp.production", compute="_compute_mrp_production_ids"
     )
-    
+
     mrp_production_qty = fields.Integer(
         compute="_compute_production_qty",
     )
@@ -101,8 +100,6 @@ class MrpSaleGrouped(models.Model):
             else:
                 mrp_sale_grouped.sales_state = "all_sales_confirmed"
 
-
-    
     @api.depends("mrp_production_ids")
     def _compute_production_state(self):
         for mrp_sale_grouped in self:
@@ -128,7 +125,7 @@ class MrpSaleGrouped(models.Model):
             grouped_prod.mrp_production_ids = grouped_prod.order_ids.mapped(
                 "mrp_production_ids"
             )
-    
+
     @api.depends("mrp_production_ids")
     def _compute_production_qty(self):
         for grouped_prod in self:
