@@ -10,4 +10,8 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["stock"],
+    "data": [
+        "views/view_product_product.xml",
+        "views/view_product_template.xml",
+    ],
 }
