@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.0.0 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
 [fermente_product](fermente_product/) | 16.0.1.1.0 |  | Fermente - Product
-[fermente_stock](fermente_stock/) | 16.0.1.0.0 |  | Fermente - Stock
+[fermente_stock](fermente_stock/) | 16.0.1.1.0 |  | Fermente - Stock
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.1.0 |  | Wizard linked to Bill of Materials to help your production.
 [mrp_business](mrp_business/) | 16.0.1.0.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
