@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [fermente_product](fermente_product/) | 16.0.1.1.0 |  | Fermente - Product
 [fermente_stock](fermente_stock/) | 16.0.1.1.0 |  | Fermente - Stock
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
+[mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.0 |  | MRP BoM Weight
 [mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.1.0 |  | Wizard linked to Bill of Materials to help your production.
 [mrp_business](mrp_business/) | 16.0.1.0.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [server_environment_files](server_environment_files/) | 16.0.1.0.0 |  | Add custom CSS and extra text on PoS ticket depending on the environment
