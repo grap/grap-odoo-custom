@@ -1,4 +1,5 @@
-Quickly manage what you need to produce thanks to grouped sales
+Quickly manage sales and linked manufacturing orders.
+For example : a Week Production for a Bakery based on its Grocery sales.
 
 .. figure:: ../static/description/mrp_sale_grouped.png
 
@@ -15,3 +16,7 @@ See dedicated module mrp_wizard_production
 .. figure:: ../static/description/report_sales_sum_up.png
 .. figure:: ../static/description/mrp_sale_grouped_sales_matrix2d.png
 .. figure:: ../static/description/mrp_sale_grouped.jpeg
+
+Quickly see what's going on for your sales and production on tree view
+
+.. figure:: ../static/description/mrp_sale_grouped_tree_view.jpeg
