@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2024 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record model="mrp.sale.grouped" id="prod_week_63">
+      <field name="name">Production week 63</field>
+      <field name="order_ids" eval="[(6, 0, [ref('mrp_sale_grouped.demo_sale_deco_addict'),])]"></field>
+    </record>
+
+</odoo>

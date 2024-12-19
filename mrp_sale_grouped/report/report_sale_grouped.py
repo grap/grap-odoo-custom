@@ -31,7 +31,7 @@ class ReportSaleGrouped(models.AbstractModel):
 
     # Data is sale.order ids
     # First returns list sale_order for head of PDF table
-    # Second return dict of product__id and quantities sort by sale_order
+    # Second return dict of product_id and quantities sort by sale_order
     @api.model
     def _prepare_data_to_matrix_customer_product(self, data):
         all_sale_order_ids = data["line_data"]

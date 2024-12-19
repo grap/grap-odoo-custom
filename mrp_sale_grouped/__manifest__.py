@@ -11,8 +11,7 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "mrp",
-        "sale_management",
+        "sale_mrp",
         # OCA
         "web_widget_x2many_2d_matrix",
         "mrp_bom_simple_report",
@@ -24,9 +23,11 @@
         "demo/bom.xml",
         "demo/sale_order.xml",
         "demo/sale_order_line.xml",
+        "demo/mrp_sale_grouped.xml",
     ],
     "data": [
         "data/report_paperformat.xml",
+        "data/stock_route.xml",
         "security/ir_rule.xml",
         "security/ir.model.access.csv",
         "report/report_sale_grouped.xml",
@@ -38,7 +39,6 @@
         "wizard/view_sale_grouped_wizard.xml",
         "wizard/x2m_matrix_grouped_sales.xml",
         "wizard/view_production_assistant_wizard.xml",
-        "views/action.xml",
     ],
     "installable": True,
 }

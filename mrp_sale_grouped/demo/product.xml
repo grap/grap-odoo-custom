@@ -37,15 +37,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="standard_price">3</field>
     </record>
 
-    <record model="product.template" id="demo_product_tomato_tart_product_template">
-        <field name="name">Tomato pie - template</field>
-        <field name="categ_id" ref="product.product_category_all"/>
-    </record>
-
     <record model="product.product" id="demo_product_tomato_tart">
       <field name="name">Tomato pie</field>
+      <field name="detailed_type">product</field>
       <field name="categ_id" ref="product.product_category_all"/>
       <field name="image_1920" type="base64" file="mrp_sale_grouped/static/img/tomato_pie.png"/>
+      <field name="route_ids" eval="[(6, 0, [ref('mrp.route_warehouse0_manufacture'), ref('stock.route_warehouse0_mto')])]"></field>
     </record>
 
 

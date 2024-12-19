@@ -10,7 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- PDF report called from action -->
     <record id="sale_grouped" model="ir.actions.report">
         <field name="model">report.sale.grouped</field>
-        <field name="name">Print sales sum up</field>
+        <field name="name">Print sales sum up PROUT</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">mrp_sale_grouped.report_sale_grouped</field>
         <field name="attachment_use">False</field>
