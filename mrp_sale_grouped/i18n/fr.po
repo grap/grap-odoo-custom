@@ -1,19 +1,34 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mrp_sale_grouped
+# 	* mrp_sale_grouped
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-26 14:32+0000\n"
-"PO-Revision-Date: 2024-01-26 14:32+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2024-12-19 14:42+0000\n"
+"PO-Revision-Date: 2024-12-19 14:42+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "<span class=\"o_stat_text\">Manufacturing Orders</span>"
+msgstr "<span class=\"o_stat_text\">Ordre de fabrication</span>"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "<span class=\"o_stat_text\">No BoM</span>"
+msgstr "<span class=\"o_stat_text\">Pas de FT</span>"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "<span class=\"o_stat_text\">Sale Orders</span>"
+msgstr "<span class=\"o_stat_text\">Ventes</span>"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_needaction
@@ -26,9 +41,19 @@ msgid "Activities"
 msgstr "Activités"
 
 #. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité exception décoration"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_state
 msgid "Activity State"
 msgstr "Status de l'Activité"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône de type d'activité"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_attachment_count
@@ -45,6 +70,11 @@ msgstr "Annuler"
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__company_id
 msgid "Company"
 msgstr "Société"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Confirm"
+msgstr "Confirmer"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
@@ -74,7 +104,6 @@ msgstr "Créé le"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__display_name
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_report_mrp_sale_grouped_report_sale_grouped__display_name
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard__display_name
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard_line__display_name
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_x2m_matrix_grouped_sales_wizard__display_name
@@ -87,19 +116,21 @@ msgid "Followers"
 msgstr "Abonnés"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Abonnés (Canaux)"
-
-#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Abonnés (Partenaires)"
 
 #. module: mrp_sale_grouped
+#: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__date
 msgid "For example, it will be used for production wizard PDF."
-msgstr "Cette date sera utilisée par exemple dans le PDF issu de l'assistant de production."
+msgstr ""
+"Cette date sera utilisée par exemple dans le PDF issu de l'assistant de "
+"production."
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_sale_grouped
@@ -110,8 +141,12 @@ msgid "Grouped Sale Production"
 msgstr "Groupe de ventes à produire"
 
 #. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__id
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_report_mrp_sale_grouped_report_sale_grouped__id
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard__id
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard_line__id
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_x2m_matrix_grouped_sales_wizard__id
@@ -119,9 +154,14 @@ msgid "ID"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__message_unread
-msgid "If checked new messages require your attention."
-msgstr "Si coché, de nouveaux messages demandent votre attention."
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__message_needaction
@@ -145,7 +185,6 @@ msgstr "31 derniers jours"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped____last_update
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_report_mrp_sale_grouped_report_sale_grouped____last_update
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard____last_update
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard_line____last_update
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_x2m_matrix_grouped_sales_wizard____last_update
@@ -184,6 +223,11 @@ msgid "Main Attachment"
 msgstr "Pièce jointe principale"
 
 #. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Mark as Done"
+msgstr "Marquer comme fait"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_has_error
 msgid "Message Delivery error"
 msgstr "Erreur d'envoi du message"
@@ -199,19 +243,24 @@ msgid "Missing Boms Text"
 msgstr "Texte des Fiches Techniques manquantes"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__mrp_production_ids
-msgid "Mrp Production"
-msgstr ""
+#: model:product.template,name:mrp_sale_grouped.demo_product_mustard_product_template
+msgid "Mustard"
+msgstr "Moutarde"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__mrp_production_qty
-msgid "Mrp Production Qty"
-msgstr ""
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Échéance de mon activité"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__name
 msgid "Name"
 msgstr "Nom"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Next Activity"
+msgstr "Activité suivante"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_date_deadline
@@ -229,9 +278,24 @@ msgid "Next Activity Type"
 msgstr "Type d'Activités à Venir"
 
 #. module: mrp_sale_grouped
+#: model:ir.model.fields.selection,name:mrp_sale_grouped.selection__mrp_sale_grouped__productions_state__no_production
+msgid "No Production"
+msgstr "Pas de production"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields.selection,name:mrp_sale_grouped.selection__mrp_sale_grouped__sales_state__no_sale
+msgid "No Sale"
+msgstr "Pas de vente"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__notes
 msgid "Notes"
 msgstr ""
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Number"
+msgstr "Nombre"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_needaction_counter
@@ -245,12 +309,12 @@ msgstr "Nombre de ventes liées"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr "Nombre d'erreurs"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr "Nombre de messages exigeant une action"
 
 #. module: mrp_sale_grouped
@@ -259,14 +323,14 @@ msgid "Number of messages with delivery error"
 msgstr "Nombre de messages avec des erreurs d'envoi"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Nombre de messages non lus"
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Open"
+msgstr "Ouvrir"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,activity_state:0
-msgid "Overdue"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Order Date"
+msgstr "Date de commande"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_sale_grouped_wizard_line__sale_partner_id
@@ -274,43 +338,50 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,activity_state:0
-msgid "Planned"
-msgstr ""
+#: model:product.template,name:mrp_sale_grouped.demo_product_pie_product_template
+msgid "Pie"
+msgstr "Tarte"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.mrp_sale_grouped_report_wizard
-#: model:ir.actions.report,name:mrp_sale_grouped.sale_grouped
-#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form
 msgid "Print sales sum up"
 msgstr "Imprimer le résumé des ventes"
 
 #. module: mrp_sale_grouped
+#: model:ir.actions.report,name:mrp_sale_grouped.sale_grouped
+msgid "Print sales sum up PROUT"
+msgstr "Imprimer le résumé des ventes"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__product_wo_bom_ids
 msgid "Product Wo Bom"
-msgstr ""
+msgstr "Produit sans FT"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__product_wo_bom_qty
 msgid "Product Wo Bom Qty"
+msgstr "Nb de produits sans FT"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__production_ids
+msgid "Production"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
-msgid "Product w/o BoM"
-msgstr "Articles sans FT"
+#: model:ir.model,name:mrp_sale_grouped.model_mrp_production
+msgid "Production Order"
+msgstr "Ordre de production"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_production_order
-#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Production Orders"
 msgstr "Ordres de production"
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__production_state
-msgid "Production State"
-msgstr "État de la Production"
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__production_qty
+msgid "Production Qty"
+msgstr "Qté de production"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
@@ -323,19 +394,29 @@ msgid "Production date"
 msgstr "Date de production"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,production_state:0
+#: model:ir.model.fields.selection,name:mrp_sale_grouped.selection__mrp_sale_grouped__productions_state__all_production_done
 msgid "Production done"
-msgstr "Production finie"
+msgstr "Production terminée"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,production_state:0
+#: model:ir.model.fields.selection,name:mrp_sale_grouped.selection__mrp_sale_grouped__productions_state__prod_in_progress
 msgid "Production in progress"
 msgstr "Production en cours"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__productions_state
+msgid "Productions State"
+msgstr "État de la production"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_product_product
 msgid "Products"
 msgstr "Articles"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Quantity"
+msgstr "Quantité"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_report_mrp_sale_grouped_report_sale_grouped
@@ -353,18 +434,12 @@ msgid "Sale Grouped Display Name"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model:ir.model,name:mrp_sale_grouped.model_sale_order
-msgid "Sale Order"
-msgstr "Commande client"
-
-#. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__orders_qty
 msgid "Sale Order Quantity"
-msgstr "Quantité de ventes"
+msgstr "Qté de ventes"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_sale_order
-#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Sale Orders"
 msgstr "Ventes"
 
@@ -374,9 +449,19 @@ msgid "Sale order"
 msgstr "Vente"
 
 #. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: mrp_sale_grouped
+#: model:ir.model,name:mrp_sale_grouped.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Ligne de bons de commande"
+msgstr "Ligne de commande"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__order_ids
@@ -389,12 +474,12 @@ msgid "Sales State"
 msgstr "État des ventes"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,sales_state:0
+#: model:ir.model.fields.selection,name:mrp_sale_grouped.selection__mrp_sale_grouped__sales_state__all_sales_confirmed
 msgid "Sales confirmed"
 msgstr "Ventes confirmées"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,sales_state:0
+#: model:ir.model.fields.selection,name:mrp_sale_grouped.selection__mrp_sale_grouped__sales_state__sales_in_progress
 msgid "Sales in progress"
 msgstr "Ventes en cours"
 
@@ -409,46 +494,85 @@ msgid "See and update values"
 msgstr "Voir et mettre à jour les quantités"
 
 #. module: mrp_sale_grouped
+#: model:product.template,name:mrp_sale_grouped.demo_product_spinach_product_template
+msgid "Spinach"
+msgstr "Épinard"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_state
-msgid "Status based on activities\n"
+msgid ""
+"Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr "Statut basé sur les activités\n"
+msgstr ""
+"Statut basé sur les activités\n"
 "En retard : la date d'échéance est déjà dépassée\n"
 "Aujourd'hui : la date d'activité est aujourd'hui\n"
 "Planifiée : activités futures"
 
 #. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Tax Total"
+msgstr "Total des taxes"
+
+#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_sale_order_line__sale_grouped_display_name
-msgid "Technical field, used to display matrix with web_widget_x2many_2d_matrix module."
-msgstr "Champ technique, utilisé pour afficher la matrice de produit, via le module web_widget_x2many_2d_matrix."
+msgid ""
+"Technical field, used to display matrix with web_widget_x2many_2d_matrix "
+"module."
+msgstr ""
+"Champ technique, utilisé pour afficher la matrice de produit, via le module "
+"web_widget_x2many_2d_matrix."
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_production_assistant_wizard
-msgid "These products are sold but don't have any Bill Of Material, so they can't be\n"
-"                   in this Production assistant:"
+msgid ""
+"These products are sold but don't have any Bill Of Material, so they can't be\n"
+"                     in this Production assistant:"
 msgstr ""
+"Ces produits sont dans une vente mais n'ont pas de Fiche technique, donc\n"
+"                     ils ne peuvent pas être dans l'assistant de production:"
 
 #. module: mrp_sale_grouped
-#: selection:mrp.sale.grouped,activity_state:0
-msgid "Today"
-msgstr "Aujourd'hui"
+#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_tart_product_template
+msgid "Tomato pie"
+msgstr "Tarte à la tomate"
+
+#. module: mrp_sale_grouped
+#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_product_template
+msgid "Tomatoes"
+msgstr "Tomates"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
-msgid "Total"
+msgid "Total Tax Excluded"
+msgstr "Total taxes exclus"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Total Tax Included"
+msgstr "Total taxes inclus"
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Total expected duration"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_unread
-msgid "Unread Messages"
-msgstr "Messages non lus"
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "Total real duration"
+msgstr ""
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Compteur de messages non lus"
+#: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: mrp_sale_grouped
+#: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
+msgid "UoM"
+msgstr "UdM"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_2_wizard_x2m_matrix
@@ -498,12 +622,14 @@ msgstr ""
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.x2many_2d_matrix_grouped_sales
 msgid "ℹ️ Only show draft and sent quotations (not confirmed quotations)"
-msgstr "ℹ️ Affiche seulement les devis brouillons et envoyées (pas les ventes confirmés)"
+msgstr ""
+"ℹ️ Affiche seulement les devis brouillons et envoyées (pas les ventes "
+"confirmés)"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
-msgid "ℹ️ Sales contains severals products that don't have any associated bill of material. Access them with the smart button on the right."
-msgstr "ℹ️ Les ventes contiennent des articles qui ne sont pas associés à une fiche technique. Accéder à ces articles par le bouton de raccourci à droite."
+msgid "⤷ Associated Manufacturing Orders"
+msgstr "⤷ Ordres de fabrication associés"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form
@@ -512,5 +638,9 @@ msgstr "📈 Ventes concernées"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
-msgid "📌 After giving a name, fill in the sales by adding a line bellow and selecting one sale."
-msgstr "📌 Après avoir donné un nom, remplissez les ventes liées en cliquant sur 'ajouter une ligne' et en séléctionnant une ou plusieurs ventes."
+msgid ""
+"📌 After giving a name, fill in the sales by adding a line bellow and "
+"selecting one sale."
+msgstr ""
+"📌 Après avoir donné un nom, remplissez les ventes liées en cliquant sur "
+"'ajouter une ligne' et en séléctionnant une ou plusieurs ventes."

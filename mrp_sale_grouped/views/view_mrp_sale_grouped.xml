@@ -76,7 +76,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             attrs="{'invisible': [('production_qty', '=', 0)]}">
                             <div class="o_field_widget o_stat_info">
                               <span><field name="production_qty" widget="statinfo" nolabel="1"/></span>
-                              <span class="o_stat_text">Manufacturing Orderss</span>
+                              <span class="o_stat_text">Manufacturing Orders</span>
                             </div>
                         </button>
 
@@ -138,7 +138,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     <h3>⤷ Associated Manufacturing Orders</h3>
                     <group col="12">
                         <field colspan="12" name="production_ids" nolabel="1">
-                            <tree decoration-info="state == 'draft'" default_order="product_id, origin desc" style="pointer-events:none;">
+                            <tree decoration-info="state == 'draft'" default_order="product_id, origin desc">
                                 <button name="open_mo" string="Open" type="object" class="oe_highlight"/>
                                 <field name="company_id" invisible="1"/>
                                 <field name="product_uom_category_id" invisible="1"/>
