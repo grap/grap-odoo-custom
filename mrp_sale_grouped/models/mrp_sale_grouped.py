@@ -63,9 +63,9 @@ class MrpSaleGrouped(models.Model):
 
     # Quick access to MRP Production Orders
     production_ids = fields.One2many(
-        comodel_name="mrp.production", 
+        comodel_name="mrp.production",
         compute="_compute_production_ids",
-        default=False, # default values False permits to add filtered on computation
+        default=False,  # default values False permits to add filtered on computation
     )
 
     production_qty = fields.Integer(
@@ -76,7 +76,7 @@ class MrpSaleGrouped(models.Model):
     product_wo_bom_ids = fields.One2many(
         comodel_name="product.product",
         compute="_compute_product_wo_bom_ids",
-        default=False, # default values False permits to add filtered on computation
+        default=False,  # default values False permits to add filtered on computation
     )
 
     product_wo_bom_qty = fields.Integer(

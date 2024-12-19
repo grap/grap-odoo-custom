@@ -10,7 +10,9 @@ class MrpProduction(models.Model):
 
     def open_mo(self):
         self.ensure_one()
-        result = self.env['ir.actions.act_window']._for_xml_id('mrp.action_mrp_production_form')
+        result = self.env["ir.actions.act_window"]._for_xml_id(
+            "mrp.action_mrp_production_form"
+        )
         form_view = self.env.ref("mrp.mrp_production_form_view")
         result["views"] = [(form_view.id, "form")]
         result["res_id"] = self.id

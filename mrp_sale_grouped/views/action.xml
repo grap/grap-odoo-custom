@@ -18,8 +18,3 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
 </odoo>
-<!-- 
-                  <button type="action" string="Print sales sum up"
-                          attrs="{'invisible': [('order_ids', '=', [])]}"
-                          name="%(mrp_sale_grouped.mrp_sale_grouped_report_wizard)d"
-                          icon="fa-print"/> -->

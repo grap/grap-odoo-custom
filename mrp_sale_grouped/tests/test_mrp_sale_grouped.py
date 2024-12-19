@@ -46,9 +46,7 @@ class TestMrpSaleGrouped(TransactionCase):
         self.assertEqual(self.mrp_sale_grouped_1.sales_state, "all_sales_confirmed")
 
     def test_03_check_mrp_grouped_productions_state(self):
-        self.assertEqual(
-            self.mrp_sale_grouped_1.productions_state, "no_production"
-        )
+        self.assertEqual(self.mrp_sale_grouped_1.productions_state, "no_production")
 
     def test_04_sale_grouped_report(self):
         # Launch wizard and report action
