@@ -9,7 +9,6 @@ class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
     # Column Section
-    description_packaging = fields.Char(string="Packaging description")
 
     # Second placeholder
     meal_category_id = fields.Many2one(
