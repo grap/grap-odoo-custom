@@ -1,1 +1,2 @@
-* Description_packaging → find OCA module ?
+* Migrate mrp_meal_category in product_template
+* Create dedicated module mrp_bom_print + mrp_business = mrp_bom_report_allergen, see task [1249](https://erp.grap.coop/web#id=1249&action=2148&active_id=40&model=project.task&view_type=form&menu_id=1673)

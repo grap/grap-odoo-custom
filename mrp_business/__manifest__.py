@@ -18,8 +18,5 @@
         "demo/product.xml",
         "demo/bom.xml",
     ],
-    "data": [
-        "views/view_mrp_bom.xml",
-    ],
     "installable": True,
 }
