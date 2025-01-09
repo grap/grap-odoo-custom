@@ -9,4 +9,3 @@ class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
     currency_id = fields.Many2one(related="product_tmpl_id.currency_id")
-    description_packaging = fields.Char(string="Packaging description")

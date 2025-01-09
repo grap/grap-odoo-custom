@@ -13,6 +13,7 @@
     "depends": [
         "mrp_bom_product_price_margin",
         "mrp_bom_simple_report",
+        "mrp_bom_simple_packaging_description",
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -20,7 +21,6 @@
         "report/report_bom_purchase_list.xml",
         "report/ir_actions_report.xml",
         "wizard/view_bom_print_purchase_list_wizard.xml",
-        "views/mrp_bom.xml",
         "views/action.xml",
         "views/menu.xml",
     ],
