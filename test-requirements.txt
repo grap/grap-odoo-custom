@@ -3,3 +3,4 @@ git+https://github.com/OCA/manufacture@refs/pull/1218/head#subdirectory=setup/mr
 git+https://github.com/OCA/manufacture@refs/pull/1214/head#subdirectory=setup/mrp_bom_line_net_qty
 
 # Placeholder for future PRs
+git+https://github.com/OCA/manufacture@refs/pull/1430/head#subdirectory=setup/mrp_bom_simple_packaging_description
