@@ -14,7 +14,7 @@
         # OCA
         "web_widget_numeric_step",
         "mrp_bom_widget_section_and_note_one2many",
-        "mrp_bom_produce_delay_in_hour",
+        "mrp_product_produce_delay_in_hour",
         # GRAP
         "mrp_bom_tag",
         "mrp_bom_line_net_qty",
