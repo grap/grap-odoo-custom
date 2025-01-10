@@ -32,7 +32,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="name">Production Orders</field>
         <field name="res_model">mrp.production</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('sale_id', 'in', context.get('ctx_order_ids'))]</field>
+        <field name="domain">[('id', 'in', context.get('ctx_production_ids'))]</field>
     </record>
 
     <record id="view_grouped_sale_production_form" model="ir.ui.view">
@@ -72,7 +72,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                         <button class="oe_stat_button" type="action" icon="fa-wrench"
                             name="%(action_grouped_sale_prod_2_production_order)d"
-                            context="{'ctx_order_ids': order_ids}"
+                            context="{'ctx_production_ids': production_ids}"
                             attrs="{'invisible': [('production_qty', '=', 0)]}">
                             <div class="o_field_widget o_stat_info">
                               <span><field name="production_qty" widget="statinfo" nolabel="1"/></span>

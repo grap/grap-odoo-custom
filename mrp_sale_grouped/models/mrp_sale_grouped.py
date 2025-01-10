@@ -65,7 +65,6 @@ class MrpSaleGrouped(models.Model):
     production_ids = fields.One2many(
         comodel_name="mrp.production",
         compute="_compute_production_ids",
-        default=False,  # default values False permits to add filtered on computation
     )
 
     production_qty = fields.Integer(
@@ -76,7 +75,6 @@ class MrpSaleGrouped(models.Model):
     product_wo_bom_ids = fields.One2many(
         comodel_name="product.product",
         compute="_compute_product_wo_bom_ids",
-        default=False,  # default values False permits to add filtered on computation
     )
 
     product_wo_bom_qty = fields.Integer(
@@ -123,7 +121,7 @@ class MrpSaleGrouped(models.Model):
 
     @api.depends("order_ids", "order_ids.mrp_production_ids")
     def _compute_production_ids(self):
-        for grouped_prod in self.filtered(lambda x: x.order_ids):
+        for grouped_prod in self:
             grouped_prod.production_ids = grouped_prod.order_ids.mapped(
                 "mrp_production_ids"
             )
@@ -136,7 +134,7 @@ class MrpSaleGrouped(models.Model):
     # Methods for Products without any BoM
     @api.depends("order_ids")
     def _compute_product_wo_bom_ids(self):
-        for grouped_prod in self.filtered(lambda x: x.order_ids):
+        for grouped_prod in self:
             grouped_prod.product_wo_bom_ids = grouped_prod.mapped(
                 "order_ids.order_line.product_id"
             ).filtered(lambda r: r.bom_count == 0)
