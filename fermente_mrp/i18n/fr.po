@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fermente_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-10 12:56+0000\n"
+"PO-Revision-Date: 2025-01-10 12:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fermente_mrp
+#: model_terms:ir.ui.view,arch_db:fermente_mrp.view_fermente_mrp_production_form_base
+msgid "BoM"
+msgstr "Fiche technique"
+
+#. module: fermente_mrp
+#: model_terms:ir.ui.view,arch_db:fermente_mrp.view_fermente_mrp_production_form_base
+msgid "Now, fill the quantity to indicate what you have produce."
+msgstr "Maintenant, remplissez la quantité pour indiquer ce que vous avez produit."
