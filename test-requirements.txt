@@ -5,3 +5,4 @@ git+https://github.com/OCA/manufacture@refs/pull/1214/head#subdirectory=setup/mr
 # Placeholder for future PRs
 git+https://github.com/OCA/manufacture@refs/pull/1430/head#subdirectory=setup/mrp_bom_simple_packaging_description
 git+https://github.com/OCA/manufacture@refs/pull/1242/head#subdirectory=setup/mrp_product_produce_delay_in_hour
+git+https://github.com/OCA/manufacture@refs/pull/1244/head#subdirectory=setup/mrp_bom_produce_delay_in_hour
