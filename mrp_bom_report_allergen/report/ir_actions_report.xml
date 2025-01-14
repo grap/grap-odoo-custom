@@ -10,12 +10,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">report.bom.allergens</field>
         <field name="name">BoM Allergens</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">mrp_bom_print.report_bom_allergens</field>
-        <field name="file">mrp_bom_print.report_bom_allergens</field>
+        <field name="report_name">mrp_bom_report_allergen.report_bom_allergens</field>
         <field name="attachment_use">False</field>
-    </record>
-
-    <record id="bom_allergens" model="ir.actions.report">
         <field name="paperformat_id" ref="paper_format_allergens"/>
     </record>
 

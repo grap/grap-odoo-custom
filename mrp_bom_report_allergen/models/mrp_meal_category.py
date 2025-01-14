@@ -33,4 +33,4 @@ class MrpMealCategory(models.Model):
     # Default methods
     @api.model
     def _default_company_id(self):
-        return self.env.company.id
+        return self.env.company

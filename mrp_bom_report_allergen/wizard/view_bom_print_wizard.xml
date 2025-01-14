@@ -10,39 +10,37 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">bom.print.wizard</field>
         <field name="arch" type="xml">
             <form string="Print Allergen table">
-                <div class="wizard_options">
-                  <h5>🔧 Choose options</h5><br/>
-                  <label for="option_allergens_only_code"/><field name="option_allergens_only_code" widget="boolean_toggle"/><br/>
-                  <label for="option_group_by_meal_category"/><field name="option_group_by_meal_category" widget="boolean_toggle"/><br/>
-                </div>
-                <div class="wizard_instrutions">
-                  <h5>🖨️ Choose BoMs to print ↓</h5>
-                </div>
-                <group colspan="2">
-                    <group col="4" colspan="2">
-                        <field name="line_ids" nolabel="1">
-                            <tree editable="bottom" default_order="bom_meal_category">
-                                <field name="bom_id" required="1"/>
-                                <field name="bom_meal_category"/>
-                                <field name="bom_allergens_ids" widget="many2many_tags"/>
-                            </tree>
-                        </field>
+                <group col="12">
+                    <group name="choose_options" string="🔧 Choose options" colspan="12">
+                      <field name="option_allergens_only_code" widget="boolean_toggle"/>
+                      <field name="option_print_meal_categories" widget="boolean_toggle"/>
                     </group>
-                    <footer>
-                        <button name="print_report" string="Print" type="object" icon="fa-print" class="oe_highlight"/>
-                        <button icon="fa-ban" special="cancel" string="Cancel"/>
-                    </footer>
                 </group>
+                <group name="choose_boms" string="🖨️ Choose BoMs to print" col="12">
+                    <field name="line_ids" nolabel="1" colspan="12">
+                        <tree editable="bottom">
+                            <field name="bom_id" required="1"/>
+                            <field name="bom_meal_category"/>
+                            <field name="bom_allergens_ids" widget="many2many_tags"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" icon="fa-print" class="oe_highlight"/>
+                    <button icon="fa-ban" special="cancel" string="Cancel"/>
+                </footer>
             </form>
         </field>
     </record>
 
-    <record id="action_mrp_bom_print_wizard" model="ir.actions.act_window">
-        <field name="name">Print Allergen table</field>
+    <!-- Button to call wizard with Print button -->
+    <record id="action_mrp_bom_report_allergen_wizard" model="ir.actions.act_window">
+        <field name="name">Allergens table</field>
         <field name="res_model">bom.print.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
         <field name="binding_model_id" ref="mrp.model_mrp_bom"/>
+        <field name="binding_type">report</field>        
     </record>
 
 </odoo>

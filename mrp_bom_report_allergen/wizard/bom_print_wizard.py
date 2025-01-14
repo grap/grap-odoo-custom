@@ -18,11 +18,11 @@ class BomPrintWizard(models.TransientModel):
 
     option_allergens_only_code = fields.Boolean(
         string="Display allergen code instead of their name",
-        default=False,
+        default=True,
     )
 
-    option_group_by_meal_category = fields.Boolean(
-        string="Group BoM by meal category",
+    option_print_meal_categories = fields.Boolean(
+        string="Print meal categories",
         default=True,
     )
 
@@ -40,9 +40,12 @@ class BomPrintWizard(models.TransientModel):
         # User has selected BoMs
         if len(bom_ids) > 0:
             boms = bom_obj.browse(bom_ids)
-        # User has not selected BoMs (click on action button for example)
+        # User has not selected BoMs (e.g : click on action button)
         else:
             boms = bom_obj.search([])
+
+        # Default sort line by meal category sequence
+        boms = boms.sorted(key=lambda r: r.product_tmpl_id.meal_category_id.sequence)
 
         # Initialize lines
         for bom in boms:
@@ -63,7 +66,7 @@ class BomPrintWizard(models.TransientModel):
         self.ensure_one()
         data = self._prepare_data()
         # Get ir_actions_report bom_allergens
-        return self.env.ref("mrp_bom_print.bom_allergens").report_action(
+        return self.env.ref("mrp_bom_report_allergen.bom_allergens").report_action(
             self, data=data
         )
 
@@ -72,7 +75,7 @@ class BomPrintWizard(models.TransientModel):
             "line_data": [x.id for x in self.line_ids],
             "option_allergens_only_code": self.option_allergens_only_code,
             "option_allergens_only_code_text": self.option_allergens_only_code_text,
-            "option_group_by_meal_category": self.option_group_by_meal_category,
+            "option_print_meal_categories": self.option_print_meal_categories,
         }
 
     # Compute Section
