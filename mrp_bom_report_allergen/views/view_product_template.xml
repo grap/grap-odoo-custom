@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- ************************************************************ -->
-    <!-- Product.product Form View -->
+    <!-- Product.template Form View -->
     <!-- ************************************************************ -->
 
     <record id="view_mrp_bom_report_allergen_product_template_form" model="ir.ui.view">

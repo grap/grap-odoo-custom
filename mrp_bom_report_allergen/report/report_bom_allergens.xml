@@ -32,7 +32,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <!-- Initialize category -->
                         <t t-set="categ_tmp" t-value="" />
                         <t t-foreach="boms_and_allergens" t-as="prepare_data_line">
-                            <t t-if="option_group_by_meal_category">
+                            <t t-if="option_print_meal_categories">
                                 <!-- PRINT CATEGORY -->
                                 <!-- New category: print this category -->
                                 <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
@@ -70,11 +70,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </tbody>
                 </table>
                 <t t-if="option_allergens_only_code" class="text-center">
-                  <hr/>
-                  <div class="code_explanation">
-                      <span class="code_explanation_title"><b>Allergens: </b></span>
-                      <span class="code_explanation_text" t-esc="option_allergens_only_code_text"></span>
-                  </div>
+                    <div class="code_explanation">
+                          <span class="code_explanation_title"><b>Allergens: </b></span>
+                          <span class="code_explanation_text" t-esc="option_allergens_only_code_text"></span>
+                    </div>
                 </t>
 
             </div>

@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_meal_category_manager,model_mrp_meal_category Manage Meal Category,model_mrp_meal_category,mrp.group_mrp_user,1,1,1,1
+access_bom_print_wizard,access_bom_print_wizard,model_bom_print_wizard,base.group_user,1,1,1,1
+access_bom_print_wizard_line,access_bom_print_wizard_line,model_bom_print_wizard_line,base.group_user,1,1,1,1

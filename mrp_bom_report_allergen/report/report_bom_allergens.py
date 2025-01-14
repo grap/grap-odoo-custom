@@ -4,7 +4,7 @@ from odoo import _, api, models
 
 
 class ReportBomAllergens(models.AbstractModel):
-    _name = "report.mrp_bom_print.report_bom_allergens"
+    _name = "report.mrp_bom_report_allergen.report_bom_allergens"
     _description = "BoM Allergens report"
 
     # In case allergen's code is not set, and user wants to print with code
@@ -31,7 +31,7 @@ class ReportBomAllergens(models.AbstractModel):
 
         # Preparing data for report → list of list
         # Goal : list of [meal_categ, product_name, allergen1, allergen2..]
-        # ordered by meal categories. allergenX is '✔️' or ''
+        # ordered by meal categories. allergenX is 'X' or ''
         # 1st step : Get line by line and create list
         boms = line_obj.browse([int(x) for x in data["line_data"]])
         boms_and_allergens = []
@@ -43,7 +43,7 @@ class ReportBomAllergens(models.AbstractModel):
             else:
                 tmpList_allergens.append(_(self._NO_CATEGORY_STRING))
             # Product name
-            tmpList_allergens.append(bom.bom_id.product_id.name)
+            tmpList_allergens.append(bom.bom_id.product_tmpl_id.name)
             # Allergens
             for allergen in allergens_all:
                 if allergen.id in bom.bom_id.bom_allergen_ids.ids:
@@ -56,5 +56,5 @@ class ReportBomAllergens(models.AbstractModel):
         # example : [['categ1', 'product1', 'x', '', 'x'],
         #            ['categ1', 'product2', '', 'x', 'x'],
         #            ['categ2', 'product2', '', 'x', 'x']]
-        boms_and_allergens.sort(key=itemgetter(0))
+        # boms_and_allergens.sort(key=itemgetter(0))
         return boms_and_allergens
