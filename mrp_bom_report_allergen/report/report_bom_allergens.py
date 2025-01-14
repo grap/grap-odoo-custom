@@ -31,8 +31,8 @@ class ReportBomAllergens(models.AbstractModel):
 
         # Preparing data for report → list of list
         # Goal : list of [meal_categ, product_name, allergen1, allergen2..]
-        # ordered by meal categories. allergenX is 'X' or ''
-        # 1st step : Get line by line and create list
+        # - Already ordered in bom_print_wizard by meal categories
+        #  - allergenX is 'X' or ''
         boms = line_obj.browse([int(x) for x in data["line_data"]])
         boms_and_allergens = []
         for bom in boms:
@@ -52,9 +52,4 @@ class ReportBomAllergens(models.AbstractModel):
                     tmpList_allergens.append(" ")
             boms_and_allergens.append(tmpList_allergens)
 
-        # 2nd step : Sort by category
-        # example : [['categ1', 'product1', 'x', '', 'x'],
-        #            ['categ1', 'product2', '', 'x', 'x'],
-        #            ['categ2', 'product2', '', 'x', 'x']]
-        # boms_and_allergens.sort(key=itemgetter(0))
         return boms_and_allergens
