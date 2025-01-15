@@ -21,7 +21,6 @@
         "data/report_paperformat.xml",
         "report/report_bom_allergens.xml",
         "report/ir_actions_report.xml",
-        "views/view_mrp_bom.xml",
         "views/view_mrp_meal_category.xml",
         "views/view_product_template.xml",
         "wizard/view_bom_print_wizard.xml",
