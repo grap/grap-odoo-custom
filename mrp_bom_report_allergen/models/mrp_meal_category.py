@@ -23,7 +23,9 @@ class MrpMealCategory(models.Model):
     )
 
     sequence = fields.Integer(
-        default=10, help="Order Meal Category for BoM Allergen Report. E.g. starter, main course, dessert"
+        default=10,
+        help="Order Meal Category for BoM Allergen Report. "
+        "E.g. starter, main course, dessert",
     )
 
     _sql_constraints = [
