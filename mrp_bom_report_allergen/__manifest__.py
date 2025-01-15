@@ -27,8 +27,8 @@
         "views/menu.xml",
     ],
     "assets": {
-        'web.report_assets_common': [
-            'mrp_bom_report_allergen/static/src/scss/mrp_bom_report_allergen.scss',
+        "web.report_assets_common": [
+            "mrp_bom_report_allergen/static/src/scss/mrp_bom_report_allergen.scss",
         ],
     },
     "installable": True,

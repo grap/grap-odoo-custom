@@ -12,5 +12,6 @@ class ProductTemplate(models.Model):
     meal_category_id = fields.Many2one(
         comodel_name="mrp.meal.category",
         string="Meal category",
-        help="Add a Meal Category to order Products in BoM Allergen report. E.g. starter, main course, dessert"
+        help="Add a Meal Category to order Products in BoM Allergens Table"
+        ". E.g. starter, main course, dessert",
     )

@@ -40,7 +40,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="view_mode">form</field>
         <field name="target">new</field>
         <field name="binding_model_id" ref="mrp.model_mrp_bom"/>
-        <field name="binding_type">report</field>        
+        <field name="binding_type">report</field>
     </record>
 
 </odoo>
