@@ -1,3 +1,7 @@
-Adds a wizard to print report for BoMs Allergens.
+Adds a wizard to print a Allergens Table for BoMs.
 
-.. figure:: ../static/description/bom_printing_allergens_with_options.gif
+.. figure:: ../static/description/mrp_bom_report_allergen_button.jpeg
+
+.. figure:: ../static/description/mrp_bom_report_allergen_wizard.png
+
+.. figure:: ../static/description/mrp_bom_report_allergen_report.png
