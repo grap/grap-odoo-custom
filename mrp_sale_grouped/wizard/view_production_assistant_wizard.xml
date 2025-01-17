@@ -11,13 +11,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form" />
         <field name="arch" type="xml">
             <xpath expr="//group[@name='options_pdf']/.." position="before">
-                <group name="other_text_no_bom" col="12">
+                <group attrs="{'invisible': [('missing_boms_text', '==', '')]}" name="other_text_no_bom" col="12">
                   <div class="other_text alert alert-info" role="status" colspan="11">
-                     These products are sold but don't have any Bill Of Material, so they can't be
-                     in this Production assistant:
-                     <b><field name="missing_boms_text" readonly="1"/></b>
+                    These products are sold but don't have any Bill Of Material, so they can't be
+                    in this Production assistant:
+                    <b><field name="missing_boms_text" readonly="1"/></b>
+                    <newline/>
                   </div>
-                  <newline/>
                 </group>
             </xpath>
         </field>
