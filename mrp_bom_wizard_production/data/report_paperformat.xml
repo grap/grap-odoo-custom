@@ -16,7 +16,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="margin_bottom">10</field>
             <field name="margin_left">5</field>
             <field name="margin_right">5</field>
-            <field name="dpi">90</field>
+            <field name="dpi">75</field>
         </record>
 
 </odoo>
