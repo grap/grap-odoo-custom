@@ -11,25 +11,25 @@ class ReportBomPurchaseList(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         (
-            data_purchase,
-            data_produce,
+            data_purchase_list,
+            data_produce_list,
             data_all_bom,
             data_list_matrix_product_bom,
-            data_produce_bom_qty,
+            data_produce_list_bom_qty,
         ) = self._prepare_data_to_purchase_and_produce(data)
-        purchase_total_cost = round(sum(map(lambda x: x[5], data_purchase)), 2)
+        purchase_total_cost = round(sum(map(lambda x: x[5], data_purchase_list)), 2)
         manufacture_bom_list = self._prepare_data_to_manufacture(data)
         docargs = {
             "manufacture_bom_list": manufacture_bom_list,
-            "purchase_list": data_purchase,
-            "produce_list": data_produce,
+            "purchase_list": data_purchase_list,
+            "produce_list": data_produce_list,
             "manufacture_total_cost": self._prepare_manufacture_total_cost(data),
             "purchase_total_cost": purchase_total_cost,
             "data_all_bom": data_all_bom,
             "data_list_matrix_product_bom": data_list_matrix_product_bom,
             "currency_symbol": self._prepare_currency(data),
             "wizard_lines": self._get_wizard_lines(data),
-            "data_produce_bom_qty": data_produce_bom_qty,
+            "data_produce_list_bom_qty": data_produce_list_bom_qty,
         }
         return docargs
 
@@ -47,7 +47,7 @@ class ReportBomPurchaseList(models.AbstractModel):
 
     # Used in _prepare_data_to_purchase_and_produce
     @api.model
-    def create_data_purchase_and_data_product_bom_qty(
+    def create_data_purchase_list_and_data_product_bom_qty(
         self,
         line_template,
         bom_lines_with_factor,
@@ -115,9 +115,11 @@ class ReportBomPurchaseList(models.AbstractModel):
 
     #  Used in _prepare_data_to_purchase_and_produce
     @api.model
-    def create_data_produce(self, data_produce, wiz_bom_line, bom_lines, bom_qty):
+    def create_data_produce_list(
+        self, data_produce_list, wiz_bom_line, bom_lines, bom_qty
+    ):
         bom_lines_with_factor = []
-        data_produce_bom_qty = []
+        data_produce_list_bom_qty = []
 
         for bom_line in bom_lines:
             product = bom_line.product_id
@@ -132,7 +134,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                     [("bom_id", "=", nested_bom.id), ("product_id", "!=", False)]
                 )
 
-                # DATA_PURCHASE :
+                # data_purchase_list :
                 #   - fill bom_lines_with_factor
                 #   - filter bom_lines to remove INTERMEDIATE product
                 # Add nested bom lines with factor which is
@@ -147,7 +149,7 @@ class ReportBomPurchaseList(models.AbstractModel):
                     [nested_bom_lines, parent_bom_factor_qty, nested_bom]
                 )
 
-                # DATA_PRODUCE
+                # data_produce_list
                 # Add intermediate product and calculate values of this line
                 produce_product_qty = self.calculate_qty_for_one_product(
                     bom_line.product_qty, bom_qty, wiz_bom_line.quantity, 3
@@ -160,23 +162,23 @@ class ReportBomPurchaseList(models.AbstractModel):
                     wiz_bom_line.bom_id.display_name + " x" + str(produce_product_qty)
                 )
                 # Add product or just quantity if product is already there
-                if product_id in data_produce:
-                    data_produce[product_id]["to_produce_product_bom_name"] += str(
+                if product_id in data_produce_list:
+                    data_produce_list[product_id]["to_produce_product_bom_name"] += str(
                         ", " + to_produce_product_bom_name
                     )
-                    data_produce[product_id]["to_produce_quantity"] = round(
-                        data_produce[product_id]["to_produce_quantity"]
+                    data_produce_list[product_id]["to_produce_quantity"] = round(
+                        data_produce_list[product_id]["to_produce_quantity"]
                         + produce_product_qty,
                         4,
                     )
-                    data_produce[product_id]["to_produce_subtotal"] = round(
-                        data_produce[product_id]["to_produce_subtotal"]
+                    data_produce_list[product_id]["to_produce_subtotal"] = round(
+                        data_produce_list[product_id]["to_produce_subtotal"]
                         + produce_subtotal,
                         3,
                     )
                 else:
                     _product_name = bom_line.product_id.name.capitalize()
-                    data_produce[product_id] = {
+                    data_produce_list[product_id] = {
                         "to_produce_product_name": _product_name,
                         "to_produce_product_bom_name": to_produce_product_bom_name,
                         "to_produce_quantity": round(produce_product_qty, 3),
@@ -185,22 +187,23 @@ class ReportBomPurchaseList(models.AbstractModel):
                         "to_produce_subtotal": round(produce_subtotal, 3),
                     }
 
-                # Create this list used in PDF for data_produce
-                data_produce_bom_qty.append(
+                # Create this list used in PDF for data_produce_list
+                data_produce_list_bom_qty.append(
                     [nested_bom, produce_product_qty, to_produce_product_bom_name]
                 )
 
-        return data_produce, bom_lines_with_factor, data_produce_bom_qty
+        return data_produce_list, bom_lines_with_factor, data_produce_list_bom_qty
 
     # Returns five lists :
-    # 1. DATA_PURCHASE : component products that we'll be purchased
+    # 1. data_purchase_list : component products that we'll be purchased
     #   → [['category', 'product_name', quantity, uom, price_unit, subtotal], ... ]
-    # 2. DATA_PRODUCE : intermediates products that we'll be produced [bom_id1, bom_id2]
+    # 2. data_produce_list :
+    #       intermediates products that we'll be produced [bom_id1, bom_id2]
     # 3. DATA_ALL_BOM : all boms :
     #   → [['Tomato pie', 0.1, 'kg'], ['Wood Panel', 1.0, 'Unit(s)']]
     # 4. DATA_LIST_MATRIX_PRODUCT_BOM
     #   → [['Pie', 1.0, ' '], ['Tomatoes', 0.5, ' '], ..]
-    # 5. DATA_PRODUCE_BOM_QTY
+    # 5. data_produce_list_BOM_QTY
     #   → [[mrp.bom(1), 2.0, 'Intermediate product for Tomatoes'], ..]
     @api.model
     def _prepare_data_to_purchase_and_produce(self, data):
@@ -267,43 +270,44 @@ class ReportBomPurchaseList(models.AbstractModel):
             data_all_bom.append(value[0] + " - " + str(value[1]) + " " + value[2])
 
         # ==== Init variables
-        pre_data_produce = {}
-        pre_data_purchase = {}
+        pre_data_produce_list = {}
+        pre_data_purchase_list = {}
         data_product_bom_qty = {}
 
-        # ==== Create pre_DATA_PRODUCE, pre_DATA_PURCHASE
+        # ==== Create pre_data_produce_list, pre_data_purchase_list
         #      and pre_DATA_LIST_MATRIX_PRODUCT_BOM
         for wiz_bom_line in wiz_boms_lines:
             bom = wiz_bom_line.bom_id
             bom_qty = bom.product_qty
-            # Search bomlines without bomlines of notes or sections
+            # Search bomlines except notes and sections
             bom_lines = mrp_bom_line_obj.search(
                 [("bom_id", "=", bom.id), ("product_id", "!=", False)]
             )
-            # ==== DATA_PROCUCE and DATA_PRODUCE_BOM_QTY (coming from nested boms)
-            # Also add their bom lines in bom_lines_with_factor to create DATA_PURCHASE
+            # ==== DATA_PRODUCE and data_produce_list_BOM_QTY (coming from nested boms)
+            # Also add their bom lines in bom_lines_with_factor
+            # to create data_purchase_list
             (
-                pre_data_produce,
+                pre_data_produce_list,
                 bom_lines_with_factor,
-                data_produce_bom_qty,
-            ) = self.create_data_produce(
-                pre_data_produce, wiz_bom_line, bom_lines, bom_qty
+                data_produce_list_bom_qty,
+            ) = self.create_data_produce_list(
+                pre_data_produce_list, wiz_bom_line, bom_lines, bom_qty
             )
             # bom_lines_with_factor = [[bom_lines1, factor1, nested_bom_lines1], ..]
 
-            # ==== DATA_PURCHASE (components products)
+            # ==== data_purchase_list (components products)
             # ==== and DATA_LIST_MATRIX_PRODUCT_BOM
             # Formate bom_lines to be add with nested bom lines, factor is 1
             bom_lines_with_factor.append([bom_lines, 1, False])
 
             # # Go through concatenation of nested BoMs Lines and Boms Lines
             (
-                pre_data_purchase,
+                pre_data_purchase_list,
                 data_product_bom_qty,
-            ) = self.create_data_purchase_and_data_product_bom_qty(
+            ) = self.create_data_purchase_list_and_data_product_bom_qty(
                 line_template,
                 bom_lines_with_factor,
-                pre_data_purchase,
+                pre_data_purchase_list,
                 data_product_bom_qty,
                 wiz_bom_line,
                 bom_qty,
@@ -324,9 +328,9 @@ class ReportBomPurchaseList(models.AbstractModel):
         ]
 
         # Formate purchase_list dict in list the way we want
-        data_purchase = []
-        for bom_line in pre_data_purchase.values():
-            data_purchase.append(
+        data_purchase_list = []
+        for bom_line in pre_data_purchase_list.values():
+            data_purchase_list.append(
                 [
                     bom_line[field]
                     for field in [
@@ -340,16 +344,16 @@ class ReportBomPurchaseList(models.AbstractModel):
                 ]
             )
         # Sort the PURCHASE_LIST by product name and, optionally, category
-        data_purchase.sort(
+        data_purchase_list.sort(
             key=itemgetter(0, 1)
             if data["option_group_by_product_category"]
             else itemgetter(1)
         )
 
-        # ==== DATA_PRODUCE : formate dict in list the way we want
-        data_produce = []
-        for bom in pre_data_produce.values():
-            data_produce.append(
+        # ==== data_produce_list : formate dict in list the way we want
+        data_produce_list = []
+        for bom in pre_data_produce_list.values():
+            data_produce_list.append(
                 [
                     bom[field]
                     for field in [
@@ -364,60 +368,36 @@ class ReportBomPurchaseList(models.AbstractModel):
             )
 
         return (
-            data_purchase,
-            data_produce,
+            data_purchase_list,
+            data_produce_list,
             data_all_bom,
             data_list_matrix_product_bom,
-            data_produce_bom_qty,
+            data_produce_list_bom_qty,
         )
 
     @api.model
     def _prepare_data_to_manufacture(self, data):
         line_obj = self.env["bom.print.purchase.list.wizard.line"]
-        bom_line_obj = self.env["mrp.bom.line"]
         wiz_boms = line_obj.browse([int(x) for x in data["line_data"]])
-
-        # Get all BOM lines without bomlines of notes or sections
-        bom_lines = bom_line_obj.search(
-            [
-                ("bom_id", "in", wiz_boms.mapped("bom_id").ids),
-                ("product_id", "!=", False),
-            ]
-        )
 
         manufacture_bom_list = []
         for wiz_bom in wiz_boms:
             bom = wiz_bom.bom_id
-            bom_qty = bom.product_qty
             desired_bom_qty = wiz_bom.quantity
-
-            tmp_bom_lines = []
-            for bom_line in bom_lines:
-                product_qty = self.calculate_qty_for_one_product(
-                    bom_line.product_qty, bom_qty, desired_bom_qty, 3
-                )
-                tmp_bom_lines.append(
-                    [
-                        bom_line.product_id.display_name,
-                        product_qty,
-                        bom_line.product_uom_id.name,
-                    ]
-                )
 
             manufacture_bom_list.append(
                 [
                     bom.display_name,
+                    bom.description_packaging,
                     desired_bom_qty,
                     wiz_bom.bom_uom_id.name,
                     round(wiz_bom.bom_id.standard_price, 3),
                     round(wiz_bom.wizard_line_subtotal, 3),
-                    tmp_bom_lines,
-                    bom.description_packaging,
-                    # bom.notes,
                 ]
             )
-        # manufacture_bom_list = [['SEITAN_BOM', 2.0, 'Unit(s)', 55.0, 110.0,
-        #   [['Carrots', 10.0, 'kg'], ['Onions', 4.0, 'Unit(s)']]] , bom2]
+
+        # manufacture_bom_list = [['SEITAN_BOM', 'Small packet 125g', 2.0, 'Unit(s)',
+        #  55.0, 110.0, [['Carrots', 10.0, 'kg'], ['Onions', 4.0, 'Unit(s)']]] , bom2]
         return manufacture_bom_list
 
     @api.model
