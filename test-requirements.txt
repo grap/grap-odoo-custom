@@ -4,5 +4,6 @@ git+https://github.com/OCA/manufacture@refs/pull/1214/head#subdirectory=setup/mr
 
 # Placeholder for future PRs
 git+https://github.com/OCA/product-attributes@refs/pull/1840/head#subdirectory=setup/product_compute_template_field_from_variant_helper
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_label
 git+https://github.com/grap/grap-odoo-business@refs/pull/178/head#subdirectory=setup/product_food
 git+https://github.com/grap/grap-odoo-business@refs/pull/181/head#subdirectory=setup/mrp_bom_product_allergen
