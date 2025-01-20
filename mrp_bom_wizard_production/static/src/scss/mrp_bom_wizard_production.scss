@@ -1,8 +1,11 @@
-.title-h2{
-  color : #2d3436; // grey
-}
-.title-h3{
-  color : #2a3836;
+$grey: #2d3436;
+$violet: #6c5ce7;
+$violet-light: #e1def2;
+$violet-dark: #2b043a;
+$yellow: #fdcb6e;
+
+.title-h2, .title-h3{
+  color : $grey;
 }
 
 .page_header{
@@ -10,27 +13,31 @@
   padding: 1em;
 }
 
-.bom_purchase_total_cost_tr{
-  background-color: #fdcb6e;
+.purchase_list_new_category{
+  background-color: $violet-light;
 }
 
-.reminder_bom_to_prepare_thead{
-    color : #0984e3;
+.table_footer_total_cost{
+  background-color: $yellow;
+}
+
+.manufacture_bom_to_prepare_thead{
+    color : $violet-light;
 }
 
 .th-colored{
-    color : #6c5ce7; // exodus fruit
+    color : $violet;
 }
 
-.width-fixed-small {
+.width-fixed-small{
   width: 100px;
 }
 
-.width-fixed-large {
+.width-fixed-large{
   width: 250px;
 }
 
-.width-qty-and-unit {
+.width-qty-and-unit{
   width: 10px;
 }
 
@@ -43,11 +50,11 @@
 }
 
 .bom-desired-quantity{
-  color: #2b043a;
+  color: $violet-dark;
 }
 
 .bom-description{
-  color: #500782;
+  color: $violet;
 }
 
 .production_date{
