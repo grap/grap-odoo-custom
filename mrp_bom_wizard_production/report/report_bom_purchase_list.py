@@ -197,7 +197,7 @@ class ReportBomPurchaseList(models.AbstractModel):
             bom_lines_with_factor,
         )
 
-    # Returns five lists :
+    # Returns four lists :
     # 1. data_purchase_list : component products that we'll be purchased
     #   → [['category', 'product_name', quantity, uom, price_unit, subtotal], ... ]
     # 2. data_intermediate_product_list :
