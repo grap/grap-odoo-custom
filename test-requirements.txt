@@ -1,5 +1,17 @@
 git+https://github.com/OCA/manufacture@refs/pull/1227/head#subdirectory=setup/mrp_bom_product_price_margin
 git+https://github.com/OCA/manufacture@refs/pull/1218/head#subdirectory=setup/mrp_bom_simple_report
 git+https://github.com/OCA/manufacture@refs/pull/1214/head#subdirectory=setup/mrp_bom_line_net_qty
+git+https://github.com/OCA/manufacture@refs/pull/1242/head#subdirectory=setup/mrp_product_produce_delay_in_hour
+git+https://github.com/OCA/manufacture@refs/pull/1244/head#subdirectory=setup/mrp_bom_produce_delay_in_hour
+git+https://github.com/OCA/manufacture@refs/pull/1430/head#subdirectory=setup/mrp_bom_simple_packaging_description
+git+https://github.com/OCA/product-attributes@refs/pull/1840/head#subdirectory=setup/product_compute_template_field_from_variant_helper
 
-# Placeholder for future PRs
+# Placeholder for future PRs 1
+
+# Placeholder for future PRs 2
+
+# Placeholder for future PRs 3
+
+# Placeholder for future PRs 4
+
+# Placeholder for future PRs 5
