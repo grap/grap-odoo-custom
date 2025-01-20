@@ -4,10 +4,11 @@ from operator import itemgetter
 from odoo import api, models
 
 
-class ReportBomPurchaseList(models.AbstractModel):
-    _name = "report.mrp_bom_wizard_production.report_bom_purchase_list"
-    _description = "BoM Purchase list"
+class ReportBomWizardProduction(models.AbstractModel):
+    _name = "report.mrp_bom_wizard_production.report_bom_wizard_production"
+    _description = "BoM Wizard Production"
 
+    # data are given by bom_wizard_production.py
     @api.model
     def _get_report_values(self, docids, data=None):
         (
@@ -41,7 +42,7 @@ class ReportBomPurchaseList(models.AbstractModel):
     # Used in _prepare_data_to_purchase_and_produce
     @api.model
     def _get_wizard_lines(self, data):
-        return self.env["bom.print.purchase.list.wizard.line"].browse(data["line_data"])
+        return self.env["bom.wizard.production.line"].browse(data["line_data"])
 
     # Used in _prepare_data_to_purchase_and_produce
     @api.model
@@ -376,7 +377,7 @@ class ReportBomPurchaseList(models.AbstractModel):
 
     @api.model
     def _prepare_data_to_manufacture(self, data):
-        line_obj = self.env["bom.print.purchase.list.wizard.line"]
+        line_obj = self.env["bom.wizard.production.line"]
         wiz_boms = line_obj.browse([int(x) for x in data["line_data"]])
 
         manufacture_bom_list = []
@@ -401,12 +402,12 @@ class ReportBomPurchaseList(models.AbstractModel):
 
     @api.model
     def _prepare_manufacture_total_cost(self, data):
-        line_obj = self.env["bom.print.purchase.list.wizard.line"]
+        line_obj = self.env["bom.wizard.production.line"]
         wiz_boms_lines = line_obj.browse([int(x) for x in data["line_data"]])
         return round(sum(wiz_boms_lines.mapped("wizard_line_subtotal")), 3)
 
     @api.model
     def _prepare_currency(self, data):
-        line_obj = self.env["bom.print.purchase.list.wizard.line"]
+        line_obj = self.env["bom.wizard.production.line"]
         wiz_boms_lines = line_obj.browse([int(x) for x in data["line_data"]])
         return wiz_boms_lines[0].currency_id.symbol if wiz_boms_lines else ""

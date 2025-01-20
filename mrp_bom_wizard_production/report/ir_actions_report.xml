@@ -6,13 +6,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="bom_purchase_list" model="ir.actions.report">
-        <field name="model">report.bom.purchase.list</field>
-        <field name="name">BoM Purchase List</field>
+    <record id="bom_wizard_production" model="ir.actions.report">
+        <field name="model">report.bom.wizard.production</field>
+        <field name="name">BoM Wizard Production</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">mrp_bom_wizard_production.report_bom_purchase_list</field>
+        <field name="report_name">mrp_bom_wizard_production.report_bom_wizard_production</field>
         <field name="attachment_use">False</field>
-        <field name="paperformat_id" ref="paper_format_purchase_list"/>
+        <field name="paperformat_id" ref="paper_format_bom_wizard_production"/>
     </record>
 
 </odoo>

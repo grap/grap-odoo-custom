@@ -1,1 +1,1 @@
-from . import report_bom_purchase_list
+from . import report_bom_wizard_production

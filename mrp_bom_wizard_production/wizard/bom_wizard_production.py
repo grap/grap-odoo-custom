@@ -5,12 +5,12 @@
 from odoo import api, fields, models
 
 
-class BomPrintPurchaseListWizard(models.TransientModel):
-    _name = "bom.print.purchase.list.wizard"
+class BomWizardProduction(models.TransientModel):
+    _name = "bom.wizard.production"
     _description = "Wizard for printing bill of materials"
 
     line_ids = fields.One2many(
-        comodel_name="bom.print.purchase.list.wizard.line",
+        comodel_name="bom.wizard.production.line",
         inverse_name="wizard_id",
         string="Lines",
         default=lambda s: s._default_line_ids(),
@@ -133,5 +133,5 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         data = self._prepare_data()
         # Get ir_actions_report
         return self.env.ref(
-            "mrp_bom_wizard_production.bom_purchase_list"
+            "mrp_bom_wizard_production.bom_wizard_production"
         ).report_action(self, data=data)

@@ -6,7 +6,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <template id="report_bom_purchase_list">
+    <template id="report_bom_wizard_production">
         <t t-call="web.basic_layout">
             <div class="title">
               <h1><span t-esc="title_for_pdf"/></h1>
