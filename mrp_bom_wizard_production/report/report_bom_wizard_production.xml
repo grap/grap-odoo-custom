@@ -134,7 +134,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </t>
             </div>
 
-            <!-- ======= COMPONENTS =======  -->
+            <!-- ======= PURCHASE LIST OF COMPONENTS =======  -->
             <div class="page_components_requirements small-font-size new_section">
               <div class="page_header">
                 <h2 class="text-left title-h2">Components requirements</h2>
@@ -209,7 +209,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </table>
             </div>
 
-            <!--  PRODUCTS PER BOMS -->
+            <!-- ======= MATRIX PRODUCTS PER BOMS =======  -->
             <div class="page_product_bom_qty small-font-size new_section" style="page-break-before:always;">
               <div class="page_header">
                 <h2 class="text-left title-h2">Sum um quantities per bills of materials</h2>
@@ -225,7 +225,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                       </tr>
                   </thead>
                   <tbody>
-                      <t t-foreach="data_list_matrix_product_bom" t-as="line_product_bom_qty">
+                      <t t-foreach="data_matrix_product_bom" t-as="line_product_bom_qty">
                           <tr>
                             <t t-set="i" t-value="0"/>
                             <t t-foreach="line_product_bom_qty" t-as="product_then_quantities">
@@ -252,7 +252,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
           This part is handled by module mrp_bom_simple_report
           so we need to extract from t-call web.simple_layout to be handle correctly
         -->
-        <!-- ======= BOMS =======  -->
+        <!-- ======= BOMS SIMPLE REPORT =======  -->
         <t t-if="option_print_bom">
           <t t-foreach="wizard_lines" t-as="wizard_line">
             <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
@@ -260,7 +260,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <t t-set="bom_qty" t-value="wizard_line.quantity"/>
             </t>
           </t>
-          <!-- ======= INTERMEDIATE BOMS TO PRODUCE =======  -->
+          <!-- ======= INTERMEDIATE BOMS SIMPLE REPORT =======  -->
           <t t-foreach="data_produce_bom_qty" t-as="intermediate_bom">
             <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
               <t t-set="docs" t-value="intermediate_bom[0]"/>
