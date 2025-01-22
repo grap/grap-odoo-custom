@@ -219,7 +219,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <thead>
                       <tr class="th-colored">
                           <th name="th_customer" class="text-center"></th>
-                          <t t-foreach="data_all_bom" t-as="data_bom">
+                          <t t-foreach="data_matrix_boms" t-as="data_bom">
                               <th name="th_sale_order_customer" class="text-center"><span t-esc="data_bom"/></th>
                           </t>
                       </tr>

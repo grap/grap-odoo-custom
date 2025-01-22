@@ -11,20 +11,20 @@ class ReportBomWizardProduction(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         (
+            data_manufacture_list,
             data_purchase_list,
             data_intermediate_product_list,
-            data_all_bom,
+            data_matrix_boms,
             data_matrix_product_bom,
         ) = self._prepare_data_to_purchase_and_produce(data)
         purchase_total_cost = round(sum(map(lambda x: x[5], data_purchase_list)), 2)
-        manufacture_bom_list = self._prepare_data_to_manufacture(data)
         docargs = {
-            "manufacture_bom_list": manufacture_bom_list,
+            "manufacture_bom_list": data_manufacture_list,
             "intermediate_product_list": data_intermediate_product_list,
             "purchase_list": data_purchase_list,
             "manufacture_total_cost": self._prepare_manufacture_total_cost(data),
             "purchase_total_cost": purchase_total_cost,
-            "data_all_bom": data_all_bom,
+            "data_matrix_boms": data_matrix_boms,
             "data_matrix_product_bom": data_matrix_product_bom,
             "currency_symbol": data["currency_symbol"],
             "wizard_lines": self._get_wizard_lines(data),
@@ -38,7 +38,6 @@ class ReportBomWizardProduction(models.AbstractModel):
         _bom_qty = max(1, bom_qty)
         return round(bom_line_product_qty * desired_qty / _bom_qty, digits)
 
-    # Used in _prepare_data_to_purchase_and_produce
     @api.model
     def _get_wizard_lines(self, data):
         return self.env["bom.wizard.production.line"].browse(data["line_data"])
@@ -51,7 +50,7 @@ class ReportBomWizardProduction(models.AbstractModel):
         bom_lines_with_factor,
         purchase_list,
         data_product_bom_qty,
-        wiz_bom_line,
+        wiz_line,
         bom_qty,
     ):
         # Go through concatenation of nested BoMs Lines and Boms Lines
@@ -63,7 +62,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                 product_qty = self.calculate_qty_for_one_product(
                     bom_line.product_qty,
                     bom_qty,
-                    wiz_bom_line.quantity * parent_bom_factor_qty,
+                    wiz_line.quantity * parent_bom_factor_qty,
                     3,
                 )
                 bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 3)
@@ -90,7 +89,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                     # nested bom_line → choose nested_bom
                     bom_id_concerned = bom_lines_with_quantity[2].id
                 else:
-                    bom_id_concerned = wiz_bom_line.bom_id.id
+                    bom_id_concerned = wiz_line.bom_id.id
 
                 if product_id not in data_product_bom_qty:
                     # add template : set 0 for each futur BoM column
@@ -114,20 +113,20 @@ class ReportBomWizardProduction(models.AbstractModel):
 
     @api.model
     def create_data_intermediate_product_list(
-        self, data_intermediate_product_list, wiz_bom_line
+        self, data_intermediate_product_list, wiz_line
     ):
         """
         This function is called in a loop with all BoMs of Wizard
         It gradually fills data_intermediate_product_list with quantities
 
         :param data_intermediate_product_list: array being filled gradually
-        :param wiz_bom_line: bom.wizard.production.line with Bom, Bom Qty, Desired Qty
+        :param wiz_line: bom.wizard.production.line with Bom, Bom Qty, Desired Qty
         :return: data_intermediate_product_list, bom_lines_with_factor (?)
         """
         bom_lines_with_factor = []
 
         # Loop in every bom_line of the BoM
-        for bom_line in wiz_bom_line.bom_id.bom_line_ids:
+        for bom_line in wiz_line.bom_id.bom_line_ids:
             product = bom_line.product_id
             product_id = product.id
             # /!\ Limitation : only get the first nested BoM
@@ -159,8 +158,8 @@ class ReportBomWizardProduction(models.AbstractModel):
                 # Add intermediate product and calculate values of this line
                 produce_product_qty = self.calculate_qty_for_one_product(
                     bom_line.product_qty,
-                    wiz_bom_line.bom_id.product_qty,
-                    wiz_bom_line.quantity,
+                    wiz_line.bom_id.product_qty,
+                    wiz_line.quantity,
                     3,
                 )
                 produce_subtotal = round(
@@ -168,7 +167,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                 )
 
                 to_produce_product_bom_name = (
-                    wiz_bom_line.bom_id.display_name + " x" + str(produce_product_qty)
+                    wiz_line.bom_id.display_name + " x" + str(produce_product_qty)
                 )
                 # Add product or just quantity if product is already there
                 if product_id in data_intermediate_product_list:
@@ -209,48 +208,67 @@ class ReportBomWizardProduction(models.AbstractModel):
             bom_lines_with_factor,
         )
 
-    # Returns four lists :
-    # 1. data_purchase_list : component products that we'll be purchased
-    #   → [['category', 'product_name', quantity, uom, price_unit, subtotal], ... ]
-    # 2. data_intermediate_product_list :
-    #       intermediates products that we'll be produced [bom_id1, bom_id2]
-    # 3. DATA_ALL_BOM : all boms :
-    #   → [['Tomato pie', 0.1, 'kg'], ['Wood Panel', 1.0, 'Unit(s)']]
-    # 4. data_matrix_product_bom
-    #   → [['Pie', 1.0, ' '], ['Tomatoes', 0.5, ' '], ..]
     @api.model
     def _prepare_data_to_purchase_and_produce(self, data):
-        mrp_bom_line_obj = self.env["mrp.bom.line"]
-        # Get the selected BoMs and their associated lines
-        wiz_boms_lines = self._get_wizard_lines(data)
-        wiz_boms_lines.mapped("bom_id")
+        """
+        This function formate datas for the production report
 
-        # ==== LINE_TEMPLATE and DATA_ALL_BOM
+        :param data from wizard
+        :return: Lists for report
+            1. data_manufacture_list
+            2. data_purchase_list
+            3. data_intermediate_product_list
+            4. data_matrix_boms : used in matrix head table
+            5. data_matrix_product_bom
+        """
+
+        # Init variables
+        data_manufacture_list = []
+        mrp_bom_line_obj = self.env["mrp.bom.line"]
+
+        # Get Wizard lines
+        wiz_lines = self._get_wizard_lines(data)
+
+        # ==== LINE_TEMPLATE and data_matrix_boms
         # Create template with as many zero as BoM
         # to prepare data_matrix_product_bom
         # Look like : {10: [BomName1, 0], 5: [BomName2, 0]}
         # Need to go through nested boms one first time
         line_template = {}
-        pre_data_all_bom = {}
-        for wiz_bom_line in wiz_boms_lines:
-            bom = wiz_bom_line.bom_id
+        pre_data_matrix_boms = {}
+        for wiz_line in wiz_lines:
+            # Init variables from wizard line
+            bom = wiz_line.bom_id
             bom_id = bom.id
+            desired_bom_qty = wiz_line.quantity
 
             # Add bom to line_template
             line_template[bom_id] = [bom.display_name, 0]
 
-            # ==== DATA_ALL_BOM
-            if not pre_data_all_bom.get(bom.id):
-                pre_data_all_bom[bom_id] = [
+            # ==== data_manufacture_list
+            data_manufacture_list.append(
+                [
                     bom.display_name,
-                    round(wiz_bom_line.quantity, 3),
-                    wiz_bom_line.bom_uom_id.name,
+                    bom.description_packaging,
+                    desired_bom_qty,
+                    wiz_line.bom_uom_id.name,
+                    round(wiz_line.bom_id.standard_price, 3),
+                    round(wiz_line.wizard_line_subtotal, 3),
+                ]
+            )
+
+            # ==== data_matrix_boms
+            if not pre_data_matrix_boms.get(bom.id):
+                pre_data_matrix_boms[bom_id] = [
+                    bom.display_name,
+                    round(wiz_line.quantity, 3),
+                    wiz_line.bom_uom_id.name,
                 ]
             else:
                 rounded_sum = round(
-                    pre_data_all_bom[bom_id][1] + wiz_bom_line.quantity, 3
+                    pre_data_matrix_boms[bom_id][1] + wiz_line.quantity, 3
                 )
-                pre_data_all_bom[bom_id][1] = rounded_sum
+                pre_data_matrix_boms[bom_id][1] = rounded_sum
 
             # /!\ Limitation : Search its bomlines and get the FIRST nested BoM
             bom_lines = mrp_bom_line_obj.search(
@@ -263,24 +281,26 @@ class ReportBomWizardProduction(models.AbstractModel):
 
                     # Add nested bom to line_template
                     line_template[nested_bom_id] = [nested_bom.display_name, 0]
-                    # DATA_ALL_BOM
-                    quantity_with_factor = bom_line.product_qty * wiz_bom_line.quantity
-                    if not pre_data_all_bom.get(nested_bom_id):
-                        pre_data_all_bom[nested_bom_id] = [
+                    # data_matrix_boms
+                    quantity_with_factor = bom_line.product_qty * wiz_line.quantity
+                    if not pre_data_matrix_boms.get(nested_bom_id):
+                        pre_data_matrix_boms[nested_bom_id] = [
                             "↳ " + nested_bom.display_name,
                             round(quantity_with_factor, 3),
                             bom_line.product_uom_id.name,
                         ]
                     else:
                         rounded_sum = round(
-                            pre_data_all_bom[nested_bom_id][1] + quantity_with_factor, 3
+                            pre_data_matrix_boms[nested_bom_id][1]
+                            + quantity_with_factor,
+                            3,
                         )
-                        pre_data_all_bom[nested_bom_id][1] = rounded_sum
+                        pre_data_matrix_boms[nested_bom_id][1] = rounded_sum
 
-        # ==== data_all_bom : formate for PDF
-        data_all_bom = []
-        for value in pre_data_all_bom.values():
-            data_all_bom.append(value[0] + " - " + str(value[1]) + " " + value[2])
+        # ==== data_matrix_boms : formate for PDF
+        data_matrix_boms = []
+        for value in pre_data_matrix_boms.values():
+            data_matrix_boms.append(value[0] + " - " + str(value[1]) + " " + value[2])
 
         # ==== Init variables
         pre_data_intermediate_product_list = {}
@@ -289,8 +309,8 @@ class ReportBomWizardProduction(models.AbstractModel):
 
         # ==== Create pre_data_intermediate_product_list, pre_data_purchase_list
         #      and pre_data_matrix_product_bom
-        for wiz_bom_line in wiz_boms_lines:
-            bom = wiz_bom_line.bom_id
+        for wiz_line in wiz_lines:
+            bom = wiz_line.bom_id
             bom_qty = bom.product_qty
             # Search bomlines except notes and sections
             bom_lines = mrp_bom_line_obj.search(
@@ -303,7 +323,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                 pre_data_intermediate_product_list,
                 bom_lines_with_factor,
             ) = self.create_data_intermediate_product_list(
-                pre_data_intermediate_product_list, wiz_bom_line
+                pre_data_intermediate_product_list, wiz_line
             )
             # bom_lines_with_factor = [[bom_lines1, factor1, nested_bom_lines1], ..]
 
@@ -321,7 +341,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                 bom_lines_with_factor,
                 pre_data_purchase_list,
                 data_product_bom_qty,
-                wiz_bom_line,
+                wiz_line,
                 bom_qty,
             )
 
@@ -379,36 +399,12 @@ class ReportBomWizardProduction(models.AbstractModel):
             )
 
         return (
+            data_manufacture_list,
             data_purchase_list,
             data_intermediate_product_list,
-            data_all_bom,
+            data_matrix_boms,
             data_matrix_product_bom,
         )
-
-    @api.model
-    def _prepare_data_to_manufacture(self, data):
-        line_obj = self.env["bom.wizard.production.line"]
-        wiz_boms = line_obj.browse([int(x) for x in data["line_data"]])
-
-        manufacture_bom_list = []
-        for wiz_bom in wiz_boms:
-            bom = wiz_bom.bom_id
-            desired_bom_qty = wiz_bom.quantity
-
-            manufacture_bom_list.append(
-                [
-                    bom.display_name,
-                    bom.description_packaging,
-                    desired_bom_qty,
-                    wiz_bom.bom_uom_id.name,
-                    round(wiz_bom.bom_id.standard_price, 3),
-                    round(wiz_bom.wizard_line_subtotal, 3),
-                ]
-            )
-
-        # manufacture_bom_list = [['SEITAN_BOM', 'Small packet 125g', 2.0, 'Unit(s)',
-        #  55.0, 110.0, [['Carrots', 10.0, 'kg'], ['Onions', 4.0, 'Unit(s)']]] , bom2]
-        return manufacture_bom_list
 
     @api.model
     def _prepare_manufacture_total_cost(self, data):
