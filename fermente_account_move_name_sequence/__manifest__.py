@@ -3,12 +3,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Fermente - Account",
+    "name": "Fermente - Account Move Name Sequence",
     "version": "16.0.1.0.0",
     "category": "Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["account"],
-    "data": ["views/view_account_move.xml", "views/view_account_journal.xml"],
+    "depends": ["account_move_name_sequence"],
+    "data": ["views/view_account_journal.xml"],
 }
