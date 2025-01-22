@@ -12,6 +12,7 @@ class ReportBomWizardProduction(models.AbstractModel):
     def _get_report_values(self, docids, data=None):
         (
             data_manufacture_list,
+            data_manufacture_total_cost,
             data_purchase_list,
             data_intermediate_product_list,
             data_matrix_boms,
@@ -20,9 +21,9 @@ class ReportBomWizardProduction(models.AbstractModel):
         purchase_total_cost = round(sum(map(lambda x: x[5], data_purchase_list)), 2)
         docargs = {
             "manufacture_bom_list": data_manufacture_list,
+            "manufacture_total_cost": data_manufacture_total_cost,
             "intermediate_product_list": data_intermediate_product_list,
             "purchase_list": data_purchase_list,
-            "manufacture_total_cost": self._prepare_manufacture_total_cost(data),
             "purchase_total_cost": purchase_total_cost,
             "data_matrix_boms": data_matrix_boms,
             "data_matrix_product_bom": data_matrix_product_bom,
@@ -215,11 +216,12 @@ class ReportBomWizardProduction(models.AbstractModel):
 
         :param data from wizard
         :return: Lists for report
-            1. data_manufacture_list
-            2. data_purchase_list
-            3. data_intermediate_product_list
-            4. data_matrix_boms : used in matrix head table
-            5. data_matrix_product_bom
+            - data_manufacture_list
+            - data_manufacture_total_cost
+            - data_purchase_list
+            - data_intermediate_product_list
+            - data_matrix_boms : used in matrix head table
+            - data_matrix_product_bom
         """
 
         # Init variables
@@ -228,6 +230,11 @@ class ReportBomWizardProduction(models.AbstractModel):
 
         # Get Wizard lines
         wiz_lines = self._get_wizard_lines(data)
+
+        # ==== data_manufacture_total_cost
+        data_manufacture_total_cost = round(
+            sum(wiz_lines.mapped("wizard_line_subtotal")), 3
+        )
 
         # ==== LINE_TEMPLATE and data_matrix_boms
         # Create template with as many zero as BoM
@@ -400,14 +407,9 @@ class ReportBomWizardProduction(models.AbstractModel):
 
         return (
             data_manufacture_list,
+            data_manufacture_total_cost,
             data_purchase_list,
             data_intermediate_product_list,
             data_matrix_boms,
             data_matrix_product_bom,
         )
-
-    @api.model
-    def _prepare_manufacture_total_cost(self, data):
-        line_obj = self.env["bom.wizard.production.line"]
-        wiz_boms_lines = line_obj.browse([int(x) for x in data["line_data"]])
-        return round(sum(wiz_boms_lines.mapped("wizard_line_subtotal")), 3)
