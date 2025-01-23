@@ -7,3 +7,5 @@ Customize Odoo / odoo / ``point_of_sale`` module.
 * Add a lot of missing field on the simple pos.config form view.
 
 * Allow user to create new pos.config, via kanban view.
+
+* Allow non admin user to edit receipt header and footer.

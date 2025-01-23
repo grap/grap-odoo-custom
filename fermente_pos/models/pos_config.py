@@ -14,3 +14,6 @@ class PosConfig(models.Model):
         readonly=False,
         required=True,
     )
+
+    def _check_header_footer(self, values):
+        return True
