@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2024 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="account_menu_invoice_refund.menu_action_invoice_out_tree" model="ir.ui.menu">
+        <field name="sequence" eval="0" />
+    </record>
+
+    <record id="account_menu_invoice_refund.menu_action_invoice_in_tree" model="ir.ui.menu">
+        <field name="sequence" eval="0" />
+    </record>
+
+</odoo>
