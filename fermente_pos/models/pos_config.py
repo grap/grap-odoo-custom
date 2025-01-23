@@ -12,4 +12,5 @@ class PosConfig(models.Model):
         string="Default Account Receivable (PoS)",
         related="company_id.account_default_pos_receivable_account_id",
         readonly=False,
+        required=True,
     )
