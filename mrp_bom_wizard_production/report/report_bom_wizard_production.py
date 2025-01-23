@@ -52,9 +52,21 @@ class ReportBomWizardProduction(models.AbstractModel):
         purchase_list,
         pre_data_matrix_product_bom,
         wiz_line,
-        bom_qty,
     ):
-        # Go through concatenation of nested BoMs Lines and Boms Lines
+        """
+        This function is called through a loop of Wizard Line (Bom, Desired Qty..)
+        It goes through concatenation of the BoM lines and its nested BoMs Lines
+        in order to set datas
+
+        :param: line_template: adjust template if new product
+        :param: bom_lines_with_factor: go through this array
+        :param: purchase_list:
+        :param: pre_data_matrix_product_bom:
+        :param: wiz_line:
+        :return: purchase_list:
+        :return: pre_data_matrix_product_bom:
+        """
+        _bom_qty = wiz_line.bom_id.product_qty
         for bom_lines_with_quantity in bom_lines_with_factor:
             parent_bom_factor_qty = bom_lines_with_quantity[1]
             for bom_line in bom_lines_with_quantity[0]:
@@ -62,7 +74,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                 product_id = product.id
                 product_qty = self.calculate_qty_for_one_product(
                     bom_line.product_qty,
-                    bom_qty,
+                    _bom_qty,
                     wiz_line.quantity * parent_bom_factor_qty,
                     3,
                 )
@@ -122,11 +134,18 @@ class ReportBomWizardProduction(models.AbstractModel):
     def create_datas_from_nested_boms(self, data_intermediate_product_list, wiz_line):
         """
         This function is called in a loop with all BoMs of Wizard
-        It gradually fills data_intermediate_product_list with quantities
+        - It gradually fills pre_data_intermediate_product_list with quantities
+        - It gets all bom_lines_with_factor* that will be used for other datas
+            *factor indicate qty from parent BoM that will by apply to children
+            *factor should not to be confused with product_qty of mrp.bom.lin
+            Example :
+            [[mrp.bom.line(8,), 1, False], [mrp.bom.line(10, 11), 2.0, mrp.bom(5,)]]
+            mrp_bom_line id8 has a BoM with two mrp_bom_line id10 and id11
 
         :param data_intermediate_product_list: array being filled gradually
         :param wiz_line: bom.wizard.production.line with Bom, Bom Qty, Desired Qty
-        :return: data_intermediate_product_list, bom_lines_with_factor (?)
+        :return: data_intermediate_product_list
+        :return: bom_lines_with_factor
         """
         bom_lines_with_factor = []
 
@@ -251,8 +270,6 @@ class ReportBomWizardProduction(models.AbstractModel):
         #   - set data_manufacture_list
         # *line_template has as many idBoM key as BoM. 0 will by replaced by quantity
         #  { idBoM1: [BomName1, 0], idBoM2: [BomName2, 0] }
-        line_template = {}
-        pre_data_matrix_boms = {}
         for wiz_line in wiz_lines:
             bom = wiz_line.bom_id
             bom_id = bom.id
@@ -320,14 +337,9 @@ class ReportBomWizardProduction(models.AbstractModel):
             data_matrix_boms.append(value[0] + " - " + str(value[1]) + " " + value[2])
 
         # SECOND LOOP
-        # create_datas_from_nested_boms :
-        #  - start to set data_intermediate_product_list
-        #  - get all bom_lines_with_factor*
-        # *factor indicate qty from parent BoM that will by apply to children
-        # *factor should not to be confused with product_qty of mrp.bom.lin
-        # Example :
-        # [[mrp.bom.line(8,), 1, False], [mrp.bom.line(10, 11), 2.0, mrp.bom(5,)]]
-        # mrp_bom_line id8 has a BoM with two mrp_bom_line id10 and id11
+        # Loop on each Wizard line (BoM, Desired Qty) and apply two functions
+        # - create_datas_from_nested_boms, then
+        # - create_data_purchase_list_and_pre_data_matrix_product_bom
         for wiz_line in wiz_lines:
             _bom = wiz_line.bom_id
             _bom_qty = _bom.product_qty
@@ -346,8 +358,6 @@ class ReportBomWizardProduction(models.AbstractModel):
                 pre_data_intermediate_product_list, wiz_line
             )
 
-            # Go through concatenation of nested BoMs Lines and Boms Lines in order
-            # to create datas
             (
                 pre_data_purchase_list,
                 pre_data_matrix_product_bom,
@@ -357,7 +367,6 @@ class ReportBomWizardProduction(models.AbstractModel):
                 pre_data_purchase_list,
                 pre_data_matrix_product_bom,
                 wiz_line,
-                _bom_qty,
             )
 
         # ==== SET data_matrix_product_bom
