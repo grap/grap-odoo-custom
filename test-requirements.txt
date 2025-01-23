@@ -15,3 +15,4 @@ git+https://github.com/OCA/product-attributes@refs/pull/1840/head#subdirectory=s
 # Placeholder for future PRs 4
 
 # Placeholder for future PRs 5
+git+https://github.com/OCA/account-invoicing@16.0#subdirectory=setup/account_menu_invoice_refund
