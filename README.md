@@ -29,7 +29,7 @@ addon | version | maintainers | summary
 [fermente_hr](fermente_hr/) | 16.0.1.0.0 |  | Fermente - Human Ressources
 [fermente_main_menu](fermente_main_menu/) | 16.0.1.0.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.0.0 |  | Fermente - MRP
-[fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.0.0 |  | Fermente - MRP BoM Form View
+[fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.0.1 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.2.0.0 |  | Fermente - Point Of Sale
 [fermente_product](fermente_product/) | 16.0.1.1.1 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.1 |  | Fermente - Product Category Active
@@ -38,7 +38,7 @@ addon | version | maintainers | summary
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.0 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.0 |  | MRP BoM Weight
-[mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.1.0 |  | Wizard linked to Bill of Materials to help your production.
+[mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.1.1 |  | Wizard linked to Bill of Materials to help your production.
 [mrp_business](mrp_business/) | 16.0.1.1.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_sale_grouped](mrp_sale_grouped/) | 16.0.1.0.1 |  | Quickly manage what you need to produce thanks to grouped sales
 [server_environment_files](server_environment_files/) | 16.0.1.0.0 |  | Add custom CSS and extra text on PoS ticket depending on the environment
