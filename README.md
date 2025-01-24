@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [fermente_pos](fermente_pos/) | 16.0.1.0.0 |  | Fermente - Point Of Sale
 [fermente_product](fermente_product/) | 16.0.1.1.1 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.1 |  | Fermente - Product Category Active
+[fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.1.0.1 |  | Fermente - Product Margin Classification
 [fermente_stock](fermente_stock/) | 16.0.1.1.0 |  | Fermente - Stock
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.0 |  | MRP BoM Weight
