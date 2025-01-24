@@ -343,13 +343,6 @@ class ReportBomWizardProduction(models.AbstractModel):
         for wiz_line in wiz_lines:
             _bom = wiz_line.bom_id
             _bom_qty = _bom.product_qty
-            _bom_lines_with_factor = []
-
-            # Search bomlines of the BoM except notes and sections
-            _bom_lines = mrp_bom_line_obj.search(
-                [("bom_id", "=", _bom.id), ("product_id", "!=", False)]
-            )
-            _bom_lines_with_factor.append([_bom_lines, 1, False])
 
             (
                 pre_data_intermediate_product_list,
@@ -357,6 +350,12 @@ class ReportBomWizardProduction(models.AbstractModel):
             ) = self.create_datas_from_nested_boms(
                 pre_data_intermediate_product_list, wiz_line
             )
+
+            # Add bomlines of the BoM except notes and sections
+            _bom_lines = mrp_bom_line_obj.search(
+                [("bom_id", "=", _bom.id), ("product_id", "!=", False)]
+            )
+            _bom_lines_with_factor.append([_bom_lines, 1, False])
 
             (
                 pre_data_purchase_list,
