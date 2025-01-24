@@ -5,14 +5,13 @@
 from odoo import fields, models
 
 
-class MrpBom(models.Model):
-    _inherit = "mrp.bom"
+class ProductTemplate(models.Model):
+    _inherit = "product.template"
 
     # Column Section
-    description_packaging = fields.Char(string="Packaging description")
-
-    # Second placeholder
     meal_category_id = fields.Many2one(
-        related="product_id.meal_category_id",
+        comodel_name="mrp.meal.category",
         string="Meal category",
+        help="Add a Meal Category to order Products in BoM Allergens Table"
+        ". E.g. starter, main course, dessert",
     )

@@ -23,7 +23,9 @@ class MrpMealCategory(models.Model):
     )
 
     sequence = fields.Integer(
-        default=10, help="Order Meal Category. Used for printing documents"
+        default=10,
+        help="Order Meal Category for BoM Allergen Report. "
+        "E.g. starter, main course, dessert",
     )
 
     _sql_constraints = [
@@ -33,4 +35,4 @@ class MrpMealCategory(models.Model):
     # Default methods
     @api.model
     def _default_company_id(self):
-        return self.env.company.id
+        return self.env.company

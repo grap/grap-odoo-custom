@@ -7,15 +7,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- ************************************************************ -->
-    <!-- Product.product Form View -->
+    <!-- Product.template Form View -->
     <!-- ************************************************************ -->
 
-    <record id="view_mrp_business_product_form" model="ir.ui.view">
-        <field name="model">product.product</field>
-        <field name="inherit_id" ref="product.product_normal_form_view" />
+    <record id="view_mrp_bom_report_allergen_product_template_form" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
 
-          <xpath expr="//field[@name='default_code']" position="after">
+          <xpath expr="//field[@name='categ_id']" position="after">
               <field name="meal_category_id"/>
           </xpath>
 

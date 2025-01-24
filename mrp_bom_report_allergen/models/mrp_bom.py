@@ -5,11 +5,11 @@
 from odoo import fields, models
 
 
-class ProductProduct(models.Model):
-    _inherit = "product.product"
+class MrpBom(models.Model):
+    _inherit = "mrp.bom"
 
     # Column Section
     meal_category_id = fields.Many2one(
-        comodel_name="mrp.meal.category",
+        related="product_tmpl_id.meal_category_id",
         string="Meal category",
     )
