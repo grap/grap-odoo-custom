@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_margin_classification_manager,product_margin_classification manager,product_margin_classification.model_product_margin_classification,sales_team.group_sale_salesman_all_leads,1,1,1,1
