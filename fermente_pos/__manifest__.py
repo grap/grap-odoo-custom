@@ -4,11 +4,11 @@
 
 {
     "name": "Fermente - Point Of Sale",
-    "version": "16.0.1.0.0",
+    "version": "16.0.2.0.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["point_of_sale"],
-    "data": ["views/view_product_template.xml"],
+    "data": ["views/view_product_template.xml", "views/view_pos_config.xml"],
 }
