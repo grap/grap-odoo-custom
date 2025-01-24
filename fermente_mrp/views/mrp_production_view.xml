@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Production - Form -->
+    <!-- ************************************************************ -->
+
+
+    <!-- ******** INHERIT BASE VIEW **************************************************** -->
+    <record id="view_fermente_mrp_production_form_base" model="ir.ui.view">
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+        <field name="arch" type="xml">
+
+            <!-- Add UX help for user -->
+            <xpath expr="/form/sheet" position="before">
+                <div
+                    class="alert alert-info"
+                    role="alert"
+                    attrs="{'invisible': [('state', 'not in', ('confirmed','progress'))]}"
+                >
+                  Now, fill the quantity to indicate what you have produce.
+                </div>
+            </xpath>
+
+            <!-- Rename field -->
+            <xpath expr="//field[@name='bom_id']" position="attributes">
+                <attribute name="string">BoM</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
