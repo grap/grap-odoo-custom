@@ -52,6 +52,7 @@ class ReportBomWizardProduction(models.AbstractModel):
         pre_data_purchase_list,
         pre_data_matrix_product_bom,
         wiz_line,
+        intermediate_product_ids,
     ):
         """
         This function is called through a loop of Wizard Line (Bom, Desired Qty..)
@@ -63,10 +64,12 @@ class ReportBomWizardProduction(models.AbstractModel):
         :param: pre_data_purchase_list:
         :param: pre_data_matrix_product_bom:
         :param: wiz_line:
+        :param: intermediate_product_ids: used to filter products not be purchased
         :return: purchase_list:
         :return: pre_data_matrix_product_bom:
         """
         _bom_qty = wiz_line.bom_id.product_qty
+        # Go through all BoM Lines linked to their parents
         for bom_lines_with_quantity in bom_lines_with_factor:
             parent_bom_factor_qty = bom_lines_with_quantity[1]
             for bom_line in bom_lines_with_quantity[0]:
@@ -79,25 +82,29 @@ class ReportBomWizardProduction(models.AbstractModel):
                     3,
                 )
                 bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 3)
-                # Add quantity if product is already there
-                if product_id in pre_data_purchase_list:
-                    pre_data_purchase_list[product_id]["quantity"] = round(
-                        pre_data_purchase_list[product_id]["quantity"] + product_qty, 3
-                    )
-                    pre_data_purchase_list[product_id]["subtotal"] = round(
-                        pre_data_purchase_list[product_id]["subtotal"]
-                        + bom_line_subtotal,
-                        3,
-                    )
-                else:
-                    pre_data_purchase_list[product_id] = {
-                        "category": bom_line.product_id.categ_id.complete_name,
-                        "product_name": bom_line.product_id.name.capitalize(),
-                        "quantity": round(product_qty, 3),
-                        "uom": bom_line.product_uom_id.name,
-                        "price_unit": round(bom_line.standard_price_unit, 3),
-                        "subtotal": round(bom_line_subtotal, 3),
-                    }
+                # FILTER intermediate products that will not be purchased
+                if product_id not in intermediate_product_ids:
+                    # Add quantity if product is already there
+                    if product_id in pre_data_purchase_list:
+                        pre_data_purchase_list[product_id]["quantity"] = round(
+                            pre_data_purchase_list[product_id]["quantity"]
+                            + product_qty,
+                            3,
+                        )
+                        pre_data_purchase_list[product_id]["subtotal"] = round(
+                            pre_data_purchase_list[product_id]["subtotal"]
+                            + bom_line_subtotal,
+                            3,
+                        )
+                    else:
+                        pre_data_purchase_list[product_id] = {
+                            "category": bom_line.product_id.categ_id.complete_name,
+                            "product_name": bom_line.product_id.name.capitalize(),
+                            "quantity": round(product_qty, 3),
+                            "uom": bom_line.product_uom_id.name,
+                            "price_unit": round(bom_line.standard_price_unit, 3),
+                            "subtotal": round(bom_line_subtotal, 3),
+                        }
 
                 if bom_lines_with_quantity[2] is not False:
                     # nested bom_line → choose nested_bom
@@ -150,83 +157,73 @@ class ReportBomWizardProduction(models.AbstractModel):
         """
         bom_lines_with_factor = []
 
-        # Loop in every bom_line of the BoM
-        for bom_line in wiz_line.bom_id.bom_line_ids:
+        # Loop in every bom_line of the BoM that has a BoM
+        for bom_line in wiz_line.bom_id.bom_line_ids.filtered(
+            lambda x: x.product_id.bom_ids
+        ):
             product = bom_line.product_id
             product_id = product.id
-            # /!\ Limitation : only get the first nested BoM
-            # Each nested BoM (intermediate product) is a product to produce
-            if product.bom_ids:
-                nested_bom = product.bom_ids[0]
+            # Arbitrarily get the first nested BoM and search its bom_lines
+            nested_bom = product.bom_ids[0]
+            nested_bom_lines = self.env["mrp.bom.line"].search(
+                [("bom_id", "=", nested_bom.id), ("product_id", "!=", False)]
+            )
 
-                # Search bomlines except notes and sections
-                nested_bom_lines = self.env["mrp.bom.line"].search(
-                    [("bom_id", "=", nested_bom.id), ("product_id", "!=", False)]
-                )
+            # Add nested bom lines with factor which is
+            # bom_line parent quantity divided by nested bom quantity
+            parent_bom_factor_qty = (
+                bom_line.product_qty / nested_bom.product_qty
+                if nested_bom.product_qty != 0
+                else 1
+            )
+            # Will be used for data_purchase_list & data_matrix_product_bom
+            bom_lines_with_factor.append(
+                [nested_bom_lines, parent_bom_factor_qty, nested_bom, True]
+            )
 
-                # data_purchase_list :
-                #   - fill bom_lines_with_factor
-                #   - filter bom_lines to remove INTERMEDIATE product
-                # Add nested bom lines with factor which is
-                # bom_line parent quantity divided by nested bom quantity
-                parent_bom_factor_qty = (
-                    bom_line.product_qty / nested_bom.product_qty
-                    if nested_bom.product_qty != 0
-                    else 1
-                )
-                # Create this list that will be used for other data*
-                bom_lines_with_factor.append(
-                    [nested_bom_lines, parent_bom_factor_qty, nested_bom]
-                )
+            # Add intermediate product and calculate values of this line
+            produce_product_qty = self.calculate_qty_for_one_product(
+                bom_line.product_qty,
+                wiz_line.bom_id.product_qty,
+                wiz_line.quantity,
+                3,
+            )
+            produce_subtotal = round(
+                produce_product_qty * bom_line.standard_price_unit, 3
+            )
 
-                # data_intermediate_product_list
-                # Add intermediate product and calculate values of this line
-                produce_product_qty = self.calculate_qty_for_one_product(
-                    bom_line.product_qty,
-                    wiz_line.bom_id.product_qty,
-                    wiz_line.quantity,
+            to_produce_product_bom_name = (
+                wiz_line.bom_id.display_name + " x" + str(produce_product_qty)
+            )
+            # Add product or just quantity if product is already there
+            if product_id in data_intermediate_product_list:
+                data_intermediate_product_list[product_id][
+                    "to_produce_product_bom_name"
+                ] += str(", " + to_produce_product_bom_name)
+                data_intermediate_product_list[product_id][
+                    "to_produce_quantity"
+                ] = round(
+                    data_intermediate_product_list[product_id]["to_produce_quantity"]
+                    + produce_product_qty,
+                    4,
+                )
+                data_intermediate_product_list[product_id][
+                    "to_produce_subtotal"
+                ] = round(
+                    data_intermediate_product_list[product_id]["to_produce_subtotal"]
+                    + produce_subtotal,
                     3,
                 )
-                produce_subtotal = round(
-                    produce_product_qty * bom_line.standard_price_unit, 3
-                )
-
-                to_produce_product_bom_name = (
-                    wiz_line.bom_id.display_name + " x" + str(produce_product_qty)
-                )
-                # Add product or just quantity if product is already there
-                if product_id in data_intermediate_product_list:
-                    data_intermediate_product_list[product_id][
-                        "to_produce_product_bom_name"
-                    ] += str(", " + to_produce_product_bom_name)
-                    data_intermediate_product_list[product_id][
-                        "to_produce_quantity"
-                    ] = round(
-                        data_intermediate_product_list[product_id][
-                            "to_produce_quantity"
-                        ]
-                        + produce_product_qty,
-                        4,
-                    )
-                    data_intermediate_product_list[product_id][
-                        "to_produce_subtotal"
-                    ] = round(
-                        data_intermediate_product_list[product_id][
-                            "to_produce_subtotal"
-                        ]
-                        + produce_subtotal,
-                        3,
-                    )
-                else:
-                    _product_name = bom_line.product_id.name.capitalize()
-                    data_intermediate_product_list[product_id] = {
-                        "to_produce_product_name": _product_name,
-                        "to_produce_product_bom_name": to_produce_product_bom_name,
-                        "to_produce_quantity": round(produce_product_qty, 3),
-                        "to_produce_uom": bom_line.product_uom_id.name,
-                        "to_produce_price_unit": bom_line.standard_price_unit,
-                        "to_produce_subtotal": round(produce_subtotal, 3),
-                    }
+            else:
+                _product_name = bom_line.product_id.name.capitalize()
+                data_intermediate_product_list[product_id] = {
+                    "to_produce_product_name": _product_name,
+                    "to_produce_product_bom_name": to_produce_product_bom_name,
+                    "to_produce_quantity": round(produce_product_qty, 3),
+                    "to_produce_uom": bom_line.product_uom_id.name,
+                    "to_produce_price_unit": bom_line.standard_price_unit,
+                    "to_produce_subtotal": round(produce_subtotal, 3),
+                }
 
         return (
             data_intermediate_product_list,
@@ -347,26 +344,30 @@ class ReportBomWizardProduction(models.AbstractModel):
 
             (
                 pre_data_intermediate_product_list,
-                _bom_lines_with_factor,
+                bom_lines_with_factor,
             ) = self.create_datas_from_nested_boms(
                 pre_data_intermediate_product_list, wiz_line
             )
+
+            # Get ids of intermediate products that will not be products to purchased
+            intermediate_product_ids = [*pre_data_intermediate_product_list.keys()]
 
             # Add bomlines of the BoM except notes and sections
             _bom_lines = mrp_bom_line_obj.search(
                 [("bom_id", "=", _bom.id), ("product_id", "!=", False)]
             )
-            _bom_lines_with_factor.append([_bom_lines, 1, False])
+            bom_lines_with_factor.append([_bom_lines, 1, False])
 
             (
                 pre_data_purchase_list,
                 pre_data_matrix_product_bom,
             ) = self.create_data_purchase_list_and_pre_data_matrix_product_bom(
                 line_template,
-                _bom_lines_with_factor,
+                bom_lines_with_factor,
                 pre_data_purchase_list,
                 pre_data_matrix_product_bom,
                 wiz_line,
+                intermediate_product_ids,
             )
 
         # ==== SET data_matrix_product_bom
@@ -405,7 +406,7 @@ class ReportBomWizardProduction(models.AbstractModel):
         else:
             data_purchase_list.sort(key=lambda x: x[1])
 
-        # ==== SET data_intermediate_product_lis
+        # ==== SET data_intermediate_product_list
         data_intermediate_product_list = []
         for bom in pre_data_intermediate_product_list.values():
             data_intermediate_product_list.append(
