@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [fermente_account](fermente_account/) | 16.0.1.0.1 |  | Fermente - Account
 [fermente_account_invoice_margin](fermente_account_invoice_margin/) | 16.0.1.0.1 |  | Fermente - Account Invoice Margin
 [fermente_account_invoice_triple_discount](fermente_account_invoice_triple_discount/) | 16.0.1.0.1 |  | Fermente - Account Invoice Triple Discount
+[fermente_account_menu_invoice_refund](fermente_account_menu_invoice_refund/) | 16.0.1.0.1 |  | Fermente - Account Menu Invoice Refund
 [fermente_account_move_name_sequence](fermente_account_move_name_sequence/) | 16.0.1.0.1 |  | Fermente - Account Move Name Sequence
 [fermente_hr](fermente_hr/) | 16.0.1.0.0 |  | Fermente - Human Ressources
 [fermente_main_menu](fermente_main_menu/) | 16.0.1.0.0 |  | Fermente - Main Menu
