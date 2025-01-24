@@ -49,7 +49,7 @@ class ReportBomWizardProduction(models.AbstractModel):
         self,
         line_template,
         bom_lines_with_factor,
-        purchase_list,
+        pre_data_purchase_list,
         pre_data_matrix_product_bom,
         wiz_line,
     ):
@@ -60,7 +60,7 @@ class ReportBomWizardProduction(models.AbstractModel):
 
         :param: line_template: adjust template if new product
         :param: bom_lines_with_factor: go through this array
-        :param: purchase_list:
+        :param: pre_data_purchase_list:
         :param: pre_data_matrix_product_bom:
         :param: wiz_line:
         :return: purchase_list:
@@ -80,16 +80,17 @@ class ReportBomWizardProduction(models.AbstractModel):
                 )
                 bom_line_subtotal = round(product_qty * bom_line.standard_price_unit, 3)
                 # Add quantity if product is already there
-                if product_id in purchase_list:
-                    purchase_list[product_id]["quantity"] = round(
-                        purchase_list[product_id]["quantity"] + product_qty, 3
+                if product_id in pre_data_purchase_list:
+                    pre_data_purchase_list[product_id]["quantity"] = round(
+                        pre_data_purchase_list[product_id]["quantity"] + product_qty, 3
                     )
-                    purchase_list[product_id]["subtotal"] = round(
-                        purchase_list[product_id]["subtotal"] + bom_line_subtotal,
+                    pre_data_purchase_list[product_id]["subtotal"] = round(
+                        pre_data_purchase_list[product_id]["subtotal"]
+                        + bom_line_subtotal,
                         3,
                     )
                 else:
-                    purchase_list[product_id] = {
+                    pre_data_purchase_list[product_id] = {
                         "category": bom_line.product_id.categ_id.complete_name,
                         "product_name": bom_line.product_id.name.capitalize(),
                         "quantity": round(product_qty, 3),
@@ -128,7 +129,7 @@ class ReportBomWizardProduction(models.AbstractModel):
                         1
                     ] = rounded_sum
 
-        return purchase_list, pre_data_matrix_product_bom
+        return pre_data_purchase_list, pre_data_matrix_product_bom
 
     @api.model
     def create_datas_from_nested_boms(self, data_intermediate_product_list, wiz_line):
