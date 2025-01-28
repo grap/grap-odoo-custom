@@ -6,7 +6,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="view_account_journal_form" model="ir.ui.view">
+    <record id="view_account_journal_tree" model="ir.ui.view">
         <field name="model">account.journal</field>
         <field name="inherit_id" ref="account.view_account_journal_tree"/>
         <field name="arch" type="xml">
@@ -17,6 +17,24 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
             <field name="company_id" position="attributes">
                 <attribute name="optional">show</attribute>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+
+            <field name="default_account_id" position="attributes">
+                <attribute name="attrs">{
+                    'required': [
+                        ('id', '!=', False),
+                        ('type', 'in', ('bank', 'cash')),
+                        ],
+                    'invisible': [('type', 'in', (False, 'general'))]
+                    }</attribute>
             </field>
 
         </field>
