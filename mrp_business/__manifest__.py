@@ -13,6 +13,7 @@
     "license": "AGPL-3",
     "depends": [
         "mrp",
+        "mrp_product_produce_delay_in_hour",
     ],
     "demo": [
         "demo/product.xml",
