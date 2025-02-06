@@ -84,6 +84,10 @@ class GrapPeople(models.Model):
             delta = birthdate - now
             if delta.days >= -1 and delta.days < 2:
                 people.is_birthday = True
+            else:
+                people.is_birthday = False
+        for people in self.filtered(lambda x: not x.birthdate):
+            people.is_birthday = False
 
     # Set people name with first and last name
     # Optimize for creating people directly from company form

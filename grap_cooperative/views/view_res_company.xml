@@ -79,7 +79,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-<!--     <record id="view_res_company_form_directory" model="ir.ui.view">
+    <record id="view_res_company_form_directory" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="priority">100</field>
         <field name="arch" type="xml">
@@ -108,7 +108,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="street"/>
                             <field name="city"/>
                             <field name="zip"/>
-                            <field name="state_id" string="State"/>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
                             <field name="clean_address"/>
                             <field name="partner_latitude"/>
                             <field name="partner_longitude"/>
@@ -198,9 +199,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </sheet>
             </form>
         </field>
-    </record> -->
+    </record>
 
-<!--     <record id="view_res_company_kanban_directory" model="ir.ui.view">
+    <record id="view_res_company_kanban_directory" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="arch" type="xml">
             <kanban>
@@ -249,7 +250,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </templates>
             </kanban>
         </field>
-    </record> -->
+    </record>
 
 
     <record id="view_res_company_tree_editable" model="ir.ui.view">

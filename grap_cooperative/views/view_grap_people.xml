@@ -86,7 +86,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-<!--     <record id="view_grap_people_kanban" model="ir.ui.view">
+    <record id="view_grap_people_kanban" model="ir.ui.view">
         <field name="model">grap.people</field>
         <field name="arch" type="xml">
             <kanban>
@@ -127,7 +127,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </ul>
                                 <div class="oe_kanban_partner_links"/>
                                 <t t-if="record.is_birthday.raw_value === true">
-                                    <span class="fa fa-lg fa-birthday-cake" role="img" />
+                                    <span class="fa fa-lg fa-birthday-cake" role="img" title="Birthday!"/>
                                 </t>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </kanban>
         </field>
     </record>
- -->
+
     <record id="action_grap_people" model="ir.actions.act_window">
         <field name="name">Directory</field>
         <field name="res_model">grap.people</field>
