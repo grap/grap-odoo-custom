@@ -16,7 +16,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
                <field name="accounting_interlocutor_id"/>
                <field name="hr_interlocutor_id"/>
-               <field name="it_interlocutor_id"/>
                <field name="attendant_interlocutor_id"/>
                <filter string="Category" name="group_by_category"
                     context="{'group_by' : 'category_id'}"/>
@@ -26,8 +25,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     context="{'group_by' : 'accounting_interlocutor_id'}"/>
                <filter string="HR Interlocutor" name="group_by_hr_interlocutor"
                     context="{'group_by' : 'hr_interlocutor_id'}"/>
-               <filter string="IT Interlocutor" name="group_by_it_interlocutor"
-                    context="{'group_by' : 'it_interlocutor_id'}"/>
             </field>
         </field>
     </record>
@@ -128,7 +125,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="cooperative_joining_date"/>
                             <field name="fiscal_type" readonly="True"/>
                             <field name="category_id"/><br/>
-                            <field name="manager_ids" widget="many2many_tags"/><br/>
                             <field name="is_using_odoo"/>
                         </group>
                         <group>
@@ -146,7 +142,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <group>
                             <h3>👥 Interlocutors in the service team</h3>
                             <field name="accounting_interlocutor_id"/>
-                            <field name="it_interlocutor_id"/>
                             <field name="hr_interlocutor_id"/>
                             <field name="attendant_interlocutor_id"/>
                        </group>
@@ -159,7 +154,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <kanban>
                                         <field name="id"/>
                                         <field name="image_medium"/>
-                                        <field name="name"/>
+                                        <field name="first_name"/>
                                         <field name="last_name"/>
                                         <field name="working_phone"/>
                                         <field name="private_phone"/>
@@ -174,7 +169,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                             t-att-src="_s + '/base/static/img/avatar.png'"/>
                                                     </div>
                                                     <div class="oe_kanban_details">
-                                                        <field name="name"/>
+                                                        <field name="first_name"/> <field name="last_name"/>
                                                         <div t-if="record.working_phone.raw_value">
                                                             <field name="working_phone" widget="phone"/>
                                                         </div>
@@ -183,9 +178,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                                         </div>
                                                         <div t-if="record.working_email.raw_value">
                                                             <field name="working_email" widget="email"/>
-                                                        </div>
-                                                        <div class="oe_edit_only">
-                                                            <button class="btn btn-primary" type="object" name="detach_people_from_company">Detach from the activity</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -263,7 +255,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="attendant_interlocutor_id" />
                 <field name="accounting_interlocutor_id"/>
                 <field name="hr_interlocutor_id"/>
-                <field name="it_interlocutor_id" />
             </tree>
         </field>
     </record>

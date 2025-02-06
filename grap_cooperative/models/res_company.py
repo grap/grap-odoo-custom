@@ -16,15 +16,6 @@ class ResCompany(models.Model):
         inverse_name="company_id",
     )
 
-    manager_ids = fields.Many2many(
-        string="Co-directors",
-        comodel_name="grap.people",
-        relation="grap_people_companies_managers_rel",
-        column1="company_manager_id",
-        column2="people_id",
-    )
-
-    # Cooperative informations
     clean_address = fields.Char(
         string="Clean address",
         compute="_compute_clean_adress",
@@ -63,10 +54,6 @@ class ResCompany(models.Model):
 
     hr_interlocutor_id = fields.Many2one(
         string="HR Interlocutor", comodel_name="grap.people"
-    )
-
-    it_interlocutor_id = fields.Many2one(
-        string="IT Interlocutor", comodel_name="grap.people"
     )
 
     attendant_interlocutor_id = fields.Many2one(
