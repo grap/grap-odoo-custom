@@ -9,7 +9,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="action_grap_mandate_to_grap_people" model="ir.actions.act_window">
         <field name="name">People</field>
         <field name="res_model">grap.people</field>
-        <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="context">{
             "search_default_mandate_ids": [active_id],
@@ -89,7 +88,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="action_grap_mandate" model="ir.actions.act_window">
         <field name="name">Mandates</field>
         <field name="res_model">grap.mandate</field>
-        <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 
