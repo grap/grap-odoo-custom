@@ -51,7 +51,6 @@ class GrapPeople(models.Model):
     company_id = fields.Many2one(
         string="Company",
         comodel_name="res.company",
-        inverse_name="people_ids",
         domain="[('is_displayed_in_directory', '=', True)]",
         context={
             "form_view_ref": "grap_cooperative.view_res_company_form_directory",
@@ -105,16 +104,6 @@ class GrapPeople(models.Model):
                 if people.first_name:
                     people.first_name = people.first_name.capitalize()
                     people.name += " " + people.first_name
-
-    # Overloads section
-    @api.model
-    def create(self, vals):
-        tools.image_resize_images(vals, sizes={"image": (1024, None)})
-        return super().create(vals)
-
-    def write(self, vals):
-        tools.image_resize_images(vals, sizes={"image": (1024, None)})
-        return super().write(vals)
 
     def detach_people_from_company(self):
         self.write({"company_id": False})

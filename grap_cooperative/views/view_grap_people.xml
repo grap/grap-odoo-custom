@@ -86,7 +86,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <record id="view_grap_people_kanban" model="ir.ui.view">
+<!--     <record id="view_grap_people_kanban" model="ir.ui.view">
         <field name="model">grap.people</field>
         <field name="arch" type="xml">
             <kanban>
@@ -98,10 +98,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
-                            <!-- Medium people's picture -->
                             <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image: url(#{kanban_image('grap.people', 'image', record.id.raw_value)})" role="img">
                             </div>
-                            <!-- People's picture optimized for mobile -->
                             <div class="o_kanban_image d-md-none rounded-circle" t-attf-style="background-image: url(#{kanban_image('grap.people', 'image_small', record.id.raw_value)})" role="img"/>
 
                             <div class="oe_kanban_details">
@@ -138,7 +136,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </kanban>
         </field>
     </record>
-
+ -->
     <record id="action_grap_people" model="ir.actions.act_window">
         <field name="name">Directory</field>
         <field name="res_model">grap.people</field>
