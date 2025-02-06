@@ -2,37 +2,21 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    map_display_address = fields.Char(compute="_compute_map_display_address")
+    complete_address = fields.Char(compute="_compute_complete_address")
 
-    people_ids = fields.One2many(
+    worker_ids = fields.One2many(
         string="Workers",
-        comodel_name="grap.people",
+        comodel_name="hr.employee.global",
         inverse_name="company_id",
     )
 
-    manager_ids = fields.Many2many(
-        string="Co-directors",
-        comodel_name="grap.people",
-        relation="grap_people_companies_managers_rel",
-        column1="company_manager_id",
-        column2="people_id",
-    )
-
-    # Cooperative informations
-    clean_address = fields.Char(
-        string="Clean address",
-        compute="_compute_clean_adress",
-    )
-
-    is_using_odoo = fields.Boolean(
-        string="Is using Odoo",
-    )
+    is_using_odoo = fields.Boolean(string="Is using Odoo")
 
     is_displayed_in_directory = fields.Boolean(
         string="Displayed in Directory", default=True
@@ -45,47 +29,36 @@ class ResCompany(models.Model):
 
     # Referents in Company
     accounting_referent_id = fields.Many2one(
-        string="Accounting Referent", comodel_name="grap.people"
+        string="Accounting Referent", comodel_name="hr.employee.global"
     )
 
-    hr_referent_id = fields.Many2one(string="HR Referent", comodel_name="grap.people")
+    hr_referent_id = fields.Many2one(
+        string="HR Referent", comodel_name="hr.employee.global"
+    )
 
-    it_referent_id = fields.Many2one(string="IT Referent", comodel_name="grap.people")
+    it_referent_id = fields.Many2one(
+        string="IT Referent", comodel_name="hr.employee.global"
+    )
 
     communication_referent_id = fields.Many2one(
-        string="Communication Referent", comodel_name="grap.people"
+        string="Communication Referent", comodel_name="hr.employee.global"
     )
 
     # Interlocutors in Service Team
     accounting_interlocutor_id = fields.Many2one(
-        string="Accounting Interlocutor", comodel_name="grap.people"
+        string="Accounting Interlocutor", comodel_name="hr.employee.global"
     )
 
     hr_interlocutor_id = fields.Many2one(
-        string="HR Interlocutor", comodel_name="grap.people"
-    )
-
-    it_interlocutor_id = fields.Many2one(
-        string="IT Interlocutor", comodel_name="grap.people"
+        string="HR Interlocutor", comodel_name="hr.employee.global"
     )
 
     attendant_interlocutor_id = fields.Many2one(
-        string="Attendant Interlocutor", comodel_name="grap.people"
+        string="Attendant Interlocutor", comodel_name="hr.employee.global"
     )
 
-    @api.depends("street", "city", "zip")
-    def _compute_clean_adress(self):
+    def _compute_complete_address(self):
         for company in self:
-            company.clean_address = ""
-            if company.street:
-                company.clean_address += company.street + ", "
-            if company.zip:
-                company.clean_address += company.zip + " "
-            if company.city:
-                company.clean_address += company.city.upper()
-
-    def _compute_map_display_address(self):
-        for company in self:
-            company.map_display_address = company.partner_id._display_address(
+            company.complete_address = company.partner_id._display_address(
                 without_company=True
             )
