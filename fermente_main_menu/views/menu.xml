@@ -6,7 +6,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <!-- TODO: Add Cooperative / annuaire Menu here -->
+    <record id="fermente_cooperative_directory.menu_root" model="ir.ui.menu">
+        <field name="sequence">10</field>
+    </record>
 
     <record id="point_of_sale.menu_point_root" model="ir.ui.menu">
         <field name="sequence">20</field>
@@ -52,40 +54,44 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="sequence">130</field>
     </record>
 
-    <record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
+    <record id="project.menu_main_pm" model="ir.ui.menu">
         <field name="sequence">140</field>
     </record>
 
-    <record id="project.menu_main_pm" model="ir.ui.menu">
+    <record id="crm.crm_menu_root" model="ir.ui.menu">
         <field name="sequence">150</field>
     </record>
 
-    <record id="crm.crm_menu_root" model="ir.ui.menu">
-        <field name="sequence">160</field>
+    <record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
+        <field name="sequence">200</field>
+    </record>
+
+    <record id="spreadsheet_oca.spreadsheet_spreadsheet_menu" model="ir.ui.menu">
+        <field name="sequence">210</field>
     </record>
 
     <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
-        <field name="sequence">170</field>
-    </record>
-
-    <record id="mail.menu_root_discuss" model="ir.ui.menu">
-        <field name="sequence">180</field>
-    </record>
-
-    <record id="queue_job.menu_queue_job_root" model="ir.ui.menu">
         <field name="sequence">300</field>
     </record>
 
-    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">
+    <record id="mail.menu_root_discuss" model="ir.ui.menu">
         <field name="sequence">310</field>
     </record>
 
-    <record id="base.menu_management" model="ir.ui.menu">
+    <record id="queue_job.menu_queue_job_root" model="ir.ui.menu">
         <field name="sequence">320</field>
     </record>
 
+    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">
+        <field name="sequence">330</field>
+    </record>
+
+    <record id="base.menu_management" model="ir.ui.menu">
+        <field name="sequence">340</field>
+    </record>
+
     <record id="base.menu_administration" model="ir.ui.menu">
-        <field name="sequence">320</field>
+        <field name="sequence">350</field>
     </record>
 
 
