@@ -1,4 +1,10 @@
+# GRAP: Extra modules Merged in custom repositories
+
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_food
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/mrp_bom_product_allergen
 git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_label
+
+# OCA Pending PR
 
 git+https://github.com/OCA/manufacture@refs/pull/1227/head#subdirectory=setup/mrp_bom_product_price_margin
 git+https://github.com/OCA/manufacture@refs/pull/1218/head#subdirectory=setup/mrp_bom_simple_report
@@ -9,14 +15,11 @@ git+https://github.com/OCA/manufacture@refs/pull/1430/head#subdirectory=setup/mr
 git+https://github.com/OCA/product-attributes@refs/pull/1840/head#subdirectory=setup/product_compute_template_field_from_variant_helper
 
 # Placeholder for future PRs 1
-git+https://github.com/grap/grap-odoo-business@refs/pull/178/head#subdirectory=setup/product_food
 
 # Placeholder for future PRs 2
-git+https://github.com/grap/grap-odoo-business@refs/pull/181/head#subdirectory=setup/mrp_bom_product_allergen
 
 # Placeholder for future PRs 3
 
 # Placeholder for future PRs 4
 
 # Placeholder for future PRs 5
-git+https://github.com/OCA/account-invoicing@16.0#subdirectory=setup/account_menu_invoice_refund
