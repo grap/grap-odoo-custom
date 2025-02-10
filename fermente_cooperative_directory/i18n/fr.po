@@ -1,0 +1,405 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_cooperative_directory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-10 23:00+0000\n"
+"PO-Revision-Date: 2025-02-10 23:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
+msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
+msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-github\" role=\"img\" aria-label=\"Github Account\" "
+"title=\"Github Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-github\" role=\"img\" aria-label=\"Compte Github\" "
+"title=\"Compte Github\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-gitlab\" role=\"img\" aria-label=\"Gitlab Account\" "
+"title=\"Gitlab Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-gitlab\" role=\"img\" aria-label=\"Compte Gitlab\" "
+"title=\"Compte Gitlab\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" "
+"title=\"Website\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;line-"
+"height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Site web\" title=\"Site "
+"web\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-instagram\" role=\"img\" aria-label=\"Instagram Account\" "
+"title=\"Instagram Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-instagram\" role=\"img\" aria-label=\"Compte Instagram\" "
+"title=\"Compte Instagram\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-linkedin\" role=\"img\" aria-label=\"LinkedIn Account\" "
+"title=\"LinkedIn Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-linkedin\" role=\"img\" aria-label=\"Compte LinkedIn\" "
+"title=\"Compte LinkedIn\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-mastodon\" role=\"img\" aria-label=\"Mastodon Account\" "
+"title=\"Mastodon Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-mastodon\" role=\"img\" aria-label=\"Compte Mastodon\" "
+"title=\"Compte Mastodon\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-twitter\" role=\"img\" aria-label=\"Twitter Account\" "
+"title=\"Twitter Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-twitter\" role=\"img\" aria-label=\"Compte Twitter\" "
+"title=\"Compte Twitter\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-youtube\" role=\"img\" aria-label=\"Youtube Account\" "
+"title=\"Youtube Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-youtube\" role=\"img\" aria-label=\"Compte Youtube\" "
+"title=\"Compte Youtube\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">\n"
+"                                <b>Address</b>\n"
+"                            </span>"
+msgstr ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">\n"
+"                                <b>Adresse</b>\n"
+"                            </span>"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__accounting_interlocutor_id
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+msgid "Accounting Interlocutor"
+msgstr "Interlocuteur·ice comptabilité"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__accounting_referent_id
+msgid "Accounting Referent"
+msgstr "Référent·e comptabilité"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_res_company
+#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_res_company
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
+msgid "Activities"
+msgstr "Activités"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_company_category
+#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_company_category
+msgid "Activities Category"
+msgstr "Catégories d'activités"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_company_category_to_company
+msgid "Activities categories"
+msgstr "Catégories d'activités"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+msgid "Archived companies"
+msgstr "Sociétés archivées"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__attendant_interlocutor_id
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+msgid "Attendant Interlocutor"
+msgstr "Interlocuteur·ice accompagnement"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__birthday
+msgid "Birthday"
+msgstr "Date de Naissance"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "City"
+msgstr "Ville"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__communication_referent_id
+msgid "Communication Referent"
+msgstr "Réferent·e communication"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model,name:fermente_cooperative_directory.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__complete_address
+msgid "Complete Address"
+msgstr "Adresse Complète"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
+msgid "Contact informations"
+msgstr "Informations de contact"
+
+#. module: fermente_cooperative_directory
+#: model:res.groups,name:fermente_cooperative_directory.group_fermente_cooperative_directory_manager
+msgid "Cooperative Directory Manager"
+msgstr "Responsable de l'annuaire de la coopérative"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__cooperative_joining_date
+msgid "Cooperative Joining Date"
+msgstr "Date d'adhésion à la coopérative"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Cooperative informations"
+msgstr "Informations coopératives"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Country"
+msgstr "Pays"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_res_company__cooperative_joining_date
+msgid ""
+"Date of the commission in which the cooperative accepted the entry of this "
+"activity"
+msgstr ""
+"Date de la commission à laquelle la coopérative a accepté l'entrée de cette "
+"activité"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_hr_employee_global
+#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_hr_employee_global
+msgid "Directory"
+msgstr "Annuaire"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__is_displayed_in_directory
+msgid "Displayed in Directory"
+msgstr "Affiché dans l'annuaire"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__firstname
+msgid "Firstname"
+msgstr "Prénom"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__hr_interlocutor_id
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+msgid "HR Interlocutor"
+msgstr "Interlocuteur·ice social"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__hr_referent_id
+msgid "HR Referent"
+msgstr "Référent·e social"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__id
+msgid "ID"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__it_referent_id
+msgid "IT Referent"
+msgstr "Référent·e informatique"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Interlocutors in the service team"
+msgstr "Interlocuteur·ices dans l'équipe support"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__is_using_odoo
+msgid "Is using Odoo"
+msgstr "Utilise Odoo"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__lastname
+msgid "Lastname"
+msgstr "Nom de famille"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Legal informations"
+msgstr "Informations légales"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid "Logo"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__mobile_phone
+msgid "Mobile Phone"
+msgstr "Téléphone"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
+msgid "Other informations"
+msgstr "Autres Informations"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model,name:fermente_cooperative_directory.model_hr_employee_global
+msgid "Public HR employees Data"
+msgstr "Donnnées publiques des employé·e·s"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Public informations"
+msgstr "Informations publiques"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Referents & Interlocutors"
+msgstr "Référent·e·s & Interlocuteur·rice·s"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Referents in the company"
+msgstr "Référent·es dans l'activité"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Social Networks"
+msgstr "Réseaux Sociaux"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Street 2..."
+msgstr "Rue (complément) ..."
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "Team"
+msgstr "Equipe"
+
+#. module: fermente_cooperative_directory
+#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_root
+msgid "Cooperative Directory"
+msgstr "Annuaire coopératif"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_email
+msgid "Work Email"
+msgstr "Email professionnel"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__worker_ids
+msgid "Workers"
+msgstr "Travailleurs"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
+msgid "ZIP"
+msgstr "Code Postal"

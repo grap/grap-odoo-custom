@@ -4,8 +4,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "GRAP - Cooperative",
-    "summary": "Add Directories, Companies, Colleges, Peoples, etc.",
+    "name": "Fermente - Cooperative Directory",
+    "summary": "Add Directories for companies and employees",
     "version": "16.0.2.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",

@@ -7,14 +7,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <menuitem id="menu_root"
-        name="The Cooperative"
+        name="Cooperative Directory"
         sequence="1"
-        web_icon="grap_cooperative,static/src/img/icon.png"/>
-
-    <menuitem id="menu_editable_view"
-        name="Editable Views"
-        parent="menu_root"
-        groups="res_group_grap_cooperative_manager"
-        sequence="100"/>
+        web_icon="fermente_cooperative_directory,static/src/img/icon.png"/>
 
 </odoo>
