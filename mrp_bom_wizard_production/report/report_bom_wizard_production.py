@@ -15,6 +15,7 @@ class ReportBomWizardProduction(models.AbstractModel):
             data_manufacture_total_cost,
             data_purchase_list,
             data_intermediate_product_list,
+            data_produce_bom_qty,
             data_matrix_boms,
             data_matrix_product_bom,
         ) = self._prepare_data_to_purchase_and_produce(data)
@@ -23,6 +24,7 @@ class ReportBomWizardProduction(models.AbstractModel):
             "manufacture_bom_list": data_manufacture_list,
             "manufacture_total_cost": data_manufacture_total_cost,
             "intermediate_product_list": data_intermediate_product_list,
+            "data_produce_bom_qty": data_produce_bom_qty,
             "purchase_list": data_purchase_list,
             "purchase_total_cost": purchase_total_cost,
             "data_matrix_boms": data_matrix_boms,
@@ -156,6 +158,7 @@ class ReportBomWizardProduction(models.AbstractModel):
         :return: bom_lines_with_factor
         """
         bom_lines_with_factor = []
+        data_produce_bom_qty = []
 
         # Loop in every bom_line of the BoM that has a BoM
         for bom_line in wiz_line.bom_id.bom_line_ids.filtered(
@@ -225,9 +228,15 @@ class ReportBomWizardProduction(models.AbstractModel):
                     "to_produce_subtotal": round(produce_subtotal, 3),
                 }
 
+            # Create this list used in PDF for data_produce_bom_qty
+            data_produce_bom_qty.append(
+                [nested_bom, produce_product_qty, to_produce_product_bom_name]
+            )
+
         return (
             data_intermediate_product_list,
             bom_lines_with_factor,
+            data_produce_bom_qty,
         )
 
     @api.model
@@ -244,6 +253,7 @@ class ReportBomWizardProduction(models.AbstractModel):
             - data_manufacture_total_cost
             - data_purchase_list
             - data_intermediate_product_list
+            - data_produce_bom_qty
             - data_matrix_boms : used in matrix head table
             - data_matrix_product_bom
         """
@@ -345,6 +355,7 @@ class ReportBomWizardProduction(models.AbstractModel):
             (
                 pre_data_intermediate_product_list,
                 bom_lines_with_factor,
+                data_produce_bom_qty,
             ) = self.create_datas_from_nested_boms(
                 pre_data_intermediate_product_list, wiz_line
             )
@@ -428,6 +439,7 @@ class ReportBomWizardProduction(models.AbstractModel):
             data_manufacture_total_cost,
             data_purchase_list,
             data_intermediate_product_list,
+            data_produce_bom_qty,
             data_matrix_boms,
             data_matrix_product_bom,
         )
