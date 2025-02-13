@@ -261,7 +261,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </t>
           </t>
           <!-- ======= INTERMEDIATE BOMS SIMPLE REPORT =======  -->
-          <t t-foreach="data_produce_bom_qty" t-as="intermediate_bom">
+          <t t-foreach="data_intermediate_product_bom_qty" t-as="intermediate_bom">
             <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
               <t t-set="docs" t-value="intermediate_bom[0]"/>
               <t t-set="bom_qty" t-value="intermediate_bom[1]"/>
