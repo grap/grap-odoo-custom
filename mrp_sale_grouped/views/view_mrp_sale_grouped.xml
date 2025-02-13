@@ -42,7 +42,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <header>
                   <button type="action" string="Production assistant"
                           attrs="{'invisible': [('order_ids', '=', [])]}"
-                          name="%(mrp_bom_wizard_production.action_mrp_bom_wizard_production_list_print_wizard)d"
+                          name="%(mrp_bom_wizard_production.action_mrp_bom_wizard_production)d"
                           icon="fa-print" context="{'sale_grouped':True}"
                           class="oe_highlight"/>
                   <field name="sales_state" widget="statusbar" invisible="1"/>

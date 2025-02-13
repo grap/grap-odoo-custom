@@ -5,8 +5,8 @@
 from odoo import api, fields, models
 
 
-class BomPrintPurchaseListWizard(models.TransientModel):
-    _inherit = "bom.print.purchase.list.wizard"
+class BomWizardProduction(models.TransientModel):
+    _inherit = "bom.wizard.production"
 
     missing_boms_text = fields.Char(
         default=lambda s: s._default_missing_boms_text(),
@@ -27,7 +27,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             no_origin = True
 
         return super(
-            BomPrintPurchaseListWizard,
+            BomWizardProduction,
             self.with_context(context, no_origin=no_origin),
         )._default_no_origin()
 
@@ -43,7 +43,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             title_for_pdf = False
 
         return super(
-            BomPrintPurchaseListWizard,
+            BomWizardProduction,
             self.with_context(context, title_for_pdf=title_for_pdf),
         )._default_title_for_pdf()
 
@@ -59,7 +59,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             notes_for_pdf = False
 
         return super(
-            BomPrintPurchaseListWizard,
+            BomWizardProduction,
             self.with_context(context, notes_for_pdf=notes_for_pdf),
         )._default_notes()
 
@@ -75,7 +75,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             production_date = False
 
         return super(
-            BomPrintPurchaseListWizard,
+            BomWizardProduction,
             self.with_context(context, production_date=production_date),
         )._default_production_date()
 
@@ -134,6 +134,6 @@ class BomPrintPurchaseListWizard(models.TransientModel):
             boms_and_quantities = []
 
         return super(
-            BomPrintPurchaseListWizard,
+            BomWizardProduction,
             self.with_context(context, boms_and_quantities=boms_and_quantities),
         )._default_line_ids()
