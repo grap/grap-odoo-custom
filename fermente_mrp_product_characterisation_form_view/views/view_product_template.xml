@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_characterisation_form" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="priority" eval="100" />
+        <field name="inherit_id" ref="mrp_product_characterisation.view_product_template_form"/>
+        <field name="arch" type="xml">
+
+            <!-- HIDE fields -->
+            <field name="is_component" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="is_intermediate" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+        </field>
+    </record>
+
+
+</odoo>
