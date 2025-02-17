@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_res_company_search" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="fiscal_company_base.view_res_company_search"/>
+        <field name="arch" type="xml">
+            <field name="fiscal_type" position="after">
+               <field name="code"/>
+               <field name="category_id"/>
+               <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
+               <field name="accounting_interlocutor_id"/>
+               <field name="hr_interlocutor_id"/>
+               <field name="attendant_interlocutor_id"/>
+               <filter string="Category" name="group_by_category"
+                    context="{'group_by' : 'category_id'}"/>
+               <filter string="Attendant Interlocutor" name="group_by_att_interlocutor"
+                    context="{'group_by' : 'attendant_interlocutor_id'}"/>
+               <filter string="Accounting Interlocutor" name="group_by_acc_interlocutor"
+                    context="{'group_by' : 'accounting_interlocutor_id'}"/>
+               <filter string="HR Interlocutor" name="group_by_hr_interlocutor"
+                    context="{'group_by' : 'hr_interlocutor_id'}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_company_form" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+           <field name="favicon" position="before">
+               <field name="is_using_odoo" widget="boolean_toggle"/>
+               <field name="is_displayed_in_directory" widget="boolean_toggle"/>
+               <field name="cooperative_joining_date"/>
+               <field name="accounting_referent_id" />
+               <field name="hr_referent_id" />
+               <field name="it_referent_id" />
+               <field name="communication_referent_id" />
+               <field name="accounting_interlocutor_id" />
+               <field name="hr_interlocutor_id" />
+               <field name="attendant_interlocutor_id" />
+           </field>
+       </field>
+    </record>
+
+    <record id="view_res_company_tree_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1">
+                <field name="code" readonly="1"/>
+                <field name="name" readonly="1"/>
+                <field name="fiscal_type" readonly="1" optional="show"/>
+                <field name="zip" optional="show"/>
+                <field name="city" optional="show"/>
+                <field name="country_department_id" optional="hide"/>
+                <field name="state_id" optional="hide"/>
+                <field name="country_id" readonly="1" optional="hide"/>
+                <field name="category_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_company_map" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <leaflet_map
+                    field_latitude="partner_latitude"
+                    field_longitude="partner_longitude"
+                    field_title="name"
+                    field_address="complete_address"
+                    field_marker_icon_image="logo_web"
+                    default_zoom="9"
+                    zoom_snap="0.1"
+                >
+                <field name="__last_update"/>
+                <field name="partner_latitude"/>
+                <field name="partner_longitude"/>
+                <field name="name"/>
+                <field name="complete_address"/>
+            </leaflet_map>
+        </field>
+    </record>
+
+    <record id="view_res_company_form_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <form>
+                <header/>
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar" options="{'preview_image': 'logo', 'size': [90, 90]}"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="True"/></h1>
+                    </div>
+                    <group>
+                        <group string="Public informations">
+                            <span class="o_form_label o_td_label" name="address_name">
+                                <b>Address</b>
+                            </span>
+                            <div class="o_address_format">
+                                <field name="street" class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <div name="partner_address_country" class="d-flex justify-content-between">
+                                    <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                </div>
+                            </div>
+                            <field name="complete_address"/>
+                            <field name="email" widget="email" readonly="True"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="website" widget="url"/>
+                       </group>
+                        <group col="1">
+                            <group string="Legal informations">
+                                <field name="siren"/>
+                                <field name="nic"/>
+                                <field name="vat"/>
+                            </group>
+                            <group string="Cooperative informations">
+                                <field name="code" readonly="True"/>
+                                <field name="fiscal_type" readonly="True"/>
+                                <field name="cooperative_joining_date"/>
+                                <field name="category_id"/>
+                                <field name="is_using_odoo"/>
+                            </group>
+                        </group>
+                    </group>
+                     <notebook>
+                        <page string="Team">
+                            <field name="worker_ids" mode="kanban">
+                                <kanban>
+                                    <field name="id"/>
+                                    <field name="firstname"/>
+                                    <field name="lastname"/>
+                                    <field name="company_id"/>
+                                    <field name="work_email"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                               <t t-set="employee_image" t-value="kanban_image('hr.employee.global', 'image_1024', record.id.raw_value)"/>
+                                                <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{employee_image}')" />
+                                                <div class="o_kanban_image d-md-none" t-attf-style="background-image: url(#{employee_image})" />
+                                                <div class="oe_kanban_details  d-flex flex-column justify-content-between">
+                                                    <div class="o_kanban_record_top">
+                                                        <div class="o_kanban_record_headings">
+                                                            <strong class="o_kanban_record_title">
+                                                                <ul>
+                                                                  <li><field name="firstname"/> <field name="lastname"/></li>
+                                                                </ul>
+                                                            </strong>
+                                                        </div>
+                                                    </div>
+                                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                                    <ul>
+                                                        <li t-if="record.mobile_phone.raw_value">
+                                                            <field name="mobile_phone" widget="phone"/>
+                                                        </li>
+                                                        <li t-if="record.work_email.raw_value">
+                                                            <field name="work_email" widget="email"/>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                        <page string="Referents &amp; Interlocutors">
+                            <group>
+                                <group string="Referents in the company">
+                                    <field name="accounting_referent_id"
+                                           domain="[('company_id','=', id)]"
+                                           context="{'default_lastname': accounting_referent_id}"/>
+                                    <field name="communication_referent_id"
+                                           domain="[('company_id','=', id)]"/>
+                                    <field name="it_referent_id"
+                                           domain="[('company_id','=', id)]"/>
+                                    <field name="hr_referent_id"
+                                           domain="[('company_id','=', id)]"/>
+                                </group>
+                                <group string="Interlocutors in the service team">
+                                    <field name="accounting_interlocutor_id"/>
+                                    <field name="hr_interlocutor_id"/>
+                                    <field name="attendant_interlocutor_id"/>
+                               </group>
+                            </group>
+                        </page>
+                        <page string="Social Networks">
+                            <group>
+                                <field name="social_mastodon" widget="url"/>
+                                <field name="social_twitter" widget="url"/>
+                                <field name="social_facebook" widget="url"/>
+                                <field name="social_gitlab" widget="url"/>
+                                <field name="social_github" widget="url"/>
+                                <field name="social_linkedin" widget="url"/>
+                                <field name="social_youtube" widget="url"/>
+                                <field name="social_instagram" widget="url"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_res_company_kanban_directory" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="fiscal_type"/>
+                <field name="logo_web"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="phone"/>
+                <field name="website"/>
+                <field name="social_mastodon"/>
+                <field name="social_twitter"/>
+                <field name="social_gitlab"/>
+                <field name="social_github"/>
+                <field name="social_linkedin"/>
+                <field name="social_youtube"/>
+                <field name="social_instagram"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <t t-if="record.logo_web.raw_value">
+                                <img class="o_kanban_image"
+                                    t-att-src="kanban_image('res.company', 'logo_web', record.id.raw_value)"
+                                    t-att-alt="record.name"/>
+                            </t>
+                            <t t-else="">
+                                <img class="o_kanban_image" alt="Logo" t-att-src="_s + &quot;/base/static/img/company_image.png&quot;"/>
+                            </t>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="code"/> - <field name="name"/>
+                                </strong>
+                                <ul>
+                                    <li t-if="record.fiscal_type.raw_value" class="o_kanban_record_subtitle">
+                                        <field name="fiscal_type"/>
+                                    </li>
+                                    <li t-if="record.category_id.raw_value" class="o_kanban_record_subtitle">
+                                        <field name="category_id"/>
+                                    </li>
+                                    <li t-if="record.zip.raw_value and record.city.raw_value">
+                                        <field name="zip"/>,
+                                        <field name="city"/>
+                                    </li>
+                                    <li>
+                                        <field t-if="record.phone.raw_value" name="phone" widget="phone"/>
+                                        <t t-if="record.website.raw_value">
+                                            - <a t-att-href="record.website.value" target="_blank"><i class="fa fa-globe" role="img"  aria-label="Website" title="Website" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_mastodon.raw_value">
+                                            - <a t-att-href="record.social_mastodon.value" target="_blank"><i class="fa fa-mastodon" role="img"  aria-label="Mastodon Account" title="Mastodon Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_twitter.raw_value">
+                                            - <a t-att-href="record.social_twitter.value" target="_blank"><i class="fa fa-twitter" role="img"  aria-label="Twitter Account" title="Twitter Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_gitlab.raw_value">
+                                            - <a t-att-href="record.social_gitlab.value" target="_blank"><i class="fa fa-gitlab" role="img"  aria-label="Gitlab Account" title="Gitlab Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_github.raw_value">
+                                            - <a t-att-href="record.social_github.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Github Account" title="Github Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_linkedin.raw_value">
+                                            - <a t-att-href="record.social_linkedin.value" target="_blank"><i class="fa fa-linkedin" role="img"  aria-label="LinkedIn Account" title="LinkedIn Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_youtube.raw_value">
+                                            - <a t-att-href="record.social_youtube.value" target="_blank"><i class="fa fa-youtube" role="img"  aria-label="Youtube Account" title="Youtube Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_instagram.raw_value">
+                                            - <a t-att-href="record.social_instagram.value" target="_blank"><i class="fa fa-instagram" role="img"  aria-label="Instagram Account" title="Instagram Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_res_company" model="ir.actions.act_window">
+        <field name="name">Activities</field>
+        <field name="res_model">res.company</field>
+<!--         <field name="view_id" ref="view_res_company_kanban_directory"/> -->
+        <field name="view_mode">kanban,tree,form,leaflet_map</field>
+        <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
+        <field name="context">
+            {
+                "form_view_ref": "fermente_cooperative_directory.view_res_company_form_directory",
+                "tree_view_ref": "fermente_cooperative_directory.view_res_company_tree_directory",
+            }
+        </field>
+    </record>
+
+    <menuitem id="menu_res_company"
+        name="Activities"
+        parent="menu_root"
+        action="action_res_company"
+        sequence="1"/>
+
+</odoo>

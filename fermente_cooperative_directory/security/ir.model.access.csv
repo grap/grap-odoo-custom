@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ir_model_access_hr_employee_global,ir_model_access_hr_employee_global,fermente_cooperative_directory.model_hr_employee_global,,1,,,
+ir_model_access_res_company_write,ir_model_access_res_company_write,base.model_res_company,group_fermente_cooperative_directory_manager,,1,,

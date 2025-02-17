@@ -11,7 +11,6 @@
     "license": "AGPL-3",
     "depends": [
         "point_of_sale",
-        "product_usability",
         "mrp",
         "sale_management",
         "purchase",
@@ -20,7 +19,12 @@
         "spreadsheet_dashboard",
         "project",
         "crm",
+        # OCA
+        "product_usability",
         "queue_job",
+        "spreadsheet_oca",
+        # GRAP
+        "fermente_cooperative_directory",
     ],
     "data": ["views/menu.xml"],
 }
