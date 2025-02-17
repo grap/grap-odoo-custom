@@ -14,7 +14,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_uom_id']/.." position="after">
+            <xpath expr="//group/group" position="inside">
               <field name="display_set_quantity_with_net_quantities" invisible="1"/>
               <label for="bom_components_total_net_weight"/>
               <div>
