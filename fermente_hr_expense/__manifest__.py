@@ -3,16 +3,14 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Fermente - Human Ressources",
+    "name": "Fermente - Human Ressources Expense",
     "version": "16.0.1.0.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["hr"],
+    "depends": ["fermente_hr", "hr_expense"],
     "data": [
-        "security/res_groups.xml",
         "views/menu.xml",
-        "views/view_hr_employee.xml",
     ],
 }
