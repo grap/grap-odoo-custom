@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.1.0.1 |  | Fermente - Product Margin Classification
 [fermente_stock](fermente_stock/) | 16.0.1.1.0 |  | Fermente - Stock
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
-[mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.0 |  | Manage the various useful prints for Bill of Materials
+[mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.1 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.1 |  | MRP BoM Weight
 [mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.2.0 |  | Wizard linked to Bill of Materials to help your production.
 [mrp_business](mrp_business/) | 16.0.1.1.1 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
