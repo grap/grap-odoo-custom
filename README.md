@@ -40,7 +40,7 @@ addon | version | maintainers | summary
 [mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.0 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.0 |  | MRP BoM Weight
 [mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.2.0 |  | Wizard linked to Bill of Materials to help your production.
-[mrp_business](mrp_business/) | 16.0.1.1.0 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
+[mrp_business](mrp_business/) | 16.0.1.1.1 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_sale_grouped](mrp_sale_grouped/) | 16.0.1.0.1 |  | Quickly manage what you need to produce thanks to grouped sales
 [server_environment_files](server_environment_files/) | 16.0.1.0.0 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 
