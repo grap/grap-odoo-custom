@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Main Menu",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "category": "Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

@@ -27,8 +27,9 @@ addon | version | maintainers | summary
 [fermente_account_menu_invoice_refund](fermente_account_menu_invoice_refund/) | 16.0.1.0.1 |  | Fermente - Account Menu Invoice Refund
 [fermente_account_move_name_sequence](fermente_account_move_name_sequence/) | 16.0.1.0.1 |  | Fermente - Account Move Name Sequence
 [fermente_base](fermente_base/) | 16.0.1.0.0 |  | Fermente - Base
+[fermente_cooperative_directory](fermente_cooperative_directory/) | 16.0.2.0.1 |  | Add Directories for companies and employees
 [fermente_hr](fermente_hr/) | 16.0.1.0.0 |  | Fermente - Human Ressources
-[fermente_main_menu](fermente_main_menu/) | 16.0.1.0.0 |  | Fermente - Main Menu
+[fermente_main_menu](fermente_main_menu/) | 16.0.1.0.1 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.0.1 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.0.1 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.2.0.0 |  | Fermente - Point Of Sale
