@@ -6,8 +6,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <menuitem id="menu_mrp_bom_wizard_production_list_print"
+    <menuitem id="menu_mrp_bom_wizard_production"
         parent="mrp.menu_mrp_root" sequence="50"
-        action="action_mrp_bom_wizard_production_list_print_wizard"/>
+        action="action_mrp_bom_wizard_production"/>
 
 </odoo>

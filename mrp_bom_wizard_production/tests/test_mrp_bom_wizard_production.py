@@ -5,14 +5,14 @@
 from odoo.tests.common import TransactionCase
 
 
-class TestMrpBomPurchaseWizardProduction(TransactionCase):
+class TestMrpBomWizardProduction(TransactionCase):
     def setUp(self):
         super().setUp()
         self.bom_desk = self.env.ref("mrp.mrp_bom_desk")
 
     def test_01_check_wizard_onchange_quantity(self):
         # Create wizard with Table "desk"
-        wizard_obj = self.env["bom.print.purchase.list.wizard"]
+        wizard_obj = self.env["bom.wizard.production"]
         wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})
         first_line = wizard.line_ids[0]
         line_total = first_line.wizard_line_subtotal
@@ -25,7 +25,7 @@ class TestMrpBomPurchaseWizardProduction(TransactionCase):
         new_description = "Nice office to work on overturning capitalism"
         self.bom_desk.description_packaging = new_description
         # Create wizard with Table "desk"
-        wizard_obj = self.env["bom.print.purchase.list.wizard"]
+        wizard_obj = self.env["bom.wizard.production"]
         wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})
         first_line = wizard.line_ids[0]
         # Check
@@ -33,7 +33,7 @@ class TestMrpBomPurchaseWizardProduction(TransactionCase):
 
     def test_03_report_bom_purchase_check_default(self):
         # Create wizard with Table "desk"
-        wizard_obj = self.env["bom.print.purchase.list.wizard"]
+        wizard_obj = self.env["bom.wizard.production"]
         wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})
         data = wizard._prepare_data()
         # Check default values
@@ -43,12 +43,12 @@ class TestMrpBomPurchaseWizardProduction(TransactionCase):
 
     def test_04_report_bom_purchase_check_data_nested(self):
         # Create wizard with Table "desk"
-        wizard_obj = self.env["bom.print.purchase.list.wizard"]
+        wizard_obj = self.env["bom.wizard.production"]
         wizard = wizard_obj.with_context(active_ids=[self.bom_desk.id]).create({})
         data = wizard._prepare_data()
         # Check purchase cost
         report_obj = self.env[
-            "report.mrp_bom_wizard_production.report_bom_purchase_list"
+            "report.mrp_bom_wizard_production.report_bom_wizard_production"
         ]
         values = report_obj._get_report_values(0, data)
 

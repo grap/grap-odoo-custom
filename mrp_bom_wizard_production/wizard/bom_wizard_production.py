@@ -5,12 +5,17 @@
 from odoo import api, fields, models
 
 
-class BomPrintPurchaseListWizard(models.TransientModel):
-    _name = "bom.print.purchase.list.wizard"
+class BomWizardProduction(models.TransientModel):
+    _name = "bom.wizard.production"
     _description = "Wizard for printing bill of materials"
 
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        default=lambda s: s._default_currency_id(),
+    )
+
     line_ids = fields.One2many(
-        comodel_name="bom.print.purchase.list.wizard.line",
+        comodel_name="bom.wizard.production.line",
         inverse_name="wizard_id",
         string="Lines",
         default=lambda s: s._default_line_ids(),
@@ -50,6 +55,10 @@ class BomPrintPurchaseListWizard(models.TransientModel):
     no_origin = fields.Boolean(
         default=lambda s: s._default_no_origin(),
     )
+
+    @api.model
+    def _default_currency_id(self):
+        return self.env.company.currency_id
 
     @api.model
     def _default_no_origin(self):
@@ -117,6 +126,7 @@ class BomPrintPurchaseListWizard(models.TransientModel):
 
     def _prepare_data(self):
         return {
+            "currency_symbol": self.currency_id.symbol,
             "line_data": [x.id for x in self.line_ids],
             "title_for_pdf": self.title_for_pdf,
             "notes_for_pdf": self.notes_for_pdf,
@@ -133,5 +143,5 @@ class BomPrintPurchaseListWizard(models.TransientModel):
         data = self._prepare_data()
         # Get ir_actions_report
         return self.env.ref(
-            "mrp_bom_wizard_production.bom_purchase_list"
+            "mrp_bom_wizard_production.bom_wizard_production"
         ).report_action(self, data=data)

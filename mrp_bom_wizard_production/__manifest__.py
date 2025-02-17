@@ -5,12 +5,14 @@
 {
     "name": "MRP BoM Wizard production",
     "summary": "Wizard linked to Bill of Materials to help your production.",
-    "version": "16.0.1.1.1",
-    "category": "GRAP - Custom",
+    "version": "16.0.1.2.0",
+    "category": "Manufacturing",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
+        # OCA modules
+        "mrp_bom_simple_packaging_description",
         "mrp_bom_product_price_margin",
         "mrp_bom_simple_report",
         "mrp_bom_simple_packaging_description",
@@ -18,9 +20,9 @@
     "data": [
         "security/ir.model.access.csv",
         "data/report_paperformat.xml",
-        "report/report_bom_purchase_list.xml",
+        "report/report_bom_wizard_production.xml",
         "report/ir_actions_report.xml",
-        "wizard/view_bom_print_purchase_list_wizard.xml",
+        "wizard/view_bom_wizard_production.xml",
         "views/action.xml",
         "views/menu.xml",
     ],

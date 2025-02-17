@@ -7,8 +7,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <record id="view_production_assistant_wizard" model="ir.ui.view">
-        <field name="model">bom.print.purchase.list.wizard</field>
-        <field name="inherit_id" ref="mrp_bom_wizard_production.view_bom_print_purchase_list_wizard_form" />
+        <field name="model">bom.wizard.production</field>
+        <field name="inherit_id" ref="mrp_bom_wizard_production.view_bom_wizard_production_form" />
         <field name="arch" type="xml">
             <xpath expr="//group[@name='options_pdf']/.." position="before">
                 <group attrs="{'invisible': [('missing_boms_text', '==', '')]}" name="other_text_no_bom" col="12">

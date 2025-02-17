@@ -5,14 +5,14 @@
 from odoo import api, fields, models
 
 
-class BomPrintPurchaseListWizardLine(models.TransientModel):
-    _name = "bom.print.purchase.list.wizard.line"
+class BomWizardProductionLine(models.TransientModel):
+    _name = "bom.wizard.production.line"
     _description = (
         "Wizard line for printing purchase list from selected bill of materials"
     )
 
     # Columns Section
-    wizard_id = fields.Many2one(comodel_name="bom.print.purchase.list.wizard")
+    wizard_id = fields.Many2one(comodel_name="bom.wizard.production")
 
     bom_id = fields.Many2one(comodel_name="mrp.bom", string="Bill Of Material")
 

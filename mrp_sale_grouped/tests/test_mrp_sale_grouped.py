@@ -11,7 +11,7 @@ class TestMrpSaleGrouped(TransactionCase):
         # Objects
         self.mrp_sale_grouped_obj = self.env["mrp.sale.grouped"]
         self.wizard_obj = self.env["sale.grouped.wizard"]
-        self.wizard_purchase_list_obj = self.env["bom.print.purchase.list.wizard"]
+        self.wizard_purchase_list_obj = self.env["bom.wizard.production"]
         # Demo datas
         self.sale_order_gemini = self.env.ref("mrp_sale_grouped.demo_sale_gemini")
         self.sale_order_ready_mat = self.env.ref("mrp_sale_grouped.demo_sale_ready_mat")

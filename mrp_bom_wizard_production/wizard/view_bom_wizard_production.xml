@@ -6,10 +6,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record id="view_bom_print_purchase_list_wizard_form" model="ir.ui.view">
-        <field name="model">bom.print.purchase.list.wizard</field>
+    <record id="view_bom_wizard_production_form" model="ir.ui.view">
+        <field name="model">bom.wizard.production</field>
         <field name="arch" type="xml">
-            <form string="Print Purchase list">
+            <form>
                 <group col="12">
                   <group name="options_pdf" string="Options for PDF" colspan="6">
                     <field name="option_group_by_product_category" widget="boolean_toggle"/>

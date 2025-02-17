@@ -6,7 +6,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <template id="report_bom_purchase_list">
+    <template id="report_bom_wizard_production">
         <t t-call="web.basic_layout">
             <div class="title">
               <h1><span t-esc="title_for_pdf"/></h1>
@@ -32,8 +32,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <br/>
                 <table class="table table-sm table-bordered">
                     <thead>
-                        <tr class="reminder_bom_to_prepare_thead th-colored">
+                        <tr class="manufacture_bom_to_prepare_thead th-colored">
                             <th name="th_reminder_product" class="text-left">Bill of Material</th>
+                            <th name="th_reminder_packaging" class="text-left">Packaging</th>
                             <th name="th_reminder_qty" class="text-center width-qty-and-unit">Quantity</th>
                             <th name="th_reminder_uom" class="text-left width-qty-and-unit">UoM</th>
                             <t t-if="option_display_cost">
@@ -43,24 +44,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <th name="th_reminder_free_comment" class="text-center width-fixed-large">Free comment</th>
                         </tr>
                     </thead>
-                    <tbody class="reminder_bom_to_prepare_tbody">
+                    <tbody class="manufacture_bom_to_prepare_tbody">
                         <t t-foreach="manufacture_bom_list" t-as="manufacture_bom_list_line">
                             <tr>
                               <td name="td_reminder_product" class="text-left">
                                 <span t-esc="manufacture_bom_list_line[0]"/>
                               </td>
-                              <td name="td_reminder_qty" class="text-center width-qty-and-unit">
+                              <td name="td_reminder_packaging" class="text-left">
                                 <span t-esc="manufacture_bom_list_line[1]"/>
                               </td>
-                              <td name="td_reminder_uom" class="text-left width-qty-and-unit">
+                              <td name="td_reminder_qty" class="text-center width-qty-and-unit">
                                 <span t-esc="manufacture_bom_list_line[2]"/>
+                              </td>
+                              <td name="td_reminder_uom" class="text-left width-qty-and-unit">
+                                <span t-esc="manufacture_bom_list_line[3]"/>
                               </td>
                               <t t-if="option_display_cost">
                                 <td name="td_reminder_standard_price_unit" class="text-center width-fixed-small">
-                                  <span t-esc="manufacture_bom_list_line[3]"/> <span t-esc="currency_symbol"/>
+                                  <span t-esc="manufacture_bom_list_line[4]"/> <span t-esc="currency_symbol"/>
                                 </td>
                                 <td name="td_reminder_subtotal" class="text-center width-fixed-small">
-                                  <span t-esc="manufacture_bom_list_line[4]"/> <span t-esc="currency_symbol"/>
+                                  <span t-esc="manufacture_bom_list_line[5]"/> <span t-esc="currency_symbol"/>
                                 </td>
                               </t>
                               <td name="td_reminder_free_comment" class="width-fixed-large"></td>
@@ -68,8 +72,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </t>
                     </tbody>
                     <t t-if="option_display_cost">
-                      <tr class="bom_manufacture_total_cost_tr">
-                        <td name="to_manufacture_total_cost_name" class="text-right" colspan="4">
+                      <tr class="table_footer_total_cost">
+                        <td name="to_manufacture_total_cost_name" class="text-right" colspan="5">
                           <b>Total based on BoMs cost:</b>
                         </td>
                         <td name="to_manufacture_total_cost" class="text-center" colspan="1">
@@ -83,7 +87,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
             <!-- ======= INTERMEDIATE PRODUCTS =======  -->
             <div class="page_intermediate_to_prepare small-font-size new_section">
-              <t t-if="produce_list">
+              <t t-if="intermediate_product_list">
                 <div class="page_header">
                   <h2 class="text-left title-h2">Intermediate products to produce</h2>
                   <span t-esc="notes_for_pdf"/>
@@ -103,23 +107,23 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </tr>
                     </thead>
                     <tbody class="products_to_produce_tbody">
-                        <t t-foreach="produce_list" t-as="produce_list_line">
+                        <t t-foreach="intermediate_product_list" t-as="intermediate_product_list_line">
                             <tr>
                               <td name="td_products_to_produce_product" class="text-left">
-                                <span t-esc="produce_list_line[0]"/><span class="smaller-font-size"> (for <span t-esc="produce_list_line[1]"/>)</span>
+                                <span t-esc="intermediate_product_list_line[0]"/><span class="smaller-font-size"> (for <span t-esc="intermediate_product_list_line[1]"/>)</span>
                               </td>
                               <td name="td_products_to_produce_qty" class="text-center width-qty-and-unit">
-                                <span t-esc="produce_list_line[2]"/>
+                                <span t-esc="intermediate_product_list_line[2]"/>
                               </td>
                               <td name="td_products_to_produce_uom" class="text-left width-qty-and-unit">
-                                <span t-esc="produce_list_line[3]"/>
+                                <span t-esc="intermediate_product_list_line[3]"/>
                               </td>
                               <t t-if="option_display_cost">
                                 <td name="td_products_to_produce_standard_price_unit" class="text-center width-fixed-small">
-                                  <span t-esc="produce_list_line[4]"/> <span t-esc="currency_symbol"/>
+                                  <span t-esc="intermediate_product_list_line[4]"/> <span t-esc="currency_symbol"/>
                                 </td>
                                 <td name="td_products_to_produce_subtotal" class="text-center width-fixed-small">
-                                  <span t-esc="produce_list_line[5]"/> <span t-esc="currency_symbol"/>
+                                  <span t-esc="intermediate_product_list_line[5]"/> <span t-esc="currency_symbol"/>
                                 </td>
                               </t>
                               <td name="td_products_to_produce_free_comment" class="width-fixed-large"></td>
@@ -130,7 +134,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </t>
             </div>
 
-            <!-- ======= COMPONENTS =======  -->
+            <!-- ======= PURCHASE LIST OF COMPONENTS =======  -->
             <div class="page_components_requirements small-font-size new_section">
               <div class="page_header">
                 <h2 class="text-left title-h2">Components requirements</h2>
@@ -159,7 +163,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                               <!-- New category: print this category -->
                               <!-- Nota bene : this algorithm works because the lines are classified by categories upstream -->
                               <t t-if="purchase_list_line[0] != categ_tmp">
-                                <tr>
+                                <tr class="purchase_list_new_category">
                                   <td name="new_category" class="text-left" colspan="6">
                                     <b><span t-esc="purchase_list_line[0]"/></b>
                                   </td>
@@ -192,7 +196,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                           <t t-set="categ_tmp" t-value="purchase_list_line[0]"/>
                       </t>
                       <t t-if="option_display_cost">
-                        <tr class="bom_purchase_total_cost_tr">
+                        <tr class="table_footer_total_cost">
                           <td name="to_purchase_total_cost_name" class="text-right" colspan="4">
                             <b>Total based on Products cost:</b>
                           </td>
@@ -205,7 +209,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               </table>
             </div>
 
-            <!--  PRODUCTS PER BOMS -->
+            <!-- ======= MATRIX PRODUCTS PER BOMS =======  -->
             <div class="page_product_bom_qty small-font-size new_section" style="page-break-before:always;">
               <div class="page_header">
                 <h2 class="text-left title-h2">Sum um quantities per bills of materials</h2>
@@ -215,13 +219,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                   <thead>
                       <tr class="th-colored">
                           <th name="th_customer" class="text-center"></th>
-                          <t t-foreach="data_all_bom" t-as="data_bom">
+                          <t t-foreach="data_matrix_boms" t-as="data_bom">
                               <th name="th_sale_order_customer" class="text-center"><span t-esc="data_bom"/></th>
                           </t>
                       </tr>
                   </thead>
                   <tbody>
-                      <t t-foreach="data_list_matrix_product_bom" t-as="line_product_bom_qty">
+                      <t t-foreach="data_matrix_product_bom" t-as="line_product_bom_qty">
                           <tr>
                             <t t-set="i" t-value="0"/>
                             <t t-foreach="line_product_bom_qty" t-as="product_then_quantities">
@@ -248,7 +252,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
           This part is handled by module mrp_bom_simple_report
           so we need to extract from t-call web.simple_layout to be handle correctly
         -->
-        <!-- ======= BOMS =======  -->
+        <!-- ======= BOMS SIMPLE REPORT =======  -->
         <t t-if="option_print_bom">
           <t t-foreach="wizard_lines" t-as="wizard_line">
             <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
@@ -256,8 +260,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
               <t t-set="bom_qty" t-value="wizard_line.quantity"/>
             </t>
           </t>
-          <!-- ======= INTERMEDIATE BOMS TO PRODUCE =======  -->
-          <t t-foreach="data_produce_bom_qty" t-as="intermediate_bom">
+          <!-- ======= INTERMEDIATE BOMS SIMPLE REPORT =======  -->
+          <t t-foreach="data_intermediate_product_bom_qty" t-as="intermediate_bom">
             <t t-call="mrp_bom_simple_report.bom_simple_report_xml">
               <t t-set="docs" t-value="intermediate_bom[0]"/>
               <t t-set="bom_qty" t-value="intermediate_bom[1]"/>

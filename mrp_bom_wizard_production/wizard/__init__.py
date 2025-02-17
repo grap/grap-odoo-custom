@@ -1,2 +1,2 @@
-from . import bom_print_purchase_list_wizard
-from . import bom_print_purchase_list_wizard_line
+from . import bom_wizard_production
+from . import bom_wizard_production_line
