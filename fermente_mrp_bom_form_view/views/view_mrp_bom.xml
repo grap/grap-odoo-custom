@@ -44,7 +44,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="arch" type="xml">
 
             <!-- Hide fields -->
-
             <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree/button[@name='action_see_attachments']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
@@ -58,7 +57,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_uom_id']"
                 position="before"
             >
-                <!-- mrp_bom_line_net_qty fields -->
+                <!-- mrp_bom_line_net_qty -->
                 <field name="diff_product_qty_gross_net" invisible="1" />
                 <button
                     name="set_product_qty_gross"
@@ -69,8 +68,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 />
                 <field
                     name="loss_percentage"
-                    widget="numeric_step"
                     options="{'step': 1}"
+                    optional="show"
                 />
                 <button
                     name="set_product_qty_net"
@@ -79,9 +78,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     attrs="{'invisible': [('diff_product_qty_gross_net', '=', 0)]}"
                     title="This will set product net quantity with gross quantity and loss percentage"
                 />
-                <field name="product_qty_net" />
+                <field name="product_qty_net" optional="show"/>
 
-                <!-- mrp_bom_product_price_margin fields -->
+            </xpath>
+            <xpath
+                expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_uom_id']"
+                position="after"
+            >
+                <!-- mrp_bom_weight -->
+                <field name="line_gross_weight" optional="hide "/>
+                <field name="line_net_weight" sum="Net weight (kg)" optional="show"/>
+                <field name="line_net_weight_percentage" optional="show"/>
+
+                <!-- mrp_bom_product_allergen -->
+                <field name="allergen_ids" string="Allergens" widget="many2many_tags" optional="show"/>
+
+                <!-- product_label_mrp -->
+                <field name="product_label_ids" string="Labels" widget="many2many_tags" optional="show"/>
+
+                <!-- mrp_bom_product_price_margin -->
                 <field name="currency_id" invisible="1" />
                 <field name="standard_price_unit" widget="monetary" />
                 <field
@@ -89,16 +104,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     readonly="1"
                     sum="Total"
                     widget="monetary"
+                    optional="show"
                 />
                 <field
                     name="standard_price_subtotal_percentage"
                     string="ST %"
                     widget="percentage"
+                    optional="show"
                 />
             </xpath>
 
             <!-- Add decoration -->
-            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree" position="attributes">>
+            <xpath expr="//field[@name='bom_line_with_sectionnote_ids']/tree" position="attributes">
                 <attribute
                     name="decoration-warning"
                 >diff_product_qty_gross_net != 0</attribute>
