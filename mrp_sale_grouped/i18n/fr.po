@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-19 14:42+0000\n"
-"PO-Revision-Date: 2024-12-19 14:42+0000\n"
+"POT-Creation-Date: 2025-02-21 11:17+0000\n"
+"PO-Revision-Date: 2025-02-21 11:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -238,14 +238,9 @@ msgid "Messages"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model:ir.model.fields,field_description:mrp_sale_grouped.field_bom_print_purchase_list_wizard__missing_boms_text
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_bom_wizard_production__missing_boms_text
 msgid "Missing Boms Text"
-msgstr "Texte des Fiches Techniques manquantes"
-
-#. module: mrp_sale_grouped
-#: model:product.template,name:mrp_sale_grouped.demo_product_mustard_product_template
-msgid "Mustard"
-msgstr "Moutarde"
+msgstr "Texte des Fiches Techniques manquante"
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__my_activity_date_deadline
@@ -261,6 +256,11 @@ msgstr "Nom"
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
 msgid "Next Activity"
 msgstr "Activité suivante"
+
+#. module: mrp_sale_grouped
+#: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: mrp_sale_grouped
 #: model:ir.model.fields,field_description:mrp_sale_grouped.field_mrp_sale_grouped__activity_date_deadline
@@ -338,11 +338,6 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: mrp_sale_grouped
-#: model:product.template,name:mrp_sale_grouped.demo_product_pie_product_template
-msgid "Pie"
-msgstr "Tarte"
-
-#. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.mrp_sale_grouped_report_wizard
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_sale_grouped_wizard_form
 msgid "Print sales sum up"
@@ -371,7 +366,7 @@ msgstr ""
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_mrp_production
 msgid "Production Order"
-msgstr "Ordre de production"
+msgstr "Ordre de fabrication"
 
 #. module: mrp_sale_grouped
 #: model:ir.actions.act_window,name:mrp_sale_grouped.action_grouped_sale_prod_2_production_order
@@ -456,7 +451,7 @@ msgstr "Ventes"
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order
 msgid "Sales Order"
-msgstr "Bon de commande"
+msgstr "Commandes clients"
 
 #. module: mrp_sale_grouped
 #: model:ir.model,name:mrp_sale_grouped.model_sale_order_line
@@ -494,11 +489,6 @@ msgid "See and update values"
 msgstr "Voir et mettre à jour les quantités"
 
 #. module: mrp_sale_grouped
-#: model:product.template,name:mrp_sale_grouped.demo_product_spinach_product_template
-msgid "Spinach"
-msgstr "Épinard"
-
-#. module: mrp_sale_grouped
 #: model:ir.model.fields,help:mrp_sale_grouped.field_mrp_sale_grouped__activity_state
 msgid ""
 "Status based on activities\n"
@@ -529,20 +519,10 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_production_assistant_wizard
 msgid ""
 "These products are sold but don't have any Bill Of Material, so they can't be\n"
-"                     in this Production assistant:"
+"                    in this Production assistant:"
 msgstr ""
 "Ces produits sont dans une vente mais n'ont pas de Fiche technique, donc\n"
 "                     ils ne peuvent pas être dans l'assistant de production:"
-
-#. module: mrp_sale_grouped
-#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_tart_product_template
-msgid "Tomato pie"
-msgstr "Tarte à la tomate"
-
-#. module: mrp_sale_grouped
-#: model:product.template,name:mrp_sale_grouped.demo_product_tomato_product_template
-msgid "Tomatoes"
-msgstr "Tomates"
 
 #. module: mrp_sale_grouped
 #: model_terms:ir.ui.view,arch_db:mrp_sale_grouped.view_grouped_sale_production_form
@@ -605,7 +585,7 @@ msgid "Wizard for printing Production Plan"
 msgstr ""
 
 #. module: mrp_sale_grouped
-#: model:ir.model,name:mrp_sale_grouped.model_bom_print_purchase_list_wizard
+#: model:ir.model,name:mrp_sale_grouped.model_bom_wizard_production
 msgid "Wizard for printing bill of materials"
 msgstr ""
 
