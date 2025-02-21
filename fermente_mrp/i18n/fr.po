@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 10:13+0000\n"
-"PO-Revision-Date: 2025-02-21 10:13+0000\n"
+"POT-Creation-Date: 2025-02-21 10:52+0000\n"
+"PO-Revision-Date: 2025-02-21 10:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,14 +17,10 @@ msgstr ""
 
 #. module: fermente_mrp
 #: model:ir.actions.act_window,name:fermente_mrp.action_fermente_mrp_bom_all
-msgid "Bills of Materials"
-msgstr "Fiches techniques"
-
-#. module: fermente_mrp
 #: model:ir.ui.menu,name:fermente_mrp.menu_fermente_mrp_bom
 #: model:ir.ui.menu,name:fermente_mrp.menu_fermente_mrp_bom_all
-msgid "Bills of Materials 📋"
-msgstr "Fiches techniques 📋"
+msgid "Bills of Materials"
+msgstr "Fiches techniques"
 
 #. module: fermente_mrp
 #: model_terms:ir.ui.view,arch_db:fermente_mrp.view_fermente_mrp_production_form_base
@@ -33,23 +29,15 @@ msgstr "Fiche technique"
 
 #. module: fermente_mrp
 #: model:ir.actions.act_window,name:fermente_mrp.action_fermente_mrp_bom_finished_products
+#: model:ir.ui.menu,name:fermente_mrp.menu_fermente_mrp_bom_finished_products
 msgid "BoM for finished products"
 msgstr "FT pour produits finis"
 
 #. module: fermente_mrp
-#: model:ir.ui.menu,name:fermente_mrp.menu_fermente_mrp_bom_finished_products
-msgid "BoM for finished products 🥧"
-msgstr "FT pour produits finis 🥧"
-
-#. module: fermente_mrp
 #: model:ir.actions.act_window,name:fermente_mrp.action_fermente_mrp_bom_intermediate_products
+#: model:ir.ui.menu,name:fermente_mrp.menu_fermente_mrp_bom_intermediate_products
 msgid "BoM for intermediate products"
 msgstr "FT pour produits intermédiaires"
-
-#. module: fermente_mrp
-#: model:ir.ui.menu,name:fermente_mrp.menu_fermente_mrp_bom_intermediate_products
-msgid "BoM for intermediate products 🧩"
-msgstr "FT pour produits intermédiaires 🧩"
 
 #. module: fermente_mrp
 #: model_terms:ir.ui.view,arch_db:fermente_mrp.view_fermente_mrp_production_form_base

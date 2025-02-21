@@ -18,7 +18,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- Bill of Materials - Menus for Generic fermente View -->
     <!-- ************************************************************ -->
     <menuitem id="menu_fermente_mrp_bom"
-      name="Bills of Materials 📋"
+      name="Bills of Materials"
       parent="mrp.menu_mrp_root" sequence="1"/>
 
     <record id="action_fermente_mrp_bom_all" model="ir.actions.act_window">
@@ -30,7 +30,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_fermente_mrp_bom_all"
-        name="Bills of Materials 📋"
+        name="Bills of Materials"
         parent="menu_fermente_mrp_bom" sequence="5"
         action="action_fermente_mrp_bom_all"/>
 
@@ -44,7 +44,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_fermente_mrp_bom_intermediate_products"
-      name="BoM for intermediate products 🧩"
+      name="BoM for intermediate products"
       parent="menu_fermente_mrp_bom" sequence="20"
       action="action_fermente_mrp_bom_intermediate_products"/>
 
@@ -58,7 +58,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <menuitem id="menu_fermente_mrp_bom_finished_products"
-        name="BoM for finished products 🥧"
+        name="BoM for finished products"
         parent="menu_fermente_mrp_bom" sequence="30"
         action="action_fermente_mrp_bom_finished_products"/>
 
