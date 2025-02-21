@@ -12,8 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model_id" ref="model_mrp_sale_grouped" />
         <field name="global" eval="True" />
         <field name="domain_force">[
-            '|', ('company_id', '=', False),
-                 ('company_id', 'in', company_ids)
+            ('company_id', 'in', company_ids + [False])
         ]</field>
     </record>
 
