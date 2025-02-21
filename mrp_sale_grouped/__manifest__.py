@@ -33,7 +33,6 @@
         "report/report_sale_grouped.xml",
         "report/ir_actions_report.xml",
         "views/action.xml",
-        "views/menu.xml",
         "views/view_mrp_sale_grouped.xml",
         "views/view_sale_order.xml",
         "wizard/view_sale_grouped_wizard.xml",
