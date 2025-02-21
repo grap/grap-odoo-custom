@@ -85,12 +85,12 @@ class BomWizardProduction(models.TransientModel):
 
         if context.get("active_model") == "mrp.sale.grouped":
             sale_grouped = self._get_sale_grouped_from_context()
-            # Get name of products without any BoM
+            # Get name (with size limit) of products without any BoM
             missing_boms_text = ", ".join(
                 sale_grouped.product_wo_bom_ids.mapped("display_name")
-            )
+            )[:30]
         else:
-            missing_boms_text = False
+            missing_boms_text = ""
 
         return missing_boms_text
 
