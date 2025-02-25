@@ -9,6 +9,10 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["pos_restaurant"],
-    "data": ["security/ir.model.access.csv", "views/menu.xml"],
+    "depends": ["pos_restaurant", "fermente_pos"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/view_pos_config.xml",
+    ],
 }
