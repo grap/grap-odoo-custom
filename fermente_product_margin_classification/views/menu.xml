@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: Sylvain LE GAL (http://www.grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <menuitem id="menu_product_margin_classification"
+        parent="product_usability.menu_configuration" sequence="50"
+        action="product_margin_classification.action_product_margin_classification"/>
+
+</odoo>
