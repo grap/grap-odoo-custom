@@ -10,5 +10,9 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["point_of_sale"],
-    "data": ["views/view_product_template.xml", "views/view_pos_config.xml"],
+    "data": [
+        "views/view_product_template.xml",
+        "views/view_pos_config.xml",
+        "views/menu.xml",
+    ],
 }
