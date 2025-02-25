@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="rule_mrp_food_menu" model="ir.rule">
+        <field name="name">MRP Food Menu Rule</field>
+        <field name="model_id" ref="model_mrp_food_menu" />
+        <field name="global" eval="True" />
+        <field name="domain_force">[
+            ('company_id', 'in', company_ids + [False])
+        ]</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_food_menu_form" model="ir.ui.view">
+        <field name="model">mrp.food.menu</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="Menu for New Year Eve"/></h1>
+                    </div>
+                    <br/>
+                    <group col="12">
+                        <field colspan="12" name="menu_line_ids" nolabel="1" widget="section_and_note_one2many">
+                            <tree editable="bottom">
+
+                                <control>
+                                    <create name="add_product_control" string="Add a product" />
+                                    <create
+                                            name="add_section_control"
+                                            string="Add a section"
+                                            context="{'default_display_type': 'line_section'}"
+                                        />
+                                    <create
+                                            name="add_note_control"
+                                            string="Add a note"
+                                            context="{'default_display_type': 'line_note'}"
+                                        />
+                                </control>
+                                <field name="display_type" invisible="1"/>
+                                <field name="company_id" invisible="1" />
+                                <field name="sequence" widget="handle" />
+                                <field
+                                        name="product_id"
+                                        attrs="{
+                                      'required': [('display_type', '=', False)],
+                                      'invisible': [('display_type', '=', True)],
+                                    }"
+                                        context="{
+                                      'default_type': 'product',
+                                      'default_detailed_type': 'product'
+                                    }"
+                                    />
+                                <field
+                                        name="name"
+                                        widget="section_and_note_text"
+                                        optional="show"
+                                    />
+                                <field
+                                        name="product_uom_qty"
+                                        attrs="{
+                                          'invisible': [('display_type', '=', True)],
+                                      }"
+                                    />
+                                <field name="product_uom_id" />
+                                <field name="bom_id"/>
+
+
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_food_menu_tree" model="ir.ui.view">
+        <field name="model">mrp.food.menu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mrp_food_menu" model="ir.actions.act_window">
+        <field name="name">Food Menus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mrp.food.menu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_food_menu"
+        parent="mrp.menu_mrp_root" sequence="40"
+        action="action_mrp_food_menu"/>
+
+
+</odoo>
