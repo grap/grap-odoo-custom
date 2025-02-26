@@ -9,7 +9,7 @@ class FoodMenuLine(models.Model):
     _inherit = "mrp.food.menu.line"
 
     allergen_ids = fields.Many2many(
-        string="Allergens",
+        string="BoM Allergens",
         comodel_name="product.allergen",
-        related="product_id.allergen_ids",
+        related="bom_id.bom_allergen_ids",
     )

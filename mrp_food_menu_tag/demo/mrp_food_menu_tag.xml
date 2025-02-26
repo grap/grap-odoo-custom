@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record model="mrp.food.menu.tag" id="demo_food_menu_tag_parent">
+        <field name="name">Ecological</field>
+        <field name="color">2</field>
+    </record>
+
+    <record model="mrp.food.menu.tag" id="demo_food_menu_tag">
+        <field name="name">Vegan</field>
+        <field name="color">9</field>
+        <field name="parent_id" ref="mrp_food_menu_tag.demo_food_menu_tag_parent" />
+        <field
+            name="food_menu_ids"
+            eval="[(4, ref('mrp_food_menu_tag.demo_food_menu_french_revolution')),]"
+        />
+    </record>
+
+    <record model="mrp.food.menu.tag" id="demo_food_menu_tag_2">
+        <field name="name">Halal</field>
+        <field name="color">1</field>
+    </record>
+
+</odoo>

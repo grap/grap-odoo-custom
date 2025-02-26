@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Food Menu - Form -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_food_menu_tag_form" model="ir.ui.view">
+        <field name="model">mrp.food.menu</field>
+        <field name="inherit_id" ref="mrp_food_menu.view_food_menu_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']/.." position="after">
+                <group>
+                    <field
+                        name="food_menu_tag_ids"
+                        widget="many2many_tags"
+                        options="{'color_field': 'color'}"
+                        context="{'display_complete_name': True}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ************************************************************ -->
+    <!-- MRP Food Menu - Tree -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_food_menu_tag_tree" model="ir.ui.view">
+        <field name="model">mrp.food.menu</field>
+        <field name="inherit_id" ref="mrp_food_menu.view_food_menu_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field
+                    name="food_menu_tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

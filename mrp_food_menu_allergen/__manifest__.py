@@ -13,7 +13,7 @@
     "depends": [
         "mrp_food_menu",
         # GRAP Business modules,
-        "product_food",
+        "mrp_bom_product_allergen",
     ],
     "data": [
         "views/view_food_menu.xml",
