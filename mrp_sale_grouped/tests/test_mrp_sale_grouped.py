@@ -57,6 +57,6 @@ class TestMrpSaleGrouped(TransactionCase):
 
     def test_05_check_wizard_production_with_boms(self):
         self.wizard_purchase_list_obj.with_context(
-            active_ids=[self.mrp_sale_grouped_with_boms.id],
-            active_model="mrp.sale.grouped",
+            active_ids=[self.bom_pie.id],
+            active_model="mrp.bom",
         ).create({})
