@@ -4,3 +4,8 @@ Customize Odoo / odoo / ``product`` module.
   (A product image is one server call)
 
 * Refactor ``product.product`` and ``product.template`` list views.
+
+* Change decimal precisions.
+
+  * ``product.decimal_stock_weight``: 2 -> 3
+  * ``product.decimal_cost_price``: 2 -> 3

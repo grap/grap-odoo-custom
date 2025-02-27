@@ -11,7 +11,8 @@
     "license": "AGPL-3",
     "depends": ["product"],
     "data": [
-        "views/view_product_template.xml",
+        "data/decimal_precision.xml",
+        "views/view_product_product.xml",
         "views/view_product_product.xml",
     ],
 }
