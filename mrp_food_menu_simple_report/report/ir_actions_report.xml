@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+      <record id="mrp_food_menu_simple_report_minimalist_action" model="ir.actions.report">
+            <field name="model">mrp.food.menu</field>
+            <field name="name">Simple Menu</field>
+            <field name="report_type">qweb-pdf</field>
+            <field
+            name="report_name"
+        >mrp_food_menu_simple_report.food_menu_simple_report_xml</field>
+            <field name="attachment_use">False</field>
+            <field name="binding_model_id" ref="mrp_food_menu.model_mrp_food_menu" />
+            <field name="paperformat_id" ref="mrp_food_menu_simple_report.paper_format_mrp_food_menu_report" />
+            <field name="binding_type">report</field>
+      </record>
+
+</odoo>

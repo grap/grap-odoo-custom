@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <template id="food_menu_simple_report_xml">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="menu">
+                <div class="page menu-simple-report" style="page-break-before:always;">
+
+                    <!-- MENU TITLE -->
+                    <h1 class="menu-title"><span t-out="menu.name" /></h1>
+
+                    <t t-foreach="menu.menu_line_ids" t-as="food_menu_line">
+
+                        <!-- SET VALUES -->
+                        <t t-set="allergen_codes" t-value="[]"/>
+
+                        <!-- SECTIONS -->
+                        <div class="line_all line_section" t-if="food_menu_line.display_type == 'line_section'">
+                            <h2>
+                                <span t-out="food_menu_line.name" />
+                            </h2>
+                        </div>
+
+                        <!-- NOTES -->
+                        <div class="line_all line_note" t-elif="food_menu_line.display_type == 'line_note'">
+                            <p>
+                                <span t-field="food_menu_line.name" />
+                            </p>
+                        </div>
+
+                        <!-- MENU LINE -->
+                        <div class="line_all line_product" t-else="">
+                            <table class="menu-table">
+                                <tr>
+                                    <td class="item-product">
+                                        <span t-field="food_menu_line.product_id.name" />
+                                        <t t-foreach="food_menu_line.allergen_ids" t-as="allergen">
+                                            <t t-set="allergen_codes" t-value="allergen_codes + [allergen.code]"/>
+                                        </t>
+                                        <t t-set="formatted_allergen_codes" t-value="','.join(allergen_codes)"/>
+                                        <span class="allergen_codes" t-out="formatted_allergen_codes"/>
+                                    </td>
+                                    <td class="item-price">
+                                        <span t-field="food_menu_line.product_id.lst_price" />
+                                        <span t-field="food_menu_line.product_id.currency_id.symbol" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </t>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
