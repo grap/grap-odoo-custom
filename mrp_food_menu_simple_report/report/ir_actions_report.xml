@@ -6,9 +6,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-      <record id="mrp_food_menu_simple_report_minimalist_action" model="ir.actions.report">
+      <record id="mrp_food_menu_simple_report_action" model="ir.actions.report">
             <field name="model">mrp.food.menu</field>
-            <field name="name">Simple Menu</field>
+            <field name="name">Simple Menu PDF</field>
             <field name="report_type">qweb-pdf</field>
             <field
             name="report_name"

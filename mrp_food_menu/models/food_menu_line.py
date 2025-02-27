@@ -8,6 +8,7 @@ from odoo import api, fields, models
 class FoodMenuLine(models.Model):
     _name = "mrp.food.menu.line"
     _description = "Food Menu Line"
+    _order = "sequence,id"
 
     _sql_constraints = [
         (
