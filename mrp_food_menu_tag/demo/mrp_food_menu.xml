@@ -6,7 +6,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record model="mrp.food.menu" id="demo_food_menu_french_revolution">
+    <record model="mrp.food.menu" id="demo_menu_french_revolution">
         <field name="name">Menu to celebrate French New Revolution</field>
     </record>
 

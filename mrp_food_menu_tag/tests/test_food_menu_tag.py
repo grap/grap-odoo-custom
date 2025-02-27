@@ -8,31 +8,33 @@ from odoo.tests.common import TransactionCase
 class TestFoodMenuTag(TransactionCase):
     def setUp(self):
         super().setUp()
-        self.bomtag = self.env.ref("mrp_bom_tag.demo_bom_tag")
-        self.bomtag2 = self.env.ref("mrp_bom_tag.demo_bom_tag_2")
-        self.bomtagparent = self.env.ref("mrp_bom_tag.demo_bom_tag_parent")
-        self.bom_desk = self.env.ref("mrp.mrp_bom_manufacture")
+        self.tag_parent = self.env.ref("mrp_food_menu_tag.demo_tag_ecological")
+        self.tag_vegan = self.env.ref("mrp_food_menu_tag.demo_tag_vegan")
+        self.tag_halal = self.env.ref("mrp_food_menu_tag.demo_tag_halal")
+        self.menu_revolution = self.env.ref(
+            "mrp_food_menu_tag.demo_menu_french_revolution"
+        )
 
     def test_01_bom_qty(self):
         self.assertEqual(
-            self.bomtag2.bom_qty,
+            self.tag_halal.food_menu_qty,
             0,
         )
-        self.bom_desk.write(
+        self.menu_revolution.write(
             {
-                "bom_tag_ids": [
-                    (6, 0, [self.bomtag2.id]),
+                "food_menu_tag_ids": [
+                    (6, 0, [self.tag_halal.id]),
                 ]
             }
         )
         self.assertEqual(
-            self.bomtag2.bom_qty,
+            self.tag_halal.food_menu_qty,
             1,
         )
 
     def test_02_name_get(self):
-        name_get_simple = self.bomtag.name_get()
-        name_get_complete = self.bomtag.with_context(
+        name_get_simple = self.tag_vegan.name_get()
+        name_get_complete = self.tag_vegan.with_context(
             display_complete_name=True
         ).name_get()
         self.assertEqual(name_get_simple[0][1], "Vegan")

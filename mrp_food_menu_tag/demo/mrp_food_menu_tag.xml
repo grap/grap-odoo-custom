@@ -6,22 +6,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
-    <record model="mrp.food.menu.tag" id="demo_food_menu_tag_parent">
+    <record model="mrp.food.menu.tag" id="demo_tag_ecological">
         <field name="name">Ecological</field>
         <field name="color">2</field>
     </record>
 
-    <record model="mrp.food.menu.tag" id="demo_food_menu_tag">
+    <record model="mrp.food.menu.tag" id="demo_tag_vegan">
         <field name="name">Vegan</field>
         <field name="color">9</field>
-        <field name="parent_id" ref="mrp_food_menu_tag.demo_food_menu_tag_parent" />
+        <field name="parent_id" ref="mrp_food_menu_tag.demo_tag_ecological" />
         <field
             name="food_menu_ids"
-            eval="[(4, ref('mrp_food_menu_tag.demo_food_menu_french_revolution')),]"
+            eval="[(4, ref('mrp_food_menu_tag.demo_menu_french_revolution')),]"
         />
     </record>
 
-    <record model="mrp.food.menu.tag" id="demo_food_menu_tag_2">
+    <record model="mrp.food.menu.tag" id="demo_tag_halal">
         <field name="name">Halal</field>
         <field name="color">1</field>
     </record>
