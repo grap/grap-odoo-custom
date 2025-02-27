@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- Action record -->
+    <record id="action_food_menu_to_sale_order" model="ir.actions.act_window">
+        <field name="name">Sales Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('id', 'in', context.get('ctx_sale_order_ids',False))]</field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_mrp_food_menu_sale_order_menu_form" model="ir.ui.view">
+        <field name="model">mrp.food.menu</field>
+        <field name="inherit_id" ref="mrp_food_menu.view_food_menu_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                  <button type="object" string="Create sale order"
+                          name="create_sale_order_from_menu"
+                          class="oe_highlight"/>
+                </header>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="sale_order_ids" invisible="1"/>
+                <button type="action" name="%(action_food_menu_to_sale_order)d" class="oe_stat_button" icon="fa-dollar" attrs="{'invisible': [('sale_order_count', '=', 0)]}" context="{'ctx_sale_order_ids': sale_order_ids}">
+                    <div class="o_field_widget o_stat_info">
+                        <span><field name="sale_order_count" widget="statinfo" nolabel="1"/></span>
+                        <span class="o_stat_text">Sales Orders</span>
+                    </div>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

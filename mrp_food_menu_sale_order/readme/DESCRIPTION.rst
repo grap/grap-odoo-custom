@@ -1,0 +1,1 @@
+Create a sale order directly from your food menu.
