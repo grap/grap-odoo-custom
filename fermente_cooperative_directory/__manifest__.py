@@ -28,6 +28,7 @@
         "web_view_leaflet_map",
         # GRAP
         "fiscal_company_base",
+        "hr_direct_address_home",
     ],
     "data": [
         "security/res_groups.xml",

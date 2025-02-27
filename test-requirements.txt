@@ -3,6 +3,7 @@
 git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_food
 git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/mrp_bom_product_allergen
 git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_label
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/hr_direct_address_home
 git+https://github.com/grap/odoo-addons-cae@16.0#subdirectory=setup/fiscal_company_base
 
 # OCA Pending PR
