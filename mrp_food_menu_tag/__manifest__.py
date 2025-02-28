@@ -11,7 +11,7 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "mrp",
+        "mrp_food_menu",
     ],
     "demo": ["demo/mrp_food_menu_tag.xml"],
     "data": [

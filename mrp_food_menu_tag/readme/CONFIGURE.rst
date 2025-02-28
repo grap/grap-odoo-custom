@@ -1,3 +1,3 @@
-In Configuration / BoM Tags, user can configure its tags and parent's tags.
+In Configuration / Food menu Tags, user can configure its tags and parent's tags.
 
-.. figure:: ../static/description/bom_tag_configuration.png
+.. figure:: ../static/description/mrp_food_menu_tag_list.jpeg

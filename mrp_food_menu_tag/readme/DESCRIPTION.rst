@@ -1,3 +1,3 @@
-Add Tags in Bill Of Materials in order to find them easily with tag as keywords.
+Add Tags in Food Menu in order to find them easily or classify them with tag as keywords.
 
-.. figure:: ../static/description/bom_with_tag.png
+.. figure:: ../static/description/mrp_food_menu_tag.jpeg
