@@ -5,6 +5,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <record id="sale.menu_sale_report" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]" />
+    </record>
+
     <record id="sale.menu_sale_config" model="ir.ui.menu">
         <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]" />
     </record>

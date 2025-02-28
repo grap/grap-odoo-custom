@@ -6,6 +6,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <record id="point_of_sale.menu_point_rep" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_user'))]" />
+    </record>
 
     <record id="point_of_sale.menu_point_config_product" model="ir.ui.menu">
         <field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_user'))]" />

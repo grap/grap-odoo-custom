@@ -1,6 +1,9 @@
 Customize Odoo / odoo / ``point_of_sale`` module.
 
-* Allow non admin user to see "Point Of Sale > configuration" menu entry.
+* Display for members of ``point_of_sale.group_pos_user``
+  the following menu entries:
+    * "Point Of Sale > Analysis"
+    * "Point Of Sale > Configuration"
 
 * Allow non admin user to create ``pos.category`` elements.
 
