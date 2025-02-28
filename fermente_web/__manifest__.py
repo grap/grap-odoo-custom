@@ -3,21 +3,23 @@
 # @author Quentin DUPONT (https://twitter.com/pondupont)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "GRAP - Web Theme",
+    "name": "Fermente - Custom Web",
     "summary": "Customize Odoo web User Interface",
     "version": "16.0.1.0.0",
-    "category": "GRAP Custom",
+    "category": "Fermente Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": [
-        "web",
-    ],
-    "data": [
-        "views/templates.xml",
-    ],
-    "qweb": [
-        "static/src/xml/base.xml",
-    ],
+    "depends": ["web"],
+    "assets": {
+        "web.assets_backend": [
+            "fermente_web/static/src/xml/switch_company_menu.xml",
+            "fermente_web/static/src/js/switch_company_menu.esm.js",
+            "fermente_web/static/src/scss/fermente_web.scss",
+        ],
+    },
+    # "qweb": [
+    #     "static/src/xml/base.xml",
+    # ],
     "installable": True,
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2020-Today GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<templates xml:space="preserve">
+    <t
+        t-name="fermente_web.SwitchCompanyMenu"
+        t-inherit="web.SwitchCompanyMenu"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+        <xpath expr="//i[hasclass('fa-building')]" position="replace">
+            <img class="o_user_avatar h-75 py-1" style="padding-right:5px;"
+                t-att-src="'/web/image?model=res.company&amp;field=logo&amp;id=' + currentCompany.id"/>
+        </xpath>
+    </t>
+
+</templates>
