@@ -4,8 +4,8 @@
 
 {
     "name": "MRP Food Menu",
-    "summary": "todo",
-    "version": "16.0.1.0.1",
+    "summary": "Base model to create Menu and its components.",
+    "version": "16.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -13,8 +13,10 @@
     "depends": [
         "mrp",
         "account",
-        # OCA
-        # GRAP
+    ],
+    "demo": [
+        "demo/product_product.xml",
+        "demo/mrp_food_menu.xml",
     ],
     "data": [
         "security/ir_rule.xml",

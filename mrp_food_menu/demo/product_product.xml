@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo noupdate="1">
+
+    <record model="product.product" id="demo_houmous">
+        <field name="name">Houmous</field>
+        <field name="uom_id" ref="uom.product_uom_gram" />
+        <field name="uom_po_id" ref="uom.product_uom_gram" />
+        <field name="weight">0.410</field>
+        <field name="standard_price">1.97</field>
+        <field name="list_price">2.70</field>
+    </record>
+
+    <record model="product.product" id="demo_quiche">
+        <field name="name">Quiche</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="uom_po_id" ref="uom.product_uom_unit" />
+        <field name="weight">0.600</field>
+        <field name="standard_price">5</field>
+        <field name="list_price">12</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo noupdate="1">
+
+    <record model="mrp.food.menu" id="demo_menu_french_revolution">
+        <field name="name">Menu to celebrate French New Revolution</field>
+    </record>
+
+    <record model="mrp.food.menu.line" id="demo_menu_revolution_houmous">
+        <field name="menu_id" ref="demo_menu_french_revolution"/>
+        <field name="product_id" ref="mrp_food_menu.demo_houmous"/>
+        <field name="product_uom_qty">2</field>
+    </record>
+
+    <record model="mrp.food.menu.line" id="demo_menu_revolution_quiche">
+        <field name="menu_id" ref="demo_menu_french_revolution"/>
+        <field name="product_id" ref="mrp_food_menu.demo_quiche"/>
+        <field name="product_uom_qty">3</field>
+    </record>
+
+</odoo>

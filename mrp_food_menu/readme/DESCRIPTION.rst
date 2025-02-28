@@ -1,22 +1,6 @@
-Quickly manage sales and linked manufacturing orders.
-For example : a Week Production for a Bakery based on its Grocery sales.
+Base model to create Menu, its components, add section (like Main meal, Dessert etc.)
+You can choose BoM linked to products.
 
-.. figure:: ../static/description/mrp_sale_grouped.png
+.. figure:: ../static/description/mrp_food_menu.jpeg
 
-1 : Choose or create sales
-2 : Act on sales : adjust quantities with Matrix2D view, and confirme
-all at once
-3 : Quick buttons : Products without BoM, Sales, Manufacturing Orders
-4 : Print PDF that sum up sales by product and sale
-5 : Act on Manufacturing Orders
-6 : Handle your production with wizard assistant, you can handle what components
-you have to buy, intermediate and finished products you have to produce.
-See dedicated module mrp_wizard_production
-
-.. figure:: ../static/description/report_sales_sum_up.png
-.. figure:: ../static/description/mrp_sale_grouped_sales_matrix2d.png
-.. figure:: ../static/description/mrp_sale_grouped.jpeg
-
-Quickly see what's going on for your sales and production on tree view
-
-.. figure:: ../static/description/mrp_sale_grouped_tree_view.jpeg
+This module is a base for other module (handling sales, production, tags, allergens etc.)

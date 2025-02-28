@@ -13,7 +13,7 @@
     "depends": [
         "mrp",
     ],
-    "demo": ["demo/mrp_food_menu.xml", "demo/mrp_food_menu_tag.xml"],
+    "demo": ["demo/mrp_food_menu_tag.xml"],
     "data": [
         "security/ir_rule.xml",
         "security/ir.model.access.csv",

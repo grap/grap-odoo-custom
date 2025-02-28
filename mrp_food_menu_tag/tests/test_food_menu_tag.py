@@ -11,9 +11,7 @@ class TestFoodMenuTag(TransactionCase):
         self.tag_parent = self.env.ref("mrp_food_menu_tag.demo_tag_ecological")
         self.tag_vegan = self.env.ref("mrp_food_menu_tag.demo_tag_vegan")
         self.tag_halal = self.env.ref("mrp_food_menu_tag.demo_tag_halal")
-        self.menu_revolution = self.env.ref(
-            "mrp_food_menu_tag.demo_menu_french_revolution"
-        )
+        self.menu_revolution = self.env.ref("mrp_food_menu.demo_menu_french_revolution")
 
     def test_01_bom_qty(self):
         self.assertEqual(
