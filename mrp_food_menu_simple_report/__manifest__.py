@@ -4,7 +4,7 @@
 
 {
     "name": "MRP Food Menu Simple Report",
-    "summary": "todo",
+    "summary": "Add a simple PDF report for Food Menu.",
     "version": "16.0.1.0.0",
     "category": "Manufacturing",
     "author": "GRAP, Odoo Community Association (OCA)",
