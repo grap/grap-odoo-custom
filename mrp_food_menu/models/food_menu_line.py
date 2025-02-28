@@ -63,6 +63,15 @@ class FoodMenuLine(models.Model):
         related="product_id.uom_id",
     )
 
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        related="product_id.currency_id",
+    )
+
+    lst_price = fields.Float(
+        related="product_id.lst_price",
+    )
+
     bom_id = fields.Many2one(
         comodel_name="mrp.bom",
         domain="""[
