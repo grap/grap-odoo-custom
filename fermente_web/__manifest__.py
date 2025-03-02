@@ -13,13 +13,8 @@
     "depends": ["web"],
     "assets": {
         "web.assets_backend": [
-            "fermente_web/static/src/xml/switch_company_menu.xml",
-            "fermente_web/static/src/js/switch_company_menu.esm.js",
             "fermente_web/static/src/scss/fermente_web.scss",
         ],
     },
-    # "qweb": [
-    #     "static/src/xml/base.xml",
-    # ],
     "installable": True,
 }

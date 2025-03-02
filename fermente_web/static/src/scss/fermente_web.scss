@@ -1,22 +1,5 @@
-/* ****************************************************
-Form View: Change input and spaces between objects
-**************************************************** */
-.mb-3 {
-    margin-top: 0.3rem !important;
-}
-.mb-4 {
-    margin-top: 0.4rem !important;
-}
-
-.o-form-buttonbox {
-    margin-bottom: 8px;
-}
-
-/* ****************************************************
-Tree View: Border for all cells
-**************************************************** */
+/* Improve visibility of table cells */
 
 .table td {
-    border-left: 1px solid rgb(233, 236, 239);
+    border-left: 1px solid #dee2e6;
 }
-
