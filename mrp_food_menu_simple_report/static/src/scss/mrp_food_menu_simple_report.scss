@@ -1,7 +1,6 @@
 .menu-simple-report {
 
     // VARIABLES
-    $margin-left-right: 15px;
     $color-grey: #444;
     $color-grey-dark: #222;
     $color-yellow-light: #fff7de;
@@ -9,6 +8,8 @@
 
     color: $color-grey-dark;
     background-color: $color-yellow-light;
+    padding-left: 15px;
+    padding-right: 15px;
 
     // Invisible array to properly align fields
     .menu-table {
@@ -23,9 +24,14 @@
         font-weight: bold;
         margin-bottom: 20px;
     }
+    .menu-description {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
 
     .line_all {
-        margin: 10px $margin-left-right 0px $margin-left-right;
+        margin-top: 10px;
     }
 
     .line_note {

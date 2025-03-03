@@ -10,8 +10,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <t t-foreach="docs" t-as="menu">
                 <div class="page menu-simple-report" style="page-break-before:always;">
 
-                    <!-- MENU TITLE -->
+                    <!-- MENU TITLE AND DESCRIPTION -->
                     <h1 class="menu-title"><span t-out="menu.name" /></h1>
+                    <span class="menu-description"><span t-out="menu.description" /></span>
 
                     <t t-foreach="menu.menu_line_ids" t-as="food_menu_line">
 
