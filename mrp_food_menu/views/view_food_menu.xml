@@ -36,6 +36,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" placeholder="Menu for New Year Eve"/></h1>
                     </div>
+                    <group class="menu_fields">
+                        <field name="description" placeholder="Quick and nurrishing vegan meal"/>
+                        <field name="internal_notes" placeholder="Replace flour by rice  flour for a gluten-free option."/>
+                    </group>
                     <br/>
                     <group col="12">
                         <field colspan="12" name="menu_line_ids" nolabel="1" widget="section_and_note_one2many">

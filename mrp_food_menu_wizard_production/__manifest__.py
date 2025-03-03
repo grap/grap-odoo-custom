@@ -15,6 +15,11 @@
         # GRAP Business modules,
         "mrp_bom_wizard_production",
     ],
+    "demo": [
+        "demo/product.xml",
+        "demo/mrp_bom.xml",
+        "demo/mrp_food_menu.xml",
+    ],
     "data": [
         "views/view_food_menu.xml",
     ],

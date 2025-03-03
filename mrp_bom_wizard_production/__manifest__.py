@@ -15,7 +15,6 @@
         "mrp_bom_simple_packaging_description",
         "mrp_bom_product_price_margin",
         "mrp_bom_simple_report",
-        "mrp_bom_simple_packaging_description",
     ],
     "data": [
         "security/ir.model.access.csv",

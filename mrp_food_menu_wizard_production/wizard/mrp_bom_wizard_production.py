@@ -2,20 +2,21 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class BomWizardProduction(models.TransientModel):
     _inherit = "bom.wizard.production"
 
-    missing_boms_text = fields.Char(
-        default=lambda s: s._default_missing_boms_text(),
-    )
+    # todo : at the moment, field on mrp_sale_grouped and not mrp_bom_wizard_production
+    # missing_boms_text = fields.Char(
+    #     default=lambda s: s._default_missing_boms_text(),
+    # )
 
     def _get_food_menu_from_context(self):
         return self.env["mrp.food.menu"].browse(self.env.context.get("active_ids", []))
 
-    # Set PDF Title with food_menu Title
+    # Set default values
     @api.model
     def _default_title_for_pdf(self):
         context = self.env.context
@@ -31,52 +32,35 @@ class BomWizardProduction(models.TransientModel):
             self.with_context(context, title_for_pdf=title_for_pdf),
         )._default_title_for_pdf()
 
-    # # Set PDF notes with food_menu Notes
-    # @api.model
-    # def _default_notes(self):
-    #     context = self.env.context
-
-    #     if context.get("active_model") == "mrp.food.menu":
-    #         food_menu = self._get_food_menu_from_context()
-    #         notes_for_pdf = food_menu.notes
-    #     else:
-    #         notes_for_pdf = False
-
-    #     return super(
-    #         BomWizardProduction,
-    #         self.with_context(context, notes_for_pdf=notes_for_pdf),
-    #     )._default_notes()
-
-    # Set PDF production date with food_menu production date
-    # @api.model
-    # def _default_production_date(self):
-    #     context = self.env.context
-
-    #     if context.get("active_model") == "mrp.food.menu":
-    #         food_menu = self._get_food_menu_from_context()
-    #         production_date = food_menu.date
-    #     else:
-    #         production_date = False
-
-    #     return super(
-    #         BomWizardProduction,
-    #         self.with_context(context, production_date=production_date),
-    #     )._default_production_date()
-
-    # @api.model
-    def _default_missing_boms_text(self):
+    @api.model
+    def _default_notes(self):
         context = self.env.context
 
         if context.get("active_model") == "mrp.food.menu":
             food_menu = self._get_food_menu_from_context()
-            # Get name (with size limit) of products without any BoM
-            missing_boms_text = ", ".join(
-                food_menu.product_wo_bom_ids.mapped("display_name")
-            )[:30]
+            notes_for_pdf = food_menu.internal_notes
         else:
-            missing_boms_text = ""
+            notes_for_pdf = False
 
-        return missing_boms_text
+        return super(
+            BomWizardProduction,
+            self.with_context(context, notes_for_pdf=notes_for_pdf),
+        )._default_notes()
+
+    # @api.model
+    # def _default_missing_boms_text(self):
+    #     context = self.env.context
+
+    #     if context.get("active_model") == "mrp.food.menu":
+    #         food_menu = self._get_food_menu_from_context()
+    #         # Get name (with size limit) of products without any BoM
+    #         missing_boms_text = ", ".join(
+    #             food_menu.product_wo_bom_ids.mapped("display_name")
+    #         )[:30]
+    #     else:
+    #         missing_boms_text = ""
+
+    #     return missing_boms_text
 
     # Override method to add "Origin" field that precise Sales linked to BoM
     @api.model

@@ -1,0 +1,1 @@
+from . import test_mrp_food_menu_wizard_production

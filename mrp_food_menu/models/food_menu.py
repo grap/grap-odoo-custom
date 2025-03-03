@@ -15,6 +15,10 @@ class FoodMenu(models.Model):
         required=True,
     )
 
+    description = fields.Char(help="Field for external use, for example for PDF.")
+
+    internal_notes = fields.Char(help="Field for internal use only.")
+
     company_id = fields.Many2one(
         comodel_name="res.company",
         string="Company",
