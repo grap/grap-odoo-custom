@@ -23,5 +23,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="list_price">12</field>
     </record>
 
+    <record model="product.product" id="demo_product_chickpea">
+        <field name="name">Chickpea</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">2</field>
+    </record>
+
+    <record model="product.product" id="demo_product_tahin">
+        <field name="name">Tahin</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">20</field>
+    </record>
+    <record model="product.product" id="demo_product_olive_oil">
+        <field name="name">Olive oil</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="standard_price">10</field>
+    </record>
+
 
 </odoo>

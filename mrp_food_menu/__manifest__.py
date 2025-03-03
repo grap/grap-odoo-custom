@@ -16,6 +16,7 @@
     ],
     "demo": [
         "demo/product_product.xml",
+        "demo/mrp_bom.xml",
         "demo/mrp_food_menu.xml",
     ],
     "data": [
