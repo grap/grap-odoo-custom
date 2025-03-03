@@ -15,6 +15,9 @@
         # GRAP Business modules,
         "mrp_bom_product_allergen",
     ],
+    "demo": [
+        "demo/product_product.xml",
+    ],
     "data": [
         "views/view_food_menu.xml",
     ],

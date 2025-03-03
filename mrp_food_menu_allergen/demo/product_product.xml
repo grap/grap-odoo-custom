@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo noupdate="1">
+
+    <record model="product.product" id="mrp_food_menu.demo_product_tahin">
+        <field name="allergen_ids" eval="[
+          (4, ref('product_food.allergen_SES')),
+          ]" />
+    </record>
+
+    <record model="product.product" id="mrp_food_menu.demo_quiche">
+        <field name="allergen_ids" eval="[
+          (4, ref('product_food.allergen_GLU')),
+          ]" />
+    </record>
+
+
+
+</odoo>

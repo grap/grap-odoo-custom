@@ -31,4 +31,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="product_qty">0.06</field>
     </record>
 
+    <record model="mrp.bom" id="demo_bom_quiche">
+        <field name="code">QUICHE_01</field>
+        <field name="product_qty">1</field>
+        <field name="product_uom_id" ref="uom.product_uom_kgm" />
+        <field name="product_tmpl_id" ref="mrp_food_menu.demo_quiche_product_template"/>
+    </record>
+
 </odoo>
