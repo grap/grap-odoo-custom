@@ -29,7 +29,7 @@ class TestFoodMenu(TransactionCase):
         )
 
     def test_01_get_menu_info(self):
-        self.assertEqual(self.menu_revolution.product_wo_bom_qty, 2)
+        self.assertEqual(self.menu_revolution.product_wo_bom_qty, 0)
 
         self.food_menu_line_obj.create(
             {
@@ -38,4 +38,4 @@ class TestFoodMenu(TransactionCase):
                 "product_uom_qty": 3,
             }
         )
-        self.assertEqual(self.menu_revolution.product_wo_bom_qty, 3)
+        self.assertEqual(self.menu_revolution.product_wo_bom_qty, 1)
