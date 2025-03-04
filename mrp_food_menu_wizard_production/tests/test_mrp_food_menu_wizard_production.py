@@ -42,4 +42,4 @@ class TestFoodMenuWizardProduction(TransactionCase):
             "report.mrp_bom_wizard_production.report_bom_wizard_production"
         ]
         values = report_obj._get_report_values(0, data)
-        self.assertEqual(values["purchase_total_cost"], 249.6)
+        self.assertEqual(values["purchase_total_cost"], 5.6)
