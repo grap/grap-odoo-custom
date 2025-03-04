@@ -16,6 +16,7 @@
         "mrp_bom_product_allergen",
     ],
     "demo": [
+        "demo/mrp_bom.xml",
         "demo/product_product.xml",
     ],
     "data": [
