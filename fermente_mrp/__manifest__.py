@@ -12,6 +12,7 @@
     "depends": ["mrp"],
     "data": [
         "views/menu.xml",
+        "data/stock_route.xml",
         "views/mrp_production_view.xml",
         "security/ir.model.access.csv",
     ],
