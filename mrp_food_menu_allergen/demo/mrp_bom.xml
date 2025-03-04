@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo noupdate="1">
+
+    <record model="mrp.bom" id="mrp_food_menu.demo_bom_houmous">
+        <field name="bom_allergen_ids" eval="[
+          (4, ref('product_food.allergen_SES')),
+          ]" />
+    </record>
+
+    <record model="mrp.bom" id="mrp_food_menu.demo_bom_quiche">
+        <field name="bom_allergen_ids" eval="[
+          (4, ref('product_food.allergen_GLU')),
+          ]" />
+    </record>
+
+</odoo>
