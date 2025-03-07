@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_product_replenish_ux
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-07 14:31+0000\n"
+"PO-Revision-Date: 2025-03-07 14:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_product_replenish_ux
+#: model_terms:ir.ui.view,arch_db:stock_product_replenish_ux.view_fermente_mrp_product_replenish_wizard
+msgid "Action on Confirm"
+msgstr "Action déclenchée avec le bouton Confirmer"
+
+#. module: stock_product_replenish_ux
+#. odoo-python
+#: code:addons/stock_product_replenish_ux/models/product_replenish.py:0
+#: code:addons/stock_product_replenish_ux/models/product_replenish.py:0
+#, python-format
+msgid "Manual Replenishment"
+msgstr "Réassort manuel"
+
+#. module: stock_product_replenish_ux
+#: model:ir.model,name:stock_product_replenish_ux.model_product_replenish
+msgid "Product Replenish"
+msgstr "Réassort de produit"
+
+#. module: stock_product_replenish_ux
+#. odoo-python
+#: code:addons/stock_product_replenish_ux/models/product_replenish.py:0
+#, python-format
+msgid "Product was added to this Manufacturing Order."
+msgstr "Le produit a été ajouté à un Ordre de fabrication"
+
+#. module: stock_product_replenish_ux
+#. odoo-python
+#: code:addons/stock_product_replenish_ux/models/product_replenish.py:0
+#, python-format
+msgid "Product was added to this draft Purchase Order."
+msgstr "Le produit a été ajouté à un Bon de Commande brouillon."
