@@ -11,6 +11,5 @@ class ProductTemplate(models.Model):
     categ_id = fields.Many2one(default=lambda x: x._get_default_category_id())
 
     def _get_default_category_id(self):
-        if not self.env.ref("product.product_category_all").active:
-            return False
-        return super()._get_default_category_id()
+        result = super()._get_default_category_id()
+        return result.active and result or False
