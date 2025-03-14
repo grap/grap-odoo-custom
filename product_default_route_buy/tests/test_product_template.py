@@ -12,7 +12,7 @@ class TestProductTemplate(TransactionCase):
         self.ProductTemplate = self.env["product.template"]
 
         self.product_tmpl = self.ProductTemplate.create(
-            {"name": "Test Product", "purchase_ok": False}
+            {"name": "Test Product", "purchase_ok": False, "route_ids": []}
         )
 
     def test_01_onchange_adds_route(self):
