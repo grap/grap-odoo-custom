@@ -11,5 +11,6 @@
     "depends": [
         "mrp",
     ],
+    "post_init_hook": "_hook_add_mrp_route_to_products_with_boms",
     "installable": True,
 }
