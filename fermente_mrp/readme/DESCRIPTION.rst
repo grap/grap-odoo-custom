@@ -8,6 +8,6 @@ Customize Odoo / odoo / ``mrp`` module.
 
 * Set active route "Replenish on Order (MTO)"
 
-**Product**
+**MRP - Production Order**
 
-* Add onchange to facilitate stock routes manufacturing.
+* Add an helper to fill quantities to produce
