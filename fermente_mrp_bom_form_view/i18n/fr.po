@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-14 14:35+0000\n"
-"PO-Revision-Date: 2025-03-14 14:35+0000\n"
+"POT-Creation-Date: 2024-11-26 13:14+0000\n"
+"PO-Revision-Date: 2024-11-26 13:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: fermente_mrp_bom_form_view
-#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form
 msgid "&gt;"
-msgstr ""
+msgstr "&gt;"
 
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_base
@@ -43,7 +43,7 @@ msgstr "Fiche technique"
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
 msgid "Components"
-msgstr "Lignes de recette"
+msgstr "Composants"
 
 #. module: fermente_mrp_bom_form_view
 #: model:ir.model.fields,field_description:fermente_mrp_bom_form_view.field_mrp_bom__sale_ok
@@ -80,7 +80,7 @@ msgid "ST %"
 msgstr ""
 
 #. module: fermente_mrp_bom_form_view
-#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form
 msgid ""
 "This will set product gross quantity with net quantity and loss percentage"
 msgstr ""
@@ -88,7 +88,7 @@ msgstr ""
 "pourcentage de perte."
 
 #. module: fermente_mrp_bom_form_view
-#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form
 msgid ""
 "This will set product net quantity with gross quantity and loss percentage"
 msgstr ""
@@ -96,7 +96,7 @@ msgstr ""
 "pourcentage de perte."
 
 #. module: fermente_mrp_bom_form_view
-#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form
 msgid "Total"
 msgstr ""
 
