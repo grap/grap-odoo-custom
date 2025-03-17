@@ -16,8 +16,6 @@ class ResCompany(models.Model):
         inverse_name="company_id",
     )
 
-    is_using_odoo = fields.Boolean(string="Is using Odoo")
-
     is_displayed_in_directory = fields.Boolean(
         string="Displayed in Directory", default=True
     )
@@ -25,23 +23,6 @@ class ResCompany(models.Model):
     cooperative_joining_date = fields.Date(
         help="Date of the commission in which the cooperative"
         " accepted the entry of this activity"
-    )
-
-    # Referents in Company
-    accounting_referent_id = fields.Many2one(
-        string="Accounting Referent", comodel_name="hr.employee.global"
-    )
-
-    hr_referent_id = fields.Many2one(
-        string="HR Referent", comodel_name="hr.employee.global"
-    )
-
-    it_referent_id = fields.Many2one(
-        string="IT Referent", comodel_name="hr.employee.global"
-    )
-
-    communication_referent_id = fields.Many2one(
-        string="Communication Referent", comodel_name="hr.employee.global"
     )
 
     # Interlocutors in Service Team

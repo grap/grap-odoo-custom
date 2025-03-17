@@ -34,13 +34,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
            <field name="favicon" position="before">
-               <field name="is_using_odoo" widget="boolean_toggle"/>
                <field name="is_displayed_in_directory" widget="boolean_toggle"/>
                <field name="cooperative_joining_date"/>
-               <field name="accounting_referent_id" />
-               <field name="hr_referent_id" />
-               <field name="it_referent_id" />
-               <field name="communication_referent_id" />
                <field name="accounting_interlocutor_id" />
                <field name="hr_interlocutor_id" />
                <field name="attendant_interlocutor_id" />
@@ -62,6 +57,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="state_id" optional="hide"/>
                 <field name="country_id" readonly="1" optional="hide"/>
                 <field name="category_id" optional="hide"/>
+               <field name="accounting_interlocutor_id" optional="show"/>
+               <field name="hr_interlocutor_id" />
+               <field name="attendant_interlocutor_id" optional="show"/>
             </tree>
         </field>
     </record>
@@ -128,7 +126,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <field name="fiscal_type" readonly="True"/>
                                 <field name="cooperative_joining_date"/>
                                 <field name="category_id"/>
-                                <field name="is_using_odoo"/>
                             </group>
                         </group>
                     </group>
@@ -173,24 +170,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </kanban>
                             </field>
                         </page>
-                        <page string="Referents &amp; Interlocutors">
+                        <page string="Interlocutors">
                             <group>
-                                <group string="Referents in the company">
-                                    <field name="accounting_referent_id"
-                                           domain="[('company_id','=', id)]"
-                                           context="{'default_lastname': accounting_referent_id}"/>
-                                    <field name="communication_referent_id"
-                                           domain="[('company_id','=', id)]"/>
-                                    <field name="it_referent_id"
-                                           domain="[('company_id','=', id)]"/>
-                                    <field name="hr_referent_id"
-                                           domain="[('company_id','=', id)]"/>
-                                </group>
-                                <group string="Interlocutors in the service team">
-                                    <field name="accounting_interlocutor_id"/>
-                                    <field name="hr_interlocutor_id"/>
-                                    <field name="attendant_interlocutor_id"/>
-                               </group>
+                                <field name="accounting_interlocutor_id"/>
+                                <field name="hr_interlocutor_id"/>
+                                <field name="attendant_interlocutor_id"/>
                             </group>
                         </page>
                         <page string="Social Networks">
