@@ -21,6 +21,7 @@
         "mrp_bom_product_allergen",
         "mrp_bom_product_price_margin",
         "product_label_mrp",
+        "mrp_bom_weight",
     ],
     "data": [
         "views/view_mrp_bom.xml",

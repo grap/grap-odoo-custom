@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 14:22+0000\n"
-"PO-Revision-Date: 2025-02-20 14:22+0000\n"
+"POT-Creation-Date: 2025-03-17 13:02+0000\n"
+"PO-Revision-Date: 2025-03-17 13:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,19 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: fermente_mrp_bom_form_view
-#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
-msgid "&gt;"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_base
+msgid "<b>Data sheet</b> - finished and intermediate product 🧩"
+msgstr "<b>Fiche technique</b> - produit fini et intermédiaire 🧩"
+
+#. module: fermente_mrp_bom_form_view
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_base
+msgid "<b>Data sheet</b> - finished product"
+msgstr "<b>Fiche technique</b> - produit fini"
+
+#. module: fermente_mrp_bom_form_view
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_base
+msgid "<b>Data sheet</b> - intermediate product 🧩"
+msgstr "<b>Fiche technique</b> - produit intermédiaire 🧩"
 
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
@@ -26,14 +36,43 @@ msgid "Allergens"
 msgstr "Allergènes"
 
 #. module: fermente_mrp_bom_form_view
+#: model:ir.model,name:fermente_mrp_bom_form_view.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Fiche technique"
+
+#. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
 msgid "Components"
 msgstr "Lignes de recette"
 
 #. module: fermente_mrp_bom_form_view
+#: model:ir.model.fields,field_description:fermente_mrp_bom_form_view.field_mrp_bom__sale_ok
+msgid "Finished product"
+msgstr "Produit fini"
+
+#. module: fermente_mrp_bom_form_view
+#: model:ir.model.fields,field_description:fermente_mrp_bom_form_view.field_mrp_bom__product_intermediate
+msgid "Intermediate product"
+msgstr "Produit intermédiaire"
+
+#. module: fermente_mrp_bom_form_view
+#: model:ir.model.fields,help:fermente_mrp_bom_form_view.field_mrp_bom__product_intermediate
+msgid ""
+"Is intermediate a product which has a BoM based on it +              is used"
+" in a BoM line"
+msgstr ""
+"Un produit est intermédiaire s'il a une Fiche technique dédiée + s'il est "
+"utilisé dans une autre Fiche technique"
+
+#. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
 msgid "Labels"
 msgstr ""
+
+#. module: fermente_mrp_bom_form_view
+#: model:ir.model.fields,field_description:fermente_mrp_bom_form_view.field_mrp_bom__product_name
+msgid "Name"
+msgstr "Nom"
 
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
@@ -70,3 +109,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
 msgid "Total"
 msgstr ""
+
+#. module: fermente_mrp_bom_form_view
+#: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
+msgid "View product's BoM"
+msgstr "Voir ses Fiches techniques"
