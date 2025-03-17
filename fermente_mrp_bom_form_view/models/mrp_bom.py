@@ -10,7 +10,7 @@ class MrpBom(models.Model):
 
     product_name = fields.Char(related="product_tmpl_id.name")
 
-    product_finished = fields.Boolean(
+    sale_ok = fields.Boolean(
         string="Finished product",
         related="product_tmpl_id.sale_ok",
     )
