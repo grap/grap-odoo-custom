@@ -4,15 +4,15 @@
 
 {
     "name": "Fermente - Product",
-    "version": "16.0.1.1.1",
+    "version": "16.0.2.0.0",
     "category": "Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["product"],
     "data": [
-        "data/decimal_precision.xml",
         "views/view_product_product.xml",
         "views/view_product_product.xml",
     ],
+    "pre_init_hook": "configure_decimal_precision",
 }
