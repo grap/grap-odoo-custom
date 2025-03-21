@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="pos_restaurant.FloorScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('edit-button')]" position="attributes">
+            <attribute name="t-if"/>
+        </xpath>
+    </t>
+</templates>

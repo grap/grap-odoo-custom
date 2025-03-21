@@ -15,4 +15,9 @@
         "views/menu.xml",
         "views/view_pos_config.xml",
     ],
+    "assets": {
+        "point_of_sale.assets": [
+            "fermente_pos_restaurant/static/src/xml/FloorScreen.xml",
+        ],
+    },
 }
