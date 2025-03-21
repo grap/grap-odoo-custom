@@ -12,7 +12,7 @@
     "depends": ["product"],
     "data": [
         "views/view_product_product.xml",
-        "views/view_product_product.xml",
+        "views/view_product_template.xml",
     ],
     "pre_init_hook": "configure_decimal_precision",
 }
