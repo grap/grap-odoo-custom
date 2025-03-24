@@ -224,6 +224,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="website"/>
                 <field name="social_mastodon"/>
                 <field name="social_twitter"/>
+                <field name="social_facebook"/>
                 <field name="social_gitlab"/>
                 <field name="social_github"/>
                 <field name="social_linkedin"/>
@@ -265,6 +266,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                         </t>
                                         <t t-if="record.social_twitter.raw_value">
                                             - <a t-att-href="record.social_twitter.value" target="_blank"><i class="fa fa-twitter" role="img"  aria-label="Twitter Account" title="Twitter Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
+                                        </t>
+                                        <t t-if="record.social_facebook.raw_value">
+                                            - <a t-att-href="record.social_facebook.value" target="_blank"><i class="fa fa-facebook" role="img"  aria-label="Facebook Account" title="Facebook Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
                                         </t>
                                         <t t-if="record.social_gitlab.raw_value">
                                             - <a t-att-href="record.social_gitlab.value" target="_blank"><i class="fa fa-gitlab" role="img"  aria-label="Gitlab Account" title="Gitlab Account" style="font-size:14px;color:#7c7bad;margin-left:3px;line-height:1"/></a>
