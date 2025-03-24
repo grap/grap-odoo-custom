@@ -47,15 +47,35 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <field name="name" style="font-size: min(4vw, 2.6rem);"/>
                         </h1>
                     </div>
-                    <group>
-                        <group string="Contact informations">
-                            <field name="work_email" widget="email"/>
-                            <field name="mobile_phone" widget="phone"/>
-                       </group>
-                        <group string="Other informations">
+                    <group string="Public Information">
+                        <group>
                             <field name="company_id"/>
-                            <field name="birthday"/>
+                            <field name="work_email" widget="email"/>
+                       </group>
+                        <group>
+                            <field name="mobile_phone" widget="phone"/>
+                            <field name="work_phone" widget="phone"/>
                         </group>
+                    </group>
+                    <group string="Private Information" groups="hr.group_hr_manager">
+                       <group>
+                            <field name="address_home_email" widget="email"/>
+                            <field name="address_home_mobile" widget="phone"/>
+                            <field name="address_home_phone" widget="phone"/>
+                            <field name="birthday"/>
+                       </group>
+                        <group>
+                            <span class="o_form_label o_td_label">
+                                <b>Address</b>
+                            </span>
+                            <div class="o_address_format">
+                                <field name="address_home_street"/>
+                                <field name="address_home_street2"/>
+                                <field name="address_home_zip" style="width: 50%"/>
+                                <field name="address_home_city" style="width: 50%"/>
+                                <field name="address_home_country_id"/>
+                            </div>
+                       </group>
                     </group>
                 </sheet>
             </form>
@@ -93,11 +113,14 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 </div>
                                 <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
                                 <ul>
+                                    <li t-if="record.work_email.raw_value">
+                                        <field name="work_email" widget="email"/>
+                                    </li>
                                     <li t-if="record.mobile_phone.raw_value">
                                         <field name="mobile_phone" widget="phone"/>
                                     </li>
-                                    <li t-if="record.work_email.raw_value">
-                                        <field name="work_email" widget="email"/>
+                                    <li t-if="record.work_phone.raw_value">
+                                        <field name="work_phone" widget="phone"/>
                                     </li>
                                 </ul>
                             </div>

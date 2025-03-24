@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 23:00+0000\n"
-"PO-Revision-Date: 2025-02-10 23:00+0000\n"
+"POT-Creation-Date: 2025-02-27 16:44+0000\n"
+"PO-Revision-Date: 2025-02-27 16:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
 msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
 msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
+msgid ""
+"<i class=\"fa fa-facebook\" role=\"img\" aria-label=\"Facebook Account\" "
+"title=\"Facebook Account\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
+msgstr ""
+"<i class=\"fa fa-facebook\" role=\"img\" aria-label=\"Compte Facebook\" "
+"title=\"Compte Facebook\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -119,6 +130,17 @@ msgstr ""
 "                            </span>"
 
 #. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
+msgid ""
+"<span class=\"o_form_label o_td_label\">\n"
+"                                <b>Address</b>\n"
+"                            </span>"
+msgstr ""
+"<span class=\"o_form_label o_td_label\">\n"
+"                                <b>Addresse</b>\n"
+"                            </span>"
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__accounting_interlocutor_id
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
 msgid "Accounting Interlocutor"
@@ -160,8 +182,8 @@ msgstr "Interlocuteur·ice accompagnement"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__birthday
-msgid "Birthday"
-msgstr "Date de Naissance"
+msgid "Birthday (Private)"
+msgstr "Date de Naissance (Privée)"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
@@ -172,6 +194,11 @@ msgstr "Catégorie"
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "City"
 msgstr "Ville"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_city
+msgid "City (Private)"
+msgstr "Ville (Privée)"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__communication_referent_id
@@ -194,9 +221,9 @@ msgid "Complete Address"
 msgstr "Adresse Complète"
 
 #. module: fermente_cooperative_directory
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
-msgid "Contact informations"
-msgstr "Informations de contact"
+#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_root
+msgid "Cooperative Directory"
+msgstr "Annuaire coopératif"
 
 #. module: fermente_cooperative_directory
 #: model:res.groups,name:fermente_cooperative_directory.group_fermente_cooperative_directory_manager
@@ -217,6 +244,11 @@ msgstr "Informations coopératives"
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Country"
 msgstr "Pays"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_country_id
+msgid "Country (Private)"
+msgstr "Pays (Privé)"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_res_company__cooperative_joining_date
@@ -242,6 +274,11 @@ msgstr "Nom affiché"
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__is_displayed_in_directory
 msgid "Displayed in Directory"
 msgstr "Affiché dans l'annuaire"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_email
+msgid "Email (Private)"
+msgstr "Email (Privé)"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__employee_id
@@ -330,9 +367,14 @@ msgid "Logo"
 msgstr ""
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_mobile
+msgid "Mobile (Private)"
+msgstr "Téléphone mobile (Privé)"
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__mobile_phone
 msgid "Mobile Phone"
-msgstr "Téléphone"
+msgstr "Téléphone portable professionnel"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__name
@@ -340,14 +382,24 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_phone
+msgid "Phone (Private)"
+msgstr "Téléphone Fixe (Privé)"
+
+#. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
-msgid "Other informations"
-msgstr "Autres Informations"
+msgid "Private Information"
+msgstr "Informations personnelles"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model,name:fermente_cooperative_directory.model_hr_employee_global
 msgid "Public HR employees Data"
 msgstr "Donnnées publiques des employé·e·s"
+
+#. module: fermente_cooperative_directory
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
+msgid "Public Information"
+msgstr "Informations publiques"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -375,6 +427,21 @@ msgid "Social Networks"
 msgstr "Réseaux Sociaux"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_state_id
+msgid "State (Private)"
+msgstr "Etat (Privé)"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_street
+msgid "Street (Private)"
+msgstr "Ville (Privée)"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_street2
+msgid "Street 2 (Private)"
+msgstr "Rue (complément) (Privé)"
+
+#. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Street 2..."
 msgstr "Rue (complément) ..."
@@ -385,14 +452,14 @@ msgid "Team"
 msgstr "Equipe"
 
 #. module: fermente_cooperative_directory
-#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_root
-msgid "Cooperative Directory"
-msgstr "Annuaire coopératif"
-
-#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_email
 msgid "Work Email"
 msgstr "Email professionnel"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_phone
+msgid "Work Phone"
+msgstr "Téléphone fixe professionnel"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__worker_ids
@@ -403,3 +470,8 @@ msgstr "Travailleurs"
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "ZIP"
 msgstr "Code Postal"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_zip
+msgid "ZIP (Private)"
+msgstr "Code postal (privé)"
