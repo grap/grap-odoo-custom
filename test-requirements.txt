@@ -17,6 +17,7 @@ git+https://github.com/OCA/manufacture@refs/pull/1430/head#subdirectory=setup/mr
 git+https://github.com/OCA/product-attributes@refs/pull/1840/head#subdirectory=setup/product_compute_template_field_from_variant_helper
 
 # Placeholder for future PRs 1
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_label_mrp
 
 # Placeholder for future PRs 2
 

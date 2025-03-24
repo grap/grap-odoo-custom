@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2024 - Today: fermente (http://www.fermente.coop)
+@author: Quentin DUPONT (quentin.dupont@fermente.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <!-- ************************************************************ -->
+    <!-- Hide standard menu -->
+    <!-- ************************************************************ -->
+    <menuitem id="mrp.menu_mrp_bom"
+        parent="mrp.menu_mrp_root"
+        groups="base.group_no_one"/>
+
+    <!-- ************************************************************ -->
+    <!-- Bill of Materials - Menus for Generic fermente View -->
+    <!-- ************************************************************ -->
+    <menuitem id="menu_fermente_mrp_bom"
+      name="Bills of Materials"
+      parent="mrp.menu_mrp_root" sequence="1"/>
+
+    <record id="action_fermente_mrp_bom_all" model="ir.actions.act_window">
+      <field name="name">Bills of Materials</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="mrp.mrp_bom_tree_view"/>
+    </record>
+
+    <menuitem id="menu_fermente_mrp_bom_all"
+        name="Bills of Materials"
+        parent="menu_fermente_mrp_bom" sequence="5"
+        action="action_fermente_mrp_bom_all"/>
+
+    <record id="action_fermente_mrp_bom_intermediate_products" model="ir.actions.act_window">
+      <field name="name">BoM for intermediate products</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="mrp.mrp_bom_tree_view"/>
+      <field name="context">{"search_default_filter_product_intermediate":1}</field>
+    </record>
+
+    <menuitem id="menu_fermente_mrp_bom_intermediate_products"
+      name="BoM for intermediate products"
+      parent="menu_fermente_mrp_bom" sequence="20"
+      action="action_fermente_mrp_bom_intermediate_products"/>
+
+    <record id="action_fermente_mrp_bom_finished_products" model="ir.actions.act_window">
+      <field name="name">BoM for finished products</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">mrp.bom</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="mrp.mrp_bom_tree_view"/>
+      <field name="context">{"search_default_filter_product_finished":1}</field>
+    </record>
+
+    <menuitem id="menu_fermente_mrp_bom_finished_products"
+        name="BoM for finished products"
+        parent="menu_fermente_mrp_bom" sequence="30"
+        action="action_fermente_mrp_bom_finished_products"/>
+
+  </odoo>

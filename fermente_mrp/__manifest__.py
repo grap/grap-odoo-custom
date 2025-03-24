@@ -11,6 +11,7 @@
     "license": "AGPL-3",
     "depends": ["mrp"],
     "data": [
+        "views/menu.xml",
         "views/mrp_production_view.xml",
         "security/ir.model.access.csv",
     ],
