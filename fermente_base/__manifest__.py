@@ -10,6 +10,7 @@
     "license": "AGPL-3",
     "depends": ["base"],
     "data": [
+        "security/ir_model_access.xml",
         "views/view_res_partner.xml",
     ],
 }

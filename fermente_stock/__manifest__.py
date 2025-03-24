@@ -11,6 +11,7 @@
     "license": "AGPL-3",
     "depends": ["stock"],
     "data": [
+        "views/menu.xml",
         "views/view_product_product.xml",
         "views/view_product_template.xml",
     ],
