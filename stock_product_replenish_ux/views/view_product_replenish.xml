@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_fermente_mrp_product_replenish_wizard" model="ir.ui.view">
+        <field name="model">product.replenish</field>
+        <field name="inherit_id" ref="stock.view_product_replenish" />
+        <field name="arch" type="xml">
+
+            <!-- Explicit field -->
+            <xpath expr="//field[@name='route_ids']" position="attributes">
+                <attribute name="string">Action on Confirm</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
