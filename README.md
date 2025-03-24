@@ -43,6 +43,7 @@ addon | version | maintainers | summary
 [fermente_purchase](fermente_purchase/) | 16.0.2.0.0 |  | Fermente - Purchase
 [fermente_sale](fermente_sale/) | 16.0.2.0.0 |  | Fermente - Sale
 [fermente_stock](fermente_stock/) | 16.0.2.0.0 |  | Fermente - Stock
+[fermente_web](fermente_web/) | 16.0.1.0.0 |  | Customize Odoo web User Interface
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.1 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.1 |  | MRP BoM Weight
