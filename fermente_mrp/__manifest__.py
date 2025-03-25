@@ -14,5 +14,6 @@
         "views/menu.xml",
         "views/mrp_production_view.xml",
         "security/ir.model.access.csv",
+        "data/stock_route.xml",
     ],
 }
