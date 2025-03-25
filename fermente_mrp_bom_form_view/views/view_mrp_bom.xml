@@ -11,7 +11,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <!-- ************************************************************ -->
 
 
-    <!-- ******** INHERIT BASE VIEW **************************************************** -->
+    <!-- ******** INHERIT BASE VIEW ************************************************ -->
     <record id="view_fermente_mrp_bom_form_base" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
@@ -20,11 +20,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <xpath expr="//field[@name='type']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//field[@name='image_1024']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//widget[@name='web_ribbon']" position="before">
+                <field name="image_1024" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                <div class="oe_title" name="bom_title" style="position:relative;left:15px">
+                    <field name="sale_ok" invisible="1" />
+                    <field name="product_intermediate" invisible="1" />
+                    <p attrs="{'invisible': ['|', ('sale_ok', '=', False), ('product_intermediate', '=', False)]}"><b>Data sheet</b> - finished and intermediate product 🧩</p>
+                    <p attrs="{'invisible': ['|', ('sale_ok', '=', False), '&amp;', ('sale_ok', '=', True), ('product_intermediate', '=', True)]}"><b>Data sheet</b> - finished product</p>
+                    <p attrs="{'invisible': ['|', ('product_intermediate', '=', False), '&amp;', ('sale_ok', '=', True), ('product_intermediate', '=', True)]}"><b>Data sheet</b> - intermediate product 🧩</p>
+                    <h1><field name="product_name" readonly="1"/></h1>
+                </div>
+            </xpath>
+
         </field>
     </record>
 
 
-    <!-- ******** INHERIT PRODUCE DELAY VIEW **************************************************** -->
+    <!-- ******** INHERIT PRODUCE DELAY VIEW *************************************** -->
     <record id="view_fermente_mrp_bom_form_produce_delay" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp_bom_produce_delay_in_hour.view_mrp_bom_form_glue_module_produce_delay_add_fields" />
@@ -37,7 +53,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
-    <!-- ******** INHERIT SECTIONS AND NOTES VIEW **************************************************** -->
+    <!-- ******** INHERIT SECTIONS AND NOTES VIEW ********************************** -->
     <record id="view_fermente_mrp_bom_form_sections_and_notes" model="ir.ui.view">
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp_bom_widget_section_and_note_one2many.mrp_bom_form_view_section" />
@@ -53,6 +69,12 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             </xpath>
 
             <!-- Add fields -->
+            <xpath expr="//notebook/page/field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_id']" position="before">
+                <field name="has_bom" invisible="1"/>
+                <button title="View product's BoM" name="action_open_product_bom_tree_view" type="object" class="btn btn-link" string="🧩" attrs="{'invisible': [('has_bom', '!=', True)]}"/>
+            </xpath>
+
+
             <xpath
                 expr="//field[@name='bom_line_with_sectionnote_ids']/tree/field[@name='product_uom_id']"
                 position="before"
