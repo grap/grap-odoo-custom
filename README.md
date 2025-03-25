@@ -32,7 +32,7 @@ addon | version | maintainers | summary
 [fermente_hr](fermente_hr/) | 16.0.3.0.1 |  | Fermente - Human Ressources
 [fermente_hr_expense](fermente_hr_expense/) | 16.0.2.0.0 |  | Fermente - Human Ressources Expense
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.0.0 |  | Fermente - Main Menu
-[fermente_mrp](fermente_mrp/) | 16.0.1.1.0 |  | Fermente - MRP
+[fermente_mrp](fermente_mrp/) | 16.0.1.2.0 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.0 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.3.0.0 |  | Fermente - Point Of Sale
 [fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.2.0.0 |  | Fermente - Point Of Sale Restaurant
@@ -51,6 +51,7 @@ addon | version | maintainers | summary
 [mrp_business](mrp_business/) | 16.0.1.1.1 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_sale_grouped](mrp_sale_grouped/) | 16.0.1.1.0 |  | Quickly manage what you need to produce thanks to grouped sales
 [product_default_route_buy](product_default_route_buy/) | 16.0.1.0.0 |  | Product default route Buy
+[product_default_route_mrp](product_default_route_mrp/) | 16.0.1.1.0 |  | Product default route MRP
 [server_environment_files](server_environment_files/) | 16.0.1.0.0 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_product_replenish_ux](stock_product_replenish_ux/) | 16.0.1.0.0 |  | Stock Product Replenishment UX
 

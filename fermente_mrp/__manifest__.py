@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - MRP",
-    "version": "16.0.1.1.0",
+    "version": "16.0.1.2.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
