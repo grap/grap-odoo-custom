@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- Product.product Product Food View -->
+    <!-- ************************************************************ -->
+
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product_food.view_product_product_form" />
+        <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='allergen_ids']" position="after">
+              <button string="Get Allergens With OpenFoodFacts" type="object"
+                      name="button_get_allergens_off"/>
+          </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>
