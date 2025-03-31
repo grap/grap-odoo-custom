@@ -25,6 +25,7 @@
         "wizard/view_bom_wizard_production.xml",
         "views/action.xml",
         "views/menu.xml",
+        "views/view_mrp_bom.xml",
     ],
     "assets": {
         "web.report_assets_common": [
