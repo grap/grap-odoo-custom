@@ -11,6 +11,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
 
+            <!-- MOVE fields -->
+            <field name="partner_shipping_id" position="after">
+                <field name="fiscal_position_id" position="move"/>
+            </field>
+
             <!-- Tab 'Invoice Lines' -->
             <xpath
                 expr="//field[@name='invoice_line_ids']//tree//field[@name='analytic_distribution']"
@@ -37,6 +42,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <attribute name="optional">show</attribute>
             </xpath>
 
+            <!-- Tab 'Other Info' -->
+            <field name="invoice_incoterm_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="invoice_cash_rounding_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
         </field>
     </record>
 
