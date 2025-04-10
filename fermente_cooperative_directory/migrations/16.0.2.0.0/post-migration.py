@@ -17,7 +17,7 @@ def _create_hr_employee_from_grap_people(env):
         """
     )
     columns = [col[0] for col in env.cr.description]
-    rows = [dict(zip(columns, row, strict=True)) for row in env.cr.fetchall()]
+    rows = [dict(zip(columns, row)) for row in env.cr.fetchall()]  # noqa: B905
     for row in rows:
         if not row["company_id"]:
             continue
