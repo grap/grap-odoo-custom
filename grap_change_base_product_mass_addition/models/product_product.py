@@ -2,7 +2,7 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class ProductProduct(models.Model):
@@ -36,7 +36,6 @@ class ProductProduct(models.Model):
         compute="_compute_mass_addition_purchase_bad",
     )
 
-    @api.multi
     @api.depends(
         "qty_to_process",
         "mass_addition_purchase_min_qty",
@@ -56,7 +55,6 @@ class ProductProduct(models.Model):
                 product.qty_to_process % product.mass_addition_purchase_multiplier_qty
             )
 
-    @api.multi
     def _compute_mass_addition_purchase(self):
         PurchaseOrder = self.env["purchase.order"]
         if self.env.context.get("parent_model", False) == "purchase.order":
