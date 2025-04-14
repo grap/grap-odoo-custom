@@ -2,25 +2,20 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "GRAP - Change Base Product Mass Addition",
+    "name": "Fermente - Purchase Quick",
     "version": "16.0.1.0.0",
     "category": "GRAP - Custom",
-    "summary": "Fix slow call to odoo.tests.Form, used in "
-    "base_product_mass_addition, for purchase_quick module",
+    "summary": "Add extra fields in quick purchase tree view",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
         # OCA
-        "base_product_mass_addition",
         "purchase_quick",
-        "onchange_helper",
         "product_supplierinfo_qty_multiplier",
-        "purchase_discount",
         "purchase_triple_discount",
+        "web_tree_dynamic_colored_field",
     ],
-    "data": [
-        "views/view_product_product.xml",
-    ],
+    "data": ["views/view_product_product.xml"],
     "installable": True,
 }
