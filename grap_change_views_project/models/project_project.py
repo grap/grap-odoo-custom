@@ -8,6 +8,6 @@ from odoo import fields, models
 class ProjectProject(models.Model):
     _inherit = "project.project"
 
-    description = fields.Html(string="Description")
+    description = fields.Html()
 
     is_odoo_development = fields.Boolean(string="Odoo Development")
