@@ -9,6 +9,6 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["crm"],
+    "depends": ["project"],
     "data": ["security/ir.model.access.csv", "views/menu.xml"],
 }
