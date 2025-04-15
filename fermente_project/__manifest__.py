@@ -10,5 +10,14 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["project"],
-    "data": ["security/ir.model.access.csv", "views/menu.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/view_project_task.xml",
+    ],
+    "assets": {
+        "web.assets_backend": [
+            "fermente_project/static/src/scss/fermente_project.scss",
+        ],
+    },
 }

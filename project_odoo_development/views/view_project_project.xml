@@ -11,18 +11,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
-
-            <xpath expr="//page[1]" position="before">
-              <page string="Description">
-                <group>
-                  <field name="description"/>
-                </group>
-              </page>
+            <xpath expr="//page[@name='settings']/group/group/field[@name='analytic_account_id']" position="after">
+                <field name="is_odoo_development" widget="boolean_toggle"/>
             </xpath>
-
-            <field name="company_id" position="after">
-              <field name="is_odoo_development" widget="boolean_toggle"/>
-            </field>
 
         </field>
     </record>

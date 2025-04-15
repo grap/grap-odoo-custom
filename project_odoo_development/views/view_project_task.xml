@@ -7,60 +7,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 <odoo>
 
-    <record id="view_project_task_form2" model="ir.ui.view">
-        <field name="name">view_task_form2</field>
+    <record id="view_project_task_form" model="ir.ui.view">
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
-            <field name="user_id" position="after">
-                <field name="planned_hours" widget="float_time"/>
-            </field>
-
-            <field name="date_deadline" position="after">
-                <field name="requesting_people_ids" widget="many2many_tags" options="{'no_quick_create': True}"/>
-                <field name="requesting_company_ids" widget="many2many_tags" options="{'no_quick_create': True}"/>
-            </field>
-
-          <field name="description" position="after">
-            <group>
-              <field name="github_link_1" widget="url" placeholder="e.g. https://www.github.com"/>
-              <field name="github_link_2" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_1', '=', False)]}"/>
-              <field name="github_link_3" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_2', '=', False)]}"/>
-              <field name="is_odoo_development" widget="boolean_toggle" invisible="1"/>
-              <field name="modules_to_install" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
-              <field name="modules_to_uninstall" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
-              <field name="sql_request" widget="ace" attrs="{'invisible':[('is_odoo_development', '=', False)]}"/>
+            <field name="description" position="after">
+                <group attrs="{'invisible':[('is_odoo_development', '=', False)]}">
+                <field name="github_link_1" widget="url" placeholder="e.g. https://www.github.com"/>
+                <field name="github_link_2" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_1', '=', False)]}"/>
+                <field name="github_link_3" widget="url" placeholder="e.g. https://www.github.com" attrs="{'invisible':[('github_link_2', '=', False)]}"/>
+                <field name="is_odoo_development" invisible="1"/>
+                <field name="modules_to_install" />
+                <field name="modules_to_uninstall"/>
+                <field name="sql_request" widget="ace"/>
             </group>
-          </field>
-        </field>
-    </record>
-
-    <record id="project_task_code_tree_view" model="ir.ui.view">
-        <field name="name">project.task.code.tree</field>
-        <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_tree2"/>
-        <field name="arch" type="xml">
-            <field name="stage_id" position="after">
-                <field name="priority" widget="priority"/>
-                <field name="kanban_state" widget="state_selection"/>
-                <field name="planned_hours" widget="float_time" sum="Total"/>
             </field>
         </field>
-    </record>
-
-    <record id="project_task_search" model="ir.ui.view">
-        <field name="model">project.task</field>
-        <field name="inherit_id" ref="project.view_task_search_form"/>
-        <field name="arch" type="xml">
-            <field name="name" position="after">
-                <field name="description" string="Description"/>
-            </field>
-        </field>
-    </record>
-
-    <record id="project.action_view_task" model="ir.actions.act_window">
-      <field name="domain">[('project_id','not ilike','template')]</field>
-      <field name="context">{'display_code': 1}</field>
     </record>
 
     <record id="view_task_kanban" model="ir.ui.view" >
@@ -68,27 +30,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_kanban"/>
         <field name="arch" type="xml">
-          <field name="activity_ids" position="after">
-              <field name="planned_hours"/>
-              <field name="github_link_1"/>
-              <field name="github_link_2"/>
-              <field name="github_link_3"/>
-              <field name="modules_to_install"/>
-              <field name="modules_to_uninstall"/>
-              <field name="sql_request"/>
-              <field name="requesting_company_ids"/>
-          </field>
-          <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
-            <div t-if="record.planned_hours.raw_value" class="text-muted o_kanban_record_subtitle">
-                <field name="planned_hours" widget="float_time"/>
-            </div>
-            <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050;margin-left:7px"/></a></span>
-            <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
-            <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
-            <span t-if="record.modules_to_install.raw_value"><i class="fa fa-plus-square" role="img"  aria-label="Modules to install" t-att-title="record.modules_to_install.value" style="font-size:15px;color:#505050"/></span>
-            <span t-if="record.modules_to_uninstall.raw_value"><i class="fa fa-minus-square" role="img"  aria-label="Modules to uninstall" t-att-title="record.modules_to_uninstall.value" style="font-size:15px;color:#505050"/></span>
-            <span t-if="record.sql_request.raw_value"><i class="fa fa-database" role="img"  aria-label="SQL request" title="SQL request" style="font-size:15px;color:#505050"/></span>
-          </xpath>
+            <field name="activity_ids" position="after">
+                  <field name="github_link_1"/>
+                  <field name="github_link_2"/>
+                  <field name="github_link_3"/>
+                  <field name="modules_to_install"/>
+                  <field name="modules_to_uninstall"/>
+                  <field name="sql_request"/>
+            </field>
+            <xpath expr="//div[hasclass('oe_kanban_bottom_left')]//field[@name='activity_ids']" position="after">
+                <span t-if="record.github_link_1.raw_value"><a t-att-href="record.github_link_1.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050;margin-left:7px"/></a></span>
+                <span t-if="record.github_link_2.raw_value"><a t-att-href="record.github_link_2.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
+                <span t-if="record.github_link_3.raw_value"><a t-att-href="record.github_link_3.value" target="_blank"><i class="fa fa-github" role="img"  aria-label="Pull request" title="Pull request" style="font-size:18px;color:#505050"/></a></span>
+                <span t-if="record.modules_to_install.raw_value"><i class="fa fa-plus-square" role="img"  aria-label="Modules to install" t-att-title="record.modules_to_install.value" style="font-size:15px;color:#505050"/></span>
+                <span t-if="record.modules_to_uninstall.raw_value"><i class="fa fa-minus-square" role="img"  aria-label="Modules to uninstall" t-att-title="record.modules_to_uninstall.value" style="font-size:15px;color:#505050"/></span>
+                <span t-if="record.sql_request.raw_value"><i class="fa fa-database" role="img"  aria-label="SQL request" title="SQL request" style="font-size:15px;color:#505050"/></span>
+            </xpath>
         </field>
     </record>
 
