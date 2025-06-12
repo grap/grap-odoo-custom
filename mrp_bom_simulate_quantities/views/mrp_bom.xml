@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- ************************************************************ -->
+    <!-- MRP BoM - Form -->
+    <!-- ************************************************************ -->
+
+    <record id="view_mrp_bom_simulate_quantity" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='miscellaneous']" position="before">
+                <page string="Simulate quantities" name="bom_simulate_quantites">
+
+                   <div class="my-2">
+                        <span>I have</span>
+                        <field name="bom_simulate_product_qty" nolabel="1" widget="numeric_step" options="{'step': 1, 'min': 0}"/>
+                        <field name="bom_simulate_product_uom" nolabel="1" />
+                        <span> of </span>
+                        <field name="bom_simulate_product" nolabel="1" options="{'no_open': True}"/>
+
+                        <!-- Handle second Product -->
+                        <span class="mx-2">
+                            <field name="show_second_product" invisible="1" />
+                            <button name="toggle_show_second_product" type="object" class="btn btn-outline-primary btn-sm" attrs="{'invisible': [('show_second_product', '!=', False)]}">
+                                <i class="fa fa-plus-square" aria-hidden="true" title="Add second product"></i>
+                            </button>
+                            <button name="toggle_show_second_product" type="object" class="btn btn-outline-primary btn-sm"  attrs="{'invisible': [('show_second_product', '=', False)]}">
+                                <i class="fa fa-minus-square" aria-hidden="true" title="Remove second product"></i>
+                            </button>
+                        </span>
+
+                        <span class="mx-2" attrs="{'invisible': [('show_second_product', '=', False)]}">
+                            <span> and</span>
+                            <field name="bom_simulate_product_qty_2" nolabel="1" widget="numeric_step" options="{'step': 1, 'min': 0}"/>
+                            <field name="bom_simulate_product_uom_2" nolabel="1" />
+                            <span> of </span>
+                            <field name="bom_simulate_product_2" nolabel="1" options="{'no_open': True}"/>
+                        </span>
+
+                    </div>
+
+                    <div class="alert alert-info w-25" role="alert" attrs="{'invisible': [('show_second_product', '==', False)]}">
+                          Limiting product : <field readonly="1" name="limiting_product" options="{'no_open': True}"/>
+
+                    </div>
+
+                   <div class="mt-4" attrs="{'invisible': [('bom_simulate_product_qty', '=', 0)]}" >
+                        <h4>↳ You can produce <b> <field name="bom_simulate_bom_qty"/> <field name="product_uom_id" readonly="1"/> </b> qty of BoM with this lines :</h4>
+                        <field name="bom_simulate_bom_lines">
+                            <tree>
+                                <field name="product_id"/>
+                                <field name="product_qty"/>
+                                <field name="product_uom_id"/>
+                            </tree>
+                        </field>
+                        <!-- Technical field to calculate bom_simulate_product domain -->
+                        <field name="product_ids_in_bom" invisible="1"/>
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
