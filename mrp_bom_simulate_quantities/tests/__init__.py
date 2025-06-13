@@ -1,1 +1,1 @@
-from . import test_mrp_bom_weight
+from . import test_mrp_bom

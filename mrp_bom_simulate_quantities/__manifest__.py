@@ -11,6 +11,10 @@
     "depends": [
         "mrp",
     ],
+    "demo": [
+        "demo/product_product_demo.xml",
+        "demo/mrp_bom_demo.xml",
+    ],
     "data": [
         "security/ir.model.access.csv",
         "views/mrp_bom.xml",

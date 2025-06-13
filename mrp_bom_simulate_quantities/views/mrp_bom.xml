@@ -18,7 +18,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <page string="Simulate quantities" name="bom_simulate_quantites">
 
                    <div class="my-2">
-                        <span>I have</span>
+                        <span>I have </span>
                         <field name="bom_simulate_product_qty" nolabel="1" widget="numeric_step" options="{'step': 1, 'min': 0}"/>
                         <field name="bom_simulate_product_uom" nolabel="1" />
                         <span> of </span>
@@ -36,7 +36,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </span>
 
                         <span class="mx-2" attrs="{'invisible': [('show_second_product', '=', False)]}">
-                            <span> and</span>
+                            <span>and </span>
                             <field name="bom_simulate_product_qty_2" nolabel="1" widget="numeric_step" options="{'step': 1, 'min': 0}"/>
                             <field name="bom_simulate_product_uom_2" nolabel="1" />
                             <span> of </span>
@@ -45,13 +45,13 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
                     </div>
 
-                    <div class="alert alert-info w-25" role="alert" attrs="{'invisible': [('show_second_product', '==', False)]}">
+                    <div class="alert alert-info w-25" role="alert" attrs="{'invisible': [('limiting_product', '==', False)]}">
                           Limiting product : <field readonly="1" name="limiting_product" options="{'no_open': True}"/>
 
                     </div>
 
                    <div class="mt-4" attrs="{'invisible': [('bom_simulate_product_qty', '=', 0)]}" >
-                        <h4>↳ You can produce <b> <field name="bom_simulate_bom_qty"/> <field name="product_uom_id" readonly="1"/> </b> qty of BoM with this lines :</h4>
+                        <h4>↳ You can produce <b> <field name="bom_simulate_bom_qty"/> <field name="product_uom_id" readonly="1" options="{'no_open': True}"/> </b> of this BoM with this components :</h4>
                         <field name="bom_simulate_bom_lines">
                             <tree>
                                 <field name="product_id"/>
@@ -62,6 +62,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         <!-- Technical field to calculate bom_simulate_product domain -->
                         <field name="product_ids_in_bom" invisible="1"/>
                     </div>
+                    <button name="action_export_simulation_csv" type="object" string="Export Simulation CSV" class="btn-primary"/>
+
                 </page>
             </xpath>
         </field>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record model="mrp.bom" id="demo_bom_farmhouse_bread">
+      <field name="code">BREAD</field>
+      <field name="product_tmpl_id" ref="demo_product_template_farmhouse_bread"/>
+      <field name="product_uom_id" ref="uom.product_uom_kgm"/>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_farmhouse_bread_line_flour">
+        <field name="bom_id" ref="demo_bom_farmhouse_bread"/>
+        <field name="product_id" ref="demo_product_flour"/>
+        <field name="product_qty">1</field>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_farmhouse_bread_line_salt">
+        <field name="bom_id" ref="demo_bom_farmhouse_bread"/>
+        <field name="product_id" ref="demo_product_salt"/>
+        <field name="product_qty">16</field>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_farmhouse_bread_line_rye_levain">
+        <field name="bom_id" ref="demo_bom_farmhouse_bread"/>
+        <field name="product_id" ref="demo_product_rye_levain"/>
+        <field name="product_qty">3</field>
+    </record>
+
+    <record model="mrp.bom.line" id="demo_bom_farmhouse_bread_line_water">
+        <field name="bom_id" ref="demo_bom_farmhouse_bread"/>
+        <field name="product_id" ref="demo_product_water"/>
+        <field name="product_qty">0.72</field>
+    </record>
+
+</odoo>
