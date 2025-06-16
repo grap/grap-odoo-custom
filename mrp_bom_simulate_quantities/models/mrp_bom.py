@@ -42,7 +42,8 @@ class MrpBom(models.Model):
     bom_simulate_product_2 = fields.Many2one(
         comodel_name="product.product",
         string="Second product to Simulate",
-        domain="['&', ('id', 'in', product_ids_in_bom), ('id', '!=', bom_simulate_product)]",
+        domain="['&', ('id', 'in', product_ids_in_bom), \
+                ('id', '!=', bom_simulate_product)]",
     )
 
     bom_simulate_product_uom_2 = fields.Many2one(
@@ -100,6 +101,13 @@ class MrpBom(models.Model):
         for bom in self:
             bom.product_ids_in_bom = bom.bom_line_ids.mapped("product_id")
 
+    def _get_bom_line_qty(self, product, default_qty=1.0):
+        product_line = next(
+            (line for line in self.bom_line_ids if line.product_id == product),
+            None,
+        )
+        return product_line.product_qty if product_line else default_qty
+
     # Computed fields
     @api.depends(
         "bom_simulate_product",
@@ -111,25 +119,18 @@ class MrpBom(models.Model):
         "product_qty",
     )
     def _compute_bom_simulate_bom_lines_and_qty(self):
+        DEFAULT_ROUND = 2
         DEFAULT_QTY = 1.0
 
         for bom in self:
-            # Get product quantity in BoM Lines
-            product_line = bom.bom_line_ids.filtered(
-                lambda l: l.product_id == bom.bom_simulate_product
-            )
-            product_qty_in_bom = (
-                product_line[0].product_qty if product_line else DEFAULT_QTY
-            )
+            simulate_prod = bom.bom_simulate_product
+            product_qty_in_bom = bom._get_bom_line_qty(simulate_prod, DEFAULT_QTY)
 
-            # With second product
             if bom.show_second_product and bom.bom_simulate_product_2:
-                # Get second product quantity in BoM Lines
-                product_line_2 = bom.bom_line_ids.filtered(
-                    lambda l: l.product_id == bom.bom_simulate_product_2
-                )
-                product_qty_in_bom_2 = (
-                    product_line_2[0].product_qty if product_line_2 else DEFAULT_QTY
+                simulate_prod_2 = bom.bom_simulate_product_2
+                simulate_prod_qty_2 = bom.bom_simulate_product_qty_2
+                product_qty_in_bom_2 = bom._get_bom_line_qty(
+                    simulate_prod_2, DEFAULT_QTY
                 )
 
                 # Compare ratio between the two products in BoM and in simulation
@@ -140,14 +141,14 @@ class MrpBom(models.Model):
                     else 0
                 )
                 bom_simulate_products_division = (
-                    bom.bom_simulate_product_qty / bom.bom_simulate_product_qty_2
-                    if bom.bom_simulate_product_qty_2
+                    bom.bom_simulate_product_qty / simulate_prod_qty_2
+                    if simulate_prod_qty_2
                     else 0
                 )
                 # Then set simulate qty and choosen product
                 if bom_simulate_products_division > bom_products_division:
-                    bom.limiting_product = bom.bom_simulate_product_2
-                    simulate_qty = bom.bom_simulate_product_qty_2 or DEFAULT_QTY
+                    bom.limiting_product = simulate_prod_2
+                    simulate_qty = simulate_prod_qty_2 or DEFAULT_QTY
                     # Choose BoM Line Product 2 quantity
                     product_qty_in_bom = product_qty_in_bom_2
                 else:
@@ -177,7 +178,7 @@ class MrpBom(models.Model):
                 for line in bom.bom_line_ids
             ]
 
-            bom.bom_simulate_bom_qty = bom.product_qty * ratio
+            bom.bom_simulate_bom_qty = round(bom.product_qty * ratio, DEFAULT_ROUND)
 
     @api.depends("bom_simulate_product", "bom_simulate_product_2")
     def _compute_bom_simulate_product_uom(self):
@@ -217,7 +218,8 @@ class MrpBom(models.Model):
         output.close()
 
         # Create attachment
-        filename = f"simulation_{self.product_tmpl_id.display_name}_{self.limiting_product.display_name}_{self.bom_simulate_bom_qty}.csv"
+        filename = f"simulation_{self.product_tmpl_id.display_name}_\
+                {self.bom_simulate_bom_qty}.csv"
         attachment = self.env["ir.attachment"].create(
             {
                 "name": filename,

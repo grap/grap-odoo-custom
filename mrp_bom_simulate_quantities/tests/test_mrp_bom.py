@@ -27,13 +27,13 @@ class TestMrpBomSimulation(TransactionCase):
         self.bom._compute_bom_simulate_bom_lines_and_qty()
 
         flour_line = self.bom.bom_simulate_bom_lines.filtered(
-            lambda l: l.product_id == self.product_flour
+            lambda x: x.product_id == self.product_flour
         )
         self.assertEqual(flour_line.product_qty, 2.0)
 
         expected_ratio = 2.0 / 1.0
         water_line = self.bom.bom_simulate_bom_lines.filtered(
-            lambda l: l.product_id == self.product_water
+            lambda x: x.product_id == self.product_water
         )
         self.assertEqual(water_line.product_qty, 0.72 * expected_ratio)
 
