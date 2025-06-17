@@ -13,7 +13,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="context">{
             "search_default_category_id": [active_id],
             "default_category_id": active_id,
-        }
+            "form_view_ref": "fermente_cooperative_directory.view_res_company_form_directory",
+            "tree_view_ref": "fermente_cooperative_directosssry.view_res_company_tree_directory",
+            }
         </field>
     </record>
 
