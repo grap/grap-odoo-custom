@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-13 12:29+0000\n"
-"PO-Revision-Date: 2025-06-13 12:29+0000\n"
+"POT-Creation-Date: 2025-06-19 08:42+0000\n"
+"PO-Revision-Date: 2025-06-19 08:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,12 +21,15 @@ msgid ""
 "<i class=\"fa fa-minus-square\" aria-hidden=\"true\" title=\"Remove second "
 "product\"/>"
 msgstr ""
-"<i class=\"fa fa-minus-square\" aria-hidden=\"true\" title=\"Enlever le 2ème produit "
-"product\"/>"
+"<i class=\"fa fa-minus-square\" aria-hidden=\"true\" title=\"Enlever le 2ème"
+" produit product\"/>"
+
 #. module: mrp_bom_simulate_quantities
 #: model_terms:ir.ui.view,arch_db:mrp_bom_simulate_quantities.view_mrp_bom_simulate_quantity
 msgid "<i class=\"fa fa-plus-square\" aria-hidden=\"true\" title=\"Add second product\"/>"
-msgstr "<i class=\"fa fa-plus-square\" aria-hidden=\"true\" title=\"Ajouter un 2ème produit\"/>"
+msgstr ""
+"<i class=\"fa fa-plus-square\" aria-hidden=\"true\" title=\"Ajouter un 2ème "
+"produit\"/>"
 
 #. module: mrp_bom_simulate_quantities
 #: model_terms:ir.ui.view,arch_db:mrp_bom_simulate_quantities.view_mrp_bom_simulate_quantity
@@ -86,7 +89,7 @@ msgstr "Nom affiché"
 #. module: mrp_bom_simulate_quantities
 #: model_terms:ir.ui.view,arch_db:mrp_bom_simulate_quantities.view_mrp_bom_simulate_quantity
 msgid "Export Simulation CSV"
-msgstr "Export la simulation en CSV"
+msgstr "Exporter la simulation en CSV"
 
 #. module: mrp_bom_simulate_quantities
 #: model:product.template,name:mrp_bom_simulate_quantities.demo_product_farmhouse_bread_product_template
@@ -222,8 +225,8 @@ msgstr "Eau"
 
 #. module: mrp_bom_simulate_quantities
 #: model_terms:ir.ui.view,arch_db:mrp_bom_simulate_quantities.view_mrp_bom_simulate_quantity
-msgid "of this BoM with this components :"
-msgstr "de cette Fiche technique avec ces composants :"
+msgid "with this components :"
+msgstr "avec ses composants :"
 
 #. module: mrp_bom_simulate_quantities
 #: model_terms:ir.ui.view,arch_db:mrp_bom_simulate_quantities.view_mrp_bom_simulate_quantity

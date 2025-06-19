@@ -76,24 +76,33 @@ class MrpBom(models.Model):
         compute="_compute_product_ids_in_bom",
     )
 
-    # Functions
     @api.onchange("bom_line_ids")
     def _onchange_bom_simulate_product(self):
-        # Select "main" bom line by choosing the more used one
+        # Select main and secondary product
         for bom in self.filtered(lambda b: b.bom_line_ids):
-            max_line = max(
+            sorted_lines = sorted(
                 bom.bom_line_ids,
-                key=lambda x: x.product_qty / x.product_uom_id.ratio or 0,
+                key=lambda line: line.product_qty / line.product_uom_id.ratio
+                if line.product_uom_id.ratio
+                else 0,
+                reverse=True,
             )
+
             bom.bom_simulate_product = (
-                max_line.product_id.id if max_line.product_id else False
+                sorted_lines[0].product_id.id
+                if sorted_lines and sorted_lines[0].product_id
+                else False
+            )
+
+            bom.bom_simulate_product_2 = (
+                sorted_lines[1].product_id.id
+                if len(sorted_lines) > 1 and sorted_lines[1].product_id
+                else False
             )
 
     def toggle_show_second_product(self):
         for bom in self:
             bom.show_second_product = not bom.show_second_product
-            bom.bom_simulate_product_2 = False
-            bom.bom_simulate_product_qty_2 = 0
 
     # Compute functions
     @api.depends("bom_line_ids")
