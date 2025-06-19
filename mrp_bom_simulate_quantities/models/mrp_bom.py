@@ -180,7 +180,7 @@ class MrpBom(models.Model):
                     {
                         "bom_id": bom.id,
                         "product_id": line.product_id.id,
-                        "product_qty": line.product_qty * ratio,
+                        "product_qty": round(line.product_qty * ratio, DEFAULT_ROUND),
                         "product_uom_id": line.product_uom_id.id,
                     },
                 )
