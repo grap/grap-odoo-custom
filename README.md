@@ -30,7 +30,7 @@ addon | version | maintainers | summary
 [fermente_cooperative_directory](fermente_cooperative_directory/) | 16.0.2.2.0 |  | Add Directories for companies and employees
 [fermente_crm](fermente_crm/) | 16.0.2.0.0 |  | Fermente - CRM
 [fermente_hr](fermente_hr/) | 16.0.3.0.1 |  | Fermente - Human Ressources
-[fermente_hr_expense](fermente_hr_expense/) | 16.0.2.0.0 |  | Fermente - Human Ressources Expense
+[fermente_hr_expense](fermente_hr_expense/) | 16.0.2.1.0 |  | Fermente - Human Ressources Expense
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.0.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.2.0 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.0 |  | Fermente - MRP BoM Form View
