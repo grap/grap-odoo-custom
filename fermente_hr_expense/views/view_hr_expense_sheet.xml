@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_hr_expense_sheet_form" model="ir.ui.view">
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+
+            <field name="journal_id" position="attributes">
+                <attribute name="groups" ref="account.group_account_manager"/>
+            </field>
+
+            <field name="user_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="total_amount_company" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+
+            <field name="quantity" position="attributes">
+                <attribute name="optional">show</attribute>
+                <attribute name="attrs">{'invisible': [('product_has_cost', '=', False)]}</attribute>
+            </field>
+
+            <field name="unit_amount" position="attributes">
+                <attribute name="optional">show</attribute>
+                <attribute name="attrs">{'invisible': [('product_has_cost', '=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

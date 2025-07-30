@@ -12,5 +12,7 @@
     "depends": ["fermente_hr", "hr_expense"],
     "data": [
         "views/menu.xml",
+        "views/view_hr_expense.xml",
+        "views/view_hr_expense_sheet.xml",
     ],
 }
