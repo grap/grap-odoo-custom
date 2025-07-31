@@ -85,6 +85,7 @@ msgid "Created on"
 msgstr "Crée le"
 
 #. module: mrp_bom_wizard_production
+#: model:ir.model.fields,field_description:mrp_bom_wizard_production.field_bom_wizard_production__currency_id
 #: model:ir.model.fields,field_description:mrp_bom_wizard_production.field_bom_wizard_production_line__currency_id
 #: model:ir.model.fields,field_description:mrp_bom_wizard_production.field_mrp_bom__currency_id
 msgid "Currency"
@@ -236,8 +237,12 @@ msgid "Production date:"
 msgstr "Date de production :"
 
 #. module: mrp_bom_wizard_production
+#. odoo-python
+#: code:addons/mrp_bom_wizard_production/models/mrp_bom.py:0
 #: model:ir.actions.act_window,name:mrp_bom_wizard_production.action_mrp_bom_wizard_production
 #: model:ir.ui.menu,name:mrp_bom_wizard_production.menu_mrp_bom_wizard_production
+#: model_terms:ir.ui.view,arch_db:mrp_bom_wizard_production.view_wizard_production_mrp_bom_tree
+#, python-format
 msgid "Production wizard"
 msgstr "Assistant de production"
 
