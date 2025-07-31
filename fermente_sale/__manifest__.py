@@ -10,5 +10,9 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["sale", "sales_team"],
-    "data": ["security/ir.model.access.csv", "views/menu.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/view_sale_order.xml",
+    ],
 }
