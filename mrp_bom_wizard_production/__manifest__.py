@@ -5,7 +5,7 @@
 {
     "name": "MRP BoM Wizard production",
     "summary": "Wizard linked to Bill of Materials to help your production.",
-    "version": "16.0.1.2.0",
+    "version": "16.0.1.3.0",
     "category": "Manufacturing",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
