@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[fermente_account](fermente_account/) | 16.0.2.1.0 |  | Fermente - Account
+[fermente_account](fermente_account/) | 16.0.2.2.0 |  | Fermente - Account
 [fermente_account_invoice_margin](fermente_account_invoice_margin/) | 16.0.1.0.1 |  | Fermente - Account Invoice Margin
 [fermente_account_invoice_triple_discount](fermente_account_invoice_triple_discount/) | 16.0.1.0.1 |  | Fermente - Account Invoice Triple Discount
 [fermente_account_menu_invoice_refund](fermente_account_menu_invoice_refund/) | 16.0.1.0.1 |  | Fermente - Account Menu Invoice Refund
