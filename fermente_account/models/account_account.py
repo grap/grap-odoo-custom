@@ -16,5 +16,6 @@ class AccountAccount(models.Model):
         move_type,
         filter_never_user_accounts=False,
         limit=None,
+        journal_id=None,
     ):
         return []
