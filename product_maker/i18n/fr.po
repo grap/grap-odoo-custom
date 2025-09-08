@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_maker
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-04 12:43+0000\n"
+"PO-Revision-Date: 2025-04-04 12:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_maker
+#: model:ir.model.fields,field_description:product_maker.field_product_product__maker_description
+#: model:ir.model.fields,field_description:product_maker.field_product_template__maker_description
+msgid "Maker"
+msgstr "Fabricant·e"
+
+#. module: product_maker
+#: model:ir.model,name:product_maker.model_product_template
+msgid "Product"
+msgstr "Produit"
+
+#. module: product_maker
+#: model:ir.model,name:product_maker.model_product_product
+msgid "Product Variant"
+msgstr "Variante de produit"
