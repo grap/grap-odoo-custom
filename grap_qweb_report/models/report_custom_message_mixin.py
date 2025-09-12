@@ -12,7 +12,6 @@ class ReportCustomMessageMixin(models.AbstractModel):
 
     report_custom_message = fields.Text(compute="_compute_report_custom_message")
 
-    @api.multi
     def _compute_report_custom_message(self):
         ReportCustomMessage = self.env["report.custom.message"]
         for item in self:
