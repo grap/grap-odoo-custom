@@ -5,7 +5,7 @@
 
 {
     "name": "GRAP - Custom Qweb Reports",
-    "version": "12.0.2.2.0",
+    "version": "16.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
