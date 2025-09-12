@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <record id="paperformat_grap_no_margin" model="report.paperformat">
-        <field name="name">GRAP - No Margin A4</field>
+        <field name="name">Fermente - No Margin A4</field>
         <field name="default" eval="True"/>
         <field name="format">custom</field>
         <field name="page_height">297</field>

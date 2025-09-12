@@ -8,29 +8,29 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 
     <template id="grap_external_layout" inherit_id="web.external_layout_standard" priority="1000">
-<!--                 -->
-<!--Overwrite header -->
-<!--                 -->
 
-        <xpath expr="//div[hasclass('header')]" position="replace">
+        <!--                 -->
+        <!--Overwrite header -->
+        <!--                 -->
+        <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
             <div class="header" t-att-style="report_header_style">
 
-<!-- Ligne horizontale -->
-                <div class="row zero_min_height">
-                    <div class="col-sm-12">
-                        <div style="border-bottom: 1px solid grey;"/>
-                    </div>
+            <!-- Ligne horizontale -->
+            <div class="row zero_min_height">
+                <div class="col-sm-12">
+                    <div style="border-bottom: 1px solid grey;"/>
                 </div>
+            </div>
 
-<!-- Affichage des information de la société -->
+                <!-- Affichage des information de la société -->
                 <div class="row">
                     <div class="col-2 text-left">
-                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px;" alt="Logo"/>
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px; max-width: 120px;" alt="Logo"/>
                     </div>
                     <div class="col-5 text-left">
                         <br/>
                         <div>
-                            <b><span t-esc="company.name.replace('|', '')"/></b>
+                            <b><span t-esc="company.name"/></b>
                         </div>
                         <div>
                         <span t-esc="company.street"/> <span t-esc="company.street2"/>
@@ -48,7 +48,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             <span t-esc="company.email"/>
                         </div>
                         <div t-if="company.website">
-                            <span t-esc="company.website.replace('http://', '')"/>
+                            <span t-esc="company.website.replace('https://', '')"/>
                         </div>
                         <div t-if="company.report_header">
                             <span style="font-style:italic; font-size:9px" t-esc="company.report_header"/>
@@ -56,7 +56,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </div>
                 </div>
 
-    <!-- Ligne horizontale -->
+                <!-- Ligne horizontale -->
                 <div class="row zero_min_height">
                     <div class="col-sm-12">
                         <div style="border-bottom: 1px solid grey;"/>
@@ -66,23 +66,22 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
         </xpath>
 
-<!--                 -->
-<!--Overwrite footer -->
-<!--                 -->
-
-        <xpath expr="//div[hasclass('footer')]" position="replace">
+        <!--                 -->
+        <!--Overwrite footer -->
+        <!--                 -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
             <div class="footer o_standard_footer">
 
                 <div class="container">
                     <div class="row">
                         <div class="col-2 text-left" style="font-size:10px" t-if="company.fiscal_company_id.id != company.id">
-                            <span t-esc="company.name.replace('|', '')"/><br/>
+                            <span t-esc="company.name"/><br/>
                             est une activité de <br/>
                             <img t-if="company.fiscal_company_id.logo" t-att-src="image_data_uri(company.fiscal_company_id.logo)" style="max-height: 45px;" alt="Logo"/>
                             </div>
                         <div class="col-2 text-left" style="font-size:10px" t-if="company.fiscal_company_id.id != company.id">
                             <div>
-                                <b><span t-esc="company.fiscal_company_id.report_legal_description.replace('|', '')"/></b>
+                                <b><span t-esc="company.fiscal_company_id.report_legal_description"/></b>
                             </div>
                             <div>
                                 <span t-esc="company.fiscal_company_id.street"/> <span t-esc="company.fiscal_company_id.street2"/>
@@ -97,23 +96,23 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <span t-esc="company.fiscal_company_id.email"/>
                             </div>
                             <div t-if="company.fiscal_company_id.website">
-                                <span t-esc="company.fiscal_company_id.website.replace('http://', '')"/>
+                                <span t-esc="company.fiscal_company_id.website.replace('https://', '')"/>
                             </div>
                         </div>
                         <div class="col-12" style="font-size:15px" t-if="not company.fiscal_company_id.id != company.id">
                             <div t-if="company.fiscal_company_id.id == company.id">
-                                <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
+                                <div><b><span t-esc="company.report_legal_description"/></b></div>
                             </div>
                             <div>
-                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice', 'stock.picking')">
+                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.move', 'stock.picking')">
                                     Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
                                 </div>
-                                <span t-if="o._name in ('sale.order', 'account.invoice')">
+                                <span t-if="o._name in ('sale.order', 'account.move')">
                                     <span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>
                                     <br/><span>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b>. </span>
                                 </span>
                                 <span t-if="len(company.partner_id.bank_ids)">
-                                    <span t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/>.</span>
+                                    <span t-if="o._name in ('sale.order', 'account.move')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/>.</span>
                                     <span>
                                         <br/>
                                         <b>IBAN : </b><span t-esc="company.partner_id.bank_ids[0].acc_number"/>
@@ -136,15 +135,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <div><b><span t-esc="company.report_legal_description.replace('|', '')"/></b></div>
                             </div>
                             <div>
-                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.invoice', 'stock.picking')">
+                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.move', 'stock.picking')">
                                     Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
                                 </div>
-                                <span t-if="o._name in ('sale.order', 'account.invoice')">
+                                <span t-if="o._name in ('sale.order', 'account.move')">
                                     <span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>
-                                    <br/><span>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name.replace('|','')"/></b>. </span>
+                                    <br/><span>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name"/></b>. </span>
                                 </span>
                                 <span t-if="len(company.partner_id.bank_ids)">
-                                    <span t-if="o._name in ('sale.order', 'account.invoice')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/>.</span>
+                                    <span t-if="o._name in ('sale.order', 'account.move')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/>.</span>
                                     <span>
                                         <br/>
                                         <b>IBAN : </b><span t-esc="company.partner_id.bank_ids[0].acc_number"/>
