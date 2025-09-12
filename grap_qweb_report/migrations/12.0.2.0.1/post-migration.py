@@ -17,7 +17,7 @@ def migrate(env, version):
         ORDER BY id;"""
     )
     company_datas = env.cr.fetchall()
-    for (company_id, company_name) in company_datas:
+    for company_id, company_name in company_datas:
         env.cr.execute(
             """
             SELECT ia.id

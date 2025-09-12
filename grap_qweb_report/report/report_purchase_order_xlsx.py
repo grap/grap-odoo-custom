@@ -121,7 +121,6 @@ class PurchaseOrderXlsx(models.AbstractModel):
         ]
 
     def _purchase_order_report(self, workbook, ws, ws_params, data, order_lines):
-
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
         ws.set_header(self.xls_headers["standard"])
