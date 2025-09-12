@@ -14,7 +14,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="border">3</field>
         <field name="extra_css_code">border-radius:10px;</field>
         <field name="html_text"><![CDATA[
-        <p><b>Attention</b>, change of RIB on January 1, 2022.</p>
+        <p><b>Warning</b>, change of RIB on January 1, 2022.</p>
         ]]></field>
     </record>
 
