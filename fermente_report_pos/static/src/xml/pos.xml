@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+
+<templates id="template" xml:space="preserve">
+
+    <!-- Extend ticket printed via Proxy-->
+    <t t-extend="XmlReceipt">
+
+        <t t-jquery="t[t-if='!taxincluded']" t-operation="replace">
+        </t>
+
+        <t t-jquery="t[t-if='taxincluded']" t-operation="replace">
+        </t>
+
+        <t t-jquery="line[class='total_foodprint_amount']" t-operation="replace">
+        </t>
+
+        <t t-jquery="div[class='before-footer']" t-operation="before">
+
+            <div>------------------------------------------</div>
+
+            <t t-if='receipt.tax_details_with_base'>
+                <line>
+                    <left>VAT</left>
+                    <left>______ Base</left>
+                    <right>Amount</right>
+                </line>
+                <line t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
+                    <left><t t-esc='line_tax.tax_name_with_underscore' /></left>
+                    <left><t t-esc='widget.format_currency(line_tax.base)' /></left>
+                    <right><t t-esc='widget.format_currency(line_tax.amount)' /></right>
+                </line>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.client'>
+                <div font='b'>
+                    Customer:
+                </div>
+                <div font='b'>
+                    <t t-esc='receipt.client' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.pricelist_default === false'>
+                <div font='b'>
+                    Pricelist:
+                </div>
+                <div font='b'>
+                    <t t-esc='receipt.pricelist_name' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.client and receipt.customer_wallet_balance'>
+                <div font='b'>
+                    Customer Wallet Balance:
+                </div>
+                <div font='b'>
+                    <t t-esc='widget.format_currency(receipt.customer_wallet_balance)' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+        </t>
+    </t>
+
+    <!-- Extend ticket printed without Proxy-->
+    <t t-extend="PosTicket">
+
+        <t t-jquery="t[t-foreach='order.get_tax_details()']" t-operation="replace">
+        </t>
+
+        <t t-jquery="table[class='receipt-customer-wallet-balance']" t-operation="replace">
+        </t>
+
+        <t t-jquery="t[t-if='receipt.footer']" t-operation="before">
+
+            <div>------------------------------------------</div>
+
+            <t t-if='receipt.tax_details_with_base'>
+                <table>
+                    <tr>
+                        <th>VAT</th>
+                        <th>Base</th>
+                        <th>Amount</th>
+                    </tr>
+                    <t t-foreach='receipt.tax_details_with_base' t-as='line_tax'>
+                        <tr>
+                            <td><t t-esc='line_tax.name' /></td>
+                            <td><t t-esc='widget.format_currency(line_tax.base)' /></td>
+                            <td><t t-esc='widget.format_currency(line_tax.amount)' /></td>
+                        </tr>
+                    </t>
+                </table>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.client'>
+                <div font='b'>
+                    Customer:
+                </div>
+                <div font='b'>
+                    <t t-esc='receipt.client' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.pricelist_default === false'>
+                <div font='b'>
+                    Pricelist:
+                </div>
+                <div font='b'>
+                    <t t-esc='receipt.pricelist_name' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
+            <t t-if='receipt.client and receipt.customer_wallet_balance'>
+                <div font='b'>
+                    Customer Wallet Balance:
+                </div>
+                <div font='b'>
+                    <t t-esc='widget.format_currency(receipt.customer_wallet_balance)' />
+                </div>
+                <div>------------------------------------------</div>
+            </t>
+
+        </t>
+
+    </t>
+
+</templates>
