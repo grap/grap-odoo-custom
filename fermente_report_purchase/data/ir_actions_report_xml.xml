@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="purchase.action_report_purchase_order" model="ir.actions.report">
+        <field name="print_report_name">
+            "Bon_de_commande__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <record id="purchase.report_purchase_quotation" model="ir.actions.report">
+        <field name="print_report_name">
+            "Demande_de_prix__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <report
+        id="purchase_order_xlsx"
+        model="purchase.order"
+        string="Purchase Order (XLSX)"
+        report_type="xlsx"
+        name="report_xlsx.purchase_order_xlsx"
+        print_report_name="'Bon_de_commande__%s__%s' % (
+                object.partner_id.name.replace('&quot;', '_').replace('\'', '_').replace('/', '_'),
+                object.name.replace('/', '_')
+            )"
+
+    />
+</odoo>

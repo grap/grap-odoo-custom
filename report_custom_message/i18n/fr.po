@@ -1,0 +1,190 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_custom_message
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-15 08:00+0000\n"
+"PO-Revision-Date: 2025-09-15 08:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Account Move"
+msgstr "Facture"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Advanced Edition"
+msgstr "Édition avancée"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__border
+msgid "Border"
+msgstr "Bordure"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__background_color
+msgid "Color"
+msgstr "Couleur"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__create_uid
+msgid "Created by"
+msgstr "Crée par"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__create_date
+msgid "Created on"
+msgstr "Crée le"
+
+#. module: report_custom_message
+#: model:ir.actions.act_window,name:report_custom_message.action_report_custom_message
+#: model:ir.ui.menu,name:report_custom_message.menu_report_custom_message
+msgid "Custom Messages"
+msgstr "Messages personnalisés"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_on_account_move
+msgid "Display On Account Invoice"
+msgstr "Afficher sur les Factures"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_on_purchase_order
+msgid "Display On Purchase Order"
+msgstr "Afficher sur les Bons de Commandes d'achat"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_on_sale_order
+msgid "Display On Sale Order"
+msgstr "Afficher sur les Bons de Commanes de vente"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_on_stock_picking
+msgid "Display On Stock Picking"
+msgstr "Afficher sur les Bons de Livraisons"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Display on"
+msgstr "Afficher sur"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__extra_css_code
+msgid "Extra Css Code"
+msgstr "Code CSS supplémentaire"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "HTML Code"
+msgstr "Code HTML"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__html_text
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "HTML Text"
+msgstr "Texte HTML"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__html_text_code
+msgid "HTML Text (Code View)"
+msgstr "Texte HTML (Vue du code)"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__height
+msgid "Height"
+msgstr "Hauteur"
+
+#. module: report_custom_message
+#: model:ir.model.fields,help:report_custom_message.field_report_custom_message__height
+msgid "Height of the message, expressed in pixel"
+msgstr "Hauteur du message, en pixel"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__id
+msgid "ID"
+msgstr ""
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__write_date
+msgid "Last Updated on"
+msgstr "Dernière modification sur"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Message"
+msgstr ""
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__name
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Preview"
+msgstr "Aperçu"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Purchase Order"
+msgstr "Bon de commande d'achat"
+
+#. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message_mixin__report_custom_message
+msgid "Report Custom Message"
+msgstr ""
+
+#. module: report_custom_message
+#: model:ir.model,name:report_custom_message.model_report_custom_message_mixin
+msgid "Report Custom Message Mixin"
+msgstr ""
+
+#. module: report_custom_message
+#: model:ir.model,name:report_custom_message.model_report_custom_message
+msgid "Report Custom Messages"
+msgstr ""
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Sale Order"
+msgstr "Bon de commande de vente"
+
+#. module: report_custom_message
+#: model:ir.model.fields,help:report_custom_message.field_report_custom_message__border
+msgid "Size of the border, expressed in pixel"
+msgstr "Taille de la bordure, en pixel"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "Stock Picking"
+msgstr "Bon de livraison"

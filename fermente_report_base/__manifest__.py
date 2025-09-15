@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "GRAP - Custom Qweb Reports",
+    "name": "Fermente - Custom Qweb Reports",
     "version": "16.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
@@ -12,17 +12,21 @@
     "license": "AGPL-3",
     "depends": [
         "web",
+        # OCA
+        "base_company_legal_info",
+        "l10n_fr_siret",
         # GRAP
+        "fiscal_company_base",
         "product_food_certification",
     ],
     "data": [
-        "security/ir.model.access.csv",
-        "views/view_report_custom_message.xml",
         "report/qweb_template_layout_standard.xml",
         "data/report_paperformat.xml",
     ],
-    "demo": [
-        "demo/report_custom_message.xml",
-    ],
+    "assets": {
+        "web.report_assets_common": [
+            "fermente_report_base/static/src/scss/**",
+        ],
+    },        
     "installable": True,
 }
