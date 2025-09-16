@@ -19,6 +19,10 @@
     "data": [
         "security/ir.model.access.csv",
         "views/view_report_custom_message.xml",
+        "report/qweb_template_account_invoice.xml",
+        "report/qweb_template_purchase_order.xml",
+        "report/qweb_template_sale_order.xml",
+        "report/qweb_template_stock_picking.xml",
     ],
     "demo": [
         "demo/report_custom_message.xml",
