@@ -1,9 +1,15 @@
 from odoo import _, models
 
+from odoo.addons.report_xlsx_helper.report.report_xlsx_format import (
+    FORMATS,
+    XLS_HEADERS,
+)
+
 
 class PurchaseOrderXlsx(models.AbstractModel):
     _name = "report.report_xlsx.purchase_order_xlsx"
     _inherit = "report.report_xlsx.abstract"
+    _description = "Report PurchaseOrder in XLSX"
 
     def _define_custom_formats(self, workbook, orders):
         currency = orders[0].currency_id
@@ -12,7 +18,7 @@ class PurchaseOrderXlsx(models.AbstractModel):
         currency_format = (
             f"{f'{s_before}'}#,##0.{'0' * currency.decimal_places}{f'{s_after}'}"
         )
-        self.format_currency_right = workbook.add_format(
+        FORMATS["format_currency_right"] = workbook.add_format(
             {"align": "right", "num_format": currency_format}
         )
 
@@ -37,7 +43,7 @@ class PurchaseOrderXlsx(models.AbstractModel):
         res = [
             {
                 "name": "product_code",
-                "header_name": _("product Code"),
+                "header_name": _("Product Code"),
                 "data": self._render(f"{supplierinfo_render}.product_code or ''"),
                 "width": 20,
             },
@@ -69,18 +75,18 @@ class PurchaseOrderXlsx(models.AbstractModel):
                 "name": "price_unit",
                 "header_name": _("Unit Price"),
                 "data": self._render("order_line.price_unit"),
-                "format": self.format_currency_right,
+                "format": FORMATS["format_currency_right"],
                 "width": 10,
             },
         ]
-        for i, field in enumerate(["discount", "discount2", "discount3"]):
+        for i, field in enumerate(["discount1", "discount2", "discount3"]):
             if any(order_lines.mapped(field)):
                 res.append(
                     {
                         "name": field,
                         "header_name": _("Discount %s %%" % (i + 1)),
                         "data": self._render(f"order_line.{field} /  100"),
-                        "format": self.format_tcell_percent_right,
+                        "format": FORMATS["format_tcell_percent_right"],
                         "width": 15,
                     }
                 )
@@ -89,7 +95,7 @@ class PurchaseOrderXlsx(models.AbstractModel):
                 "name": "price_subtotal",
                 "header_name": _("Price Subtotal VAT Excl."),
                 "data": self._render("order_line.price_subtotal"),
-                "format": self.format_currency_right,
+                "format": FORMATS["format_currency_right"],
                 "width": 20,
             }
         ]
@@ -123,8 +129,8 @@ class PurchaseOrderXlsx(models.AbstractModel):
     def _purchase_order_report(self, workbook, ws, ws_params, data, order_lines):
         ws.set_portrait()
         ws.fit_to_pages(1, 0)
-        ws.set_header(self.xls_headers["standard"])
-        ws.set_footer(self.xls_footers["standard"])
+        ws.set_header(XLS_HEADERS["xls_headers"]["standard"])
+        ws.set_footer(XLS_HEADERS["xls_footers"]["standard"])
 
         self._set_column_width(ws, ws_params)
 
@@ -135,7 +141,7 @@ class PurchaseOrderXlsx(models.AbstractModel):
             row_pos,
             ws_params,
             col_specs_section="header",
-            default_format=self.format_theader_yellow_left,
+            default_format=FORMATS["format_theader_yellow_left"],
         )
         ws.freeze_panes(row_pos, 0)
 
@@ -148,5 +154,5 @@ class PurchaseOrderXlsx(models.AbstractModel):
                 render_space={
                     "order_line": order_line,
                 },
-                default_format=self.format_tcell_left,
+                default_format=FORMATS["format_tcell_left"],
             )

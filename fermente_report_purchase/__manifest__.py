@@ -13,14 +13,15 @@
     "depends": [
         "purchase",
         # OCA
-        "report_xlsx",
+        "report_xlsx_helper",
+        "purchase_triple_discount",
         # GRAP
         "fermente_report_base",
         "report_custom_message",
     ],
     "data": [
+        "data/ir_actions_report.xml",
         "report/qweb_template_purchase_order.xml",
-        "data/report_paperformat.xml",
     ],
     "installable": True,
 }

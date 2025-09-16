@@ -13,9 +13,5 @@
     "depends": [
         "point_of_sale",
     ],
-    "data": [
-        "report/qweb_template_layout_standard.xml",
-        "data/report_paperformat.xml",
-    ],
     "installable": True,
 }
