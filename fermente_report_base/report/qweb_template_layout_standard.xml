@@ -107,7 +107,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                             </div>
                         </t>
 
-                        <!-- Classic company -->
+                        <!-- Change class according to company type → it adjusts CSS -->
                         <div t-attf-class="{specific_col} {company_type}">
                             <div t-if="company_type == 'classic'">
                                 <div><b><span t-esc="company.report_legal_description"/></b></div>
