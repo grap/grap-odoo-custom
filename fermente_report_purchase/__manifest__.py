@@ -12,11 +12,14 @@
     "license": "AGPL-3",
     "depends": [
         "purchase",
-        # Grap
+        # OCA
+        "report_xlsx",
+        # GRAP
+        "fermente_report_base",
         "report_custom_message",
     ],
     "data": [
-        "report/qweb_template_layout_standard.xml",
+        "report/qweb_template_purchase_order.xml",
         "data/report_paperformat.xml",
     ],
     "installable": True,
