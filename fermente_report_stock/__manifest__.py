@@ -15,9 +15,5 @@
         # Grap
         "report_custom_message",
     ],
-    "data": [
-        "report/qweb_template_layout_standard.xml",
-        "data/report_paperformat.xml",
-    ],
     "installable": True,
 }

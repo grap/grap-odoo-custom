@@ -13,7 +13,7 @@ class ProductProduct(models.Model):
     def _get_supplierinfo_from_purchase_order_line(self, order_line):
         self.ensure_one()
         supplierinfos = order_line.product_id.seller_ids.filtered(
-            lambda x: x.name == order_line.order_id.partner_id
+            lambda x: x.partner_id == order_line.order_id.partner_id
             and (not x.product_id or x.product_id == order_line.product_id)
         )
         if len(supplierinfos) <= 1:

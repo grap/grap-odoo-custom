@@ -12,15 +12,12 @@ class ReportCustomMessage(models.Model):
     name = fields.Char(required=True)
 
     height = fields.Float(
-        string="Height",
         default="30",
         required=True,
         help="Height of the message, expressed in pixel",
     )
 
-    border = fields.Float(
-        string="Border", default="1", help="Size of the border, expressed in pixel"
-    )
+    border = fields.Float(default="1", help="Size of the border, expressed in pixel")
 
     company_id = fields.Many2one(comodel_name="res.company", string="Company")
 
@@ -36,13 +33,13 @@ class ReportCustomMessage(models.Model):
         string="Color",
     )
 
-    html_text = fields.Text(string="HTML Text", required=True)
+    html_text = fields.Text(required=True)
 
     html_text_code = fields.Text(
         string="HTML Text (Code View)", related="html_text", readonly=False
     )
 
-    extra_css_code = fields.Char(string="Extra Css Code")
+    extra_css_code = fields.Char()
 
     message = fields.Text(compute="_compute_message")
 
