@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Fermente - Custom Qweb Reports",
+    "name": "Fermente - Report adjustements for Account",
     "version": "16.0.1.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
@@ -13,11 +13,12 @@
     "depends": [
         "account",
         # Grap
+        "fermente_report_base",
         "report_custom_message",
     ],
     "data": [
-        "report/qweb_template_layout_standard.xml",
-        "data/report_paperformat.xml",
+        "data/ir_actions_report.xml",
+        "report/qweb_template_account_invoice.xml",
     ],
     "installable": True,
 }

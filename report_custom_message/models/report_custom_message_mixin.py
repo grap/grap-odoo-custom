@@ -23,7 +23,7 @@ class ReportCustomMessageMixin(models.AbstractModel):
                     [("company_id", "child_of", [item.company_id.id])],
                 ]
             )
-            if self._name == "account.invoice":
+            if self._name == "account.move":
                 model_domain = ("display_on_account_move", "=", True)
             elif self._name == "purchase.order":
                 model_domain = ("display_on_purchase_order", "=", True)

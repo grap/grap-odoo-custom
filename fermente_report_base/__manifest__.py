@@ -27,6 +27,6 @@
         "web.report_assets_common": [
             "fermente_report_base/static/src/scss/**",
         ],
-    },        
+    },
     "installable": True,
 }
