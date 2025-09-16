@@ -11,11 +11,7 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "product",
-    ],
-    "data": [
-        "report/qweb_template_layout_standard.xml",
-        "data/report_paperformat.xml",
+        "product_label_report",
     ],
     "installable": True,
 }
