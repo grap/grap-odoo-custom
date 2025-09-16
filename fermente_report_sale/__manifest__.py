@@ -18,7 +18,6 @@
     ],
     "data": [
         "data/ir_actions_report.xml",
-        "report/qweb_template_sale_order.xml",
     ],
     "installable": True,
 }
