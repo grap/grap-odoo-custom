@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <record model="product.product" id="demo_product_farmhouse_bread">
+        <field name="name">Farmhouse bread</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+
+    <record model="product.product" id="demo_product_flour">
+        <field name="name">Flour</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record model="product.product" id="demo_product_salt">
+        <field name="name">Salt</field>
+        <field name="uom_id" ref="uom.product_uom_gram"/>
+        <field name="uom_po_id" ref="uom.product_uom_gram"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record model="product.product" id="demo_product_rye_levain">
+        <field name="name">Rye levain</field>
+        <field name="uom_id" ref="uom.product_uom_gram"/>
+        <field name="uom_po_id" ref="uom.product_uom_gram"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record model="product.product" id="demo_product_water">
+        <field name="name">Water</field>
+        <field name="uom_id" ref="uom.product_uom_kgm"/>
+        <field name="uom_po_id" ref="uom.product_uom_kgm"/>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record model="product.template" id="demo_product_template_farmhouse_bread">
+        <field name="name">Farmhouse bread</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+
+</odoo>
