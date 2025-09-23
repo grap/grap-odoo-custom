@@ -46,6 +46,7 @@ addon | version | maintainers | summary
 [fermente_web](fermente_web/) | 16.0.1.0.0 |  | Customize Odoo web User Interface
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.1 |  | Manage the various useful prints for Bill of Materials
+[mrp_bom_simulate_quantities](mrp_bom_simulate_quantities/) | 16.0.1.1.0 |  | MRP BoM Simulate Quantities
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.1 |  | MRP BoM Weight
 [mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.3.0 |  | Wizard linked to Bill of Materials to help your production.
 [mrp_business](mrp_business/) | 16.0.1.1.1 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
