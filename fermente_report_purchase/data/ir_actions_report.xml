@@ -25,7 +25,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     </record>
 
     <record id="purchase_order_xlsx" model="ir.actions.report">
-        <field name="name">Purchase Order (XLSX)</field>
+        <field name="name">Bon de commande (XLSX)</field>
         <field name="model">purchase.order</field>
         <field name="report_type">xlsx</field>
         <field name="report_name">report_xlsx.purchase_order_xlsx</field>
