@@ -1,58 +1,20 @@
 # Copyright (C) 2021 - Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+# @author: Quentin DUPONT
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-# from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-# @tagged("post_install", "-at_install")
-class TestModule(TransactionCase):
-    # def _render_html(self, xml_id_action, xml_id_item):
-    #     action = self.env.ref(xml_id_action)
-    #     item = self.env.ref(xml_id_item)
-    #     action.render_qweb_html(item.ids)
+class TestModule(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.stock1 = cls.env.ref("stock.outgoing_shipment_main_warehouse")
+        cls.report_model = cls.env["ir.actions.report"]
 
-    def _render(self, xml_id_action, xml_id_item):
-        action = self.env.ref(xml_id_action)
-        item = self.env.ref(xml_id_item)
-        action.render(item.ids)
-
-    def test_01_sale_order_report(self):
-        self._render("sale.action_report_saleorder", "sale.sale_order_1")
-
-    def test_02_purchase_order_report(self):
-        self._render(
-            "purchase.action_report_purchase_order", "purchase.purchase_order_1"
-        )
-        self._render("purchase.report_purchase_quotation", "purchase.purchase_order_1")
-        self._render(
-            "grap_qweb_report.purchase_order_xlsx", "purchase.purchase_order_1"
-        )
-
-    def test_03_stock_picking_report(self):
-        self._render(
-            "stock.action_report_picking", "stock.outgoing_shipment_main_warehouse"
-        )
-        self._render(
-            "stock.action_report_delivery", "stock.outgoing_shipment_main_warehouse"
-        )
-
-    def test_04_stock_inventory_report(self):
-        self._render("stock.action_report_inventory", "stock.stock_inventory_0")
-
-    def _test_05_account_invoice_report(self):
-        # TODO, make demo data. There are no demo invoices
-        pass
-
-    def test_06_product_product_report(self):
-        # Barcode report (without barcode)
-        self._render(
-            "grap_qweb_report.report_product_product_barcode_5",
-            "product_food.product_arachide_toaste",
-        )
-        # Barcode report (with barcode)
-        self._render(
-            "grap_qweb_report.report_product_product_barcode_5",
-            "point_of_sale.desk_organizer",
+    def test_01_stock_picking_report(self):
+        self.report_model._render("stock.action_report_picking", self.stock1.ids, False)
+        self.report_model._render(
+            "stock.action_report_delivery", self.stock1.ids, False
         )

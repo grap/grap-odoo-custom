@@ -9,31 +9,50 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="template_stock_delivery" inherit_id="stock.report_delivery_document" priority="1000">
 
-        <!-- Changement car si la description est trop longue
-             ça merdait en affichant pas les auttres champs-->
+        <!-- More friendly document name -->
         <xpath expr="//h2" position="replace">
             <h3>
                 <span>Bon de livraison n° </span><span t-field="o.name"/>
             </h3>
         </xpath>
 
-
-        <!-- STATE != DONE -->
-        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move.product_id']" position="attributes">
-              <attribute name="t-att-style">'display: none'</attribute>
-        </xpath>
-        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move.product_id']" position="after">
-                <span t-field="move.name"/>
-        </xpath>
-
-        <!-- STATE == DONE -->
-        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move_line.product_id']" position="attributes">
-              <attribute name="t-att-style">'display: none'</attribute>
-        </xpath>
-        <xpath expr="//table[hasclass('mt48')]//span[@t-field='move_line.product_id']" position="after">
-                <span t-field="move_line.move_id.name"/>
+        <!-- Stock pickings has several template due to "multiple conditionals" -->
+        <!-- Replaced product name and code by product description -->
+        <!-- 1st case : state != done -->
+        <xpath
+            expr="//table[@name='stock_move_table']//span[@t-field='move.product_id']"
+            position="replace"
+        >
+            <span t-field="move.product_id.name"/>
         </xpath>
 
     </template>
+
+    <!-- 2nd case -->
+    <template
+        id="fermente_stock_report_delivery_has_serial_move_line"
+        inherit_id="stock.stock_report_delivery_has_serial_move_line"
+        priority="1000"
+    >
+        <xpath
+            expr="//span[@t-field='move_line.product_id']"
+            position="replace"
+        >            <td>
+             <span t-field="move_line.product_id.name"/>
+            </td>
+        </xpath>
+    </template>
+
+    <!-- 3rd case : When state == done-->
+    <template
+        id="fermente_stock_report_delivery_aggregated_move_lines"
+        inherit_id="stock.stock_report_delivery_aggregated_move_lines"
+        priority="1000"
+    >
+        <xpath expr="//td[1]/span" position="replace">
+            <span t-esc="aggregated_lines[line]['product'].name"/>
+        </xpath>
+    </template>
+
 
 </odoo>
