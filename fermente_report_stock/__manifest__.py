@@ -12,8 +12,10 @@
     "license": "AGPL-3",
     "depends": [
         "stock",
-        # Grap
-        "report_custom_message",
+    ],
+    "data": [
+        "data/ir_actions_report.xml",
+        "report/qweb_template_stock_picking.xml",
     ],
     "installable": True,
 }
