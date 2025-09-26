@@ -14,7 +14,6 @@
         "account",
         # Grap
         "fermente_report_base",
-        "report_custom_message",
     ],
     "data": [
         "data/ir_actions_report.xml",

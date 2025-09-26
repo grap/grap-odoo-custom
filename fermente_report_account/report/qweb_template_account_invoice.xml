@@ -8,11 +8,9 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <template id="template_account_invoice" inherit_id="account.report_invoice_document" priority="1000">
 
-        <!-- DEPRECATED ? -->
-
         <!-- Changement car si la description est trop longue
-             ça merdait en affichant pas les auttres champs-->
-<!--         <xpath expr="//div[@id='informations']" position="replace">
+             ça merdait en affichant pas les autres champs-->
+        <xpath expr="//div[@id='informations']" position="replace">
             <div id="informations">
                 <div class="col-xs-10">
                     <table class="table table-sm">
@@ -26,16 +24,16 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </thead>
                         <tbody class="invoice_tbody">
                             <tr>
-                                <td t-if="o.invoice_date" class="col-xs-3">
+                                <td t-if="o.invoice_date" class="col-xs-3 text-center">
                                     <span t-field="o.invoice_date"/>
                                 </td>
-                                <td t-if="o.invoice_date_due" class="col-xs-3">
+                                <td t-if="o.invoice_date_due" class="col-xs-3 text-center">
                                     <span t-field="o.invoice_date_due"/>
                                 </td>
-                                <td t-if="o.name">
+                                <td t-if="o.name" class="col-xs-3 text-center">
                                     <span t-esc="o.name"/>
                                 </td>
-                                <td t-if="o.invoice_origin">
+                                <td t-if="o.invoice_origin" class="col-xs-3 text-center">
                                     <span t-esc="o.invoice_origin"/>
                                 </td>
                             </tr>
@@ -44,15 +42,18 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 </div>
             </div>
         </xpath>
- -->
-        <!-- DEPRECATED ? -->
+
 <!--
+        # Commenté en attendant de rebosser sérieusement sur le sujet
+        # des prix HT, TTC sur le prix unitaire, total autant sur
+        # Odoo que sur les PDF, dans account et sale
         <xpath expr="//t[@name='account_invoice_line_accountable']/td[hasclass('o_price_total')]" position="replace">
             <td class="text-right o_price_total">
                 <span t-field="line.price_total_displayed"/>
             </td>
         </xpath>
  -->
+
     </template>
 
 </odoo>

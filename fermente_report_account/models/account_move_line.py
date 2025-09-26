@@ -8,7 +8,9 @@ from odoo import models
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    # DEPRECATED ?
+    # Commenté en attendant de rebosser sérieusement sur le sujet
+    # des prix HT, TTC sur le prix unitaire, total autant sur
+    # Odoo que sur les PDF, dans account et sale
     # price_total_displayed = fields.Monetary(
     #     string="Amount (w / wo taxes)", compute="_compute_price_total_displayed"
     # )

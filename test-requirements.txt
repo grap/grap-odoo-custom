@@ -28,5 +28,9 @@ git+https://github.com/OCA/social@refs/pull/1587/head#subdirectory=setup/social_
 git+https://github.com/OCA/l10n-france@refs/pull/621/head#subdirectory=setup/l10n_fr_department
 
 # Placeholder for future PRs 4
+git+https://github.com/OCA/multi-company@refs/pull/674/head#subdirectory=setup/base_company_legal_info
+git+https://github.com/coopiteasy/addons@16.0#subdirectory=setup/product_label_report
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_food_certification
+
 
 # Placeholder for future PRs 5
