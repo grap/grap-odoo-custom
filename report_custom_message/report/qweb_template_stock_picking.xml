@@ -8,15 +8,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <template id="template_report_picking"  inherit_id="stock.report_picking">
-        <!-- Add Custom Message -->
+
         <xpath expr="//div[hasclass('page')]/h1/.." position="before">
             <t t-out="o.report_custom_message"/>
         </xpath>
+
     </template>
 
-    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document" priority="1000">
+    <template id="template_stock_delivery" inherit_id="stock.report_delivery_document">
 
-        <!-- Add Custom Message -->
         <xpath expr="//div[hasclass('page')]/h2/.." position="before">
             <t t-out="o.report_custom_message"/>
         </xpath>
