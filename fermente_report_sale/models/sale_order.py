@@ -9,9 +9,9 @@ class SaleOrder(models.Model):
     _name = "sale.order"
     _inherit = "sale.order"
 
-    def action_invoice_create(self, grouped=False, final=False):
+    def _create_invoices(self, grouped=False, final=False, date=None):
         if not grouped and len(self) > 1:
             return super(
                 SaleOrder, self.with_context(add_picking_date=True)
-            ).action_invoice_create(grouped=grouped, final=final)
-        return super().action_invoice_create(grouped=grouped, final=final)
+            )._create_invoices(grouped=grouped, final=final)
+        return super()._create_invoices(grouped=grouped, final=final)

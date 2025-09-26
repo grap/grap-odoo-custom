@@ -11,10 +11,10 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": [
-        "sale",
-        # Grap
+        "sale_management",
+        "stock",
+        # GRAP
         "fermente_report_base",
-        "report_custom_message",
     ],
     "data": [
         "data/ir_actions_report.xml",
