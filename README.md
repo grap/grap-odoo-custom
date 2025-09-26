@@ -36,7 +36,7 @@ addon | version | maintainers | summary
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.0 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.3.0.0 |  | Fermente - Point Of Sale
 [fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.2.0.0 |  | Fermente - Point Of Sale Restaurant
-[fermente_product](fermente_product/) | 16.0.3.0.0 |  | Fermente - Product
+[fermente_product](fermente_product/) | 16.0.3.0.1 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.2 |  | Fermente - Product Category Active
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.0 |  | Fermente - Product Margin Classification
 [fermente_project](fermente_project/) | 16.0.2.0.0 |  | Fermente - Project
