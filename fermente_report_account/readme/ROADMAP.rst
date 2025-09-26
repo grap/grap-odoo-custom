@@ -1,1 +1,1 @@
-* Maybe DEPRECATED changes commentend : header on PDF and taxes
+* Rebosser sur l'affichage des prix HT, TTC dans account_move_line
