@@ -1,6 +1,5 @@
-* Base module to change reports
+Custom module to improve Point of Sale reports
 
-* Set a default Document template for all companies. (``web.external_layout_standard``)
+Module adds Customer and Pricelist on order Receipt
 
-* Change the default footer and header for all the reports. (sale orders, invoices, ....)
-to add cooperative and organic legal informations
+.. figure:: ../static/description/OrderReceipt.png
