@@ -16,4 +16,9 @@
         "views/view_pos_config.xml",
         "views/menu.xml",
     ],
+    "assets": {
+        "point_of_sale.assets": [
+            "fermente_pos/static/src/scss/fermente_pos.scss",
+        ],
+    },
 }

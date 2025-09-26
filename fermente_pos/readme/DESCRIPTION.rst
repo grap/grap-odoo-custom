@@ -16,3 +16,7 @@ Customize Odoo / odoo / ``point_of_sale`` module.
 * Allow admin user to create new pos.config, via kanban view.
 
 * Allow non admin user to edit receipt header and footer.
+
+Customize ``point_of_sale`` Front End.
+
+* Make bigger the button to reset the search input field.
