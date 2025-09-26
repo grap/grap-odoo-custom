@@ -8,14 +8,14 @@ from odoo import models
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    def _prepare_invoice_line(self, qty):
-        res = super()._prepare_invoice_line(qty)
+    def _prepare_invoice_line(self, **optional_values):
+        values = super()._prepare_invoice_line(**optional_values)
 
         if self.env.context.get("add_picking_date", False) and self.move_ids:
             prefix = (
-                self.move_ids[0].date_expected
-                and self.move_ids[0].date_expected.strftime("%Y-%m-%d") + " - "
+                self.move_ids[0].date
+                and self.move_ids[0].date.strftime("%Y-%m-%d") + " - "
                 or ""
             )
-            res["name"] = prefix + res["name"]
-        return res
+            values["name"] = prefix + values["name"]
+        return values
