@@ -41,6 +41,7 @@ addon | version | maintainers | summary
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.0 |  | Fermente - Product Margin Classification
 [fermente_project](fermente_project/) | 16.0.2.0.0 |  | Fermente - Project
 [fermente_purchase](fermente_purchase/) | 16.0.2.0.0 |  | Fermente - Purchase
+[fermente_purchase_quick](fermente_purchase_quick/) | 16.0.1.0.0 |  | Add extra fields in quick purchase tree view
 [fermente_sale](fermente_sale/) | 16.0.2.1.0 |  | Fermente - Sale
 [fermente_stock](fermente_stock/) | 16.0.2.0.0 |  | Fermente - Stock
 [fermente_web](fermente_web/) | 16.0.1.0.0 |  | Customize Odoo web User Interface
