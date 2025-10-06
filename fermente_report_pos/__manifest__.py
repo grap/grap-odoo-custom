@@ -17,5 +17,5 @@
             "fermente_report_pos/static/src/xml/OrderReceipt.xml",
         ],
     },
-    "installable": True,    
+    "installable": True,
 }
