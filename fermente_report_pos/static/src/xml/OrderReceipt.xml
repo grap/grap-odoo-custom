@@ -24,7 +24,7 @@
             </t>
 
             <t t-if='receipt.pricelist_default === false'>
-                <div id="receipt_pricelist">     
+                <div id="receipt_pricelist">
                     <span class="pos-receipt-left-align">
                         Pricelist:
                     </span>

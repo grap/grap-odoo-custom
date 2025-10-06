@@ -10,12 +10,9 @@ odoo.define('fermente_report_pos.OrderReceipt', function (require) {
     const {Order} = require("point_of_sale.models");
     const Registries = require("point_of_sale.Registries");
 
-    var core = require("web.core");
-    var _t = core._t;
-
     const OverloadOrder = (OriginalOrder) =>
         class extends OriginalOrder {
-            
+
             export_for_printing() {
                 var receipt = super.export_for_printing(...arguments);
                 receipt.pricelist_id = this.pricelist.id;
