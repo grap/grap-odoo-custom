@@ -2,19 +2,44 @@
 <!--
 Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
 @author: Sylvain LE GAL
+@author: Quentin DUPONT
 License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
     <record id="view_hr_expense_form" model="ir.ui.view">
         <field name="model">hr.expense</field>
+        <field name="priority">100</field>
         <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
         <field name="arch" type="xml">
 
             <field name="reference" position="attributes">
                 <attribute name="groups" />
             </field>
+
+            <!-- Replace order description <-> expense category  -->
+            <xpath expr="//label[@for='product_id']" position="replace"/>
+            <xpath expr="//field[@name='product_id']/.." position="replace">
+                <field name="name" placeholder="e.g. Lunch with Customer" attrs="{'readonly': [('sheet_is_editable', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']" position="replace">
+                <label for="product_id"/>
+                <h1>
+                    <field name="product_id" required="1" attrs="{'readonly': [('sheet_is_editable', '=', False)]}"
+                       context="{'default_detailed_type': 'service', 'default_can_be_expensed': 1, 'tree_view_ref': 'hr_expense.product_product_expense_tree_view', 'form_view_ref': 'hr_expense.product_product_expense_form_view'}" class="w-50" placeholder="Choose expense product category" options="{'no_create': True}"/>
+                </h1>
+                <div class="fst-italic" attrs="{'invisible': ['|', ('product_description', '=', False), ('product_id', '=', False)]}">
+                    <field name="product_description"/>
+                </div>
+            </xpath>
+
         </field>
     </record>
+
+    <!-- Remove filter by default -->
+     <record id="hr_expense.hr_expense_actions_my_all" model="ir.actions.act_window">
+        <field name="context">{'search_default_my_expenses': 0}</field>
+    </record>
+
 
 </odoo>
