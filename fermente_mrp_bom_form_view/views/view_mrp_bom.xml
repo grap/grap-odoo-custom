@@ -7,9 +7,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <!-- ************************************************************ -->
-    <!-- MRP Bill of Materials - Form -->
+    <!-- MRP Bill of Materials - Tree -->
     <!-- ************************************************************ -->
 
+    <record id="view_fermente_mrp_bom_tree_base" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp.mrp_bom_tree_view" />
+        <field name="arch" type="xml">
+            <!-- Rename fields -->
+            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
+                <attribute name="string">Product</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- ************************************************************ -->
+    <!-- MRP Bill of Materials - Form -->
+    <!-- ************************************************************ -->
 
     <!-- ******** INHERIT BASE VIEW ************************************************ -->
     <record id="view_fermente_mrp_bom_form_base" model="ir.ui.view">
