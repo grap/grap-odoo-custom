@@ -12,7 +12,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record id="view_fermente_mrp_bom_tree_base" model="ir.ui.view">
         <field name="model">mrp.bom</field>
-        <field name="inherit_id" ref="mrp.mrp.mrp_bom_tree_view" />
+        <field name="inherit_id" ref="mrp.mrp_bom_tree_view" />
         <field name="arch" type="xml">
             <!-- Rename fields -->
             <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
