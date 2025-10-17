@@ -18,7 +18,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <!-- Ligne horizontale -->
             <div class="row zero_min_height">
                 <div class="col-sm-12">
-                    <div style="border-bottom: 1px solid grey;"/>
+                    <div class="border_footer_header"/>
                 </div>
             </div>
 
@@ -70,22 +70,31 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <!--Overwrite footer -->
         <!--                 -->
         <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
-            <div class="footer o_standard_footer">
+            <div class="o_company_#{company.id}_layout footer">
 
-                <div class="container">
+                <!-- Ligne horizontale -->
+                <div class="row zero_min_height">
+                    <div class="col-sm-12">
+                        <div class="border_footer_header"/>
+                    </div>
+                </div>
+
+                <!-- Set value to differentiate integrated and classic company -->
+                <t t-set="company_type" t-value="'integrated' if company.fiscal_company_id.id != company.id else 'classic'"/>
+                <t t-set="specific_col" t-value="'col-8' if company_type == 'integrated' else 'col-12'"/>
+
+                <div t-attf-class="{{company_type}} container fermente_footer">
                     <div class="row">
-                        <!-- Set value to differentiate integrated and classic company -->
-                        <t t-set="company_type" t-value="'integrated' if company.fiscal_company_id.id != company.id else 'classic'"/>
-                        <t t-set="specific_col" t-value="'col-8' if company_type == 'integrated' else 'col-12'"/>
+
                         <!-- Add "Parent company informations" for integrated company -->
                         <t t-if="company_type == 'integrated'">
-                            <div class="col-2 text-left" style="font-size:10px">
+                            <div class="col-2 text-left">
                                 <span t-esc="company.name"/><br/>
                                 est une activité de <br/>
-                                <img t-if="company.fiscal_company_id.logo" t-att-src="image_data_uri(company.fiscal_company_id.logo)" style="max-height: 45px;" alt="Logo"/>
+                                <img class="integrated_parent_logo" t-if="company.fiscal_company_id.logo" t-att-src="image_data_uri(company.fiscal_company_id.logo)" alt="Fiscal parent logo"/>
                             </div>
 
-                            <div class="col-2 text-left" style="font-size:10px">
+                            <div class="col-2 text-left">
                                 <div>
                                     <b><span t-esc="company.fiscal_company_id.report_legal_description"/></b>
                                 </div>
@@ -108,14 +117,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                         </t>
 
                         <!-- Change class according to company type → it adjusts CSS -->
-                        <div t-attf-class="{specific_col} {company_type}">
+                        <div t-attf-class="{{specific_col}} {{company_type}} fermente_footer_main">
                             <div t-if="company_type == 'classic'">
                                 <div><b><span t-esc="company.report_legal_description"/></b></div>
                             </div>
                             <div>
-                                <div t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.move', 'stock.picking')">
+                                <span t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.move', 'stock.picking')">
                                     Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
-                                </div>
+                                    <br/>
+                                </span>
                                 <span t-if="o._name in ('sale.order', 'account.move')">
                                     <span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>
                                     <br/><span>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name"/></b>. </span>
@@ -136,7 +146,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                     <b> - TVA intracommunautaire : </b><span t-esc="company.vat"/>
                             </span>
                             <div t-if="company.report_footer">
-                                <div><span t-esc="company.report_footer"/></div>
+                                <div><br/><span t-esc="company.report_footer"/></div>
                             </div>
                         </div>
                     </div>
