@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [fermente_hr_expense](fermente_hr_expense/) | 16.0.2.1.0 |  | Fermente - Human Ressources Expense
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.0.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.2.0 |  | Fermente - MRP
-[fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.0 |  | Fermente - MRP BoM Form View
+[fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.1 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.3.0.1 |  | Fermente - Point Of Sale
 [fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.2.0.0 |  | Fermente - Point Of Sale Restaurant
 [fermente_product](fermente_product/) | 16.0.3.0.1 |  | Fermente - Product

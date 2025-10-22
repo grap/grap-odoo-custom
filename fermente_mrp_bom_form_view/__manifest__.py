@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - MRP BoM Form View",
-    "version": "16.0.1.2.0",
+    "version": "16.0.1.2.1",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
