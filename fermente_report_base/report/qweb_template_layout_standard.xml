@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+
+    <template id="grap_external_layout" inherit_id="web.external_layout_standard" priority="1000">
+
+        <!--                 -->
+        <!--Overwrite header -->
+        <!--                 -->
+        <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
+            <div class="header" t-att-style="report_header_style">
+
+            <!-- Ligne horizontale -->
+            <div class="row zero_min_height">
+                <div class="col-sm-12">
+                    <div class="border_footer_header"/>
+                </div>
+            </div>
+
+                <!-- Affichage des information de la société -->
+                <div class="row">
+                    <div class="col-2 text-left">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px; max-width: 120px;" alt="Logo"/>
+                    </div>
+                    <div class="col-5 text-left">
+                        <br/>
+                        <div>
+                            <b><span t-esc="company.name"/></b>
+                        </div>
+                        <div>
+                        <span t-esc="company.street"/> <span t-esc="company.street2"/>
+                        </div>
+                        <div>
+                            <span t-esc="company.zip"/> <span t-esc="company.city"/>
+                        </div>
+                    </div>
+                    <div class="col-5 text-left">
+                        <br/>
+                        <div t-if="company.phone">
+                            <span t-esc="company.phone"/>
+                         </div>
+                        <div t-if="company.email">
+                            <span t-esc="company.email"/>
+                        </div>
+                        <div t-if="company.website">
+                            <span t-esc="company.website.replace('https://', '')"/>
+                        </div>
+                        <div t-if="company.report_header">
+                            <span style="font-style:italic; font-size:9px" t-esc="company.report_header"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ligne horizontale -->
+                <div class="row zero_min_height">
+                    <div class="col-sm-12">
+                        <div style="border-bottom: 1px solid grey;"/>
+                    </div>
+                </div>
+            </div>
+
+        </xpath>
+
+        <!--                 -->
+        <!--Overwrite footer -->
+        <!--                 -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
+            <div class="o_company_#{company.id}_layout footer">
+
+                <!-- Ligne horizontale -->
+                <div class="row zero_min_height">
+                    <div class="col-sm-12">
+                        <div class="border_footer_header"/>
+                    </div>
+                </div>
+
+                <!-- Set value to differentiate integrated and classic company -->
+                <t t-set="company_type" t-value="'integrated' if company.fiscal_company_id.id != company.id else 'classic'"/>
+                <t t-set="specific_col" t-value="'col-8' if company_type == 'integrated' else 'col-12'"/>
+
+                <div t-attf-class="{{company_type}} container fermente_footer">
+                    <div class="row">
+
+                        <!-- Add "Parent company informations" for integrated company -->
+                        <t t-if="company_type == 'integrated'">
+                            <div class="col-2 text-left">
+                                <span t-esc="company.name"/><br/>
+                                est une activité de <br/>
+                                <img class="integrated_parent_logo" t-if="company.fiscal_company_id.logo" t-att-src="image_data_uri(company.fiscal_company_id.logo)" alt="Fiscal parent logo"/>
+                            </div>
+
+                            <div class="col-2 text-left">
+                                <div>
+                                    <b><span t-esc="company.fiscal_company_id.report_legal_description"/></b>
+                                </div>
+                                <div>
+                                    <span t-esc="company.fiscal_company_id.street"/> <span t-esc="company.fiscal_company_id.street2"/>
+                                 </div>
+                                <div>
+                                    <span t-esc="company.fiscal_company_id.zip"/> <span t-esc="company.fiscal_company_id.city"/>
+                                 </div>
+                                <div t-if="company.fiscal_company_id.phone">
+                                    <span t-esc="company.fiscal_company_id.phone"/>
+                                 </div>
+                                <div t-if="company.fiscal_company_id.email">
+                                    <span t-esc="company.fiscal_company_id.email"/>
+                                </div>
+                                <div t-if="company.fiscal_company_id.website">
+                                    <span t-esc="company.fiscal_company_id.website.replace('https://', '')"/>
+                                </div>
+                            </div>
+                        </t>
+
+                        <!-- Change class according to company type → it adjusts CSS -->
+                        <div t-attf-class="{{specific_col}} {{company_type}} fermente_footer_main">
+                            <div t-if="company_type == 'classic'">
+                                <div><b><span t-esc="company.report_legal_description"/></b></div>
+                            </div>
+                            <div>
+                                <span t-if="len(company.certifier_organization_id) and o._name in ('sale.order', 'account.move', 'stock.picking')">
+                                    Tous les produits issus de l'agriculture biologique (AB) sont certifiés par <span t-esc="company.certifier_organization_id.name"/> <span t-esc="company.certifier_organization_id.code"/>
+                                    <br/>
+                                </span>
+                                <span t-if="o._name in ('sale.order', 'account.move')">
+                                    <span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>
+                                    <br/><span>Règlement par chèque à l'ordre de <b><span t-esc="company.fiscal_company_id.name"/></b>. </span>
+                                </span>
+                                <span t-if="len(company.partner_id.bank_ids)">
+                                    <span t-if="o._name in ('sale.order', 'account.move')">Règlement par virement sur le compte <span t-esc="company.partner_id.bank_ids[0].bank_name"/>.</span>
+                                    <span>
+                                        <br/>
+                                        <b>IBAN : </b><span t-esc="company.partner_id.bank_ids[0].acc_number"/>
+                                        <b> - SWIFT/BIC : </b><span t-esc="company.partner_id.bank_ids[0].bank_bic"/>
+                                    </span>
+                                </span>
+                            </div>
+                            <span t-if="company.siret">
+                                <b>SIRET : </b><span t-esc="company.siret"/>
+                            </span>
+                            <span t-if="company.vat">
+                                    <b> - TVA intracommunautaire : </b><span t-esc="company.vat"/>
+                            </span>
+                            <div t-if="company.report_footer">
+                                <div><br/><span t-esc="company.report_footer"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>

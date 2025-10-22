@@ -1,0 +1,41 @@
+<!--
+    Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+    @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<templates id="template" xml:space="preserve">
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+
+        <xpath expr="//div[hasclass('before-footer')]" t-operation="before">
+
+            <t t-if='receipt.partner'>
+                <div id="receipt_customer">
+                    <span class="pos-receipt-left-align">
+                        Customer:
+                    </span>
+                    <span class="pos-receipt-right-align">
+                        <t t-esc='receipt.partner.name' />
+                    </span>
+                    <br/>
+                    <div>-------------</div>
+
+                </div>
+            </t>
+
+            <t t-if='receipt.pricelist_default === false'>
+                <div id="receipt_pricelist">
+                    <span class="pos-receipt-left-align">
+                        Pricelist:
+                    </span>
+                    <span class="pos-receipt-right-align">
+                        <t t-esc='receipt.pricelist_name' />
+                    </span>
+                    <div>-----------</div>
+                </div>
+            </t>
+
+        </xpath>
+
+    </t>
+</templates>

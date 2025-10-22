@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fermente_report_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-25 05:21+0000\n"
+"PO-Revision-Date: 2025-09-25 05:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fermente_report_purchase
+#: model:ir.actions.report,print_report_name:fermente_report_purchase.purchase_order_xlsx
+msgid ""
+"\n"
+"            \"Bon_de_commande__%s__%s\" % (\n"
+"                object.partner_id.name.replace(\"'\",\"_\").replace('\"','').replace('/', '_'),\n"
+"                object.name.replace('/', '_')\n"
+"            )\n"
+"        "
+msgstr ""
+
+#. module: fermente_report_purchase
+#: model_terms:ir.ui.view,arch_db:fermente_report_purchase.template_purchaseorder
+msgid "<strong>Date prévue :</strong>"
+msgstr ""
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Description"
+msgstr ""
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Discount %s %%"
+msgstr "Remise %s %%"
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Price Subtotal VAT Excl."
+msgstr "Sous Total HT"
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Product Code"
+msgstr "Produit - Code"
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Product Name"
+msgstr "Produit - Nom frs"
+
+#. module: fermente_report_purchase
+#: model:ir.model,name:fermente_report_purchase.model_product_product
+msgid "Product Variant"
+msgstr "Variante de produit"
+
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: fermente_report_purchase
+#: model:ir.model,name:fermente_report_purchase.model_report_report_xlsx_purchase_order_xlsx
+msgid "Report PurchaseOrder in XLSX"
+msgstr ""
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Unit"
+msgstr "Unité"
+
+#. module: fermente_report_purchase
+#. odoo-python
+#: code:addons/fermente_report_purchase/report/report_purchase_order_xlsx.py:0
+#, python-format
+msgid "Unit Price"
+msgstr "Prix unitaire"

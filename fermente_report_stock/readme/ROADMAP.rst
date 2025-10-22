@@ -1,0 +1,1 @@
+Changes on future stock inventory report (don't exist at the moment)
