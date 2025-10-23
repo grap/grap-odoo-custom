@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ===========================
 MRP BoM Simulate Quantities
 ===========================
@@ -13,7 +17,7 @@ MRP BoM Simulate Quantities
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -22,10 +26,11 @@ MRP BoM Simulate Quantities
 
 |badge1| |badge2| |badge3|
 
-This module adds the possibilty to quickly simulate components quantities in order
-to know the quantity that can be produced for a BoM.
+This module adds the possibilty to quickly simulate components
+quantities in order to know the quantity that can be produced for a BoM.
 
-For example : a baker has 4 kg of flour and wants to know how many brad he can produce
+For example : a baker has 4 kg of flour and wants to know how many brad
+he can produce
 
 **Table of contents**
 
@@ -35,13 +40,17 @@ For example : a baker has 4 kg of flour and wants to know how many brad he can p
 Usage
 =====
 
-* The user goes to the dedicated tab
-* Writes a component quantity I has
-* Option : he can write a second quantity of a second product (or hide the option)
-* Odoo calculates the components quantities and BoM quantity, showing the limiting product if the second product has been filled
-* The user can export the BoM and BoM lines in CSV.
+- The user goes to the dedicated tab
+- Writes a component quantity I has
+- Option : he can write a second quantity of a second product (or hide
+  the option)
+- Odoo calculates the components quantities and BoM quantity, showing
+  the limiting product if the second product has been filled
+- The user can export the BoM and BoM lines in CSV.
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_simulate_quantities/static/description/mrp_bom_simulate_quantities.jpeg
+|image1|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_simulate_quantities/static/description/mrp_bom_simulate_quantities.jpeg
 
 Bug Tracker
 ===========
@@ -57,17 +66,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin Dupont (quentin.dupont@grap.coop)
+- Quentin Dupont (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/mrp_bom_simulate_quantities>`_ project on GitHub.
 

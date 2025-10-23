@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 =========================
 Product default route Buy
 =========================
@@ -13,7 +17,7 @@ Product default route Buy
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -24,7 +28,9 @@ Product default route Buy
 
 This module adds 'Buy' route to Product if it 'Can be Purchased'.
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/product_default_route_buy/static/description/product_purchase_ok.jpeg
+|image1|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/product_default_route_buy/static/description/product_purchase_ok.jpeg
 
 **Table of contents**
 
@@ -45,17 +51,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin Dupont (quentin.dupont@grap.coop)
+- Quentin Dupont (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/product_default_route_buy>`_ project on GitHub.
 

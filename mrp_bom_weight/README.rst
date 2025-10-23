@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==============
 MRP BoM Weight
 ==============
@@ -13,7 +17,7 @@ MRP BoM Weight
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -25,16 +29,20 @@ MRP BoM Weight
 Useful for users managing weight in their product and bills of material.
 Depends on mrp_bom_line_net_qty
 
-Calculate BoM line weight this way :
-- if product is a weightable product : weight is bom line weight
-- if product is a unit product : weight depends on quantity and product weight and net_weight
+Calculate BoM line weight this way : - if product is a weightable
+product : weight is bom line weight - if product is a unit product :
+weight depends on quantity and product weight and net_weight
 
-Then, it calculate BoM components total weight.
-For weightable BoM Product, it shows button to adjust BoM quantity if it's different from its components.
+Then, it calculate BoM components total weight. For weightable BoM
+Product, it shows button to adjust BoM quantity if it's different from
+its components.
 
-Works with differents unity of measures, works if you change BoM unity of measure etc.
+Works with differents unity of measures, works if you change BoM unity
+of measure etc.
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_weight/static/description/mrp_bom_weight.jpeg
+|image1|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_weight/static/description/mrp_bom_weight.jpeg
 
 **Table of contents**
 
@@ -55,17 +63,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin Dupont (quentin.dupont@grap.coop)
+- Quentin Dupont (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/mrp_bom_weight>`_ project on GitHub.
 

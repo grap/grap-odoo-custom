@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==============
 Fermente - CRM
 ==============
@@ -13,7 +17,7 @@ Fermente - CRM
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -24,13 +28,14 @@ Fermente - CRM
 
 Customize Odoo / odoo / ``crm`` module.
 
-* Display for members of ``sales_team.group_sale_salesman_all_leads``
+- Display for members of ``sales_team.group_sale_salesman_all_leads``
   the following menu entries:
-  * "CRM > Analysis"
-  * "CRM > Configuration"
 
-* Give access to ``crm.stage``, ``crm.tag`` and ``crm.lost.reason`` models
-  for members of ``sales_team.group_sale_salesman_all_leads``.
+  - "CRM > Analysis"
+  - "CRM > Configuration"
+
+- Give access to ``crm.stage``, ``crm.tag`` and ``crm.lost.reason``
+  models for members of ``sales_team.group_sale_salesman_all_leads``.
 
 **Table of contents**
 
@@ -51,17 +56,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_crm>`_ project on GitHub.
 
