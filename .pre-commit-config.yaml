@@ -119,3 +119,7 @@ repos:
       - id: pylint_odoo
         args:
           - --rcfile=.pylintrc-mandatory
+  - repo: https://github.com/jackdewinter/pymarkdown
+    rev: v0.9.32
+    hooks:
+      - id: pymarkdown
