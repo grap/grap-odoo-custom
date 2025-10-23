@@ -5,7 +5,7 @@
 {
     "name": "MRP BoM Print",
     "summary": "Manage the various useful prints for Bill of Materials",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.0.2",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

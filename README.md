@@ -17,7 +17,46 @@ This repository contains Odoo modules developped by the company GRAP for custom 
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[fermente_account](fermente_account/) | 16.0.2.2.1 |  | Fermente - Account
+[fermente_account_invoice_margin](fermente_account_invoice_margin/) | 16.0.1.0.2 |  | Fermente - Account Invoice Margin
+[fermente_account_invoice_triple_discount](fermente_account_invoice_triple_discount/) | 16.0.1.0.2 |  | Fermente - Account Invoice Triple Discount
+[fermente_account_menu_invoice_refund](fermente_account_menu_invoice_refund/) | 16.0.1.0.2 |  | Fermente - Account Menu Invoice Refund
+[fermente_account_move_name_sequence](fermente_account_move_name_sequence/) | 16.0.1.0.2 |  | Fermente - Account Move Name Sequence
+[fermente_base](fermente_base/) | 16.0.2.0.2 |  | Fermente - Base
+[fermente_cooperative_directory](fermente_cooperative_directory/) | 16.0.2.4.1 |  | Add Directories for companies and employees
+[fermente_crm](fermente_crm/) | 16.0.2.0.1 |  | Fermente - CRM
+[fermente_hr](fermente_hr/) | 16.0.3.0.2 |  | Fermente - Human Ressources
+[fermente_hr_expense](fermente_hr_expense/) | 16.0.2.2.1 |  | Fermente - Human Ressources Expense
+[fermente_main_menu](fermente_main_menu/) | 16.0.2.0.1 |  | Fermente - Main Menu
+[fermente_mrp](fermente_mrp/) | 16.0.1.2.1 |  | Fermente - MRP
+[fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.2 |  | Fermente - MRP BoM Form View
+[fermente_pos](fermente_pos/) | 16.0.3.0.2 |  | Fermente - Point Of Sale
+[fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.2.0.1 |  | Fermente - Point Of Sale Restaurant
+[fermente_product](fermente_product/) | 16.0.3.0.2 |  | Fermente - Product
+[fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.3 |  | Fermente - Product Category Active
+[fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
+[fermente_project](fermente_project/) | 16.0.2.0.1 |  | Fermente - Project
+[fermente_purchase](fermente_purchase/) | 16.0.2.0.1 |  | Fermente - Purchase
+[fermente_purchase_quick](fermente_purchase_quick/) | 16.0.1.0.1 |  | Add extra fields in quick purchase tree view
+[fermente_sale](fermente_sale/) | 16.0.2.1.1 |  | Fermente - Sale
+[fermente_stock](fermente_stock/) | 16.0.2.0.1 |  | Fermente - Stock
+[fermente_web](fermente_web/) | 16.0.1.0.1 |  | Customize Odoo web User Interface
+[fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.0.1 |  | Fermente - Web Environment Ribbon
+[mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.2 |  | Manage the various useful prints for Bill of Materials
+[mrp_bom_simulate_quantities](mrp_bom_simulate_quantities/) | 16.0.1.1.1 |  | MRP BoM Simulate Quantities
+[mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.2 |  | MRP BoM Weight
+[mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.3.1 |  | Wizard linked to Bill of Materials to help your production.
+[mrp_business](mrp_business/) | 16.0.1.1.2 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
+[mrp_sale_grouped](mrp_sale_grouped/) | 16.0.1.1.1 |  | Quickly manage what you need to produce thanks to grouped sales
+[product_default_route_buy](product_default_route_buy/) | 16.0.1.0.1 |  | Product default route Buy
+[product_default_route_mrp](product_default_route_mrp/) | 16.0.1.1.1 |  | Product default route MRP
+[product_maker](product_maker/) | 16.0.1.1.1 |  | Product Maker
+[server_environment_files](server_environment_files/) | 16.0.1.0.1 |  | Add custom CSS and extra text on PoS ticket depending on the environment
+[stock_product_replenish_ux](stock_product_replenish_ux/) | 16.0.1.0.1 |  | Stock Product Replenishment UX
 
 [//]: # (end addons)
 
