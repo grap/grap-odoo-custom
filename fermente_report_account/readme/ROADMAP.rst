@@ -1,1 +1,0 @@
-* Rebosser sur l'affichage des prix HT, TTC dans account_move_line

@@ -1,6 +1,10 @@
-==========================
-GRAP - Custom Qweb Reports
-==========================
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
+================================================
+Fermente - Report adjustements for Point of Sale
+================================================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -13,54 +17,40 @@ GRAP - Custom Qweb Reports
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
-    :target: https://github.com/grap/grap-odoo-custom/tree/12.0/grap_qweb_report
+    :target: https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_report_pos
     :alt: grap/grap-odoo-custom
 
 |badge1| |badge2| |badge3|
 
-* Set a default Document template for all companies. (``web.external_layout_standard``)
+Custom module to improve Point of Sale reports
 
-* change the default footer and header for all the reports. (sale orders, invoices, ....)
+Module adds Customer and Pricelist on order Receipt
 
-Reports Changes
----------------
+|image1|
 
-- Add a field ``price_total_displayed`` on ``account.invoice.line``, that will be the price subtotal
-  without taxes, if taxes are price excluded, or the price subtotal with taxes, if taxes are price included.
-  This field is displayed on the ``account.invoice`` report.
-
-- When generating invoices from delivered sale orders, add the date of the delivery for each
-  ``account.invoice.line``.
-
-- Add ``valuation`` on ``stock.inventory`` report.
-
-- Add a new ``product.print.category`` for ``product.product`` and associated qweb templates.
-
-* Add a new template for ``product.product`` to print sheet of barcodes.
-
-
-PoS Tickets changes
--------------------
-
-Add extra information on PoS Tickets.
-
-* Add detailled lines for taxes. (Name / Base / amount)
-* Add customer name
-* Add the pricelist name. (if not the default one)
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/fermente_report_pos/static/description/OrderReceipt.png
 
 **Table of contents**
 
 .. contents::
    :local:
 
-Known issues / Roadmap
-======================
+Changelog
+=========
 
-Adding ``valuation`` on ``stock.inventory`` should be done in the module ``stock_inventory_valuation``.
+16.0.1.0.0 (2025-09-26)
+-----------------------
+
+- Refactor and migrate from ``grap_qweb_report`` into
+  ``fermente_report``
+- Changes in OrderReceipt inheritance :
+
+  - VAT details are in new OCA module pos_receipt_vat_detail
+  - Customer Wallet Balance is in pos_customer_wallet module
 
 Bug Tracker
 ===========
@@ -68,7 +58,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/grap/grap-odoo-custom/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/grap/grap-odoo-custom/issues/new?body=module:%20grap_qweb_report%0Aversion:%2012.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/grap/grap-odoo-custom/issues/new?body=module:%20fermente_report_pos%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -76,19 +66,19 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin DUPONT <https://twitter.com/pondupont>
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Quentin DUPONT
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
-This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/12.0/grap_qweb_report>`_ project on GitHub.
+This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_report_pos>`_ project on GitHub.
 
 You are welcome to contribute.
