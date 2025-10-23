@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==========================================
 Fermente - Configuration Environment Files
 ==========================================
@@ -13,7 +17,7 @@ Fermente - Configuration Environment Files
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -22,18 +26,22 @@ Fermente - Configuration Environment Files
 
 |badge1| |badge2| |badge3|
 
-This module is a custom module for GRAP, using ``server_environmnent`` OCA
-modules.
+This module is a custom module for GRAP, using ``server_environmnent``
+OCA modules.
 
 It adds two settings, depending on the environment :
 
-* Custom css to clearly distinguish which server you are acting on
+- Custom css to clearly distinguish which server you are acting on
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/server_environment_files/static/description/login_page.png
+|image1|
 
-* messages on the Point of Sale Bill if the server is a non production server
+- messages on the Point of Sale Bill if the server is a non production
+  server
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/server_environment_files/static/description/point_of_sale_ticket.png
+|image2|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/server_environment_files/static/description/login_page.png
+.. |image2| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/server_environment_files/static/description/point_of_sale_ticket.png
 
 **Table of contents**
 
@@ -43,13 +51,14 @@ It adds two settings, depending on the environment :
 Configuration
 =============
 
-Open your ``odoo.cfg`` file and add the following lines, replacing ``RUNNING_ENV``
-value by the one the values : ``dev``, ``test``, ``prod`` or ``spare``.
+Open your ``odoo.cfg`` file and add the following lines, replacing
+``RUNNING_ENV`` value by the one the values : ``dev``, ``test``,
+``prod`` or ``spare``.
 
-.. code-block::
+.. code:: text
 
-    [options]
-    running_env = RUNNING_ENV
+   [options]
+   running_env = RUNNING_ENV
 
 Bug Tracker
 ===========
@@ -65,17 +74,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/server_environment_files>`_ project on GitHub.
 
