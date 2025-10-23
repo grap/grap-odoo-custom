@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2018 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="purchase.action_report_purchase_order" model="ir.actions.report">
+        <field name="print_report_name">
+            "Bon_de_commande__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <record id="purchase.report_purchase_quotation" model="ir.actions.report">
+        <field name="print_report_name">
+            "Demande_de_prix__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+    </record>
+
+    <record id="purchase_order_xlsx" model="ir.actions.report">
+        <field name="name">Bon de commande (XLSX)</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">report_xlsx.purchase_order_xlsx</field>
+        <field name="print_report_name">
+            "Bon_de_commande__%s__%s" % (
+                object.partner_id.name.replace("'","_").replace('"','').replace('/', '_'),
+                object.name.replace('/', '_')
+            )
+        </field>
+        <field name="binding_model_id" ref="purchase.model_purchase_order" />
+    </record>
+
+</odoo>
