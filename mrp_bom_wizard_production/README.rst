@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 =========================
 MRP BoM Wizard production
 =========================
@@ -13,7 +17,7 @@ MRP BoM Wizard production
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -22,31 +26,46 @@ MRP BoM Wizard production
 
 |badge1| |badge2| |badge3|
 
-Users selects Bill of Materials and launch wizard.
-Wizard permits to print a PDF Purchase with three tables :
-- reminder of quantities to prepare
-- table of intermediate products to produce
-- table of components products to purchase
+Users selects Bill of Materials and launch wizard. Wizard permits to
+print a PDF Purchase with three tables : - reminder of quantities to
+prepare - table of intermediate products to produce - table of
+components products to purchase
 
-You can choose some options : group products to order by category and/or display cost price.
+You can choose some options : group products to order by category and/or
+display cost price.
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_wizard.png
+|image1|
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_01.png
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_02.png
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_03.png
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_04.png
+|image2|
+
+|image3|
+
+|image4|
+
+|image5|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_wizard.png
+.. |image2| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_01.png
+.. |image3| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_02.png
+.. |image4| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_03.png
+.. |image5| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_bom_wizard_production/static/description/bom_purchase_printing_pdf_04.png
 
 **Table of contents**
 
 .. contents::
    :local:
 
+Configuration
+=============
+
+
+
 Known issues / Roadmap
 ======================
 
 - Button in wizard to create purchase and manufacturing orders ?
-- How to handle nested of nested boms ? At the moment, take one level into account
+- How to handle nested of nested boms ? At the moment, take one level
+  into account
 - Fix test04
 
 Bug Tracker
@@ -63,17 +82,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin Dupont (quentin.dupont@grap.coop)
+- Quentin Dupont (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/mrp_bom_wizard_production>`_ project on GitHub.
 

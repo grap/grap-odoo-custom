@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ========================
 Fermente - Point Of Sale
 ========================
@@ -13,7 +17,7 @@ Fermente - Point Of Sale
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -24,26 +28,23 @@ Fermente - Point Of Sale
 
 Customize Odoo / odoo / ``point_of_sale`` module.
 
-* Display for members of ``point_of_sale.group_pos_user``
-  the following menu entries:
-  * "Point Of Sale > Analysis"
-  * "Point Of Sale > Configuration"
+- Display for members of ``point_of_sale.group_pos_user`` the following
+  menu entries:
 
-* Allow non admin user to create ``pos.category`` elements.
+  - "Point Of Sale > Analysis"
+  - "Point Of Sale > Configuration"
 
-* Set 'Update quantities in stock' field of PoS config as 'Real Time', by default.
-
-* Add 'Available in PoS' field in the ``product.template`` tree view.
-
-* Add a lot of missing field on the simple pos.config form view.
-
-* Allow admin user to create new pos.config, via kanban view.
-
-* Allow non admin user to edit receipt header and footer.
+- Allow non admin user to create ``pos.category`` elements.
+- Set 'Update quantities in stock' field of PoS config as 'Real Time',
+  by default.
+- Add 'Available in PoS' field in the ``product.template`` tree view.
+- Add a lot of missing field on the simple pos.config form view.
+- Allow admin user to create new pos.config, via kanban view.
+- Allow non admin user to edit receipt header and footer.
 
 Customize ``point_of_sale`` Front End.
 
-* Make bigger the button to reset the search input field.
+- Make bigger the button to reset the search input field.
 
 **Table of contents**
 
@@ -64,17 +65,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_pos>`_ project on GitHub.
 

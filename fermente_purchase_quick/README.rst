@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 =========================
 Fermente - Purchase Quick
 =========================
@@ -13,7 +17,7 @@ Fermente - Purchase Quick
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -22,14 +26,17 @@ Fermente - Purchase Quick
 
 |badge1| |badge2| |badge3|
 
-This module extends the OCA ``purchase_quick`` module to add extra fields to display
-that comes from ``product_supplierinfo_qty_multiplier`` and
-``purchase_triple_discount`` modules.
+This module extends the OCA ``purchase_quick`` module to add extra
+fields to display that comes from
+``product_supplierinfo_qty_multiplier`` and ``purchase_triple_discount``
+modules.
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/fermente_purchase_quick/static/description/quick_purchase.png
+|image1|
 
-It also add a background red color warning, if quantity are not compliant with
-the supplier settings.
+It also add a background red color warning, if quantity are not
+compliant with the supplier settings.
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/fermente_purchase_quick/static/description/quick_purchase.png
 
 **Table of contents**
 
@@ -50,17 +57,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_purchase_quick>`_ project on GitHub.
 

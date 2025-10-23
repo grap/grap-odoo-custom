@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ====================
 MRP Business Modules
 ====================
@@ -13,7 +17,7 @@ MRP Business Modules
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -32,8 +36,10 @@ MRP methods that need to be tested before their own module
 Known issues / Roadmap
 ======================
 
-* Migrate mrp_meal_category in product_template
-* Create dedicated module mrp_bom_print + mrp_business = mrp_bom_report_allergen, see task [1249](https://erp.grap.coop/web#id=1249&action=2148&active_id=40&model=project.task&view_type=form&menu_id=1673)
+- Migrate mrp_meal_category in product_template
+- Create dedicated module mrp_bom_print + mrp_business =
+  mrp_bom_report_allergen, see task
+  [1249](https://erp.grap.coop/web#id=1249&action=2148&active_id=40&model=project.task&view_type=form&menu_id=1673)
 
 Bug Tracker
 ===========
@@ -49,17 +55,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin Dupont (quentin.dupont@grap.coop)
+- Quentin Dupont (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/mrp_business>`_ project on GitHub.
 

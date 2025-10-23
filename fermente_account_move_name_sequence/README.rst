@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 =====================================
 Fermente - Account Move Name Sequence
 =====================================
@@ -13,7 +17,7 @@ Fermente - Account Move Name Sequence
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -22,12 +26,12 @@ Fermente - Account Move Name Sequence
 
 |badge1| |badge2| |badge3|
 
-Customize OCA / account-financial-tools  / ``account_move_name_sequence`` module.
+Customize OCA / account-financial-tools / ``account_move_name_sequence``
+module.
 
-* Display in the journal tree view, the prefix of the related sequences.
-
-* when creating sequence from journal form view, set ``range_y`` instead of ``range_year``
-  by default.
+- Display in the journal tree view, the prefix of the related sequences.
+- when creating sequence from journal form view, set ``range_y`` instead
+  of ``range_year`` by default.
 
 **Table of contents**
 
@@ -48,17 +52,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_account_move_name_sequence>`_ project on GitHub.
 

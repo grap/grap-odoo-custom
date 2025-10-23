@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ===============
 Fermente - Sale
 ===============
@@ -13,7 +17,7 @@ Fermente - Sale
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -25,17 +29,18 @@ Fermente - Sale
 Customize Odoo / odoo / ``sale`` module. (and pseudo sales modules
 ``sales_team``, ``sale_management`` modules.)
 
-* Display for members of ``sales_team.group_sale_salesman_all_leads``
+- Display for members of ``sales_team.group_sale_salesman_all_leads``
   the following menu entries:
-  * "Sale > Analysis"
-  * "Sale > Configuration"
 
-* Give access to ``sale.order.template`` model (and related
-  ``sale.order.template.line`` and ``sale.order.template.option`` models)
-  for members of ``sales_team.group_sale_salesman_all_leads``.
+  - "Sale > Analysis"
+  - "Sale > Configuration"
 
-* On ``sale.order`` form:
-  * move fiscal position field from Other Info tab, to main form.
+- Give access to ``sale.order.template`` model (and related
+  ``sale.order.template.line`` and ``sale.order.template.option``
+  models) for members of ``sales_team.group_sale_salesman_all_leads``.
+- On ``sale.order`` form:
+
+  - move fiscal position field from Other Info tab, to main form.
 
 **Table of contents**
 
@@ -56,17 +61,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_sale>`_ project on GitHub.
 

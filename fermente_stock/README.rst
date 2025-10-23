@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ================
 Fermente - Stock
 ================
@@ -13,7 +17,7 @@ Fermente - Stock
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -24,12 +28,13 @@ Fermente - Stock
 
 Customize Odoo / odoo / ``stock`` module.
 
-* Display for members of ``stock.group_stock_user``
-  the following menu entries:
-  * "Inventory > Analysis"
+- Display for members of ``stock.group_stock_user`` the following menu
+  entries:
 
-* Change default type for ``product.template`` from ``consu`` (Consumable)
-  to ``product`` (Storable Product)
+  - "Inventory > Analysis"
+
+- Change default type for ``product.template`` from ``consu``
+  (Consumable) to ``product`` (Storable Product)
 
 **Table of contents**
 
@@ -50,17 +55,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/fermente_stock>`_ project on GitHub.
 

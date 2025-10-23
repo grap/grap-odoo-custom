@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==============================
 Stock Product Replenishment UX
 ==============================
@@ -13,7 +17,7 @@ Stock Product Replenishment UX
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -24,10 +28,13 @@ Stock Product Replenishment UX
 
 Improve UX for Product Replenishment based on v18 Odoo code :
 
-* Prefered route is set with default Route making clearer what will be produce with Confirm button
-* Adds a notification with MO / PO link created
+- Prefered route is set with default Route making clearer what will be
+  produce with Confirm button
+- Adds a notification with MO / PO link created
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/stock_product_replenish_ux/static/description/stock_product_replenish_create_po.png
+|image1|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/stock_product_replenish_ux/static/description/stock_product_replenish_create_po.png
 
 **Table of contents**
 
@@ -37,10 +44,11 @@ Improve UX for Product Replenishment based on v18 Odoo code :
 Known issues / Roadmap
 ======================
 
-Don't migrate this fucntion in v17 as it's native : 
+Don't migrate this fucntion in v17 as it's native :
 
-* Prefered route is set with default Route making clearer what will be produce with Confirm button
-* Adds a notification with MO / PO link created
+- Prefered route is set with default Route making clearer what will be
+  produce with Confirm button
+- Adds a notification with MO / PO link created
 
 Bug Tracker
 ===========
@@ -56,17 +64,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin DUPONT (quentin.dupont@grap.coop)
+- Quentin DUPONT (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/stock_product_replenish_ux>`_ project on GitHub.
 

@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ================================
 MRP Grouped Sales and Production
 ================================
@@ -13,7 +17,7 @@ MRP Grouped Sales and Production
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -22,28 +26,34 @@ MRP Grouped Sales and Production
 
 |badge1| |badge2| |badge3|
 
-Quickly manage sales and linked manufacturing orders.
-For example : a Week Production for a Bakery based on its Grocery sales.
+Quickly manage sales and linked manufacturing orders. For example : a
+Week Production for a Bakery based on its Grocery sales.
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped.png
+|image1|
 
-1 : Choose or create sales
-2 : Act on sales : adjust quantities with Matrix2D view, and confirme
-all at once
-3 : Quick buttons : Products without BoM, Sales, Manufacturing Orders
-4 : Print PDF that sum up sales by product and sale
-5 : Act on Manufacturing Orders
-6 : Handle your production with wizard assistant, you can handle what components
-you have to buy, intermediate and finished products you have to produce.
-See dedicated module mrp_wizard_production
+1 : Choose or create sales 2 : Act on sales : adjust quantities with
+Matrix2D view, and confirme all at once 3 : Quick buttons : Products
+without BoM, Sales, Manufacturing Orders 4 : Print PDF that sum up sales
+by product and sale 5 : Act on Manufacturing Orders 6 : Handle your
+production with wizard assistant, you can handle what components you
+have to buy, intermediate and finished products you have to produce. See
+dedicated module mrp_wizard_production
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/report_sales_sum_up.png
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped_sales_matrix2d.png
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped.jpeg
+|image2|
+
+|image3|
+
+|image4|
 
 Quickly see what's going on for your sales and production on tree view
 
-.. figure:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped_tree_view.jpeg
+|image5|
+
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped.png
+.. |image2| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/report_sales_sum_up.png
+.. |image3| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped_sales_matrix2d.png
+.. |image4| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped.jpeg
+.. |image5| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/mrp_sale_grouped/static/description/mrp_sale_grouped_tree_view.jpeg
 
 **Table of contents**
 
@@ -53,11 +63,12 @@ Quickly see what's going on for your sales and production on tree view
 Configuration
 =============
 
-* To use wizard production assistant, you need to create BoMs for your products
+- To use wizard production assistant, you need to create BoMs for your
+  products
 
-To handle Manufacturing orders with sales :
-* Since v13, you need to unarchive Route `Replenish on Order (MTO)`
-* Select MTO and Manufacture in your Products Routes (tab Inventory)
+To handle Manufacturing orders with sales : \* Since v13, you need to
+unarchive Route Replenish on Order (MTO) \* Select MTO and Manufacture
+in your Products Routes (tab Inventory)
 
 Bug Tracker
 ===========
@@ -73,17 +84,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Quentin Dupont (quentin.dupont@grap.coop)
+- Quentin Dupont (quentin.dupont@grap.coop)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/mrp_sale_grouped>`_ project on GitHub.
 
