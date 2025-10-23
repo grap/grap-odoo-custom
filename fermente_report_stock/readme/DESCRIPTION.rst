@@ -1,0 +1,1 @@
+* Custom module to change stock reports
