@@ -42,6 +42,13 @@ addon | version | maintainers | summary
 [fermente_project](fermente_project/) | 16.0.2.0.1 |  | Fermente - Project
 [fermente_purchase](fermente_purchase/) | 16.0.2.0.1 |  | Fermente - Purchase
 [fermente_purchase_quick](fermente_purchase_quick/) | 16.0.1.0.1 |  | Add extra fields in quick purchase tree view
+[fermente_report_account](fermente_report_account/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Account
+[fermente_report_base](fermente_report_base/) | 16.0.1.0.0 |  | Fermente - Custom Qweb Reports
+[fermente_report_pos](fermente_report_pos/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Point of Sale
+[fermente_report_product](fermente_report_product/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Product
+[fermente_report_purchase](fermente_report_purchase/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Purchase
+[fermente_report_sale](fermente_report_sale/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Sale
+[fermente_report_stock](fermente_report_stock/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Stock
 [fermente_sale](fermente_sale/) | 16.0.2.1.1 |  | Fermente - Sale
 [fermente_stock](fermente_stock/) | 16.0.2.0.1 |  | Fermente - Stock
 [fermente_web](fermente_web/) | 16.0.1.0.1 |  | Customize Odoo web User Interface
@@ -55,6 +62,7 @@ addon | version | maintainers | summary
 [product_default_route_buy](product_default_route_buy/) | 16.0.1.0.1 |  | Product default route Buy
 [product_default_route_mrp](product_default_route_mrp/) | 16.0.1.1.1 |  | Product default route MRP
 [product_maker](product_maker/) | 16.0.1.1.1 |  | Product Maker
+[report_custom_message](report_custom_message/) | 16.0.1.0.0 |  | Fermente - Custom Message on Reports
 [server_environment_files](server_environment_files/) | 16.0.1.0.1 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_product_replenish_ux](stock_product_replenish_ux/) | 16.0.1.0.1 |  | Stock Product Replenishment UX
 
