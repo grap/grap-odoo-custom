@@ -17,7 +17,7 @@ Fermente - Configuration Environment Files
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
-    :target: https://github.com/grap/grap-odoo-custom/tree/16.0/server_environment_files
+    :target: https://github.com/grap/grap-odoo-custom/tree/18.0/server_environment_files
     :alt: grap/grap-odoo-custom
 
 |badge1| |badge2| |badge3|
@@ -36,8 +36,8 @@ It adds two settings, depending on the environment :
 
 |image2|
 
-.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/server_environment_files/static/description/login_page.png
-.. |image2| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/server_environment_files/static/description/point_of_sale_ticket.png
+.. |image1| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/18.0/server_environment_files/static/description/login_page.png
+.. |image2| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/18.0/server_environment_files/static/description/point_of_sale_ticket.png
 
 **Table of contents**
 
@@ -56,13 +56,33 @@ Open your ``odoo.cfg`` file and add the following lines, replacing
    [options]
    running_env = RUNNING_ENV
 
+Known issues / Roadmap
+======================
+
+Create a ``server_environment_files_pos`` module, once
+``pos_environment`` module will be migrated in V18.0 and restore in that
+module the inheritance of this view.
+
+.. code:: xml
+
+   <template id="point_of_sale_index" inherit_id="point_of_sale.index">
+       <xpath expr="." position="inside">
+           <t t-set="point_of_sale_index_path"
+               t-value="request.env['ir.config_parameter'].sudo()
+               .get_param('point_of_sale_index_path', None)" />
+           <link t-if="point_of_sale_index_path"
+               rel="stylesheet"
+               t-att-href="point_of_sale_index_path"/>
+       </xpath>
+   </template>
+
 Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues <https://github.com/grap/grap-odoo-custom/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/grap/grap-odoo-custom/issues/new?body=module:%20server_environment_files%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/grap/grap-odoo-custom/issues/new?body=module:%20server_environment_files%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -82,6 +102,6 @@ Contributors
 Maintainers
 -----------
 
-This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/server_environment_files>`_ project on GitHub.
+This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/18.0/server_environment_files>`_ project on GitHub.
 
 You are welcome to contribute.

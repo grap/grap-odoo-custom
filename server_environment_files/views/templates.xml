@@ -21,11 +21,4 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </xpath>
     </template>
 
-    <template id="point_of_sale_index" inherit_id="point_of_sale.index">
-        <xpath expr="." position="inside">
-            <t t-set="point_of_sale_index_path" t-value="request.env['ir.config_parameter'].sudo().get_param('point_of_sale_index_path', None)" />
-            <link t-if="point_of_sale_index_path" rel="stylesheet" t-att-href="point_of_sale_index_path"/>
-        </xpath>
-    </template>
-
 </odoo>

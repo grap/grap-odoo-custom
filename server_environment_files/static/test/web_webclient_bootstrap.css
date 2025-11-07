@@ -1,5 +1,5 @@
-/*Background of the kanban,tree views*/
-.o_view_controller {
+/*Background of the kanban,tree views and form views*/
+.o_renderer,.o_form_renderer {
     background-color:#AAFFAA !important;
 }
 
