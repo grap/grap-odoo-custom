@@ -26,3 +26,6 @@ repo_website: https://github.com/grap/grap-odoo-custom
 use_pyproject_toml: false
 use_ruff: true
 
+convert_readme_fragments_to_markdown: true
+odoo_test_flavor: Odoo
+use_ruff: true
