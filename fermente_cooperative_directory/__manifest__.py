@@ -6,7 +6,7 @@
 {
     "name": "Fermente - Cooperative Directory",
     "summary": "Add Directories for companies and employees",
-    "version": "16.0.2.4.1",
+    "version": "16.0.3.0.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -23,8 +23,8 @@
         "res_company_active",
         "res_company_category",
         "res_company_code",
-        "social_media_mastodon",
-        "social_media_gitlab",
+        "res_company_mastodon_link",
+        "res_company_gitlab_link",
         "web_view_leaflet_map",
         # GRAP
         "fiscal_company_base",

@@ -23,8 +23,6 @@ git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_l
 
 # Placeholder for future PRs 3
 git+https://github.com/OCA/hr@refs/pull/1421/head#subdirectory=setup/hr_employee_firstname_partner_firstname
-git+https://github.com/OCA/social@refs/pull/1586/head#subdirectory=setup/social_media_gitlab
-git+https://github.com/OCA/social@refs/pull/1587/head#subdirectory=setup/social_media_mastodon
 git+https://github.com/OCA/l10n-france@refs/pull/621/head#subdirectory=setup/l10n_fr_department
 
 # Placeholder for future PRs 4
