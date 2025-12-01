@@ -198,7 +198,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
     <record id="view_res_company_kanban_directory" model="ir.ui.view">
         <field name="model">res.company</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban create="False">
                 <field name="id"/>
                 <field name="fiscal_type"/>
                 <field name="logo_web"/>
