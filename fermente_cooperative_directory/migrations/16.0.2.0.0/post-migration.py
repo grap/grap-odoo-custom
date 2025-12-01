@@ -22,6 +22,8 @@ def _create_hr_employee_from_grap_people(env):
         if not row["company_id"]:
             continue
 
+        # We don't recover private information
+        # (private_phone / address)
         vals = {
             "firstname": row["first_name"],
             "lastname": row["last_name"],
@@ -31,13 +33,19 @@ def _create_hr_employee_from_grap_people(env):
             "birthday": row["birthdate"],
         }
 
-        # TODO
-        # grap_people.private_phone-> hr_employee.address_home_id.mobile / phone
-        # grap_people.addresse -> hr_employee.address_home_id
-
         if row["working_email"]:
             user = (
-                env["res.users"].sudo().search([("email", "=", row["working_email"])])
+                env["res.users"]
+                .sudo()
+                .search(
+                    [
+                        ("login", "not ilike", "-eboutique"),
+                        ("login", "not ilike", "_caisse"),
+                        ("login", "not ilike", "-TI"),
+                        ("email", "=", row["working_email"]),
+                    ]
+                )
+                .filtered(lambda x: len(x.login) != 3)
             )
             if len(user) == 1:
                 vals["user_id"] = user.id
@@ -58,7 +66,9 @@ def _create_hr_employee_from_grap_people(env):
 
         if attachment:
             _logger.info(
-                f"Transfer image from grap.people#{row['id']}"
+                f"Transfer image (#{attachment.id})"
+                f"from grap.people#{row['id']}"
+                f" ({row['first_name']} / {row['last_name']}) "
                 f" to new hr.employee#{employee.id} ..."
             )
             attachment.write(
