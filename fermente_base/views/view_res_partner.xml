@@ -15,4 +15,17 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+        <record id="view_res_partner_form" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                 <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="autofocus">autofocus</attribute>
+                    </xpath>
+                 <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="autofocus"></attribute>
+                    </xpath>
+            </field>
+        </record>
+
 </odoo>
