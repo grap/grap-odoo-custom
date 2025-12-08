@@ -34,6 +34,7 @@
         "security/res_groups.xml",
         "security/ir.model.access.csv",
         "views/menu.xml",
+        "views/view_hr_employee.xml",
         "views/view_hr_employee_global.xml",
         "views/view_res_company.xml",
         "views/view_res_company_category.xml",

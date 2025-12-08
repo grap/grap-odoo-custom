@@ -28,10 +28,32 @@ Fermente - Cooperative Directory
 
 Manage people, companies, members of the cooperative.
 
+The members of the cooperative are based on ``hr.employee`` table.
+
+The companies are based on the ``res.company`` table.
+
 **Table of contents**
 
 .. contents::
    :local:
+
+Configuration
+=============
+
+Go to "Employees > Employees"
+
+A new checkbox is available to hide employees.
+
+|hr_employee_form|
+
+Go to "Settings > Companies"
+
+A new checkbox is available to hide companies.
+
+|res_company_form|
+
+.. |hr_employee_form| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/fermente_cooperative_directory/static/description/hr_employee_form.png
+.. |res_company_form| image:: https://raw.githubusercontent.com/grap/grap-odoo-custom/16.0/fermente_cooperative_directory/static/description/res_company_form.png
 
 Bug Tracker
 ===========
