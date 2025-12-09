@@ -9,10 +9,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <!-- ************************************************************ -->
     <!-- Hide standard menu -->
+    <!-- Change Icon -->
     <!-- ************************************************************ -->
     <menuitem id="mrp.menu_mrp_bom"
         parent="mrp.menu_mrp_root"
         groups="base.group_no_one"/>
+
+
+    <menuitem id="mrp.menu_mrp_root"
+        web_icon="fermente_mrp,static/src/img/icon.png"/>
 
     <!-- ************************************************************ -->
     <!-- Bill of Materials - Menus for Generic fermente View -->
