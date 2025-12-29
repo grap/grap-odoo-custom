@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_food_menu_wizard_purchase_order" model="ir.ui.view">
+        <field name="model">food.menu.wizard.purchase.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <group col="12">
+                  <group string="Informations on PDF" colspan="6">
+                      <field name="option_production_date"/>
+                  </group>
+                </group>
+                <group string="Choose the products categories for which you want to split the purchase orders " col="12">
+                </group>
+                <footer>
+<!--                     <button name="print_report" string="Launch Purchase Orders" type="object" icon="fa-print" class="oe_highlight"/>
+ -->
+                  <button icon="fa-ban" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

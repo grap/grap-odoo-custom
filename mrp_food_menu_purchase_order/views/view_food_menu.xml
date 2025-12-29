@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT (quentin.dupont@grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- Action record -->
+    <record id="action_food_menu_to_purchase_order" model="ir.actions.act_window">
+        <field name="name">purchases Orders</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('id', 'in', context.get('ctx_purchase_order_ids',False))]</field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_mrp_food_menu_purchase_order_menu_form" model="ir.ui.view">
+        <field name="model">mrp.food.menu</field>
+        <field name="inherit_id" ref="mrp_food_menu.view_food_menu_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                   <button type="action" string="Launch purchase orders"
+                          name="%(action_food_menu_purchase_order)d"
+                          icon="fa-dollar" context="{'food_menu':True}"
+                          class="oe_highlight"/>
+                </header>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="purchase_order_ids" invisible="1"/>
+                <button type="action" name="%(action_food_menu_to_purchase_order)d" class="oe_stat_button" icon="fa-dollar" attrs="{'invisible': [('purchase_order_count', '=', 0)]}" context="{'ctx_purchase_order_ids': purchase_order_ids}">
+                    <div class="o_field_widget o_stat_info">
+                        <span><field name="purchase_order_count" widget="statinfo" nolabel="1"/></span>
+                        <span class="o_stat_text">purchases Orders</span>
+                    </div>
+                </button>
+            </xpath>
+
+            <!-- Food Menu Lines -->
+            <field name="product_id" position="before">
+                <field name="planned_date" optional="show"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

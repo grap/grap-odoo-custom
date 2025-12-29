@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mrp_food_menu_purchase_order.access_food_menu_wizard_purchase_order,access_food_menu_wizard_purchase_order,mrp_food_menu_purchase_order.model_food_menu_wizard_purchase_order,base.group_user,1,1,1,1
