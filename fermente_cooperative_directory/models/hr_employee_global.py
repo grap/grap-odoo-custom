@@ -2,10 +2,10 @@
 # @author: Quentin DUPONT (quentin.dupont@grap.coop)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models, tools
+from odoo import api, fields, models
 
 
-class ResCompany(models.Model):
+class HrEmployeeGlobal(models.Model):
     _name = "hr.employee.global"
     _description = "Public HR employees Data"
     _auto = False
@@ -78,6 +78,10 @@ class ResCompany(models.Model):
         string="Email (Private)", groups="hr.group_hr_manager"
     )
 
+    @property
+    def _table_query(self):
+        return f"{self._select()} {self._from()} {self._where()}"
+
     @api.model
     def _select(self):
         return """
@@ -107,18 +111,7 @@ class ResCompany(models.Model):
     def _from(self):
         return """FROM hr_employee"""
 
-    def _join(self):
-        return """"""
-
-    def init(self):
-        tools.drop_view_if_exists(self.env.cr, self._table)
-
-        self.env.cr.execute(
-            f"""
-            CREATE OR REPLACE VIEW {self._table} AS (
-                {self._select()}
-                {self._from()}
-                {self._join()}
-            )
+    def _where(self):
+        return """
+            WHERE hr_employee.is_displayed_in_directory = true
         """
-        )
