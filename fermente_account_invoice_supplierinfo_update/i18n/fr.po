@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fermente_account_invoice_supplierinfo_update
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-06 11:35+0000\n"
+"PO-Revision-Date: 2026-01-06 11:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Disc. 1 (%)"
+msgstr "Rem. 1 (%)"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Disc. 2 (%)"
+msgstr "Rem. 2 (%)"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model:ir.model.fields,field_description:fermente_account_invoice_supplierinfo_update.field_wizard_update_invoice_supplierinfo_line__has_uom_different
+msgid "Has Uom Different"
+msgstr "A une unité différente"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Min. Qty."
+msgstr "Min. Qté."
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Mult. Qty."
+msgstr "Cond."
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New Disc. 1 (%)"
+msgstr "Nouvelle Rem. 1"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New Disc. 2 (%)"
+msgstr "Nouvelle Rem. 2"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New Min. Qty."
+msgstr "Nouvelle Qté Min."
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New Mult. Qty."
+msgstr "Nouveau Cond."
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New SP"
+msgstr "Nouveau coût"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New U.P."
+msgstr "Nouveau PU"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "New UoM"
+msgstr "Nouvelle UdM"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "SP"
+msgstr "PU"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model:ir.model.fields,field_description:fermente_account_invoice_supplierinfo_update.field_wizard_update_invoice_supplierinfo_line__smart_search
+msgid "Smart Search"
+msgstr ""
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "U.P."
+msgstr "P.U"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "UoM"
+msgstr "UdM"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
+msgid "Update Supplier Informations"
+msgstr "Mettre à jour les infos fournisseur·ses"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model:ir.model,name:fermente_account_invoice_supplierinfo_update.model_wizard_update_invoice_supplierinfo_line
+msgid "Wizard Line to update supplierinfo"
+msgstr "Ligne d'assistant pour mettre à jour les informations fournisseurs"
