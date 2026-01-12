@@ -5,6 +5,7 @@ git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/mrp_bom_p
 git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/product_label
 git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/hr_direct_address_home
 git+https://github.com/grap/odoo-addons-cae@16.0#subdirectory=setup/fiscal_company_base
+git+https://github.com/grap/grap-odoo-business@16.0#subdirectory=setup/account_invoice_supplierinfo_update_standard_price
 
 # OCA Pending PR
 
