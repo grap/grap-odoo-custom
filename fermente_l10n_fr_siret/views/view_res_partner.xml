@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: Quentin DUPONT (http://www.grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <!-- Move SIRET fields to be more visible -->
+    <record id="view_fermente_res_partner_l10n_fr_siret_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_fr_siret.res_partner_form_l10n_fr" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field
+                    name="siren"
+                    attrs="{'readonly': [('parent_id', '!=', False)], 'invisible': [('is_company', '=', False), ('parent_is_company', '=', False)]}"
+                />
+                <field
+                    name="nic"
+                    attrs="{'invisible': [('is_company', '=', False), ('parent_is_company', '=', False)]}"
+                />
+                <field name="siret" attrs="{'readonly': [('parent_id', '!=', False)], 'invisible': [('is_company', '=', False), ('parent_is_company', '=', False)]}" placeholder="SIREN + NIC"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Hide original SIRET fields -->
+    <record id="view_fermente_res_partner_l10n_fr_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_fr_siret.res_partner_form_l10n_fr" />
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='misc']//field[@name='siret']" position="replace"/>
+            <xpath expr="//group[@name='misc']//field[@name='siren']" position="replace"/>
+            <xpath expr="//group[@name='misc']//field[@name='nic']" position="replace"/>
+        </field>
+    </record>
+
+</odoo>

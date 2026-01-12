@@ -5,6 +5,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <!-- SEARCH VIEW -->
     <record id="view_res_partner_search" model="ir.ui.view">
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter" />
