@@ -41,7 +41,6 @@
         "grap_change_views_mrp",
         "fiscal_company_product",
         "recurring_consignment",
-        "product_to_scale_bizerba",
         "sale_eshop",
         "product_food",
         "product_food_certification",

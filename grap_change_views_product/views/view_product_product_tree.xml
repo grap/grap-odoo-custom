@@ -218,7 +218,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="margin_classification_id"/>
                 <field name="print_category_id"/>
                 <field name="pos_categ_id" groups="point_of_sale.group_pos_user"/>
-                <field name="scale_group_id" groups="product_to_scale_bizerba.group_user"/>
                 <field name="eshop_category_id" groups="sale_eshop.res_groups_eshop_user"/>
                 <field name="company_id" groups="base.group_multi_company" readonly="1"/>
             </tree>
@@ -311,61 +310,6 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         parent="menu_product_product_editable_view" sequence="10"
         groups="point_of_sale.group_pos_user"
         action="action_product_product_pos"/>
-
-<!-- ************************************************************ -->
-<!-- 11 - Products (Scale View) -->
-<!-- ************************************************************ -->
-
-    <record id="view_product_product_tree_scale" model="ir.ui.view">
-        <field name="model">product.product</field>
-        <field name="arch" type="xml">
-            <tree editable="bottom" create="false">
-                <field name="default_code" readonly="1"/>
-                <button name="see_current_product" type="object" string="↗️"/>
-                <field name="name" readonly="1"/>
-                <field name="scale_group_id"/>
-                <field name="tare_weight"/>
-                <field name="barcode_rule_id"
-                    domain="[('generate_model', '=', 'product.product')]"
-                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
-                <field name="generate_type" invisible="1"/>
-                <field name="barcode_base" attrs="{
-                    'invisible': [('barcode_rule_id', '=', False)],
-                    'readonly': [('generate_type', '!=', 'manual')]}"
-                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
-                <button name="generate_base" type="object" string="Generate Base (Using Sequence)" attrs="{'invisible': ['|',
-                    ('generate_type', '!=', 'sequence'),
-                    ('barcode_base', '!=', 0)]}"
-                    icon="gtk-execute"
-                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
-                <field name="barcode"
-                    attrs ="{'readonly': [('generate_type', '=', 'sequence')]}" />
-                <button name="generate_barcode" type="object" string="Generate Barcode (Using Barcode Rule)"
-                    icon="gtk-execute"
-                    attrs="{'invisible': ['|',
-                            ('barcode_rule_id', '=', False),
-                            ('barcode_base', '=', 0)]}"
-                    groups="barcodes_generator_abstract.generate_barcode" colspan="2"/>
-                <field name="company_id" groups="base.group_multi_company" readonly="1"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="action_product_product_scale" model="ir.actions.act_window">
-        <field name="name">Products (Scale)</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">product.product</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree</field>
-        <field name="view_id" ref="view_product_product_tree_scale"/>
-        <field name="context">{"search_default_filter_to_sell":1}</field>
-    </record>
-
-    <menuitem id="menu_product_product_scale"
-        name="Products (Scale)"
-        parent="menu_product_product_editable_view" sequence="11"
-        groups="product_to_scale_bizerba.group_user"
-        action="action_product_product_scale"/>
 
 <!-- ************************************************************ -->
 <!-- 12 - Products (eShop View) -->
