@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Web Environment Ribbon",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.1.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
