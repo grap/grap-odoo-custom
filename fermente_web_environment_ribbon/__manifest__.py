@@ -10,4 +10,9 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["web_environment_ribbon"],
+    "assets": {
+        "web.assets_common": [
+            "fermente_web_environment_ribbon/static/**/*",
+        ],
+    },
 }
