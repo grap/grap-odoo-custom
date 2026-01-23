@@ -3,7 +3,7 @@
 
 {
     "name": "Fermente - Base",
-    "version": "16.0.2.1.0",
+    "version": "16.0.2.1.1",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
