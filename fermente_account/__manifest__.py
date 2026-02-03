@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Account",
-    "version": "16.0.2.2.1",
+    "version": "16.0.2.3.0",
     "category": "Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
