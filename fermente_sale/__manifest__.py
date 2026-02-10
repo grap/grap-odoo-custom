@@ -9,7 +9,7 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["sale", "sales_team"],
+    "depends": ["sale", "sales_team", "sale_management"],
     "data": [
         "security/ir.model.access.csv",
         "views/menu.xml",
