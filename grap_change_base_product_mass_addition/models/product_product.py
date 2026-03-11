@@ -1,5 +1,6 @@
 # Copyright (C) 2020-Today: GRAP (http://www.grap.coop)
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+# @author: Quentin DUPONT
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
@@ -42,78 +43,45 @@ class ProductProduct(models.Model):
         "mass_addition_purchase_multiplier_qty",
     )
     def _compute_mass_addition_purchase_bad(self):
-        for product in self.filtered(
-            lambda x: x.qty_to_process and x.mass_addition_purchase_min_qty
-        ):
-            product.mass_addition_purchase_min_qty_bad = (
-                product.qty_to_process < product.mass_addition_purchase_min_qty
-            )
-        for product in self.filtered(
-            lambda x: x.qty_to_process and x.mass_addition_purchase_multiplier_qty
-        ):
-            product.mass_addition_purchase_multiplier_qty_bad = (
-                product.qty_to_process % product.mass_addition_purchase_multiplier_qty
-            )
+        for product in self:
+            product.mass_addition_purchase_min_qty_bad = False
+            product.mass_addition_purchase_multiplier_qty_bad = False
+
+            if product.qty_to_process and product.mass_addition_purchase_min_qty:
+                product.mass_addition_purchase_min_qty_bad = (
+                    product.qty_to_process < product.mass_addition_purchase_min_qty
+                )
+
+            if product.qty_to_process and product.mass_addition_purchase_multiplier_qty:
+                product.mass_addition_purchase_multiplier_qty_bad = (
+                    product.qty_to_process
+                    % product.mass_addition_purchase_multiplier_qty
+                )
 
     def _compute_mass_addition_purchase(self):
         PurchaseOrder = self.env["purchase.order"]
-        if self.env.context.get("parent_model", False) == "purchase.order":
-            order = PurchaseOrder.browse([self.env.context.get("parent_id")])[0]
-        else:
+
+        for product in self:
+            product.mass_addition_purchase_min_qty = 0
+            product.mass_addition_purchase_multiplier_qty = 0
+            product.mass_addition_purchase_price = 0
+            product.mass_addition_purchase_discount = 0
+            product.mass_addition_purchase_discount2 = 0
+
+        if self.env.context.get("parent_model") != "purchase.order":
             return
+
+        order = PurchaseOrder.browse(self.env.context.get("parent_id"))
 
         for product in self.filtered(lambda x: x.id):
             sellers = product.seller_ids.filtered(
-                lambda r: r.name == order.partner_id
+                lambda r: r.partner_id == order.partner_id
             ).sorted(key=lambda r: r.min_qty)
 
             if sellers:
-                product.mass_addition_purchase_min_qty = sellers[0].min_qty
-                product.mass_addition_purchase_multiplier_qty = sellers[
-                    0
-                ].multiplier_qty
-                product.mass_addition_purchase_price = sellers[0].price
-                product.mass_addition_purchase_discount = sellers[0].discount
-                product.mass_addition_purchase_discount2 = sellers[0].discount2
-
-    def _inverse_set_process_qty(self):
-        parent_model = self.env.context.get("parent_model")
-        parent_id = self.env.context.get("parent_id")
-        PurchaseOrderLine = self.env["purchase.order.line"]
-        if parent_model == "purchase.order":
-            order = self.env[parent_model].browse(parent_id)
-            for product in self:
-                # we conserve the value because the call
-                # of play_onchanges reset the value. That's the magic !
-                new_qty = product.qty_to_process
-                order_line = order._get_quick_line(product)
-                if order_line:
-                    if new_qty:
-                        # Update mode
-                        order_line.product_qty = product.qty_to_process
-                    else:
-                        order_line.unlink()
-                else:
-                    # Create Mode
-                    vals = {
-                        "order_id": parent_id,
-                        "product_id": product.id,
-                        "partner_id": order.partner_id,
-                        "product_qty": new_qty,
-                    }
-                    vals = PurchaseOrderLine.with_context(
-                        multiplier_qty_message=False
-                    ).play_onchanges(vals, ["product_id", "product_qty"])
-                    # We pop related fields like product_image,
-                    # to avoid a useless write to ir.attachment
-                    for k in [x for x in vals]:
-                        field = PurchaseOrderLine._fields[k]
-                        if field.related_field:
-                            vals.pop(k)
-                    # We add price_unit because play_onchanges
-                    # doesn't seems to return null values...
-                    if "price_unit" not in vals:
-                        vals["price_unit"] = 0.0
-                    PurchaseOrderLine.create(PurchaseOrderLine._convert_to_write(vals))
-        else:
-            return super()._inverse_set_process_qty()
+                seller = sellers[0]
+                product.mass_addition_purchase_min_qty = seller.min_qty
+                product.mass_addition_purchase_multiplier_qty = seller.multiplier_qty
+                product.mass_addition_purchase_price = seller.price
+                product.mass_addition_purchase_discount = seller.discount
+                product.mass_addition_purchase_discount2 = seller.discount2
