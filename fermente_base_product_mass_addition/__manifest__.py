@@ -1,12 +1,11 @@
 # Copyright (C) 2020-Today: GRAP (http://www.grap.coop)
-# @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+# @author: Sylvain LE GAL
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "GRAP - Change Base Product Mass Addition",
+    "name": "Fermente - Change Base Product Mass Addition",
     "version": "16.0.1.0.0",
-    "category": "GRAP - Custom",
-    "summary": "Fix slow call to odoo.tests.Form, used in "
-    "base_product_mass_addition, for purchase_quick module",
+    "category": "Custom",
+    "summary": "Add purchase fields to Product Mass Addition",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
