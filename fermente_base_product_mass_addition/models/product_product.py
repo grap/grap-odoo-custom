@@ -3,6 +3,8 @@
 # @author: Quentin DUPONT
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import math
+
 from odoo import api, fields, models
 
 
@@ -85,3 +87,29 @@ class ProductProduct(models.Model):
                 product.mass_addition_purchase_price = seller.price
                 product.mass_addition_purchase_discount = seller.discount
                 product.mass_addition_purchase_discount2 = seller.discount2
+
+    def _inverse_set_process_qty(self):
+        if self.env.context.get("parent_model") != "purchase.order":
+            return super()._inverse_set_process_qty()
+
+        for product in self:
+            user_qty = product.qty_to_process or 0.0
+            min_qty = product.mass_addition_purchase_min_qty or 0.0
+            mult = product.mass_addition_purchase_multiplier_qty or 0.0
+
+            # at least min qty
+            target_qty = max(user_qty, min_qty)
+
+            # todo afficher un pop-up
+
+            # handle minimum multipler
+            if mult > 0:
+                # ceil : Round a number upward to its nearest integer:
+                factor = math.ceil(target_qty / mult)
+                new_qty = factor * mult
+            else:
+                new_qty = target_qty
+
+            product.qty_to_process = new_qty
+
+            return super()._inverse_set_process_qty()
