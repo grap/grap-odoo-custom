@@ -1,87 +1,99 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * grap_change_base_product_mass_addition
+#   * fermente_purchase_quick
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-16 00:21+0000\n"
-"PO-Revision-Date: 2020-11-16 00:21+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2026-03-11 19:02+0000\n"
+"PO-Revision-Date: 2026-03-11 19:02+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: grap_change_base_product_mass_addition
-#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+#. module: fermente_purchase_quick
+#: model_terms:ir.ui.view,arch_db:fermente_purchase_quick.view_product_product_tree
 msgid "Disc 1"
 msgstr "Rem. 1"
 
-#. module: grap_change_base_product_mass_addition
-#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+#. module: fermente_purchase_quick
+#: model_terms:ir.ui.view,arch_db:fermente_purchase_quick.view_product_product_tree
 msgid "Disc 2"
 msgstr "Rem. 2"
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_discount
-msgid "Mass Addition Purchase Discount"
+#. module: fermente_purchase_quick
+#: model:ir.model.fields,field_description:fermente_purchase_quick.field_product_product__mass_addition_purchase_discount1
+msgid "Mass Addition Purchase Discount1"
 msgstr ""
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_discount2
+#. module: fermente_purchase_quick
+#: model:ir.model.fields,field_description:fermente_purchase_quick.field_product_product__mass_addition_purchase_discount2
 msgid "Mass Addition Purchase Discount2"
 msgstr ""
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_min_qty
+#. module: fermente_purchase_quick
+#: model:ir.model.fields,field_description:fermente_purchase_quick.field_product_product__mass_addition_purchase_min_qty
 msgid "Mass Addition Purchase Min Qty"
 msgstr ""
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_min_qty_bad
+#. module: fermente_purchase_quick
+#: model:ir.model.fields,field_description:fermente_purchase_quick.field_product_product__mass_addition_purchase_min_qty_bad
 msgid "Mass Addition Purchase Min Qty Bad"
 msgstr ""
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_multiplier_qty
+#. module: fermente_purchase_quick
+#: model:ir.model.fields,field_description:fermente_purchase_quick.field_product_product__mass_addition_purchase_multiplier_qty
 msgid "Mass Addition Purchase Multiplier Qty"
 msgstr ""
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_multiplier_qty_bad
+#. module: fermente_purchase_quick
+#: model:ir.model.fields,field_description:fermente_purchase_quick.field_product_product__mass_addition_purchase_multiplier_qty_bad
 msgid "Mass Addition Purchase Multiplier Qty Bad"
 msgstr ""
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model.fields,field_description:grap_change_base_product_mass_addition.field_product_product__mass_addition_purchase_price
-msgid "Mass Addition Purchase Price"
-msgstr ""
-
-#. module: grap_change_base_product_mass_addition
-#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+#. module: fermente_purchase_quick
+#: model_terms:ir.ui.view,arch_db:fermente_purchase_quick.view_product_product_tree
 msgid "Min Qty"
 msgstr "Qté Min."
 
-#. module: grap_change_base_product_mass_addition
-#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
+#. module: fermente_purchase_quick
+#: model_terms:ir.ui.view,arch_db:fermente_purchase_quick.view_product_product_tree
 msgid "Multiplier Qty"
 msgstr "Qté Cond."
 
-#. module: grap_change_base_product_mass_addition
-#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
-msgid "Price"
-msgstr "Prix"
+#. module: fermente_purchase_quick
+#: model:ir.model,name:fermente_purchase_quick.model_product_product
+msgid "Product Variant"
+msgstr "Variante de produit"
+#. module: fermente_purchase_quick
+#. odoo-python
+#: code:addons/fermente_purchase_quick/models/product_product.py:0
+#, python-format
+msgid ""
+"Quantity was too small.\n"
+"The quantity has been automatically changed to %(qty)s %(uom)s."
+msgstr ""
+"La quantité était trop petite.\n"
+"Elle a été changé automatiquement en %(qty)s %(uom)s."
 
-#. module: grap_change_base_product_mass_addition
-#: model:ir.model,name:grap_change_base_product_mass_addition.model_product_product
-msgid "Product"
-msgstr "Article"
+#. module: fermente_purchase_quick
+#. odoo-python
+#: code:addons/fermente_purchase_quick/models/product_product.py:0
+#, python-format
+msgid ""
+"The supplier only sells this product by %(mult)s %(uom)s.\n"
+"The quantity has been automatically changed to %(qty)s %(uom)s."
+msgstr ""
+"Læ fournisseurse vend se produit seulement par %(mult)s %(uom)s. \n"
+"Elle a été changé automatiquement en %(qty)s %(uom)s."
 
-#. module: grap_change_base_product_mass_addition
-#: model_terms:ir.ui.view,arch_db:grap_change_base_product_mass_addition.view_product_product_tree
-msgid "Purchase UoM"
-msgstr "UdM d'Achat"
-
+#. module: fermente_purchase_quick
+#. odoo-python
+#: code:addons/fermente_purchase_quick/models/product_product.py:0
+#, python-format
+msgid "Warning"
+msgstr "Attention"

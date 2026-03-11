@@ -2,7 +2,9 @@
 # @author: Sylvain LE GAL (https://twitter.com/legalsylvain)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+import math
+
+from odoo import _, api, fields, models
 
 
 class ProductProduct(models.Model):
@@ -65,3 +67,54 @@ class ProductProduct(models.Model):
             product.mass_addition_purchase_multiplier_qty = seller.multiplier_qty
             product.mass_addition_purchase_discount1 = seller.discount1
             product.mass_addition_purchase_discount2 = seller.discount2
+
+    def _inverse_set_process_qty(self):
+        if self.env.context.get("parent_model") != "purchase.order":
+            return super()._inverse_set_process_qty()
+
+        for product in self:
+            user_qty = product.qty_to_process or 0.0
+            min_qty = product.mass_addition_purchase_min_qty or 0.0
+            mult = product.mass_addition_purchase_multiplier_qty or 0.0
+
+            # Respect minimum quantity
+            target_qty = max(user_qty, min_qty)
+            changeby = "min_qty" if target_qty != user_qty else False
+
+            # Respect multiplier
+            new_qty = target_qty
+            if mult:
+                new_qty = math.ceil(target_qty / mult) * mult
+                if new_qty != target_qty:
+                    changeby = "mult"
+
+            if changeby == "min_qty":
+                message = _(
+                    "Quantity was too small.\n"
+                    "The quantity has been automatically changed to %(qty)s %(uom)s."
+                ) % {
+                    "qty": target_qty,
+                    "uom": product.uom_name,
+                }
+
+            elif changeby == "mult":
+                message = _(
+                    "The supplier only sells this product by %(mult)s %(uom)s.\n"
+                    "The quantity has been automatically changed to %(qty)s %(uom)s."
+                ) % {
+                    "mult": mult,
+                    "qty": new_qty,
+                    "uom": product.uom_name,
+                }
+
+            else:
+                continue
+
+            self.env.user.notify_warning(
+                title=_("Warning"),
+                message=message,
+            )
+
+            product.qty_to_process = new_qty
+
+        return super()._inverse_set_process_qty()
