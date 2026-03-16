@@ -19,6 +19,7 @@
     ],
     "data": [
         "wizards/view_wizard_update_invoice_supplierinfo.xml",
+        "views/account_invoice_view.xml",
     ],
     "installable": True,
 }

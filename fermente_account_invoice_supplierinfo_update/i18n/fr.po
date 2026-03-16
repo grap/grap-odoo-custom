@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06 11:35+0000\n"
-"PO-Revision-Date: 2026-01-06 11:35+0000\n"
+"POT-Creation-Date: 2026-01-12 13:20+0000\n"
+"PO-Revision-Date: 2026-01-12 13:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,6 +29,11 @@ msgstr "Rem. 2 (%)"
 #: model:ir.model.fields,field_description:fermente_account_invoice_supplierinfo_update.field_wizard_update_invoice_supplierinfo_line__has_uom_different
 msgid "Has Uom Different"
 msgstr "A une unité différente"
+
+#. module: fermente_account_invoice_supplierinfo_update
+#: model:ir.model,name:fermente_account_invoice_supplierinfo_update.model_account_move
+msgid "Journal Entry"
+msgstr "Pièce comptable"
 
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
@@ -81,9 +86,9 @@ msgid "SP"
 msgstr "PU"
 
 #. module: fermente_account_invoice_supplierinfo_update
-#: model:ir.model.fields,field_description:fermente_account_invoice_supplierinfo_update.field_wizard_update_invoice_supplierinfo_line__smart_search
-msgid "Smart Search"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_move_form
+msgid "See products to modify their price"
+msgstr "Voir les produits pour modifier leur prix"
 
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form

@@ -3,5 +3,11 @@ Change default views for the following modules
 
 ## features
 
-In supplier info update wizard : - rename fields - add colored
-background
+In supplier info update wizard :
+
+* rename fields
+* add colored background
+
+In supplier invoice :
+
+* Add a button to quick access to products
