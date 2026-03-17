@@ -1,5 +1,23 @@
+/*Main background */
+nav {
+    background-color:#AAFFAA !important;
+}
+
+main {
+    background-color:#AAFFAA !important;
+}
+
+.o_web_client {
+    background-color:#AAFFAA !important;
+
+}
+
+.o_main_navbar .dropdown-toggle:not(.o-dropdown-toggle-custo), .o_main_navbar .o_menu_toggle {
+    color: #212529 !important;
+}
+
 /*Background of the kanban,tree views and form views*/
-.o_renderer,.o_form_renderer {
+.o_renderer,.o_form_renderer, .o_kanban_record {
     background-color:#AAFFAA !important;
 }
 
