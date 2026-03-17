@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 18.0.1.0.1 |  | Fermente - Web Environment Ribbon
 [server_environment_files](server_environment_files/) | 18.0.1.0.0 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 
 [//]: # (end addons)

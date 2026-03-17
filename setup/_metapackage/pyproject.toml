@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-grap-grap-odoo-custom"
-version = "18.0.20251107.0"
+version = "18.0.20260317.0"
 dependencies = [
+    "odoo-addon-fermente_web_environment_ribbon==18.0.*",
     "odoo-addon-server_environment_files==18.0.*",
 ]
 classifiers=[
