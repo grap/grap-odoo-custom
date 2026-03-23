@@ -7,4 +7,6 @@ from odoo import fields, models
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    standard_price = fields.Float(copy=True)
+    standard_price = fields.Float(copy=True, tracking=True)
+
+    lst_price = fields.Float(tracking=True)

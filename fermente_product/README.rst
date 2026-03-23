@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==================
 Fermente - Product
 ==================
@@ -13,7 +17,7 @@ Fermente - Product
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -26,14 +30,18 @@ Customize Odoo / odoo / ``product`` module.
 
 - Set default ``list`` view for product, and not ``kanban`` (save planet
   and ressources). (A product image is one server call)
+
 - Refactor ``product.product`` and ``product.template`` list views.
+
 - Change decimal precisions.
 
   - ``product.decimal_stock_weight``: 2 -> 3
   - ``product.decimal_cost_price``: 2 -> 3
 
-- Model ``product.product``: set ``standard_price`` as copiable, when
-  product are duplicated.
+- Model ``product.product`` and ``product.template``:
+
+  - set ``standard_price`` as copiable, when product are duplicated.
+  - track ``standard_price`` and sale prices fields.
 
 **Table of contents**
 
