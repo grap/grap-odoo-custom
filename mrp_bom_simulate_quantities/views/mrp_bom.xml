@@ -51,7 +51,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                     </div>
 
                    <div class="mt-4" attrs="{'invisible': [('bom_simulate_product_qty', '=', 0)]}" >
-                        <h4>↳ You can produce <b> <field name="bom_simulate_bom_qty"/> <field name="product_uom_id" readonly="1" options="{'no_open': True}"/> <field name="display_name" readonly="1" options="{'no_open': True}"/> </b> with this components :</h4>
+                        <h4>↳ You can produce <b> <field name="bom_simulate_bom_qty"/> <field name="product_uom_id" readonly="1" options="{'no_open': True}" force_save="1"/> <field name="display_name" readonly="1" options="{'no_open': True}"/> </b> with this components :</h4>
                         <field name="bom_simulate_bom_lines">
                             <tree>
                                 <field name="product_id"/>
