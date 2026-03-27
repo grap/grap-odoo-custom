@@ -8,5 +8,5 @@ class HrEmployee(models.Model):
     _inherit = "hr.employee"
 
     is_displayed_in_directory = fields.Boolean(
-        string="Displayed in Directory", default=True
+        string="Displayed in Directory", default=True, groups="hr.group_hr_user"
     )
