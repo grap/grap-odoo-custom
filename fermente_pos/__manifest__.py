@@ -13,7 +13,6 @@
     "data": [
         "security/ir.model.access.csv",
         "views/view_product_template.xml",
-        "views/view_pos_config.xml",
         "views/menu.xml",
     ],
     "assets": {

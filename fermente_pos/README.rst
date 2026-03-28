@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ========================
 Fermente - Point Of Sale
 ========================
@@ -13,7 +17,7 @@ Fermente - Point Of Sale
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -34,9 +38,6 @@ Customize Odoo / odoo / ``point_of_sale`` module.
 - Set 'Update quantities in stock' field of PoS config as 'Real Time',
   by default.
 - Add 'Available in PoS' field in the ``product.template`` tree view.
-- Add a lot of missing field on the simple pos.config form view.
-- Allow admin user to create new pos.config, via kanban view.
-- Allow non admin user to edit receipt header and footer.
 
 Customize ``point_of_sale`` Front End.
 

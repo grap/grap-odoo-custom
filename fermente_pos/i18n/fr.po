@@ -9,7 +9,26 @@ msgstr ""
 "PO-Revision-Date: 2024-06-21 10:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: fermente_pos
+#: model:ir.model.fields,help:fermente_pos.field_res_company__point_of_sale_update_stock_quantities
+msgid ""
+"At the session closing: A picking is created for the entire session when "
+"it's closed\n"
+" In real time: Each order sent to the server create its own picking"
+msgstr ""
+
+#. module: fermente_pos
+#: model:ir.model,name:fermente_pos.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: fermente_pos
+#: model:ir.model.fields,field_description:fermente_pos.field_res_company__point_of_sale_update_stock_quantities
+msgid "Update quantities in stock"
+msgstr ""
