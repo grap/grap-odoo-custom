@@ -5,6 +5,7 @@ Customize Odoo / odoo / `point_of_sale` module.
   - "Point Of Sale \> Analysis"
   - "Point Of Sale \> Configuration"
 - Allow non admin user to create `pos.category` elements.
+- Default accounting journal is the same for pos orders and invoices.
 - Set 'Update quantities in stock' field of PoS config as 'Real Time',
   by default.
 - Add 'Available in PoS' field in the `product.template` tree view.
