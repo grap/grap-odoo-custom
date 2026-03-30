@@ -65,7 +65,7 @@ addon | version | maintainers | summary
 [product_default_route_buy](product_default_route_buy/) | 16.0.1.0.1 |  | Product default route Buy
 [product_default_route_mrp](product_default_route_mrp/) | 16.0.1.1.1 |  | Product default route MRP
 [product_maker](product_maker/) | 16.0.1.1.1 |  | Product Maker
-[project_odoo_development](project_odoo_development/) | 16.0.1.1.0 |  | Project - Odoo Development
+[project_odoo_development](project_odoo_development/) | 16.0.1.1.1 |  | Project - Odoo Development
 [report_custom_message](report_custom_message/) | 16.0.1.0.0 |  | Fermente - Custom Message on Reports
 [server_environment_files](server_environment_files/) | 16.0.1.0.1 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_product_replenish_ux](stock_product_replenish_ux/) | 16.0.1.0.1 |  | Stock Product Replenishment UX
