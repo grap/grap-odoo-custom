@@ -8,6 +8,8 @@ from odoo import fields, models
 class PosConfig(models.Model):
     _inherit = "pos.config"
 
+    # TODO, remove this field, once
+    # 16.0-2026-003-marthe-gautier has been deployed
     account_default_pos_receivable_account_id = fields.Many2one(
         string="Default Account Receivable (PoS)",
         related="company_id.account_default_pos_receivable_account_id",
@@ -19,4 +21,8 @@ class PosConfig(models.Model):
         return self._default_invoice_journal()
 
     def _check_header_footer(self, values):
+        # TODO, remove this function
+        # once 16.0-2026-003-marthe-gautier has been deployed
+        # is merged.
+        # if we remove now, it conflict with #501.
         return True
