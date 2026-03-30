@@ -48,17 +48,17 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * GRAP
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `grap/grap-odoo-custom <https://github.com/grap/grap-odoo-custom/tree/16.0/project_odoo_development>`_ project on GitHub.
 
