@@ -32,7 +32,7 @@ addon | version | maintainers | summary
 [fermente_cooperative_directory](fermente_cooperative_directory/) | 16.0.3.2.1 |  | Add Directories for companies and employees
 [fermente_crm](fermente_crm/) | 16.0.2.0.1 |  | Fermente - CRM
 [fermente_hr](fermente_hr/) | 16.0.3.0.2 |  | Fermente - Human Ressources
-[fermente_hr_expense](fermente_hr_expense/) | 16.0.2.2.1 |  | Fermente - Human Ressources Expense
+[fermente_hr_expense](fermente_hr_expense/) | 16.0.2.2.2 |  | Fermente - Human Ressources Expense
 [fermente_l10n_fr_siret](fermente_l10n_fr_siret/) | 16.0.1.1.0 |  | Fermente - L10N FR Siret
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.0.1 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.3.0 |  | Fermente - MRP
