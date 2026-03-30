@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Point Of Sale",
-    "version": "16.0.3.0.3",
+    "version": "16.0.3.0.4",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
