@@ -15,5 +15,8 @@ class PosConfig(models.Model):
         required=True,
     )
 
+    def _default_sale_journal(self):
+        return self._default_invoice_journal()
+
     def _check_header_footer(self, values):
         return True
