@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * project_odoo_development
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-15 14:55+0000\n"
+"PO-Revision-Date: 2025-04-15 14:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_odoo_development
+#: model_terms:ir.ui.view,arch_db:project_odoo_development.view_task_kanban
+msgid ""
+"<i class=\"fa fa-database\" role=\"img\" aria-label=\"SQL request\" "
+"title=\"SQL request\" style=\"font-size:15px;color:#505050\"/>"
+msgstr ""
+"<i class=\"fa fa-database\" role=\"img\" aria-label=\"Requête SQL\" "
+"title=\"Requête SQL\" style=\"font-size:15px;color:#505050\"/>"
+
+#. module: project_odoo_development
+#: model_terms:ir.ui.view,arch_db:project_odoo_development.view_task_kanban
+msgid ""
+"<i class=\"fa fa-github\" role=\"img\" aria-label=\"Pull request\" "
+"title=\"Pull request\" style=\"font-size:18px;color:#505050\"/>"
+msgstr ""
+
+#. module: project_odoo_development
+#: model_terms:ir.ui.view,arch_db:project_odoo_development.view_task_kanban
+msgid ""
+"<i class=\"fa fa-github\" role=\"img\" aria-label=\"Pull request\" "
+"title=\"Pull request\" style=\"font-size:18px;color:#505050;margin-"
+"left:7px\"/>"
+msgstr ""
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__modules_to_install
+#: model_terms:ir.ui.view,arch_db:project_odoo_development.view_task_kanban
+msgid "Modules to install"
+msgstr "Modules à installer"
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__modules_to_uninstall
+#: model_terms:ir.ui.view,arch_db:project_odoo_development.view_task_kanban
+msgid "Modules to uninstall"
+msgstr "Modules à désinstaller"
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_project__is_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__is_odoo_development
+msgid "Odoo Development"
+msgstr "Développement Odoo"
+
+#. module: project_odoo_development
+#: model:ir.model,name:project_odoo_development.model_project_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__github_link_1
+msgid "Pull request n°1"
+msgstr ""
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__github_link_2
+msgid "Pull request n°2"
+msgstr ""
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__github_link_3
+msgid "Pull request n°3"
+msgstr ""
+
+#. module: project_odoo_development
+#: model:ir.model.fields,field_description:project_odoo_development.field_project_task__sql_request
+msgid "SQL request"
+msgstr "Requête SQL"
+
+#. module: project_odoo_development
+#: model:ir.model,name:project_odoo_development.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: project_odoo_development
+#: model_terms:ir.ui.view,arch_db:project_odoo_development.view_project_task_form
+msgid "e.g. https://www.github.com"
+msgstr ""
