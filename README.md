@@ -42,7 +42,7 @@ addon | version | maintainers | summary
 [fermente_product](fermente_product/) | 16.0.3.0.2 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.3 |  | Fermente - Product Category Active
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
-[fermente_project](fermente_project/) | 16.0.2.0.1 |  | Fermente - Project
+[fermente_project](fermente_project/) | 16.0.2.1.0 |  | Fermente - Project
 [fermente_purchase](fermente_purchase/) | 16.0.2.0.1 |  | Fermente - Purchase
 [fermente_purchase_quick](fermente_purchase_quick/) | 16.0.1.0.1 |  | Add extra fields in quick purchase tree view
 [fermente_report_account](fermente_report_account/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Account
@@ -65,6 +65,7 @@ addon | version | maintainers | summary
 [product_default_route_buy](product_default_route_buy/) | 16.0.1.0.1 |  | Product default route Buy
 [product_default_route_mrp](product_default_route_mrp/) | 16.0.1.1.1 |  | Product default route MRP
 [product_maker](product_maker/) | 16.0.1.1.1 |  | Product Maker
+[project_odoo_development](project_odoo_development/) | 16.0.1.1.0 |  | Project - Odoo Development
 [report_custom_message](report_custom_message/) | 16.0.1.0.0 |  | Fermente - Custom Message on Reports
 [server_environment_files](server_environment_files/) | 16.0.1.0.1 |  | Add custom CSS and extra text on PoS ticket depending on the environment
 [stock_product_replenish_ux](stock_product_replenish_ux/) | 16.0.1.0.1 |  | Stock Product Replenishment UX
