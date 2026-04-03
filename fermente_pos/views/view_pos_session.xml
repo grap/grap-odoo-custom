@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_pos_session_tree" model="ir.ui.view">
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_tree" />
+        <field name="arch" type="xml">
+            <field name="config_id" position="after">
+                <field name="total_payments_amount" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
