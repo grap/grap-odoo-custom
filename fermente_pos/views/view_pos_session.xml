@@ -11,7 +11,8 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="point_of_sale.view_pos_session_tree" />
         <field name="arch" type="xml">
             <field name="config_id" position="after">
-                <field name="total_payments_amount" optional="show"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="total_payments_amount" optional="show" widget="monetary" options="{'display_currency': 'currency_id', 'field_digits': True}"/>
             </field>
         </field>
     </record>
