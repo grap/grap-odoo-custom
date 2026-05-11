@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_fermente_pos_order_tree" model="ir.ui.view">
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="pos_hr.pos_order_list_select_inherit" />
+        <field name="arch" type="xml">
+            <field name="cashier" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>
