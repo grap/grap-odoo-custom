@@ -71,12 +71,14 @@ def _create_hr_employee_from_grap_people(env):
                 f" ({row['first_name']} / {row['last_name']}) "
                 f" to new hr.employee#{employee.id} ..."
             )
-            attachment.write(
-                {
-                    "res_id": employee.id,
-                    "res_model": "hr.employee",
-                    "res_field": "image_1920",
-                }
+
+            openupgrade.logged_query(
+                """UPDATE ir_attachment
+                set res_id = %s
+                res_model = 'hr.employee'
+                res_field = 'image_1920'
+                """,
+                (employee.id,),
             )
             employee.image_1920 = employee.image_1920
 
