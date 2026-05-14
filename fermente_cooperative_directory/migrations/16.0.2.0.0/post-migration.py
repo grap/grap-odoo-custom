@@ -95,7 +95,7 @@ def _create_hr_employee_from_grap_people(env):
                     attachment.id,
                 ),
             )
-            env["hr.employee"].invalidate_cache()
+            employee.invalidate_recordset()
             employee.image_1920 = employee.image_1920
 
 
