@@ -42,6 +42,9 @@ Customize Odoo / odoo / ``sale`` module. (and pseudo sales modules
 
   - move fiscal position field from Other Info tab, to main form.
 
+- set ``company_id`` field as required on ``sale.order.template`` model,
+  and put a default value to the current company.
+
 **Table of contents**
 
 .. contents::
