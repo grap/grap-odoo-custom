@@ -27,6 +27,7 @@ def _create_hr_employee_from_grap_people(env):
         vals = {
             "firstname": row["first_name"],
             "lastname": row["last_name"],
+            "name": env["hr.employee"]._get_name(row["last_name"], row["first_name"]),
             "work_email": row["working_email"],
             "mobile_phone": row["working_phone"],
             "company_id": row["company_id"],
@@ -49,6 +50,15 @@ def _create_hr_employee_from_grap_people(env):
             )
             if len(user) == 1:
                 vals["user_id"] = user.id
+                if "[" in user.name or "]" in user.name:
+                    _logger.info(f"Fixing user name {user.name}")
+                    user.name = user.name.replace("[", "").replace("]", "")
+                if not user.firstname or not user.lastname:
+                    _logger.info(
+                        f"Deducing first name / last name from {user.name} ..."
+                    )
+                    user.write(env["res.partner"]._get_inverse_name(user.name))
+
             elif len(user) > 1:
                 _logger.warning(f"Many users found for email {row['working_email']}...")
 
@@ -71,13 +81,21 @@ def _create_hr_employee_from_grap_people(env):
                 f" ({row['first_name']} / {row['last_name']}) "
                 f" to new hr.employee#{employee.id} ..."
             )
-            attachment.write(
-                {
-                    "res_id": employee.id,
-                    "res_model": "hr.employee",
-                    "res_field": "image_1920",
-                }
+
+            openupgrade.logged_query(
+                env.cr,
+                """UPDATE ir_attachment
+                SET res_id = %s,
+                res_model = 'hr.employee',
+                res_field = 'image_1920'
+                WHERE id = %s
+                """,
+                (
+                    employee.id,
+                    attachment.id,
+                ),
             )
+            employee.invalidate_recordset()
             employee.image_1920 = employee.image_1920
 
 
