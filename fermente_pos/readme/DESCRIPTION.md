@@ -10,6 +10,8 @@ Customize Odoo / odoo / `point_of_sale` module.
 - Set 'Update quantities in stock' field of PoS config as 'Real Time',
   by default.
 - Add 'Available in PoS' field in the `product.template` tree view.
+- Hide some fields (`user_id`, `pos_reference`) by default in the `pos.order`
+  tree view, to make the view lighter.
 
 Customize `point_of_sale` Front End.
 
