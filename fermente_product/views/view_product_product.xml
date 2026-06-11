@@ -44,6 +44,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
             <field name="detailed_type" position="before">
                 <field name="default_code" position="move" />
                 <field name="barcode" position="move" />
+                <field name="categ_id" position="move" />
             </field>
         </field>
     </record>
