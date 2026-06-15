@@ -37,14 +37,14 @@ addon | version | maintainers | summary
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.0.1 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.3.0 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.2 |  | Fermente - MRP BoM Form View
-[fermente_pos](fermente_pos/) | 16.0.4.0.3 |  | Fermente - Point Of Sale
+[fermente_pos](fermente_pos/) | 16.0.4.1.0 |  | Fermente - Point Of Sale
 [fermente_pos_hr](fermente_pos_hr/) | 16.0.1.0.2 |  | Fermente - Point Of Sale HR
 [fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.3.0.0 |  | Fermente - Point Of Sale Restaurant
-[fermente_product](fermente_product/) | 16.0.3.0.2 |  | Fermente - Product
+[fermente_product](fermente_product/) | 16.0.3.1.0 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.3 |  | Fermente - Product Category Active
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
 [fermente_project](fermente_project/) | 16.0.2.1.0 |  | Fermente - Project
-[fermente_purchase](fermente_purchase/) | 16.0.2.0.1 |  | Fermente - Purchase
+[fermente_purchase](fermente_purchase/) | 16.0.2.1.0 |  | Fermente - Purchase
 [fermente_purchase_quick](fermente_purchase_quick/) | 16.0.1.0.1 |  | Add extra fields in quick purchase tree view
 [fermente_report_account](fermente_report_account/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Account
 [fermente_report_base](fermente_report_base/) | 16.0.1.0.0 |  | Fermente - Custom Qweb Reports
@@ -53,7 +53,7 @@ addon | version | maintainers | summary
 [fermente_report_purchase](fermente_report_purchase/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Purchase
 [fermente_report_sale](fermente_report_sale/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Sale
 [fermente_report_stock](fermente_report_stock/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Stock
-[fermente_sale](fermente_sale/) | 16.0.2.2.0 |  | Fermente - Sale
+[fermente_sale](fermente_sale/) | 16.0.2.3.0 |  | Fermente - Sale
 [fermente_stock](fermente_stock/) | 16.0.2.0.1 |  | Fermente - Stock
 [fermente_web](fermente_web/) | 16.0.1.0.1 |  | Customize Odoo web User Interface
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.1.0 |  | Fermente - Web Environment Ribbon
