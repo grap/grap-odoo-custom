@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Sale",
-    "version": "16.0.2.2.0",
+    "version": "16.0.2.3.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -14,5 +14,6 @@
         "security/ir.model.access.csv",
         "views/menu.xml",
         "views/view_sale_order.xml",
+        "views/view_product_template.xml",
     ],
 }

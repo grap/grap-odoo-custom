@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Purchase",
-    "version": "16.0.2.0.1",
+    "version": "16.0.2.1.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
@@ -12,5 +12,6 @@
     "depends": ["purchase"],
     "data": [
         "views/menu.xml",
+        "views/view_product_template.xml",
     ],
 }
