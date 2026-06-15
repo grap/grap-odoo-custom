@@ -40,7 +40,7 @@ addon | version | maintainers | summary
 [fermente_pos](fermente_pos/) | 16.0.4.1.0 |  | Fermente - Point Of Sale
 [fermente_pos_hr](fermente_pos_hr/) | 16.0.1.0.2 |  | Fermente - Point Of Sale HR
 [fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.3.0.0 |  | Fermente - Point Of Sale Restaurant
-[fermente_product](fermente_product/) | 16.0.3.1.0 |  | Fermente - Product
+[fermente_product](fermente_product/) | 16.0.4.0.0 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.1.3 |  | Fermente - Product Category Active
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
 [fermente_project](fermente_project/) | 16.0.2.1.0 |  | Fermente - Project
@@ -55,6 +55,7 @@ addon | version | maintainers | summary
 [fermente_report_stock](fermente_report_stock/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Stock
 [fermente_sale](fermente_sale/) | 16.0.2.3.0 |  | Fermente - Sale
 [fermente_stock](fermente_stock/) | 16.0.2.0.1 |  | Fermente - Stock
+[fermente_uom](fermente_uom/) | 16.0.1.0.0 |  | Fermente - UoM
 [fermente_web](fermente_web/) | 16.0.1.0.1 |  | Customize Odoo web User Interface
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.1.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.2 |  | Manage the various useful prints for Bill of Materials
