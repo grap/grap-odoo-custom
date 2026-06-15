@@ -18,17 +18,23 @@ msgstr ""
 #. module: fermente_pos
 #: model:ir.model.fields,help:fermente_pos.field_res_company__point_of_sale_update_stock_quantities
 msgid ""
-"At the session closing: A picking is created for the entire session when "
-"it's closed\n"
+"At the session closing: A picking is created for the entire session when it's closed\n"
 " In real time: Each order sent to the server create its own picking"
 msgstr ""
+"A la fermeture de la session : un transfert est créé pour l’entièreté de la session lorsqu'elle est fermée\n"
+"En temps réel : chaque commande envoyée au serveur crée son propre transfert"
 
 #. module: fermente_pos
 #: model:ir.model,name:fermente_pos.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Sociétés"
+
+#. module: fermente_pos
+#: model_terms:ir.ui.view,arch_db:fermente_pos.view_product_template_form
+msgid "To weigh"
+msgstr "A peser"
 
 #. module: fermente_pos
 #: model:ir.model.fields,field_description:fermente_pos.field_res_company__point_of_sale_update_stock_quantities
 msgid "Update quantities in stock"
-msgstr ""
+msgstr "Mettre à jour les quantités en stock"
