@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [fermente_hr_expense](fermente_hr_expense/) | 16.0.2.2.2 |  | Fermente - Human Ressources Expense
 [fermente_l10n_fr_siret](fermente_l10n_fr_siret/) | 16.0.1.1.0 |  | Fermente - L10N FR Siret
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.0.1 |  | Fermente - Main Menu
-[fermente_mrp](fermente_mrp/) | 16.0.1.3.0 |  | Fermente - MRP
+[fermente_mrp](fermente_mrp/) | 16.0.1.3.1 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.2 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.4.1.0 |  | Fermente - Point Of Sale
 [fermente_pos_hr](fermente_pos_hr/) | 16.0.1.0.2 |  | Fermente - Point Of Sale HR
