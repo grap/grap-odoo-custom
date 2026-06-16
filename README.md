@@ -45,7 +45,6 @@ addon | version | maintainers | summary
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
 [fermente_project](fermente_project/) | 16.0.2.1.0 |  | Fermente - Project
 [fermente_purchase](fermente_purchase/) | 16.0.2.1.0 |  | Fermente - Purchase
-[fermente_purchase_quick](fermente_purchase_quick/) | 16.0.1.0.1 |  | Add extra fields in quick purchase tree view
 [fermente_report_account](fermente_report_account/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Account
 [fermente_report_base](fermente_report_base/) | 16.0.1.0.0 |  | Fermente - Custom Qweb Reports
 [fermente_report_pos](fermente_report_pos/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Point of Sale
