@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2026-Today GRAP (http://www.grap.coop)
+@author Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record
+        id="action_account_move_2_product_print_wizard"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Print Products</field>
+        <field name="res_model">product.print.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="account.model_account_move" />
+        <field name="binding_view_types">list,form</field>
+        <field name="binding_type">report</field>
+    </record>
+
+
+</odoo>
