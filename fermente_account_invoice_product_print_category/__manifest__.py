@@ -11,10 +11,12 @@
     "depends": [
         "account",
         "product_print_category",
+        # just for supplierinfo_ok
+        "account_invoice_supplierinfo_update",
     ],
     "data": [
-        "views/account_move_view.xml",
         "wizards/view_product_print_wizard.xml",
+        "views/account_move_view.xml",
     ],
     "installable": True,
 }
