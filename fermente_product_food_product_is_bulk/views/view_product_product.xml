@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_product_form_remove_field" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product_is_bulk.view_product_is_bulk_product_form" />
+        <field name="arch" type="xml">
+            <!-- Remove -->
+            <xpath expr="//field[@name='is_bulk']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_product_product_form_add_field" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product_food.view_product_product_form" />
+        <field name="arch" type="xml">
+            <!-- Add -->
+            <field name="is_vegan" position="after">
+                <field name="is_bulk"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>
