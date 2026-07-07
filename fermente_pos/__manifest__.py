@@ -14,6 +14,7 @@
         "security/ir.model.access.csv",
         "views/view_product_template.xml",
         "views/view_pos_session.xml",
+        "views/view_pos_order_line.xml",
         "views/view_pos_order.xml",
         "views/menu.xml",
     ],

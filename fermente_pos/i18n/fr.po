@@ -1,15 +1,15 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
+# 	* fermente_pos
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 10:04+0000\n"
-"PO-Revision-Date: 2024-06-21 10:04+0000\n"
+"POT-Creation-Date: 2026-07-07 22:29+0000\n"
+"PO-Revision-Date: 2026-07-07 22:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -25,9 +25,39 @@ msgstr ""
 "En temps réel : chaque commande envoyée au serveur crée son propre transfert"
 
 #. module: fermente_pos
+#: model:ir.model.fields,field_description:fermente_pos.field_product_product__available_in_pos
+#: model:ir.model.fields,field_description:fermente_pos.field_product_template__available_in_pos
+msgid "Available in POS"
+msgstr "Disponible dans le PdV"
+
+#. module: fermente_pos
+#: model:ir.model.fields,help:fermente_pos.field_product_product__available_in_pos
+#: model:ir.model.fields,help:fermente_pos.field_product_template__available_in_pos
+msgid "Check if you want this product to appear in the Point of Sale."
+msgstr ""
+"Cochez cette case si vous souhaitez faire apparaître ce produit dans le "
+"Point de Vente"
+
+#. module: fermente_pos
 #: model:ir.model,name:fermente_pos.model_res_company
 msgid "Companies"
 msgstr "Sociétés"
+
+#. module: fermente_pos
+#: model:ir.actions.act_window,name:fermente_pos.action_pos_order_line
+#: model:ir.ui.menu,name:fermente_pos.menu_pos_order_line
+msgid "Order Lines"
+msgstr "Lignes de commandes"
+
+#. module: fermente_pos
+#: model:ir.model,name:fermente_pos.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuration du point de vente"
+
+#. module: fermente_pos
+#: model:ir.model,name:fermente_pos.model_product_template
+msgid "Product"
+msgstr "Produit"
 
 #. module: fermente_pos
 #: model_terms:ir.ui.view,arch_db:fermente_pos.view_product_template_form
@@ -35,6 +65,22 @@ msgid "To weigh"
 msgstr "A peser"
 
 #. module: fermente_pos
+#: model_terms:ir.ui.view,arch_db:fermente_pos.view_pos_order_line_tree
+msgid "Total Excl"
+msgstr "Total TTC"
+
+#. module: fermente_pos
+#: model_terms:ir.ui.view,arch_db:fermente_pos.view_pos_order_line_tree
+msgid "Total Incl"
+msgstr "Total TTC"
+
+#. module: fermente_pos
+#: model_terms:ir.ui.view,arch_db:fermente_pos.view_pos_order_line_tree
+msgid "Total Qty"
+msgstr "Qté Totale"
+
+#. module: fermente_pos
 #: model:ir.model.fields,field_description:fermente_pos.field_res_company__point_of_sale_update_stock_quantities
 msgid "Update quantities in stock"
 msgstr "Mettre à jour les quantités en stock"
+
