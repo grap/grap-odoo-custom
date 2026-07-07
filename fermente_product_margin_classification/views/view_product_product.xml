@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2022 - Today: Sylvain LE GAL (http://www.grap.coop)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_product_tree" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product_margin_classification.view_product_product_tree" />
+        <field name="arch" type="xml">
+            <field name="lst_price" position="after">
+                <field name="standard_margin_rate" />
+            </field>
+        </field>
+    </record>
+
+
+</odoo>
