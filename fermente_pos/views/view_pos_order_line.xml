@@ -38,16 +38,29 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <filter string="Create Date" name="group_by_date" context="{'group_by': 'create_date'}"/>
                 <filter string="Product" name="group_by_product_id" context="{'group_by': 'product_id'}"/>
                 <filter string="Company" name="group_by_company_id" context="{'group_by': 'company_id'}" groups="base.group_multi_company" />
-
+                <filter string="Today" name="filter_today" domain="[
+                    ('create_date', '&gt;=' , context_today().strftime('%Y-%m-%d 0:00:00')),
+                    ('create_date', '&lt;=', (context_today() + datetime.timedelta(days=1)).strftime('%Y-%m-%d 0:00:00')),
+                ]"
+                />
+                <filter string="Yesterday" name="filter_yesterday" domain="[
+                    ('create_date', '&gt;=', (context_today() + datetime.timedelta(days=-1)).strftime('%Y-%m-%d 0:00:00')),
+                    ('create_date', '&lt;=' , context_today().strftime('%Y-%m-%d 0:00:00')),
+                ]"/>
            </search>
         </field>
     </record>
+
+
+
 
     <record id="action_pos_order_line" model="ir.actions.act_window">
         <field name="name">Order Lines</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">pos.order.line</field>
         <field name="view_mode">tree,search</field>
+        <field name="context">{'search_default_filter_today': 1}</field>
+
     </record>
 
     <menuitem id="menu_pos_order_line" name="Order Lines"
