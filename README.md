@@ -58,6 +58,7 @@ addon | version | maintainers | summary
 [fermente_stock](fermente_stock/) | 16.0.2.0.2 |  | Fermente - Stock
 [fermente_uom](fermente_uom/) | 16.0.1.0.0 |  | Fermente - UoM
 [fermente_web](fermente_web/) | 16.0.1.0.1 |  | Customize Odoo web User Interface
+[fermente_web_chatter_position](fermente_web_chatter_position/) | 16.0.1.0.0 |  | Fermente - Web Chatter Position
 [fermente_web_environment_ribbon](fermente_web_environment_ribbon/) | 16.0.1.1.0 |  | Fermente - Web Environment Ribbon
 [mrp_bom_report_allergen](mrp_bom_report_allergen/) | 16.0.1.0.2 |  | Manage the various useful prints for Bill of Materials
 [mrp_bom_simulate_quantities](mrp_bom_simulate_quantities/) | 16.0.1.1.2 |  | MRP BoM Simulate Quantities
