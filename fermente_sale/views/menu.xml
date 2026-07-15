@@ -17,4 +17,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="groups_id" eval="[Command.clear(), Command.link(ref('base.group_system'))]" />
     </record>
 
+    <!-- Hide Request for Quotation entries + Move to be after Sales menu -->
+    <record id="sale.menu_sale_quotations" model="ir.ui.menu" >
+        <field name="groups_id" eval="[Command.set([ref('base.group_erp_manager')])]"/>
+        <field name="sequence">25</field>
+    </record>
+
 </odoo>
