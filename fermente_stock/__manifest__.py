@@ -14,5 +14,6 @@
         "views/menu.xml",
         "views/view_product_product.xml",
         "views/view_product_template.xml",
+        "views/view_stock_picking.xml",
     ],
 }
