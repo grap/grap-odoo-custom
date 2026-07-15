@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_draft']" position="after">
+                <button
+                    name="%(fermente_account_invoice_product_print_category.action_account_move_2_product_print_wizard)d"
+                    type="action"
+                    attrs="{'invisible': ['|', ('supplierinfo_ok', '=', False), ('move_type', 'not in', ['in_invoice', 'in_refund'])]}"
+                    string="Print Products"
+                    icon="fa-print"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

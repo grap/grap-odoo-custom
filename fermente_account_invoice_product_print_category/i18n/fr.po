@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_account_invoice_product_print_category
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-29 15:04+0000\n"
+"PO-Revision-Date: 2026-06-29 15:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fermente_account_invoice_product_print_category
+#: model:ir.actions.act_window,name:fermente_account_invoice_product_print_category.action_account_move_2_product_print_wizard
+#: model_terms:ir.ui.view,arch_db:fermente_account_invoice_product_print_category.view_move_form
+msgid "Print Products"
+msgstr "Imprimer les Articles"
+
+#. module: fermente_account_invoice_product_print_category
+#: model:ir.model,name:fermente_account_invoice_product_print_category.model_product_print_wizard
+msgid "Wizard for printing products"
+msgstr "assistant pour l'impression d'articles"
