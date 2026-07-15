@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2013-Today GRAP (http://www.grap.coop)
+@author: Julien WESTE
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="view_pos_order_line_tree" model="ir.ui.view" >
+        <field name="model">pos.order.line</field>
+        <field name="priority" eval="15"/>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false" default_order="create_date desc">
+                <field name="create_date"/>
+                <field name="order_id"/>
+                <field name="product_id"/>
+                <field name="qty" sum="Total Qty"/>
+                <field name="price_unit"/>
+                <field name="discount"/>
+                <field name="margin"/>
+                <field name="margin_percent"/>
+                <field name="price_subtotal" sum="Total Excl"/>
+                <field name="price_subtotal_incl" sum="Total Incl"/>
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_pos_order_line_search" model="ir.ui.view">
+        <field name="model">pos.order.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+                <field name="order_id"/>
+                <field name="company_id" />
+                <filter string="Create Date" name="group_by_date" context="{'group_by': 'create_date'}"/>
+                <filter string="Product" name="group_by_product_id" context="{'group_by': 'product_id'}"/>
+                <filter string="Company" name="group_by_company_id" context="{'group_by': 'company_id'}" groups="base.group_multi_company" />
+                <filter string="Today" name="filter_today" domain="[
+                    ('create_date', '&gt;=' , context_today().strftime('%Y-%m-%d 0:00:00')),
+                    ('create_date', '&lt;=', (context_today() + datetime.timedelta(days=1)).strftime('%Y-%m-%d 0:00:00')),
+                ]"
+                />
+                <filter string="Yesterday" name="filter_yesterday" domain="[
+                    ('create_date', '&gt;=', (context_today() + datetime.timedelta(days=-1)).strftime('%Y-%m-%d 0:00:00')),
+                    ('create_date', '&lt;=' , context_today().strftime('%Y-%m-%d 0:00:00')),
+                ]"/>
+           </search>
+        </field>
+    </record>
+
+
+
+
+    <record id="action_pos_order_line" model="ir.actions.act_window">
+        <field name="name">Order Lines</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.order.line</field>
+        <field name="view_mode">tree,search</field>
+        <field name="context">{'search_default_filter_today': 1}</field>
+
+    </record>
+
+    <menuitem id="menu_pos_order_line" name="Order Lines"
+        sequence="2"
+        parent="point_of_sale.menu_point_of_sale"
+        action="action_pos_order_line"/>
+
+</odoo>
