@@ -14,6 +14,7 @@
         # OCA
         "account_invoice_supplierinfo_update_qty_multiplier",
         "web_tree_dynamic_colored_field",
+        "product_margin_classification",
         # GRAP
         "account_invoice_supplierinfo_update_standard_price",
     ],

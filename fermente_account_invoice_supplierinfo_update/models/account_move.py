@@ -11,11 +11,13 @@ class AccountMove(models.Model):
     # View Section
     def go_to_products_view(self):
         self.ensure_one()
-        products = self.mapped("invoice_line_ids.product_id.product_tmpl_id")
-        action = self.env.ref("product.product_template_action").sudo().read()[0]
+        products = self.mapped("invoice_line_ids.product_id")
+        action = (
+            self.env.ref(
+                "product_margin_classification.action_view_product_product_by_margin_classification"
+            )
+            .sudo()
+            .read()[0]
+        )
         action["domain"] = [("id", "in", products.ids)]
-        action["views"] = [
-            (self.env.ref("product.product_template_tree_view").id, "tree"),
-            (self.env.ref("product.product_template_form_view").id, "form"),
-        ]
         return action
