@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [fermente_account](fermente_account/) | 16.0.2.3.2 |  | Fermente - Account
 [fermente_account_invoice_margin](fermente_account_invoice_margin/) | 16.0.1.0.2 |  | Fermente - Account Invoice Margin
+[fermente_account_invoice_product_print_category](fermente_account_invoice_product_print_category/) | 16.0.1.0.0 |  | Fermente - Account Invoice x Product Print Category
 [fermente_account_invoice_supplier_ref_unique](fermente_account_invoice_supplier_ref_unique/) | 16.0.1.0.0 |  | Fermente - Account Invoice Supplier Ref Unique
 [fermente_account_invoice_supplierinfo_update](fermente_account_invoice_supplierinfo_update/) | 16.0.1.3.0 |  | Fermente - Change Views Account Invoice Supplierinfo Update
 [fermente_account_invoice_triple_discount](fermente_account_invoice_triple_discount/) | 16.0.1.0.2 |  | Fermente - Account Invoice Triple Discount
