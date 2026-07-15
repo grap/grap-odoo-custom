@@ -44,6 +44,7 @@ Customize Odoo / odoo / ``product`` module.
   - set ``standard_price`` as copiable, when product are duplicated.
   - track ``standard_price`` and sale prices fields.
 
+
 **Table of contents**
 
 .. contents::

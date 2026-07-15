@@ -47,6 +47,11 @@ Customize ``point_of_sale`` Front End.
 
 - Make bigger the button to reset the search input field.
 
+Customize ``product_template``.
+
+- Field ``availaible_in_pos`` default True except in Joint Buying
+  context
+
 **Table of contents**
 
 .. contents::
