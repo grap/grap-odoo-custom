@@ -55,6 +55,7 @@ addon | version | maintainers | summary
 [fermente_report_sale](fermente_report_sale/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Sale
 [fermente_report_stock](fermente_report_stock/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Stock
 [fermente_sale](fermente_sale/) | 16.0.2.5.0 |  | Fermente - Sale
+[fermente_spreadsheet_dashboard](fermente_spreadsheet_dashboard/) | 16.0.1.0.1 |  | Fermente - Spreadsheet Dashboard
 [fermente_stock](fermente_stock/) | 16.0.2.0.2 |  | Fermente - Stock
 [fermente_uom](fermente_uom/) | 16.0.1.0.0 |  | Fermente - UoM
 [fermente_web](fermente_web/) | 16.0.1.0.2 |  | Customize Odoo web User Interface
