@@ -64,7 +64,7 @@ addon | version | maintainers | summary
 [mrp_bom_simulate_quantities](mrp_bom_simulate_quantities/) | 16.0.1.1.2 |  | MRP BoM Simulate Quantities
 [mrp_bom_weight](mrp_bom_weight/) | 16.0.1.0.2 |  | MRP BoM Weight
 [mrp_bom_wizard_production](mrp_bom_wizard_production/) | 16.0.1.3.1 |  | Wizard linked to Bill of Materials to help your production.
-[mrp_business](mrp_business/) | 16.0.1.1.2 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
+[mrp_business](mrp_business/) | 16.0.1.1.3 |  | MRP functions that meet the business needs of GRAP,adapted for food-related professions
 [mrp_sale_grouped](mrp_sale_grouped/) | 16.0.1.1.1 |  | Quickly manage what you need to produce thanks to grouped sales
 [product_default_route_buy](product_default_route_buy/) | 16.0.1.0.1 |  | Product default route Buy
 [product_default_route_mrp](product_default_route_mrp/) | 16.0.1.1.1 |  | Product default route MRP
