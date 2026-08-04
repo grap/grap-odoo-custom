@@ -11,7 +11,7 @@ class ProductTemplate(models.Model):
     categ_id = fields.Many2one(default=lambda x: x._default_category_id())
 
     def _default_category_id(self):
-        result = super()._get_default_category_id()
+        result = self._get_default_category_id()
         if self.env.context.get("install_mode"):
             return result
         return result.active and result or False
