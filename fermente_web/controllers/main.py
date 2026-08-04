@@ -28,7 +28,7 @@ class Binary(controllers.binary.Binary):
             get_resource_path, "fermente_web", "static", "src", "img"
         )
         file_name = "undefined_database"
-        for name in ["grap", "caap", "mache", "fermente"]:
+        for name in ["grap", "caap", "mache", "coopalim", "fermente"]:
             if dbname.startswith(f"{name}_production"):
                 file_name = name
 
