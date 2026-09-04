@@ -10,5 +10,9 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["account"],
-    "data": ["views/view_account_move.xml", "views/view_account_journal.xml"],
+    "data": [
+        "views/view_account_move.xml",
+        "views/view_account_journal.xml",
+        "views/view_res_partner.xml",
+    ],
 }
