@@ -6,10 +6,39 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-21 10:04+0000\n"
-"PO-Revision-Date: 2024-06-21 10:04+0000\n"
+"PO-Revision-Date: 2026-09-04 15:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: fermente_account
+#: model:ir.model,name:fermente_account.model_account_account
+msgid "Account"
+msgstr "Compte comptable"
+
+#. module: fermente_account
+#: model:ir.model,name:fermente_account.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: fermente_account
+#: model:ir.model.fields,field_description:fermente_account.field_res_partner__property_account_position_id
+#: model:ir.model.fields,field_description:fermente_account.field_res_users__property_account_position_id
+msgid "Fiscal Position"
+msgstr "Position fiscale"
+
+#. module: fermente_account
+#: model:ir.model,name:fermente_account.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: fermente_account
+#: model:ir.model.fields,help:fermente_account.field_res_partner__property_account_position_id
+#: model:ir.model.fields,help:fermente_account.field_res_users__property_account_position_id
+msgid "The fiscal position determines the taxes/accounts used for this contact."
+msgstr "La position fiscale détermine les taxes/comptes utilisés pour ce contact."

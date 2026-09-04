@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-12 13:20+0000\n"
-"PO-Revision-Date: 2026-01-12 13:20+0000\n"
+"PO-Revision-Date: 2026-09-04 14:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
@@ -73,7 +75,7 @@ msgstr "Nouveau coût"
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
 msgid "New U.P."
-msgstr "Nouveau PU"
+msgstr "Nouveau P.U."
 
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
@@ -83,7 +85,7 @@ msgstr "Nouvelle UdM"
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
 msgid "SP"
-msgstr "PU"
+msgstr "Coût"
 
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_move_form
@@ -93,7 +95,7 @@ msgstr "Voir les produits pour modifier leur prix"
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
 msgid "U.P."
-msgstr "P.U"
+msgstr "P.U."
 
 #. module: fermente_account_invoice_supplierinfo_update
 #: model_terms:ir.ui.view,arch_db:fermente_account_invoice_supplierinfo_update.view_wizard_update_invoice_supplierinfo_form
