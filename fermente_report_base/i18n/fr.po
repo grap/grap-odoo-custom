@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-15 07:56+0000\n"
-"PO-Revision-Date: 2025-09-15 07:56+0000\n"
+"PO-Revision-Date: 2026-09-04 14:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: fermente_report_base
 #: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout
@@ -41,13 +43,15 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout
 msgid ""
 "<br/>\n"
-"                            est une activité de <br/>"
+"                                est une activité de <br/>"
 msgstr ""
 
 #. module: fermente_report_base
 #: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout
 msgid ""
-"<span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>\n"
+"<span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le "
+"taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au "
+"créancier en cas de retard de paiement : 40€</span>\n"
 "                                    <br/>"
 msgstr ""
 
@@ -63,8 +67,13 @@ msgstr "Modèle de document"
 
 #. module: fermente_report_base
 #: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout
+msgid "Fiscal parent logo"
+msgstr "logo de la société fiscale"
+
+#. module: fermente_report_base
+#: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. module: fermente_report_base
 #: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout

@@ -4,6 +4,6 @@ Customize OCA / product-attribute / `product_category_active` module.
   `product.template` to force user to select a category and have the
   possibility to disable the "All" category.
 
-Note: the default is False if the category is disabled. So, tests are
-not failing if categ_id is not defined in demo data or in creation of
-products in tests mode.
+Note: we don't remove `categ_id` in "install mode", or in some situation
+where the ORM create automatically products (like in `loyalty` module).
+In that case, we just warn the user with the `web_notify` module.

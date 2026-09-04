@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ==================================
 Fermente - Product Category Active
 ==================================
@@ -13,7 +17,7 @@ Fermente - Product Category Active
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-grap%2Fgrap--odoo--custom-lightgray.png?logo=github
@@ -28,9 +32,10 @@ Customize OCA / product-attribute / ``product_category_active`` module.
   ``product.template`` to force user to select a category and have the
   possibility to disable the "All" category.
 
-Note: the default is False if the category is disabled. So, tests are
-not failing if categ_id is not defined in demo data or in creation of
-products in tests mode.
+Note: we don't remove ``categ_id`` in "install mode", or in some
+situation where the ORM create automatically products (like in
+``loyalty`` module). In that case, we just warn the user with the
+``web_notify`` module.
 
 **Table of contents**
 
