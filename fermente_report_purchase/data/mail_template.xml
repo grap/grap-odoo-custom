@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2015 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="email_template_purchase_order_report_xlsx" model="mail.template.report">
+        <field name="mail_template_id" ref="purchase.email_template_edi_purchase_done"/>
+        <field name="report_template_id" ref="fermente_report_purchase.purchase_order_xlsx"/>
+    </record>
+
+</odoo>

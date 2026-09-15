@@ -13,6 +13,7 @@
     "depends": [
         "purchase",
         # OCA
+        "mail_template_multi_attachment",
         "report_xlsx_helper",
         "purchase_triple_discount",
         # GRAP
@@ -20,6 +21,7 @@
     ],
     "data": [
         "data/ir_actions_report.xml",
+        "data/mail_template.xml",
         "report/qweb_template_purchase_order.xml",
     ],
     "installable": True,
