@@ -25,6 +25,8 @@ class ResCompany(models.Model):
         " accepted the entry of this activity"
     )
 
+    territory_id = fields.Many2one(comodel_name="fermente.territory")
+
     # Interlocutors in Service Team
     accounting_interlocutor_id = fields.Many2one(
         string="Accounting Interlocutor", comodel_name="hr.employee.global"

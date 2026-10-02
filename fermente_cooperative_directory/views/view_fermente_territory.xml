@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_fermente_territory_search" model="ir.ui.view">
+        <field name="model">fermente.territory</field>
+        <field name="arch" type="xml">
+            <search>
+               <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_fermente_territory_tree" model="ir.ui.view">
+        <field name="model">fermente.territory</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_fermente_territory_form" model="ir.ui.view">
+        <field name="model">fermente.territory</field>
+        <field name="arch" type="xml">
+            <form>
+                <header />
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="d-flex flex-row">
+                            <field name="name" style="font-size: min(4vw, 2.6rem);"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_ids" widget="many2many_tags"/>
+                       </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fermente_territory" model="ir.actions.act_window">
+        <field name="name">Territories</field>
+        <field name="res_model">fermente.territory</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_fermente_territory"
+        name="Territories"
+        parent="menu_root"
+        action="action_fermente_territory"
+        sequence="50"/>
+
+</odoo>
