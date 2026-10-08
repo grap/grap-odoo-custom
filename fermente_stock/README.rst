@@ -35,6 +35,7 @@ Customize Odoo / odoo / ``stock`` module.
 
 - Change default type for ``product.template`` from ``consu``
   (Consumable) to ``product`` (Storable Product)
+- Allow members of ``stock.group_stock_user`` to "Update Quantity".
 
 **Table of contents**
 

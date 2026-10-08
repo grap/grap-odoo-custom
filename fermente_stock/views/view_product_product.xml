@@ -18,4 +18,24 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_product_product_form" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+            <button name="action_update_quantity_on_hand" position="attributes">
+                <attribute name="groups">stock.group_stock_user</attribute>
+            </button>
+        </field>
+    </record>
+
+    <record id="view_product_product_variant_easy" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_product_view_form_easy_inherit_stock"/>
+        <field name="arch" type="xml">
+            <button name="action_update_quantity_on_hand" position="attributes">
+                <attribute name="groups">stock.group_stock_user</attribute>
+            </button>
+        </field>
+    </record>
+
 </odoo>
