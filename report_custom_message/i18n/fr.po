@@ -7,18 +7,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-15 08:00+0000\n"
-"PO-Revision-Date: 2025-09-15 08:00+0000\n"
+"PO-Revision-Date: 2026-09-04 14:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Account Move"
-msgstr "Facture"
+msgstr "Pièce comptable"
 
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
@@ -63,8 +65,8 @@ msgstr "Nom affiché"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_on_account_move
-msgid "Display On Account Invoice"
-msgstr "Afficher sur les Factures"
+msgid "Display On Account Move"
+msgstr "Afficher sur les pièces comptables"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__display_on_purchase_order
@@ -97,7 +99,6 @@ msgid "HTML Code"
 msgstr "Code HTML"
 
 #. module: report_custom_message
-#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__html_text
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "HTML Text"
 msgstr "Texte HTML"
@@ -118,9 +119,20 @@ msgid "Height of the message, expressed in pixel"
 msgstr "Hauteur du message, en pixel"
 
 #. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__html_text
+#, fuzzy
+msgid "Html Text"
+msgstr "Texte HTML"
+
+#. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
+
+#. module: report_custom_message
+#: model:ir.model,name:report_custom_message.model_account_move
+msgid "Journal Entry"
+msgstr "Pièce comptable"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message____last_update
@@ -141,7 +153,7 @@ msgstr "Dernière modification sur"
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__name
@@ -155,29 +167,41 @@ msgid "Preview"
 msgstr "Aperçu"
 
 #. module: report_custom_message
+#: model:ir.model,name:report_custom_message.model_purchase_order
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Purchase Order"
 msgstr "Bon de commande d'achat"
 
 #. module: report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_account_bank_statement_line__report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_account_move__report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_account_payment__report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_purchase_order__report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message_mixin__report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_sale_order__report_custom_message
+#: model:ir.model.fields,field_description:report_custom_message.field_stock_picking__report_custom_message
 msgid "Report Custom Message"
-msgstr ""
+msgstr "Message personnalisé sur le rapport"
 
 #. module: report_custom_message
 #: model:ir.model,name:report_custom_message.model_report_custom_message_mixin
 msgid "Report Custom Message Mixin"
-msgstr ""
+msgstr "Mixin de message personnalisé sur le rapport"
 
 #. module: report_custom_message
 #: model:ir.model,name:report_custom_message.model_report_custom_message
 msgid "Report Custom Messages"
-msgstr ""
+msgstr "Messages personnalisés sur le rapport"
 
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Sale Order"
 msgstr "Bon de commande de vente"
+
+#. module: report_custom_message
+#: model:ir.model,name:report_custom_message.model_sale_order
+msgid "Sales Order"
+msgstr "Bons de commandes de vente"
 
 #. module: report_custom_message
 #: model:ir.model.fields,help:report_custom_message.field_report_custom_message__border
@@ -188,3 +212,13 @@ msgstr "Taille de la bordure, en pixel"
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Stock Picking"
 msgstr "Bon de livraison"
+
+#. module: report_custom_message
+#: model:ir.model,name:report_custom_message.model_stock_picking
+msgid "Transfer"
+msgstr "Mouvement de stock"
+
+#. module: report_custom_message
+#: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
+msgid "px"
+msgstr "px"

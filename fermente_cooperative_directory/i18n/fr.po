@@ -7,18 +7,24 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-27 16:44+0000\n"
-"PO-Revision-Date: 2025-02-27 16:44+0000\n"
+"PO-Revision-Date: 2026-09-04 14:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
-msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
-msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
+msgid ""
+"<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" "
+"title=\"Manage\"/>"
+msgstr ""
+"<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" "
+"title=\"Gérer\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -39,8 +45,8 @@ msgid ""
 "left:3px;line-height:1\"/>"
 msgstr ""
 "<i class=\"fa fa-github\" role=\"img\" aria-label=\"Compte Github\" "
-"title=\"Compte Github\" style=\"font-size:14px;color:#7c7bad;margin-"
-"left:3px;line-height:1\"/>"
+"title=\"Compte Github\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;"
+"line-height:1\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -50,8 +56,8 @@ msgid ""
 "left:3px;line-height:1\"/>"
 msgstr ""
 "<i class=\"fa fa-gitlab\" role=\"img\" aria-label=\"Compte Gitlab\" "
-"title=\"Compte Gitlab\" style=\"font-size:14px;color:#7c7bad;margin-"
-"left:3px;line-height:1\"/>"
+"title=\"Compte Gitlab\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;"
+"line-height:1\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -261,6 +267,7 @@ msgid "Display Name"
 msgstr "Nom affiché"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee__is_displayed_in_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__is_displayed_in_directory
 msgid "Displayed in Directory"
 msgstr "Affiché dans l'annuaire"
@@ -271,6 +278,7 @@ msgid "Email (Private)"
 msgstr "Email (Privé)"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model,name:fermente_cooperative_directory.model_hr_employee
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__employee_id
 msgid "Employee"
 msgstr "Employé"
@@ -289,32 +297,32 @@ msgstr "Interlocuteur·ice social"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1024
 msgid "Image 1024"
-msgstr ""
+msgstr "Image 1024"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_128
 msgid "Image 128"
-msgstr ""
+msgstr "Image 128"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_256
 msgid "Image 256"
-msgstr ""
+msgstr "Image 256"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_512
 msgid "Image 512"
-msgstr ""
+msgstr "Image 512"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -339,7 +347,7 @@ msgstr "Informations légales"
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_mobile

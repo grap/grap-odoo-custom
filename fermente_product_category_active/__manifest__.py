@@ -9,5 +9,5 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["product_category_active"],
+    "depends": ["product_category_active", "web_notify"],
 }
