@@ -3,7 +3,7 @@
 
 {
     "name": "Fermente - Mail",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

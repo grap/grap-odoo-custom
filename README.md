@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[fermente_account](fermente_account/) | 16.0.2.4.0 |  | Fermente - Account
+[fermente_account](fermente_account/) | 16.0.2.5.0 |  | Fermente - Account
 [fermente_account_invoice_margin](fermente_account_invoice_margin/) | 16.0.1.1.0 |  | Fermente - Account Invoice Margin
 [fermente_account_invoice_product_print_category](fermente_account_invoice_product_print_category/) | 16.0.1.1.0 |  | Fermente - Account Invoice x Product Print Category
 [fermente_account_invoice_supplier_ref_unique](fermente_account_invoice_supplier_ref_unique/) | 16.0.1.0.0 |  | Fermente - Account Invoice Supplier Ref Unique
@@ -29,19 +29,20 @@ addon | version | maintainers | summary
 [fermente_account_invoice_triple_discount](fermente_account_invoice_triple_discount/) | 16.0.1.1.0 |  | Fermente - Account Invoice Triple Discount
 [fermente_account_menu_invoice_refund](fermente_account_menu_invoice_refund/) | 16.0.1.1.0 |  | Fermente - Account Menu Invoice Refund
 [fermente_account_move_name_sequence](fermente_account_move_name_sequence/) | 16.0.1.1.0 |  | Fermente - Account Move Name Sequence
-[fermente_base](fermente_base/) | 16.0.2.2.0 |  | Fermente - Base
+[fermente_base](fermente_base/) | 16.0.2.3.0 |  | Fermente - Base
 [fermente_cooperative_directory](fermente_cooperative_directory/) | 16.0.4.1.0 |  | Add Directories for companies and employees
 [fermente_crm](fermente_crm/) | 16.0.2.0.1 |  | Fermente - CRM
 [fermente_hr](fermente_hr/) | 16.0.3.1.0 |  | Fermente - Human Ressources
 [fermente_hr_expense](fermente_hr_expense/) | 16.0.2.3.0 |  | Fermente - Human Ressources Expense
 [fermente_l10n_fr_siret](fermente_l10n_fr_siret/) | 16.0.1.1.0 |  | Fermente - L10N FR Siret
+[fermente_mail](fermente_mail/) | 16.0.1.1.0 |  | Fermente - Mail
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.1.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.3.1 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.2 |  | Fermente - MRP BoM Form View
 [fermente_pos](fermente_pos/) | 16.0.4.4.0 |  | Fermente - Point Of Sale
 [fermente_pos_hr](fermente_pos_hr/) | 16.0.1.0.2 |  | Fermente - Point Of Sale HR
 [fermente_pos_restaurant](fermente_pos_restaurant/) | 16.0.3.0.0 |  | Fermente - Point Of Sale Restaurant
-[fermente_product](fermente_product/) | 16.0.4.2.0 |  | Fermente - Product
+[fermente_product](fermente_product/) | 16.0.4.3.0 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.2.0 |  | Fermente - Product Category Active
 [fermente_product_food_product_is_bulk](fermente_product_food_product_is_bulk/) | 16.0.1.0.0 |  | Fermente - Product Food x Product is bulk
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
