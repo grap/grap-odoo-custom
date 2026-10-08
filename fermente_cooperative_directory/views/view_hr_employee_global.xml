@@ -94,7 +94,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
-                           <t t-set="employee_image" t-value="kanban_image('hr.employee.global', 'image_1024', record.id.raw_value)"/>
+                           <t t-set="employee_image" t-value="kanban_image('hr.employee.global', 'image_128', record.id.raw_value)"/>
                             <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image:url('#{employee_image}')">
                                 <img class="o_kanban_image_inner_pic" t-att-alt="record.company_id.value" t-att-src="kanban_image('res.company', 'logo_web', record.company_id.raw_value)"/>
                             </div>
