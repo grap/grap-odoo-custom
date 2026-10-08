@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Human Ressources",
-    "version": "16.0.3.0.2",
+    "version": "16.0.3.1.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

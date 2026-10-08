@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Human Ressources Expense",
-    "version": "16.0.2.2.2",
+    "version": "16.0.2.3.0",
     "category": "Web",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

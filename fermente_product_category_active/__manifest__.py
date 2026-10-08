@@ -4,7 +4,7 @@
 
 {
     "name": "Fermente - Product Category Active",
-    "version": "16.0.1.1.3",
+    "version": "16.0.1.2.0",
     "category": "Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

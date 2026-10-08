@@ -4,7 +4,7 @@
 
 {
     "name": "Stock Product Replenishment UX",
-    "version": "16.0.1.0.1",
+    "version": "16.0.1.1.0",
     "category": "Stock",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
