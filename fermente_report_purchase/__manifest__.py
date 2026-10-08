@@ -5,7 +5,7 @@
 
 {
     "name": "Fermente - Report adjustements for Purchase",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "category": "GRAP - Custom",
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",

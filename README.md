@@ -51,7 +51,7 @@ addon | version | maintainers | summary
 [fermente_report_base](fermente_report_base/) | 16.0.1.1.0 |  | Fermente - Custom Qweb Reports
 [fermente_report_pos](fermente_report_pos/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Point of Sale
 [fermente_report_product](fermente_report_product/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Product
-[fermente_report_purchase](fermente_report_purchase/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Purchase
+[fermente_report_purchase](fermente_report_purchase/) | 16.0.1.1.0 |  | Fermente - Report adjustements for Purchase
 [fermente_report_sale](fermente_report_sale/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Sale
 [fermente_report_stock](fermente_report_stock/) | 16.0.1.0.0 |  | Fermente - Report adjustements for Stock
 [fermente_sale](fermente_sale/) | 16.0.2.6.0 |  | Fermente - Sale
