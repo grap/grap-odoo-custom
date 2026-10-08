@@ -145,7 +145,9 @@ class PurchaseOrderXlsx(models.AbstractModel):
         )
         ws.freeze_panes(row_pos, 0)
 
-        for order_line in order_lines:
+        # Filters sections and notes
+        order_lines_filtered = order_lines.filtered(lambda t: t.display_type is False)
+        for order_line in order_lines_filtered:
             row_pos = self._write_line(
                 ws,
                 row_pos,
