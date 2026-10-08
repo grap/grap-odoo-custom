@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_res_partner_tree" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="before">
+                <field name="property_payment_term_id" optional="hide"/>
+                <field name="property_account_position_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
