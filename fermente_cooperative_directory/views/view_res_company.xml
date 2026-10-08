@@ -17,15 +17,27 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                <field name="accounting_interlocutor_id"/>
                <field name="hr_interlocutor_id"/>
                <field name="attendant_interlocutor_id"/>
-               <filter string="Category" name="group_by_category"
-                    context="{'group_by' : 'category_id'}"/>
-               <filter string="Attendant Interlocutor" name="group_by_att_interlocutor"
-                    context="{'group_by' : 'attendant_interlocutor_id'}"/>
-               <filter string="Accounting Interlocutor" name="group_by_acc_interlocutor"
-                    context="{'group_by' : 'accounting_interlocutor_id'}"/>
-               <filter string="HR Interlocutor" name="group_by_hr_interlocutor"
-                    context="{'group_by' : 'hr_interlocutor_id'}"/>
             </field>
+        </field>
+    </record>
+
+    <record id="view_res_company_group" model="ir.ui.view">
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="res_company_search_view.view_res_company_search"/>
+        <field name="arch" type="xml">
+            <group name="group_by" position="inside">
+                <filter string="Category" name="group_by_category"
+                    context="{'group_by' : 'category_id'}"/>
+                <filter string="Territory" name="group_territory"
+                    context="{'group_by': 'territory_id'}"/>
+                <separator/>
+                <filter string="Attendant Interlocutor" name="group_by_att_interlocutor"
+                    context="{'group_by' : 'attendant_interlocutor_id'}"/>
+                <filter string="Accounting Interlocutor" name="group_by_acc_interlocutor"
+                    context="{'group_by' : 'accounting_interlocutor_id'}"/>
+                <filter string="HR Interlocutor" name="group_by_hr_interlocutor"
+                    context="{'group_by' : 'hr_interlocutor_id'}"/>
+            </group>
         </field>
     </record>
 
@@ -125,6 +137,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                                 <field name="code" readonly="True"/>
                                 <field name="fiscal_type" readonly="True"/>
                                 <field name="cooperative_joining_date"/>
+                                <field name="territory_id"/>
                                 <field name="category_id"/>
                             </group>
                         </group>
