@@ -69,9 +69,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="state_id" optional="hide"/>
                 <field name="country_id" readonly="1" optional="hide"/>
                 <field name="category_id" optional="hide"/>
-               <field name="accounting_interlocutor_id" optional="show"/>
-               <field name="hr_interlocutor_id" />
-               <field name="attendant_interlocutor_id" optional="show"/>
+                <field name="territory_id" optional="hide"/>
+                <field name="accounting_interlocutor_id" optional="show"/>
+                <field name="hr_interlocutor_id" optional="show"/>
+                <field name="attendant_interlocutor_id" optional="show"/>
             </tree>
         </field>
     </record>
