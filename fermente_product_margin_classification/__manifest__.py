@@ -9,6 +9,14 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["product_margin_classification", "product_usability"],
-    "data": ["security/ir.model.access.csv", "views/menu.xml"],
+    "depends": [
+        "product_margin_classification",
+        "product_usability",
+        "product_standard_margin",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/view_product_product.xml",
+    ],
 }
