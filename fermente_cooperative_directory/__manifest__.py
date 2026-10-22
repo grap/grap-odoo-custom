@@ -25,6 +25,7 @@
         "res_company_code",
         "res_company_mastodon_link",
         "res_company_gitlab_link",
+        "res_company_search_view",
         "web_view_leaflet_map",
         # GRAP
         "fiscal_company_base",
@@ -34,6 +35,7 @@
         "security/res_groups.xml",
         "security/ir.model.access.csv",
         "views/menu.xml",
+        "views/view_fermente_territory.xml",
         "views/view_hr_employee.xml",
         "views/view_hr_employee_global.xml",
         "views/view_res_company.xml",

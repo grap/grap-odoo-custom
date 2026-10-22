@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * fermente_cooperative_directory
+# 	* fermente_cooperative_directory
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-27 16:44+0000\n"
-"PO-Revision-Date: 2026-09-04 14:55+0200\n"
+"POT-Creation-Date: 2026-10-02 19:39+0000\n"
+"PO-Revision-Date: 2026-10-02 19:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -148,12 +148,13 @@ msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__accounting_interlocutor_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
 msgid "Accounting Interlocutor"
 msgstr "Interlocuteur·ice comptabilité"
 
 #. module: fermente_cooperative_directory
 #: model:ir.actions.act_window,name:fermente_cooperative_directory.action_res_company
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_ids
 #: model:ir.ui.menu,name:fermente_cooperative_directory.menu_res_company
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
 msgid "Activities"
@@ -177,7 +178,7 @@ msgstr "Sociétés archivées"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__attendant_interlocutor_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
 msgid "Attendant Interlocutor"
 msgstr "Interlocuteur·ice accompagnement"
 
@@ -187,9 +188,9 @@ msgid "Birthday (Private)"
 msgstr "Date de Naissance (Privée)"
 
 #. module: fermente_cooperative_directory
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
 msgid "Category"
-msgstr "Catégorie"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -205,6 +206,11 @@ msgstr "Ville (Privée)"
 #: model:ir.model,name:fermente_cooperative_directory.model_res_company
 msgid "Companies"
 msgstr "Sociétés"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__company_ids
+msgid "Companies in this Territory"
+msgstr "Activités sur ce Territoire"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__company_id
@@ -262,6 +268,7 @@ msgid "Directory"
 msgstr "Annuaire"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__display_name
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
@@ -284,17 +291,23 @@ msgid "Employee"
 msgstr "Employé"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model,name:fermente_cooperative_directory.model_fermente_territory
+msgid "Fermente custom Territory"
+msgstr ""
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__firstname
 msgid "Firstname"
 msgstr "Prénom"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__hr_interlocutor_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
 msgid "HR Interlocutor"
 msgstr "Interlocuteur·ice social"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__id
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__id
 msgid "ID"
 msgstr "ID"
@@ -330,6 +343,7 @@ msgid "Interlocutors"
 msgstr "Interlocuteurs"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory____last_update
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
@@ -360,6 +374,7 @@ msgid "Mobile Phone"
 msgstr "Téléphone portable professionnel"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__name
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__name
 msgid "Name"
 msgstr "Nom"
@@ -388,6 +403,11 @@ msgstr "Informations publiques"
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Public informations"
 msgstr "Informations publiques"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_user_id
+msgid "Responsible User"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
@@ -423,6 +443,18 @@ msgstr "Rue (complément) ..."
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Team"
 msgstr "Equipe"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_fermente_territory
+#: model:ir.ui.menu,name:fermente_cooperative_directory.menu_fermente_territory
+msgid "Territories"
+msgstr "Territoires"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__territory_id
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
+msgid "Territory"
+msgstr "Territoire"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_email
