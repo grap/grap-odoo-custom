@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Quentin DUPONT
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <record id="view_product_template_form_remove_field" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_origin.product_template_form_view" />
+        <field name="arch" type="xml">
+            <!-- Remove -->
+            <xpath expr="//group[@name='group_origin']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_product_template_form_add_field" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_food.view_product_template_form" />
+        <field name="arch" type="xml">
+            <!-- Add -->
+            <group name="group_food_content" position="after">
+                <group
+                    string="Origin"
+                    name="group_origin"
+                    attrs="{'invisible': [('product_variant_count', '>', 1)]}"
+                >
+                    <!-- product_origin fields -->
+                    <field name="country_id" />
+                    <field name="state_id_domain" invisible="1" />
+                    <field name="state_id" domain="state_id_domain" />
+                    <!-- l10n_fr_department_product_origin fields -->
+                    <field name="department_id_domain" invisible="1" />
+                    <field name="department_id" domain="department_id_domain" />
+                </group>
+            </group>
+        </field>
+    </record>
+
+
+</odoo>
