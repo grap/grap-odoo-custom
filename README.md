@@ -45,6 +45,7 @@ addon | version | maintainers | summary
 [fermente_product](fermente_product/) | 16.0.4.3.0 |  | Fermente - Product
 [fermente_product_category_active](fermente_product_category_active/) | 16.0.1.2.0 |  | Fermente - Product Category Active
 [fermente_product_food_product_is_bulk](fermente_product_food_product_is_bulk/) | 16.0.1.0.0 |  | Fermente - Product Food x Product is bulk
+[fermente_product_food_product_maker](fermente_product_food_product_maker/) | 16.0.1.0.0 |  | Fermente - Product Food x Product maker
 [fermente_product_margin_classification](fermente_product_margin_classification/) | 16.0.2.0.1 |  | Fermente - Product Margin Classification
 [fermente_project](fermente_project/) | 16.0.2.1.0 |  | Fermente - Project
 [fermente_purchase](fermente_purchase/) | 16.0.2.1.0 |  | Fermente - Purchase
