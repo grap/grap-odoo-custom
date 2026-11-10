@@ -12,6 +12,5 @@
     "data": [
         "views/view_mail_compose_message.xml",
         "views/view_res_partner.xml",
-        "views/menu.xml",
     ],
 }
