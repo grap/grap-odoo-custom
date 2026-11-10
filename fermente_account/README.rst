@@ -35,6 +35,8 @@ Customize Odoo / ``account`` module.
   - Hide useless fields. ``invoice_incoterm_id``,
     ``invoice_cash_rounding_id``.
 
+- avoid creating new mail template directly from document
+
 **Table of contents**
 
 .. contents::

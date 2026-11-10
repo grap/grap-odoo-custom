@@ -9,5 +9,8 @@
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
     "depends": ["mail"],
-    "data": ["views/view_res_partner.xml"],
+    "data": [
+        "views/view_mail_compose_message.xml",
+        "views/view_res_partner.xml",
+    ],
 }
