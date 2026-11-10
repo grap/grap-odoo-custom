@@ -6,6 +6,21 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 <odoo>
 
+    <record id="action_fermente_territory_to_company" model="ir.actions.act_window">
+        <field name="name">Territory Activities</field>
+        <field name="res_model">res.company</field>
+        <field name="view_mode">kanban,tree,form,leaflet_map</field>
+        <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
+        <field name="context">{
+            "search_default_territory_id": [active_id],
+            "default_territory_id": active_id,
+            "form_view_ref": "fermente_cooperative_directory.view_res_company_form_directory",
+            "tree_view_ref": "fermente_cooperative_directosssry.view_res_company_tree_directory",
+            }
+        </field>
+    </record>
+
+
     <record id="view_fermente_territory_search" model="ir.ui.view">
         <field name="model">fermente.territory</field>
         <field name="arch" type="xml">
@@ -50,10 +65,53 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         </field>
     </record>
 
+    <record id="view_fermente_territory_kanban" model="ir.ui.view">
+        <field name="model">fermente.territory</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_background_grey o_kanban_dashboard o_hr_kanban">
+                <field name="name"/>
+                <field name="company_qty"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div>
+                            <div t-attf-class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title">
+                                    <div class="o_primary"><field name="name"/></div>
+                                </div>
+                                <div class="o_kanban_manage_button_section">
+                                    <a class="o_kanban_manage_toggle_button" href="#"><i class="fa fa-ellipsis-v" role="img" aria-label="Manage" title="Manage"/></a>
+                                </div>
+                            </div>
+                            <div class="container o_kanban_card_content">
+                                <div class="row">
+                                    <div class="col-6 o_kanban_primary_left">
+                                        <button class="btn btn-primary" type="action"
+                                                name="%(action_fermente_territory_to_company)d" >
+                                            <field name="company_qty"/> Activities
+                                        </button>
+                                    </div>
+                                    <div class="col-6 o_kanban_primary_right">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
+                                    <div class="col-4 text-right">
+                                        <a role="menuitem" type="edit">Settings</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="action_fermente_territory" model="ir.actions.act_window">
         <field name="name">Territories</field>
         <field name="res_model">fermente.territory</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <menuitem id="menu_fermente_territory"
