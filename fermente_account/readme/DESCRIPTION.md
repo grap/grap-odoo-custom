@@ -5,3 +5,4 @@ Customize Odoo / `account` module.
   - move fiscal position field from Other Info tab, to main form.
   - Hide useless fields. `invoice_incoterm_id`,
     `invoice_cash_rounding_id`.
+- avoid creating new mail template directly from document

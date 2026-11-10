@@ -8,9 +8,8 @@
     "author": "GRAP",
     "website": "https://github.com/grap/grap-odoo-custom",
     "license": "AGPL-3",
-    "depends": ["account"],
+    "depends": ["mail"],
     "data": [
-        "views/view_account_invoice_send.xml",
         "views/view_mail_compose_message.xml",
         "views/view_res_partner.xml",
         "views/menu.xml",
