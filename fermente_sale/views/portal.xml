@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2026 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="portal_sale_order" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//span[@t-field='sale_order.date_order']" position="after">
+            <div class="mb-3 col-6" t-if="sale_order.commitment_date">
+                <strong>Delivery Date:</strong> <span t-field="sale_order.commitment_date" t-options='{"widget": "date"}'/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

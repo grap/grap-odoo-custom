@@ -17,6 +17,15 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
                 <field name="fiscal_position_id" position="move"/>
             </field>
 
+            <!-- Date clean and refactor -->
+            <field name="validity_date" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </field>
+            <field name="show_update_pricelist" position="before">
+                <field name="commitment_date" position="move" />
+                <field name="validity_date" position="move" />
+            </field>
+
         </field>
     </record>
 

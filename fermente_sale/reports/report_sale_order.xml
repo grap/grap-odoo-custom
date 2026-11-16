@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2025 - Today: GRAP (http://www.grap.coop)
+@author: Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+
+    <template id="report_sale_order" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@name='informations_date']" position="after">
+
+            <div t-if="doc.commitment_date" class="col-auto col-3 mw-100 mb-2" name="commitment_date">
+                <strong>Delivery Date:</strong>
+                <p class="m-0" t-field="doc.commitment_date" t-options='{"widget": "date"}'/>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>

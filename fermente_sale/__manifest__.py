@@ -15,5 +15,7 @@
         "views/menu.xml",
         "views/view_sale_order.xml",
         "views/view_product_template.xml",
+        "views/portal.xml",
+        "reports/report_sale_order.xml",
     ],
 }
