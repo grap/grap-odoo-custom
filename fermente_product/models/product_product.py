@@ -6,6 +6,7 @@ from odoo import fields, models
 
 class ProductProduct(models.Model):
     _inherit = "product.product"
+    _order = "name"
 
     standard_price = fields.Float(copy=True, tracking=True)
 
