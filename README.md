@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[fermente_account](fermente_account/) | 16.0.2.5.0 |  | Fermente - Account
+[fermente_account](fermente_account/) | 16.0.2.5.1 |  | Fermente - Account
 [fermente_account_invoice_margin](fermente_account_invoice_margin/) | 16.0.1.1.0 |  | Fermente - Account Invoice Margin
 [fermente_account_invoice_product_print_category](fermente_account_invoice_product_print_category/) | 16.0.1.1.0 |  | Fermente - Account Invoice x Product Print Category
 [fermente_account_invoice_supplier_ref_unique](fermente_account_invoice_supplier_ref_unique/) | 16.0.1.0.0 |  | Fermente - Account Invoice Supplier Ref Unique
@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [fermente_hr](fermente_hr/) | 16.0.3.1.0 |  | Fermente - Human Ressources
 [fermente_hr_expense](fermente_hr_expense/) | 16.0.2.3.0 |  | Fermente - Human Ressources Expense
 [fermente_l10n_fr_siret](fermente_l10n_fr_siret/) | 16.0.1.1.0 |  | Fermente - L10N FR Siret
-[fermente_mail](fermente_mail/) | 16.0.1.1.0 |  | Fermente - Mail
+[fermente_mail](fermente_mail/) | 16.0.1.1.1 |  | Fermente - Mail
 [fermente_main_menu](fermente_main_menu/) | 16.0.2.1.0 |  | Fermente - Main Menu
 [fermente_mrp](fermente_mrp/) | 16.0.1.3.1 |  | Fermente - MRP
 [fermente_mrp_bom_form_view](fermente_mrp_bom_form_view/) | 16.0.1.2.2 |  | Fermente - MRP BoM Form View
