@@ -8,36 +8,25 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
     <record id="view_res_company_search" model="ir.ui.view">
         <field name="model">res.company</field>
-        <field name="inherit_id" ref="fiscal_company_base.view_res_company_search"/>
+        <field name="inherit_id" ref="res_company_search_view.view_res_company_search"/>
         <field name="arch" type="xml">
-            <field name="fiscal_type" position="after">
-               <field name="code"/>
-               <field name="category_id"/>
-               <filter name="inactive" string="Archived companies" domain="[('active','=', False)]"/>
+            <field name="name" position="after">
+               <field name="territory_id"/>
                <field name="accounting_interlocutor_id"/>
                <field name="hr_interlocutor_id"/>
                <field name="attendant_interlocutor_id"/>
-            </field>
-        </field>
-    </record>
-
-    <record id="view_res_company_group" model="ir.ui.view">
-        <field name="model">res.company</field>
-        <field name="inherit_id" ref="res_company_search_view.view_res_company_search"/>
-        <field name="arch" type="xml">
-            <group name="group_by" position="inside">
                 <filter string="Category" name="group_by_category"
                     context="{'group_by' : 'category_id'}"/>
-                <filter string="Territory" name="group_territory"
+                <filter string="Territory" name="group_by_territory"
                     context="{'group_by': 'territory_id'}"/>
                 <separator/>
-                <filter string="Attendant Interlocutor" name="group_by_att_interlocutor"
+                <filter string="Attendant Interlocutor" name="group_by_attendant_interlocutor_id"
                     context="{'group_by' : 'attendant_interlocutor_id'}"/>
-                <filter string="Accounting Interlocutor" name="group_by_acc_interlocutor"
+                <filter string="Accounting Interlocutor" name="group_by_accounting_interlocutor_id"
                     context="{'group_by' : 'accounting_interlocutor_id'}"/>
-                <filter string="HR Interlocutor" name="group_by_hr_interlocutor"
+                <filter string="HR Interlocutor" name="group_by_hr_interlocutor_id"
                     context="{'group_by' : 'hr_interlocutor_id'}"/>
-            </group>
+            </field>
         </field>
     </record>
 

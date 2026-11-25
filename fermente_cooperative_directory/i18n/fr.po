@@ -19,12 +19,9 @@ msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
-msgid ""
-"<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" "
-"title=\"Manage\"/>"
-msgstr ""
-"<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" "
-"title=\"Gérer\"/>"
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_fermente_territory_kanban
+msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
+msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -45,8 +42,8 @@ msgid ""
 "left:3px;line-height:1\"/>"
 msgstr ""
 "<i class=\"fa fa-github\" role=\"img\" aria-label=\"Compte Github\" "
-"title=\"Compte Github\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;"
-"line-height:1\"/>"
+"title=\"Compte Github\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -56,8 +53,8 @@ msgid ""
 "left:3px;line-height:1\"/>"
 msgstr ""
 "<i class=\"fa fa-gitlab\" role=\"img\" aria-label=\"Compte Gitlab\" "
-"title=\"Compte Gitlab\" style=\"font-size:14px;color:#7c7bad;margin-left:3px;"
-"line-height:1\"/>"
+"title=\"Compte Gitlab\" style=\"font-size:14px;color:#7c7bad;margin-"
+"left:3px;line-height:1\"/>"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
@@ -148,15 +145,21 @@ msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__accounting_interlocutor_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
 msgid "Accounting Interlocutor"
 msgstr "Interlocuteur·ice comptabilité"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_needaction
+msgid "Action Needed"
+msgstr "Actions Requises"
 
 #. module: fermente_cooperative_directory
 #: model:ir.actions.act_window,name:fermente_cooperative_directory.action_res_company
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_ids
 #: model:ir.ui.menu,name:fermente_cooperative_directory.menu_res_company
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_fermente_territory_kanban
 msgid "Activities"
 msgstr "Activités"
 
@@ -167,18 +170,28 @@ msgid "Activities Category"
 msgstr "Catégories d'activités"
 
 #. module: fermente_cooperative_directory
-#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_company_category_to_company
-msgid "Activities categories"
-msgstr "Catégories d'activités"
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
 
 #. module: fermente_cooperative_directory
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
-msgid "Archived companies"
-msgstr "Sociétés archivées"
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__attendant_interlocutor_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
 msgid "Attendant Interlocutor"
 msgstr "Interlocuteur·ice accompagnement"
 
@@ -188,9 +201,14 @@ msgid "Birthday (Private)"
 msgstr "Date de Naissance (Privée)"
 
 #. module: fermente_cooperative_directory
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_company_category_to_company
+msgid "Category Activities"
+msgstr "Catégories d'activités"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -208,6 +226,11 @@ msgid "Companies"
 msgstr "Sociétés"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__company_qty
+msgid "Companies Quantity"
+msgstr "Nombre de sociétés"
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__company_ids
 msgid "Companies in this Territory"
 msgstr "Activités sur ce Territoire"
@@ -216,6 +239,11 @@ msgstr "Activités sur ce Territoire"
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__company_id
 msgid "Company"
 msgstr "Société"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model,name:fermente_cooperative_directory.model_res_company_category
+msgid "Company Categories"
+msgstr "Catégories de société"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__complete_address
@@ -253,6 +281,16 @@ msgid "Country (Private)"
 msgstr "Pays (Privé)"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_res_company__cooperative_joining_date
 msgid ""
 "Date of the commission in which the cooperative accepted the entry of this "
@@ -288,7 +326,7 @@ msgstr "Email (Privé)"
 #: model:ir.model,name:fermente_cooperative_directory.model_hr_employee
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__employee_id
 msgid "Employee"
-msgstr "Employé"
+msgstr "Employé·e"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model,name:fermente_cooperative_directory.model_fermente_territory
@@ -301,41 +339,81 @@ msgid "Firstname"
 msgstr "Prénom"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__hr_interlocutor_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
 msgid "HR Interlocutor"
 msgstr "Interlocuteur·ice social"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__has_message
+msgid "Has Message"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__id
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1920
 msgid "Image"
-msgstr "Image"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1024
 msgid "Image 1024"
-msgstr "Image 1024"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_128
 msgid "Image 128"
-msgstr "Image 128"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_256
 msgid "Image 256"
-msgstr "Image 256"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_512
 msgid "Image 512"
-msgstr "Image 512"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -343,10 +421,25 @@ msgid "Interlocutors"
 msgstr "Interlocuteurs"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory____last_update
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__write_date
+msgid "Last Updated on"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__lastname
@@ -361,7 +454,22 @@ msgstr "Informations légales"
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
 msgid "Logo"
-msgstr "Logo"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_ids
+msgid "Messages"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_mobile
@@ -374,10 +482,55 @@ msgid "Mobile Phone"
 msgstr "Téléphone portable professionnel"
 
 #. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__name
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__name
 msgid "Name"
 msgstr "Nom"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_phone
@@ -411,8 +564,18 @@ msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_fermente_territory_kanban
 msgid "Settings"
 msgstr "Configuration"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__smart_search
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee__smart_search
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__smart_search
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__smart_search
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company_category__smart_search
+msgid "Smart Search"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -423,6 +586,15 @@ msgstr "Réseaux Sociaux"
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_state_id
 msgid "State (Private)"
 msgstr "Etat (Privé)"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_street
@@ -452,9 +624,29 @@ msgstr "Territoires"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__territory_id
-#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_group
+#: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_search
 msgid "Territory"
 msgstr "Territoire"
+
+#. module: fermente_cooperative_directory
+#: model:ir.actions.act_window,name:fermente_cooperative_directory.action_fermente_territory_to_company
+msgid "Territory Activities"
+msgstr "Activités du territoire"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_email

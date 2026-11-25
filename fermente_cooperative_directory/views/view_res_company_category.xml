@@ -7,7 +7,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 <odoo>
 
     <record id="action_company_category_to_company" model="ir.actions.act_window">
-        <field name="name">Activities categories</field>
+        <field name="name">Category Activities</field>
         <field name="res_model">res.company</field>
         <field name="view_mode">kanban,tree,form,leaflet_map</field>
         <field name="domain">[('is_displayed_in_directory', '=', True)]</field>
