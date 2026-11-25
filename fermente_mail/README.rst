@@ -29,14 +29,31 @@ Fermente - Mail
 Customize Odoo / ``mail`` module.
 
 - set ``activity_ids`` hidden by default
+- avoid creating new mail template directly from document
 
 **Table of contents**
 
 .. contents::
    :local:
 
+Development
+===========
+
+Due to poor design of Odoo Core ``mail`` and ``account`` modules, the
+wizard to send mail via odoo is fully duplicated.
+
+- ``mail.email_compose_message_wizard_form``
+- ``account.account_invoice_send_wizard_form``
+
+see ``fermente_account`` module for the ``account`` changes.
+
 Changelog
 =========
+
+16.0.2.0.2 (2026-10)
+--------------------
+
+- hide new template button
 
 16.0.2.0.1 (2025-10-25)
 -----------------------
@@ -64,7 +81,8 @@ Authors
 Contributors
 ------------
 
-- Sylvain LE GAL (https://www.twitter.com/legalsylvain)
+- Sylvain LE GAL
+- Quentin DUPONT
 
 Maintainers
 -----------
