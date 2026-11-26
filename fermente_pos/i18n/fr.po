@@ -20,12 +20,10 @@ msgstr ""
 #. module: fermente_pos
 #: model:ir.model.fields,help:fermente_pos.field_res_company__point_of_sale_update_stock_quantities
 msgid ""
-"At the session closing: A picking is created for the entire session when "
-"it's closed\n"
+"At the session closing: A picking is created for the entire session when it's closed\n"
 " In real time: Each order sent to the server create its own picking"
 msgstr ""
-"A la fermeture de la session : un transfert est créé pour l’entièreté de la "
-"session lorsqu'elle est fermée\n"
+"A la fermeture de la session : un transfert est créé pour l’entièreté de la session lorsqu'elle est fermée\n"
 "En temps réel : chaque commande envoyée au serveur crée son propre transfert"
 
 #. module: fermente_pos
@@ -40,7 +38,7 @@ msgstr "Disponible dans le PdV"
 msgid "Check if you want this product to appear in the Point of Sale."
 msgstr ""
 "Cochez cette case si vous souhaitez faire apparaître ce produit dans le "
-"Point de Vente."
+"Point de Vente"
 
 #. module: fermente_pos
 #: model:ir.model,name:fermente_pos.model_res_company
@@ -61,7 +59,7 @@ msgstr "Date de création"
 #: model:ir.actions.act_window,name:fermente_pos.action_pos_order_line
 #: model:ir.ui.menu,name:fermente_pos.menu_pos_order_line
 msgid "Order Lines"
-msgstr "Lignes de commandes"
+msgstr "Lignes de commande"
 
 #. module: fermente_pos
 #: model:ir.model,name:fermente_pos.model_pos_config
@@ -97,7 +95,7 @@ msgstr "Total TTC"
 #. module: fermente_pos
 #: model_terms:ir.ui.view,arch_db:fermente_pos.view_pos_order_line_tree
 msgid "Total Qty"
-msgstr "Qté Totale"
+msgstr "Qté totale"
 
 #. module: fermente_pos
 #: model:ir.model.fields,field_description:fermente_pos.field_res_company__point_of_sale_update_stock_quantities

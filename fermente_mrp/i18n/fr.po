@@ -10,6 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2025-02-21 10:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -25,7 +26,7 @@ msgstr "Fiches techniques"
 #. module: fermente_mrp
 #: model_terms:ir.ui.view,arch_db:fermente_mrp.view_fermente_mrp_production_form_base
 msgid "BoM"
-msgstr "Fiche technique"
+msgstr "F.T."
 
 #. module: fermente_mrp
 #: model:ir.actions.act_window,name:fermente_mrp.action_fermente_mrp_bom_finished_products

@@ -10,6 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2025-09-09 12:20+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -61,8 +62,9 @@ msgid ""
 "Is intermediate a product which has a BoM based on it +              is used"
 " in a BoM line"
 msgstr ""
-"Un produit est intermédiaire s'il a une Fiche technique dédiée + s'il est "
-"utilisé dans une autre Fiche technique"
+"Est un produit intermédiaire tout produit qui a une Fiche technique basée "
+"sur elle +              qui est utilisé dans une Fiche technique comme "
+"composant"
 
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
@@ -114,9 +116,9 @@ msgstr ""
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #. module: fermente_mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:fermente_mrp_bom_form_view.view_fermente_mrp_bom_form_sections_and_notes
 msgid "View product's BoM"
-msgstr "Voir ses Fiches techniques"
+msgstr ""

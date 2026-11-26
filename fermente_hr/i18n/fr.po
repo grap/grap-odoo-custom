@@ -19,7 +19,7 @@ msgstr ""
 #. module: fermente_hr
 #: model:ir.model,name:fermente_hr.model_hr_employee_base
 msgid "Basic Employee"
-msgstr "Employée classique"
+msgstr "Employé de base"
 
 #. module: fermente_hr
 #: model:res.groups,name:fermente_hr.group_hr

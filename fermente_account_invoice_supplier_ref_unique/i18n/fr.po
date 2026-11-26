@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_account_invoice_supplier_ref_unique
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fermente_account_invoice_supplier_ref_unique
+#: model:ir.model.fields,field_description:fermente_account_invoice_supplier_ref_unique.field_res_company__check_invoice_supplier_number
+msgid "Check Invoice Supplier Number"
+msgstr "Contrôle du numéro de facture fournisseur"
+
+#. module: fermente_account_invoice_supplier_ref_unique
+#: model:ir.model.fields,help:fermente_account_invoice_supplier_ref_unique.field_res_company__check_invoice_supplier_number
+msgid ""
+"Check this if you want to constraint the unicity for Invoice Supplier Number"
+msgstr ""
+"Cochez ceci pour activer le contrôle d'unicité du numéro de facture "
+"fournisseur"
+
+#. module: fermente_account_invoice_supplier_ref_unique
+#: model:ir.model,name:fermente_account_invoice_supplier_ref_unique.model_res_company
+msgid "Companies"
+msgstr "Sociétés"

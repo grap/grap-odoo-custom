@@ -1,0 +1,23 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_report_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fermente_report_pos
+#. odoo-javascript
+#: code:addons/fermente_report_pos/static/src/xml/OrderReceipt.xml:0
+#, python-format
+msgid "Customer:"
+msgstr "Client :"
+
+#. module: fermente_report_pos
+#. odoo-javascript
+#: code:addons/fermente_report_pos/static/src/xml/OrderReceipt.xml:0
+#, python-format
+msgid "Pricelist:"
+msgstr "Liste de prix :"

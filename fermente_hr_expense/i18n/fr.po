@@ -24,4 +24,4 @@ msgstr "Sélectionner un compte de dépense"
 #. module: fermente_hr_expense
 #: model_terms:ir.ui.view,arch_db:fermente_hr_expense.view_hr_expense_form
 msgid "e.g. Lunch with Customer"
-msgstr "Ex: Repas avec un client"
+msgstr "par ex. Déjeuner avec un Client"

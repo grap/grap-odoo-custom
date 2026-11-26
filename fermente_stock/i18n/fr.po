@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fermente_stock
+#: model:ir.model.fields,help:fermente_stock.field_product_product__detailed_type
+#: model:ir.model.fields,help:fermente_stock.field_product_template__detailed_type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Un produit stockable est un produit dont on gère le stock. L'application \"Inventaire\" doit être installée. \n"
+"Un produit consommable est un produit pour lequel le stock n'est pas géré.\n"
+"Un service est un produit immatériel que vous fournissez."
+
+#. module: fermente_stock
+#: model:ir.model,name:fermente_stock.model_product_template
+msgid "Product"
+msgstr "Produit"
+
+#. module: fermente_stock
+#: model:ir.model.fields,field_description:fermente_stock.field_product_product__detailed_type
+#: model:ir.model.fields,field_description:fermente_stock.field_product_template__detailed_type
+msgid "Product Type"
+msgstr "Type de produit"

@@ -1,0 +1,14 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_l10n_fr_siret
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fermente_l10n_fr_siret
+#: model_terms:ir.ui.view,arch_db:fermente_l10n_fr_siret.view_fermente_res_partner_l10n_fr_siret_form
+msgid "SIREN + NIC"
+msgstr ""

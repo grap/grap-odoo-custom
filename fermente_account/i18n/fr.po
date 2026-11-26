@@ -19,7 +19,7 @@ msgstr ""
 #. module: fermente_account
 #: model:ir.model,name:fermente_account.model_account_account
 msgid "Account"
-msgstr "Compte comptable"
+msgstr "Compte"
 
 #. module: fermente_account
 #: model:ir.model,name:fermente_account.model_res_partner
@@ -40,5 +40,7 @@ msgstr "Paiements"
 #. module: fermente_account
 #: model:ir.model.fields,help:fermente_account.field_res_partner__property_account_position_id
 #: model:ir.model.fields,help:fermente_account.field_res_users__property_account_position_id
-msgid "The fiscal position determines the taxes/accounts used for this contact."
-msgstr "La position fiscale détermine les taxes/comptes utilisés pour ce contact."
+msgid ""
+"The fiscal position determines the taxes/accounts used for this contact."
+msgstr ""
+"La position fiscale détermine les taxes/comptes utilisés pour ce contact."
