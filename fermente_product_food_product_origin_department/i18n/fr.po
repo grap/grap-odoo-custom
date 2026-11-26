@@ -1,0 +1,9 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_product_food_product_origin_department
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
