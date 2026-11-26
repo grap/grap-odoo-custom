@@ -25,10 +25,9 @@ msgid ""
 "\"%(category_name)s\" Please reaffect the following products to a correct "
 "active category:<br /><br />- %(product_names)s"
 msgstr ""
-"%(products_qty)d produit(s) a/ont été créé(s) avec une catégorie de "
-"produit désactivé \"%(category_name)s\". Veuillez réaffecter les produits "
-"suivant dans une catégorie de produit active: <br /><br />- "
-"%(product_names)s"
+"%(products_qty)d produit(s) a/ont été créé(s) avec une catégorie de produit "
+"désactivé \"%(category_name)s\". Veuillez réaffecter les produits suivant "
+"dans une catégorie de produit active: <br /><br />- %(product_names)s"
 
 #. module: fermente_product_category_active
 #. odoo-python

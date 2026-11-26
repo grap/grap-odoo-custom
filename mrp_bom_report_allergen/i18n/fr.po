@@ -10,6 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-15 09:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -25,12 +26,13 @@ msgstr "<span class=\"code_explanation_title\"><b>Allergènes: </b></span>"
 #: model:ir.model.fields,help:mrp_bom_report_allergen.field_mrp_bom__meal_category_id
 #: model:ir.model.fields,help:mrp_bom_report_allergen.field_product_product__meal_category_id
 #: model:ir.model.fields,help:mrp_bom_report_allergen.field_product_template__meal_category_id
+#, fuzzy
 msgid ""
-"Add a Meal Category to order Products in BoM Allergen report. E.g. starter, "
+"Add a Meal Category to order Products in BoM Allergens Table. E.g. starter, "
 "main course, dessert"
 msgstr ""
-"Ajouter une Catégorie de Repas pour classer les Produits dans la table des Allergènes."
-"Exemple : Entrée, Plat, Dessert"
+"Ajouter une Catégorie de Repas pour classer les Produits dans la table des "
+"Allergènes.Exemple : Entrée, Plat, Dessert"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__bom_allergens_ids
@@ -46,7 +48,7 @@ msgstr "Table des allergènes"
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__bom_id
 msgid "Bill Of Material"
-msgstr "Fiche technique"
+msgstr "Nomenclature"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model,name:mrp_bom_report_allergen.model_mrp_bom
@@ -88,14 +90,14 @@ msgstr "Société"
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__create_uid
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_mrp_meal_category__create_uid
 msgid "Created by"
-msgstr "Crée par"
+msgstr "Créé par"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard__create_date
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__create_date
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_mrp_meal_category__create_date
 msgid "Created on"
-msgstr "Crée le"
+msgstr "Créé le"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard__display_name
@@ -114,7 +116,7 @@ msgstr "Imprimer le code allergène au lieu du nom complet"
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__id
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_mrp_meal_category__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,help:mrp_bom_report_allergen.field_bom_print_wizard_line__bom_allergens_ids
@@ -133,14 +135,14 @@ msgstr "Dernière modification le"
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__write_uid
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_mrp_meal_category__write_uid
 msgid "Last Updated by"
-msgstr "Dernière modification par"
+msgstr "Dernière mise à jour par"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard__write_date
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__write_date
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_mrp_meal_category__write_date
 msgid "Last Updated on"
-msgstr "Dernière modification le"
+msgstr "Dernière mise à jour le"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard__line_ids
@@ -172,6 +174,13 @@ msgid "Meal category"
 msgstr "Catégorie de repas"
 
 #. module: mrp_bom_report_allergen
+#. odoo-python
+#: code:addons/mrp_bom_report_allergen/report/report_bom_allergens.py:0
+#, python-format
+msgid "No category"
+msgstr "Sans catégorie"
+
+#. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard__option_allergens_only_code_text
 msgid "Option Allergens Only Code Text"
 msgstr ""
@@ -182,15 +191,8 @@ msgid ""
 "Order Meal Category for BoM Allergen Report. E.g. starter, main course, "
 "dessert"
 msgstr ""
-"Classer les catégories de repas pour la Table des Allergènes."
-"Example : Entrée, Plat, Dessert"
-
-#. module: mrp_bom_report_allergen
-#. odoo-python
-#: code:addons/mrp_bom_report_allergen/report/report_bom_allergens.py:0
-#, python-format
-msgid "No category"
-msgstr "Sans catégorie"
+"Classer les catégories de repas pour la Table des Allergènes.Example : "
+"Entrée, Plat, Dessert"
 
 #. module: mrp_bom_report_allergen
 #: model_terms:ir.ui.view,arch_db:mrp_bom_report_allergen.view_bom_print_wizard_form
@@ -220,7 +222,7 @@ msgstr "Produit"
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_mrp_meal_category__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Séquence"
 
 #. module: mrp_bom_report_allergen
 #: model:ir.model.fields,field_description:mrp_bom_report_allergen.field_bom_print_wizard_line__wizard_id

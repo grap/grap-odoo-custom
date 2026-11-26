@@ -152,7 +152,7 @@ msgstr "Interlocuteur·ice comptabilité"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_needaction
 msgid "Action Needed"
-msgstr "Actions Requises"
+msgstr "Nécessite une action"
 
 #. module: fermente_cooperative_directory
 #: model:ir.actions.act_window,name:fermente_cooperative_directory.action_res_company
@@ -172,22 +172,22 @@ msgstr "Catégories d'activités"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Activité exception décoration"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Status de l'activité"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icône de type d'activité"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__attendant_interlocutor_id
@@ -248,7 +248,7 @@ msgstr "Catégories de société"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__complete_address
 msgid "Complete Address"
-msgstr "Adresse Complète"
+msgstr "Adresse complète"
 
 #. module: fermente_cooperative_directory
 #: model:ir.ui.menu,name:fermente_cooperative_directory.menu_root
@@ -336,22 +336,22 @@ msgstr ""
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__firstname
 msgid "Firstname"
-msgstr "Prénom"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icône Font Awesome par ex. fa-tasks"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__hr_interlocutor_id
@@ -362,58 +362,59 @@ msgstr "Interlocuteur·ice social"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__id
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône pour indiquer une activité d'exception."
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, de nouveaux messages demandent votre attention."
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_has_error
+#: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si coché, certains messages ont une erreur de livraison."
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_1024
 msgid "Image 1024"
-msgstr ""
+msgstr "Image 1024"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_128
 msgid "Image 128"
-msgstr ""
+msgstr "Image 128"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_256
 msgid "Image 256"
-msgstr ""
+msgstr "Image 256"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__image_512
 msgid "Image 512"
-msgstr ""
+msgstr "Image 512"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -423,7 +424,7 @@ msgstr "Interlocuteurs"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est un abonné"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory____last_update
@@ -434,17 +435,17 @@ msgstr "Dernière modification le"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__lastname
 msgid "Lastname"
-msgstr "Nom de famille"
+msgstr ""
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
@@ -454,22 +455,22 @@ msgstr "Informations légales"
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_kanban_directory
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Pièce jointe principale"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur d'envoi du message"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_mobile
@@ -484,7 +485,7 @@ msgstr "Téléphone portable professionnel"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Échéance de mon activité"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__name
@@ -495,42 +496,42 @@ msgstr "Nom"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Activité suivante de l'événement du calendrier"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Date limite de l'activité à venir"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Résumé de l'activité suivante"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Type d'activités à venir"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d'actions"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Nombre d'erreurs"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Nombre de messages nécessitant une action"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec des erreurs d'envoi"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_phone
@@ -540,7 +541,7 @@ msgstr "Téléphone Fixe (Privé)"
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_hr_employee_global_form
 msgid "Private Information"
-msgstr "Informations personnelles"
+msgstr "Informations privées"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model,name:fermente_cooperative_directory.model_hr_employee_global
@@ -560,27 +561,23 @@ msgstr "Informations publiques"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Utilisateur responsable"
+
+#. module: fermente_cooperative_directory
+#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur d'envoi SMS"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_company_category_kanban
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_fermente_territory_kanban
 msgid "Settings"
-msgstr "Configuration"
-
-#. module: fermente_cooperative_directory
-#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__smart_search
-#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee__smart_search
-#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__smart_search
-#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__smart_search
-#: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company_category__smart_search
-msgid "Smart Search"
-msgstr ""
+msgstr "Paramètres"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Social Networks"
-msgstr "Réseaux Sociaux"
+msgstr "Réseaux sociaux"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_state_id
@@ -595,6 +592,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date d'activité est aujourd'hui\n"
+"Planifiée : activités futures"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_street
@@ -609,12 +610,12 @@ msgstr "Rue (complément) (Privé)"
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Street 2..."
-msgstr "Rue (complément) ..."
+msgstr "Rue 2..."
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "Team"
-msgstr "Equipe"
+msgstr "Équipe"
 
 #. module: fermente_cooperative_directory
 #: model:ir.actions.act_window,name:fermente_cooperative_directory.action_fermente_territory
@@ -636,37 +637,37 @@ msgstr "Activités du territoire"
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type d'activité d'exception enregistrée."
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_fermente_territory__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site web"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,help:fermente_cooperative_directory.field_fermente_territory__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique de communication du site web"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_email
 msgid "Work Email"
-msgstr "Email professionnel"
+msgstr "Adresse e-mail professionnelle"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__work_phone
 msgid "Work Phone"
-msgstr "Téléphone fixe professionnel"
+msgstr "Téléphone professionnel"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_res_company__worker_ids
 msgid "Workers"
-msgstr "Travailleurs"
+msgstr "Techniciens"
 
 #. module: fermente_cooperative_directory
 #: model_terms:ir.ui.view,arch_db:fermente_cooperative_directory.view_res_company_form_directory
 msgid "ZIP"
-msgstr "Code Postal"
+msgstr "Code postal"
 
 #. module: fermente_cooperative_directory
 #: model:ir.model.fields,field_description:fermente_cooperative_directory.field_hr_employee_global__address_home_zip

@@ -20,7 +20,7 @@ msgstr ""
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Account Move"
-msgstr "Pièce comptable"
+msgstr "Écriture comptable"
 
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
@@ -45,12 +45,12 @@ msgstr "Société"
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__create_uid
 msgid "Created by"
-msgstr "Crée par"
+msgstr "Créé par"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__create_date
 msgid "Created on"
-msgstr "Crée le"
+msgstr "Créé le"
 
 #. module: report_custom_message
 #: model:ir.actions.act_window,name:report_custom_message.action_report_custom_message
@@ -142,12 +142,12 @@ msgstr "Dernière modification le"
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__write_uid
 msgid "Last Updated by"
-msgstr "Dernière modification par"
+msgstr "Dernière mise à jour par"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__write_date
 msgid "Last Updated on"
-msgstr "Dernière modification sur"
+msgstr "Dernière mise à jour le"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_report_custom_message__message
@@ -170,7 +170,7 @@ msgstr "Aperçu"
 #: model:ir.model,name:report_custom_message.model_purchase_order
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Purchase Order"
-msgstr "Bon de commande d'achat"
+msgstr "Bon de commande"
 
 #. module: report_custom_message
 #: model:ir.model.fields,field_description:report_custom_message.field_account_bank_statement_line__report_custom_message
@@ -196,12 +196,12 @@ msgstr "Messages personnalisés sur le rapport"
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Sale Order"
-msgstr "Bon de commande de vente"
+msgstr "Bon de commande"
 
 #. module: report_custom_message
 #: model:ir.model,name:report_custom_message.model_sale_order
 msgid "Sales Order"
-msgstr "Bons de commandes de vente"
+msgstr "Bon de commande"
 
 #. module: report_custom_message
 #: model:ir.model.fields,help:report_custom_message.field_report_custom_message__border
@@ -211,12 +211,12 @@ msgstr "Taille de la bordure, en pixel"
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form
 msgid "Stock Picking"
-msgstr "Bon de livraison"
+msgstr "Colisage"
 
 #. module: report_custom_message
 #: model:ir.model,name:report_custom_message.model_stock_picking
 msgid "Transfer"
-msgstr "Mouvement de stock"
+msgstr "Transfert"
 
 #. module: report_custom_message
 #: model_terms:ir.ui.view,arch_db:report_custom_message.view_report_custom_message_form

@@ -35,4 +35,4 @@ msgstr "Préfixe pour la séquence de retour"
 #. module: fermente_account_move_name_sequence
 #: model:ir.model.fields,field_description:fermente_account_move_name_sequence.field_account_journal__sequence_prefix
 msgid "Sequence Prefix"
-msgstr "Préfixe pour la séquence"
+msgstr "Préfixe de la Séquence"

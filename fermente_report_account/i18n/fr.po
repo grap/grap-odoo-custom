@@ -37,7 +37,7 @@ msgstr ""
 #. module: fermente_report_account
 #: model_terms:ir.ui.view,arch_db:fermente_report_account.template_account_invoice
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: fermente_report_account
 #: model_terms:ir.ui.view,arch_db:fermente_report_account.template_account_invoice

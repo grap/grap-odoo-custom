@@ -1,0 +1,14 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * fermente_product_margin_classification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: fermente_product_margin_classification
+#: model:ir.ui.menu,name:fermente_product_margin_classification.menu_product_margin_classification
+msgid "Margin Classifications"
+msgstr "Catégories de marge"

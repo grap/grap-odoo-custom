@@ -49,9 +49,7 @@ msgstr ""
 #. module: fermente_report_base
 #: model_terms:ir.ui.view,arch_db:fermente_report_base.grap_external_layout
 msgid ""
-"<span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le "
-"taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au "
-"créancier en cas de retard de paiement : 40€</span>\n"
+"<span>Pas d'escompte pour paiement anticipé. Pénalité de retard : 3 fois le taux d'intérêt légal. Montant forfaitaire pour frais de recouvrement dû au créancier en cas de retard de paiement : 40€</span>\n"
 "                                    <br/>"
 msgstr ""
 
