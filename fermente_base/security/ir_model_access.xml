@@ -29,4 +29,10 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <value eval="{'active': False}"/>
     </function>
 
+    <!-- res.partner.bank can NOT be changed by Contact Creation -->
+    <function model="ir.model.access" name="write">
+        <value model="ir.model.access" search="[('id', '=', obj().env.ref('base.access_res_partner_bank_group_partner_manager').id)]"/>
+        <value eval="{'active': False}"/>
+    </function>
+
 </odoo>
